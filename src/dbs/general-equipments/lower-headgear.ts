@@ -48,7 +48,7 @@ export const lowerHeadgear: IBaseEquipment[] = [
         const multiplierStrLuk = Math.floor((baseStr + baseLuk) / 80);
         if (multiplierStrLuk > 0) {
           _this.additionAtk.race = multiplierStrLuk * 0.06;
-          _this.criticalPercent = Number((new Big(multiplierStrLuk)).mul(0.01).valueOf());
+          _this.criticalPercent = Number((new Big(0.01)).mul(multiplierStrLuk).valueOf());
         }
       }
     }
