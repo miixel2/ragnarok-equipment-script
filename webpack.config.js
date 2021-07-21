@@ -1,6 +1,7 @@
 const path = require("path");
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 
 module.exports = {
   mode: "production",
@@ -47,6 +48,14 @@ module.exports = {
       new TerserPlugin({
         extractComments: false,
       }),
+      new UglifyJsPlugin({
+        uglifyOptions: {
+          output: {
+            // 2. remove comments
+            comments: false,
+          },
+        },
+      })
     ],
   },
   plugins: [
