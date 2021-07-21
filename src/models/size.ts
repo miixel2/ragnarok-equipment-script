@@ -1,0 +1,4 @@
+import { Scale } from './monster';
+
+// tslint:disable-next-line: max-line-length
+export const sizePenaltyTable: Record<string, Record<Scale, 0.5 | 0.75 | 1>> = { BARE_HANDED: { SMALL: 1, MEDIUM: 1, LARGE: 1 }, DAGGER: { SMALL: 1, MEDIUM: 0.75, LARGE: 0.5 }, SWORD: { SMALL: 0.75, MEDIUM: 1, LARGE: 0.75 }, TWO_HANDED_SWORD: { SMALL: 0.75, MEDIUM: 0.75, LARGE: 1 }, SPEAR: { SMALL: 1, MEDIUM: 1, LARGE: 1 }, AXE: { SMALL: 0.5, MEDIUM: 0.75, LARGE: 1 }, MACE: { SMALL: 0.75, MEDIUM: 1, LARGE: 1 }, ROD: { SMALL: 1, MEDIUM: 1, LARGE: 1 }, BOW: { SMALL: 1, MEDIUM: 1, LARGE: 0.75 }, KATAR: { SMALL: 0.75, MEDIUM: 1, LARGE: 0.75 }, BOOK: { SMALL: 0.75, MEDIUM: 1, LARGE: 0.75 }, KNUCKLE: { SMALL: 1, MEDIUM: 1, LARGE: 0.75 }, INSTRUMENT: { SMALL: 0.75, MEDIUM: 1, LARGE: 0.75 }, WHIP: { SMALL: 0.75, MEDIUM: 1, LARGE: 0.5 }, GUN: { SMALL: 1, MEDIUM: 1, LARGE: 1 }, HUUMA_SHURIKEN: { SMALL: 0.75, MEDIUM: 0.75, LARGE: 1 }, };

@@ -1,0 +1,14 @@
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "module": "commonjs",
+    "target": "es5",
+    "lib": [
+      "es2015",
+      "dom"
+    ],
+    "outDir": "./dist",
+    "sourceMap": true,
+    "declaration": true,
+  }
+}
