@@ -19,4 +19,4 @@ jobs:
     steps:
       # Runs a single command using the runners shell
       - name: Purge
-        run: curl https://purge.jsdelivr.net/gh/AmplifierS9/ragnarok-equipment-script/dist/ragnarok-equipment.js
+        run: curl https://purge.jsdelivr.net/gh/AmplifierS9/ragnarok-equipment-script@latest/dist/ragnarok-equipment.js
