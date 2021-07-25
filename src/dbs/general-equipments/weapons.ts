@@ -258,6 +258,7 @@ export const weapons: IBaseEquipment[] = [
     criticalPercent: 0,
     penetrationPercent: 0,
     script: (character: Character2, _this: IBaseEquipment): void => {
+      _this.eATK = 0;
       const upgrade = _this.equipUpgradeValue;
 
       if (upgrade > 15) {
@@ -311,6 +312,8 @@ export const weapons: IBaseEquipment[] = [
     criticalPercent: 0,
     penetrationPercent: 0,
     script: (character: Character2, _this: IBaseEquipment): void => {
+      _this.eATK = 0;
+
       const upgrade = _this.equipUpgradeValue;
 
       if (upgrade > 15) {

@@ -28,7 +28,8 @@ export const accessories: IBaseEquipment[] = [
       element: 0,
       race: 0,
       class: 0,
-      atkPercent: 0.06
+      atkPercent: 0,
+      atkPercent2: 0.06
     },
     additionDef: {
       size: 0,
@@ -160,6 +161,7 @@ export const accessories: IBaseEquipment[] = [
     script: (character: Character2, _this: IBaseEquipment): void => {
 
       _this.additionAtk.atkPercent = 0;
+      _this.additionAtk.atkPercent2 = 0;
       _this.additionAtk.size = 0;
       _this.criticalPercent = 0;
 
@@ -169,7 +171,7 @@ export const accessories: IBaseEquipment[] = [
 
       // STR
       if ([22000, 22006, 22107, 22113].includes(character.shoes.id) && character.class.str0 >= 120) {
-        _this.additionAtk.atkPercent = 0.08;
+        _this.additionAtk.atkPercent2 = 0.08;
         _this.additionAtk.size = 0.08;
         return;
       }
@@ -192,7 +194,7 @@ export const accessories: IBaseEquipment[] = [
 
       // DEX
       if ([22004, 22008, 22111, 22117].includes(character.shoes.id) && character.class.dex0 >= 120) {
-        _this.additionAtk.atkPercent = 0.08;
+        _this.additionAtk.atkPercent2 = 0.08;
         return;
       }
 

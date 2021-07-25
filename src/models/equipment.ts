@@ -34,7 +34,8 @@ export interface IBaseEquipment {
     element: number,
     race: number,
     class: number,
-    atkPercent: number
+    atkPercent: number,
+    atkPercent2?: number
   };
 
   additionDef: {
@@ -42,7 +43,8 @@ export interface IBaseEquipment {
     element: number,
     race: number,
     class: number,
-    atkPercent: number
+    atkPercent: number,
+    atkPercent2?: number
   };
 
   eATK: number;
@@ -94,7 +96,8 @@ export class BaseEquipment implements IBaseEquipment {
     element: 0,
     race: 0,
     class: 0,
-    atkPercent: 0
+    atkPercent: 0,
+    atkPercent2: 0
   };
   // Addition DEF
   public additionDef = {
@@ -102,7 +105,8 @@ export class BaseEquipment implements IBaseEquipment {
     element: 0,
     race: 0,
     class: 0,
-    atkPercent: 0
+    atkPercent: 0,
+    atkPercent2: 0
   };
 
   public eATK: number = 0;

@@ -39,6 +39,8 @@ export const enchants: IBaseEquipment[] = [
     criticalPercent: 0,
     penetrationPercent: 0,
     script: (character: Character2, _this: IBaseEquipment): void => {
+      _this.eATK = 0;
+
       if (character.bodyGear) {
         const upgradeArmor = character.bodyGear.equipUpgradeValue;
         const baseStr = character.class.str0;
@@ -125,6 +127,9 @@ export const enchants: IBaseEquipment[] = [
     criticalPercent: 0,
     penetrationPercent: 0,
     script: (character: Character2, _this: IBaseEquipment): void => {
+      _this.additionAtk.atkPercent = 0;
+      _this.str = 0;
+
       if (character.bodyGear) {
         const upgradeArmor = character.bodyGear.equipUpgradeValue;
 
@@ -160,7 +165,8 @@ export const enchants: IBaseEquipment[] = [
       element: 0,
       race: 0,
       class: 0,
-      atkPercent: 0
+      atkPercent: 0,
+      atkPercent2: 0
     },
     additionDef: {
       size: 0,
@@ -174,6 +180,9 @@ export const enchants: IBaseEquipment[] = [
     criticalPercent: 0,
     penetrationPercent: 0,
     script: (character: Character2, _this: IBaseEquipment): void => {
+      _this.additionAtk.atkPercent = 0;
+      _this.str = 0;
+
       if (character.bodyGear) {
         const upgradeArmor = character.bodyGear.equipUpgradeValue;
 
@@ -224,6 +233,9 @@ export const enchants: IBaseEquipment[] = [
     criticalPercent: 0,
     penetrationPercent: 0,
     script: (character: Character2, _this: IBaseEquipment): void => {
+      _this.additionAtk.atkPercent = 0;
+      _this.str = 0;
+
       if (character.bodyGear) {
         const upgradeArmor = character.bodyGear.equipUpgradeValue;
 
@@ -279,6 +291,8 @@ export const enchants: IBaseEquipment[] = [
     criticalPercent: 0,
     penetrationPercent: 0,
     script: (character: Character2, _this: IBaseEquipment): void => {
+      _this.dex = 0;
+
       if (character.bodyGear) {
         const upgradeArmor = character.bodyGear.equipUpgradeValue;
 
@@ -324,6 +338,8 @@ export const enchants: IBaseEquipment[] = [
     criticalPercent: 0,
     penetrationPercent: 0,
     script: (character: Character2, _this: IBaseEquipment): void => {
+      _this.dex = 0;
+
       if (character.bodyGear) {
         const upgradeArmor = character.bodyGear.equipUpgradeValue;
 
@@ -373,6 +389,8 @@ export const enchants: IBaseEquipment[] = [
     criticalPercent: 0,
     penetrationPercent: 0,
     script: (character: Character2, _this: IBaseEquipment): void => {
+      _this.dex = 0;
+
       if (character.bodyGear) {
         const upgradeArmor = character.bodyGear.equipUpgradeValue;
 
@@ -426,6 +444,9 @@ export const enchants: IBaseEquipment[] = [
     criticalPercent: 0,
     penetrationPercent: 0,
     script: (character: Character2, _this: IBaseEquipment): void => {
+      _this.luk = 0;
+      _this.criticalPercent = 0;
+
       if (character.bodyGear) {
         const upgradeArmor = character.bodyGear.equipUpgradeValue;
 
@@ -475,6 +496,9 @@ export const enchants: IBaseEquipment[] = [
     criticalPercent: 0,
     penetrationPercent: 0,
     script: (character: Character2, _this: IBaseEquipment): void => {
+      _this.luk = 0;
+      _this.criticalPercent = 0;
+
       if (character.bodyGear) {
         const upgradeArmor = character.bodyGear.equipUpgradeValue;
 
@@ -525,6 +549,9 @@ export const enchants: IBaseEquipment[] = [
     criticalPercent: 0,
     penetrationPercent: 0,
     script: (character: Character2, _this: IBaseEquipment): void => {
+      _this.luk = 0;
+      _this.criticalPercent = 0;
+
       if (character.bodyGear) {
         const upgradeArmor = character.bodyGear.equipUpgradeValue;
 
@@ -2057,9 +2084,10 @@ export const enchants: IBaseEquipment[] = [
     },
     eATK: 0,
     cATK: 0,
-    criticalPercent: 0.03,
+    criticalPercent: 0,
     penetrationPercent: 0,
     script: (character: Character2, _this: IBaseEquipment): void => {
+      _this.criticalPercent = 0.03;
       if (character.costumeUpperHeadgear && character.costumeUpperHeadgear.slot1?.id === 29359
         && character.costumeMiddleHeadgear && character.costumeMiddleHeadgear.slot1?.id === 29047
         && character.costumeLowerHeadgear && character.costumeLowerHeadgear.slot1?.id === 29360
@@ -2512,7 +2540,7 @@ export const enchants: IBaseEquipment[] = [
     penetrationPercent: 0,
     script: (character: Character2, _this: IBaseEquipment): void => {
       _this.agi = 1;
-
+      _this.additionAtk.atkPercent = 0;
       const upgrade = _this.equipUpgradeValue;
 
       if (upgrade >= 8) {

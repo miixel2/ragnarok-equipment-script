@@ -26,7 +26,8 @@ export const upperHeadgear: IBaseEquipment[] = [
       element: 0,
       race: 0,
       class: 0,
-      atkPercent: 0
+      atkPercent: 0,
+      atkPercent2: 0
     },
     additionDef: {
       size: 0,
@@ -40,11 +41,14 @@ export const upperHeadgear: IBaseEquipment[] = [
     criticalPercent: 0,
     penetrationPercent: 0,
     script: (character: Character2, _this: IBaseEquipment): void => {
+      _this.additionAtk.atkPercent2 = 0;
+      _this.criticalPercent = 0;
+
       const upgrade = _this.equipUpgradeValue;
       _this.eATK = Math.floor(upgrade / 2) * 15;
 
       if (upgrade >= 9) {
-        _this.additionAtk.atkPercent = 0.05;
+        _this.additionAtk.atkPercent2 = 0.05;
       }
 
       if (upgrade >= 11) {

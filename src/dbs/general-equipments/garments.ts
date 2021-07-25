@@ -42,6 +42,9 @@ export const garments: IBaseEquipment[] = [
     criticalPercent: 0,
     penetrationPercent: 0,
     script: (character: Character2, _this: IBaseEquipment): void => {
+      _this.eATK = 0;
+      _this.criticalPercent = 0;
+
       const upgrade = _this.equipUpgradeValue;
       const baseStr = character.class.str0;
       const baseLuk = character.class.luk0;

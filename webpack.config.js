@@ -2,6 +2,7 @@ const path = require("path");
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
+const LodashModuleReplacementPlugin = require('lodash-webpack-plugin');
 
 module.exports = {
   mode: "production",
@@ -20,9 +21,10 @@ module.exports = {
         include: path.resolve(__dirname, "src"),
         use: [
           {
-            loader: 'ts-loader',
+            loader: 'babel-loader',
             options: {
-              transpileOnly: true
+              cacheDirectory: true,
+              presets: [['@babel/env', { 'targets': { 'node': 6 } }]]
             }
           }
         ]
@@ -54,13 +56,17 @@ module.exports = {
             // 2. remove comments
             comments: false,
           },
-        },
+        }
       })
     ],
   },
   plugins: [
     new CleanWebpackPlugin({
       cleanAfterEveryBuildPatterns: ['*.LICENSE.txt'],
+    }),
+    new LodashModuleReplacementPlugin({
+      'collections': true,
+      'paths': true
     })
   ]
 };
