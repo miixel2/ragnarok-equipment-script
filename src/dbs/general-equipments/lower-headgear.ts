@@ -25,7 +25,8 @@ export const lowerHeadgear: IBaseEquipment[] = [
       element: 0,
       race: 0,
       class: 0,
-      atkPercent: 0
+      atkPercent: 0,
+      atkPercent2: 0
     },
     additionDef: {
       size: 0,
@@ -39,7 +40,7 @@ export const lowerHeadgear: IBaseEquipment[] = [
     criticalPercent: 0,
     penetrationPercent: 0,
     script: (character: Character2, _this: IBaseEquipment): void => {
-      _this.additionAtk.race = 0;
+      _this.additionAtk.atkPercent = 0;
       _this.criticalPercent = 0;
       if (character.middleHeadgear && character.middleHeadgear.id === 2202) {
         const baseStr = character.class.str0;
@@ -47,7 +48,7 @@ export const lowerHeadgear: IBaseEquipment[] = [
 
         const multiplierStrLuk = Math.floor((baseStr + baseLuk) / 80);
         if (multiplierStrLuk > 0) {
-          _this.additionAtk.race = multiplierStrLuk * 0.06;
+          _this.additionAtk.atkPercent = multiplierStrLuk * 0.06;
           _this.criticalPercent = Number((new Big(0.1)).mul(multiplierStrLuk).valueOf());
         }
       }

@@ -1,5 +1,6 @@
 import Big from 'big.js';
 import { Character2 } from '../../models/character2';
+import { ClassKey } from '../../models/class';
 import { E_Element } from '../../models/element';
 import { IBaseEquipment, EquipmentType, EquipmentSubType, EquipmentLocation } from '../../models/equipment';
 import { MonsterRace } from '../../models/monster';
@@ -13,9 +14,9 @@ export const armors: IBaseEquipment[] = [
     location: EquipmentLocation.BODY,
     compoundOn: null,
     slot1Enable: false,
-    slot2Enable: false,
-    slot3Enable: false,
-    slot4Enable: false,
+    slot2Enable: true,
+    slot3Enable: true,
+    slot4Enable: true,
     baseDef: 110,
     baseATK: 0,
     level: 1,
@@ -44,6 +45,7 @@ export const armors: IBaseEquipment[] = [
     cATK: 0,
     criticalPercent: 0,
     penetrationPercent: 0,
+    classActives: [ClassKey.RuneKnight],
     script: (character: Character2, _this: IBaseEquipment): void => { }
   },
   {
@@ -315,5 +317,47 @@ export const armors: IBaseEquipment[] = [
         }
       }
     }
+  },
+  {
+    id: 15039,
+    name: `Nab's Cloth [1]`,
+    type: EquipmentType.ARMOR,
+    subType: EquipmentSubType.ARMOR,
+    location: EquipmentLocation.BODY,
+    compoundOn: null,
+    slot1Enable: true,
+    slot2Enable: true,
+    slot3Enable: true,
+    slot4Enable: true,
+    baseDef: 45,
+    baseATK: 0,
+    level: 1,
+    equipUpgradeValue: 0,
+    str: 2,
+    agi: 0,
+    vit: 0,
+    int: 2,
+    dex: 0,
+    luk: 0,
+    additionAtk: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+      atkPercent: 0
+    },
+    additionDef: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+      atkPercent: 0
+    },
+    eATK: 0,
+    cATK: 0,
+    criticalPercent: 0,
+    penetrationPercent: 0,
+    classActives: [ClassKey.GuillotineCross],
+    script: (character: Character2, _this: IBaseEquipment): void => { }
   },
 ];

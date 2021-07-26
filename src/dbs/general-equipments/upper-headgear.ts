@@ -1,5 +1,6 @@
 import Big from 'big.js';
 import { Character2 } from '../../models/character2';
+import { ClassKey } from '../../models/class';
 import { IBaseEquipment, EquipmentType, EquipmentSubType, EquipmentLocation } from '../../models/equipment';
 
 export const upperHeadgear: IBaseEquipment[] = [
@@ -49,10 +50,71 @@ export const upperHeadgear: IBaseEquipment[] = [
 
       if (upgrade >= 9) {
         _this.additionAtk.atkPercent2 = 0.05;
+
+        if (upgrade >= 11) {
+          _this.criticalPercent = 0.15;
+        }
+      }
+    }
+  },
+  {
+    id: 19300,
+    name: 'Ruff Officer [1]',
+    type: EquipmentType.ARMOR,
+    subType: EquipmentSubType.HELM,
+    location: EquipmentLocation.UPPER_HEADGEAR,
+    compoundOn: null,
+    slot1Enable: true,
+    baseDef: 35,
+    baseATK: 0,
+    level: 1,
+    equipUpgradeValue: 0,
+    str: 0,
+    agi: 0,
+    vit: 0,
+    int: 0,
+    dex: 0,
+    luk: 0,
+    additionAtk: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+      atkPercent: 0,
+      atkPercent2: 0
+    },
+    additionDef: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+      atkPercent: 0
+    },
+    eATK: 0,
+    cATK: 0,
+    criticalPercent: 0,
+    penetrationPercent: 0,
+    script: (character: Character2, _this: IBaseEquipment): void => {
+      _this.additionAtk.atkPercent2 = 0;
+      _this.criticalPercent = 0;
+
+      const upgrade = _this.equipUpgradeValue;
+      _this.eATK = Math.floor(upgrade / 2) * 15;
+
+      if (character.rightHand?.id === 28000) {
+        _this.eATK += Math.floor(upgrade / 2) * 20;
       }
 
-      if (upgrade >= 11) {
-        _this.criticalPercent = 0.15;
+      if (upgrade >= 7) {
+        _this.eATK += 30;
+
+        if (upgrade >= 9) {
+          _this.additionAtk.atkPercent2 = 0.05;
+
+          if (upgrade >= 11) {
+            _this.criticalPercent = 0.03;
+          }
+        }
       }
     }
   },
@@ -95,6 +157,7 @@ export const upperHeadgear: IBaseEquipment[] = [
     cATK: 0,
     criticalPercent: 0,
     penetrationPercent: 0,
+    classActives: [ClassKey.RuneKnight],
     script: (character: Character2, _this: IBaseEquipment): void => {
       const upgrade = _this.equipUpgradeValue;
       _this.eATK = upgrade * 4;
@@ -139,6 +202,7 @@ export const upperHeadgear: IBaseEquipment[] = [
     cATK: 0,
     criticalPercent: 0,
     penetrationPercent: 0,
+    classActives: [ClassKey.GuillotineCross],
     script: (character: Character2, _this: IBaseEquipment): void => { }
   },
   {

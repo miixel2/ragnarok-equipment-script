@@ -26,7 +26,8 @@ export const shadowArmors: IBaseEquipment[] = [
       element: 0,
       race: 0,
       class: 0,
-      atkPercent: 0
+      atkPercent: 0,
+      atkPercent2: 0
     },
     additionDef: {
       size: 0,
@@ -40,15 +41,16 @@ export const shadowArmors: IBaseEquipment[] = [
     criticalPercent: 0,
     penetrationPercent: 0,
     script: (character: Character2, _this: IBaseEquipment): void => {
+      _this.additionAtk.atkPercent2 = 0;
       _this.eATK = 20;
       const upgrade = _this.equipUpgradeValue;
 
       if (upgrade >= 7) {
-        _this.additionAtk.atkPercent = 0.02;
+        _this.additionAtk.atkPercent2 = 0.02;
       }
 
       if (upgrade >= 9) {
-        _this.additionAtk.atkPercent = Number((new Big(_this.additionAtk.atkPercent)).plus(0.03).valueOf());
+        _this.additionAtk.atkPercent2 = Number((new Big(_this.additionAtk.atkPercent2)).plus(0.03).valueOf());
       }
 
       if (character.shadowLeftHand && character.shadowLeftHand?.id === 24394
@@ -61,11 +63,11 @@ export const shadowArmors: IBaseEquipment[] = [
         _this.eATK += sumAll * 2;
 
         if (sumAll >= 23) {
-          _this.additionAtk.atkPercent = Number((new Big(_this.additionAtk.atkPercent)).plus(0.02).valueOf());
+          _this.additionAtk.atkPercent2 = Number((new Big(_this.additionAtk.atkPercent2)).plus(0.02).valueOf());
         }
 
         if (sumAll >= 25) {
-          _this.additionAtk.atkPercent = Number((new Big(_this.additionAtk.atkPercent)).plus(0.03).valueOf());
+          _this.additionAtk.atkPercent2 = Number((new Big(_this.additionAtk.atkPercent2)).plus(0.03).valueOf());
         }
       }
     }

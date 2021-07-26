@@ -1,6 +1,13 @@
 import Big from 'big.js';
 import { Character2 } from '../models/character2';
 import { IBaseEquipment, EquipmentType, EquipmentSubType, EquipmentLocation, CompoundOn } from '../models/equipment';
+import { costumeIds } from './costumes';
+
+const headGearLab5 = [18971, 18982];
+const malangdo = [21018, 28010, 1185, 1186];
+const tempBoots = [22006, 22011];
+const costumes = costumeIds;
+const mora = [15039, 15037];
 
 export const enchants: IBaseEquipment[] = [
   {
@@ -38,6 +45,7 @@ export const enchants: IBaseEquipment[] = [
     cATK: 0,
     criticalPercent: 0,
     penetrationPercent: 0,
+    enchantActives: [15128],
     script: (character: Character2, _this: IBaseEquipment): void => {
       _this.eATK = 0;
 
@@ -89,6 +97,7 @@ export const enchants: IBaseEquipment[] = [
     cATK: 0,
     criticalPercent: 0,
     penetrationPercent: 0,
+    enchantActives: [15128, 20773],
     script: (character: Character2, _this: IBaseEquipment): void => { }
   },
   {
@@ -113,7 +122,8 @@ export const enchants: IBaseEquipment[] = [
       element: 0,
       race: 0,
       class: 0,
-      atkPercent: 0
+      atkPercent: 0,
+      atkPercent2: 0
     },
     additionDef: {
       size: 0,
@@ -126,6 +136,7 @@ export const enchants: IBaseEquipment[] = [
     cATK: 0,
     criticalPercent: 0,
     penetrationPercent: 0,
+    enchantActives: [15147],
     script: (character: Character2, _this: IBaseEquipment): void => {
       _this.additionAtk.atkPercent = 0;
       _this.str = 0;
@@ -179,6 +190,7 @@ export const enchants: IBaseEquipment[] = [
     cATK: 0,
     criticalPercent: 0,
     penetrationPercent: 0,
+    enchantActives: [15147],
     script: (character: Character2, _this: IBaseEquipment): void => {
       _this.additionAtk.atkPercent = 0;
       _this.str = 0;
@@ -219,7 +231,8 @@ export const enchants: IBaseEquipment[] = [
       element: 0,
       race: 0,
       class: 0,
-      atkPercent: 0
+      atkPercent: 0,
+      atkPercent2: 0
     },
     additionDef: {
       size: 0,
@@ -232,6 +245,7 @@ export const enchants: IBaseEquipment[] = [
     cATK: 0,
     criticalPercent: 0,
     penetrationPercent: 0,
+    enchantActives: [15147],
     script: (character: Character2, _this: IBaseEquipment): void => {
       _this.additionAtk.atkPercent = 0;
       _this.str = 0;
@@ -290,6 +304,7 @@ export const enchants: IBaseEquipment[] = [
     cATK: 0,
     criticalPercent: 0,
     penetrationPercent: 0,
+    enchantActives: [15147],
     script: (character: Character2, _this: IBaseEquipment): void => {
       _this.dex = 0;
 
@@ -337,6 +352,7 @@ export const enchants: IBaseEquipment[] = [
     cATK: 0,
     criticalPercent: 0,
     penetrationPercent: 0,
+    enchantActives: [15147],
     script: (character: Character2, _this: IBaseEquipment): void => {
       _this.dex = 0;
 
@@ -388,6 +404,7 @@ export const enchants: IBaseEquipment[] = [
     cATK: 0,
     criticalPercent: 0,
     penetrationPercent: 0,
+    enchantActives: [15147],
     script: (character: Character2, _this: IBaseEquipment): void => {
       _this.dex = 0;
 
@@ -443,6 +460,7 @@ export const enchants: IBaseEquipment[] = [
     cATK: 0,
     criticalPercent: 0,
     penetrationPercent: 0,
+    enchantActives: [15147],
     script: (character: Character2, _this: IBaseEquipment): void => {
       _this.luk = 0;
       _this.criticalPercent = 0;
@@ -495,6 +513,7 @@ export const enchants: IBaseEquipment[] = [
     cATK: 0,
     criticalPercent: 0,
     penetrationPercent: 0,
+    enchantActives: [15147],
     script: (character: Character2, _this: IBaseEquipment): void => {
       _this.luk = 0;
       _this.criticalPercent = 0;
@@ -548,6 +567,7 @@ export const enchants: IBaseEquipment[] = [
     cATK: 0,
     criticalPercent: 0,
     penetrationPercent: 0,
+    enchantActives: [15147],
     script: (character: Character2, _this: IBaseEquipment): void => {
       _this.luk = 0;
       _this.criticalPercent = 0;
@@ -606,6 +626,7 @@ export const enchants: IBaseEquipment[] = [
     cATK: 0,
     criticalPercent: 0.1,
     penetrationPercent: 0,
+    enchantActives: [...headGearLab5],
     script: (character: Character2, _this: IBaseEquipment): void => { }
   },
   {
@@ -643,6 +664,7 @@ export const enchants: IBaseEquipment[] = [
     cATK: 0,
     criticalPercent: 0.2,
     penetrationPercent: 0,
+    enchantActives: [...headGearLab5],
     script: (character: Character2, _this: IBaseEquipment): void => { }
   },
   {
@@ -680,6 +702,7 @@ export const enchants: IBaseEquipment[] = [
     cATK: 0,
     criticalPercent: 0.3,
     penetrationPercent: 0,
+    enchantActives: [...headGearLab5],
     script: (character: Character2, _this: IBaseEquipment): void => { }
   },
   {
@@ -717,6 +740,7 @@ export const enchants: IBaseEquipment[] = [
     cATK: 0,
     criticalPercent: 0.4,
     penetrationPercent: 0,
+    enchantActives: [...headGearLab5],
     script: (character: Character2, _this: IBaseEquipment): void => { }
   },
   {
@@ -754,6 +778,7 @@ export const enchants: IBaseEquipment[] = [
     cATK: 0,
     criticalPercent: 0.5,
     penetrationPercent: 0,
+    enchantActives: [...headGearLab5],
     script: (character: Character2, _this: IBaseEquipment): void => { }
   },
   {
@@ -791,6 +816,7 @@ export const enchants: IBaseEquipment[] = [
     cATK: 0,
     criticalPercent: 0,
     penetrationPercent: 0,
+    enchantActives: [20718, ...malangdo, ...mora],
     script: (character: Character2, _this: IBaseEquipment): void => { }
   },
   {
@@ -828,6 +854,7 @@ export const enchants: IBaseEquipment[] = [
     cATK: 0,
     criticalPercent: 0,
     penetrationPercent: 0,
+    enchantActives: [...headGearLab5, 20718, ...malangdo, ...mora],
     script: (character: Character2, _this: IBaseEquipment): void => { }
   },
   {
@@ -865,6 +892,7 @@ export const enchants: IBaseEquipment[] = [
     cATK: 0,
     criticalPercent: 0,
     penetrationPercent: 0,
+    enchantActives: [...headGearLab5, 2589, 20718, ...malangdo, ...mora],
     script: (character: Character2, _this: IBaseEquipment): void => { }
   },
   {
@@ -902,6 +930,7 @@ export const enchants: IBaseEquipment[] = [
     cATK: 0,
     criticalPercent: 0,
     penetrationPercent: 0,
+    enchantActives: [...headGearLab5, 2589, 20718, ...malangdo, ...mora],
     script: (character: Character2, _this: IBaseEquipment): void => { }
   },
   {
@@ -939,6 +968,7 @@ export const enchants: IBaseEquipment[] = [
     cATK: 0,
     criticalPercent: 0,
     penetrationPercent: 0,
+    enchantActives: [...headGearLab5, 2589, 20718, ...malangdo, ...mora],
     script: (character: Character2, _this: IBaseEquipment): void => { }
   },
   {
@@ -976,6 +1006,7 @@ export const enchants: IBaseEquipment[] = [
     cATK: 0,
     criticalPercent: 0,
     penetrationPercent: 0,
+    enchantActives: [20718, ...malangdo],
     script: (character: Character2, _this: IBaseEquipment): void => { }
   },
   {
@@ -1013,6 +1044,7 @@ export const enchants: IBaseEquipment[] = [
     cATK: 0,
     criticalPercent: 0,
     penetrationPercent: 0,
+    enchantActives: [20718],
     script: (character: Character2, _this: IBaseEquipment): void => { }
   },
   {
@@ -1050,6 +1082,7 @@ export const enchants: IBaseEquipment[] = [
     cATK: 0,
     criticalPercent: 0,
     penetrationPercent: 0,
+    enchantActives: [20718, ...malangdo, ...mora],
     script: (character: Character2, _this: IBaseEquipment): void => { }
   },
   {
@@ -1087,6 +1120,7 @@ export const enchants: IBaseEquipment[] = [
     cATK: 0,
     criticalPercent: 0,
     penetrationPercent: 0,
+    enchantActives: [...headGearLab5, 20718, ...malangdo, ...mora],
     script: (character: Character2, _this: IBaseEquipment): void => { }
   },
   {
@@ -1124,6 +1158,7 @@ export const enchants: IBaseEquipment[] = [
     cATK: 0,
     criticalPercent: 0,
     penetrationPercent: 0,
+    enchantActives: [...headGearLab5, 2589, 20718, ...malangdo, ...mora],
     script: (character: Character2, _this: IBaseEquipment): void => { }
   },
   {
@@ -1161,6 +1196,7 @@ export const enchants: IBaseEquipment[] = [
     cATK: 0,
     criticalPercent: 0,
     penetrationPercent: 0,
+    enchantActives: [...headGearLab5, 2589, 20718, ...malangdo, ...mora],
     script: (character: Character2, _this: IBaseEquipment): void => { }
   },
   {
@@ -1198,6 +1234,7 @@ export const enchants: IBaseEquipment[] = [
     cATK: 0,
     criticalPercent: 0,
     penetrationPercent: 0,
+    enchantActives: [...headGearLab5, 2589, 20718, ...malangdo, ...mora],
     script: (character: Character2, _this: IBaseEquipment): void => { }
   },
   {
@@ -1235,6 +1272,7 @@ export const enchants: IBaseEquipment[] = [
     cATK: 0,
     criticalPercent: 0,
     penetrationPercent: 0,
+    enchantActives: [20718, ...malangdo],
     script: (character: Character2, _this: IBaseEquipment): void => { }
   },
   {
@@ -1272,6 +1310,7 @@ export const enchants: IBaseEquipment[] = [
     cATK: 0,
     criticalPercent: 0,
     penetrationPercent: 0,
+    enchantActives: [20718],
     script: (character: Character2, _this: IBaseEquipment): void => { }
   },
   {
@@ -1309,6 +1348,7 @@ export const enchants: IBaseEquipment[] = [
     cATK: 0,
     criticalPercent: 0,
     penetrationPercent: 0,
+    enchantActives: [20718, ...malangdo, ...mora],
     script: (character: Character2, _this: IBaseEquipment): void => { }
   },
   {
@@ -1346,6 +1386,7 @@ export const enchants: IBaseEquipment[] = [
     cATK: 0,
     criticalPercent: 0,
     penetrationPercent: 0,
+    enchantActives: [...headGearLab5, 20718, ...malangdo, ...mora],
     script: (character: Character2, _this: IBaseEquipment): void => { }
   },
   {
@@ -1383,6 +1424,7 @@ export const enchants: IBaseEquipment[] = [
     cATK: 0,
     criticalPercent: 0,
     penetrationPercent: 0,
+    enchantActives: [...headGearLab5, 2589, 20718, ...malangdo, ...mora],
     script: (character: Character2, _this: IBaseEquipment): void => { }
   },
   {
@@ -1420,6 +1462,7 @@ export const enchants: IBaseEquipment[] = [
     cATK: 0,
     criticalPercent: 0,
     penetrationPercent: 0,
+    enchantActives: [...headGearLab5, 2589, 20718, ...malangdo, ...mora],
     script: (character: Character2, _this: IBaseEquipment): void => { }
   },
   {
@@ -1457,6 +1500,7 @@ export const enchants: IBaseEquipment[] = [
     cATK: 0,
     criticalPercent: 0,
     penetrationPercent: 0,
+    enchantActives: [...headGearLab5, 2589, 20718, ...malangdo, ...mora],
     script: (character: Character2, _this: IBaseEquipment): void => { }
   },
   {
@@ -1494,6 +1538,7 @@ export const enchants: IBaseEquipment[] = [
     cATK: 0,
     criticalPercent: 0,
     penetrationPercent: 0,
+    enchantActives: [20718, ...malangdo],
     script: (character: Character2, _this: IBaseEquipment): void => { }
   },
   {
@@ -1531,6 +1576,83 @@ export const enchants: IBaseEquipment[] = [
     cATK: 0,
     criticalPercent: 0,
     penetrationPercent: 0,
+    enchantActives: [20718],
+    script: (character: Character2, _this: IBaseEquipment): void => { }
+  },
+  {
+    id: 4811,
+    name: 'Fighting Spirit 1Lv',
+    type: EquipmentType.CARD,
+    subType: null,
+    location: null,
+    compoundOn: CompoundOn.ENCHANT,
+    baseDef: 0,
+    baseATK: 0,
+    level: 1,
+    equipUpgradeValue: 0,
+    str: 0,
+    agi: 0,
+    vit: 0,
+    int: 0,
+    dex: 0,
+    luk: 0,
+    additionAtk: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+      atkPercent: 0
+    },
+    additionDef: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+      atkPercent: 0
+    },
+    eATK: 6,
+    cATK: 0,
+    criticalPercent: 0,
+    penetrationPercent: 0,
+    enchantActives: [...mora],
+    script: (character: Character2, _this: IBaseEquipment): void => { }
+  },
+  {
+    id: 4810,
+    name: 'Fighting Spirit 2Lv',
+    type: EquipmentType.CARD,
+    subType: null,
+    location: null,
+    compoundOn: CompoundOn.ENCHANT,
+    baseDef: 0,
+    baseATK: 0,
+    level: 1,
+    equipUpgradeValue: 0,
+    str: 0,
+    agi: 0,
+    vit: 0,
+    int: 0,
+    dex: 0,
+    luk: 0,
+    additionAtk: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+      atkPercent: 0
+    },
+    additionDef: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+      atkPercent: 0
+    },
+    eATK: 9,
+    cATK: 0,
+    criticalPercent: 0,
+    penetrationPercent: 0,
+    enchantActives: [...mora],
     script: (character: Character2, _this: IBaseEquipment): void => { }
   },
   {
@@ -1568,6 +1690,7 @@ export const enchants: IBaseEquipment[] = [
     cATK: 0,
     criticalPercent: 0,
     penetrationPercent: 0,
+    enchantActives: [2589, ...mora],
     script: (character: Character2, _this: IBaseEquipment): void => { }
   },
   {
@@ -1605,6 +1728,7 @@ export const enchants: IBaseEquipment[] = [
     cATK: 0,
     criticalPercent: 0,
     penetrationPercent: 0,
+    enchantActives: [...malangdo, ...tempBoots, 2589, ...mora],
     script: (character: Character2, _this: IBaseEquipment): void => { }
   },
   {
@@ -1642,6 +1766,7 @@ export const enchants: IBaseEquipment[] = [
     cATK: 0,
     criticalPercent: 0,
     penetrationPercent: 0,
+    enchantActives: [...malangdo, ...tempBoots, 2589, ...mora],
     script: (character: Character2, _this: IBaseEquipment): void => { }
   },
   {
@@ -1679,6 +1804,7 @@ export const enchants: IBaseEquipment[] = [
     cATK: 0,
     criticalPercent: 0,
     penetrationPercent: 0,
+    enchantActives: [...malangdo, ...tempBoots, 2589, ...mora],
     script: (character: Character2, _this: IBaseEquipment): void => { }
   },
   {
@@ -1716,6 +1842,7 @@ export const enchants: IBaseEquipment[] = [
     cATK: 0,
     criticalPercent: 0,
     penetrationPercent: 0,
+    enchantActives: [...malangdo, ...tempBoots],
     script: (character: Character2, _this: IBaseEquipment): void => { }
   },
   {
@@ -1753,6 +1880,7 @@ export const enchants: IBaseEquipment[] = [
     cATK: 0,
     criticalPercent: 0,
     penetrationPercent: 0,
+    enchantActives: [...malangdo],
     script: (character: Character2, _this: IBaseEquipment): void => { }
   },
   {
@@ -1790,6 +1918,7 @@ export const enchants: IBaseEquipment[] = [
     cATK: 0,
     criticalPercent: 0,
     penetrationPercent: 0,
+    enchantActives: [...tempBoots],
     script: (character: Character2, _this: IBaseEquipment): void => { }
   },
   {
@@ -1827,6 +1956,7 @@ export const enchants: IBaseEquipment[] = [
     cATK: 0,
     criticalPercent: 0,
     penetrationPercent: 0,
+    enchantActives: [...tempBoots],
     script: (character: Character2, _this: IBaseEquipment): void => { }
   },
   {
@@ -1864,6 +1994,7 @@ export const enchants: IBaseEquipment[] = [
     cATK: 0,
     criticalPercent: 0,
     penetrationPercent: 0,
+    enchantActives: [...tempBoots],
     script: (character: Character2, _this: IBaseEquipment): void => { }
   },
   {
@@ -1901,6 +2032,7 @@ export const enchants: IBaseEquipment[] = [
     cATK: 0,
     criticalPercent: 0,
     penetrationPercent: 0,
+    enchantActives: [...tempBoots],
     script: (character: Character2, _this: IBaseEquipment): void => { }
   },
   {
@@ -1938,6 +2070,7 @@ export const enchants: IBaseEquipment[] = [
     cATK: 0,
     criticalPercent: 0,
     penetrationPercent: 0,
+    enchantActives: [...tempBoots],
     script: (character: Character2, _this: IBaseEquipment): void => { }
   },
   {
@@ -1975,6 +2108,7 @@ export const enchants: IBaseEquipment[] = [
     cATK: 0,
     criticalPercent: 0,
     penetrationPercent: 0,
+    enchantActives: [...tempBoots],
     script: (character: Character2, _this: IBaseEquipment): void => { }
   },
   {
@@ -2012,6 +2146,7 @@ export const enchants: IBaseEquipment[] = [
     cATK: 0,
     criticalPercent: 0,
     penetrationPercent: 0,
+    enchantActives: [...malangdo],
     script: (character: Character2, _this: IBaseEquipment): void => { }
   },
   {
@@ -2019,7 +2154,7 @@ export const enchants: IBaseEquipment[] = [
     name: 'Double Attack',
     type: EquipmentType.CARD,
     subType: null,
-    location: null,
+    location: EquipmentLocation.COSTUME_GARMENT,
     compoundOn: CompoundOn.ENCHANT,
     baseDef: 0,
     baseATK: 0,
@@ -2049,6 +2184,7 @@ export const enchants: IBaseEquipment[] = [
     cATK: 0,
     criticalPercent: 0,
     penetrationPercent: 0,
+    enchantActives: [...costumes],
     script: (character: Character2, _this: IBaseEquipment): void => { }
   },
   {
@@ -2056,7 +2192,7 @@ export const enchants: IBaseEquipment[] = [
     name: 'Fatal (Upper)',
     type: EquipmentType.CARD,
     subType: null,
-    location: null,
+    location: EquipmentLocation.COSTUME_UPPER_HEADGEAR,
     compoundOn: CompoundOn.ENCHANT,
     baseDef: 0,
     baseATK: 0,
@@ -2086,6 +2222,7 @@ export const enchants: IBaseEquipment[] = [
     cATK: 0,
     criticalPercent: 0,
     penetrationPercent: 0,
+    enchantActives: [...costumes],
     script: (character: Character2, _this: IBaseEquipment): void => {
       _this.criticalPercent = 0.03;
       if (character.costumeUpperHeadgear && character.costumeUpperHeadgear.slot1?.id === 29359
@@ -2131,6 +2268,7 @@ export const enchants: IBaseEquipment[] = [
     cATK: 0,
     criticalPercent: 0.04,
     penetrationPercent: 0,
+    enchantActives: [2589],
     script: (character: Character2, _this: IBaseEquipment): void => { }
   },
   {
@@ -2168,6 +2306,7 @@ export const enchants: IBaseEquipment[] = [
     cATK: 0,
     criticalPercent: 0.06,
     penetrationPercent: 0,
+    enchantActives: [2589],
     script: (character: Character2, _this: IBaseEquipment): void => { }
   },
   {
@@ -2205,6 +2344,7 @@ export const enchants: IBaseEquipment[] = [
     cATK: 0,
     criticalPercent: 0.08,
     penetrationPercent: 0,
+    enchantActives: [2589],
     script: (character: Character2, _this: IBaseEquipment): void => { }
   },
   {
@@ -2242,6 +2382,7 @@ export const enchants: IBaseEquipment[] = [
     cATK: 0,
     criticalPercent: 0.1,
     penetrationPercent: 0,
+    enchantActives: [2589],
     script: (character: Character2, _this: IBaseEquipment): void => { }
   },
   {
@@ -2249,7 +2390,7 @@ export const enchants: IBaseEquipment[] = [
     name: 'Critical',
     type: EquipmentType.CARD,
     subType: null,
-    location: null,
+    location: EquipmentLocation.COSTUME_MIDDLE_HEADGEAR,
     compoundOn: CompoundOn.ENCHANT,
     baseDef: 0,
     baseATK: 0,
@@ -2279,6 +2420,7 @@ export const enchants: IBaseEquipment[] = [
     cATK: 0,
     criticalPercent: 0.03,
     penetrationPercent: 0,
+    enchantActives: [...costumes],
     script: (character: Character2, _this: IBaseEquipment): void => { }
   },
   {
@@ -2286,7 +2428,7 @@ export const enchants: IBaseEquipment[] = [
     name: 'Fatal (Lower)',
     type: EquipmentType.CARD,
     subType: null,
-    location: null,
+    location: EquipmentLocation.COSTUME_LOWER_HEADGEAR,
     compoundOn: CompoundOn.ENCHANT,
     baseDef: 0,
     baseATK: 0,
@@ -2316,6 +2458,7 @@ export const enchants: IBaseEquipment[] = [
     cATK: 0,
     criticalPercent: 0.03,
     penetrationPercent: 0,
+    enchantActives: [...costumes],
     script: (character: Character2, _this: IBaseEquipment): void => { }
   },
   {
@@ -2323,7 +2466,7 @@ export const enchants: IBaseEquipment[] = [
     name: 'Fatal (Garment)',
     type: EquipmentType.CARD,
     subType: null,
-    location: null,
+    location: EquipmentLocation.COSTUME_GARMENT,
     compoundOn: CompoundOn.ENCHANT,
     baseDef: 0,
     baseATK: 0,
@@ -2353,6 +2496,7 @@ export const enchants: IBaseEquipment[] = [
     cATK: 0,
     criticalPercent: 0.2,
     penetrationPercent: 0,
+    enchantActives: [...costumes],
     script: (character: Character2, _this: IBaseEquipment): void => {
       if (character.costumeUpperHeadgear && character.costumeUpperHeadgear.slot1?.id === 29359
         && character.costumeMiddleHeadgear && character.costumeMiddleHeadgear.slot1?.id === 29047
@@ -2398,6 +2542,7 @@ export const enchants: IBaseEquipment[] = [
     cATK: 0,
     criticalPercent: 0,
     penetrationPercent: 0,
+    enchantActives: [20718, 2589],
     script: (character: Character2, _this: IBaseEquipment): void => {
       _this.str = 1;
       _this.additionAtk.atkPercent = 0;
@@ -2448,6 +2593,7 @@ export const enchants: IBaseEquipment[] = [
     cATK: 0,
     criticalPercent: 0,
     penetrationPercent: 0,
+    enchantActives: [20718, 2589],
     script: (character: Character2, _this: IBaseEquipment): void => {
       _this.luk = 1;
 
@@ -2493,6 +2639,7 @@ export const enchants: IBaseEquipment[] = [
     cATK: 0,
     criticalPercent: 0,
     penetrationPercent: 0,
+    enchantActives: [20718, 2589],
     script: (character: Character2, _this: IBaseEquipment): void => {
       _this.dex = 1;
 
@@ -2538,6 +2685,7 @@ export const enchants: IBaseEquipment[] = [
     cATK: 0,
     criticalPercent: 0,
     penetrationPercent: 0,
+    enchantActives: [20718, 2589],
     script: (character: Character2, _this: IBaseEquipment): void => {
       _this.agi = 1;
       _this.additionAtk.atkPercent = 0;
@@ -2551,5 +2699,119 @@ export const enchants: IBaseEquipment[] = [
         }
       }
     }
+  },
+  {
+    id: 4819,
+    name: 'ATK+1%',
+    type: EquipmentType.CARD,
+    subType: null,
+    location: null,
+    compoundOn: CompoundOn.ENCHANT,
+    baseDef: 0,
+    baseATK: 0,
+    level: 1,
+    equipUpgradeValue: 0,
+    str: 0,
+    agi: 0,
+    vit: 0,
+    int: 0,
+    dex: 0,
+    luk: 0,
+    additionAtk: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+      atkPercent: 0.01
+    },
+    additionDef: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+      atkPercent: 0
+    },
+    eATK: 0,
+    cATK: 0,
+    criticalPercent: 0,
+    penetrationPercent: 0,
+    enchantActives: [...mora],
+    script: (character: Character2, _this: IBaseEquipment): void => { }
+  },
+  {
+    id: 4766,
+    name: 'ATK+2%',
+    type: EquipmentType.CARD,
+    subType: null,
+    location: null,
+    compoundOn: CompoundOn.ENCHANT,
+    baseDef: 0,
+    baseATK: 0,
+    level: 1,
+    equipUpgradeValue: 0,
+    str: 0,
+    agi: 0,
+    vit: 0,
+    int: 0,
+    dex: 0,
+    luk: 0,
+    additionAtk: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+      atkPercent: 0.02
+    },
+    additionDef: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+      atkPercent: 0
+    },
+    eATK: 0,
+    cATK: 0,
+    criticalPercent: 0,
+    penetrationPercent: 0,
+    enchantActives: [...mora],
+    script: (character: Character2, _this: IBaseEquipment): void => { }
+  },
+  {
+    id: 4767,
+    name: 'ATK+3%',
+    type: EquipmentType.CARD,
+    subType: null,
+    location: null,
+    compoundOn: CompoundOn.ENCHANT,
+    baseDef: 0,
+    baseATK: 0,
+    level: 1,
+    equipUpgradeValue: 0,
+    str: 0,
+    agi: 0,
+    vit: 0,
+    int: 0,
+    dex: 0,
+    luk: 0,
+    additionAtk: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+      atkPercent: 0.03
+    },
+    additionDef: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+      atkPercent: 0
+    },
+    eATK: 0,
+    cATK: 0,
+    criticalPercent: 0,
+    penetrationPercent: 0,
+    enchantActives: [...mora],
+    script: (character: Character2, _this: IBaseEquipment): void => { }
   },
 ];

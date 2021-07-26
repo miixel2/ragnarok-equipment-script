@@ -1,5 +1,6 @@
 import { E_Element } from './element';
 import { Character2 } from './character2';
+import { ClassKey } from './class';
 
 export interface IBaseEquipment {
   id: number;
@@ -62,6 +63,9 @@ export interface IBaseEquipment {
   slot3?: IBaseEquipment;
   slot4?: IBaseEquipment;
 
+  classActives?: ClassKey[];
+  enchantActives?: number[];
+
   script: (character: Character2, _this: IBaseEquipment) => void;
 }
 
@@ -123,6 +127,9 @@ export class BaseEquipment implements IBaseEquipment {
   public slot2: IBaseEquipment = null;
   public slot3: IBaseEquipment = null;
   public slot4: IBaseEquipment = null;
+
+  public classActives: ClassKey[] = [];
+  public enchantActives: number[] = [];
 
   public script: (character: Character2, _this: IBaseEquipment) => void = null;
 }

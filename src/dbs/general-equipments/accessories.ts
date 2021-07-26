@@ -1,4 +1,5 @@
 import { Character2 } from "../../models/character2";
+import { ClassKey } from "../../models/class";
 import { EquipmentLocation, EquipmentSubType, EquipmentType, IBaseEquipment } from "../../models/equipment";
 
 export const accessories: IBaseEquipment[] = [
@@ -79,6 +80,7 @@ export const accessories: IBaseEquipment[] = [
     cATK: 0,
     criticalPercent: 0,
     penetrationPercent: 0,
+    classActives: [ClassKey.GuillotineCross],
     script: (character: Character2, _this: IBaseEquipment): void => { }
   },
   {
@@ -116,6 +118,7 @@ export const accessories: IBaseEquipment[] = [
     cATK: 0,
     criticalPercent: 0,
     penetrationPercent: 0,
+    classActives: [ClassKey.GuillotineCross],
     script: (character: Character2, _this: IBaseEquipment): void => {
       _this.eATK = 0;
       if (character.class.agi0 >= 90) {
@@ -309,6 +312,134 @@ export const accessories: IBaseEquipment[] = [
       race: 0,
       class: 0,
       atkPercent: 0
+    },
+    additionDef: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+      atkPercent: 0
+    },
+    eATK: 0,
+    cATK: 0,
+    criticalPercent: 0,
+    penetrationPercent: 0,
+    script: (character: Character2, _this: IBaseEquipment): void => { }
+  },
+  {
+    id: 2990,
+    name: 'Pendant of Harmony',
+    type: EquipmentType.ARMOR,
+    subType: EquipmentSubType.ACCESSORY,
+    location: EquipmentLocation.ACCESSORY,
+    compoundOn: null,
+    baseDef: 0,
+    baseATK: 0,
+    level: 1,
+    equipUpgradeValue: 0,
+    str: 0,
+    agi: 0,
+    vit: 0,
+    int: 0,
+    dex: 0,
+    luk: 0,
+    additionAtk: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+      atkPercent: 0
+    },
+    additionDef: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+      atkPercent: 0
+    },
+    eATK: 0,
+    cATK: 0,
+    criticalPercent: 0,
+    penetrationPercent: 0,
+    script: (character: Character2, _this: IBaseEquipment): void => {
+      _this.str = -5;
+      _this.agi = 0;
+      _this.vit = 0;
+      _this.int = 0;
+      _this.dex = 0;
+      _this.luk = 0;
+
+      if (character.rightAccessory?.id === 2991 || character.leftAccessory?.id === 2991) {
+        _this.str += 5;
+        _this.agi += 5;
+        _this.vit += 5;
+        _this.int += 5;
+        _this.dex += 5;
+        _this.luk += 5;
+      }
+    }
+  },
+  {
+    id: 2991,
+    name: 'Pendant of Chaos',
+    type: EquipmentType.ARMOR,
+    subType: EquipmentSubType.ACCESSORY,
+    location: EquipmentLocation.ACCESSORY,
+    compoundOn: null,
+    baseDef: 0,
+    baseATK: 0,
+    level: 1,
+    equipUpgradeValue: 0,
+    str: 0,
+    agi: 0,
+    vit: 0,
+    int: 0,
+    dex: 0,
+    luk: 0,
+    additionAtk: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+      atkPercent: 0.06
+    },
+    additionDef: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+      atkPercent: 0
+    },
+    eATK: 0,
+    cATK: 0,
+    criticalPercent: 0,
+    penetrationPercent: 0,
+    script: (character: Character2, _this: IBaseEquipment): void => { }
+  },
+  {
+    id: 2992,
+    name: 'Pendant of Maelstrom [1]',
+    type: EquipmentType.ARMOR,
+    subType: EquipmentSubType.ACCESSORY,
+    location: EquipmentLocation.ACCESSORY,
+    compoundOn: null,
+    slot1Enable: true,
+    baseDef: 0,
+    baseATK: 0,
+    level: 1,
+    equipUpgradeValue: 0,
+    str: 1,
+    agi: 1,
+    vit: 1,
+    int: 1,
+    dex: 1,
+    luk: 1,
+    additionAtk: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+      atkPercent: 0.06
     },
     additionDef: {
       size: 0,
