@@ -38,6 +38,7 @@ export const cards: IBaseEquipment[] = [
     cATK: 0,
     criticalPercent: 0,
     penetrationPercent: 0,
+    suffix: 'of Mad Berserker',
     script: (character: Character2, _this: IBaseEquipment): void => { }
   },
   {
@@ -75,6 +76,7 @@ export const cards: IBaseEquipment[] = [
     cATK: 0,
     criticalPercent: 0,
     penetrationPercent: 0,
+    prefix: 'Pollution',
     script: (character: Character2, _this: IBaseEquipment): void => { }
   },
   {
@@ -112,6 +114,7 @@ export const cards: IBaseEquipment[] = [
     cATK: 0,
     criticalPercent: 0,
     penetrationPercent: 0,
+    suffix: 'of Wild Cat',
     script: (character: Character2, _this: IBaseEquipment): void => { }
   },
   {
@@ -149,6 +152,7 @@ export const cards: IBaseEquipment[] = [
     cATK: 0,
     criticalPercent: 0,
     penetrationPercent: 0,
+    prefix: 'Knight',
     script: (character: Character2, _this: IBaseEquipment): void => { }
   },
   {
@@ -186,6 +190,7 @@ export const cards: IBaseEquipment[] = [
     cATK: 0,
     criticalPercent: 0,
     penetrationPercent: 0,
+    suffix: 'of Death Blow',
     script: (character: Character2, _this: IBaseEquipment): void => {
       const baseLuk = character.class.luk0;
       _this.criticalPercent = Math.floor((baseLuk) / 10) * 0.02;
@@ -226,6 +231,7 @@ export const cards: IBaseEquipment[] = [
     cATK: 0,
     criticalPercent: 0,
     penetrationPercent: 0,
+    prefix: 'Liberation',
     script: (character: Character2, _this: IBaseEquipment): void => {
       _this.additionAtk.class = 0;
 
@@ -269,6 +275,7 @@ export const cards: IBaseEquipment[] = [
     cATK: 0,
     criticalPercent: 0,
     penetrationPercent: 0,
+    prefix: 'The First',
     script: (character: Character2, _this: IBaseEquipment): void => { }
   },
   {
@@ -306,6 +313,7 @@ export const cards: IBaseEquipment[] = [
     cATK: 0,
     criticalPercent: 0.15,
     penetrationPercent: 0,
+    prefix: 'Mortal Blow',
     script: (character: Character2, _this: IBaseEquipment): void => { }
   },
   {
@@ -343,6 +351,7 @@ export const cards: IBaseEquipment[] = [
     cATK: 0,
     criticalPercent: 0,
     penetrationPercent: 0,
+    prefix: 'Strike',
     script: (character: Character2, _this: IBaseEquipment): void => {
       _this.eATK = 10;
 
@@ -390,6 +399,7 @@ export const cards: IBaseEquipment[] = [
     cATK: 0,
     criticalPercent: 0,
     penetrationPercent: 0,
+    suffix: 'of Counter',
     script: (character: Character2, _this: IBaseEquipment): void => {}
   },
 ];

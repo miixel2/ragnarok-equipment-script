@@ -66,6 +66,9 @@ export interface IBaseEquipment {
   classActives?: ClassKey[];
   enchantActives?: number[];
 
+  prefix?: string;
+  suffix?: string;
+
   script: (character: Character2, _this: IBaseEquipment) => void;
 }
 
@@ -130,6 +133,9 @@ export class BaseEquipment implements IBaseEquipment {
 
   public classActives: ClassKey[] = [];
   public enchantActives: number[] = [];
+
+  public prefix: string = null;
+  public suffix: string = null;
 
   public script: (character: Character2, _this: IBaseEquipment) => void = null;
 }

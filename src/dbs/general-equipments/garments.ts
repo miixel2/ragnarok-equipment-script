@@ -1,3 +1,4 @@
+import Big from 'big.js';
 import { Character2 } from "../../models/character2";
 import { IBaseEquipment, EquipmentType, EquipmentSubType, EquipmentLocation } from "../../models/equipment";
 
@@ -233,7 +234,8 @@ export const garments: IBaseEquipment[] = [
       const baseLuk = character.class.luk0;
 
       _this.eATK = Math.floor(baseStr / 20) * 1;
-      _this.criticalPercent = Math.floor(baseLuk / 20) * 0.01;
+      const tempLukMul = Math.floor(baseLuk / 20);
+      _this.criticalPercent = Number((new Big(0.01)).mul(tempLukMul).valueOf());
     }
   },
   {
@@ -276,5 +278,68 @@ export const garments: IBaseEquipment[] = [
     criticalPercent: 0,
     penetrationPercent: 0,
     script: (character: Character2, _this: IBaseEquipment): void => { },
-  }
+  },
+  {
+    id: 20841,
+    name: 'Golden Angel Wing [1]',
+    type: EquipmentType.ARMOR,
+    subType: EquipmentSubType.GARMENT,
+    location: EquipmentLocation.GARMENT,
+    compoundOn: null,
+    slot1Enable: true,
+    slot2Enable: false,
+    slot3Enable: false,
+    slot4Enable: false,
+    baseDef: 20,
+    baseATK: 0,
+    level: 1,
+    equipUpgradeValue: 0,
+    str: 0,
+    agi: 0,
+    vit: 0,
+    int: 0,
+    dex: 0,
+    luk: 0,
+    additionAtk: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+      atkPercent: 0
+    },
+    additionDef: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+      atkPercent: 0
+    },
+    eATK: 0,
+    cATK: 0,
+    criticalPercent: 0,
+    penetrationPercent: 0,
+    script: (character: Character2, _this: IBaseEquipment): void => {
+      _this.eATK = 0;
+      _this.criticalPercent = 0;
+
+      const upgrade = _this.equipUpgradeValue;
+      const baseStr = character.class.str0;
+      const baseLuk = character.class.luk0;
+
+      if (baseStr >= 90) {
+        _this.eATK = 15;
+
+        if (upgrade >= 9) {
+          _this.eATK += 15;
+        }
+      }
+
+      if (baseLuk >= 90) {
+        _this.criticalPercent = 0.05;
+        if (upgrade >= 9) {
+          _this.criticalPercent = 0.1;
+        }
+      }
+    }
+  },
 ];
