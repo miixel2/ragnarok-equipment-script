@@ -12,14 +12,14 @@ function titleCase(str) {
   return str.join(' ');
 }
 
-const prefixPhysicalText = 'PDmg';
+const prefixPhysicalText = '';
 const prefixPenetrationText = 'Bypass';
 
-const vmPhysicalId = [28706, 28008, 1450, 16041, 28706, 13455, 1400, 21016];
+const vmPhysicalId = [28706, 28008, 1450, 16041, 28706, 13455, 1400, 21016, 21011];
 
 export const ignoreSizePenalty: IBaseEquipment = {
   id: 2000000,
-  name: 'No weapon size penalty',
+  name: 'Bypass size penalty',
   type: EquipmentType.CARD,
   subType: null,
   location: null,
@@ -56,6 +56,7 @@ export const ignoreSizePenalty: IBaseEquipment = {
   criticalPercent: 0,
   penetrationPercent: 0,
   enchantActives: [...vmPhysicalId],
+  canSelectOnSlot2: true,
   script: (character: Character2, _this: IBaseEquipment): void => { }
 };
 
@@ -70,7 +71,7 @@ const generatePhysicalNEUTRAL = Array.from(Array(physicalElementMax), (x, index)
 
   const equipment = new BaseEquipment();
   equipment.id = physicalNEUTRALStartAtId + index;
-  equipment.name = `${prefixPhysicalText}: ${titlecase} property +${value}%`;
+  equipment.name = `${prefixPhysicalText}${titlecase} property +${value}%`;
   equipment.type = EquipmentType.CARD;
   equipment.compoundOn = CompoundOn.ENCHANT;
   equipment.enchantActives = [...vmPhysicalId];
@@ -90,7 +91,7 @@ const generatePhysicalWATER = Array.from(Array(physicalElementMax), (x, index) =
 
   const equipment = new BaseEquipment();
   equipment.id = physicalWATERStartAtId + index;
-  equipment.name = `${prefixPhysicalText}: ${titlecase} property +${value}%`;
+  equipment.name = `${prefixPhysicalText}${titlecase} property +${value}%`;
   equipment.type = EquipmentType.CARD;
   equipment.compoundOn = CompoundOn.ENCHANT;
   equipment.enchantActives = [...vmPhysicalId];
@@ -109,7 +110,7 @@ const generatePhysicalEARTH = Array.from(Array(physicalElementMax), (x, index) =
 
   const equipment = new BaseEquipment();
   equipment.id = physicalEARTHStartAtId + index;
-  equipment.name = `${prefixPhysicalText}: ${titlecase} property +${value}%`;
+  equipment.name = `${prefixPhysicalText}${titlecase} property +${value}%`;
   equipment.type = EquipmentType.CARD;
   equipment.compoundOn = CompoundOn.ENCHANT;
   equipment.enchantActives = [...vmPhysicalId];
@@ -128,7 +129,7 @@ const generatePhysicalFIRE = Array.from(Array(physicalElementMax), (x, index) =>
 
   const equipment = new BaseEquipment();
   equipment.id = physicalFIREStartAtId + index;
-  equipment.name = `${prefixPhysicalText}: ${titlecase} property +${value}%`;
+  equipment.name = `${prefixPhysicalText}${titlecase} property +${value}%`;
   equipment.type = EquipmentType.CARD;
   equipment.compoundOn = CompoundOn.ENCHANT;
   equipment.enchantActives = [...vmPhysicalId];
@@ -147,7 +148,7 @@ const generatePhysicalWIND = Array.from(Array(physicalElementMax), (x, index) =>
 
   const equipment = new BaseEquipment();
   equipment.id = physicalWINDStartAtId + index;
-  equipment.name = `${prefixPhysicalText}: ${titlecase} property +${value}%`;
+  equipment.name = `${prefixPhysicalText}${titlecase} property +${value}%`;
   equipment.type = EquipmentType.CARD;
   equipment.compoundOn = CompoundOn.ENCHANT;
   equipment.enchantActives = [...vmPhysicalId];
@@ -166,7 +167,7 @@ const generatePhysicalPOISON = Array.from(Array(physicalElementMax), (x, index) 
 
   const equipment = new BaseEquipment();
   equipment.id = physicalPOISONStartAtId + index;
-  equipment.name = `${prefixPhysicalText}: ${titlecase} property +${value}%`;
+  equipment.name = `${prefixPhysicalText}${titlecase} property +${value}%`;
   equipment.type = EquipmentType.CARD;
   equipment.compoundOn = CompoundOn.ENCHANT;
   equipment.enchantActives = [...vmPhysicalId];
@@ -185,7 +186,7 @@ const generatePhysicalHOLY = Array.from(Array(physicalElementMax), (x, index) =>
 
   const equipment = new BaseEquipment();
   equipment.id = physicalHOLYStartAtId + index;
-  equipment.name = `${prefixPhysicalText}: ${titlecase} property +${value}%`;
+  equipment.name = `${prefixPhysicalText}${titlecase} property +${value}%`;
   equipment.type = EquipmentType.CARD;
   equipment.compoundOn = CompoundOn.ENCHANT;
   equipment.enchantActives = [...vmPhysicalId];
@@ -204,7 +205,7 @@ const generatePhysicalSHADOW = Array.from(Array(physicalElementMax), (x, index) 
 
   const equipment = new BaseEquipment();
   equipment.id = physicalSHADOWStartAtId + index;
-  equipment.name = `${prefixPhysicalText}: ${titlecase} property +${value}%`;
+  equipment.name = `${prefixPhysicalText}${titlecase} property +${value}%`;
   equipment.type = EquipmentType.CARD;
   equipment.compoundOn = CompoundOn.ENCHANT;
   equipment.enchantActives = [...vmPhysicalId];
@@ -223,7 +224,7 @@ const generatePhysicalGHOST = Array.from(Array(physicalElementMax), (x, index) =
 
   const equipment = new BaseEquipment();
   equipment.id = physicalGHOSTStartAtId + index;
-  equipment.name = `${prefixPhysicalText}: ${titlecase} property +${value}%`;
+  equipment.name = `${prefixPhysicalText}${titlecase} property +${value}%`;
   equipment.type = EquipmentType.CARD;
   equipment.compoundOn = CompoundOn.ENCHANT;
   equipment.enchantActives = [...vmPhysicalId];
@@ -242,7 +243,7 @@ const generatePhysicalUNDEAD = Array.from(Array(physicalElementMax), (x, index) 
 
   const equipment = new BaseEquipment();
   equipment.id = physicalUNDEADStartAtId + index;
-  equipment.name = `${prefixPhysicalText}: ${titlecase} property +${value}%`;
+  equipment.name = `${prefixPhysicalText}${titlecase} property +${value}%`;
   equipment.type = EquipmentType.CARD;
   equipment.compoundOn = CompoundOn.ENCHANT;
   equipment.enchantActives = [...vmPhysicalId];
@@ -301,7 +302,7 @@ const generatBossPercent = Array.from(Array(maxBossPercent), (x, index) => {
 
   const equipment = new BaseEquipment();
   equipment.id = bossPercentStartAtId + index;
-  equipment.name = `${prefixPhysicalText}: Boss class +${value}%`;
+  equipment.name = `${prefixPhysicalText}Boss class +${value}%`;
   equipment.type = EquipmentType.CARD;
   equipment.compoundOn = CompoundOn.ENCHANT;
   equipment.enchantActives = [...vmPhysicalId];
@@ -320,7 +321,7 @@ const generatNormalPercent = Array.from(Array(maxNormalPercent), (x, index) => {
 
   const equipment = new BaseEquipment();
   equipment.id = normalPercentStartAtId + index;
-  equipment.name = `${prefixPhysicalText}: Normal class +${value}%`;
+  equipment.name = `${prefixPhysicalText}Normal class +${value}%`;
   equipment.type = EquipmentType.CARD;
   equipment.compoundOn = CompoundOn.ENCHANT;
   equipment.enchantActives = [...vmPhysicalId];
@@ -340,7 +341,7 @@ const generatePhysicalRaceANGEL = Array.from(Array(physicalRaceMax), (x, index) 
 
   const equipment = new BaseEquipment();
   equipment.id = physicalRaceANGELStartAtId + index;
-  equipment.name = `${prefixPhysicalText}: ${titlecase} race +${value}%`;
+  equipment.name = `${prefixPhysicalText}${titlecase} race +${value}%`;
   equipment.type = EquipmentType.CARD;
   equipment.compoundOn = CompoundOn.ENCHANT;
   equipment.enchantActives = [...vmPhysicalId];
@@ -359,7 +360,7 @@ const generatePhysicalRaceBRUTE = Array.from(Array(physicalRaceMax), (x, index) 
 
   const equipment = new BaseEquipment();
   equipment.id = physicalRaceBRUTEStartAtId + index;
-  equipment.name = `${prefixPhysicalText}: ${titlecase} race +${value}%`;
+  equipment.name = `${prefixPhysicalText}${titlecase} race +${value}%`;
   equipment.type = EquipmentType.CARD;
   equipment.compoundOn = CompoundOn.ENCHANT;
   equipment.enchantActives = [...vmPhysicalId];
@@ -371,14 +372,14 @@ const generatePhysicalRaceBRUTE = Array.from(Array(physicalRaceMax), (x, index) 
 
 const physicalRaceDEMI_HUMANStartAtId = physicalRaceMax + physicalRaceBRUTEStartAtId;
 const generatePhysicalRaceDEMI_HUMAN = Array.from(Array(physicalRaceMax), (x, index) => {
-  const titlecase = 'DemiHuman';
+  const titlecase = 'Demi';
   const value = index + 1;
   const option = {};
   option[`physicalRace${titlecase}Percent`] = Number((new Big(value)).div(100).valueOf());
 
   const equipment = new BaseEquipment();
   equipment.id = physicalRaceDEMI_HUMANStartAtId + index;
-  equipment.name = `${prefixPhysicalText}: ${titlecase} race +${value}%`;
+  equipment.name = `${prefixPhysicalText}${titlecase} race +${value}%`;
   equipment.type = EquipmentType.CARD;
   equipment.compoundOn = CompoundOn.ENCHANT;
   equipment.enchantActives = [...vmPhysicalId];
@@ -397,7 +398,7 @@ const generatePhysicalRaceDEMON = Array.from(Array(physicalRaceMax), (x, index) 
 
   const equipment = new BaseEquipment();
   equipment.id = physicalRaceDEMONStartAtId + index;
-  equipment.name = `${prefixPhysicalText}: ${titlecase} race +${value}%`;
+  equipment.name = `${prefixPhysicalText}${titlecase} race +${value}%`;
   equipment.type = EquipmentType.CARD;
   equipment.compoundOn = CompoundOn.ENCHANT;
   equipment.enchantActives = [...vmPhysicalId];
@@ -416,7 +417,7 @@ const generatePhysicalRaceDRAGON = Array.from(Array(physicalRaceMax), (x, index)
 
   const equipment = new BaseEquipment();
   equipment.id = physicalRaceDRAGONStartAtId + index;
-  equipment.name = `${prefixPhysicalText}: ${titlecase} race +${value}%`;
+  equipment.name = `${prefixPhysicalText}${titlecase} race +${value}%`;
   equipment.type = EquipmentType.CARD;
   equipment.compoundOn = CompoundOn.ENCHANT;
   equipment.enchantActives = [...vmPhysicalId];
@@ -435,7 +436,7 @@ const generatePhysicalRaceFISH = Array.from(Array(physicalRaceMax), (x, index) =
 
   const equipment = new BaseEquipment();
   equipment.id = physicalRaceFISHStartAtId + index;
-  equipment.name = `${prefixPhysicalText}: ${titlecase} race +${value}%`;
+  equipment.name = `${prefixPhysicalText}${titlecase} race +${value}%`;
   equipment.type = EquipmentType.CARD;
   equipment.compoundOn = CompoundOn.ENCHANT;
   equipment.enchantActives = [...vmPhysicalId];
@@ -454,7 +455,7 @@ const generatePhysicalRaceFORMLESS = Array.from(Array(physicalRaceMax), (x, inde
 
   const equipment = new BaseEquipment();
   equipment.id = physicalRaceFORMLESSStartAtId + index;
-  equipment.name = `${prefixPhysicalText}: ${titlecase} race +${value}%`;
+  equipment.name = `${prefixPhysicalText}${titlecase} race +${value}%`;
   equipment.type = EquipmentType.CARD;
   equipment.compoundOn = CompoundOn.ENCHANT;
   equipment.enchantActives = [...vmPhysicalId];
@@ -473,7 +474,7 @@ const generatePhysicalRaceINSECT = Array.from(Array(physicalRaceMax), (x, index)
 
   const equipment = new BaseEquipment();
   equipment.id = physicalRaceINSECTStartAtId + index;
-  equipment.name = `${prefixPhysicalText}: ${titlecase} race +${value}%`;
+  equipment.name = `${prefixPhysicalText}${titlecase} race +${value}%`;
   equipment.type = EquipmentType.CARD;
   equipment.compoundOn = CompoundOn.ENCHANT;
   equipment.enchantActives = [...vmPhysicalId];
@@ -492,7 +493,7 @@ const generatePhysicalRacePLANT = Array.from(Array(physicalRaceMax), (x, index) 
 
   const equipment = new BaseEquipment();
   equipment.id = physicalRacePLANTStartAtId + index;
-  equipment.name = `${prefixPhysicalText}: ${titlecase} race +${value}%`;
+  equipment.name = `${prefixPhysicalText}${titlecase} race +${value}%`;
   equipment.type = EquipmentType.CARD;
   equipment.compoundOn = CompoundOn.ENCHANT;
   equipment.enchantActives = [...vmPhysicalId];
@@ -511,7 +512,7 @@ const generatePhysicalRacePLAYER = Array.from(Array(physicalRaceMax), (x, index)
 
   const equipment = new BaseEquipment();
   equipment.id = physicalRacePLAYERStartAtId + index;
-  equipment.name = `${prefixPhysicalText}: ${titlecase} race +${value}%`;
+  equipment.name = `${prefixPhysicalText}${titlecase} race +${value}%`;
   equipment.type = EquipmentType.CARD;
   equipment.compoundOn = CompoundOn.ENCHANT;
   equipment.enchantActives = [...vmPhysicalId];
@@ -530,7 +531,7 @@ const generatePhysicalRaceUNDEAD = Array.from(Array(physicalRaceMax), (x, index)
 
   const equipment = new BaseEquipment();
   equipment.id = physicalRaceUNDEADStartAtId + index;
-  equipment.name = `${prefixPhysicalText}: ${titlecase} race +${value}%`;
+  equipment.name = `${prefixPhysicalText}${titlecase} race +${value}%`;
   equipment.type = EquipmentType.CARD;
   equipment.compoundOn = CompoundOn.ENCHANT;
   equipment.enchantActives = [...vmPhysicalId];
@@ -550,7 +551,7 @@ const generatePenetrationRaceANGEL = Array.from(Array(maxPenetration), (x, index
 
   const equipment = new BaseEquipment();
   equipment.id = penetrationRaceANGELStartAtId + index;
-  equipment.name = `${prefixPenetrationText}: ${titlecase} race +${value}%`;
+  equipment.name = `${prefixPenetrationText}: ${titlecase} +${value}%`;
   equipment.type = EquipmentType.CARD;
   equipment.compoundOn = CompoundOn.ENCHANT;
   equipment.enchantActives = [...vmPhysicalId];
@@ -569,7 +570,7 @@ const generatePenetrationRaceBRUTE = Array.from(Array(maxPenetration), (x, index
 
   const equipment = new BaseEquipment();
   equipment.id = penetrationRaceBRUTEStartAtId + index;
-  equipment.name = `${prefixPenetrationText}: ${titlecase} race +${value}%`;
+  equipment.name = `${prefixPenetrationText}: ${titlecase} +${value}%`;
   equipment.type = EquipmentType.CARD;
   equipment.compoundOn = CompoundOn.ENCHANT;
   equipment.enchantActives = [...vmPhysicalId];
@@ -581,14 +582,14 @@ const generatePenetrationRaceBRUTE = Array.from(Array(maxPenetration), (x, index
 
 const penetrationRaceDemiHumanStartAtId = maxPenetration + penetrationRaceBRUTEStartAtId;
 const generatePenetrationRaceDemiHuman = Array.from(Array(maxPenetration), (x, index) => {
-  const titlecase = 'DemiHuman';
+  const titlecase = 'Demi';
   const value = index + 1;
   const option = {};
   option[`penetrationRace${titlecase}Percent`] = Number((new Big(value)).div(100).valueOf());
 
   const equipment = new BaseEquipment();
   equipment.id = penetrationRaceDemiHumanStartAtId + index;
-  equipment.name = `${prefixPenetrationText}: ${titlecase} race +${value}%`;
+  equipment.name = `${prefixPenetrationText}: ${titlecase} +${value}%`;
   equipment.type = EquipmentType.CARD;
   equipment.compoundOn = CompoundOn.ENCHANT;
   equipment.enchantActives = [...vmPhysicalId];
@@ -607,7 +608,7 @@ const generatePenetrationRaceDEMON = Array.from(Array(maxPenetration), (x, index
 
   const equipment = new BaseEquipment();
   equipment.id = penetrationRaceDEMONStartAtId + index;
-  equipment.name = `${prefixPenetrationText}: ${titlecase} race +${value}%`;
+  equipment.name = `${prefixPenetrationText}: ${titlecase} +${value}%`;
   equipment.type = EquipmentType.CARD;
   equipment.compoundOn = CompoundOn.ENCHANT;
   equipment.enchantActives = [...vmPhysicalId];
@@ -626,7 +627,7 @@ const generatePenetrationRaceDRAGON = Array.from(Array(maxPenetration), (x, inde
 
   const equipment = new BaseEquipment();
   equipment.id = penetrationRaceDRAGONStartAtId + index;
-  equipment.name = `${prefixPenetrationText}: ${titlecase} race +${value}%`;
+  equipment.name = `${prefixPenetrationText}: ${titlecase} +${value}%`;
   equipment.type = EquipmentType.CARD;
   equipment.compoundOn = CompoundOn.ENCHANT;
   equipment.enchantActives = [...vmPhysicalId];
@@ -645,7 +646,7 @@ const generatePenetrationRaceFISH = Array.from(Array(maxPenetration), (x, index)
 
   const equipment = new BaseEquipment();
   equipment.id = penetrationRaceFISHStartAtId + index;
-  equipment.name = `${prefixPenetrationText}: ${titlecase} race +${value}%`;
+  equipment.name = `${prefixPenetrationText}: ${titlecase} +${value}%`;
   equipment.type = EquipmentType.CARD;
   equipment.compoundOn = CompoundOn.ENCHANT;
   equipment.enchantActives = [...vmPhysicalId];
@@ -664,7 +665,7 @@ const generatePenetrationRaceFORMLESS = Array.from(Array(maxPenetration), (x, in
 
   const equipment = new BaseEquipment();
   equipment.id = penetrationRaceFORMLESSStartAtId + index;
-  equipment.name = `${prefixPenetrationText}: ${titlecase} race +${value}%`;
+  equipment.name = `${prefixPenetrationText}: ${titlecase} +${value}%`;
   equipment.type = EquipmentType.CARD;
   equipment.compoundOn = CompoundOn.ENCHANT;
   equipment.enchantActives = [...vmPhysicalId];
@@ -683,7 +684,7 @@ const generatePenetrationRaceINSECT = Array.from(Array(maxPenetration), (x, inde
 
   const equipment = new BaseEquipment();
   equipment.id = penetrationRaceINSECTStartAtId + index;
-  equipment.name = `${prefixPenetrationText}: ${titlecase} race +${value}%`;
+  equipment.name = `${prefixPenetrationText}: ${titlecase} +${value}%`;
   equipment.type = EquipmentType.CARD;
   equipment.compoundOn = CompoundOn.ENCHANT;
   equipment.enchantActives = [...vmPhysicalId];
@@ -702,7 +703,7 @@ const generatePenetrationRacePLANT = Array.from(Array(maxPenetration), (x, index
 
   const equipment = new BaseEquipment();
   equipment.id = penetrationRacePLANTStartAtId + index;
-  equipment.name = `${prefixPenetrationText}: ${titlecase} race +${value}%`;
+  equipment.name = `${prefixPenetrationText}: ${titlecase} +${value}%`;
   equipment.type = EquipmentType.CARD;
   equipment.compoundOn = CompoundOn.ENCHANT;
   equipment.enchantActives = [...vmPhysicalId];
@@ -721,7 +722,7 @@ const generatePenetrationRacePLAYER = Array.from(Array(maxPenetration), (x, inde
 
   const equipment = new BaseEquipment();
   equipment.id = penetrationRacePLAYERStartAtId + index;
-  equipment.name = `${prefixPenetrationText}: ${titlecase} race +${value}%`;
+  equipment.name = `${prefixPenetrationText}: ${titlecase} +${value}%`;
   equipment.type = EquipmentType.CARD;
   equipment.compoundOn = CompoundOn.ENCHANT;
   equipment.enchantActives = [...vmPhysicalId];
@@ -740,7 +741,7 @@ const generatePenetrationRaceUNDEAD = Array.from(Array(maxPenetration), (x, inde
 
   const equipment = new BaseEquipment();
   equipment.id = penetrationRaceUNDEADStartAtId + index;
-  equipment.name = `${prefixPenetrationText}: ${titlecase} race +${value}%`;
+  equipment.name = `${prefixPenetrationText}: ${titlecase} +${value}%`;
   equipment.type = EquipmentType.CARD;
   equipment.compoundOn = CompoundOn.ENCHANT;
   equipment.enchantActives = [...vmPhysicalId];
@@ -816,7 +817,7 @@ const generatCriPercent = Array.from(Array(maxCriPercent), (x, index) => {
 
   const equipment = new BaseEquipment();
   equipment.id = criPercentStartAtId + index;
-  equipment.name = `Critical damage +${value}%`;
+  equipment.name = `CriDmg +${value}%`;
   equipment.type = EquipmentType.CARD;
   equipment.compoundOn = CompoundOn.ENCHANT;
   equipment.enchantActives = [...vmPhysicalId];

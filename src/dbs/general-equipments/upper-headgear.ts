@@ -46,7 +46,7 @@ export const upperHeadgear: IBaseEquipment[] = [
       _this.criticalPercent = 0;
 
       const upgrade = _this.equipUpgradeValue;
-      _this.eATK = Math.floor(upgrade / 2) * 15;
+      _this.eATK = Number((new Big(Math.floor(upgrade / 2))).mul(15).valueOf());
 
       if (upgrade >= 9) {
         _this.additionAtk.atkPercent2 = 0.05;
@@ -99,10 +99,10 @@ export const upperHeadgear: IBaseEquipment[] = [
       _this.criticalPercent = 0;
 
       const upgrade = _this.equipUpgradeValue;
-      _this.eATK = Math.floor(upgrade / 2) * 15;
+      _this.eATK = Number((new Big(Math.floor(upgrade / 2))).mul(15).valueOf());
 
       if (character.rightHand?.id === 28000) {
-        _this.eATK += Math.floor(upgrade / 2) * 20;
+        _this.eATK += Number((new Big(Math.floor(upgrade / 2))).mul(20).valueOf());
       }
 
       if (upgrade >= 7) {
@@ -261,5 +261,43 @@ export const upperHeadgear: IBaseEquipment[] = [
         }
       }
     }
+  },
+  {
+    id: 5388,
+    name: 'Snake Head Hat [1]',
+    type: EquipmentType.ARMOR,
+    subType: EquipmentSubType.HELM,
+    location: EquipmentLocation.UPPER_HEADGEAR,
+    compoundOn: null,
+    slot1Enable: true,
+    baseDef: 2,
+    baseATK: 0,
+    level: 1,
+    equipUpgradeValue: 0,
+    str: 0,
+    agi: 0,
+    vit: 0,
+    int: 0,
+    dex: 0,
+    luk: 0,
+    additionAtk: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+      atkPercent: 0
+    },
+    additionDef: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+      atkPercent: 0
+    },
+    eATK: 0,
+    cATK: 0,
+    criticalPercent: 0,
+    penetrationPercent: 0,
+    script: (character: Character2, _this: IBaseEquipment): void => { }
   },
 ];

@@ -653,4 +653,57 @@ export const weapons: IBaseEquipment[] = [
       }
     }
   },
+  {
+    id: 21011,
+    name: 'Giant Blade [1]',
+    type: EquipmentType.WEAPON,
+    subType: EquipmentSubType.TWO_HANDED_SWORD,
+    location: EquipmentLocation.BOTH_HAND,
+    compoundOn: null,
+    slot1Enable: true,
+    slot2Enable: true,
+    slot3Enable: true,
+    slot4Enable: true,
+    baseDef: 0,
+    baseATK: 300,
+    level: 4,
+    equipUpgradeValue: 0,
+    str: 0,
+    agi: 0,
+    vit: 0,
+    int: 0,
+    dex: 0,
+    luk: 0,
+    additionAtk: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+      atkPercent: 0
+    },
+    additionDef: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+      atkPercent: 0
+    },
+    eATK: 0,
+    cATK: 0,
+    criticalPercent: 0,
+    penetrationPercent: 0,
+    classActives: [ClassKey.RuneKnight],
+    script: (character: Character2, _this: IBaseEquipment): void => {
+      _this.eATK = 0;
+
+      const baseStr = character.class.str0;
+
+      if (baseStr < 110) {
+        _this.eATK = -250;
+      }
+
+      const upgrade = _this.equipUpgradeValue;
+      _this.criticalPercent = Number((new Big(upgrade)).mul(0.01).valueOf());
+    }
+  },
 ];

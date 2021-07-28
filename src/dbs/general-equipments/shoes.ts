@@ -45,7 +45,7 @@ export const shoes: IBaseEquipment[] = [
     script: (character: Character2, _this: IBaseEquipment): void => {
       const upgrade = _this.equipUpgradeValue;
 
-      const refineEAtk = Math.floor(upgrade / 3) * 7;
+      const refineEAtk = Number((new Big(Math.floor(upgrade / 3))).mul(7).valueOf());
       _this.eATK = refineEAtk;
 
       if (character.class.str0 >= 120) {
@@ -95,7 +95,7 @@ export const shoes: IBaseEquipment[] = [
     script: (character: Character2, _this: IBaseEquipment): void => {
       const upgrade = _this.equipUpgradeValue;
 
-      const refineCriticalPercent = Math.floor(upgrade / 3) * 0.02;
+      const refineCriticalPercent = Number((new Big(Math.floor(upgrade / 3))).mul(0.02).valueOf());
       _this.criticalPercent = refineCriticalPercent;
 
       if (character.class.luk0 >= 120) {

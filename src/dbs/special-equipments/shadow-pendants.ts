@@ -42,7 +42,7 @@ export const shadowPendants: IBaseEquipment[] = [
       _this.penetrationPercent = 0.05;
       const upgrade = _this.equipUpgradeValue;
 
-      const refinePenetration = Math.floor(upgrade / 2) * 0.01;
+      const refinePenetration = Number((new Big(Math.floor(upgrade / 2))).mul(0.01).valueOf());
       _this.penetrationPercent = Number((new Big(_this.penetrationPercent)).plus(refinePenetration).valueOf());
     }
   },

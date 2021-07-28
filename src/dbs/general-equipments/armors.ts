@@ -209,7 +209,7 @@ export const armors: IBaseEquipment[] = [
       _this.additionAtk.element = 0;
 
       const upgrade = _this.equipUpgradeValue;
-      _this.additionAtk.atkPercent2 = Math.floor(upgrade / 3) * 0.02;
+      _this.additionAtk.atkPercent2 = Number((new Big(Math.floor(upgrade / 3))).mul(0.02).valueOf());
 
       if (upgrade >= 7) {
         if (character.monster.race === MonsterRace.BRUTE || character.monster.race === MonsterRace.DEMON) {
@@ -286,7 +286,7 @@ export const armors: IBaseEquipment[] = [
       _this.additionAtk.race = 0;
       _this.additionAtk.element = 0;
       const upgrade = _this.equipUpgradeValue;
-      _this.criticalPercent = Math.floor(upgrade / 3) * 0.02;
+      _this.criticalPercent = Number((new Big(Math.floor(upgrade / 3))).mul(0.02).valueOf());
 
       if (upgrade >= 7) {
         if (character.monster.race === MonsterRace.BRUTE || character.monster.race === MonsterRace.DEMON) {

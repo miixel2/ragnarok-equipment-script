@@ -233,7 +233,7 @@ export const garments: IBaseEquipment[] = [
       const baseStr = character.class.str0;
       const baseLuk = character.class.luk0;
 
-      _this.eATK = Math.floor(baseStr / 20) * 1;
+      _this.eATK = Number((new Big(Math.floor(baseStr / 20))).mul(1).valueOf());
       const tempLukMul = Math.floor(baseLuk / 20);
       _this.criticalPercent = Number((new Big(0.01)).mul(tempLukMul).valueOf());
     }

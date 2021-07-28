@@ -47,7 +47,7 @@ export const shadowWeapons: IBaseEquipment[] = [
       if (character.monster.race === MonsterRace.FORMLESS) {
         _this.penetrationPercent = 0.05;
 
-        const refinePenetration = Math.floor(upgrade / 2) * 0.01;
+        const refinePenetration = Number((new Big(Math.floor(upgrade / 2))).mul(0.01).valueOf());
         _this.penetrationPercent = Number((new Big(_this.penetrationPercent)).plus(refinePenetration).valueOf());
       }
 
@@ -164,7 +164,7 @@ export const shadowWeapons: IBaseEquipment[] = [
       if (character.monster.race === MonsterRace.DEMI_HUMAN) {
         _this.penetrationPercent = 0.05;
 
-        const refinePenetration = Math.floor(upgrade / 2) * 0.01;
+        const refinePenetration = Number((new Big(Math.floor(upgrade / 2))).mul(0.01).valueOf());
         _this.penetrationPercent = Number((new Big(_this.penetrationPercent)).plus(refinePenetration).valueOf());
       }
 
@@ -226,7 +226,7 @@ export const shadowWeapons: IBaseEquipment[] = [
       if (character.monster.race === MonsterRace.DEMON) {
         _this.penetrationPercent = 0.05;
 
-        const refinePenetration = Math.floor(upgrade / 2) * 0.01;
+        const refinePenetration = Number((new Big(Math.floor(upgrade / 2))).mul(0.01).valueOf());
         _this.penetrationPercent = Number((new Big(_this.penetrationPercent)).plus(refinePenetration).valueOf());
       }
 
@@ -288,7 +288,7 @@ export const shadowWeapons: IBaseEquipment[] = [
       if (character.monster.race === MonsterRace.BRUTE) {
         _this.penetrationPercent = 0.05;
 
-        const refinePenetration = Math.floor(upgrade / 2) * 0.01;
+        const refinePenetration = Number((new Big(Math.floor(upgrade / 2))).mul(0.01).valueOf());
         _this.penetrationPercent = Number((new Big(_this.penetrationPercent)).plus(refinePenetration).valueOf());
       }
 
@@ -350,7 +350,7 @@ export const shadowWeapons: IBaseEquipment[] = [
       if (character.monster.race === MonsterRace.INSECT) {
         _this.penetrationPercent = 0.05;
 
-        const refinePenetration = Math.floor(upgrade / 2) * 0.01;
+        const refinePenetration = Number((new Big(Math.floor(upgrade / 2))).mul(0.01).valueOf());
         _this.penetrationPercent = Number((new Big(_this.penetrationPercent)).plus(refinePenetration).valueOf());
       }
 
@@ -412,7 +412,7 @@ export const shadowWeapons: IBaseEquipment[] = [
       if (character.monster.race === MonsterRace.FISH) {
         _this.penetrationPercent = 0.05;
 
-        const refinePenetration = Math.floor(upgrade / 2) * 0.01;
+        const refinePenetration = Number((new Big(Math.floor(upgrade / 2))).mul(0.01).valueOf());
         _this.penetrationPercent = Number((new Big(_this.penetrationPercent)).plus(refinePenetration).valueOf());
       }
 
@@ -474,7 +474,7 @@ export const shadowWeapons: IBaseEquipment[] = [
       if (character.monster.race === MonsterRace.DRAGON) {
         _this.penetrationPercent = 0.05;
 
-        const refinePenetration = Math.floor(upgrade / 2) * 0.01;
+        const refinePenetration = Number((new Big(Math.floor(upgrade / 2))).mul(0.01).valueOf());
         _this.penetrationPercent = Number((new Big(_this.penetrationPercent)).plus(refinePenetration).valueOf());
       }
 
@@ -536,7 +536,7 @@ export const shadowWeapons: IBaseEquipment[] = [
       if (character.monster.race === MonsterRace.ANGEL) {
         _this.penetrationPercent = 0.05;
 
-        const refinePenetration = Math.floor(upgrade / 2) * 0.01;
+        const refinePenetration = Number((new Big(Math.floor(upgrade / 2))).mul(0.01).valueOf());
         _this.penetrationPercent = Number((new Big(_this.penetrationPercent)).plus(refinePenetration).valueOf());
       }
 
@@ -598,7 +598,7 @@ export const shadowWeapons: IBaseEquipment[] = [
       if (character.monster.race === MonsterRace.UNDEAD) {
         _this.penetrationPercent = 0.05;
 
-        const refinePenetration = Math.floor(upgrade / 2) * 0.01;
+        const refinePenetration = Number((new Big(Math.floor(upgrade / 2))).mul(0.01).valueOf());
         _this.penetrationPercent = Number((new Big(_this.penetrationPercent)).plus(refinePenetration).valueOf());
       }
 
@@ -660,7 +660,7 @@ export const shadowWeapons: IBaseEquipment[] = [
       if (character.monster.race === MonsterRace.PLANT) {
         _this.penetrationPercent = 0.05;
 
-        const refinePenetration = Math.floor(upgrade / 2) * 0.01;
+        const refinePenetration = Number((new Big(Math.floor(upgrade / 2))).mul(0.01).valueOf());
         _this.penetrationPercent = Number((new Big(_this.penetrationPercent)).plus(refinePenetration).valueOf());
       }
 
