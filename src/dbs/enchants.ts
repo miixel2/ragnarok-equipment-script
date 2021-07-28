@@ -46,6 +46,7 @@ export const enchants: IBaseEquipment[] = [
     criticalPercent: 0,
     penetrationPercent: 0,
     enchantActives: [15128],
+    canSelectOnSlot2: true,
     script: (character: Character2, _this: IBaseEquipment): void => {
       _this.eATK = 0;
 
@@ -98,6 +99,9 @@ export const enchants: IBaseEquipment[] = [
     criticalPercent: 0,
     penetrationPercent: 0,
     enchantActives: [15128, 20773],
+    canSelectOnSlot2: true,
+    canSelectOnSlot3: true,
+    canSelectOnSlot4: true,
     script: (character: Character2, _this: IBaseEquipment): void => { }
   },
   {

@@ -48,6 +48,9 @@ export interface IBaseEquipment {
     atkPercent2?: number
   };
 
+  // options
+  options?: EnchantOption;
+
   eATK: number;
   cATK: number;
   criticalPercent: number;
@@ -63,6 +66,11 @@ export interface IBaseEquipment {
   slot3?: IBaseEquipment;
   slot4?: IBaseEquipment;
 
+  canSelectOnSlot1?: boolean;
+  canSelectOnSlot2?: boolean;
+  canSelectOnSlot3?: boolean;
+  canSelectOnSlot4?: boolean;
+
   classActives?: ClassKey[];
   enchantActives?: number[];
 
@@ -70,6 +78,62 @@ export interface IBaseEquipment {
   suffix?: string;
 
   script: (character: Character2, _this: IBaseEquipment) => void;
+}
+
+export interface EnchantOption {
+  // slot2
+  ignoreSizePenalty?: boolean;
+  physicalNeutralPercent?: number;
+  physicalWaterPercent?: number;
+  physicalEarthPercent?: number;
+  physicalFirePercent?: number;
+  physicalWindPercent?: number;
+  physicalPoisonPercent?: number;
+  physicalHolyPercent?: number;
+  physicalShadowPercent?: number;
+  physicalGhostPercent?: number;
+  physicalUndeadPercent?: number;
+  weapenElement?: E_Element;
+  atkPercent2?: number;
+  matkPercent2?: number;
+
+  // slot3
+  physicalRaceAngelPercent?: number;
+  physicalRaceBrutePercent?: number;
+  physicalRaceDemiHumanPercent?: number;
+  physicalRaceDemonPercent?: number;
+  physicalRaceDragonPercent?: number;
+  physicalRaceFishPercent?: number;
+  physicalRaceFormlessPercent?: number;
+  physicalRaceInsectPercent?: number;
+  physicalRacePlantPercent?: number;
+  physicalRacePlayerPercent?: number;
+  physicalRaceUndeadPercent?: number;
+  physicalBossPercent?: number;
+  physicalNomalPercent?: number;
+  penetrationRaceAngelPercent?: number;
+  penetrationRaceBrutePercent?: number;
+  penetrationRaceDemiHumanPercent?: number;
+  penetrationRaceDemonPercent?: number;
+  penetrationRaceDragonPercent?: number;
+  penetrationRaceFishPercent?: number;
+  penetrationRaceFormlessPercent?: number;
+  penetrationRaceInsectPercent?: number;
+  penetrationRacePlantPercent?: number;
+  penetrationRacePlayerPercent?: number;
+  penetrationRaceUndeadPercent?: number;
+  penetrationBossPercent?: number;
+  penetrationNormalPercent?: number;
+
+  // slot4
+  str?: number;
+  agi?: number;
+  vit?: number;
+  int?: number;
+  dex?: number;
+  luk?: number;
+  eATK?: number;
+  criticalPercent?: number;
 }
 
 export class BaseEquipment implements IBaseEquipment {
@@ -116,6 +180,8 @@ export class BaseEquipment implements IBaseEquipment {
     atkPercent2: 0
   };
 
+  public options: EnchantOption = null;
+
   public eATK: number = 0;
   public cATK: number = 0;
   public criticalPercent: number = 0;
@@ -130,6 +196,11 @@ export class BaseEquipment implements IBaseEquipment {
   public slot2: IBaseEquipment = null;
   public slot3: IBaseEquipment = null;
   public slot4: IBaseEquipment = null;
+
+  public canSelectOnSlot1: boolean = false;
+  public canSelectOnSlot2: boolean = false;
+  public canSelectOnSlot3: boolean = false;
+  public canSelectOnSlot4: boolean = false;
 
   public classActives: ClassKey[] = [];
   public enchantActives: number[] = [];
