@@ -46,4 +46,6 @@ testem.log
 Thumbs.db
 
 package-lock.json
-copy-to-site.bat
+*.sh
+*.bat
+/src/assets

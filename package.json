@@ -6,9 +6,9 @@
   "module": "dist/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "bundle": "webpack --mode production && copy-to-site.bat",
+    "start": "webpack --mode production && copy-to-site.sh",
     "build:stats": "webpack --profile --json > stats.json",
-    "build": "npm version patch --no-git-tag-version && npm run bundle"
+    "build": "npm version patch --no-git-tag-version && npm run start"
   },
   "author": "",
   "license": "ISC",
