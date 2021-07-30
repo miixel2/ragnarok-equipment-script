@@ -17,11 +17,11 @@ export interface IBaseEquipment {
   baseATK: number;
   level: 1 | 2 | 3 | 4;
   equipUpgradeValue: number;
-  // refineSafe: number;
-  // overRefineValue: number;
-  // overRefineBonus: number;
-  // refineUpgradeATK: number;
-  // highUpgrade: number;
+
+  hpModA?: number;
+  hpModB?: number;
+  spModA?: number;
+  spModB?: number;
 
   str: number;
   agi: number;
@@ -152,6 +152,11 @@ export class BaseEquipment implements IBaseEquipment {
   public baseATK: number = 0;
   public level: 1 | 2 | 3 | 4 = 1;
   public equipUpgradeValue: number = 0;
+
+  public hpModA: number = 0;
+  public hpModB: number = 0;
+  public spModA: number = 0;
+  public spModB: number = 0;
 
   // Stat
   public str: number = 0;

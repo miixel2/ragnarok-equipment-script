@@ -89,6 +89,8 @@ export const shadowArmors: IBaseEquipment[] = [
     int: 0,
     dex: 0,
     luk: 0,
+    hpModA: 0,
+    hpModB: 0,
     additionAtk: {
       size: 0,
       element: 0,
@@ -110,8 +112,11 @@ export const shadowArmors: IBaseEquipment[] = [
     script: (character: Character2, _this: IBaseEquipment): void => {
       const upgrade = _this.equipUpgradeValue;
 
+      _this.hpModA = upgrade * 10;
+      // _this.criticalRate = 5;
+
       if (upgrade >= 7) {
-        // _this.criticalRate = 5;
+        // _this.criticalRate += 5;
       }
     }
   },

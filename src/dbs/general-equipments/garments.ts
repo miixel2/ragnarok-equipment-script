@@ -259,6 +259,10 @@ export const garments: IBaseEquipment[] = [
     int: 0,
     dex: 0,
     luk: 0,
+    hpModA: 0,
+    hpModB: 0,
+    spModA: 0,
+    spModB: 0,
     additionAtk: {
       size: 0,
       element: 0,
@@ -277,7 +281,14 @@ export const garments: IBaseEquipment[] = [
     cATK: 0,
     criticalPercent: 0,
     penetrationPercent: 0,
-    script: (character: Character2, _this: IBaseEquipment): void => { },
+    script: (character: Character2, _this: IBaseEquipment): void => {
+      _this.hpModB = 0;
+      _this.spModB = 0;
+      if (character.shoes && [22006, 22011].includes(character.shoes.id)) {
+        _this.hpModB = 0.15;
+        _this.spModB = 0.05;
+      }
+    },
   },
   {
     id: 20841,
@@ -300,6 +311,10 @@ export const garments: IBaseEquipment[] = [
     int: 0,
     dex: 0,
     luk: 0,
+    hpModA: 0,
+    hpModB: 0,
+    spModA: 0,
+    spModB: 0,
     additionAtk: {
       size: 0,
       element: 0,
@@ -321,10 +336,13 @@ export const garments: IBaseEquipment[] = [
     script: (character: Character2, _this: IBaseEquipment): void => {
       _this.eATK = 0;
       _this.criticalPercent = 0;
+      _this.hpModB = 0;
+      _this.spModB = 0;
 
       const upgrade = _this.equipUpgradeValue;
       const baseStr = character.class.str0;
       const baseLuk = character.class.luk0;
+      const baseVit = character.class.vit0;
 
       if (baseStr >= 90) {
         _this.eATK = 15;
@@ -332,6 +350,11 @@ export const garments: IBaseEquipment[] = [
         if (upgrade >= 9) {
           _this.eATK += 15;
         }
+      }
+
+      if (baseVit >= 90) {
+        _this.hpModB = 0.05;
+        _this.spModB = 0.05;
       }
 
       if (baseLuk >= 90) {

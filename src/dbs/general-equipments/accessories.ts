@@ -143,6 +143,8 @@ export const accessories: IBaseEquipment[] = [
     int: 2,
     dex: 2,
     luk: 2,
+    hpModA: 0,
+    hpModB: 0,
     additionAtk: {
       size: 0,
       element: 0,
@@ -167,6 +169,7 @@ export const accessories: IBaseEquipment[] = [
       _this.additionAtk.atkPercent2 = 0;
       _this.additionAtk.size = 0;
       _this.criticalPercent = 0;
+      _this.hpModB = 0;
 
       if (!character.shoes || character.shoes.equipUpgradeValue < 9) {
         return;
@@ -187,6 +190,7 @@ export const accessories: IBaseEquipment[] = [
 
       // VIT
       if ([22003, 22007, 22110, 22116].includes(character.shoes.id) && character.class.vit0 >= 120) {
+        _this.hpModB = 0.08;
         return;
       }
 

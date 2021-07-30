@@ -2,7 +2,7 @@ export class BaseClass {
   public className: string = 'Novice';
   public classKey: string = 'Novice';
 
-  public baseLv: number = 1;
+  public baseLv: number = 100;
   public jobLv: number = 1;
 
   public hp: number = 0;
@@ -29,6 +29,16 @@ export class BaseClass {
   public softDef: number = 0;
   public hardDEF: number = 0;
   public _hardDEF: number = 0;
+
+  public hpJobA: number = 0;
+  public hpJobB: number = 0;
+  public hpModA: number = 0;
+  public hpModB: number = 0;
+
+  public spJob: number = 0;
+  public spModA: number = 0;
+  public spModB: number = 0;
+  public transMod: number = 1;
 }
 
 export enum ClassKey {
@@ -48,6 +58,16 @@ export class GuillotineCross extends BaseClass {
   public dex1: number = 7;
   public luk1: number = 2;
 
+  public readonly transMod: number = 1.25;
+  public readonly hpJobA: number = 1.1;
+  public readonly hpJobB: number = 5;
+  public hpModA: number = 0;
+  public hpModB: number = 0;
+
+  public readonly spJob: number = 4;
+  public spModA: number = 0;
+  public spModB: number = 0;
+
   constructor(data: GuillotineCross = null) {
     super();
 
@@ -58,6 +78,11 @@ export class GuillotineCross extends BaseClass {
           this[key] = element;
         }
       }
+
+      this.transMod = 1.25;
+      this.hpJobA = 1.1;
+      this.hpJobB = 5;
+      this.spJob = 4;
     }
   }
 }
@@ -74,6 +99,16 @@ export class RuneKnight extends BaseClass {
   public dex1: number = 8;
   public luk1: number = 4;
 
+  public readonly transMod: number = 1.25;
+  public readonly hpJobA: number = 1.5;
+  public readonly hpJobB: number = 5;
+  public hpModA: number = 0;
+  public hpModB: number = 0;
+
+  public readonly spJob: number = 3;
+  public spModA: number = 0;
+  public spModB: number = 0;
+
   constructor(data: RuneKnight = null) {
     super();
 
@@ -84,6 +119,11 @@ export class RuneKnight extends BaseClass {
           this[key] = element;
         }
       }
+
+      this.transMod = 1.25;
+      this.hpJobA = 1.5;
+      this.hpJobB = 5;
+      this.spJob = 3;
     }
   }
 }

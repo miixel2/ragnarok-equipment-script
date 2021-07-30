@@ -69,6 +69,8 @@ export const armors: IBaseEquipment[] = [
     int: 0,
     dex: 0,
     luk: 0,
+    hpModA: 0,
+    hpModB: 0,
     additionAtk: {
       size: 0,
       element: 0,
@@ -88,13 +90,16 @@ export const armors: IBaseEquipment[] = [
     criticalPercent: 0,
     penetrationPercent: 0,
     script: (character: Character2, _this: IBaseEquipment): void => {
-      _this.vit = 0;
+      _this.vit = 6;
 
       const baseLv = character.class.baseLv;
 
       if (baseLv >= 130) {
-        _this.vit = 4;
+        _this.vit += 4;
       }
+
+      const upgrade = _this.equipUpgradeValue;
+      _this.hpModB = Number((new Big(Math.floor(upgrade / 3))).mul(0.04).valueOf());
     }
   },
   {
@@ -118,6 +123,8 @@ export const armors: IBaseEquipment[] = [
     int: 0,
     dex: 0,
     luk: 0,
+    hpModA: 0,
+    hpModB: 0,
     additionAtk: {
       size: 0,
       element: 0,
@@ -140,6 +147,7 @@ export const armors: IBaseEquipment[] = [
       _this.penetrationPercent = 0;
       _this.luk = 0;
       _this.additionAtk.atkPercent = 0;
+      _this.hpModB = 0;
 
       if ([MonsterRace.DEMI_HUMAN, MonsterRace.DEMON, MonsterRace.UNDEAD].includes(character.monster.race)) {
         _this.penetrationPercent = Number((new Big(_this.equipUpgradeValue)).mul(0.04).valueOf());
@@ -156,6 +164,9 @@ export const armors: IBaseEquipment[] = [
         if ([MonsterRace.DEMI_HUMAN, MonsterRace.DEMON, MonsterRace.UNDEAD].includes(character.monster.race)) {
           _this.penetrationPercent = Number((new Big(_this.equipUpgradeValue)).plus(0.15).valueOf());
         }
+
+        _this.hpModB = 0.1;
+        _this.hpModB = Number((new Big(_this.equipUpgradeValue)).mul(0.01).plus(_this.hpModB).valueOf());
 
         _this.additionAtk.atkPercent = 0.02;
         _this.additionAtk.atkPercent = Number((new Big(_this.equipUpgradeValue)).mul(0.01).plus(_this.additionAtk.atkPercent).valueOf());

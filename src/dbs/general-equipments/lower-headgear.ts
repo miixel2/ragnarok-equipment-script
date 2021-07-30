@@ -162,6 +162,8 @@ export const lowerHeadgear: IBaseEquipment[] = [
     int: 0,
     dex: 0,
     luk: 0,
+    hpModA: 200,
+    hpModB: 0,
     additionAtk: {
       size: 0,
       element: 0,
@@ -236,6 +238,8 @@ export const lowerHeadgear: IBaseEquipment[] = [
     int: 1,
     dex: 1,
     luk: 0,
+    hpModA: 100,
+    hpModB: 0,
     additionAtk: {
       size: 0,
       element: 0,

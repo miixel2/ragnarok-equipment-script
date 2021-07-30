@@ -20,6 +20,8 @@ export const shadowShields: IBaseEquipment[] = [
     int: 0,
     dex: 0,
     luk: 0,
+    hpModA: 200,
+    hpModB: 0,
     additionAtk: {
       size: 0,
       element: 0,
@@ -38,7 +40,18 @@ export const shadowShields: IBaseEquipment[] = [
     cATK: 0,
     criticalPercent: 0,
     penetrationPercent: 0,
-    script: (character: Character2, _this: IBaseEquipment): void => { }
+    script: (character: Character2, _this: IBaseEquipment): void => {
+      _this.hpModB = 0;
+
+      const upgrade = _this.equipUpgradeValue;
+      if (upgrade >= 7) {
+        _this.hpModB = 0.02;
+
+        if (upgrade >= 9) {
+          _this.hpModB = 0.05;
+        }
+      }
+    }
   },
   {
     id: 24418,

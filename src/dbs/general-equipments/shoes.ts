@@ -24,6 +24,10 @@ export const shoes: IBaseEquipment[] = [
     int: 0,
     dex: 0,
     luk: 0,
+    hpModA: 0,
+    hpModB: 0,
+    spModA: 0,
+    spModB: 0,
     additionAtk: {
       size: 0,
       element: 0,
@@ -44,6 +48,9 @@ export const shoes: IBaseEquipment[] = [
     penetrationPercent: 0,
     script: (character: Character2, _this: IBaseEquipment): void => {
       const upgrade = _this.equipUpgradeValue;
+
+      _this.hpModA = Number((new Big(Math.floor(upgrade / 3))).mul(100).plus(300).valueOf());
+      _this.spModA = Number((new Big(Math.floor(upgrade / 3))).mul(100).plus(30).valueOf());
 
       const refineEAtk = Number((new Big(Math.floor(upgrade / 3))).mul(7).valueOf());
       _this.eATK = refineEAtk;
@@ -74,6 +81,10 @@ export const shoes: IBaseEquipment[] = [
     int: 0,
     dex: 0,
     luk: 0,
+    hpModA: 0,
+    hpModB: 0,
+    spModA: 0,
+    spModB: 0,
     additionAtk: {
       size: 0,
       element: 0,
@@ -94,6 +105,9 @@ export const shoes: IBaseEquipment[] = [
     penetrationPercent: 0,
     script: (character: Character2, _this: IBaseEquipment): void => {
       const upgrade = _this.equipUpgradeValue;
+
+      _this.hpModA = Number((new Big(Math.floor(upgrade / 3))).mul(100).plus(300).valueOf());
+      _this.spModA = Number((new Big(Math.floor(upgrade / 3))).mul(100).plus(30).valueOf());
 
       const refineCriticalPercent = Number((new Big(Math.floor(upgrade / 3))).mul(0.02).valueOf());
       _this.criticalPercent = refineCriticalPercent;

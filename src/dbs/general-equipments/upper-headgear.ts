@@ -161,6 +161,7 @@ export const upperHeadgear: IBaseEquipment[] = [
     script: (character: Character2, _this: IBaseEquipment): void => {
       const upgrade = _this.equipUpgradeValue;
       _this.eATK = upgrade * 4;
+      _this.hpModB = Number((new Big(Math.floor(upgrade / 2))).mul(0.01).valueOf());
     }
   },
   {
@@ -203,7 +204,10 @@ export const upperHeadgear: IBaseEquipment[] = [
     criticalPercent: 0,
     penetrationPercent: 0,
     classActives: [ClassKey.GuillotineCross],
-    script: (character: Character2, _this: IBaseEquipment): void => { }
+    script: (character: Character2, _this: IBaseEquipment): void => {
+      const upgrade = _this.equipUpgradeValue;
+      _this.hpModB = Number((new Big(Math.floor(upgrade / 2))).mul(0.01).valueOf());
+    }
   },
   {
     id: 19328,
