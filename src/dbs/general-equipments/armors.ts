@@ -155,14 +155,14 @@ export const armors: IBaseEquipment[] = [
 
       if (character.garment?.id === 2519) {
         if ([MonsterRace.DEMI_HUMAN, MonsterRace.DEMON, MonsterRace.UNDEAD].includes(character.monster.race)) {
-          _this.penetrationPercent = Number((new Big(_this.equipUpgradeValue)).plus(0.15).valueOf());
+          _this.penetrationPercent = Number((new Big(_this.penetrationPercent)).plus(0.15).valueOf());
         }
 
         _this.luk = 3;
         _this.luk += _this.equipUpgradeValue * 1;
       } else if (character.garment?.id === 2524) {
         if ([MonsterRace.DEMI_HUMAN, MonsterRace.DEMON, MonsterRace.UNDEAD].includes(character.monster.race)) {
-          _this.penetrationPercent = Number((new Big(_this.equipUpgradeValue)).plus(0.15).valueOf());
+          _this.penetrationPercent = Number((new Big(_this.penetrationPercent)).plus(0.15).valueOf());
         }
 
         _this.hpModB = 0.1;
