@@ -16,6 +16,7 @@ const prefixPhysicalText = '';
 const prefixPenetrationText = 'Bypass';
 
 const vmPhysicalId = [28706, 28008, 1450, 16041, 28706, 13455, 1400, 21016, 21011];
+const temporalManteausId = [20846, 20963, 20964, 20968];
 
 export const ignoreSizePenalty: IBaseEquipment = {
   id: 2000000,
@@ -937,6 +938,62 @@ const generateLuk = Array.from(Array(maxStatus).slice(statusStartAt), (x, index)
   return equipment;
 });
 
+// Temporal Manteau
+const eAtkTemporalStartAtId = maxStatus + lukStartAtId;
+const generateeAtkTemporal = Array.from(Array(36), (x, index) => {
+  const value = index + 5;
+  const option = {};
+  option[`eATK`] = value;
+
+  const equipment = new BaseEquipment();
+  equipment.id = eAtkTemporalStartAtId + index;
+  equipment.name = `ATK +${value}`;
+  equipment.type = EquipmentType.CARD;
+  equipment.compoundOn = CompoundOn.ENCHANT;
+  equipment.enchantActives = [...temporalManteausId];
+  equipment.options = option;
+  equipment.canSelectOnSlot2 = true;
+
+  return equipment;
+});
+
+const maxAtkTemporalPercent = 6;
+const atkPercentTemporalStartAtId = 36 + eAtkTemporalStartAtId;
+const generateatkTemporalPercent = Array.from(Array(maxAtkTemporalPercent), (x, index) => {
+  const value = index + 1;
+  const option = {};
+  option[`atkPercent2`] = Number((new Big(value)).div(100).valueOf());
+
+  const equipment = new BaseEquipment();
+  equipment.id = atkPercentTemporalStartAtId + index;
+  equipment.name = `ATK +${value}%`;
+  equipment.type = EquipmentType.CARD;
+  equipment.compoundOn = CompoundOn.ENCHANT;
+  equipment.enchantActives = [...temporalManteausId];
+  equipment.options = option;
+  equipment.canSelectOnSlot2 = true;
+
+  return equipment;
+});
+
+const criTemporalStartAtId = maxAtkTemporalPercent + atkPercentTemporalStartAtId;
+const generatecriTemporal = Array.from(Array(8), (x, index) => {
+  const value = index + 3;
+  const option = {};
+  option[`criticalPercent`] = Number((new Big(value)).div(100).valueOf());
+
+  const equipment = new BaseEquipment();
+  equipment.id = criTemporalStartAtId + index;
+  equipment.name = `CriDmg +${value}%`;
+  equipment.type = EquipmentType.CARD;
+  equipment.compoundOn = CompoundOn.ENCHANT;
+  equipment.enchantActives = [...temporalManteausId];
+  equipment.options = option;
+  equipment.canSelectOnSlot2 = true;
+
+  return equipment;
+});
+
 export const allOptions: BaseEquipment[] | IBaseEquipment[] = [
   ignoreSizePenalty,
   ...generatePhysicalNEUTRAL,
@@ -985,5 +1042,8 @@ export const allOptions: BaseEquipment[] | IBaseEquipment[] = [
   ...generateVit,
   ...generateInt,
   ...generateDex,
-  ...generateLuk
+  ...generateLuk,
+  ...generateeAtkTemporal,
+  ...generateatkTemporalPercent,
+  ...generatecriTemporal
 ];
