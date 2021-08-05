@@ -36,6 +36,7 @@ export interface IBuffSkill {
   classActives?: ClassKey[];
 
   edp?: number;
+  vi?: number;
 
   script: (character: Character2, _this: IBuffSkill) => void;
 }
@@ -189,6 +190,14 @@ export const buffSkills: IBuffSkill[] = [
     level: 5,
     classActives: [ClassKey.GuillotineCross],
     mulMeleeAtk: 2.5,
+    script: (character: Character2, _this: IBuffSkill): void => { }
+  },
+  {
+    id: 2021,
+    name: 'Venom Impression',
+    level: 5,
+    classActives: [ClassKey.GuillotineCross],
+    vi: 0.5,
     script: (character: Character2, _this: IBuffSkill): void => { }
   }
 ];
