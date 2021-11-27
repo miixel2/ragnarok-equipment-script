@@ -142,7 +142,7 @@ export const enchants: IBaseEquipment[] = [
     penetrationPercent: 0,
     enchantActives: [15147],
     script: (character: Character2, _this: IBaseEquipment): void => {
-      _this.additionAtk.atkPercent = 0;
+      _this.additionAtk.race = 0;
       _this.str = 0;
 
       if (character.bodyGear) {
@@ -152,7 +152,7 @@ export const enchants: IBaseEquipment[] = [
           _this.str = 5;
 
           if (upgradeArmor >= 10) {
-            _this.additionAtk.atkPercent = 0.05;
+            _this.additionAtk.race = 0.05;
           }
         }
       }
@@ -196,7 +196,7 @@ export const enchants: IBaseEquipment[] = [
     penetrationPercent: 0,
     enchantActives: [15147],
     script: (character: Character2, _this: IBaseEquipment): void => {
-      _this.additionAtk.atkPercent = 0;
+      _this.additionAtk.race = 0;
       _this.str = 0;
 
       if (character.bodyGear) {
@@ -207,7 +207,7 @@ export const enchants: IBaseEquipment[] = [
 
           if (upgradeArmor >= 11) {
             _this.str = 7;
-            _this.additionAtk.atkPercent = 0.07;
+            _this.additionAtk.race = 0.07;
           }
         }
       }
@@ -251,7 +251,7 @@ export const enchants: IBaseEquipment[] = [
     penetrationPercent: 0,
     enchantActives: [15147],
     script: (character: Character2, _this: IBaseEquipment): void => {
-      _this.additionAtk.atkPercent = 0;
+      _this.additionAtk.race = 0;
       _this.str = 0;
 
       if (character.bodyGear) {
@@ -262,12 +262,12 @@ export const enchants: IBaseEquipment[] = [
 
           if (upgradeArmor >= 12) {
             _this.str = 8;
-            _this.additionAtk.atkPercent = 0.08;
+            _this.additionAtk.race = 0.08;
           }
 
           if (upgradeArmor >= 13) {
             _this.str = 9;
-            _this.additionAtk.atkPercent = 0.10;
+            _this.additionAtk.race = 0.10;
           }
         }
       }

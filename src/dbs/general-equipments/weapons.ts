@@ -107,7 +107,8 @@ export const weapons: IBaseEquipment[] = [
       element: 0,
       race: 0,
       class: 0,
-      atkPercent: 0
+      atkPercent: 0,
+      atkPercent2: 0
     },
     additionDef: {
       size: 0,
@@ -123,7 +124,7 @@ export const weapons: IBaseEquipment[] = [
     classActives: [ClassKey.RuneKnight],
     script: (character: Character2, _this: IBaseEquipment): void => {
       const upgrade = _this.equipUpgradeValue;
-      _this.additionAtk.atkPercent = Number((new Big(Math.floor(upgrade / 2))).mul(0.01).valueOf());;
+      _this.additionAtk.atkPercent2 = Number((new Big(Math.floor(upgrade / 2))).mul(0.01).valueOf());;
     }
   },
   {

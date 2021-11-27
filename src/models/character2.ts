@@ -59,6 +59,13 @@ export class Character2 {
 
   public id: number = null;
 
+  public maxHp: number = 0;
+  public maxSp: number = 0;
+  public hpModA: number = 0;
+  public hpModB: number = 0;
+  public spModA: number = 0;
+  public spModB: number = 0;
+
   // ± 0.05 * WeaponLevel * BaseWeaponDamage
   public variance: number = 0;
   public varianceMin: number = 0;
@@ -67,6 +74,8 @@ export class Character2 {
   // FLOOR( FLOOR(( BaseWeaponATK + Variance + StatBonus + RefineUpgradeATK + OverrefineBonus + HighUpgrade ) * SERC Addition * SERC Reduction * Elemnt Multiplier * VI * EDP) * SizePenalty )
   public wATK: number = 0;
   public wAtkMin: number = 0;
+  public realWATK: number = 0;
+  public realWATKMin: number = 0;
 
   // FLOOR( (ของบวกATK) * SERC Addition * SERC Reduction * Elemnt Multiplier * VI * EDP )
   public eATK: number = 0;
@@ -84,12 +93,18 @@ export class Character2 {
   public masteryATK: number = 0;
 
   // Normal = 1, Venom Impression = 1.5
-  public VI: 1 | 1.5 = 1;
+  public VI: number = 1;
   // Normal = 1, Use EDP = 4
-  public edp: 1 | 4 = 1;
-  public akm: 1 | 1.2 = 1;
+  public edp: number = 1;
+  public akm: number = 1;
+  public skillPercent: number = 1;
+  public buffAtkPercent: number = 0;
+  public buffSkillPercert: number = 1;
+  public pureAtk: number = 0;
+  public mulMeleeAtk: number = 0;
   // FLOOR(WATK * PE%)
   public peATK: number = 0;
+  public peATKMin: number = 0;
 
   // BaseWeaponDamage * {STR} / 200 (Melee = STR, Range = DEX)
   public statBonus: number = 0;
@@ -121,6 +136,8 @@ export class Character2 {
   public weapon: Weapon = new Weapon();
   public additionBuff: AdditionBuff = new AdditionBuff();
   public elementalConverter: E_Element = E_Element.NEUTRAL;
+  public playerAtkLevel: number = 1;
+  public playerTypeAtk: number = 0;
 
   // Equipments
   public upperHeadgear: BaseEquipment = null;
@@ -145,4 +162,6 @@ export class Character2 {
   public shadowShoes: BaseEquipment = null;
   public shadowRightAccessory: BaseEquipment = null;
   public shadowLeftAccessory: BaseEquipment = null;
+
+  public ignoreSizePenalty: boolean = false;
 }

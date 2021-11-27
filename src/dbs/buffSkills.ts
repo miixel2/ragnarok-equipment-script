@@ -170,9 +170,8 @@ export const buffSkills: IBuffSkill[] = [
     classActives: [ClassKey.GuillotineCross],
     buffAtkPercent: 0,
     script: (character: Character2, _this: IBuffSkill): void => {
-      _this.buffAtkPercent = 0;
       if (character.rightHand && character.rightHand.subType === EquipmentSubType.KATAR) {
-        _this.buffAtkPercent = 0.2;
+        character.akm = 1.2;
       }
     }
   },
