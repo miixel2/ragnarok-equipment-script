@@ -2549,7 +2549,7 @@ export const enchants: IBaseEquipment[] = [
     enchantActives: [20718, 2589],
     script: (character: Character2, _this: IBaseEquipment): void => {
       _this.str = 1;
-      _this.additionAtk.atkPercent = 0;
+      _this.additionAtk.class = 0;
 
       const upgrade = _this.equipUpgradeValue;
 
@@ -2557,7 +2557,7 @@ export const enchants: IBaseEquipment[] = [
         _this.str += 3;
 
         if (upgrade >= 9) {
-          _this.additionAtk.atkPercent = 0.01;
+          _this.additionAtk.class = 0.01;
         }
       }
     }
@@ -2692,14 +2692,14 @@ export const enchants: IBaseEquipment[] = [
     enchantActives: [20718, 2589],
     script: (character: Character2, _this: IBaseEquipment): void => {
       _this.agi = 1;
-      _this.additionAtk.atkPercent = 0;
+      _this.additionAtk.class = 0;
       const upgrade = _this.equipUpgradeValue;
 
       if (upgrade >= 8) {
         _this.agi += 3;
 
         if (upgrade >= 9) {
-          _this.additionAtk.atkPercent = 0.01;
+          _this.additionAtk.class = 0.01;
         }
       }
     }
@@ -2725,8 +2725,8 @@ export const enchants: IBaseEquipment[] = [
       size: 0,
       element: 0,
       race: 0,
-      class: 0,
-      atkPercent: 0.01
+      class: 0.01,
+      atkPercent: 0
     },
     additionDef: {
       size: 0,
@@ -2763,8 +2763,8 @@ export const enchants: IBaseEquipment[] = [
       size: 0,
       element: 0,
       race: 0,
-      class: 0,
-      atkPercent: 0.02
+      class: 0.02,
+      atkPercent: 0
     },
     additionDef: {
       size: 0,
@@ -2801,8 +2801,8 @@ export const enchants: IBaseEquipment[] = [
       size: 0,
       element: 0,
       race: 0,
-      class: 0,
-      atkPercent: 0.03
+      class: 0.03,
+      atkPercent: 0
     },
     additionDef: {
       size: 0,

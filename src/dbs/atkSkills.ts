@@ -1,6 +1,7 @@
 import Big from 'big.js';
 import { Character2 } from "../models/character2";
 import { ClassKey } from "../models/class";
+import { E_Element } from '../models/element';
 
 interface SkillLevel {
   level: number;
@@ -56,8 +57,14 @@ export const atkSkills: IAtkSkill[] = [
       }
     ],
     script: (character: Character2, _this: SkillLevel): number => {
-      // return Number(new Big(character.class.baseLv).div(100).mul(_this.skillPercent));
-      return Number(new Big(_this.skillPercent).mul(character.class.baseLv).div(100));
+      let sumPercent =  Number(new Big(_this.skillPercent).mul(character.class.baseLv).div(100).valueOf());
+
+      if (character.elementalConverter === E_Element.FIRE) {
+        const bonus = Number(new Big(_this.level).mul(100).div(100).valueOf());
+        sumPercent = Number(new Big(sumPercent).plus(bonus).valueOf());
+      }
+
+      return sumPercent;
     }
   },
   {

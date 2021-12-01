@@ -1,6 +1,7 @@
 import Big from 'big.js';
 import { Character2 } from '../../models/character2';
 import { IBaseEquipment, EquipmentType, EquipmentSubType, EquipmentLocation } from '../../models/equipment';
+import { MonsterType } from '../../models/monster';
 
 export const shadowShields: IBaseEquipment[] = [
   {
@@ -156,6 +157,62 @@ export const shadowShields: IBaseEquipment[] = [
         _this.penetrationPercent = 0.5;
       }
 
+    }
+  },
+  {
+    id: 24053,
+    name: 'Safeguard Shadow Shield',
+    type: EquipmentType.SHADOW_EQUIPMENT,
+    subType: EquipmentSubType.SHADOW_SHIELD,
+    location: EquipmentLocation.SHADOW_SHIELD,
+    compoundOn: null,
+    baseDef: 0,
+    baseATK: 0,
+    level: 1,
+    equipUpgradeValue: 0,
+    str: 0,
+    agi: 0,
+    vit: 0,
+    int: 0,
+    dex: 0,
+    luk: 0,
+    additionAtk: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+      atkPercent: 0
+    },
+    additionDef: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+      atkPercent: 0
+    },
+    eATK: 0,
+    cATK: 0,
+    criticalPercent: 0,
+    penetrationPercent: 0,
+    script: (character: Character2, _this: IBaseEquipment): void => {
+      _this.additionAtk.class = 0;
+
+      const upgrade = _this.equipUpgradeValue;
+      if (character.monster.type === MonsterType.BOSS) {
+        _this.additionAtk.class = Number(new Big(0.02).valueOf());
+
+        if (upgrade >= 7) {
+          _this.additionAtk.class = Number(new Big(_this.additionAtk.class).plus(0.01).valueOf());
+
+          if (upgrade >= 9) {
+            _this.additionAtk.class = Number(new Big(_this.additionAtk.class).plus(0.01).valueOf());
+          }
+        }
+
+        if (character.shadowShoes && character.shadowShoes.id === 24063) {
+          _this.additionAtk.class = Number(new Big(_this.additionAtk.class).plus(0.05).valueOf());
+        }
+      }
     }
   },
 ];
