@@ -315,4 +315,103 @@ export const upperHeadgear: IBaseEquipment[] = [
     penetrationPercent: 0,
     script: (character: Character2, _this: IBaseEquipment): void => { }
   },
+  {
+    id: 18570,
+    name: 'Ancient Gold Deco [1]',
+    type: EquipmentType.ARMOR,
+    subType: EquipmentSubType.HELM,
+    location: EquipmentLocation.UPPER_HEADGEAR,
+    compoundOn: null,
+    slot1Enable: true,
+    baseDef: 7,
+    baseATK: 0,
+    level: 1,
+    equipUpgradeValue: 0,
+    str: 0,
+    agi: 0,
+    vit: 0,
+    int: 0,
+    dex: 0,
+    luk: 0,
+    additionAtk: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+      atkPercent: 0
+    },
+    additionDef: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+      atkPercent: 0
+    },
+    eATK: 0,
+    cATK: 0,
+    criticalPercent: 0,
+    penetrationPercent: 0,
+    script: (character: Character2, _this: IBaseEquipment): void => {
+      const baseLevel = character.class.baseLv;
+
+      _this.str = 0;
+      _this.agi = 0;
+      _this.vit = 0;
+      _this.int = 0;
+      _this.dex = 0;
+      _this.luk = 0;
+      _this.additionAtk.class = 0;
+
+      if (baseLevel >= 150) {
+        _this.str = 2;
+        _this.agi = 2;
+        _this.vit = 2;
+        _this.int = 2;
+        _this.dex = 2;
+        _this.luk = 2;
+      }
+
+      if ([ClassKey.RuneKnight, ClassKey.GuillotineCross].includes(ClassKey[character.class.classKey])) {
+        _this.additionAtk.class = Number(new Big(0.08).valueOf());
+      }
+    }
+  },
+  {
+    id: 5507,
+    name: 'Pink Pajamas Hat [1]',
+    type: EquipmentType.ARMOR,
+    subType: EquipmentSubType.HELM,
+    location: EquipmentLocation.UPPER_HEADGEAR,
+    compoundOn: null,
+    slot1Enable: true,
+    baseDef: 2,
+    baseATK: 0,
+    level: 1,
+    equipUpgradeValue: 0,
+    str: 0,
+    agi: 0,
+    vit: 0,
+    int: 0,
+    dex: 0,
+    luk: 0,
+    additionAtk: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0.05,
+      atkPercent: 0
+    },
+    additionDef: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+      atkPercent: 0
+    },
+    eATK: 0,
+    cATK: 0,
+    criticalPercent: 0,
+    penetrationPercent: 0,
+    script: (character: Character2, _this: IBaseEquipment): void => { }
+  },
 ];
