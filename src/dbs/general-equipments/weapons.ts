@@ -172,7 +172,7 @@ export const weapons: IBaseEquipment[] = [
     classActives: [ClassKey.GuillotineCross],
     script: (character: Character2, _this: IBaseEquipment): void => {
       const upgrade = _this.equipUpgradeValue;
-      _this.additionAtk.atkPercent2 = Number((new Big(Math.floor(upgrade / 2))).mul(0.01).valueOf());
+      _this.additionAtk.class = Number((new Big(Math.floor(upgrade / 2))).mul(0.01).valueOf());
     }
   },
   {
