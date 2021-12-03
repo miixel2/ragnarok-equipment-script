@@ -8,12 +8,14 @@ import { MonsterRace } from '../../models/monster';
 
 export const weapons: IBaseEquipment[] = [
   {
-    id: 1252,
-    name: 'Katar [1]',
+    id: 1253,
+    name: 'Katar [2]',
     type: EquipmentType.WEAPON,
     subType: EquipmentSubType.KATAR,
     location: EquipmentLocation.BOTH_HAND,
     compoundOn: null,
+    slot1Enable: true,
+    slot2Enable: true,
     baseDef: 0,
     baseATK: 148,
     level: 3,
@@ -52,6 +54,10 @@ export const weapons: IBaseEquipment[] = [
     subType: EquipmentSubType.TWO_HANDED_SWORD,
     location: EquipmentLocation.BOTH_HAND,
     compoundOn: null,
+    slot1Enable: true,
+    slot2Enable: true,
+    slot3Enable: true,
+    slot4Enable: true,
     baseDef: 0,
     baseATK: 60,
     level: 1,
@@ -897,5 +903,457 @@ export const weapons: IBaseEquipment[] = [
         }
       }
     }
+  },
+  {
+    id: 1208,
+    name: 'Main Gauche [4]',
+    type: EquipmentType.WEAPON,
+    subType: EquipmentSubType.DAGGER,
+    location: EquipmentLocation.RIGHT_HAND,
+    compoundOn: null,
+    slot1Enable: true,
+    slot2Enable: true,
+    slot3Enable: true,
+    slot4Enable: true,
+    baseDef: 0,
+    baseATK: 43,
+    level: 1,
+    equipUpgradeValue: 0,
+    str: 0,
+    agi: 0,
+    vit: 0,
+    int: 0,
+    dex: 0,
+    luk: 0,
+    additionAtk: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+      atkPercent: 0
+    },
+    additionDef: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+      atkPercent: 0
+    },
+    eATK: 0,
+    cATK: 0,
+    criticalPercent: 0,
+    penetrationPercent: 0,
+    classActives: [ClassKey.GuillotineCross, ClassKey.RuneKnight],
+    script: (character: Character2, _this: IBaseEquipment): void => { }
+  },
+  {
+    id: 1205,
+    name: 'Cutter [4]',
+    type: EquipmentType.WEAPON,
+    subType: EquipmentSubType.DAGGER,
+    location: EquipmentLocation.RIGHT_HAND,
+    compoundOn: null,
+    slot1Enable: true,
+    slot2Enable: true,
+    slot3Enable: true,
+    slot4Enable: true,
+    baseDef: 0,
+    baseATK: 30,
+    level: 1,
+    equipUpgradeValue: 0,
+    str: 0,
+    agi: 0,
+    vit: 0,
+    int: 0,
+    dex: 0,
+    luk: 0,
+    additionAtk: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+      atkPercent: 0
+    },
+    additionDef: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+      atkPercent: 0
+    },
+    eATK: 0,
+    cATK: 0,
+    criticalPercent: 0,
+    penetrationPercent: 0,
+    classActives: [ClassKey.GuillotineCross, ClassKey.RuneKnight],
+    script: (character: Character2, _this: IBaseEquipment): void => { }
+  },
+  {
+    id: 1102,
+    name: 'Sword [4]',
+    type: EquipmentType.WEAPON,
+    subType: EquipmentSubType.SWORD,
+    location: EquipmentLocation.RIGHT_HAND,
+    compoundOn: null,
+    slot1Enable: true,
+    slot2Enable: true,
+    slot3Enable: true,
+    slot4Enable: true,
+    baseDef: 0,
+    baseATK: 25,
+    level: 1,
+    equipUpgradeValue: 0,
+    str: 0,
+    agi: 0,
+    vit: 0,
+    int: 0,
+    dex: 0,
+    luk: 0,
+    additionAtk: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+      atkPercent: 0
+    },
+    additionDef: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+      atkPercent: 0
+    },
+    eATK: 0,
+    cATK: 0,
+    criticalPercent: 0,
+    penetrationPercent: 0,
+    classActives: [ClassKey.GuillotineCross, ClassKey.RuneKnight],
+    script: (character: Character2, _this: IBaseEquipment): void => { }
+  },
+  {
+    id: 28705,
+    name: 'Dagger of Crimson [2]',
+    type: EquipmentType.WEAPON,
+    subType: EquipmentSubType.DAGGER,
+    location: EquipmentLocation.RIGHT_HAND,
+    compoundOn: null,
+    slot1Enable: true,
+    slot2Enable: true,
+    baseDef: 0,
+    baseATK: 55,
+    level: 3,
+    equipUpgradeValue: 0,
+    str: 0,
+    agi: 0,
+    vit: 0,
+    int: 0,
+    dex: 0,
+    luk: 0,
+    additionAtk: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+      atkPercent: 0
+    },
+    additionDef: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+      atkPercent: 0
+    },
+    eATK: 0,
+    cATK: 0,
+    criticalPercent: 0,
+    penetrationPercent: 0,
+    classActives: [ClassKey.GuillotineCross, ClassKey.RuneKnight],
+    script: (character: Character2, _this: IBaseEquipment): void => {
+      _this.eATK = 0;
+
+      const upgrade = _this.equipUpgradeValue;
+
+      if (upgrade > 15) {
+        _this.eATK = 15 * 15;
+      } else {
+        _this.eATK = upgrade * upgrade;
+      }
+
+      if (character.class.baseLv >= 70) {
+        _this.eATK += Math.floor((character.class.baseLv - 70) / 10) * 5;
+      }
+    }
+  },
+  {
+    id: 13071,
+    name: 'Upgrade Dagger [1]',
+    type: EquipmentType.WEAPON,
+    subType: EquipmentSubType.DAGGER,
+    location: EquipmentLocation.RIGHT_HAND,
+    compoundOn: null,
+    slot1Enable: true,
+    baseDef: 0,
+    baseATK: 55,
+    level: 3,
+    equipUpgradeValue: 0,
+    str: 0,
+    agi: 0,
+    vit: 0,
+    int: 0,
+    dex: 0,
+    luk: 0,
+    additionAtk: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+      atkPercent: 0
+    },
+    additionDef: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+      atkPercent: 0
+    },
+    eATK: 0,
+    cATK: 0,
+    criticalPercent: 0,
+    penetrationPercent: 0,
+    classActives: [ClassKey.GuillotineCross, ClassKey.RuneKnight],
+    script: (character: Character2, _this: IBaseEquipment): void => {
+      const upgrade = _this.equipUpgradeValue;
+      _this.eATK = upgrade * 10;
+
+      if (character.class.baseLv >= 70) {
+        _this.eATK += Math.floor((character.class.baseLv - 70) / 10) * 5;
+      }
+    }
+  },
+  {
+    id: 13090,
+    name: 'Face Worm Queen Leg [2]',
+    type: EquipmentType.WEAPON,
+    subType: EquipmentSubType.DAGGER,
+    location: EquipmentLocation.RIGHT_HAND,
+    compoundOn: null,
+    slot1Enable: true,
+    slot2Enable: true,
+    baseDef: 0,
+    baseATK: 180,
+    level: 4,
+    equipUpgradeValue: 0,
+    str: 0,
+    agi: 0,
+    vit: 0,
+    int: 3,
+    dex: 0,
+    luk: 0,
+    additionAtk: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+      atkPercent: 0
+    },
+    additionDef: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+      atkPercent: 0
+    },
+    eATK: 0,
+    cATK: 0,
+    criticalPercent: 0,
+    penetrationPercent: 0,
+    classActives: [ClassKey.GuillotineCross, ClassKey.RuneKnight],
+    script: (character: Character2, _this: IBaseEquipment): void => { }
+  },
+  {
+    id: 13035,
+    name: 'Sandstorm [4]',
+    type: EquipmentType.WEAPON,
+    subType: EquipmentSubType.DAGGER,
+    location: EquipmentLocation.RIGHT_HAND,
+    compoundOn: null,
+    slot1Enable: true,
+    slot2Enable: true,
+    slot3Enable: true,
+    slot4Enable: true,
+    baseDef: 0,
+    baseATK: 50,
+    level: 2,
+    equipUpgradeValue: 0,
+    str: 0,
+    agi: 0,
+    vit: 0,
+    int: 0,
+    dex: 0,
+    luk: 0,
+    hpModB: 0.05,
+    spModA: 20,
+    additionAtk: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+      atkPercent: 0
+    },
+    additionDef: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+      atkPercent: 0
+    },
+    eATK: 0,
+    cATK: 0,
+    criticalPercent: 0,
+    penetrationPercent: 0,
+    classActives: [ClassKey.GuillotineCross],
+    script: (character: Character2, _this: IBaseEquipment): void => { }
+  },
+  {
+    id: 13454,
+    name: 'Saber of Crimson [2]',
+    type: EquipmentType.WEAPON,
+    subType: EquipmentSubType.SWORD,
+    location: EquipmentLocation.RIGHT_HAND,
+    compoundOn: null,
+    slot1Enable: true,
+    slot2Enable: true,
+    baseDef: 0,
+    baseATK: 85,
+    level: 3,
+    equipUpgradeValue: 0,
+    str: 0,
+    agi: 0,
+    vit: 0,
+    int: 0,
+    dex: 0,
+    luk: 0,
+    additionAtk: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+      atkPercent: 0
+    },
+    additionDef: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+      atkPercent: 0
+    },
+    eATK: 0,
+    cATK: 0,
+    criticalPercent: 0,
+    penetrationPercent: 0,
+    classActives: [ClassKey.GuillotineCross, ClassKey.RuneKnight],
+    script: (character: Character2, _this: IBaseEquipment): void => {
+      _this.eATK = 0;
+
+      const upgrade = _this.equipUpgradeValue;
+
+      if (upgrade > 15) {
+        _this.eATK = 15 * 15;
+      } else {
+        _this.eATK = upgrade * upgrade;
+      }
+
+      if (character.class.baseLv >= 70) {
+        _this.eATK += Math.floor((character.class.baseLv - 70) / 10) * 5;
+      }
+    }
+  },
+  {
+    id: 28706,
+    name: 'Vicious Mind Dagger [1]',
+    type: EquipmentType.WEAPON,
+    subType: EquipmentSubType.SWORD,
+    location: EquipmentLocation.RIGHT_HAND,
+    compoundOn: null,
+    slot1Enable: true,
+    slot2Enable: true,
+    slot3Enable: true,
+    slot4Enable: true,
+    baseDef: 0,
+    baseATK: 105,
+    level: 4,
+    equipUpgradeValue: 0,
+    str: 0,
+    agi: 0,
+    vit: 0,
+    int: 0,
+    dex: 0,
+    luk: 0,
+    additionAtk: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+      atkPercent: 0
+    },
+    additionDef: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+      atkPercent: 0
+    },
+    eATK: 0,
+    cATK: 0,
+    criticalPercent: 0,
+    penetrationPercent: 0,
+    classActives: [ClassKey.RuneKnight, ClassKey.GuillotineCross],
+    script: (character: Character2, _this: IBaseEquipment): void => {
+      const upgrade = _this.equipUpgradeValue;
+      if (upgrade > 15) {
+        _this.eATK = 15 * 15;
+      } else {
+        _this.eATK = upgrade * upgrade;
+      }
+    }
+  },
+  {
+    id: 13017,
+    name: 'Ice Pick [1]',
+    type: EquipmentType.WEAPON,
+    subType: EquipmentSubType.DAGGER,
+    location: EquipmentLocation.RIGHT_HAND,
+    compoundOn: null,
+    slot1Enable: true,
+    baseDef: 0,
+    baseATK: 70,
+    level: 4,
+    equipUpgradeValue: 0,
+    str: 0,
+    agi: 0,
+    vit: 0,
+    int: 0,
+    dex: 0,
+    luk: 0,
+    additionAtk: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+      atkPercent: 0
+    },
+    additionDef: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+      atkPercent: 0
+    },
+    eATK: 0,
+    cATK: 0,
+    criticalPercent: 0,
+    penetrationPercent: 0,
+    classActives: [ClassKey.GuillotineCross, ClassKey.RuneKnight],
+    script: (character: Character2, _this: IBaseEquipment): void => { }
   },
 ];

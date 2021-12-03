@@ -15,7 +15,7 @@ function titleCase(str) {
 const prefixPhysicalText = '';
 const prefixPenetrationText = 'Bypass';
 
-const vmPhysicalId = [28706, 28008, 1450, 16041, 28706, 13455, 1400, 21016, 21011];
+const vmPhysicalId = [28706, 28008, 1450, 16041, 13455, 1400, 21016, 21011];
 const temporalManteausId = [20846, 20963, 20964, 20968];
 
 export const ignoreSizePenalty: IBaseEquipment = {

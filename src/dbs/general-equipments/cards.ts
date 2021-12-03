@@ -438,8 +438,8 @@ export const cards: IBaseEquipment[] = [
     },
     eATK: 0,
     cATK: 0,
-    criticalPercent: 0,
-    penetrationPercent: 0.2,
+    criticalPercent: 0.2,
+    penetrationPercent: 0,
     prefix: 'Fatal',
     script: (character: Character2, _this: IBaseEquipment): void => { }
   },
@@ -1037,5 +1037,44 @@ export const cards: IBaseEquipment[] = [
         }
       }
     }
+  },
+  {
+    id: 4399,
+    name: 'Memory of Thanatos Card',
+    type: EquipmentType.CARD,
+    subType: null,
+    location: null,
+    compoundOn: CompoundOn.WEAPON,
+    baseDef: -30,
+    baseATK: 0,
+    level: 1,
+    equipUpgradeValue: 0,
+    str: 0,
+    agi: 0,
+    vit: 0,
+    int: 0,
+    dex: 0,
+    luk: 0,
+    hpModA: 0,
+    additionAtk: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+      atkPercent: 0
+    },
+    additionDef: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+      atkPercent: 0
+    },
+    eATK: 0,
+    cATK: 0,
+    criticalPercent: 0,
+    penetrationPercent: 0,
+    prefix: 'Penetration',
+    script: (character: Character2, _this: IBaseEquipment): void => { }
   },
 ];
