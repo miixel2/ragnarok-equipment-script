@@ -139,6 +139,8 @@ export const upperHeadgear: IBaseEquipment[] = [
     int: 1,
     dex: 1,
     luk: 1,
+    hpModB: 0,
+    spModB: 0,
     additionAtk: {
       size: 0,
       element: 0,
@@ -162,6 +164,7 @@ export const upperHeadgear: IBaseEquipment[] = [
       const upgrade = _this.equipUpgradeValue;
       _this.eATK = upgrade * 4;
       _this.hpModB = Number((new Big(Math.floor(upgrade / 2))).mul(0.01).valueOf());
+      _this.spModB = Number((new Big(Math.floor(upgrade / 2))).mul(0.01).valueOf());
 
       if (character.playerTypeAtk === 2006) {
         const skillMultiple = Number((new Big(Math.floor(upgrade / 2))).mul(0.2).valueOf());
@@ -190,6 +193,8 @@ export const upperHeadgear: IBaseEquipment[] = [
     int: 1,
     dex: 1,
     luk: 1,
+    hpModB: 0,
+    spModB: 0,
     additionAtk: {
       size: 0,
       element: 0,
@@ -212,6 +217,7 @@ export const upperHeadgear: IBaseEquipment[] = [
     script: (character: Character2, _this: IBaseEquipment): void => {
       const upgrade = _this.equipUpgradeValue;
       _this.hpModB = Number((new Big(Math.floor(upgrade / 2))).mul(0.01).valueOf());
+      _this.spModB = Number((new Big(Math.floor(upgrade / 2))).mul(0.01).valueOf());
       _this.criticalPercent = Number(new Big(upgrade).mul(0.01).valueOf());
 
       if (character.playerTypeAtk === 2022) {
