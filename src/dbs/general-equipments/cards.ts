@@ -2,7 +2,7 @@ import Big from 'big.js';
 import { Character2 } from "../../models/character2";
 import { ClassKey } from '../../models/class';
 import { E_Element } from '../../models/element';
-import { IBaseEquipment, EquipmentType, CompoundOn } from "../../models/equipment";
+import { IBaseEquipment, EquipmentType, CompoundOn, EquipmentSubType } from "../../models/equipment";
 import { MonsterRace, MonsterType } from "../../models/monster";
 
 export const cards: IBaseEquipment[] = [
@@ -1076,5 +1076,50 @@ export const cards: IBaseEquipment[] = [
     penetrationPercent: 0,
     prefix: 'Penetration',
     script: (character: Character2, _this: IBaseEquipment): void => { }
+  },
+  {
+    id: 4574,
+    name: 'General Daehyon Card',
+    type: EquipmentType.CARD,
+    subType: null,
+    location: null,
+    compoundOn: CompoundOn.WEAPON,
+    baseDef: 0,
+    baseATK: 0,
+    level: 1,
+    equipUpgradeValue: 0,
+    str: 0,
+    agi: 0,
+    vit: 0,
+    int: 0,
+    dex: 0,
+    luk: 0,
+    hpModA: 0,
+    additionAtk: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+      atkPercent: 0
+    },
+    additionDef: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+      atkPercent: 0
+    },
+    eATK: 0,
+    cATK: 0,
+    criticalPercent: 0,
+    penetrationPercent: 0,
+    prefix: 'Sword Master',
+    script: (character: Character2, _this: IBaseEquipment): void => {
+      _this.eATK = 0;
+      
+      if (character.rightHand?.subType === EquipmentSubType.TWO_HANDED_SWORD) {
+        _this.eATK = 100;
+      }
+    }
   },
 ];
