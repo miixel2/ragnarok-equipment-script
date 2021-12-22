@@ -32,14 +32,12 @@ export const armors: IBaseEquipment[] = [
       element: 0,
       race: 0,
       class: 0,
-      atkPercent: 0
     },
     additionDef: {
       size: 0,
       element: 0,
       race: 0,
       class: 0,
-      atkPercent: 0
     },
     eATK: 20,
     cATK: 0,
@@ -76,14 +74,12 @@ export const armors: IBaseEquipment[] = [
       element: 0,
       race: 0,
       class: 0,
-      atkPercent: 0
     },
     additionDef: {
       size: 0,
       element: 0,
       race: 0,
       class: 0,
-      atkPercent: 0
     },
     eATK: 0,
     cATK: 0,
@@ -130,14 +126,12 @@ export const armors: IBaseEquipment[] = [
       element: 0,
       race: 0,
       class: 0,
-      atkPercent: 0
     },
     additionDef: {
       size: 0,
       element: 0,
       race: 0,
       class: 0,
-      atkPercent: 0
     },
     eATK: 0,
     cATK: 0,
@@ -146,7 +140,7 @@ export const armors: IBaseEquipment[] = [
     script: (character: Character2, _this: IBaseEquipment): void => {
       _this.penetrationPercent = 0;
       _this.luk = 0;
-      _this.additionAtk.atkPercent = 0;
+      _this.additionAtk.class = 0;
       _this.hpModB = 0;
 
       if ([MonsterRace.DEMI_HUMAN, MonsterRace.DEMON, MonsterRace.UNDEAD].includes(character.monster.race)) {
@@ -168,8 +162,8 @@ export const armors: IBaseEquipment[] = [
         _this.hpModB = 0.1;
         _this.hpModB = Number((new Big(_this.equipUpgradeValue)).mul(0.01).plus(_this.hpModB).valueOf());
 
-        _this.additionAtk.atkPercent = 0.02;
-        _this.additionAtk.atkPercent = Number((new Big(_this.equipUpgradeValue)).mul(0.01).plus(_this.additionAtk.atkPercent).valueOf());
+        _this.additionAtk.class = 0.02;
+        _this.additionAtk.class = Number((new Big(_this.equipUpgradeValue)).mul(0.01).plus(_this.additionAtk.class).valueOf());
       }
     }
   },
@@ -199,7 +193,6 @@ export const armors: IBaseEquipment[] = [
       element: 0,
       race: 0,
       class: 0,
-      atkPercent: 0,
       atkPercent2: 0
     },
     additionDef: {
@@ -207,7 +200,6 @@ export const armors: IBaseEquipment[] = [
       element: 0,
       race: 0,
       class: 0,
-      atkPercent: 0
     },
     eATK: 0,
     cATK: 0,
@@ -278,14 +270,12 @@ export const armors: IBaseEquipment[] = [
       element: 0,
       race: 0,
       class: 0,
-      atkPercent: 0
     },
     additionDef: {
       size: 0,
       element: 0,
       race: 0,
       class: 0,
-      atkPercent: 0
     },
     eATK: 0,
     cATK: 0,
@@ -355,14 +345,12 @@ export const armors: IBaseEquipment[] = [
       element: 0,
       race: 0,
       class: 0,
-      atkPercent: 0
     },
     additionDef: {
       size: 0,
       element: 0,
       race: 0,
       class: 0,
-      atkPercent: 0
     },
     eATK: 0,
     cATK: 0,

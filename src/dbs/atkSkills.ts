@@ -98,5 +98,53 @@ export const atkSkills: IAtkSkill[] = [
       // return Number(new Big(character.class.baseLv).div(120).mul(_this.skillPercent));
       return Number(new Big(_this.skillPercent).mul(character.class.baseLv).div(120));
     }
-  }
+  },
+  {
+    id: 62,
+    name: 'Bowling Bash',
+    maxLevel: 10,
+    classActives: [ClassKey.RuneKnight],
+    level: [
+      {
+        level: 1,
+        skillPercent: 1.4
+      },
+      {
+        level: 2,
+        skillPercent: 1.8
+      },
+      {
+        level: 3,
+        skillPercent: 2.2
+      },
+      {
+        level: 4,
+        skillPercent: 2.6
+      },
+      {
+        level: 5,
+        skillPercent: 3
+      },
+      {
+        level: 6,
+        skillPercent: 3.4
+      },
+      {
+        level: 7,
+        skillPercent: 3.8
+      },
+      {
+        level: 8,
+        skillPercent: 4.2
+      },
+      {
+        level: 9,
+        skillPercent: 4.6
+      },
+      {
+        level: 10,
+        skillPercent: 5
+      }
+    ],
+  },
 ];

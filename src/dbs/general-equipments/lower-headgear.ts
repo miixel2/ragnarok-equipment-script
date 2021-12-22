@@ -27,7 +27,6 @@ export const lowerHeadgear: IBaseEquipment[] = [
       element: 0,
       race: 0,
       class: 0,
-      atkPercent: 0,
       atkPercent2: 0
     },
     additionDef: {
@@ -35,7 +34,6 @@ export const lowerHeadgear: IBaseEquipment[] = [
       element: 0,
       race: 0,
       class: 0,
-      atkPercent: 0
     },
     eATK: 0,
     cATK: 0,
@@ -86,14 +84,12 @@ export const lowerHeadgear: IBaseEquipment[] = [
       element: 0,
       race: 0,
       class: 0,
-      atkPercent: 0
     },
     additionDef: {
       size: 0,
       element: 0,
       race: 0,
       class: 0,
-      atkPercent: 0
     },
     eATK: 0,
     cATK: 0,
@@ -140,14 +136,12 @@ export const lowerHeadgear: IBaseEquipment[] = [
       element: 0,
       race: 0,
       class: 0,
-      atkPercent: 0
     },
     additionDef: {
       size: 0,
       element: 0,
       race: 0,
       class: 0,
-      atkPercent: 0
     },
     eATK: 10,
     cATK: 0,
@@ -179,14 +173,12 @@ export const lowerHeadgear: IBaseEquipment[] = [
       element: 0,
       race: 0,
       class: 0,
-      atkPercent: 0
     },
     additionDef: {
       size: 0,
       element: 0,
       race: 0,
       class: 0,
-      atkPercent: 0
     },
     eATK: 0,
     cATK: 0,
@@ -216,14 +208,12 @@ export const lowerHeadgear: IBaseEquipment[] = [
       element: 0,
       race: 0,
       class: 0,
-      atkPercent: 0
     },
     additionDef: {
       size: 0,
       element: 0,
       race: 0,
       class: 0,
-      atkPercent: 0
     },
     eATK: 0,
     cATK: 0,
@@ -255,14 +245,12 @@ export const lowerHeadgear: IBaseEquipment[] = [
       element: 0,
       race: 0,
       class: 0,
-      atkPercent: 0
     },
     additionDef: {
       size: 0,
       element: 0,
       race: 0,
       class: 0,
-      atkPercent: 0
     },
     eATK: 5,
     cATK: 0,
@@ -292,14 +280,12 @@ export const lowerHeadgear: IBaseEquipment[] = [
       element: 0,
       race: 0,
       class: 0,
-      atkPercent: 0
     },
     additionDef: {
       size: 0,
       element: 0,
       race: 0,
       class: 0,
-      atkPercent: 0
     },
     eATK: 0,
     cATK: 0,
@@ -329,14 +315,12 @@ export const lowerHeadgear: IBaseEquipment[] = [
       element: 0,
       race: 0,
       class: 0,
-      atkPercent: 0
     },
     additionDef: {
       size: 0,
       element: 0,
       race: 0,
       class: 0,
-      atkPercent: 0
     },
     eATK: 0,
     cATK: 0,
@@ -366,14 +350,12 @@ export const lowerHeadgear: IBaseEquipment[] = [
       element: 0,
       race: 0,
       class: 0,
-      atkPercent: 0
     },
     additionDef: {
       size: 0,
       element: 0,
       race: 0,
       class: 0,
-      atkPercent: 0
     },
     eATK: 0,
     cATK: 0,
@@ -415,7 +397,6 @@ export const lowerHeadgear: IBaseEquipment[] = [
       element: 0,
       race: 0,
       class: 0,
-      atkPercent: 0,
       atkPercent2: 0
     },
     additionDef: {
@@ -423,7 +404,6 @@ export const lowerHeadgear: IBaseEquipment[] = [
       element: 0,
       race: 0,
       class: 0,
-      atkPercent: 0
     },
     eATK: 0,
     cATK: 0,

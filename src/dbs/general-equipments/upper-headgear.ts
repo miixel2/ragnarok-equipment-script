@@ -27,7 +27,6 @@ export const upperHeadgear: IBaseEquipment[] = [
       element: 0,
       race: 0,
       class: 0,
-      atkPercent: 0,
       atkPercent2: 0
     },
     additionDef: {
@@ -35,7 +34,6 @@ export const upperHeadgear: IBaseEquipment[] = [
       element: 0,
       race: 0,
       class: 0,
-      atkPercent: 0
     },
     eATK: 0,
     cATK: 0,
@@ -80,7 +78,6 @@ export const upperHeadgear: IBaseEquipment[] = [
       element: 0,
       race: 0,
       class: 0,
-      atkPercent: 0,
       atkPercent2: 0
     },
     additionDef: {
@@ -88,7 +85,6 @@ export const upperHeadgear: IBaseEquipment[] = [
       element: 0,
       race: 0,
       class: 0,
-      atkPercent: 0
     },
     eATK: 0,
     cATK: 0,
@@ -146,14 +142,12 @@ export const upperHeadgear: IBaseEquipment[] = [
       element: 0,
       race: 0,
       class: 0,
-      atkPercent: 0
     },
     additionDef: {
       size: 0,
       element: 0,
       race: 0,
       class: 0,
-      atkPercent: 0
     },
     eATK: 0,
     cATK: 0,
@@ -200,14 +194,12 @@ export const upperHeadgear: IBaseEquipment[] = [
       element: 0,
       race: 0,
       class: 0,
-      atkPercent: 0
     },
     additionDef: {
       size: 0,
       element: 0,
       race: 0,
       class: 0,
-      atkPercent: 0
     },
     eATK: 0,
     cATK: 0,
@@ -249,21 +241,19 @@ export const upperHeadgear: IBaseEquipment[] = [
       element: 0,
       race: 0,
       class: 0,
-      atkPercent: 0
     },
     additionDef: {
       size: 0,
       element: 0,
       race: 0,
       class: 0,
-      atkPercent: 0
     },
     eATK: 0,
     cATK: 0,
     criticalPercent: 0,
     penetrationPercent: 0,
     script: (character: Character2, _this: IBaseEquipment): void => {
-      _this.additionAtk.atkPercent = 0;
+      _this.additionAtk.class = 0;
       _this.penetrationPercent = 0;
 
       const baseStr = character.class.str0;
@@ -273,11 +263,11 @@ export const upperHeadgear: IBaseEquipment[] = [
 
       const upgrade = _this.equipUpgradeValue;
       if (upgrade >= 9) {
-        _this.additionAtk.atkPercent = 0.02;
+        _this.additionAtk.class = 0.02;
         _this.penetrationPercent = Number((new Big(_this.penetrationPercent)).plus(0.05).valueOf());
 
         if (upgrade >= 12) {
-          _this.additionAtk.atkPercent = Number((new Big(_this.additionAtk.atkPercent)).plus(0.03).valueOf());
+          _this.additionAtk.class = Number((new Big(_this.additionAtk.class)).plus(0.03).valueOf());
           _this.penetrationPercent = Number((new Big(_this.penetrationPercent)).plus(0.05).valueOf());
         }
       }
@@ -306,14 +296,12 @@ export const upperHeadgear: IBaseEquipment[] = [
       element: 0,
       race: 0,
       class: 0,
-      atkPercent: 0
     },
     additionDef: {
       size: 0,
       element: 0,
       race: 0,
       class: 0,
-      atkPercent: 0
     },
     eATK: 0,
     cATK: 0,
@@ -344,14 +332,12 @@ export const upperHeadgear: IBaseEquipment[] = [
       element: 0,
       race: 0,
       class: 0,
-      atkPercent: 0
     },
     additionDef: {
       size: 0,
       element: 0,
       race: 0,
       class: 0,
-      atkPercent: 0
     },
     eATK: 0,
     cATK: 0,
@@ -405,14 +391,12 @@ export const upperHeadgear: IBaseEquipment[] = [
       element: 0,
       race: 0,
       class: 0.05,
-      atkPercent: 0
     },
     additionDef: {
       size: 0,
       element: 0,
       race: 0,
       class: 0,
-      atkPercent: 0
     },
     eATK: 0,
     cATK: 0,

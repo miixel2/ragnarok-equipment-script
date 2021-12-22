@@ -28,14 +28,12 @@ export const cards: IBaseEquipment[] = [
       element: 0,
       race: 0,
       class: 0,
-      atkPercent: 0
     },
     additionDef: {
       size: 0,
       element: 0,
       race: 0,
       class: 0,
-      atkPercent: 0
     },
     eATK: 20,
     cATK: 0,
@@ -66,14 +64,12 @@ export const cards: IBaseEquipment[] = [
       element: 0,
       race: 0,
       class: 0,
-      atkPercent: 0
     },
     additionDef: {
       size: 0,
       element: 0,
       race: 0,
       class: 0,
-      atkPercent: 0
     },
     eATK: 10,
     cATK: 0,
@@ -104,14 +100,12 @@ export const cards: IBaseEquipment[] = [
       element: 0,
       race: 0,
       class: 0,
-      atkPercent: 0
     },
     additionDef: {
       size: 0,
       element: 0,
       race: 0,
       class: 0,
-      atkPercent: 0
     },
     eATK: 25,
     cATK: 0,
@@ -142,14 +136,12 @@ export const cards: IBaseEquipment[] = [
       element: 0,
       race: 0,
       class: 0,
-      atkPercent: 0
     },
     additionDef: {
       size: 0,
       element: 0,
       race: 0,
       class: 0,
-      atkPercent: 0
     },
     eATK: 15,
     cATK: 0,
@@ -180,14 +172,12 @@ export const cards: IBaseEquipment[] = [
       element: 0,
       race: 0,
       class: 0,
-      atkPercent: 0
     },
     additionDef: {
       size: 0,
       element: 0,
       race: 0,
       class: 0,
-      atkPercent: 0
     },
     eATK: 0,
     cATK: 0,
@@ -221,14 +211,12 @@ export const cards: IBaseEquipment[] = [
       element: 0,
       race: 0,
       class: 0,
-      atkPercent: 0
     },
     additionDef: {
       size: 0,
       element: 0,
       race: 0,
       class: 0,
-      atkPercent: 0
     },
     eATK: 0,
     cATK: 0,
@@ -265,14 +253,12 @@ export const cards: IBaseEquipment[] = [
       element: 0,
       race: 0,
       class: 0,
-      atkPercent: 0
     },
     additionDef: {
       size: 0,
       element: 0,
       race: 0,
       class: 0,
-      atkPercent: 0
     },
     eATK: 15,
     cATK: 0,
@@ -303,14 +289,12 @@ export const cards: IBaseEquipment[] = [
       element: 0,
       race: 0,
       class: 0,
-      atkPercent: 0
     },
     additionDef: {
       size: 0,
       element: 0,
       race: 0,
       class: 0,
-      atkPercent: 0
     },
     eATK: 0,
     cATK: 0,
@@ -341,14 +325,12 @@ export const cards: IBaseEquipment[] = [
       element: 0,
       race: 0,
       class: 0,
-      atkPercent: 0
     },
     additionDef: {
       size: 0,
       element: 0,
       race: 0,
       class: 0,
-      atkPercent: 0
     },
     eATK: 0,
     cATK: 0,
@@ -389,14 +371,12 @@ export const cards: IBaseEquipment[] = [
       element: 0,
       race: 0,
       class: 0,
-      atkPercent: 0
     },
     additionDef: {
       size: 0,
       element: 0,
       race: 0,
       class: 0,
-      atkPercent: 0
     },
     eATK: 0,
     cATK: 0,
@@ -427,14 +407,12 @@ export const cards: IBaseEquipment[] = [
       element: 0,
       race: 0,
       class: 0,
-      atkPercent: 0
     },
     additionDef: {
       size: 0,
       element: 0,
       race: 0,
       class: 0,
-      atkPercent: 0
     },
     eATK: 0,
     cATK: 0,
@@ -465,14 +443,12 @@ export const cards: IBaseEquipment[] = [
       element: 0,
       race: 0,
       class: 0,
-      atkPercent: 0
     },
     additionDef: {
       size: 0,
       element: 0,
       race: 0,
       class: 0,
-      atkPercent: 0
     },
     options: {
       ignoreSizePenalty: true
@@ -505,15 +481,13 @@ export const cards: IBaseEquipment[] = [
       size: 0,
       element: 0,
       race: 0,
-      class: 0,
-      atkPercent: 0
+      class: 0.2,
     },
     additionDef: {
       size: 0,
       element: 0,
       race: 0,
       class: 0,
-      atkPercent: 0.2
     },
     eATK: 0,
     cATK: 0,
@@ -544,14 +518,12 @@ export const cards: IBaseEquipment[] = [
       element: 0,
       race: 0,
       class: 0,
-      atkPercent: 0
     },
     additionDef: {
       size: 0,
       element: 0,
       race: 0,
       class: 0,
-      atkPercent: 0
     },
     eATK: 0,
     cATK: 0,
@@ -559,10 +531,10 @@ export const cards: IBaseEquipment[] = [
     penetrationPercent: 0,
     prefix: 'Half Blast',
     script: (character: Character2, _this: IBaseEquipment): void => {
-      _this.additionAtk.atkPercent = 0.1;
+      _this.additionAtk.class = 0.1;
       const upgrade = _this.equipUpgradeValue;
       if (upgrade >= 15) {
-        _this.additionAtk.atkPercent = Number((new Big(_this.additionAtk.atkPercent)).plus(0.05).valueOf());
+        _this.additionAtk.class = Number((new Big(_this.additionAtk.class)).plus(0.05).valueOf());
       }
     }
   },
@@ -588,14 +560,12 @@ export const cards: IBaseEquipment[] = [
       element: 0,
       race: 0,
       class: 0,
-      atkPercent: 0
     },
     additionDef: {
       size: 0,
       element: 0,
       race: 0,
       class: 0,
-      atkPercent: 0
     },
     eATK: 0,
     cATK: 0,
@@ -603,11 +573,11 @@ export const cards: IBaseEquipment[] = [
     penetrationPercent: 0,
     suffix: 'of Hate',
     script: (character: Character2, _this: IBaseEquipment): void => {
-      _this.additionAtk.atkPercent = 0.01;
+      _this.additionAtk.class = 0.01;
 
       const upgrade = _this.equipUpgradeValue;
       const tempPercentUpgrade = Number((new Big(Math.floor(upgrade / 2))).mul(0.01).valueOf());
-      _this.additionAtk.atkPercent = Number((new Big(_this.additionAtk.atkPercent)).plus(tempPercentUpgrade).valueOf());
+      _this.additionAtk.class = Number((new Big(_this.additionAtk.class)).plus(tempPercentUpgrade).valueOf());
     }
   },
   {
@@ -632,7 +602,6 @@ export const cards: IBaseEquipment[] = [
       element: 0,
       race: 0,
       class: 0,
-      atkPercent: 0,
       atkPercent2: 0.1
     },
     additionDef: {
@@ -640,7 +609,6 @@ export const cards: IBaseEquipment[] = [
       element: 0,
       race: 0,
       class: 0,
-      atkPercent: 0,
       atkPercent2: 0
     },
     eATK: 0,
@@ -672,14 +640,12 @@ export const cards: IBaseEquipment[] = [
       element: 0,
       race: 0,
       class: 0,
-      atkPercent: 0
     },
     additionDef: {
       size: 0,
       element: 0,
       race: 0,
       class: 0,
-      atkPercent: 0
     },
     eATK: 0,
     cATK: 0,
@@ -719,15 +685,13 @@ export const cards: IBaseEquipment[] = [
       size: 0,
       element: 0,
       race: 0,
-      class: 0,
-      atkPercent: 0
+      class: 0.15,
     },
     additionDef: {
       size: 0,
       element: 0,
       race: 0,
       class: 0,
-      atkPercent: 0.15
     },
     eATK: 0,
     cATK: 0,
@@ -758,14 +722,12 @@ export const cards: IBaseEquipment[] = [
       element: 0,
       race: 0,
       class: 0,
-      atkPercent: 0
     },
     additionDef: {
       size: 0,
       element: 0,
       race: 0,
-      class: 0,
-      atkPercent: 0.2
+      class: 0.2,
     },
     eATK: 0,
     cATK: 0,
@@ -796,14 +758,12 @@ export const cards: IBaseEquipment[] = [
       element: 0,
       race: 0,
       class: 0,
-      atkPercent: 0
     },
     additionDef: {
       size: 0,
       element: 0,
       race: 0,
       class: 0,
-      atkPercent: 0
     },
     eATK: 0,
     cATK: 0,
@@ -842,14 +802,12 @@ export const cards: IBaseEquipment[] = [
       element: 0,
       race: 0,
       class: 0,
-      atkPercent: 0
     },
     additionDef: {
       size: 0,
       element: 0,
       race: 0,
       class: 0,
-      atkPercent: 0
     },
     eATK: 0,
     cATK: 0,
@@ -885,14 +843,12 @@ export const cards: IBaseEquipment[] = [
       element: 0,
       race: 0,
       class: 0,
-      atkPercent: 0
     },
     additionDef: {
       size: 0,
       element: 0,
       race: 0,
       class: 0,
-      atkPercent: 0
     },
     eATK: 0,
     cATK: 0,
@@ -924,14 +880,12 @@ export const cards: IBaseEquipment[] = [
       element: 0,
       race: 0,
       class: 0,
-      atkPercent: 0
     },
     additionDef: {
       size: 0,
       element: 0,
       race: 0,
       class: 0,
-      atkPercent: 0
     },
     eATK: 0,
     cATK: 0,
@@ -963,14 +917,12 @@ export const cards: IBaseEquipment[] = [
       element: 0,
       race: 0,
       class: 0,
-      atkPercent: 0
     },
     additionDef: {
       size: 0,
       element: 0,
       race: 0,
       class: 0,
-      atkPercent: 0
     },
     eATK: 0,
     cATK: 0,
@@ -1012,14 +964,12 @@ export const cards: IBaseEquipment[] = [
       element: 0,
       race: 0,
       class: 0,
-      atkPercent: 0
     },
     additionDef: {
       size: 0,
       element: 0,
       race: 0,
       class: 0,
-      atkPercent: 0
     },
     eATK: 0,
     cATK: 0,
@@ -1061,14 +1011,12 @@ export const cards: IBaseEquipment[] = [
       element: 0,
       race: 0,
       class: 0,
-      atkPercent: 0
     },
     additionDef: {
       size: 0,
       element: 0,
       race: 0,
       class: 0,
-      atkPercent: 0
     },
     eATK: 0,
     cATK: 0,
@@ -1100,14 +1048,12 @@ export const cards: IBaseEquipment[] = [
       element: 0,
       race: 0,
       class: 0,
-      atkPercent: 0
     },
     additionDef: {
       size: 0,
       element: 0,
       race: 0,
       class: 0,
-      atkPercent: 0
     },
     eATK: 0,
     cATK: 0,
@@ -1116,7 +1062,7 @@ export const cards: IBaseEquipment[] = [
     prefix: 'Sword Master',
     script: (character: Character2, _this: IBaseEquipment): void => {
       _this.eATK = 0;
-      
+
       if (character.rightHand?.subType === EquipmentSubType.TWO_HANDED_SWORD) {
         _this.eATK = 100;
       }

@@ -25,14 +25,12 @@ export const shadowPendants: IBaseEquipment[] = [
       element: 0,
       race: 0,
       class: 0,
-      atkPercent: 0
     },
     additionDef: {
       size: 0,
       element: 0,
       race: 0,
       class: 0,
-      atkPercent: 0
     },
     eATK: 0,
     cATK: 0,
@@ -68,14 +66,12 @@ export const shadowPendants: IBaseEquipment[] = [
       element: 0,
       race: 0,
       class: 0,
-      atkPercent: 0
     },
     additionDef: {
       size: 0,
       element: 0,
       race: 0,
       class: 0,
-      atkPercent: 0
     },
     eATK: 15,
     cATK: 0,
@@ -105,14 +101,12 @@ export const shadowPendants: IBaseEquipment[] = [
       element: 0,
       race: 0,
       class: 0,
-      atkPercent: 0
     },
     additionDef: {
       size: 0,
       element: 0,
       race: 0,
       class: 0,
-      atkPercent: 0
     },
     eATK: 15,
     cATK: 0,

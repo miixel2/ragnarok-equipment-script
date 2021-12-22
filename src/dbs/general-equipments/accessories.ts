@@ -29,7 +29,6 @@ export const accessories: IBaseEquipment[] = [
       element: 0,
       race: 0,
       class: 0,
-      atkPercent: 0,
       atkPercent2: 0.06
     },
     additionDef: {
@@ -37,7 +36,6 @@ export const accessories: IBaseEquipment[] = [
       element: 0,
       race: 0,
       class: 0,
-      atkPercent: 0
     },
     eATK: 0,
     cATK: 0,
@@ -67,14 +65,12 @@ export const accessories: IBaseEquipment[] = [
       element: 0,
       race: 0,
       class: 0,
-      atkPercent: 0
     },
     additionDef: {
       size: 0,
       element: 0,
       race: 0,
       class: 0,
-      atkPercent: 0
     },
     eATK: 0,
     cATK: 0,
@@ -105,14 +101,12 @@ export const accessories: IBaseEquipment[] = [
       element: 0,
       race: 0,
       class: 0,
-      atkPercent: 0
     },
     additionDef: {
       size: 0,
       element: 0,
       race: 0,
       class: 0,
-      atkPercent: 0
     },
     eATK: 0,
     cATK: 0,
@@ -150,14 +144,12 @@ export const accessories: IBaseEquipment[] = [
       element: 0,
       race: 0,
       class: 0,
-      atkPercent: 0
     },
     additionDef: {
       size: 0,
       element: 0,
       race: 0,
       class: 0,
-      atkPercent: 0
     },
     eATK: 25,
     cATK: 0,
@@ -165,7 +157,7 @@ export const accessories: IBaseEquipment[] = [
     penetrationPercent: 0,
     script: (character: Character2, _this: IBaseEquipment): void => {
 
-      _this.additionAtk.atkPercent = 0;
+      _this.additionAtk.class = 0;
       _this.additionAtk.atkPercent2 = 0;
       _this.additionAtk.size = 0;
       _this.criticalPercent = 0;
@@ -234,14 +226,12 @@ export const accessories: IBaseEquipment[] = [
       element: 0,
       race: 0,
       class: 0.07,
-      atkPercent: 0
     },
     additionDef: {
       size: 0,
       element: 0,
       race: 0,
       class: 0,
-      atkPercent: 0
     },
     eATK: 0,
     cATK: 0,
@@ -272,14 +262,12 @@ export const accessories: IBaseEquipment[] = [
       element: 0,
       race: 0,
       class: 0,
-      atkPercent: 0
     },
     additionDef: {
       size: 0,
       element: 0,
       race: 0,
       class: 0,
-      atkPercent: 0
     },
     eATK: 0,
     cATK: 0,
@@ -315,14 +303,12 @@ export const accessories: IBaseEquipment[] = [
       element: 0,
       race: 0,
       class: 0,
-      atkPercent: 0
     },
     additionDef: {
       size: 0,
       element: 0,
       race: 0,
       class: 0,
-      atkPercent: 0
     },
     eATK: 0,
     cATK: 0,
@@ -352,14 +338,12 @@ export const accessories: IBaseEquipment[] = [
       element: 0,
       race: 0,
       class: 0,
-      atkPercent: 0
     },
     additionDef: {
       size: 0,
       element: 0,
       race: 0,
       class: 0,
-      atkPercent: 0
     },
     eATK: 0,
     cATK: 0,
@@ -404,15 +388,13 @@ export const accessories: IBaseEquipment[] = [
       size: 0,
       element: 0,
       race: 0,
-      class: 0,
-      atkPercent: 0.06
+      class: 0.06,
     },
     additionDef: {
       size: 0,
       element: 0,
       race: 0,
       class: 0,
-      atkPercent: 0
     },
     eATK: 0,
     cATK: 0,
@@ -442,15 +424,13 @@ export const accessories: IBaseEquipment[] = [
       size: 0,
       element: 0,
       race: 0,
-      class: 0,
-      atkPercent: 0.06
+      class: 0.06,
     },
     additionDef: {
       size: 0,
       element: 0,
       race: 0,
       class: 0,
-      atkPercent: 0
     },
     eATK: 0,
     cATK: 0,
@@ -485,14 +465,12 @@ export const accessories: IBaseEquipment[] = [
       element: 0,
       race: 0,
       class: 0,
-      atkPercent: 0
     },
     additionDef: {
       size: 0,
       element: 0,
       race: 0,
       class: 0,
-      atkPercent: 0
     },
     eATK: 0,
     cATK: 0,
@@ -523,14 +501,12 @@ export const accessories: IBaseEquipment[] = [
       element: 0,
       race: 0,
       class: 0,
-      atkPercent: 0
     },
     additionDef: {
       size: 0,
       element: 0,
       race: 0,
       class: 0,
-      atkPercent: 0
     },
     eATK: 0,
     cATK: 0,

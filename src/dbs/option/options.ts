@@ -40,14 +40,12 @@ export const ignoreSizePenalty: IBaseEquipment = {
     element: 0,
     race: 0,
     class: 0,
-    atkPercent: 0
   },
   additionDef: {
     size: 0,
     element: 0,
     race: 0,
     class: 0,
-    atkPercent: 0
   },
   options: {
     ignoreSizePenalty: true
