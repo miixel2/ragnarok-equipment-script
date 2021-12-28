@@ -3,7 +3,7 @@ import { Character2 } from "../../models/character2";
 import { ClassKey } from '../../models/class';
 import { E_Element } from '../../models/element';
 import { IBaseEquipment, EquipmentType, CompoundOn, EquipmentSubType } from "../../models/equipment";
-import { MonsterRace, MonsterType } from "../../models/monster";
+import { MonsterRace, MonsterType, Scale } from "../../models/monster";
 
 export const cards: IBaseEquipment[] = [
   {
@@ -1065,6 +1065,60 @@ export const cards: IBaseEquipment[] = [
 
       if (character.rightHand?.subType === EquipmentSubType.TWO_HANDED_SWORD) {
         _this.eATK = 100;
+      }
+    }
+  },
+  {
+    id: 4609,
+    name: 'Khalitzburg Knightage Card',
+    type: EquipmentType.CARD,
+    subType: null,
+    location: null,
+    compoundOn: CompoundOn.SHIELD,
+    baseDef: 20,
+    baseATK: 0,
+    level: 1,
+    equipUpgradeValue: 0,
+    str: 0,
+    agi: 0,
+    vit: 0,
+    int: 0,
+    dex: 0,
+    luk: 0,
+    hpModA: 0,
+    additionAtk: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    additionDef: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    eATK: 0,
+    cATK: 0,
+    criticalPercent: 0,
+    penetrationPercent: 0,
+    prefix: 'Knight',
+    script: (character: Character2, _this: IBaseEquipment): void => {
+      _this.additionAtk.size = 0;
+
+      let hasCard = false;
+      if (character.rightHand?.slot1?.id === 4608) {
+        hasCard = true;
+      } else if (character.rightHand?.slot2?.id === 4608) {
+        hasCard = true;
+      } else if (character.rightHand?.slot3?.id === 4608) {
+        hasCard = true;
+      } else if (character.rightHand?.slot4?.id === 4608) {
+        hasCard = true;
+      }
+
+      if (hasCard && [Scale.MEDIUM, Scale.LARGE].includes(character.monster?.scale)) {
+        _this.additionAtk.size = 0.15;
       }
     }
   },

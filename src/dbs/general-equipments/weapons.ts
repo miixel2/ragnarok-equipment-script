@@ -1,4 +1,3 @@
-// import Big from 'big.js';
 import Big from 'big.js';
 import { Character2 } from '../../models/character2';
 import { ClassKey } from '../../models/class';
