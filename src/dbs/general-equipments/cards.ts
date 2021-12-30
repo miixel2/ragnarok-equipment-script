@@ -190,6 +190,45 @@ export const cards: IBaseEquipment[] = [
     }
   },
   {
+    id: 4588,
+    name: 'Wakwak Card',
+    type: EquipmentType.CARD,
+    subType: null,
+    location: null,
+    compoundOn: CompoundOn.GARMENT,
+    baseDef: 0,
+    baseATK: 0,
+    level: 1,
+    equipUpgradeValue: 0,
+    str: 0,
+    agi: 0,
+    vit: 0,
+    int: 0,
+    dex: 0,
+    luk: 0,
+    additionAtk: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    additionDef: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    eATK: 0,
+    cATK: 0,
+    criticalPercent: 0,
+    penetrationPercent: 0,
+    suffix: 'of Power',
+    script: (character: Character2, _this: IBaseEquipment): void => {
+      const baseStr = character.class.str0;
+      _this.eATK = Number((new Big(Math.floor((baseStr) / 10))).mul(5).valueOf());
+    }
+  },
+  {
     id: 4140,
     name: 'Abysmal Knight Card',
     type: EquipmentType.CARD,
@@ -721,13 +760,13 @@ export const cards: IBaseEquipment[] = [
       size: 0,
       element: 0,
       race: 0,
-      class: 0,
+      class: 0.2,
     },
     additionDef: {
       size: 0,
       element: 0,
       race: 0,
-      class: 0.2,
+      class: 0,
     },
     eATK: 0,
     cATK: 0,
@@ -816,7 +855,7 @@ export const cards: IBaseEquipment[] = [
     prefix: 'Dancing',
     script: (character: Character2, _this: IBaseEquipment): void => {
       _this.additionAtk.element = 0;
-      if (character.monster && character.monster.element === E_Element.NEUTRAL) {
+      if (character.monster && character.monster.element === E_Element.NEUTRAL && character.leftAccessory?.slot1?.id === 27108) {
         _this.additionAtk.element = 0.2;
       }
     }
