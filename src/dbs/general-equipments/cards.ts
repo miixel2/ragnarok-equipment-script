@@ -1102,7 +1102,7 @@ export const cards: IBaseEquipment[] = [
     script: (character: Character2, _this: IBaseEquipment): void => {
       _this.eATK = 0;
 
-      if (character.rightHand?.subType === EquipmentSubType.TWO_HANDED_SWORD) {
+      if (character.rightHand?.subType === EquipmentSubType.TWO_HANDED_SWORD || character.rightHand?.subType === EquipmentSubType.SWORD) {
         _this.eATK = 100;
       }
     }
