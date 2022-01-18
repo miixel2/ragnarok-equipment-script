@@ -11,6 +11,7 @@ interface SkillLevel {
 export interface IAtkSkill {
   id: number;
   name: string;
+  type?: 'melee' | 'range' | 'magic',
   maxLevel: number;
   classActives?: ClassKey[];
   level: SkillLevel[];
@@ -32,6 +33,7 @@ export const atkSkills: IAtkSkill[] = [
   {
     id: 2006,
     name: 'Ignition Break',
+    type: 'melee',
     maxLevel: 5,
     classActives: [ClassKey.RuneKnight],
     level: [
@@ -70,6 +72,7 @@ export const atkSkills: IAtkSkill[] = [
   {
     id: 2022,
     name: 'Cross Impact',
+    type: 'melee',
     maxLevel: 5,
     classActives: [ClassKey.GuillotineCross],
     level: [
@@ -96,12 +99,13 @@ export const atkSkills: IAtkSkill[] = [
     ],
     script: (character: Character2, _this: SkillLevel): number => {
       // return Number(new Big(character.class.baseLv).div(120).mul(_this.skillPercent));
-      return Number(new Big(_this.skillPercent).mul(character.class.baseLv).div(120));
+      return Number(new Big(_this.skillPercent).mul(character.class.baseLv).div(120).valueOf());
     }
   },
   {
     id: 62,
     name: 'Bowling Bash',
+    type: 'melee',
     maxLevel: 10,
     classActives: [ClassKey.RuneKnight],
     level: [
@@ -146,5 +150,38 @@ export const atkSkills: IAtkSkill[] = [
         skillPercent: 5
       }
     ],
+  },
+  {
+    id: 2002,
+    name: 'Sonic Wave',
+    type: 'range',
+    maxLevel: 5,
+    classActives: [ClassKey.RuneKnight],
+    level: [
+      {
+        level: 1,
+        skillPercent: 6
+      },
+      {
+        level: 2,
+        skillPercent: 7
+      },
+      {
+        level: 3,
+        skillPercent: 8
+      },
+      {
+        level: 4,
+        skillPercent: 9
+      },
+      {
+        level: 5,
+        skillPercent: 10
+      }
+    ],
+    script: (character: Character2, _this: SkillLevel): number => {
+      const baseLv = new Big(character.class.baseLv - 100).div(200).plus(1);
+      return Number(new Big(_this.skillPercent).mul(baseLv).valueOf());
+    }
   },
 ];

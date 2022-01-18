@@ -808,6 +808,10 @@ export const weapons: IBaseEquipment[] = [
     script: (character: Character2, _this: IBaseEquipment): void => {
       const upgrade = _this.equipUpgradeValue;
       _this.eATK = Number((new Big(Math.floor(upgrade / 2))).mul(10).valueOf());
+
+      if (character.playerTypeAtk === 2002) {
+        character.buffSkillPercert = Number((new Big(Math.floor(upgrade / 3))).mul(0.1).plus(character.buffSkillPercert).valueOf());
+      }
     }
   },
   {

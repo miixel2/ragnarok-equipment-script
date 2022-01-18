@@ -1,5 +1,6 @@
 import Big from 'big.js';
 import { Character2 } from '../../models/character2';
+import { ClassKey } from '../../models/class';
 import { IBaseEquipment, EquipmentType, EquipmentSubType, EquipmentLocation } from '../../models/equipment';
 
 export const shadowEarrings: IBaseEquipment[] = [
@@ -115,6 +116,7 @@ export const shadowEarrings: IBaseEquipment[] = [
     cATK: 0,
     criticalPercent: 0,
     penetrationPercent: 0,
+    classActives: [ClassKey.RuneKnight],
     script: (character: Character2, _this: IBaseEquipment): void => {
       const upgrade = _this.equipUpgradeValue;
       if(character.shadowLeftHand && character.shadowLeftHand.id === 24250) {

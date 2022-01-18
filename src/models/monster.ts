@@ -29,6 +29,9 @@ export enum MonsterType {
 }
 
 export class Monster {
+  public id: number = 0;
+  public name: string = '';
+  public dbname: string = '';
   public level: number = 0;
   public def: number = 0;
   public vit: number = 0;
@@ -38,7 +41,12 @@ export class Monster {
   public element: E_Element = E_Element.NEUTRAL;
   public elementLv: 1 | 2 | 3 | 4 = 1;
   public scale: Scale = Scale.MEDIUM;
+  public health: number = 0;
+  public baseExperience: number = 0;
+  public jobExperience: number = 0;
+  public hit: number = 0;
 
   public elementMultiplier: number = 1;
   public sizePenalty: 0.5 | 0.75 | 1 = 1;
+  public sizePenaltyLeft: 0.5 | 0.75 | 1 = 1;
 }

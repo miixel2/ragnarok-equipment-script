@@ -1,5 +1,6 @@
 import Big from 'big.js';
 import { Character2 } from '../../models/character2';
+import { ClassKey } from '../../models/class';
 import { IBaseEquipment, EquipmentType, EquipmentSubType, EquipmentLocation } from '../../models/equipment';
 import { MonsterRace } from '../../models/monster';
 
@@ -728,9 +729,15 @@ export const shadowWeapons: IBaseEquipment[] = [
     cATK: 0,
     criticalPercent: 0,
     penetrationPercent: 0,
+    classActives: [ClassKey.RuneKnight],
     script: (character: Character2, _this: IBaseEquipment): void => {
       const upgrade = _this.equipUpgradeValue;
       _this.eATK = upgrade;
+
+      if (character.playerTypeAtk === 2002) {
+        character.buffSkillPercert = Number(new Big(character.buffSkillPercert).plus(0.2).valueOf());
+        character.buffSkillPercert = Number(new Big(upgrade).mul(0.05).plus(character.buffSkillPercert).valueOf());
+      }
     }
   },
   {

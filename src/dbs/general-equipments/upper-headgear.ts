@@ -404,4 +404,53 @@ export const upperHeadgear: IBaseEquipment[] = [
     penetrationPercent: 0,
     script: (character: Character2, _this: IBaseEquipment): void => { }
   },
+  {
+    id: 19269,
+    name: 'Angel of Happiness [1]',
+    type: EquipmentType.ARMOR,
+    subType: EquipmentSubType.HELM,
+    location: EquipmentLocation.UPPER_HEADGEAR,
+    compoundOn: null,
+    slot1Enable: true,
+    baseDef: 2,
+    baseATK: 0,
+    level: 1,
+    equipUpgradeValue: 0,
+    str: 0,
+    agi: 0,
+    vit: 0,
+    int: 0,
+    dex: 0,
+    luk: 0,
+    additionAtk: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    additionDef: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    eATK: 0,
+    cATK: 0,
+    criticalPercent: 0,
+    penetrationPercent: 0,
+    script: (character: Character2, _this: IBaseEquipment): void => {
+      if ([1191, 1195, 1193, 1270, 2917, 2910, 2479, 2478, 2918, 2921, 2923, 3074].includes(character.monster?.id)) {
+        character.mulMeleeAtk = Number(new Big(character.mulMeleeAtk).plus(0.15).valueOf());
+
+        const upgrade = _this.equipUpgradeValue;
+        if (upgrade >= 7) {
+          character.mulMeleeAtk = Number(new Big(character.mulMeleeAtk).plus(0.15).valueOf());
+
+          if (upgrade >= 9) {
+            character.mulMeleeAtk = Number(new Big(character.mulMeleeAtk).plus(0.2).valueOf());
+          }
+        }
+      }
+    }
+  },
 ];

@@ -44,7 +44,15 @@ export const armors: IBaseEquipment[] = [
     criticalPercent: 0,
     penetrationPercent: 0,
     classActives: [ClassKey.RuneKnight],
-    script: (character: Character2, _this: IBaseEquipment): void => { }
+    script: (character: Character2, _this: IBaseEquipment): void => {
+      if (character.playerTypeAtk === 2002
+        && character.garment?.id === 2575
+        && character.shoes?.id === 2476
+        && (character.leftAccessory?.id === 2884 || character.rightAccessory?.id === 2884)
+      ) {
+        character.buffSkillPercert = Number((new Big(character.buffSkillPercert)).plus(1).valueOf());
+      }
+    }
   },
   {
     id: 15128,

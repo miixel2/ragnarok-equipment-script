@@ -1,5 +1,6 @@
 import Big from 'big.js';
 import { Character2 } from "../../models/character2";
+import { ClassKey } from '../../models/class';
 import { IBaseEquipment, EquipmentType, EquipmentSubType, EquipmentLocation } from "../../models/equipment";
 import { MonsterRace } from '../../models/monster';
 
@@ -841,6 +842,42 @@ export const garments: IBaseEquipment[] = [
     criticalPercent: 0,
     penetrationPercent: 0,
     classActives: [],
+    script: (character: Character2, _this: IBaseEquipment): void => { }
+  },
+  {
+    id: 2575,
+    name: `Peuz's Manteau`,
+    type: EquipmentType.ARMOR,
+    subType: EquipmentSubType.GARMENT,
+    location: EquipmentLocation.GARMENT,
+    compoundOn: null,
+    baseDef: 16,
+    baseATK: 0,
+    level: 1,
+    equipUpgradeValue: 0,
+    str: 0,
+    agi: 0,
+    vit: 0,
+    int: 0,
+    dex: 0,
+    luk: 0,
+    additionAtk: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    additionDef: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    eATK: 0,
+    cATK: 0,
+    criticalPercent: 0,
+    penetrationPercent: 0,
+    classActives: [ClassKey.RuneKnight],
     script: (character: Character2, _this: IBaseEquipment): void => { }
   },
 ];
