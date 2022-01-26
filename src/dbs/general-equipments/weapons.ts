@@ -772,7 +772,7 @@ export const weapons: IBaseEquipment[] = [
     name: 'Oriental Sword [2]',
     type: EquipmentType.WEAPON,
     subType: EquipmentSubType.TWO_HANDED_SWORD,
-    location: EquipmentLocation.RIGHT_HAND,
+    location: EquipmentLocation.BOTH_HAND,
     compoundOn: null,
     slot1Enable: true,
     slot2Enable: true,

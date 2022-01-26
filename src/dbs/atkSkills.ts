@@ -11,7 +11,7 @@ interface SkillLevel {
 export interface IAtkSkill {
   id: number;
   name: string;
-  type?: 'melee' | 'range' | 'magic',
+  type?: 'melee' | 'range' | 'magic';
   maxLevel: number;
   classActives?: ClassKey[];
   level: SkillLevel[];

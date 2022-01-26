@@ -1,7 +1,7 @@
 import Big from 'big.js';
-import { Character2 } from "../../models/character2";
+import { Character2 } from '../../models/character2';
 import { ClassKey } from '../../models/class';
-import { IBaseEquipment, EquipmentType, EquipmentSubType, EquipmentLocation } from "../../models/equipment";
+import { IBaseEquipment, EquipmentType, EquipmentSubType, EquipmentLocation } from '../../models/equipment';
 import { MonsterRace } from '../../models/monster';
 
 export const garments: IBaseEquipment[] = [

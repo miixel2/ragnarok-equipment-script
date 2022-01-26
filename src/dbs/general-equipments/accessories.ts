@@ -1,6 +1,7 @@
-import { Character2 } from "../../models/character2";
-import { ClassKey } from "../../models/class";
-import { EquipmentLocation, EquipmentSubType, EquipmentType, IBaseEquipment } from "../../models/equipment";
+import Big from 'big.js';
+import { Character2 } from '../../models/character2';
+import { ClassKey } from '../../models/class';
+import { EquipmentLocation, EquipmentSubType, EquipmentType, IBaseEquipment } from '../../models/equipment';
 
 export const accessories: IBaseEquipment[] = [
   {
@@ -587,5 +588,76 @@ export const accessories: IBaseEquipment[] = [
     penetrationPercent: 0,
     classActives: [ClassKey.RuneKnight],
     script: (character: Character2, _this: IBaseEquipment): void => { }
+  },
+  {
+    id: 28505,
+    name: 'Ring of Devil [1]',
+    type: EquipmentType.ARMOR,
+    subType: EquipmentSubType.ACCESSORY,
+    location: EquipmentLocation.ACCESSORY,
+    compoundOn: null,
+    slot1Enable: true,
+    baseDef: 0,
+    baseATK: 0,
+    level: 1,
+    equipUpgradeValue: 0,
+    str: 0,
+    agi: 0,
+    vit: 0,
+    int: 0,
+    dex: 0,
+    luk: 0,
+    additionAtk: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+      atkPercent2: 0,
+    },
+    additionDef: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    eATK: 0,
+    cATK: 0,
+    criticalPercent: 0,
+    penetrationPercent: 0,
+    classActives: [],
+    script: (character: Character2, _this: IBaseEquipment): void => {
+      _this.additionAtk.class = 0.05;
+      const checkEssence = (id: number) => {
+        return [
+          character.upperHeadgear?.slot1?.id,
+          character.middleHeadgear?.slot1?.id,
+          character.lowerHeadgear?.slot1?.id,
+          character.bodyGear?.slot1?.id,
+          character.rightHand?.slot1?.id,
+          character.rightHand?.slot2?.id,
+          character.rightHand?.slot3?.id,
+          character.rightHand?.slot4?.id,
+          character.leftHand?.slot1?.id,
+          character.leftHand?.slot2?.id,
+          character.leftHand?.slot3?.id,
+          character.leftHand?.slot4?.id,
+          character.garment?.slot1?.id,
+          character.shoes?.slot1?.id,
+          character.rightAccessory?.slot1?.id,
+          character.leftAccessory?.slot1?.id,
+        ].includes(id);
+      };
+
+      // Dark Lord Essence Force 1 (id: 4908)
+      if (checkEssence(4908)) {
+        _this.additionAtk.class = Number(new Big(_this.additionAtk.class).plus(0.05).valueOf());
+      }
+      if (checkEssence(4909)) {
+        _this.additionAtk.class = Number(new Big(_this.additionAtk.class).plus(0.05).valueOf());
+      }
+      if (checkEssence(4910)) {
+        _this.additionAtk.class = Number(new Big(_this.additionAtk.class).plus(0.05).valueOf());
+      }
+    }
   },
 ];
