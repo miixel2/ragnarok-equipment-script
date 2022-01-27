@@ -101,6 +101,7 @@ export class Character2 {
   public buffAtkPercent: number = 0;
   public buffSkillPercert: number = 1;
   public pureAtk: number = 0;
+  public flatDmg: number = 0;
   public mulMeleeAtk: number = 0;
   // FLOOR(WATK * PE%)
   public peATK: number = 0;

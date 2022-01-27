@@ -1,3 +1,4 @@
+import Big from 'big.js';
 import { Character2 } from '../models/character2';
 import { ClassKey } from '../models/class';
 import { EquipmentSubType } from '../models/equipment';
@@ -6,6 +7,7 @@ export interface IBuffSkill {
   id: number;
   level: number;
   name: string;
+  type?: 'skill' | 'item';
 
   eATK?: number;
   mATK?: number;
@@ -162,6 +164,16 @@ export const buffSkills: IBuffSkill[] = [
     classActives: [ClassKey.RuneKnight],
     buffAtkPercent: 2,
     script: (character: Character2, _this: IBuffSkill): void => { }
+  },
+  {
+    id: 12731,
+    name: 'Turisus Runestone',
+    level: 1,
+    type: 'item',
+    classActives: [ClassKey.RuneKnight],
+    script: (character: Character2, _this: IBuffSkill): void => {
+      character.flatDmg = Number(new Big(character.flatDmg).plus(2.5).valueOf());
+    }
   },
   {
     id: 376,

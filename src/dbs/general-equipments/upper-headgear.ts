@@ -42,6 +42,7 @@ export const upperHeadgear: IBaseEquipment[] = [
     script: (character: Character2, _this: IBaseEquipment): void => {
       _this.additionAtk.atkPercent2 = 0;
       _this.criticalPercent = 0;
+      _this.eATK = 0;
 
       const upgrade = _this.equipUpgradeValue;
       _this.eATK = Number((new Big(Math.floor(upgrade / 2))).mul(15).valueOf());
@@ -52,6 +53,10 @@ export const upperHeadgear: IBaseEquipment[] = [
         if (upgrade >= 11) {
           _this.criticalPercent = 0.15;
         }
+      }
+
+      if (character.rightHand?.id === 19263) {
+        _this.eATK = Number((new Big(Math.floor(upgrade / 2))).mul(20).valueOf());
       }
     }
   },

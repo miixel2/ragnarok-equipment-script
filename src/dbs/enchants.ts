@@ -4,7 +4,7 @@ import { IBaseEquipment, EquipmentType, EquipmentSubType, EquipmentLocation, Com
 import { costumeIds } from './costumes';
 
 const headGearLab5 = [18971, 18982];
-const malangdo = [21018, 28010, 1185, 1186, 13412, 13413];
+const malangdo = [21018, 28010, 1185, 1186, 13412, 13413, 1171];
 const tempBoots = [22006, 22011];
 const costumes = costumeIds;
 const mora = [15039, 15037];
