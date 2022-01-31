@@ -406,4 +406,64 @@ export const armors: IBaseEquipment[] = [
     classActives: [],
     script: (character: Character2, _this: IBaseEquipment): void => { }
   },
+  {
+    id: 15212,
+    name: 'YSF01 Plate [1]',
+    type: EquipmentType.ARMOR,
+    subType: EquipmentSubType.ARMOR,
+    location: EquipmentLocation.BODY,
+    compoundOn: null,
+    slot1Enable: true,
+    baseDef: 78,
+    baseATK: 0,
+    level: 1,
+    equipUpgradeValue: 0,
+    str: 0,
+    agi: 0,
+    vit: 0,
+    int: 0,
+    dex: 0,
+    luk: 0,
+    hpModA: 0,
+    spModA: 0,
+    additionAtk: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+      atkPercent2: 0,
+    },
+    additionDef: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    eATK: 0,
+    cATK: 0,
+    criticalPercent: 0,
+    penetrationPercent: 0,
+    classActives: [],
+    script: (character: Character2, _this: IBaseEquipment): void => {
+      const upgrade = _this.equipUpgradeValue;
+      _this.additionAtk.atkPercent2 = 0;
+
+      if (upgrade >= 8) {
+        _this.additionAtk.atkPercent2 = Number((new Big(_this.additionAtk.atkPercent2)).plus(0.05).valueOf());
+
+        if (upgrade >= 11) {
+          _this.additionAtk.atkPercent2 = Number((new Big(_this.additionAtk.atkPercent2)).plus(0.02).valueOf());
+  
+          if (upgrade >= 13) {
+            _this.additionAtk.atkPercent2 = Number((new Big(_this.additionAtk.atkPercent2)).plus(0.04).valueOf());
+          }
+        }
+      }
+
+      if (character.class.str0 >= 125) {
+        const atkBonus = Number((new Big(upgrade)).mul(0.01).valueOf());
+        _this.additionAtk.atkPercent2 = Number((new Big(_this.additionAtk.atkPercent2)).plus(atkBonus).valueOf());
+      }
+    }
+  },
 ];
