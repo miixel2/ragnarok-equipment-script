@@ -1,7 +1,6 @@
 const path = require("path");
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
-const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 const LodashModuleReplacementPlugin = require('lodash-webpack-plugin');
 
 module.exports = {
@@ -49,14 +48,6 @@ module.exports = {
     minimizer: [
       new TerserPlugin({
         extractComments: false,
-      }),
-      new UglifyJsPlugin({
-        uglifyOptions: {
-          output: {
-            // 2. remove comments
-            comments: false,
-          },
-        }
       })
     ],
   },
