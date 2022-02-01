@@ -1,6 +1,5 @@
-import Big from 'big.js';
 import { Character2 } from '../models/character2';
-import { IBaseEquipment, EquipmentType, EquipmentSubType, EquipmentLocation, CompoundOn } from '../models/equipment';
+import { IBaseEquipment, EquipmentType, EquipmentLocation, CompoundOn } from '../models/equipment';
 import { costumeIds } from './costumes';
 
 const headGearLab5 = [18971, 18982];

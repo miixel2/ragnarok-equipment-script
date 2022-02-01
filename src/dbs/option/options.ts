@@ -3,6 +3,7 @@ import { Character2 } from "../../models/character2";
 import { E_Element } from "../../models/element";
 import { EquipmentType, CompoundOn, IBaseEquipment, BaseEquipment } from "../../models/equipment";
 import { MonsterRace } from '../../models/monster';
+import { shadowIds } from '../costumes';
 
 function titleCase(str) {
   str = str.toLowerCase().split(' ');
@@ -17,6 +18,7 @@ const prefixPenetrationText = 'Bypass';
 
 const vmPhysicalId = [28706, 28008, 1450, 16041, 13455, 1400, 21016, 21011];
 const temporalManteausId = [20846, 20963, 20964, 20968];
+const shadowsId = shadowIds;
 
 export const ignoreSizePenalty: IBaseEquipment = {
   id: 2000000,
@@ -285,9 +287,14 @@ const generateatkPercent = Array.from(Array(maxAtkPercent), (x, index) => {
   equipment.name = `ATK +${value}%`;
   equipment.type = EquipmentType.CARD;
   equipment.compoundOn = CompoundOn.ENCHANT;
-  equipment.enchantActives = [...vmPhysicalId];
   equipment.options = option;
   equipment.canSelectOnSlot2 = true;
+
+  if (value <= 3) {
+    equipment.enchantActives = [...vmPhysicalId, ...shadowsId];
+  } else {
+    equipment.enchantActives = [...vmPhysicalId];
+  }
 
   return equipment;
 });
@@ -803,6 +810,12 @@ const generateeAtk = Array.from(Array(maxEAtk), (x, index) => {
   equipment.enchantActives = [...vmPhysicalId];
   equipment.options = option;
   equipment.canSelectOnSlot4 = true;
+
+  if (value <= 15) {
+    equipment.enchantActives = [...vmPhysicalId, ...shadowsId];
+  } else {
+    equipment.enchantActives = [...vmPhysicalId];
+  }
 
   return equipment;
 });
