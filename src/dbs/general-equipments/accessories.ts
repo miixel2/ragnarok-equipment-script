@@ -854,17 +854,19 @@ export const accessories: IBaseEquipment[] = [
       const upgrade = character.rightHand?.equipUpgradeValue || 0;
       if (character.rightHand?.id === 28010) {
         _this.additionAtk.class = Number(new Big(upgrade).mul(0.01).valueOf());
-      
+
         if (upgrade >= 12) {
-          _this.longRangePercent = 0.08;
+          const coreUpgrade = upgrade - 12;
+          _this.longRangePercent = Number(new Big(coreUpgrade + 1).mul(0.08).valueOf());
         }
       }
 
       if (character.rightHand?.id === 21018) {
         _this.criticalPercent = Number(new Big(upgrade).mul(0.01).valueOf());
-      
+
         if (upgrade >= 12 && character.monster?.type === MonsterType.BOSS) {
-          _this.additionAtk.class = 0.15;
+          const coreUpgrade = upgrade - 12;
+          _this.additionAtk.class = Number(new Big(coreUpgrade + 1).mul(0.15).valueOf());
         }
       }
     }
