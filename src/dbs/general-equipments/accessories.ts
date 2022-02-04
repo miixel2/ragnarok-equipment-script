@@ -2,6 +2,7 @@ import Big from 'big.js';
 import { Character2 } from '../../models/character2';
 import { ClassKey } from '../../models/class';
 import { EquipmentLocation, EquipmentSubType, EquipmentType, IBaseEquipment } from '../../models/equipment';
+import { MonsterType } from '../../models/monster';
 
 export const accessories: IBaseEquipment[] = [
   {
@@ -657,6 +658,214 @@ export const accessories: IBaseEquipment[] = [
       }
       if (checkEssence(4910)) {
         _this.additionAtk.class = Number(new Big(_this.additionAtk.class).plus(0.05).valueOf());
+      }
+    }
+  },
+  {
+    id: 28302,
+    name: 'Vesper Core 01 [1]',
+    type: EquipmentType.ARMOR,
+    subType: EquipmentSubType.ACCESSORY,
+    location: EquipmentLocation.ACCESSORY,
+    compoundOn: null,
+    slot1Enable: true,
+    baseDef: 1,
+    baseATK: 0,
+    level: 1,
+    equipUpgradeValue: 0,
+    str: 0,
+    agi: 0,
+    vit: 0,
+    int: 2,
+    dex: 0,
+    luk: 0,
+    spModB: 0.05,
+    additionAtk: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    additionDef: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    eATK: 0,
+    cATK: 0,
+    criticalPercent: 0,
+    penetrationPercent: 0,
+    classActives: [],
+    script: (character: Character2, _this: IBaseEquipment): void => { }
+  },
+  {
+    id: 28303,
+    name: 'Vesper Core 02 [1]',
+    type: EquipmentType.ARMOR,
+    subType: EquipmentSubType.ACCESSORY,
+    location: EquipmentLocation.ACCESSORY,
+    compoundOn: null,
+    slot1Enable: true,
+    baseDef: 1,
+    baseATK: 0,
+    level: 1,
+    equipUpgradeValue: 0,
+    str: 3,
+    agi: 0,
+    vit: 0,
+    int: 0,
+    dex: 0,
+    luk: 0,
+    additionAtk: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    additionDef: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    eATK: 10,
+    cATK: 0,
+    criticalPercent: 0,
+    penetrationPercent: 0,
+    classActives: [],
+    script: (character: Character2, _this: IBaseEquipment): void => { }
+  },
+  {
+    id: 28304,
+    name: 'Vesper Core 03 [1]',
+    type: EquipmentType.ARMOR,
+    subType: EquipmentSubType.ACCESSORY,
+    location: EquipmentLocation.ACCESSORY,
+    compoundOn: null,
+    slot1Enable: true,
+    baseDef: 1,
+    baseATK: 0,
+    level: 1,
+    equipUpgradeValue: 0,
+    str: 0,
+    agi: 3,
+    vit: 0,
+    int: 0,
+    dex: 0,
+    luk: 0,
+    additionAtk: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    additionDef: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    eATK: 0,
+    cATK: 0,
+    criticalPercent: 0,
+    penetrationPercent: 0,
+    classActives: [],
+    script: (character: Character2, _this: IBaseEquipment): void => { }
+  },
+  {
+    id: 28305,
+    name: 'Vesper Core 04 [1]',
+    type: EquipmentType.ARMOR,
+    subType: EquipmentSubType.ACCESSORY,
+    location: EquipmentLocation.ACCESSORY,
+    compoundOn: null,
+    slot1Enable: true,
+    baseDef: 1,
+    baseATK: 0,
+    level: 1,
+    equipUpgradeValue: 0,
+    str: 0,
+    agi: 0,
+    vit: 0,
+    int: 0,
+    dex: 3,
+    luk: 0,
+    additionAtk: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    additionDef: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    eATK: 0,
+    cATK: 0,
+    criticalPercent: 0,
+    penetrationPercent: 0,
+    classActives: [],
+    script: (character: Character2, _this: IBaseEquipment): void => { }
+  },
+  {
+    id: 490182,
+    name: 'Immortal Dog Tag [1]',
+    type: EquipmentType.ARMOR,
+    subType: EquipmentSubType.ACCESSORY,
+    location: EquipmentLocation.ACCESSORY,
+    compoundOn: null,
+    slot1Enable: true,
+    baseDef: 0,
+    baseATK: 0,
+    level: 1,
+    equipUpgradeValue: 0,
+    str: 0,
+    agi: 0,
+    vit: 0,
+    int: 0,
+    dex: 0,
+    luk: 0,
+    additionAtk: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    additionDef: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    eATK: 0,
+    cATK: 0,
+    criticalPercent: 0,
+    longRangePercent: 0,
+    penetrationPercent: 0,
+    classActives: [],
+    script: (character: Character2, _this: IBaseEquipment): void => {
+      _this.eATK = 40;
+      _this.longRangePercent = 0;
+      _this.additionAtk.class = 0;
+
+      const upgrade = character.rightHand?.equipUpgradeValue || 0;
+      if (character.rightHand?.id === 28010) {
+        _this.additionAtk.class = Number(new Big(upgrade).mul(0.01).valueOf());
+      
+        if (upgrade >= 12) {
+          _this.longRangePercent = 0.08;
+        }
+      }
+
+      if (character.rightHand?.id === 21018) {
+        _this.criticalPercent = Number(new Big(upgrade).mul(0.01).valueOf());
+      
+        if (upgrade >= 12 && character.monster?.type === MonsterType.BOSS) {
+          _this.additionAtk.class = 0.15;
+        }
       }
     }
   },

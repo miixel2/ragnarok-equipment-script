@@ -313,4 +313,67 @@ export const middleHeadgear: IBaseEquipment[] = [
     penetrationPercent: 0,
     script: (character: Character2, _this: IBaseEquipment): void => { }
   },
+  {
+    id: 18937,
+    name: 'Memory of Lovers',
+    type: EquipmentType.ARMOR,
+    subType: EquipmentSubType.HELM,
+    location: EquipmentLocation.MIDDLE_HEADGEAR,
+    compoundOn: null,
+    slot1Enable: true,
+    baseDef: 0,
+    baseATK: 0,
+    level: 1,
+    equipUpgradeValue: 0,
+    str: 0,
+    agi: 0,
+    vit: 0,
+    int: 0,
+    dex: 0,
+    luk: 0,
+    hpModB: 0.02,
+    spModB: 0,
+    additionAtk: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    additionDef: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    eATK: 0,
+    cATK: 0,
+    criticalPercent: 0,
+    penetrationPercent: 0,
+    script: (character: Character2, _this: IBaseEquipment): void => {
+      _this.str = 0;
+      _this.dex = 0;
+      _this.agi = 0;
+      _this.int = 0;
+      _this.eATK = 0;
+      _this.spModB = 0;
+
+      if (character.leftAccessory?.id === 2659 || character.rightAccessory?.id === 28302) {
+        _this.int = 8;
+        _this.spModB = 0.2;
+      }
+
+      if (character.leftAccessory?.id === 2660 || character.rightAccessory?.id === 28303) {
+        _this.str = 8;
+        _this.eATK = 20;
+      }
+
+      if (character.leftAccessory?.id === 2661 || character.rightAccessory?.id === 28304) {
+        _this.agi = 8;
+      }
+
+      if (character.leftAccessory?.id === 2662 || character.rightAccessory?.id === 28305) {
+        _this.dex = 8;
+      }
+    }
+  },
 ];

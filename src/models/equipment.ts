@@ -54,6 +54,7 @@ export interface IBaseEquipment {
   eATK: number;
   cATK: number;
   criticalPercent: number;
+  longRangePercent?: number;
   penetrationPercent: number;
 
   slot1Enable?: boolean;
@@ -188,6 +189,7 @@ export class BaseEquipment implements IBaseEquipment {
   public eATK: number = 0;
   public cATK: number = 0;
   public criticalPercent: number = 0;
+  public longRangePercent: number = 0;
   public penetrationPercent: number = 0;
 
   public slot1Enable: boolean = false;
