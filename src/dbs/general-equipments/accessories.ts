@@ -2,7 +2,6 @@ import Big from 'big.js';
 import { Character2 } from '../../models/character2';
 import { ClassKey } from '../../models/class';
 import { EquipmentLocation, EquipmentSubType, EquipmentType, IBaseEquipment } from '../../models/equipment';
-import { MonsterType } from '../../models/monster';
 
 export const accessories: IBaseEquipment[] = [
   {
@@ -840,35 +839,12 @@ export const accessories: IBaseEquipment[] = [
       race: 0,
       class: 0,
     },
-    eATK: 0,
+    eATK: 40,
     cATK: 0,
     criticalPercent: 0,
     longRangePercent: 0,
     penetrationPercent: 0,
     classActives: [],
-    script: (character: Character2, _this: IBaseEquipment): void => {
-      _this.eATK = 40;
-      _this.longRangePercent = 0;
-      _this.additionAtk.class = 0;
-
-      const upgrade = character.rightHand?.equipUpgradeValue || 0;
-      if (character.rightHand?.id === 28010) {
-        _this.additionAtk.class = Number(new Big(upgrade).mul(0.01).valueOf());
-
-        if (upgrade >= 12) {
-          const coreUpgrade = upgrade - 12;
-          _this.longRangePercent = Number(new Big(coreUpgrade + 1).mul(0.08).valueOf());
-        }
-      }
-
-      if (character.rightHand?.id === 21018) {
-        _this.criticalPercent = Number(new Big(upgrade).mul(0.01).valueOf());
-
-        if (upgrade >= 12 && character.monster?.type === MonsterType.BOSS) {
-          const coreUpgrade = upgrade - 12;
-          _this.additionAtk.class = Number(new Big(coreUpgrade + 1).mul(0.15).valueOf());
-        }
-      }
-    }
+    script: (character: Character2, _this: IBaseEquipment): void => { }
   },
 ];

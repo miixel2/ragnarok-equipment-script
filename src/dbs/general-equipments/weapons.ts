@@ -3,7 +3,7 @@ import { Character2 } from '../../models/character2';
 import { ClassKey } from '../../models/class';
 import { E_Element } from '../../models/element';
 import { IBaseEquipment, EquipmentType, EquipmentSubType, EquipmentLocation } from '../../models/equipment';
-import { MonsterRace } from '../../models/monster';
+import { MonsterRace, MonsterType } from '../../models/monster';
 
 export const weapons: IBaseEquipment[] = [
   {
@@ -124,8 +124,19 @@ export const weapons: IBaseEquipment[] = [
     penetrationPercent: 0,
     classActives: [ClassKey.RuneKnight],
     script: (character: Character2, _this: IBaseEquipment): void => {
+      _this.criticalPercent = 0;
+
       const upgrade = _this.equipUpgradeValue;
       _this.additionAtk.class = Number((new Big(Math.floor(upgrade / 2))).mul(0.01).valueOf());
+
+      if (character.rightAccessory?.id === 490182 || character.leftAccessory?.id === 490182) {
+        _this.criticalPercent = Number(new Big(upgrade).mul(0.01).valueOf());
+
+        if (upgrade >= 12 && character.monster?.type === MonsterType.BOSS) {
+          const coreUpgrade = upgrade - 12;
+          _this.additionAtk.class = Number(new Big(coreUpgrade + 1).mul(0.15).plus(_this.additionAtk.class).valueOf());
+        }
+      }
     }
   },
   {
@@ -165,11 +176,23 @@ export const weapons: IBaseEquipment[] = [
     eATK: 0,
     cATK: 0,
     criticalPercent: 0,
+    longRangePercent: 0,
     penetrationPercent: 0,
     classActives: [ClassKey.GuillotineCross],
     script: (character: Character2, _this: IBaseEquipment): void => {
+      _this.longRangePercent = 0;
+
       const upgrade = _this.equipUpgradeValue;
       _this.additionAtk.class = Number((new Big(Math.floor(upgrade / 2))).mul(0.01).valueOf());
+
+      if (character.rightAccessory?.id === 490182 || character.leftAccessory?.id === 490182) {
+        _this.additionAtk.class = Number(new Big(upgrade).mul(0.01).plus(_this.additionAtk.class).valueOf());
+
+        if (upgrade >= 12) {
+          const coreUpgrade = upgrade - 12;
+          _this.longRangePercent = Number(new Big(coreUpgrade + 1).mul(0.08).valueOf());
+        }
+      }
     }
   },
   {

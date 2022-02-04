@@ -49,3 +49,4 @@ package-lock.json
 *.sh
 *.bat
 /src/assets
+*.txt
