@@ -133,8 +133,7 @@ export const weapons: IBaseEquipment[] = [
         _this.criticalPercent = Number(new Big(upgrade).mul(0.01).valueOf());
 
         if (upgrade >= 12 && character.monster?.type === MonsterType.BOSS) {
-          const coreUpgrade = upgrade - 12;
-          _this.additionAtk.class = Number(new Big(coreUpgrade + 1).mul(0.15).plus(_this.additionAtk.class).valueOf());
+          _this.additionAtk.class = Number(new Big(0.15).plus(_this.additionAtk.class).valueOf());
         }
       }
     }
@@ -189,8 +188,7 @@ export const weapons: IBaseEquipment[] = [
         _this.additionAtk.class = Number(new Big(upgrade).mul(0.01).plus(_this.additionAtk.class).valueOf());
 
         if (upgrade >= 12) {
-          const coreUpgrade = upgrade - 12;
-          _this.longRangePercent = Number(new Big(coreUpgrade + 1).mul(0.08).valueOf());
+          _this.longRangePercent = 0.08;
         }
       }
     }
