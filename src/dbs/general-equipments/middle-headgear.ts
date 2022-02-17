@@ -383,7 +383,6 @@ export const middleHeadgear: IBaseEquipment[] = [
     subType: EquipmentSubType.HELM,
     location: EquipmentLocation.MIDDLE_HEADGEAR,
     compoundOn: null,
-    slot1Enable: true,
     baseDef: 0,
     baseATK: 0,
     level: 1,
