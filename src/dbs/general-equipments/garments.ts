@@ -927,4 +927,66 @@ export const garments: IBaseEquipment[] = [
       }
     }
   },
+  {
+    id: 480172,
+    name: 'Subject Cape (Melee) [1]',
+    type: EquipmentType.ARMOR,
+    subType: EquipmentSubType.GARMENT,
+    location: EquipmentLocation.GARMENT,
+    compoundOn: null,
+    slot1Enable: true,
+    baseDef: 10,
+    baseATK: 0,
+    level: 1,
+    equipUpgradeValue: 0,
+    str: 0,
+    agi: 0,
+    vit: 0,
+    int: 0,
+    dex: 0,
+    luk: 0,
+    hpModA: 0,
+    spModA: 0,
+    additionAtk: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+      atkPercent2: 0,
+    },
+    additionDef: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    eATK: 0,
+    cATK: 0,
+    criticalPercent: 0,
+    penetrationPercent: 0,
+    classActives: [],
+    script: (character: Character2, _this: IBaseEquipment): void => {
+      const upgrade = _this.equipUpgradeValue;
+      _this.eATK = 20;
+      _this.hpModB = Number((new Big(Math.floor(upgrade / 2))).mul(0.01).valueOf());
+      _this.spModB = Number((new Big(Math.floor(upgrade / 2))).mul(0.01).valueOf());
+      _this.additionAtk.class = 0;
+      _this.criticalPercent = 0;
+      _this.additionAtk.race = 0;
+
+      if (upgrade >= 9) {
+        _this.additionAtk.class = 0.05;
+      }
+
+      if (character.upperHeadgear?.id === 18971) {
+        _this.criticalPercent = Number((new Big(Math.floor(upgrade / 2))).mul(0.03).valueOf());
+      }
+
+      if (character.upperHeadgear?.id === 18982) {
+        if (upgrade >= 12) {
+          _this.additionAtk.race = 0.05;
+        }
+      }
+    }
+  },
 ];

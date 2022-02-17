@@ -376,4 +376,78 @@ export const middleHeadgear: IBaseEquipment[] = [
       }
     }
   },
+  {
+    id: 410136,
+    name: 'Raven Of Tomb',
+    type: EquipmentType.ARMOR,
+    subType: EquipmentSubType.HELM,
+    location: EquipmentLocation.MIDDLE_HEADGEAR,
+    compoundOn: null,
+    slot1Enable: true,
+    baseDef: 0,
+    baseATK: 0,
+    level: 1,
+    equipUpgradeValue: 0,
+    str: 0,
+    agi: 0,
+    vit: 0,
+    int: 0,
+    dex: 0,
+    luk: 0,
+    additionAtk: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    additionDef: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    eATK: 0,
+    cATK: 0,
+    criticalPercent: 0,
+    penetrationPercent: 0,
+    script: (character: Character2, _this: IBaseEquipment): void => {
+      _this.additionAtk.class = 0;
+      _this.eATK = 0;
+      _this.criticalPercent = 0;
+
+      const baseStr = character.class.str0;
+      const baseLuk = character.class.luk0;
+      const baseAgi = character.class.agi0;
+
+      if (baseStr >= 100) {
+        _this.additionAtk.class = 0.04;
+        if (baseStr >= 120) {
+          _this.additionAtk.class = 0.1;
+        }
+      }
+
+      if (baseLuk >= 100) {
+        _this.eATK = 20;
+        if (baseLuk >= 120) {
+          _this.eATK = 60;
+        }
+      }
+
+      if (baseAgi >= 100) {
+        _this.criticalPercent = 0.07;
+        if (baseAgi >= 120) {
+          _this.criticalPercent = 0.14;
+        }
+      }
+
+      if (character.garment?.id === 480172) {
+        _this.eATK = _this.eATK + 50;
+        const garmentUpgrade = character.garment.equipUpgradeValue;
+        if (garmentUpgrade >= 11) {
+          const mulVal = garmentUpgrade >= 15 ? 5 : (garmentUpgrade - 10);
+          _this.additionAtk.class = Number(new Big(mulVal).mul(0.02).plus(_this.additionAtk.class).valueOf());
+        }
+      }
+    }
+  },
 ];

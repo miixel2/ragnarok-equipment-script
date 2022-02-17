@@ -424,4 +424,49 @@ export const lowerHeadgear: IBaseEquipment[] = [
       }
     }
   },
+  {
+    id: 420129,
+    name: 'Wei Brush Tattoo',
+    type: EquipmentType.ARMOR,
+    subType: EquipmentSubType.HELM,
+    location: EquipmentLocation.LOWER_HEADGEAR,
+    compoundOn: null,
+    baseDef: 0,
+    baseATK: 0,
+    level: 1,
+    equipUpgradeValue: 0,
+    str: 0,
+    agi: 0,
+    vit: 0,
+    int: 0,
+    dex: 0,
+    luk: 0,
+    additionAtk: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    additionDef: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    eATK: 0,
+    cATK: 0,
+    criticalPercent: 0,
+    penetrationPercent: 0,
+    script: (character: Character2, _this: IBaseEquipment): void => {
+      _this.additionAtk.class = 0;
+
+      if (character.rightAccessory?.id === 2910 || character.leftAccessory?.id === 2910) {
+        const baseStr = character.class.str0;
+        const baseLuk = character.class.luk0;
+
+        const multiplierStrLuk = Math.floor((baseStr + baseLuk) / 40);
+        _this.additionAtk.class = Number((new Big(multiplierStrLuk)).mul(0.01).valueOf());
+      }
+    }
+  },
 ];
