@@ -807,7 +807,6 @@ const generateeAtk = Array.from(Array(maxEAtk), (x, index) => {
   equipment.name = `ATK +${value}`;
   equipment.type = EquipmentType.CARD;
   equipment.compoundOn = CompoundOn.ENCHANT;
-  equipment.enchantActives = [...vmPhysicalId];
   equipment.options = option;
   equipment.canSelectOnSlot4 = true;
 
@@ -832,9 +831,14 @@ const generatCriPercent = Array.from(Array(maxCriPercent), (x, index) => {
   equipment.name = `CriDmg +${value}%`;
   equipment.type = EquipmentType.CARD;
   equipment.compoundOn = CompoundOn.ENCHANT;
-  equipment.enchantActives = [...vmPhysicalId];
   equipment.options = option;
   equipment.canSelectOnSlot4 = true;
+
+  if (value <= 5) {
+    equipment.enchantActives = [...vmPhysicalId, ...shadowsId];
+  } else {
+    equipment.enchantActives = [...vmPhysicalId];
+  }
 
   return equipment;
 });

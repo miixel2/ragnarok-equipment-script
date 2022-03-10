@@ -119,7 +119,7 @@ export const shadowEarrings: IBaseEquipment[] = [
     classActives: [ClassKey.RuneKnight],
     script: (character: Character2, _this: IBaseEquipment): void => {
       const upgrade = _this.equipUpgradeValue;
-      if(character.shadowLeftHand && character.shadowLeftHand.id === 24250) {
+      if (character.shadowLeftHand && character.shadowLeftHand.id === 24250) {
         _this.additionAtk.atkPercent2 = 0.01;
         _this.hpModB = 0.01;
 
@@ -129,6 +129,110 @@ export const shadowEarrings: IBaseEquipment[] = [
           _this.hpModB = 0.03;
         }
       }
+    }
+  },
+  {
+    id: 24150,
+    name: 'Infinity Shadow Earring',
+    type: EquipmentType.SHADOW_EQUIPMENT,
+    subType: EquipmentSubType.SHADOW_RIGHT_ACCESSORY,
+    location: EquipmentLocation.SHADOW_RIGHT_ACCESSORY,
+    compoundOn: null,
+    baseDef: 0,
+    baseATK: 0,
+    level: 1,
+    equipUpgradeValue: 0,
+    str: 0,
+    agi: 0,
+    vit: 0,
+    int: 0,
+    dex: 0,
+    luk: 0,
+    additionAtk: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    additionDef: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    options: {
+      ignoreSizePenalty: false
+    },
+    eATK: 0,
+    cATK: 0,
+    criticalPercent: 0,
+    penetrationPercent: 0,
+    script: (character: Character2, _this: IBaseEquipment): void => {
+      _this.options.ignoreSizePenalty = false;
+      _this.additionAtk.size = 0.01;
+      _this.additionAtk.atkPercent2 = 0;
+      const upgrade = _this.equipUpgradeValue;
+
+      if (upgrade >= 7) {
+        _this.additionAtk.size = 0.02;
+
+        if (upgrade >= 9) {
+          _this.additionAtk.size = 0.03;
+        }
+      }
+
+      if (character.shadowLeftAccessory?.id === 24151) {
+        _this.additionAtk.atkPercent2 = 0.01;
+
+        const leftRefine = character.shadowLeftAccessory.equipUpgradeValue;
+        if ((upgrade + leftRefine) >= 15) {
+          _this.options.ignoreSizePenalty = true;
+        }
+      }
+    }
+  },
+  {
+    id: 24339,
+    name: 'Almighty Shadow Earring',
+    type: EquipmentType.SHADOW_EQUIPMENT,
+    subType: EquipmentSubType.SHADOW_RIGHT_ACCESSORY,
+    location: EquipmentLocation.SHADOW_RIGHT_ACCESSORY,
+    compoundOn: null,
+    baseDef: 0,
+    baseATK: 0,
+    level: 1,
+    equipUpgradeValue: 0,
+    str: 0,
+    agi: 0,
+    vit: 0,
+    int: 0,
+    dex: 0,
+    luk: 0,
+    additionAtk: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    additionDef: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    eATK: 0,
+    cATK: 0,
+    criticalPercent: 0,
+    penetrationPercent: 0,
+    script: (character: Character2, _this: IBaseEquipment): void => {
+      const upgrade = _this.equipUpgradeValue;
+
+      _this.str = upgrade;
+      _this.agi = upgrade;
+      _this.vit = upgrade;
+      _this.int = upgrade;
+      _this.dex = upgrade;
+      _this.luk = upgrade;
     }
   },
 ];

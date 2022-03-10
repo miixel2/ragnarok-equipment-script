@@ -209,4 +209,45 @@ export const shadowShields: IBaseEquipment[] = [
       }
     }
   },
+  {
+    id: 24374,
+    name: 'Penetration Shadow Shield',
+    type: EquipmentType.SHADOW_EQUIPMENT,
+    subType: EquipmentSubType.SHADOW_SHIELD,
+    location: EquipmentLocation.SHADOW_SHIELD,
+    compoundOn: null,
+    baseDef: 0,
+    baseATK: 0,
+    level: 1,
+    equipUpgradeValue: 0,
+    str: 0,
+    agi: 0,
+    vit: 0,
+    int: 0,
+    dex: 0,
+    luk: 0,
+    additionAtk: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    additionDef: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    eATK: 0,
+    cATK: 0,
+    criticalPercent: 0,
+    penetrationPercent: 0,
+    script: (character: Character2, _this: IBaseEquipment): void => {
+      _this.penetrationPercent = 0.05;
+      const upgrade = _this.equipUpgradeValue;
+
+      const refinePenetration = Number((new Big(Math.floor(upgrade / 2))).mul(0.01).valueOf());
+      _this.penetrationPercent = Number((new Big(_this.penetrationPercent)).plus(refinePenetration).valueOf());
+    }
+  },
 ];

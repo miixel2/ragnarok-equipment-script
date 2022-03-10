@@ -95,14 +95,14 @@ export const shadowArmors: IBaseEquipment[] = [
       element: 0,
       race: 0,
       class: 0,
-      
+
     },
     additionDef: {
       size: 0,
       element: 0,
       race: 0,
       class: 0,
-      
+
     },
     eATK: 0,
     cATK: 0,
@@ -227,7 +227,7 @@ export const shadowArmors: IBaseEquipment[] = [
       size: 0,
       element: 0,
       race: 0,
-      class: 0,   
+      class: 0,
     },
     additionDef: {
       size: 0,
@@ -242,6 +242,306 @@ export const shadowArmors: IBaseEquipment[] = [
     script: (character: Character2, _this: IBaseEquipment): void => {
       const upgrade = _this.equipUpgradeValue;
       _this.criticalPercent = Number((new Big(Math.floor(upgrade / 2))).mul(0.01).valueOf());
+    }
+  },
+  {
+    id: 24375,
+    name: 'Executioner Holy Water Shadow Armor',
+    type: EquipmentType.SHADOW_EQUIPMENT,
+    subType: EquipmentSubType.SHADOW_ARMOR,
+    location: EquipmentLocation.SHADOW_ARMOR,
+    compoundOn: null,
+    baseDef: 0,
+    baseATK: 0,
+    level: 1,
+    equipUpgradeValue: 0,
+    str: 0,
+    agi: 0,
+    vit: 0,
+    int: 0,
+    dex: 0,
+    luk: 0,
+    additionAtk: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    additionDef: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    eATK: 0,
+    cATK: 0,
+    criticalPercent: 0,
+    penetrationPercent: 0,
+    script: (character: Character2, _this: IBaseEquipment): void => {
+
+      const upgrade = _this.equipUpgradeValue;
+      _this.eATK = upgrade;
+
+      if ([MonsterRace.DEMI_HUMAN, MonsterRace.UNDEAD].includes(character.monster.race)) {
+        _this.penetrationPercent = 0.05;
+
+        const refinePenetration = Number((new Big(Math.floor(upgrade / 2))).mul(0.01).valueOf());
+        _this.penetrationPercent = Number((new Big(_this.penetrationPercent)).plus(refinePenetration).valueOf());
+      }
+
+      if (character.shadowLeftHand && character.shadowLeftHand?.id === 24374
+        && character.shadowShoes && character.shadowShoes?.id === 24373
+      ) {
+        _this.eATK += 5;
+
+        if ([MonsterRace.DEMI_HUMAN, MonsterRace.UNDEAD].includes(character.monster.race)) {
+          const shieldRefine = character.shadowLeftHand.equipUpgradeValue;
+          const shoesRefine = character.shadowShoes.equipUpgradeValue;
+          if ((shieldRefine + shoesRefine + _this.equipUpgradeValue) >= 25) {
+            _this.penetrationPercent = 1;
+          }
+        }
+      }
+    }
+  },
+  {
+    id: 24376,
+    name: 'Exorcist Corrupted Shadow Armor',
+    type: EquipmentType.SHADOW_EQUIPMENT,
+    subType: EquipmentSubType.SHADOW_ARMOR,
+    location: EquipmentLocation.SHADOW_ARMOR,
+    compoundOn: null,
+    baseDef: 0,
+    baseATK: 0,
+    level: 1,
+    equipUpgradeValue: 0,
+    str: 0,
+    agi: 0,
+    vit: 0,
+    int: 0,
+    dex: 0,
+    luk: 0,
+    additionAtk: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    additionDef: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    eATK: 0,
+    cATK: 0,
+    criticalPercent: 0,
+    penetrationPercent: 0,
+    script: (character: Character2, _this: IBaseEquipment): void => {
+
+      const upgrade = _this.equipUpgradeValue;
+      _this.eATK = upgrade;
+
+      if ([MonsterRace.DEMON, MonsterRace.ANGEL].includes(character.monster.race)) {
+        _this.penetrationPercent = 0.05;
+
+        const refinePenetration = Number((new Big(Math.floor(upgrade / 2))).mul(0.01).valueOf());
+        _this.penetrationPercent = Number((new Big(_this.penetrationPercent)).plus(refinePenetration).valueOf());
+      }
+
+      if (character.shadowLeftHand && character.shadowLeftHand?.id === 24374
+        && character.shadowShoes && character.shadowShoes?.id === 24373
+      ) {
+        _this.eATK += 5;
+
+        if ([MonsterRace.DEMON, MonsterRace.ANGEL].includes(character.monster.race)) {
+          const shieldRefine = character.shadowLeftHand.equipUpgradeValue;
+          const shoesRefine = character.shadowShoes.equipUpgradeValue;
+          if ((shieldRefine + shoesRefine + _this.equipUpgradeValue) >= 25) {
+            _this.penetrationPercent = 1;
+          }
+        }
+      }
+    }
+  },
+  {
+    id: 24377,
+    name: 'Vibration Dragon Killer Shadow Armor',
+    type: EquipmentType.SHADOW_EQUIPMENT,
+    subType: EquipmentSubType.SHADOW_ARMOR,
+    location: EquipmentLocation.SHADOW_ARMOR,
+    compoundOn: null,
+    baseDef: 0,
+    baseATK: 0,
+    level: 1,
+    equipUpgradeValue: 0,
+    str: 0,
+    agi: 0,
+    vit: 0,
+    int: 0,
+    dex: 0,
+    luk: 0,
+    additionAtk: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    additionDef: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    eATK: 0,
+    cATK: 0,
+    criticalPercent: 0,
+    penetrationPercent: 0,
+    script: (character: Character2, _this: IBaseEquipment): void => {
+
+      const upgrade = _this.equipUpgradeValue;
+      _this.eATK = upgrade;
+
+      if ([MonsterRace.FORMLESS, MonsterRace.DRAGON].includes(character.monster.race)) {
+        _this.penetrationPercent = 0.05;
+
+        const refinePenetration = Number((new Big(Math.floor(upgrade / 2))).mul(0.01).valueOf());
+        _this.penetrationPercent = Number((new Big(_this.penetrationPercent)).plus(refinePenetration).valueOf());
+      }
+
+      if (character.shadowLeftHand && character.shadowLeftHand?.id === 24374
+        && character.shadowShoes && character.shadowShoes?.id === 24373
+      ) {
+        _this.eATK += 5;
+
+        if ([MonsterRace.FORMLESS, MonsterRace.DRAGON].includes(character.monster.race)) {
+          const shieldRefine = character.shadowLeftHand.equipUpgradeValue;
+          const shoesRefine = character.shadowShoes.equipUpgradeValue;
+          if ((shieldRefine + shoesRefine + _this.equipUpgradeValue) >= 25) {
+            _this.penetrationPercent = 1;
+          }
+        }
+      }
+    }
+  },
+  {
+    id: 24378,
+    name: 'Scissor Hunting Shadow Armor',
+    type: EquipmentType.SHADOW_EQUIPMENT,
+    subType: EquipmentSubType.SHADOW_ARMOR,
+    location: EquipmentLocation.SHADOW_ARMOR,
+    compoundOn: null,
+    baseDef: 0,
+    baseATK: 0,
+    level: 1,
+    equipUpgradeValue: 0,
+    str: 0,
+    agi: 0,
+    vit: 0,
+    int: 0,
+    dex: 0,
+    luk: 0,
+    additionAtk: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    additionDef: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    eATK: 0,
+    cATK: 0,
+    criticalPercent: 0,
+    penetrationPercent: 0,
+    script: (character: Character2, _this: IBaseEquipment): void => {
+
+      const upgrade = _this.equipUpgradeValue;
+      _this.eATK = upgrade;
+
+      if ([MonsterRace.BRUTE, MonsterRace.PLANT].includes(character.monster.race)) {
+        _this.penetrationPercent = 0.05;
+
+        const refinePenetration = Number((new Big(Math.floor(upgrade / 2))).mul(0.01).valueOf());
+        _this.penetrationPercent = Number((new Big(_this.penetrationPercent)).plus(refinePenetration).valueOf());
+      }
+
+      if (character.shadowLeftHand && character.shadowLeftHand?.id === 24374
+        && character.shadowShoes && character.shadowShoes?.id === 24373
+      ) {
+        _this.eATK += 5;
+
+        if ([MonsterRace.BRUTE, MonsterRace.PLANT].includes(character.monster.race)) {
+          const shieldRefine = character.shadowLeftHand.equipUpgradeValue;
+          const shoesRefine = character.shadowShoes.equipUpgradeValue;
+          if ((shieldRefine + shoesRefine + _this.equipUpgradeValue) >= 25) {
+            _this.penetrationPercent = 1;
+          }
+        }
+      }
+    }
+  },
+  {
+    id: 24379,
+    name: 'Fishing Insect Net Shadow Armor',
+    type: EquipmentType.SHADOW_EQUIPMENT,
+    subType: EquipmentSubType.SHADOW_ARMOR,
+    location: EquipmentLocation.SHADOW_ARMOR,
+    compoundOn: null,
+    baseDef: 0,
+    baseATK: 0,
+    level: 1,
+    equipUpgradeValue: 0,
+    str: 0,
+    agi: 0,
+    vit: 0,
+    int: 0,
+    dex: 0,
+    luk: 0,
+    additionAtk: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    additionDef: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    eATK: 0,
+    cATK: 0,
+    criticalPercent: 0,
+    penetrationPercent: 0,
+    script: (character: Character2, _this: IBaseEquipment): void => {
+
+      const upgrade = _this.equipUpgradeValue;
+      _this.eATK = upgrade;
+
+      if ([MonsterRace.FISH, MonsterRace.INSECT].includes(character.monster.race)) {
+        _this.penetrationPercent = 0.05;
+
+        const refinePenetration = Number((new Big(Math.floor(upgrade / 2))).mul(0.01).valueOf());
+        _this.penetrationPercent = Number((new Big(_this.penetrationPercent)).plus(refinePenetration).valueOf());
+      }
+
+      if (character.shadowLeftHand && character.shadowLeftHand?.id === 24374
+        && character.shadowShoes && character.shadowShoes?.id === 24373
+      ) {
+        _this.eATK += 5;
+
+        if ([MonsterRace.FISH, MonsterRace.INSECT].includes(character.monster.race)) {
+          const shieldRefine = character.shadowLeftHand.equipUpgradeValue;
+          const shoesRefine = character.shadowShoes.equipUpgradeValue;
+          if ((shieldRefine + shoesRefine + _this.equipUpgradeValue) >= 25) {
+            _this.penetrationPercent = 1;
+          }
+        }
+      }
     }
   },
 ];
