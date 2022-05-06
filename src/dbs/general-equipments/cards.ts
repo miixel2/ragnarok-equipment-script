@@ -379,7 +379,7 @@ export const cards: IBaseEquipment[] = [
     script: (character: Character2, _this: IBaseEquipment): void => {
       _this.eATK = 10;
 
-      const upgrade = _this.equipUpgradeValue;
+      const upgrade = _this.equipUpgradeValue || 0;
       if (upgrade >= 7) {
         _this.eATK += 10;
         if (upgrade >= 9) {
@@ -571,7 +571,7 @@ export const cards: IBaseEquipment[] = [
     prefix: 'Half Blast',
     script: (character: Character2, _this: IBaseEquipment): void => {
       _this.additionAtk.class = 0.1;
-      const upgrade = _this.equipUpgradeValue;
+      const upgrade = _this.equipUpgradeValue || 0;
       if (upgrade >= 15) {
         _this.additionAtk.class = Number((new Big(_this.additionAtk.class)).plus(0.05).valueOf());
       }
@@ -614,7 +614,7 @@ export const cards: IBaseEquipment[] = [
     script: (character: Character2, _this: IBaseEquipment): void => {
       _this.additionAtk.class = 0.01;
 
-      const upgrade = _this.equipUpgradeValue;
+      const upgrade = _this.equipUpgradeValue || 0;
       const tempPercentUpgrade = Number((new Big(Math.floor(upgrade / 2))).mul(0.01).valueOf());
       _this.additionAtk.class = Number((new Big(_this.additionAtk.class)).plus(tempPercentUpgrade).valueOf());
     }
@@ -813,7 +813,7 @@ export const cards: IBaseEquipment[] = [
       _this.criticalPercent = 0.02;
 
       if (character.class.classKey === ClassKey.GuillotineCross) {
-        const upgrade = _this.equipUpgradeValue;
+        const upgrade = _this.equipUpgradeValue || 0;
         const tempPercentUpgrade = Number((new Big(Math.floor(upgrade / 2))).mul(0.01).valueOf());
         _this.criticalPercent = Number((new Big(_this.criticalPercent)).plus(tempPercentUpgrade).valueOf());
       }
@@ -1239,7 +1239,7 @@ export const cards: IBaseEquipment[] = [
     criticalPercent: 0,
     penetrationPercent: 0,
     prefix: 'Strong',
-    script: (character: Character2, _this: IBaseEquipment): void => {}
+    script: (character: Character2, _this: IBaseEquipment): void => { }
   },
   {
     id: 4909,
@@ -1276,7 +1276,7 @@ export const cards: IBaseEquipment[] = [
     criticalPercent: 0,
     penetrationPercent: 0,
     prefix: 'Strong',
-    script: (character: Character2, _this: IBaseEquipment): void => {}
+    script: (character: Character2, _this: IBaseEquipment): void => { }
   },
   {
     id: 4910,
@@ -1313,6 +1313,186 @@ export const cards: IBaseEquipment[] = [
     criticalPercent: 0,
     penetrationPercent: 0,
     prefix: 'Strong',
-    script: (character: Character2, _this: IBaseEquipment): void => {}
+    script: (character: Character2, _this: IBaseEquipment): void => { }
+  },
+  {
+    id: 27116,
+    name: 'Ominous Heater Card',
+    type: EquipmentType.CARD,
+    subType: null,
+    location: null,
+    compoundOn: CompoundOn.ACCESSORY,
+    baseDef: 0,
+    baseATK: 0,
+    level: 1,
+    equipUpgradeValue: 0,
+    str: 0,
+    agi: 0,
+    vit: 0,
+    int: 0,
+    dex: 0,
+    luk: 0,
+    additionAtk: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    additionDef: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    eATK: 0,
+    cATK: 0,
+    criticalPercent: 0,
+    penetrationPercent: 0,
+    prefix: 'Dual Critical',
+    script: (character: Character2, _this: IBaseEquipment): void => {
+      // cri rate + 3
+      _this.criticalPercent = 0.05;
+
+      if (character.rightAccessory?.slot1?.id === 27117 || character.leftAccessory?.slot1?.id === 27117) {
+        // cri rate + 5
+        _this.criticalPercent = 0.07;
+      }
+    }
+  },
+  {
+    id: 27117,
+    name: 'Ominous Assaulter Card',
+    type: EquipmentType.CARD,
+    subType: null,
+    location: null,
+    compoundOn: CompoundOn.WEAPON,
+    baseDef: 0,
+    baseATK: 0,
+    level: 1,
+    equipUpgradeValue: 0,
+    str: 0,
+    agi: 0,
+    vit: 0,
+    int: 0,
+    dex: 0,
+    luk: 0,
+    additionAtk: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    additionDef: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    eATK: 0,
+    cATK: 0,
+    criticalPercent: 0,
+    penetrationPercent: 0,
+    prefix: 'Lethal',
+    script: (character: Character2, _this: IBaseEquipment): void => {
+      _this.criticalPercent = 0.1;
+      _this.eATK = 0;
+
+      if ([EquipmentSubType.TWO_HANDED_SWORD, EquipmentSubType.TWO_HANDED_SPEAR, EquipmentSubType.WHIP, EquipmentSubType.BOOK].includes(character.rightHand?.subType)) {
+        // cri rate + 5
+
+        const upgrade = _this.equipUpgradeValue || 0;
+        const tempPercentUpgrade = Number((new Big(Math.floor(upgrade))).mul(0.01).valueOf());
+        _this.criticalPercent = Number((new Big(_this.criticalPercent)).plus(tempPercentUpgrade).valueOf());
+        const tempAtk = Number((new Big(Math.floor(upgrade))).mul(3).valueOf());
+        _this.eATK = Number((new Big(_this.eATK)).plus(tempAtk).valueOf());
+      }
+    }
+  },
+  {
+    id: 27082,
+    name: 'Furious Ninetail Card',
+    type: EquipmentType.CARD,
+    subType: null,
+    location: null,
+    compoundOn: CompoundOn.ARMOR,
+    baseDef: 0,
+    baseATK: 0,
+    level: 1,
+    equipUpgradeValue: 0,
+    str: 0,
+    agi: 0,
+    vit: 0,
+    int: 0,
+    dex: 0,
+    luk: 0,
+    additionAtk: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    additionDef: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    eATK: 0,
+    cATK: 0,
+    criticalPercent: 0,
+    penetrationPercent: 0,
+    prefix: 'Fox Tail',
+    script: (character: Character2, _this: IBaseEquipment): void => {
+      // cri rate + 5
+      _this.criticalPercent = 0.1;
+
+      const upgrade = _this.equipUpgradeValue || 0;
+      if (upgrade >= 10) {
+        // cri rate + 15
+      }
+    }
+  },
+  {
+    id: 27176,
+    name: 'Brown Rat Card',
+    type: EquipmentType.CARD,
+    subType: null,
+    location: null,
+    compoundOn: CompoundOn.GARMENT,
+    baseDef: 0,
+    baseATK: 0,
+    level: 1,
+    equipUpgradeValue: 0,
+    str: 0,
+    agi: 0,
+    vit: 0,
+    int: 0,
+    dex: 0,
+    luk: 0,
+    additionAtk: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    additionDef: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    eATK: 0,
+    cATK: 0,
+    criticalPercent: 0,
+    penetrationPercent: 0,
+    prefix: 'Dirty',
+    script: (character: Character2, _this: IBaseEquipment): void => {
+      const baseStr = character.class.str0;
+      _this.eATK = Number((new Big(Math.floor((baseStr) / 10))).mul(3).valueOf());
+
+      if (baseStr >= 120) {
+        _this.eATK = Number(new Big(_this.eATK).plus(40).valueOf());
+      }
+    }
   },
 ];

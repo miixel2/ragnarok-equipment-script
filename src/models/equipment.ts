@@ -237,6 +237,7 @@ export enum EquipmentSubType {
   KATAR = 'KATAR',
   MACE = 'MACE',
   SPEAR = 'SPEAR',
+  TWO_HANDED_SPEAR = 'TWO_HANDED_SPEAR',
   AXE = 'AXE',
   ROD = 'ROD',
   BOW = 'BOW',

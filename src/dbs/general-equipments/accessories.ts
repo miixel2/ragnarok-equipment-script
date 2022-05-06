@@ -847,4 +847,97 @@ export const accessories: IBaseEquipment[] = [
     classActives: [],
     script: (character: Character2, _this: IBaseEquipment): void => { }
   },
+  {
+    id: 28496,
+    name: `Vigilante's Badge (R) [1]`,
+    type: EquipmentType.ARMOR,
+    subType: EquipmentSubType.ACCESSORY,
+    location: EquipmentLocation.RIGHT_ACCESSORY,
+    compoundOn: null,
+    slot1Enable: true,
+    baseDef: 0,
+    baseATK: 0,
+    level: 1,
+    equipUpgradeValue: 0,
+    str: 0,
+    agi: 0,
+    vit: 0,
+    int: 0,
+    dex: 0,
+    luk: 0,
+    additionAtk: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    additionDef: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    eATK: 0,
+    cATK: 0,
+    criticalPercent: 0,
+    penetrationPercent: 0,
+    script: (character: Character2, _this: IBaseEquipment): void => { }
+  },
+  {
+    id: 28495,
+    name: `Vigilante's Badge (L) [1]`,
+    type: EquipmentType.ARMOR,
+    subType: EquipmentSubType.ACCESSORY,
+    location: EquipmentLocation.LEFT_ACCESSORY,
+    compoundOn: null,
+    slot1Enable: true,
+    baseDef: 0,
+    baseATK: 0,
+    level: 1,
+    equipUpgradeValue: 0,
+    str: 0,
+    agi: 0,
+    vit: 0,
+    int: 0,
+    dex: 0,
+    luk: 0,
+    hpModA: 0,
+    additionAtk: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    additionDef: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    eATK: 0,
+    cATK: 0,
+    criticalPercent: 0,
+    longRangePercent: 0,
+    penetrationPercent: 0,
+    script: (character: Character2, _this: IBaseEquipment): void => {
+      _this.additionAtk.atkPercent2 = 0;
+      _this.longRangePercent = 0;
+      _this.hpModA = 0;
+      const baseStr = character.class.str0;
+      const baseDex = character.class.dex0;
+      const baseVit = character.class.vit0;
+
+      if (baseStr >= 90) {
+        _this.additionAtk.atkPercent2 = 0.03;
+      }
+
+      if (baseDex >= 90) {
+        _this.longRangePercent = 0.03;
+      }
+
+      if (baseVit >= 90) {
+        _this.hpModA = 1000;
+      }
+    }
+  },
 ];
