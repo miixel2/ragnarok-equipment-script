@@ -54,6 +54,7 @@ export interface IBaseEquipment {
   eATK: number;
   cATK: number;
   criticalPercent: number;
+  meleePercent?: number;
   longRangePercent?: number;
   penetrationPercent: number;
 

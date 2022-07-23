@@ -469,4 +469,50 @@ export const lowerHeadgear: IBaseEquipment[] = [
       }
     }
   },
+  {
+    id: 15932,
+    name: 'Vassalage Necklace',
+    type: EquipmentType.ARMOR,
+    subType: EquipmentSubType.HELM,
+    location: EquipmentLocation.LOWER_HEADGEAR,
+    compoundOn: null,
+    baseDef: 0,
+    baseATK: 0,
+    level: 1,
+    equipUpgradeValue: 0,
+    str: 0,
+    agi: 0,
+    vit: 0,
+    int: 0,
+    dex: 0,
+    luk: 0,
+    additionAtk: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    additionDef: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    eATK: 0,
+    cATK: 0,
+    criticalPercent: 0,
+    penetrationPercent: 0,
+    meleePercent: 0,
+    script: (character: Character2, _this: IBaseEquipment): void => {
+      _this.meleePercent = 0;
+
+      const baseLevel = character.class.baseLv;
+      const multiplierBaseLevel = Math.floor(baseLevel / 35);
+      _this.meleePercent = Number((new Big(multiplierBaseLevel)).mul(0.01).valueOf());
+
+      if (baseLevel >= 175) {
+        _this.meleePercent = _this.meleePercent * 2;
+      }
+    }
+  },
 ];

@@ -126,6 +126,7 @@ export class Character2 {
   public finalATK: number = 0;
   public finalAtkMin: number = 0;
   public criDmgPercent: number = 0;
+  public meleePercent: number = 0;
   public longRangePercent: number = 0;
   public totalCriATK: number = 0;
   public totalCriAtkMin: number = 0;

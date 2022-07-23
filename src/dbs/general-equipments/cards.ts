@@ -132,7 +132,7 @@ export const cards: IBaseEquipment[] = [
     dex: 0,
     luk: 0,
     additionAtk: {
-      size: 0.2,
+      size: 0,
       element: 0,
       race: 0,
       class: 0,
@@ -148,7 +148,12 @@ export const cards: IBaseEquipment[] = [
     criticalPercent: 0,
     penetrationPercent: 0,
     prefix: 'Knight',
-    script: (character: Character2, _this: IBaseEquipment): void => { }
+    script: (character: Character2, _this: IBaseEquipment): void => {
+      _this.additionAtk.size = 0;
+      if ([Scale.MEDIUM, Scale.LARGE].includes(character.monster?.scale)) {
+        _this.additionAtk.size = 0.2;
+      }
+    }
   },
   {
     id: 4594,
@@ -1492,6 +1497,144 @@ export const cards: IBaseEquipment[] = [
 
       if (baseStr >= 120) {
         _this.eATK = Number(new Big(_this.eATK).plus(40).valueOf());
+      }
+    }
+  },
+  {
+    id: 27361,
+    name: 'Corrupted Wanderer Card',
+    type: EquipmentType.CARD,
+    subType: null,
+    location: null,
+    compoundOn: CompoundOn.WEAPON,
+    baseDef: 0,
+    baseATK: 0,
+    level: 1,
+    equipUpgradeValue: 0,
+    str: 0,
+    agi: 0,
+    vit: 0,
+    int: 0,
+    dex: 0,
+    luk: 0,
+    additionAtk: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    additionDef: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    eATK: 0,
+    cATK: 0,
+    criticalPercent: 0,
+    penetrationPercent: 0,
+    prefix: 'Heavy Blade',
+    script: (character: Character2, _this: IBaseEquipment): void => {
+      _this.additionAtk.size = 0;
+      if ([Scale.MEDIUM, Scale.LARGE].includes(character.monster?.scale)) {
+        _this.additionAtk.size = 0.3;
+      }
+    }
+  },
+  {
+    id: 4485,
+    name: 'Sealed Gloom Card',
+    type: EquipmentType.CARD,
+    subType: null,
+    location: null,
+    compoundOn: CompoundOn.ARMOR,
+    baseDef: 0,
+    baseATK: 0,
+    level: 1,
+    equipUpgradeValue: 0,
+    str: 0,
+    agi: 0,
+    vit: 0,
+    int: 0,
+    dex: 0,
+    luk: 0,
+    additionAtk: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    additionDef: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    eATK: 0,
+    cATK: 0,
+    criticalPercent: 0,
+    penetrationPercent: 0,
+    prefix: 'Half Abyss',
+    script: (character: Character2, _this: IBaseEquipment): void => {
+      _this.additionAtk.race = 0;
+      _this.additionAtk.element = 0;
+      if (character.monster?.element === E_Element.HOLY || character.monster?.element === E_Element.SHADOW) {
+        _this.additionAtk.race = 0.2;
+
+        if (character.bodyGear?.equipUpgradeValue >= 15) {
+          _this.additionAtk.race = 0.3;
+        }
+      }
+      if (character.monster?.race === MonsterRace.ANGEL || character.monster?.race === MonsterRace.DEMON) {
+        _this.additionAtk.element = 0.2;
+        if (character.bodyGear?.equipUpgradeValue >= 15) {
+          _this.additionAtk.element = 0.3;
+        }
+      }
+    }
+  },
+  {
+    id: 4408,
+    name: 'Gloom Card',
+    type: EquipmentType.CARD,
+    subType: null,
+    location: null,
+    compoundOn: CompoundOn.ARMOR,
+    baseDef: 0,
+    baseATK: 0,
+    level: 1,
+    equipUpgradeValue: 0,
+    str: 0,
+    agi: 0,
+    vit: 0,
+    int: 0,
+    dex: 0,
+    luk: 0,
+    additionAtk: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    additionDef: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    eATK: 0,
+    cATK: 0,
+    criticalPercent: 0,
+    penetrationPercent: 0,
+    prefix: 'Abyss',
+    script: (character: Character2, _this: IBaseEquipment): void => {
+      _this.additionAtk.race = 0;
+      _this.additionAtk.element = 0;
+      if (character.monster?.element === E_Element.HOLY || character.monster?.element === E_Element.SHADOW) {
+        _this.additionAtk.race = 0.4;
+      }
+      if (character.monster?.race === MonsterRace.ANGEL || character.monster?.race === MonsterRace.DEMON) {
+        _this.additionAtk.element = 0.4;
       }
     }
   },

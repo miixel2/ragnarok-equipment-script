@@ -7,6 +7,7 @@ const malangdo = [21018, 28010, 1185, 1186, 13412, 13413, 1171];
 const tempBoots = [22006, 22011];
 const costumes = costumeIds;
 const mora = [15039, 15037];
+const racingCap = [19191, 19195];
 
 export const enchants: IBaseEquipment[] = [
   {
@@ -1335,7 +1336,7 @@ export const enchants: IBaseEquipment[] = [
     cATK: 0,
     criticalPercent: 0,
     penetrationPercent: 0,
-    enchantActives: [20718, ...malangdo, ...mora],
+    enchantActives: [20718, ...malangdo, ...mora, ...racingCap],
     script: (character: Character2, _this: IBaseEquipment): void => { }
   },
   {
@@ -1371,7 +1372,7 @@ export const enchants: IBaseEquipment[] = [
     cATK: 0,
     criticalPercent: 0,
     penetrationPercent: 0,
-    enchantActives: [...headGearLab5, 20718, ...malangdo, ...mora],
+    enchantActives: [...headGearLab5, 20718, ...malangdo, ...mora, ...racingCap],
     script: (character: Character2, _this: IBaseEquipment): void => { }
   },
   {
@@ -1407,7 +1408,7 @@ export const enchants: IBaseEquipment[] = [
     cATK: 0,
     criticalPercent: 0,
     penetrationPercent: 0,
-    enchantActives: [...headGearLab5, 2589, 20718, ...malangdo, ...mora],
+    enchantActives: [...headGearLab5, 2589, 20718, ...malangdo, ...mora, ...racingCap],
     script: (character: Character2, _this: IBaseEquipment): void => { }
   },
   {
@@ -1587,7 +1588,7 @@ export const enchants: IBaseEquipment[] = [
     cATK: 0,
     criticalPercent: 0,
     penetrationPercent: 0,
-    enchantActives: [20718, ...malangdo, ...mora],
+    enchantActives: [20718, ...malangdo, ...mora, ...racingCap],
     script: (character: Character2, _this: IBaseEquipment): void => { }
   },
   {
@@ -1623,7 +1624,7 @@ export const enchants: IBaseEquipment[] = [
     cATK: 0,
     criticalPercent: 0,
     penetrationPercent: 0,
-    enchantActives: [...headGearLab5, 20718, ...malangdo, ...mora],
+    enchantActives: [...headGearLab5, 20718, ...malangdo, ...mora, ...racingCap],
     script: (character: Character2, _this: IBaseEquipment): void => { }
   },
   {
@@ -1659,7 +1660,7 @@ export const enchants: IBaseEquipment[] = [
     cATK: 0,
     criticalPercent: 0,
     penetrationPercent: 0,
-    enchantActives: [...headGearLab5, 2589, 20718, ...malangdo, ...mora],
+    enchantActives: [...headGearLab5, 2589, 20718, ...malangdo, ...mora, ...racingCap],
     script: (character: Character2, _this: IBaseEquipment): void => { }
   },
   {
@@ -1839,7 +1840,7 @@ export const enchants: IBaseEquipment[] = [
     cATK: 0,
     criticalPercent: 0,
     penetrationPercent: 0,
-    enchantActives: [20718, ...malangdo, ...mora],
+    enchantActives: [20718, ...malangdo, ...mora, ...racingCap],
     script: (character: Character2, _this: IBaseEquipment): void => { }
   },
   {
@@ -1875,7 +1876,7 @@ export const enchants: IBaseEquipment[] = [
     cATK: 0,
     criticalPercent: 0,
     penetrationPercent: 0,
-    enchantActives: [...headGearLab5, 20718, ...malangdo, ...mora],
+    enchantActives: [...headGearLab5, 20718, ...malangdo, ...mora, ...racingCap],
     script: (character: Character2, _this: IBaseEquipment): void => { }
   },
   {
@@ -1911,7 +1912,7 @@ export const enchants: IBaseEquipment[] = [
     cATK: 0,
     criticalPercent: 0,
     penetrationPercent: 0,
-    enchantActives: [...headGearLab5, 2589, 20718, ...malangdo, ...mora],
+    enchantActives: [...headGearLab5, 2589, 20718, ...malangdo, ...mora, ...racingCap],
     script: (character: Character2, _this: IBaseEquipment): void => { }
   },
   {
@@ -3229,6 +3230,222 @@ export const enchants: IBaseEquipment[] = [
     criticalPercent: 0,
     penetrationPercent: 0,
     enchantActives: [...mora],
+    script: (character: Character2, _this: IBaseEquipment): void => { }
+  },
+  {
+    id: 29310,
+    name: 'Racing (Rune Knight) Lv1',
+    type: EquipmentType.CARD,
+    subType: null,
+    location: null,
+    compoundOn: CompoundOn.ENCHANT,
+    baseDef: 0,
+    baseATK: 0,
+    level: 1,
+    equipUpgradeValue: 0,
+    str: 0,
+    agi: 0,
+    vit: 0,
+    int: 0,
+    dex: 0,
+    luk: 0,
+    additionAtk: {
+      size: 0.05,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    additionDef: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    eATK: 0,
+    cATK: 0,
+    criticalPercent: 0,
+    penetrationPercent: 0,
+    enchantActives: [19195],
+    script: (character: Character2, _this: IBaseEquipment): void => { }
+  },
+  {
+    id: 29311,
+    name: 'Racing (Rune Knight) Lv2',
+    type: EquipmentType.CARD,
+    subType: null,
+    location: null,
+    compoundOn: CompoundOn.ENCHANT,
+    baseDef: 0,
+    baseATK: 0,
+    level: 1,
+    equipUpgradeValue: 0,
+    str: 0,
+    agi: 0,
+    vit: 0,
+    int: 0,
+    dex: 0,
+    luk: 0,
+    additionAtk: {
+      size: 0.07,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    additionDef: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    eATK: 0,
+    cATK: 0,
+    criticalPercent: 0,
+    penetrationPercent: 0,
+    enchantActives: [19195],
+    script: (character: Character2, _this: IBaseEquipment): void => { }
+  },
+  {
+    id: 29312,
+    name: 'Racing (Rune Knight) Lv3',
+    type: EquipmentType.CARD,
+    subType: null,
+    location: null,
+    compoundOn: CompoundOn.ENCHANT,
+    baseDef: 0,
+    baseATK: 0,
+    level: 1,
+    equipUpgradeValue: 0,
+    str: 0,
+    agi: 0,
+    vit: 0,
+    int: 0,
+    dex: 0,
+    luk: 0,
+    additionAtk: {
+      size: 0.15,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    additionDef: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    eATK: 40,
+    cATK: 0,
+    criticalPercent: 0,
+    penetrationPercent: 0,
+    enchantActives: [19195],
+    script: (character: Character2, _this: IBaseEquipment): void => { }
+  },
+  {
+    id: 29322,
+    name: 'Racing (Guillotine Cross) Lv1',
+    type: EquipmentType.CARD,
+    subType: null,
+    location: null,
+    compoundOn: CompoundOn.ENCHANT,
+    baseDef: 0,
+    baseATK: 0,
+    level: 1,
+    equipUpgradeValue: 0,
+    str: 0,
+    agi: 0,
+    vit: 0,
+    int: 0,
+    dex: 0,
+    luk: 0,
+    additionAtk: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    additionDef: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    eATK: 20,
+    cATK: 0,
+    criticalPercent: 0,
+    penetrationPercent: 0,
+    enchantActives: [19191],
+    script: (character: Character2, _this: IBaseEquipment): void => { }
+  },
+  {
+    id: 29323,
+    name: 'Racing (Guillotine Cross) Lv2',
+    type: EquipmentType.CARD,
+    subType: null,
+    location: null,
+    compoundOn: CompoundOn.ENCHANT,
+    baseDef: 0,
+    baseATK: 0,
+    level: 1,
+    equipUpgradeValue: 0,
+    str: 0,
+    agi: 0,
+    vit: 0,
+    int: 0,
+    dex: 0,
+    luk: 0,
+    additionAtk: {
+      size: 0.05,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    additionDef: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    eATK: 30,
+    cATK: 0,
+    criticalPercent: 0,
+    penetrationPercent: 0,
+    enchantActives: [19191],
+    script: (character: Character2, _this: IBaseEquipment): void => { }
+  },
+  {
+    id: 29324,
+    name: 'Racing (Guillotine Cross) Lv3',
+    type: EquipmentType.CARD,
+    subType: null,
+    location: null,
+    compoundOn: CompoundOn.ENCHANT,
+    baseDef: 0,
+    baseATK: 0,
+    level: 1,
+    equipUpgradeValue: 0,
+    str: 0,
+    agi: 0,
+    vit: 0,
+    int: 0,
+    dex: 0,
+    luk: 0,
+    additionAtk: {
+      size: 0.1,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    additionDef: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    eATK: 50,
+    cATK: 0,
+    criticalPercent: 0,
+    penetrationPercent: 0,
+    enchantActives: [19191],
     script: (character: Character2, _this: IBaseEquipment): void => { }
   },
 ];

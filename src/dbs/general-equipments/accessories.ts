@@ -940,4 +940,50 @@ export const accessories: IBaseEquipment[] = [
       }
     }
   },
+  {
+    id: 490246,
+    name: 'Vassalage Ring [1]',
+    type: EquipmentType.ARMOR,
+    subType: EquipmentSubType.ACCESSORY,
+    location: EquipmentLocation.LEFT_ACCESSORY,
+    compoundOn: null,
+    slot1Enable: true,
+    baseDef: 0,
+    baseATK: 0,
+    level: 1,
+    equipUpgradeValue: 0,
+    str: 0,
+    agi: 0,
+    vit: 0,
+    int: 0,
+    dex: 0,
+    luk: 0,
+    additionAtk: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    additionDef: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    eATK: 0,
+    cATK: 0,
+    criticalPercent: 0,
+    penetrationPercent: 0,
+    script: (character: Character2, _this: IBaseEquipment): void => {
+      _this.criticalPercent = 0;
+
+      const baseLevel = character.class.baseLv;
+      const multiplierBaseLevel = Math.floor(baseLevel / 35);
+      _this.criticalPercent = Number((new Big(multiplierBaseLevel)).mul(0.01).valueOf());
+
+      if (baseLevel >= 175) {
+        _this.criticalPercent = _this.criticalPercent * 2;
+      }
+    }
+  },
 ];
