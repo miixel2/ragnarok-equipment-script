@@ -554,4 +554,43 @@ export const upperHeadgear: IBaseEquipment[] = [
       }
     }
   },
+  {
+    id: 15927,
+    name: '[Rental] Happy Turtle Hat',
+    type: EquipmentType.ARMOR,
+    subType: EquipmentSubType.HELM,
+    location: EquipmentLocation.UPPER_HEADGEAR,
+    compoundOn: null,
+    baseDef: 15,
+    baseATK: 0,
+    level: 1,
+    equipUpgradeValue: 0,
+    str: 0,
+    agi: 0,
+    vit: 0,
+    int: 0,
+    dex: 0,
+    luk: 0,
+    additionAtk: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    additionDef: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    eATK: 30,
+    cATK: 0,
+    criticalPercent: 0,
+    penetrationPercent: 0,
+    script: (character: Character2, _this: IBaseEquipment): void => {
+      if ([3799, 3800, 3801, 3802, 3803, 3804].includes(character.monster?.id)) {
+        character.mulMeleeAtk = Number(new Big(character.mulMeleeAtk).plus(0.5).valueOf());
+      }
+    }
+  },
 ];
