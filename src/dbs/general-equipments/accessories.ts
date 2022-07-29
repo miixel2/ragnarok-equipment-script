@@ -962,7 +962,7 @@ export const accessories: IBaseEquipment[] = [
       size: 0,
       element: 0,
       race: 0,
-      class: 0,
+      class: 0.05,
     },
     additionDef: {
       size: 0,
