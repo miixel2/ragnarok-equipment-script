@@ -1358,9 +1358,22 @@ export const cards: IBaseEquipment[] = [
       // cri rate + 3
       _this.criticalPercent = 0.05;
 
-      if (character.rightAccessory?.slot1?.id === 27117 || character.leftAccessory?.slot1?.id === 27117) {
+      if (character.comboSet.indexOf('27116_27117') > -1) {
+        return;
+      }
+
+      if (character.leftHand?.slot1?.id === 27117
+        || character.leftHand?.slot2?.id === 27117
+        || character.leftHand?.slot3?.id === 27117
+        || character.leftHand?.slot4?.id === 27117
+        || character.rightHand?.slot1?.id === 27117
+        || character.rightHand?.slot2?.id === 27117
+        || character.rightHand?.slot3?.id === 27117
+        || character.rightHand?.slot4?.id === 27117
+      ) {
         // cri rate + 5
         _this.criticalPercent = 0.07;
+        character.comboSet.push('27116_27117');
       }
     }
   },
@@ -1402,6 +1415,10 @@ export const cards: IBaseEquipment[] = [
       _this.criticalPercent = 0.1;
       _this.eATK = 0;
 
+      if (character.comboSet.indexOf('27117') > -1) {
+        return;
+      }
+
       if ([EquipmentSubType.TWO_HANDED_SWORD, EquipmentSubType.TWO_HANDED_SPEAR, EquipmentSubType.WHIP, EquipmentSubType.BOOK].includes(character.rightHand?.subType)) {
         // cri rate + 5
 
@@ -1410,6 +1427,7 @@ export const cards: IBaseEquipment[] = [
         _this.criticalPercent = Number((new Big(_this.criticalPercent)).plus(tempPercentUpgrade).valueOf());
         const tempAtk = Number((new Big(Math.floor(upgrade))).mul(3).valueOf());
         _this.eATK = Number((new Big(_this.eATK)).plus(tempAtk).valueOf());
+        character.comboSet.push('27117');
       }
     }
   },

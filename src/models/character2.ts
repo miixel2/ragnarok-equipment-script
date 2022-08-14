@@ -167,4 +167,6 @@ export class Character2 {
   public shadowLeftAccessory: BaseEquipment = null;
 
   public ignoreSizePenalty: boolean = false;
+
+  public comboSet: string[] = [];
 }

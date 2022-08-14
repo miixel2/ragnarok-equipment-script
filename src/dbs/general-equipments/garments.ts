@@ -989,4 +989,58 @@ export const garments: IBaseEquipment[] = [
       }
     }
   },
+  {
+    id: 15389,
+    name: `King Schmidt's Manteau [1]`,
+    type: EquipmentType.ARMOR,
+    subType: EquipmentSubType.GARMENT,
+    location: EquipmentLocation.GARMENT,
+    compoundOn: null,
+    slot1Enable: true,
+    slot2Enable: true,
+    slot3Enable: true,
+    slot4Enable: true,
+    baseDef: 70,
+    baseATK: 0,
+    level: 1,
+    equipUpgradeValue: 0,
+    str: 0,
+    agi: 0,
+    vit: 0,
+    int: 0,
+    dex: 0,
+    luk: 0,
+    hpModA: 0,
+    hpModB: 0,
+    spModA: 0,
+    spModB: 0,
+    additionAtk: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    additionDef: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    eATK: 0,
+    cATK: 0,
+    criticalPercent: 0,
+    penetrationPercent: 0,
+    classActives: [],
+    script: (character: Character2, _this: IBaseEquipment): void => {
+      const upgrade = _this.equipUpgradeValue;
+      _this.additionAtk.race = 0;
+      _this.additionAtk.element = Number((new Big(Math.floor(upgrade / 3))).mul(0.02).valueOf());
+
+      if (upgrade >= 11) {
+        if (character.monster?.race === MonsterRace.DRAGON || character.monster?.race === MonsterRace.FORMLESS) {
+          _this.additionAtk.race = 0.15;
+        }
+      }
+    }
+  },
 ];

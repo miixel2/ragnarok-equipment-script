@@ -3,7 +3,7 @@ import { Character2 } from '../../models/character2';
 import { ClassKey } from '../../models/class';
 import { E_Element } from '../../models/element';
 import { IBaseEquipment, EquipmentType, EquipmentSubType, EquipmentLocation } from '../../models/equipment';
-import { MonsterRace } from '../../models/monster';
+import { MonsterRace, Scale } from '../../models/monster';
 
 export const armors: IBaseEquipment[] = [
   {
@@ -463,6 +463,71 @@ export const armors: IBaseEquipment[] = [
       if (character.class.str0 >= 125) {
         const atkBonus = Number((new Big(upgrade)).mul(0.01).valueOf());
         _this.additionAtk.atkPercent2 = Number((new Big(_this.additionAtk.atkPercent2)).plus(atkBonus).valueOf());
+      }
+    }
+  },
+  {
+    id: 15388,
+    name: `King Schmidt's Suit [1]`,
+    type: EquipmentType.ARMOR,
+    subType: EquipmentSubType.ARMOR,
+    location: EquipmentLocation.BODY,
+    compoundOn: null,
+    slot1Enable: true,
+    slot2Enable: true,
+    slot3Enable: true,
+    slot4Enable: true,
+    baseDef: 150,
+    baseATK: 0,
+    level: 1,
+    equipUpgradeValue: 0,
+    str: 0,
+    agi: 0,
+    vit: 0,
+    int: 0,
+    dex: 0,
+    luk: 0,
+    hpModA: 0,
+    hpModB: 0,
+    spModA: 0,
+    spModB: 0,
+    additionAtk: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    additionDef: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    eATK: 0,
+    cATK: 0,
+    criticalPercent: 0,
+    penetrationPercent: 0,
+    classActives: [],
+    script: (character: Character2, _this: IBaseEquipment): void => {
+      const upgrade = _this.equipUpgradeValue;
+      _this.additionAtk.race = 0;
+      _this.additionAtk.element = 0;
+      _this.hpModB = 0;
+      _this.spModB = 0;
+
+      if (character.monster?.scale === Scale.MEDIUM || character.monster?.scale === Scale.LARGE) {
+        _this.additionAtk.race = 0.1;
+      }
+
+      if (upgrade >= 7) {
+        if (character.monster?.element === E_Element.FIRE || character.monster?.element === E_Element.SHADOW) {
+          _this.additionAtk.element = 0.1;
+        }
+      }
+
+      if (character.garment?.id === 15389) {
+        _this.hpModB = 0.05;
+        _this.spModB = 0.05;
       }
     }
   },

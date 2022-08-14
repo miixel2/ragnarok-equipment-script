@@ -22,7 +22,7 @@ export const shadowShields: IBaseEquipment[] = [
     int: 0,
     dex: 0,
     luk: 0,
-    hpModA: 200,
+    hpModA: 0,
     hpModB: 0,
     additionAtk: {
       size: 0,
@@ -44,6 +44,7 @@ export const shadowShields: IBaseEquipment[] = [
       _this.hpModB = 0;
 
       const upgrade = _this.equipUpgradeValue;
+      _this.hpModA = (upgrade * 10) + 200;
       if (upgrade >= 7) {
         _this.hpModB = 0.02;
 
@@ -70,6 +71,7 @@ export const shadowShields: IBaseEquipment[] = [
     int: 0,
     dex: 0,
     luk: 0,
+    hpModA: 0,
     additionAtk: {
       size: 0,
       element: 0,
@@ -86,7 +88,10 @@ export const shadowShields: IBaseEquipment[] = [
     cATK: 0,
     criticalPercent: 0,
     penetrationPercent: 0,
-    script: (character: Character2, _this: IBaseEquipment): void => { }
+    script: (character: Character2, _this: IBaseEquipment): void => {
+      const upgrade = _this.equipUpgradeValue;
+      _this.hpModA = upgrade * 10;
+    }
   },
   {
     id: 24301,
@@ -105,6 +110,7 @@ export const shadowShields: IBaseEquipment[] = [
     int: 0,
     dex: 0,
     luk: 0,
+    hpModA: 0,
     hpModB: 0,
     spModB: 0,
     additionAtk: {
@@ -125,6 +131,9 @@ export const shadowShields: IBaseEquipment[] = [
     penetrationPercent: 0,
     classActives: [ClassKey.RuneKnight],
     script: (character: Character2, _this: IBaseEquipment): void => {
+      const upgrade = _this.equipUpgradeValue;
+
+      _this.hpModA = upgrade * 10;
       _this.str = 0;
       _this.agi = 0;
       _this.vit = 0;
@@ -172,6 +181,7 @@ export const shadowShields: IBaseEquipment[] = [
     int: 0,
     dex: 0,
     luk: 0,
+    hpModA: 0,
     additionAtk: {
       size: 0,
       element: 0,
@@ -192,6 +202,7 @@ export const shadowShields: IBaseEquipment[] = [
       _this.additionAtk.class = 0;
 
       const upgrade = _this.equipUpgradeValue;
+      _this.hpModA = upgrade * 10;
       if (character.monster.type === MonsterType.BOSS) {
         _this.additionAtk.class = Number(new Big(0.02).valueOf());
 
@@ -226,6 +237,7 @@ export const shadowShields: IBaseEquipment[] = [
     int: 0,
     dex: 0,
     luk: 0,
+    hpModA: 0,
     additionAtk: {
       size: 0,
       element: 0,
@@ -245,9 +257,45 @@ export const shadowShields: IBaseEquipment[] = [
     script: (character: Character2, _this: IBaseEquipment): void => {
       _this.penetrationPercent = 0.05;
       const upgrade = _this.equipUpgradeValue;
-
+      _this.hpModA = upgrade * 10;
       const refinePenetration = Number((new Big(Math.floor(upgrade / 2))).mul(0.01).valueOf());
       _this.penetrationPercent = Number((new Big(_this.penetrationPercent)).plus(refinePenetration).valueOf());
     }
+  },
+  {
+    id: 24585,
+    name: 'Booster Shadow Shield',
+    type: EquipmentType.SHADOW_EQUIPMENT,
+    subType: EquipmentSubType.SHADOW_SHIELD,
+    location: EquipmentLocation.SHADOW_SHIELD,
+    compoundOn: null,
+    baseDef: 0,
+    baseATK: 0,
+    level: 1,
+    equipUpgradeValue: 0,
+    str: 0,
+    agi: 0,
+    vit: 0,
+    int: 0,
+    dex: 0,
+    luk: 0,
+    hpModA: 100,
+    additionAtk: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    additionDef: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    eATK: 0,
+    cATK: 0,
+    criticalPercent: 0,
+    penetrationPercent: 0,
+    script: (character: Character2, _this: IBaseEquipment): void => { }
   },
 ];

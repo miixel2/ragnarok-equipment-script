@@ -8,6 +8,7 @@ const tempBoots = [22006, 22011];
 const costumes = costumeIds;
 const mora = [15039, 15037];
 const racingCap = [19191, 19195];
+const kingInsignia = [32228, 32230, 32231, 32232, 32233];
 
 export const enchants: IBaseEquipment[] = [
   {
@@ -1408,7 +1409,7 @@ export const enchants: IBaseEquipment[] = [
     cATK: 0,
     criticalPercent: 0,
     penetrationPercent: 0,
-    enchantActives: [...headGearLab5, 2589, 20718, ...malangdo, ...mora, ...racingCap],
+    enchantActives: [...headGearLab5, 2589, 20718, ...malangdo, ...mora, ...racingCap, 15388, 32228],
     script: (character: Character2, _this: IBaseEquipment): void => { }
   },
   {
@@ -1444,7 +1445,7 @@ export const enchants: IBaseEquipment[] = [
     cATK: 0,
     criticalPercent: 0,
     penetrationPercent: 0,
-    enchantActives: [...headGearLab5, 2589, 20718, ...malangdo, ...mora],
+    enchantActives: [...headGearLab5, 2589, 20718, ...malangdo, ...mora, 15388, 32228],
     script: (character: Character2, _this: IBaseEquipment): void => { }
   },
   {
@@ -1480,7 +1481,7 @@ export const enchants: IBaseEquipment[] = [
     cATK: 0,
     criticalPercent: 0,
     penetrationPercent: 0,
-    enchantActives: [...headGearLab5, 2589, 20718, ...malangdo, ...mora],
+    enchantActives: [...headGearLab5, 2589, 20718, ...malangdo, ...mora, 15388, 32228],
     script: (character: Character2, _this: IBaseEquipment): void => { }
   },
   {
@@ -1660,7 +1661,7 @@ export const enchants: IBaseEquipment[] = [
     cATK: 0,
     criticalPercent: 0,
     penetrationPercent: 0,
-    enchantActives: [...headGearLab5, 2589, 20718, ...malangdo, ...mora, ...racingCap],
+    enchantActives: [...headGearLab5, 2589, 20718, ...malangdo, ...mora, ...racingCap, 15388, 32228],
     script: (character: Character2, _this: IBaseEquipment): void => { }
   },
   {
@@ -1696,7 +1697,7 @@ export const enchants: IBaseEquipment[] = [
     cATK: 0,
     criticalPercent: 0,
     penetrationPercent: 0,
-    enchantActives: [...headGearLab5, 2589, 20718, ...malangdo, ...mora],
+    enchantActives: [...headGearLab5, 2589, 20718, ...malangdo, ...mora, 15388, 32228],
     script: (character: Character2, _this: IBaseEquipment): void => { }
   },
   {
@@ -1732,7 +1733,7 @@ export const enchants: IBaseEquipment[] = [
     cATK: 0,
     criticalPercent: 0,
     penetrationPercent: 0,
-    enchantActives: [...headGearLab5, 2589, 20718, ...malangdo, ...mora],
+    enchantActives: [...headGearLab5, 2589, 20718, ...malangdo, ...mora, 15388, 32228],
     script: (character: Character2, _this: IBaseEquipment): void => { }
   },
   {
@@ -1912,7 +1913,7 @@ export const enchants: IBaseEquipment[] = [
     cATK: 0,
     criticalPercent: 0,
     penetrationPercent: 0,
-    enchantActives: [...headGearLab5, 2589, 20718, ...malangdo, ...mora, ...racingCap],
+    enchantActives: [...headGearLab5, 2589, 20718, ...malangdo, ...mora, ...racingCap, 15388, 32228],
     script: (character: Character2, _this: IBaseEquipment): void => { }
   },
   {
@@ -1948,7 +1949,7 @@ export const enchants: IBaseEquipment[] = [
     cATK: 0,
     criticalPercent: 0,
     penetrationPercent: 0,
-    enchantActives: [...headGearLab5, 2589, 20718, ...malangdo, ...mora],
+    enchantActives: [...headGearLab5, 2589, 20718, ...malangdo, ...mora, 15388, 32228],
     script: (character: Character2, _this: IBaseEquipment): void => { }
   },
   {
@@ -1984,7 +1985,7 @@ export const enchants: IBaseEquipment[] = [
     cATK: 0,
     criticalPercent: 0,
     penetrationPercent: 0,
-    enchantActives: [...headGearLab5, 2589, 20718, ...malangdo, ...mora],
+    enchantActives: [...headGearLab5, 2589, 20718, ...malangdo, ...mora, 15388, 32228],
     script: (character: Character2, _this: IBaseEquipment): void => { }
   },
   {
@@ -2200,7 +2201,7 @@ export const enchants: IBaseEquipment[] = [
     cATK: 0,
     criticalPercent: 0,
     penetrationPercent: 0,
-    enchantActives: [...malangdo, ...tempBoots, 2589, ...mora],
+    enchantActives: [...malangdo, ...tempBoots, 2589, ...mora, 15389],
     script: (character: Character2, _this: IBaseEquipment): void => { }
   },
   {
@@ -2236,7 +2237,7 @@ export const enchants: IBaseEquipment[] = [
     cATK: 0,
     criticalPercent: 0,
     penetrationPercent: 0,
-    enchantActives: [...malangdo, ...tempBoots, 2589, ...mora],
+    enchantActives: [...malangdo, ...tempBoots, 2589, ...mora, 15389],
     script: (character: Character2, _this: IBaseEquipment): void => { }
   },
   {
@@ -2272,7 +2273,7 @@ export const enchants: IBaseEquipment[] = [
     cATK: 0,
     criticalPercent: 0,
     penetrationPercent: 0,
-    enchantActives: [...malangdo, ...tempBoots, 2589, ...mora],
+    enchantActives: [...malangdo, ...tempBoots, 2589, ...mora, 15389, 32228],
     script: (character: Character2, _this: IBaseEquipment): void => { }
   },
   {
@@ -2308,7 +2309,7 @@ export const enchants: IBaseEquipment[] = [
     cATK: 0,
     criticalPercent: 0,
     penetrationPercent: 0,
-    enchantActives: [...malangdo, ...tempBoots],
+    enchantActives: [...malangdo, ...tempBoots, 32228],
     script: (character: Character2, _this: IBaseEquipment): void => { }
   },
   {
@@ -2712,7 +2713,7 @@ export const enchants: IBaseEquipment[] = [
     cATK: 0,
     criticalPercent: 0.04,
     penetrationPercent: 0,
-    enchantActives: [2589],
+    enchantActives: [2589, 15389],
     script: (character: Character2, _this: IBaseEquipment): void => { }
   },
   {
@@ -2748,7 +2749,7 @@ export const enchants: IBaseEquipment[] = [
     cATK: 0,
     criticalPercent: 0.06,
     penetrationPercent: 0,
-    enchantActives: [2589],
+    enchantActives: [2589, 15389, 32228],
     script: (character: Character2, _this: IBaseEquipment): void => { }
   },
   {
@@ -2784,7 +2785,7 @@ export const enchants: IBaseEquipment[] = [
     cATK: 0,
     criticalPercent: 0.08,
     penetrationPercent: 0,
-    enchantActives: [2589],
+    enchantActives: [2589, 15389, 32228],
     script: (character: Character2, _this: IBaseEquipment): void => { }
   },
   {
@@ -3447,5 +3448,242 @@ export const enchants: IBaseEquipment[] = [
     penetrationPercent: 0,
     enchantActives: [19191],
     script: (character: Character2, _this: IBaseEquipment): void => { }
+  },
+  {
+    id: 29587,
+    name: 'Flash',
+    type: EquipmentType.CARD,
+    subType: null,
+    location: null,
+    compoundOn: CompoundOn.ENCHANT,
+    baseDef: 0,
+    baseATK: 0,
+    level: 1,
+    equipUpgradeValue: 0,
+    str: 0,
+    agi: 0,
+    vit: 0,
+    int: 0,
+    dex: 0,
+    luk: 0,
+    additionAtk: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    additionDef: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    eATK: 0,
+    cATK: 0,
+    criticalPercent: 0,
+    penetrationPercent: 0,
+    enchantActives: [...kingInsignia],
+    script: (character: Character2, _this: IBaseEquipment): void => {
+      _this.criticalPercent = 0;
+      if (character.shoes?.slot2?.id === 4877 || character.shoes?.slot3?.id === 4877 || character.shoes?.slot4?.id === 4877) {
+        _this.criticalPercent = 0.3;
+      }
+    }
+  },
+  {
+    id: 29588,
+    name: 'Strong',
+    type: EquipmentType.CARD,
+    subType: null,
+    location: null,
+    compoundOn: CompoundOn.ENCHANT,
+    baseDef: 0,
+    baseATK: 0,
+    level: 1,
+    equipUpgradeValue: 0,
+    str: 0,
+    agi: 0,
+    vit: 0,
+    int: 0,
+    dex: 0,
+    luk: 0,
+    additionAtk: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    additionDef: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    eATK: 0,
+    cATK: 0,
+    criticalPercent: 0,
+    penetrationPercent: 0,
+    enchantActives: [...kingInsignia],
+    script: (character: Character2, _this: IBaseEquipment): void => {
+      _this.additionAtk.size = 0;
+      if (character.shoes?.slot2?.id === 4875 || character.shoes?.slot3?.id === 4875 || character.shoes?.slot4?.id === 4875) {
+        _this.additionAtk.size = 0.25;
+      }
+    }
+  },
+  {
+    id: 29589,
+    name: 'Celestial Bow',
+    type: EquipmentType.CARD,
+    subType: null,
+    location: null,
+    compoundOn: CompoundOn.ENCHANT,
+    baseDef: 0,
+    baseATK: 0,
+    level: 1,
+    equipUpgradeValue: 0,
+    str: 0,
+    agi: 0,
+    vit: 0,
+    int: 0,
+    dex: 0,
+    luk: 0,
+    additionAtk: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    additionDef: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    eATK: 0,
+    cATK: 0,
+    criticalPercent: 0,
+    penetrationPercent: 0,
+    enchantActives: [...kingInsignia],
+    script: (character: Character2, _this: IBaseEquipment): void => {
+      _this.additionAtk.atkPercent2 = 0;
+      if (character.shoes?.slot2?.id === 4879 || character.shoes?.slot3?.id === 4879 || character.shoes?.slot4?.id === 4879) {
+        _this.additionAtk.atkPercent2 = 0.1;
+      }
+    }
+  },
+  {
+    id: 29590,
+    name: 'Divine Power',
+    type: EquipmentType.CARD,
+    subType: null,
+    location: null,
+    compoundOn: CompoundOn.ENCHANT,
+    baseDef: 0,
+    baseATK: 0,
+    level: 1,
+    equipUpgradeValue: 0,
+    str: 0,
+    agi: 0,
+    vit: 0,
+    int: 0,
+    dex: 0,
+    luk: 0,
+    additionAtk: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    additionDef: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    eATK: 0,
+    cATK: 0,
+    criticalPercent: 0,
+    penetrationPercent: 0,
+    enchantActives: [...kingInsignia],
+    script: (character: Character2, _this: IBaseEquipment): void => {
+      if (character.shoes?.slot2?.id === 4876 || character.shoes?.slot3?.id === 4876 || character.shoes?.slot4?.id === 4876) { }
+    }
+  },
+  {
+    id: 29591,
+    name: 'Rigid',
+    type: EquipmentType.CARD,
+    subType: null,
+    location: null,
+    compoundOn: CompoundOn.ENCHANT,
+    baseDef: 0,
+    baseATK: 0,
+    level: 1,
+    equipUpgradeValue: 0,
+    str: 0,
+    agi: 0,
+    vit: 0,
+    int: 0,
+    dex: 0,
+    luk: 0,
+    additionAtk: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    additionDef: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    eATK: 0,
+    cATK: 0,
+    criticalPercent: 0,
+    penetrationPercent: 0,
+    enchantActives: [...kingInsignia],
+    script: (character: Character2, _this: IBaseEquipment): void => {
+      if (character.shoes?.slot2?.id === 4878 || character.shoes?.slot3?.id === 4878 || character.shoes?.slot4?.id === 4878) { }
+    }
+  },
+  {
+    id: 29592,
+    name: 'White Cloud',
+    type: EquipmentType.CARD,
+    subType: null,
+    location: null,
+    compoundOn: CompoundOn.ENCHANT,
+    baseDef: 0,
+    baseATK: 0,
+    level: 1,
+    equipUpgradeValue: 0,
+    str: 0,
+    agi: 0,
+    vit: 0,
+    int: 0,
+    dex: 0,
+    luk: 0,
+    additionAtk: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    additionDef: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    eATK: 0,
+    cATK: 0,
+    criticalPercent: 0,
+    penetrationPercent: 0,
+    enchantActives: [...kingInsignia],
+    script: (character: Character2, _this: IBaseEquipment): void => {
+      if (character.shoes?.slot2?.id === 4880 || character.shoes?.slot3?.id === 4880 || character.shoes?.slot4?.id === 4880) { }
+    }
   },
 ];

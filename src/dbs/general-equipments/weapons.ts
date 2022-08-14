@@ -357,7 +357,7 @@ export const weapons: IBaseEquipment[] = [
     name: 'Violet Fear [2]',
     type: EquipmentType.WEAPON,
     subType: EquipmentSubType.TWO_HANDED_SWORD,
-    location: EquipmentLocation.RIGHT_HAND,
+    location: EquipmentLocation.BOTH_HAND,
     compoundOn: null,
     slot1Enable: true,
     slot2Enable: true,
@@ -397,7 +397,7 @@ export const weapons: IBaseEquipment[] = [
     name: 'Death Guidance [2]',
     type: EquipmentType.WEAPON,
     subType: EquipmentSubType.TWO_HANDED_SWORD,
-    location: EquipmentLocation.RIGHT_HAND,
+    location: EquipmentLocation.BOTH_HAND,
     compoundOn: null,
     slot1Enable: true,
     slot2Enable: true,
@@ -437,7 +437,7 @@ export const weapons: IBaseEquipment[] = [
     name: 'Zweihander [2]',
     type: EquipmentType.WEAPON,
     subType: EquipmentSubType.TWO_HANDED_SWORD,
-    location: EquipmentLocation.RIGHT_HAND,
+    location: EquipmentLocation.BOTH_HAND,
     compoundOn: null,
     slot1Enable: true,
     slot2Enable: true,
@@ -1361,5 +1361,112 @@ export const weapons: IBaseEquipment[] = [
     penetrationPercent: 0,
     classActives: [ClassKey.GuillotineCross, ClassKey.RuneKnight],
     script: (character: Character2, _this: IBaseEquipment): void => { }
+  },
+  {
+    id: 1447,
+    name: 'Poison Forged Spear [3]',
+    type: EquipmentType.WEAPON,
+    subType: EquipmentSubType.SPEAR,
+    location: EquipmentLocation.RIGHT_HAND,
+    compoundOn: null,
+    slot1Enable: true,
+    slot2Enable: true,
+    slot3Enable: true,
+    baseDef: 0,
+    baseATK: 150,
+    level: 4,
+    equipUpgradeValue: 0,
+    str: 0,
+    agi: 0,
+    vit: 0,
+    int: 0,
+    dex: 0,
+    luk: 0,
+    additionAtk: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    additionDef: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    eATK: 0,
+    cATK: 0,
+    criticalPercent: 0,
+    penetrationPercent: 0,
+    classActives: [ClassKey.RuneKnight],
+    script: (character: Character2, _this: IBaseEquipment): void => { }
+  },
+  {
+    id: 21055,
+    name: 'Guardian Knight Claymore [2]',
+    type: EquipmentType.WEAPON,
+    subType: EquipmentSubType.TWO_HANDED_SWORD,
+    location: EquipmentLocation.BOTH_HAND,
+    compoundOn: null,
+    slot1Enable: true,
+    slot2Enable: true,
+    baseDef: 0,
+    baseATK: 280,
+    level: 4,
+    equipUpgradeValue: 0,
+    str: 0,
+    agi: 0,
+    vit: 0,
+    int: 0,
+    dex: 0,
+    luk: 0,
+    additionAtk: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+      atkPercent2: 0
+    },
+    additionDef: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    eATK: 0,
+    cATK: 0,
+    criticalPercent: 0,
+    penetrationPercent: 0,
+    classActives: [ClassKey.RuneKnight],
+    script: (character: Character2, _this: IBaseEquipment): void => {
+      _this.criticalPercent = 0;
+      _this.additionAtk.element = 0;
+      _this.additionAtk.atkPercent2 = 0.05;
+
+      const upgrade = _this.equipUpgradeValue;
+      _this.additionAtk.class = Number((new Big(Math.floor(upgrade / 2))).mul(0.01).valueOf());
+      _this.eATK = Number((new Big(Math.floor(upgrade))).mul(4).valueOf());
+
+      if (upgrade >= 9) {
+        _this.criticalPercent = 0.25;
+
+        const trueRace = [MonsterRace.UNDEAD, MonsterRace.ANGEL].includes(character.monster?.race);
+        if (upgrade >= 11 && trueRace) {
+          _this.additionAtk.race = Number(new Big(0.2).valueOf());
+        }
+      }
+
+      if (character.bodyGear?.id === 15389 && character.garment?.id === 15389) {
+        _this.eATK += 30;
+
+        const upgradeArmor = character.bodyGear.equipUpgradeValue;
+        const upgradeGarment = character.garment.equipUpgradeValue;
+        if ((upgrade + upgradeArmor + upgradeGarment) >= 30) {
+          if (character.monster?.element === E_Element.HOLY || character.monster?.element === E_Element.UNDEAD) {
+            _this.additionAtk.element = 0.2;
+          }
+        }
+      }
+    }
   },
 ];

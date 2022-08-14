@@ -21,6 +21,7 @@ export const shadowEarrings: IBaseEquipment[] = [
     int: 0,
     dex: 0,
     luk: 0,
+    hpModA: 0,
     additionAtk: {
       size: 0,
       element: 0,
@@ -40,7 +41,7 @@ export const shadowEarrings: IBaseEquipment[] = [
     script: (character: Character2, _this: IBaseEquipment): void => {
       _this.penetrationPercent = 0.05;
       const upgrade = _this.equipUpgradeValue;
-
+      _this.hpModA = upgrade * 10;
       const refinePenetration = Number((new Big(Math.floor(upgrade / 2))).mul(0.01).valueOf());
       _this.penetrationPercent = Number((new Big(_this.penetrationPercent)).plus(refinePenetration).valueOf());
     }
@@ -62,6 +63,7 @@ export const shadowEarrings: IBaseEquipment[] = [
     int: 0,
     dex: 0,
     luk: 0,
+    hpModA: 0,
     additionAtk: {
       size: 0,
       element: 0,
@@ -78,7 +80,10 @@ export const shadowEarrings: IBaseEquipment[] = [
     cATK: 0,
     criticalPercent: 0,
     penetrationPercent: 0,
-    script: (character: Character2, _this: IBaseEquipment): void => { }
+    script: (character: Character2, _this: IBaseEquipment): void => {
+      const upgrade = _this.equipUpgradeValue;
+      _this.hpModA = upgrade * 10;
+    }
   },
   {
     id: 24246,
@@ -119,6 +124,7 @@ export const shadowEarrings: IBaseEquipment[] = [
     classActives: [ClassKey.RuneKnight],
     script: (character: Character2, _this: IBaseEquipment): void => {
       const upgrade = _this.equipUpgradeValue;
+      _this.hpModA = upgrade * 10;
       if (character.shadowLeftHand && character.shadowLeftHand.id === 24250) {
         _this.additionAtk.atkPercent2 = 0.01;
         _this.hpModB = 0.01;
@@ -148,6 +154,7 @@ export const shadowEarrings: IBaseEquipment[] = [
     int: 0,
     dex: 0,
     luk: 0,
+    hpModA: 0,
     additionAtk: {
       size: 0,
       element: 0,
@@ -172,6 +179,7 @@ export const shadowEarrings: IBaseEquipment[] = [
       _this.additionAtk.size = 0.01;
       _this.additionAtk.atkPercent2 = 0;
       const upgrade = _this.equipUpgradeValue;
+      _this.hpModA = upgrade * 10;
 
       if (upgrade >= 7) {
         _this.additionAtk.size = 0.02;
@@ -208,6 +216,7 @@ export const shadowEarrings: IBaseEquipment[] = [
     int: 0,
     dex: 0,
     luk: 0,
+    hpModA: 0,
     additionAtk: {
       size: 0,
       element: 0,
@@ -226,7 +235,7 @@ export const shadowEarrings: IBaseEquipment[] = [
     penetrationPercent: 0,
     script: (character: Character2, _this: IBaseEquipment): void => {
       const upgrade = _this.equipUpgradeValue;
-
+      _this.hpModA = upgrade * 10;
       _this.str = upgrade;
       _this.agi = upgrade;
       _this.vit = upgrade;
@@ -234,5 +243,41 @@ export const shadowEarrings: IBaseEquipment[] = [
       _this.dex = upgrade;
       _this.luk = upgrade;
     }
+  },
+  {
+    id: 24587,
+    name: 'Booster Shadow Earring',
+    type: EquipmentType.SHADOW_EQUIPMENT,
+    subType: EquipmentSubType.SHADOW_RIGHT_ACCESSORY,
+    location: EquipmentLocation.SHADOW_RIGHT_ACCESSORY,
+    compoundOn: null,
+    baseDef: 0,
+    baseATK: 0,
+    level: 1,
+    equipUpgradeValue: 0,
+    str: 0,
+    agi: 0,
+    vit: 0,
+    int: 0,
+    dex: 0,
+    luk: 0,
+    hpModA: 100,
+    additionAtk: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    additionDef: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    eATK: 0,
+    cATK: 0,
+    criticalPercent: 0,
+    penetrationPercent: 0,
+    script: (character: Character2, _this: IBaseEquipment): void => { }
   },
 ];
