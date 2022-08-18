@@ -241,4 +241,94 @@ export const shoes: IBaseEquipment[] = [
       }
     }
   },
+  {
+    id: 22202,
+    name: 'Temporal Boots [1]',
+    type: EquipmentType.ARMOR,
+    subType: EquipmentSubType.SHOES,
+    location: EquipmentLocation.SHOES,
+    compoundOn: null,
+    slot1Enable: true,
+    slot2Enable: false,
+    slot3Enable: false,
+    slot4Enable: false,
+    baseDef: 25,
+    baseATK: 0,
+    level: 1,
+    equipUpgradeValue: 0,
+    str: 0,
+    agi: 0,
+    vit: 0,
+    int: 0,
+    dex: 0,
+    luk: 0,
+    hpModA: 0,
+    hpModB: 0,
+    spModA: 0,
+    spModB: 0,
+    additionAtk: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    additionDef: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    eATK: 0,
+    cATK: 0,
+    criticalPercent: 0,
+    penetrationPercent: 0,
+    longRangePercent: 0,
+    script: (character: Character2, _this: IBaseEquipment): void => {
+      _this.str = 0;
+      _this.agi = 0;
+      _this.vit = 0;
+      _this.int = 0;
+      _this.dex = 0;
+      _this.luk = 0;
+      _this.eATK = 0;
+      _this.hpModB = 0;
+      _this.longRangePercent = 0;
+      _this.criticalPercent = 0;
+
+      const upgrade = _this.equipUpgradeValue;
+
+      if (upgrade >= 10) {
+        _this.str = 2;
+        _this.agi = 2;
+        _this.vit = 2;
+        _this.int = 2;
+        _this.dex = 2;
+        _this.luk = 2;
+      }
+
+      if (character.class.str0 >= 108) {
+        _this.eATK = 50;
+      }
+
+      if (character.class.agi0 >= 108) {
+        // aspd + 1
+      }
+
+      if (character.class.vit0 >= 108) {
+        _this.hpModB = 0.08;
+      }
+
+      if (character.class.int0 >= 108) {
+        // matk + 60
+      }
+
+      if (character.class.dex0 >= 108) {
+        _this.longRangePercent = 0.05;
+      }
+
+      if (character.class.luk0 >= 108) {
+        _this.criticalPercent = 0.3;
+      }
+    }
+  },
 ];

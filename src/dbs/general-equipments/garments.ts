@@ -274,7 +274,7 @@ export const garments: IBaseEquipment[] = [
     script: (character: Character2, _this: IBaseEquipment): void => {
       _this.hpModB = 0;
       _this.spModB = 0;
-      if (character.shoes && [22006, 22011].includes(character.shoes.id)) {
+      if (character.shoes && [22006, 22011, 22202].includes(character.shoes.id)) {
         _this.hpModB = 0.15;
         _this.spModB = 0.05;
       }
