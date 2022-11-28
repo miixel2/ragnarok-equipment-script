@@ -44,6 +44,17 @@ export class BaseClass {
 export enum ClassKey {
   RuneKnight = 'RuneKnight',
   GuillotineCross = 'GuillotineCross',
+  Mechanic = 'Mechanic',
+  Warlock = 'Warlock',
+  ArchBishop = 'ArchBishop',
+  Ranger = 'Ranger',
+  RoyalGuard = 'RoyalGuard',
+  Genetic = 'Genetic',
+  ShadowChaser = 'ShadowChaser',
+  Sorcerer = 'Sorcerer',
+  Sura = 'Sura',
+  Minstrel = 'Minstrel',
+  Wanderer = 'Wanderer',
 }
 
 export class GuillotineCross extends BaseClass {
