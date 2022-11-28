@@ -2,8 +2,13 @@ import Big from 'big.js';
 import { Character2 } from '../../models/character2';
 import { ClassKey } from '../../models/class';
 import { E_Element } from '../../models/element';
-import { IBaseEquipment, EquipmentType, EquipmentSubType, EquipmentLocation } from '../../models/equipment';
-import { MonsterRace, MonsterType } from '../../models/monster';
+import {
+  IBaseEquipment,
+  EquipmentType,
+  EquipmentSubType,
+  EquipmentLocation,
+} from '../../models/equipment';
+import { MonsterRace, MonsterType, Scale } from '../../models/monster';
 
 export const weapons: IBaseEquipment[] = [
   {
@@ -42,7 +47,7 @@ export const weapons: IBaseEquipment[] = [
     criticalPercent: 0,
     penetrationPercent: 0,
     classActives: [ClassKey.GuillotineCross],
-    script: (character: Character2, _this: IBaseEquipment): void => { }
+    script: (character: Character2, _this: IBaseEquipment): void => {},
   },
   {
     id: 1117,
@@ -82,7 +87,7 @@ export const weapons: IBaseEquipment[] = [
     criticalPercent: 0,
     penetrationPercent: 0,
     classActives: [ClassKey.RuneKnight],
-    script: (character: Character2, _this: IBaseEquipment): void => { }
+    script: (character: Character2, _this: IBaseEquipment): void => {},
   },
   {
     id: 21018,
@@ -110,7 +115,7 @@ export const weapons: IBaseEquipment[] = [
       element: 0,
       race: 0,
       class: 0,
-      atkPercent2: 0
+      atkPercent2: 0,
     },
     additionDef: {
       size: 0,
@@ -127,16 +132,23 @@ export const weapons: IBaseEquipment[] = [
       _this.criticalPercent = 0;
 
       const upgrade = _this.equipUpgradeValue;
-      _this.additionAtk.class = Number((new Big(Math.floor(upgrade / 2))).mul(0.01).valueOf());
+      _this.additionAtk.class = Number(
+        new Big(Math.floor(upgrade / 2)).mul(0.01).valueOf()
+      );
 
-      if (character.rightAccessory?.id === 490182 || character.leftAccessory?.id === 490182) {
+      if (
+        character.rightAccessory?.id === 490182 ||
+        character.leftAccessory?.id === 490182
+      ) {
         _this.criticalPercent = Number(new Big(upgrade).mul(0.01).valueOf());
 
         if (upgrade >= 12 && character.monster?.type === MonsterType.BOSS) {
-          _this.additionAtk.class = Number(new Big(0.15).plus(_this.additionAtk.class).valueOf());
+          _this.additionAtk.class = Number(
+            new Big(0.15).plus(_this.additionAtk.class).valueOf()
+          );
         }
       }
-    }
+    },
   },
   {
     id: 28010,
@@ -164,7 +176,7 @@ export const weapons: IBaseEquipment[] = [
       element: 0,
       race: 0,
       class: 0,
-      atkPercent2: 0
+      atkPercent2: 0,
     },
     additionDef: {
       size: 0,
@@ -182,16 +194,23 @@ export const weapons: IBaseEquipment[] = [
       _this.longRangePercent = 0;
 
       const upgrade = _this.equipUpgradeValue;
-      _this.additionAtk.class = Number((new Big(Math.floor(upgrade / 2))).mul(0.01).valueOf());
+      _this.additionAtk.class = Number(
+        new Big(Math.floor(upgrade / 2)).mul(0.01).valueOf()
+      );
 
-      if (character.rightAccessory?.id === 490182 || character.leftAccessory?.id === 490182) {
-        _this.additionAtk.class = Number(new Big(upgrade).mul(0.01).plus(_this.additionAtk.class).valueOf());
+      if (
+        character.rightAccessory?.id === 490182 ||
+        character.leftAccessory?.id === 490182
+      ) {
+        _this.additionAtk.class = Number(
+          new Big(upgrade).mul(0.01).plus(_this.additionAtk.class).valueOf()
+        );
 
         if (upgrade >= 12) {
           _this.longRangePercent = 0.08;
         }
       }
-    }
+    },
   },
   {
     id: 28007,
@@ -243,7 +262,7 @@ export const weapons: IBaseEquipment[] = [
       if (character.class.baseLv >= 70) {
         _this.eATK += Math.floor((character.class.baseLv - 70) / 10) * 5;
       }
-    }
+    },
   },
   {
     id: 21015,
@@ -296,7 +315,7 @@ export const weapons: IBaseEquipment[] = [
       if (character.class.baseLv >= 70) {
         _this.eATK += Math.floor((character.class.baseLv - 70) / 10) * 5;
       }
-    }
+    },
   },
   {
     id: 16040,
@@ -350,7 +369,7 @@ export const weapons: IBaseEquipment[] = [
       if (character.class.baseLv >= 70) {
         _this.eATK += Math.floor((character.class.baseLv - 70) / 10) * 5;
       }
-    }
+    },
   },
   {
     id: 1185,
@@ -390,7 +409,7 @@ export const weapons: IBaseEquipment[] = [
     criticalPercent: 0,
     penetrationPercent: 0,
     classActives: [ClassKey.RuneKnight],
-    script: (character: Character2, _this: IBaseEquipment): void => { }
+    script: (character: Character2, _this: IBaseEquipment): void => {},
   },
   {
     id: 1186,
@@ -430,7 +449,7 @@ export const weapons: IBaseEquipment[] = [
     criticalPercent: 0,
     penetrationPercent: 0,
     classActives: [ClassKey.RuneKnight],
-    script: (character: Character2, _this: IBaseEquipment): void => { }
+    script: (character: Character2, _this: IBaseEquipment): void => {},
   },
   {
     id: 1171,
@@ -470,7 +489,7 @@ export const weapons: IBaseEquipment[] = [
     criticalPercent: 0,
     penetrationPercent: 0,
     classActives: [ClassKey.RuneKnight],
-    script: (character: Character2, _this: IBaseEquipment): void => { }
+    script: (character: Character2, _this: IBaseEquipment): void => {},
   },
   {
     id: 1292,
@@ -510,12 +529,12 @@ export const weapons: IBaseEquipment[] = [
     script: (character: Character2, _this: IBaseEquipment): void => {
       const upgrade = _this.equipUpgradeValue;
       _this.eATK = upgrade * 10;
-      _this.criticalPercent = Number((new Big(0.02)).mul(upgrade).valueOf());
+      _this.criticalPercent = Number(new Big(0.02).mul(upgrade).valueOf());
 
       if (character.class.baseLv >= 70) {
         _this.eATK += Math.floor((character.class.baseLv - 70) / 10) * 10;
       }
-    }
+    },
   },
   {
     id: 28000,
@@ -552,7 +571,7 @@ export const weapons: IBaseEquipment[] = [
     criticalPercent: 0,
     penetrationPercent: 0,
     classActives: [ClassKey.GuillotineCross],
-    script: (character: Character2, _this: IBaseEquipment): void => { }
+    script: (character: Character2, _this: IBaseEquipment): void => {},
   },
   {
     id: 28008,
@@ -599,7 +618,7 @@ export const weapons: IBaseEquipment[] = [
       } else {
         _this.eATK = upgrade * upgrade;
       }
-    }
+    },
   },
   {
     id: 21016,
@@ -646,7 +665,7 @@ export const weapons: IBaseEquipment[] = [
       } else {
         _this.eATK = upgrade * upgrade;
       }
-    }
+    },
   },
   {
     id: 13455,
@@ -693,7 +712,7 @@ export const weapons: IBaseEquipment[] = [
       } else {
         _this.eATK = upgrade * upgrade;
       }
-    }
+    },
   },
   {
     id: 21011,
@@ -743,8 +762,8 @@ export const weapons: IBaseEquipment[] = [
       }
 
       const upgrade = _this.equipUpgradeValue;
-      _this.criticalPercent = Number((new Big(upgrade)).mul(0.01).valueOf());
-    }
+      _this.criticalPercent = Number(new Big(upgrade).mul(0.01).valueOf());
+    },
   },
   {
     id: 13412,
@@ -785,7 +804,7 @@ export const weapons: IBaseEquipment[] = [
     criticalPercent: 0,
     penetrationPercent: 0,
     classActives: [ClassKey.RuneKnight, ClassKey.GuillotineCross],
-    script: (character: Character2, _this: IBaseEquipment): void => { }
+    script: (character: Character2, _this: IBaseEquipment): void => {},
   },
   {
     id: 13413,
@@ -826,7 +845,7 @@ export const weapons: IBaseEquipment[] = [
     criticalPercent: 0,
     penetrationPercent: 0,
     classActives: [ClassKey.RuneKnight, ClassKey.GuillotineCross],
-    script: (character: Character2, _this: IBaseEquipment): void => { }
+    script: (character: Character2, _this: IBaseEquipment): void => {},
   },
   {
     id: 21038,
@@ -868,12 +887,17 @@ export const weapons: IBaseEquipment[] = [
     classActives: [ClassKey.RuneKnight],
     script: (character: Character2, _this: IBaseEquipment): void => {
       const upgrade = _this.equipUpgradeValue;
-      _this.eATK = Number((new Big(Math.floor(upgrade / 2))).mul(10).valueOf());
+      _this.eATK = Number(new Big(Math.floor(upgrade / 2)).mul(10).valueOf());
 
       if (character.playerTypeAtk === 2002) {
-        character.buffSkillPercert = Number((new Big(Math.floor(upgrade / 3))).mul(0.1).plus(character.buffSkillPercert).valueOf());
+        character.buffSkillPercert = Number(
+          new Big(Math.floor(upgrade / 3))
+            .mul(0.1)
+            .plus(character.buffSkillPercert)
+            .valueOf()
+        );
       }
-    }
+    },
   },
   {
     id: 28039,
@@ -917,18 +941,24 @@ export const weapons: IBaseEquipment[] = [
       _this.additionAtk.race = 0;
 
       const upgrade = _this.equipUpgradeValue;
-      _this.eATK = Number((new Big(Math.floor(upgrade / 2))).mul(10).valueOf());
-      _this.criticalPercent = Number((new Big(Math.floor(upgrade / 3))).mul(0.04).valueOf());
+      _this.eATK = Number(new Big(Math.floor(upgrade / 2)).mul(10).valueOf());
+      _this.criticalPercent = Number(
+        new Big(Math.floor(upgrade / 3)).mul(0.04).valueOf()
+      );
 
-      const trueRace = [MonsterRace.BRUTE, MonsterRace.DEMI_HUMAN].includes(character.monster.race);
+      const trueRace = [MonsterRace.BRUTE, MonsterRace.DEMI_HUMAN].includes(
+        character.monster.race
+      );
       if (upgrade >= 7 && trueRace) {
         _this.additionAtk.race = Number(new Big(0.15).valueOf());
 
         if (upgrade >= 11) {
-          _this.additionAtk.race = Number(new Big(_this.additionAtk.race).plus(0.2).valueOf());
+          _this.additionAtk.race = Number(
+            new Big(_this.additionAtk.race).plus(0.2).valueOf()
+          );
         }
       }
-    }
+    },
   },
   {
     id: 1208,
@@ -968,7 +998,7 @@ export const weapons: IBaseEquipment[] = [
     criticalPercent: 0,
     penetrationPercent: 0,
     classActives: [ClassKey.GuillotineCross, ClassKey.RuneKnight],
-    script: (character: Character2, _this: IBaseEquipment): void => { }
+    script: (character: Character2, _this: IBaseEquipment): void => {},
   },
   {
     id: 1205,
@@ -1008,7 +1038,7 @@ export const weapons: IBaseEquipment[] = [
     criticalPercent: 0,
     penetrationPercent: 0,
     classActives: [ClassKey.GuillotineCross, ClassKey.RuneKnight],
-    script: (character: Character2, _this: IBaseEquipment): void => { }
+    script: (character: Character2, _this: IBaseEquipment): void => {},
   },
   {
     id: 1102,
@@ -1048,7 +1078,7 @@ export const weapons: IBaseEquipment[] = [
     criticalPercent: 0,
     penetrationPercent: 0,
     classActives: [ClassKey.GuillotineCross, ClassKey.RuneKnight],
-    script: (character: Character2, _this: IBaseEquipment): void => { }
+    script: (character: Character2, _this: IBaseEquipment): void => {},
   },
   {
     id: 28705,
@@ -1100,7 +1130,7 @@ export const weapons: IBaseEquipment[] = [
       if (character.class.baseLv >= 70) {
         _this.eATK += Math.floor((character.class.baseLv - 70) / 10) * 5;
       }
-    }
+    },
   },
   {
     id: 13071,
@@ -1144,7 +1174,7 @@ export const weapons: IBaseEquipment[] = [
       if (character.class.baseLv >= 70) {
         _this.eATK += Math.floor((character.class.baseLv - 70) / 10) * 5;
       }
-    }
+    },
   },
   {
     id: 13090,
@@ -1182,7 +1212,7 @@ export const weapons: IBaseEquipment[] = [
     criticalPercent: 0,
     penetrationPercent: 0,
     classActives: [ClassKey.GuillotineCross, ClassKey.RuneKnight],
-    script: (character: Character2, _this: IBaseEquipment): void => { }
+    script: (character: Character2, _this: IBaseEquipment): void => {},
   },
   {
     id: 13035,
@@ -1224,7 +1254,7 @@ export const weapons: IBaseEquipment[] = [
     criticalPercent: 0,
     penetrationPercent: 0,
     classActives: [ClassKey.GuillotineCross],
-    script: (character: Character2, _this: IBaseEquipment): void => { }
+    script: (character: Character2, _this: IBaseEquipment): void => {},
   },
   {
     id: 13454,
@@ -1276,7 +1306,7 @@ export const weapons: IBaseEquipment[] = [
       if (character.class.baseLv >= 70) {
         _this.eATK += Math.floor((character.class.baseLv - 70) / 10) * 5;
       }
-    }
+    },
   },
   {
     id: 28706,
@@ -1323,7 +1353,7 @@ export const weapons: IBaseEquipment[] = [
       } else {
         _this.eATK = upgrade * upgrade;
       }
-    }
+    },
   },
   {
     id: 13017,
@@ -1360,7 +1390,7 @@ export const weapons: IBaseEquipment[] = [
     criticalPercent: 0,
     penetrationPercent: 0,
     classActives: [ClassKey.GuillotineCross, ClassKey.RuneKnight],
-    script: (character: Character2, _this: IBaseEquipment): void => { }
+    script: (character: Character2, _this: IBaseEquipment): void => {},
   },
   {
     id: 1447,
@@ -1399,7 +1429,7 @@ export const weapons: IBaseEquipment[] = [
     criticalPercent: 0,
     penetrationPercent: 0,
     classActives: [ClassKey.RuneKnight],
-    script: (character: Character2, _this: IBaseEquipment): void => { }
+    script: (character: Character2, _this: IBaseEquipment): void => {},
   },
   {
     id: 21055,
@@ -1425,7 +1455,7 @@ export const weapons: IBaseEquipment[] = [
       element: 0,
       race: 0,
       class: 0,
-      atkPercent2: 0
+      atkPercent2: 0,
     },
     additionDef: {
       size: 0,
@@ -1444,13 +1474,17 @@ export const weapons: IBaseEquipment[] = [
       _this.additionAtk.atkPercent2 = 0.05;
 
       const upgrade = _this.equipUpgradeValue;
-      _this.additionAtk.class = Number((new Big(Math.floor(upgrade / 2))).mul(0.01).valueOf());
-      _this.eATK = Number((new Big(Math.floor(upgrade))).mul(4).valueOf());
+      _this.additionAtk.class = Number(
+        new Big(Math.floor(upgrade / 2)).mul(0.01).valueOf()
+      );
+      _this.eATK = Number(new Big(Math.floor(upgrade)).mul(4).valueOf());
 
       if (upgrade >= 9) {
         _this.criticalPercent = 0.25;
 
-        const trueRace = [MonsterRace.UNDEAD, MonsterRace.ANGEL].includes(character.monster?.race);
+        const trueRace = [MonsterRace.UNDEAD, MonsterRace.ANGEL].includes(
+          character.monster?.race
+        );
         if (upgrade >= 11 && trueRace) {
           _this.additionAtk.race = Number(new Big(0.2).valueOf());
         }
@@ -1461,12 +1495,67 @@ export const weapons: IBaseEquipment[] = [
 
         const upgradeArmor = character.bodyGear.equipUpgradeValue;
         const upgradeGarment = character.garment.equipUpgradeValue;
-        if ((upgrade + upgradeArmor + upgradeGarment) >= 30) {
-          if (character.monster?.element === E_Element.HOLY || character.monster?.element === E_Element.UNDEAD) {
+        if (upgrade + upgradeArmor + upgradeGarment >= 30) {
+          if (
+            character.monster?.element === E_Element.HOLY ||
+            character.monster?.element === E_Element.UNDEAD
+          ) {
             _this.additionAtk.element = 0.2;
           }
         }
       }
-    }
+    },
+  },
+  {
+    id: 21047,
+    name: 'Beam Claymor-OS [2]',
+    type: EquipmentType.WEAPON,
+    subType: EquipmentSubType.TWO_HANDED_SWORD,
+    location: EquipmentLocation.BOTH_HAND,
+    compoundOn: null,
+    slot1Enable: true,
+    slot2Enable: true,
+    baseDef: 0,
+    baseATK: 250,
+    level: 4,
+    equipUpgradeValue: 0,
+    str: 0,
+    agi: 0,
+    vit: 0,
+    int: 0,
+    dex: 0,
+    luk: 0,
+    additionAtk: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    additionDef: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    eATK: 0,
+    cATK: 0,
+    criticalPercent: 0,
+    penetrationPercent: 0,
+    classActives: [ClassKey.RuneKnight],
+    script: (character: Character2, _this: IBaseEquipment): void => {
+      _this.criticalPercent = 0;
+      _this.additionAtk.size = 0;
+      const upgrade = _this.equipUpgradeValue;
+
+      if (upgrade >= 9) {
+        _this.criticalPercent = 0.15;
+
+        if (upgrade >= 11) {
+          if ([Scale.SMALL, Scale.MEDIUM].includes(character.monster?.scale)) {
+            _this.additionAtk.size = 0.2;
+          }
+        }
+      }
+    },
   },
 ];

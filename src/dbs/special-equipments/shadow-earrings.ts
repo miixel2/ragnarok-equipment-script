@@ -1,7 +1,12 @@
 import Big from 'big.js';
 import { Character2 } from '../../models/character2';
 import { ClassKey } from '../../models/class';
-import { IBaseEquipment, EquipmentType, EquipmentSubType, EquipmentLocation } from '../../models/equipment';
+import {
+  IBaseEquipment,
+  EquipmentType,
+  EquipmentSubType,
+  EquipmentLocation,
+} from '../../models/equipment';
 
 export const shadowEarrings: IBaseEquipment[] = [
   {
@@ -42,9 +47,13 @@ export const shadowEarrings: IBaseEquipment[] = [
       _this.penetrationPercent = 0.05;
       const upgrade = _this.equipUpgradeValue;
       _this.hpModA = upgrade * 10;
-      const refinePenetration = Number((new Big(Math.floor(upgrade / 2))).mul(0.01).valueOf());
-      _this.penetrationPercent = Number((new Big(_this.penetrationPercent)).plus(refinePenetration).valueOf());
-    }
+      const refinePenetration = Number(
+        new Big(Math.floor(upgrade / 2)).mul(0.01).valueOf()
+      );
+      _this.penetrationPercent = Number(
+        new Big(_this.penetrationPercent).plus(refinePenetration).valueOf()
+      );
+    },
   },
   {
     id: 24420,
@@ -83,7 +92,7 @@ export const shadowEarrings: IBaseEquipment[] = [
     script: (character: Character2, _this: IBaseEquipment): void => {
       const upgrade = _this.equipUpgradeValue;
       _this.hpModA = upgrade * 10;
-    }
+    },
   },
   {
     id: 24246,
@@ -109,7 +118,7 @@ export const shadowEarrings: IBaseEquipment[] = [
       element: 0,
       race: 0,
       class: 0,
-      atkPercent2: 0
+      atkPercent2: 0,
     },
     additionDef: {
       size: 0,
@@ -135,7 +144,7 @@ export const shadowEarrings: IBaseEquipment[] = [
           _this.hpModB = 0.03;
         }
       }
-    }
+    },
   },
   {
     id: 24150,
@@ -168,7 +177,7 @@ export const shadowEarrings: IBaseEquipment[] = [
       class: 0,
     },
     options: {
-      ignoreSizePenalty: false
+      ignoreSizePenalty: false,
     },
     eATK: 0,
     cATK: 0,
@@ -193,11 +202,11 @@ export const shadowEarrings: IBaseEquipment[] = [
         _this.additionAtk.atkPercent2 = 0.01;
 
         const leftRefine = character.shadowLeftAccessory.equipUpgradeValue;
-        if ((upgrade + leftRefine) >= 15) {
+        if (upgrade + leftRefine >= 15) {
           _this.options.ignoreSizePenalty = true;
         }
       }
-    }
+    },
   },
   {
     id: 24339,
@@ -242,7 +251,7 @@ export const shadowEarrings: IBaseEquipment[] = [
       _this.int = upgrade;
       _this.dex = upgrade;
       _this.luk = upgrade;
-    }
+    },
   },
   {
     id: 24587,
@@ -278,6 +287,46 @@ export const shadowEarrings: IBaseEquipment[] = [
     cATK: 0,
     criticalPercent: 0,
     penetrationPercent: 0,
-    script: (character: Character2, _this: IBaseEquipment): void => { }
+    script: (character: Character2, _this: IBaseEquipment): void => {},
+  },
+  {
+    id: 24445,
+    name: 'Ignition Shadow Earring',
+    type: EquipmentType.SHADOW_EQUIPMENT,
+    subType: EquipmentSubType.SHADOW_RIGHT_ACCESSORY,
+    location: EquipmentLocation.SHADOW_RIGHT_ACCESSORY,
+    compoundOn: null,
+    baseDef: 0,
+    baseATK: 0,
+    level: 1,
+    equipUpgradeValue: 0,
+    str: 0,
+    agi: 0,
+    vit: 0,
+    int: 0,
+    dex: 0,
+    luk: 0,
+    hpModA: 0,
+    additionAtk: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    additionDef: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    eATK: 0,
+    cATK: 0,
+    criticalPercent: 0,
+    penetrationPercent: 0,
+    classActives: [ClassKey.RuneKnight],
+    script: (character: Character2, _this: IBaseEquipment): void => {
+      const upgrade = _this.equipUpgradeValue;
+      _this.hpModA = upgrade * 10;
+    },
   },
 ];

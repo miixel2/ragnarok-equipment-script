@@ -1,7 +1,12 @@
 import Big from 'big.js';
 import { Character2 } from '../../models/character2';
 import { ClassKey } from '../../models/class';
-import { IBaseEquipment, EquipmentType, EquipmentSubType, EquipmentLocation } from '../../models/equipment';
+import {
+  IBaseEquipment,
+  EquipmentType,
+  EquipmentSubType,
+  EquipmentLocation,
+} from '../../models/equipment';
 import { MonsterRace } from '../../models/monster';
 
 export const shadowWeapons: IBaseEquipment[] = [
@@ -39,31 +44,38 @@ export const shadowWeapons: IBaseEquipment[] = [
     criticalPercent: 0,
     penetrationPercent: 0,
     script: (character: Character2, _this: IBaseEquipment): void => {
-
       const upgrade = _this.equipUpgradeValue;
       _this.eATK = upgrade;
 
       if (character.monster.race === MonsterRace.FORMLESS) {
         _this.penetrationPercent = 0.05;
 
-        const refinePenetration = Number((new Big(Math.floor(upgrade / 2))).mul(0.01).valueOf());
-        _this.penetrationPercent = Number((new Big(_this.penetrationPercent)).plus(refinePenetration).valueOf());
+        const refinePenetration = Number(
+          new Big(Math.floor(upgrade / 2)).mul(0.01).valueOf()
+        );
+        _this.penetrationPercent = Number(
+          new Big(_this.penetrationPercent).plus(refinePenetration).valueOf()
+        );
       }
 
-      if (character.shadowRightAccessory && character.shadowRightAccessory?.id === 24166
-        && character.shadowLeftAccessory && character.shadowLeftAccessory?.id === 24167
+      if (
+        character.shadowRightAccessory &&
+        character.shadowRightAccessory?.id === 24166 &&
+        character.shadowLeftAccessory &&
+        character.shadowLeftAccessory?.id === 24167
       ) {
         _this.eATK += 5;
 
         if (character.monster.race === MonsterRace.FORMLESS) {
-          const earringRefine = character.shadowRightAccessory.equipUpgradeValue;
+          const earringRefine =
+            character.shadowRightAccessory.equipUpgradeValue;
           const pendantRefine = character.shadowLeftAccessory.equipUpgradeValue;
-          if ((earringRefine + pendantRefine + _this.equipUpgradeValue) >= 25) {
+          if (earringRefine + pendantRefine + _this.equipUpgradeValue >= 25) {
             _this.penetrationPercent = 1;
           }
         }
       }
-    }
+    },
   },
   {
     id: 24032,
@@ -113,10 +125,12 @@ export const shadowWeapons: IBaseEquipment[] = [
         _this.eATK += sumAll;
 
         if (sumAll >= 15) {
-          _this.criticalPercent = Number((new Big(_this.criticalPercent)).plus(0.01).valueOf());
+          _this.criticalPercent = Number(
+            new Big(_this.criticalPercent).plus(0.01).valueOf()
+          );
         }
       }
-    }
+    },
   },
   {
     id: 24156,
@@ -152,31 +166,38 @@ export const shadowWeapons: IBaseEquipment[] = [
     criticalPercent: 0,
     penetrationPercent: 0,
     script: (character: Character2, _this: IBaseEquipment): void => {
-
       const upgrade = _this.equipUpgradeValue;
       _this.eATK = upgrade;
 
       if (character.monster.race === MonsterRace.DEMI_HUMAN) {
         _this.penetrationPercent = 0.05;
 
-        const refinePenetration = Number((new Big(Math.floor(upgrade / 2))).mul(0.01).valueOf());
-        _this.penetrationPercent = Number((new Big(_this.penetrationPercent)).plus(refinePenetration).valueOf());
+        const refinePenetration = Number(
+          new Big(Math.floor(upgrade / 2)).mul(0.01).valueOf()
+        );
+        _this.penetrationPercent = Number(
+          new Big(_this.penetrationPercent).plus(refinePenetration).valueOf()
+        );
       }
 
-      if (character.shadowRightAccessory && character.shadowRightAccessory?.id === 24166
-        && character.shadowLeftAccessory && character.shadowLeftAccessory?.id === 24167
+      if (
+        character.shadowRightAccessory &&
+        character.shadowRightAccessory?.id === 24166 &&
+        character.shadowLeftAccessory &&
+        character.shadowLeftAccessory?.id === 24167
       ) {
         _this.eATK += 5;
 
         if (character.monster.race === MonsterRace.DEMI_HUMAN) {
-          const earringRefine = character.shadowRightAccessory.equipUpgradeValue;
+          const earringRefine =
+            character.shadowRightAccessory.equipUpgradeValue;
           const pendantRefine = character.shadowLeftAccessory.equipUpgradeValue;
-          if ((earringRefine + pendantRefine + _this.equipUpgradeValue) >= 25) {
+          if (earringRefine + pendantRefine + _this.equipUpgradeValue >= 25) {
             _this.penetrationPercent = 1;
           }
         }
       }
-    }
+    },
   },
   {
     id: 24157,
@@ -212,31 +233,38 @@ export const shadowWeapons: IBaseEquipment[] = [
     criticalPercent: 0,
     penetrationPercent: 0,
     script: (character: Character2, _this: IBaseEquipment): void => {
-
       const upgrade = _this.equipUpgradeValue;
       _this.eATK = upgrade;
 
       if (character.monster.race === MonsterRace.DEMON) {
         _this.penetrationPercent = 0.05;
 
-        const refinePenetration = Number((new Big(Math.floor(upgrade / 2))).mul(0.01).valueOf());
-        _this.penetrationPercent = Number((new Big(_this.penetrationPercent)).plus(refinePenetration).valueOf());
+        const refinePenetration = Number(
+          new Big(Math.floor(upgrade / 2)).mul(0.01).valueOf()
+        );
+        _this.penetrationPercent = Number(
+          new Big(_this.penetrationPercent).plus(refinePenetration).valueOf()
+        );
       }
 
-      if (character.shadowRightAccessory && character.shadowRightAccessory?.id === 24166
-        && character.shadowLeftAccessory && character.shadowLeftAccessory?.id === 24167
+      if (
+        character.shadowRightAccessory &&
+        character.shadowRightAccessory?.id === 24166 &&
+        character.shadowLeftAccessory &&
+        character.shadowLeftAccessory?.id === 24167
       ) {
         _this.eATK += 5;
 
         if (character.monster.race === MonsterRace.DEMON) {
-          const earringRefine = character.shadowRightAccessory.equipUpgradeValue;
+          const earringRefine =
+            character.shadowRightAccessory.equipUpgradeValue;
           const pendantRefine = character.shadowLeftAccessory.equipUpgradeValue;
-          if ((earringRefine + pendantRefine + _this.equipUpgradeValue) >= 25) {
+          if (earringRefine + pendantRefine + _this.equipUpgradeValue >= 25) {
             _this.penetrationPercent = 1;
           }
         }
       }
-    }
+    },
   },
   {
     id: 24158,
@@ -272,31 +300,38 @@ export const shadowWeapons: IBaseEquipment[] = [
     criticalPercent: 0,
     penetrationPercent: 0,
     script: (character: Character2, _this: IBaseEquipment): void => {
-
       const upgrade = _this.equipUpgradeValue;
       _this.eATK = upgrade;
 
       if (character.monster.race === MonsterRace.BRUTE) {
         _this.penetrationPercent = 0.05;
 
-        const refinePenetration = Number((new Big(Math.floor(upgrade / 2))).mul(0.01).valueOf());
-        _this.penetrationPercent = Number((new Big(_this.penetrationPercent)).plus(refinePenetration).valueOf());
+        const refinePenetration = Number(
+          new Big(Math.floor(upgrade / 2)).mul(0.01).valueOf()
+        );
+        _this.penetrationPercent = Number(
+          new Big(_this.penetrationPercent).plus(refinePenetration).valueOf()
+        );
       }
 
-      if (character.shadowRightAccessory && character.shadowRightAccessory?.id === 24166
-        && character.shadowLeftAccessory && character.shadowLeftAccessory?.id === 24167
+      if (
+        character.shadowRightAccessory &&
+        character.shadowRightAccessory?.id === 24166 &&
+        character.shadowLeftAccessory &&
+        character.shadowLeftAccessory?.id === 24167
       ) {
         _this.eATK += 5;
 
         if (character.monster.race === MonsterRace.BRUTE) {
-          const earringRefine = character.shadowRightAccessory.equipUpgradeValue;
+          const earringRefine =
+            character.shadowRightAccessory.equipUpgradeValue;
           const pendantRefine = character.shadowLeftAccessory.equipUpgradeValue;
-          if ((earringRefine + pendantRefine + _this.equipUpgradeValue) >= 25) {
+          if (earringRefine + pendantRefine + _this.equipUpgradeValue >= 25) {
             _this.penetrationPercent = 1;
           }
         }
       }
-    }
+    },
   },
   {
     id: 24159,
@@ -332,31 +367,38 @@ export const shadowWeapons: IBaseEquipment[] = [
     criticalPercent: 0,
     penetrationPercent: 0,
     script: (character: Character2, _this: IBaseEquipment): void => {
-
       const upgrade = _this.equipUpgradeValue;
       _this.eATK = upgrade;
 
       if (character.monster.race === MonsterRace.INSECT) {
         _this.penetrationPercent = 0.05;
 
-        const refinePenetration = Number((new Big(Math.floor(upgrade / 2))).mul(0.01).valueOf());
-        _this.penetrationPercent = Number((new Big(_this.penetrationPercent)).plus(refinePenetration).valueOf());
+        const refinePenetration = Number(
+          new Big(Math.floor(upgrade / 2)).mul(0.01).valueOf()
+        );
+        _this.penetrationPercent = Number(
+          new Big(_this.penetrationPercent).plus(refinePenetration).valueOf()
+        );
       }
 
-      if (character.shadowRightAccessory && character.shadowRightAccessory?.id === 24166
-        && character.shadowLeftAccessory && character.shadowLeftAccessory?.id === 24167
+      if (
+        character.shadowRightAccessory &&
+        character.shadowRightAccessory?.id === 24166 &&
+        character.shadowLeftAccessory &&
+        character.shadowLeftAccessory?.id === 24167
       ) {
         _this.eATK += 5;
 
         if (character.monster.race === MonsterRace.INSECT) {
-          const earringRefine = character.shadowRightAccessory.equipUpgradeValue;
+          const earringRefine =
+            character.shadowRightAccessory.equipUpgradeValue;
           const pendantRefine = character.shadowLeftAccessory.equipUpgradeValue;
-          if ((earringRefine + pendantRefine + _this.equipUpgradeValue) >= 25) {
+          if (earringRefine + pendantRefine + _this.equipUpgradeValue >= 25) {
             _this.penetrationPercent = 1;
           }
         }
       }
-    }
+    },
   },
   {
     id: 24160,
@@ -392,31 +434,38 @@ export const shadowWeapons: IBaseEquipment[] = [
     criticalPercent: 0,
     penetrationPercent: 0,
     script: (character: Character2, _this: IBaseEquipment): void => {
-
       const upgrade = _this.equipUpgradeValue;
       _this.eATK = upgrade;
 
       if (character.monster.race === MonsterRace.FISH) {
         _this.penetrationPercent = 0.05;
 
-        const refinePenetration = Number((new Big(Math.floor(upgrade / 2))).mul(0.01).valueOf());
-        _this.penetrationPercent = Number((new Big(_this.penetrationPercent)).plus(refinePenetration).valueOf());
+        const refinePenetration = Number(
+          new Big(Math.floor(upgrade / 2)).mul(0.01).valueOf()
+        );
+        _this.penetrationPercent = Number(
+          new Big(_this.penetrationPercent).plus(refinePenetration).valueOf()
+        );
       }
 
-      if (character.shadowRightAccessory && character.shadowRightAccessory?.id === 24166
-        && character.shadowLeftAccessory && character.shadowLeftAccessory?.id === 24167
+      if (
+        character.shadowRightAccessory &&
+        character.shadowRightAccessory?.id === 24166 &&
+        character.shadowLeftAccessory &&
+        character.shadowLeftAccessory?.id === 24167
       ) {
         _this.eATK += 5;
 
         if (character.monster.race === MonsterRace.FISH) {
-          const earringRefine = character.shadowRightAccessory.equipUpgradeValue;
+          const earringRefine =
+            character.shadowRightAccessory.equipUpgradeValue;
           const pendantRefine = character.shadowLeftAccessory.equipUpgradeValue;
-          if ((earringRefine + pendantRefine + _this.equipUpgradeValue) >= 25) {
+          if (earringRefine + pendantRefine + _this.equipUpgradeValue >= 25) {
             _this.penetrationPercent = 1;
           }
         }
       }
-    }
+    },
   },
   {
     id: 24161,
@@ -452,31 +501,38 @@ export const shadowWeapons: IBaseEquipment[] = [
     criticalPercent: 0,
     penetrationPercent: 0,
     script: (character: Character2, _this: IBaseEquipment): void => {
-
       const upgrade = _this.equipUpgradeValue;
       _this.eATK = upgrade;
 
       if (character.monster.race === MonsterRace.DRAGON) {
         _this.penetrationPercent = 0.05;
 
-        const refinePenetration = Number((new Big(Math.floor(upgrade / 2))).mul(0.01).valueOf());
-        _this.penetrationPercent = Number((new Big(_this.penetrationPercent)).plus(refinePenetration).valueOf());
+        const refinePenetration = Number(
+          new Big(Math.floor(upgrade / 2)).mul(0.01).valueOf()
+        );
+        _this.penetrationPercent = Number(
+          new Big(_this.penetrationPercent).plus(refinePenetration).valueOf()
+        );
       }
 
-      if (character.shadowRightAccessory && character.shadowRightAccessory?.id === 24166
-        && character.shadowLeftAccessory && character.shadowLeftAccessory?.id === 24167
+      if (
+        character.shadowRightAccessory &&
+        character.shadowRightAccessory?.id === 24166 &&
+        character.shadowLeftAccessory &&
+        character.shadowLeftAccessory?.id === 24167
       ) {
         _this.eATK += 5;
 
         if (character.monster.race === MonsterRace.DRAGON) {
-          const earringRefine = character.shadowRightAccessory.equipUpgradeValue;
+          const earringRefine =
+            character.shadowRightAccessory.equipUpgradeValue;
           const pendantRefine = character.shadowLeftAccessory.equipUpgradeValue;
-          if ((earringRefine + pendantRefine + _this.equipUpgradeValue) >= 25) {
+          if (earringRefine + pendantRefine + _this.equipUpgradeValue >= 25) {
             _this.penetrationPercent = 1;
           }
         }
       }
-    }
+    },
   },
   {
     id: 24162,
@@ -512,31 +568,38 @@ export const shadowWeapons: IBaseEquipment[] = [
     criticalPercent: 0,
     penetrationPercent: 0,
     script: (character: Character2, _this: IBaseEquipment): void => {
-
       const upgrade = _this.equipUpgradeValue;
       _this.eATK = upgrade;
 
       if (character.monster.race === MonsterRace.ANGEL) {
         _this.penetrationPercent = 0.05;
 
-        const refinePenetration = Number((new Big(Math.floor(upgrade / 2))).mul(0.01).valueOf());
-        _this.penetrationPercent = Number((new Big(_this.penetrationPercent)).plus(refinePenetration).valueOf());
+        const refinePenetration = Number(
+          new Big(Math.floor(upgrade / 2)).mul(0.01).valueOf()
+        );
+        _this.penetrationPercent = Number(
+          new Big(_this.penetrationPercent).plus(refinePenetration).valueOf()
+        );
       }
 
-      if (character.shadowRightAccessory && character.shadowRightAccessory?.id === 24166
-        && character.shadowLeftAccessory && character.shadowLeftAccessory?.id === 24167
+      if (
+        character.shadowRightAccessory &&
+        character.shadowRightAccessory?.id === 24166 &&
+        character.shadowLeftAccessory &&
+        character.shadowLeftAccessory?.id === 24167
       ) {
         _this.eATK += 5;
 
         if (character.monster.race === MonsterRace.ANGEL) {
-          const earringRefine = character.shadowRightAccessory.equipUpgradeValue;
+          const earringRefine =
+            character.shadowRightAccessory.equipUpgradeValue;
           const pendantRefine = character.shadowLeftAccessory.equipUpgradeValue;
-          if ((earringRefine + pendantRefine + _this.equipUpgradeValue) >= 25) {
+          if (earringRefine + pendantRefine + _this.equipUpgradeValue >= 25) {
             _this.penetrationPercent = 1;
           }
         }
       }
-    }
+    },
   },
   {
     id: 24164,
@@ -572,31 +635,38 @@ export const shadowWeapons: IBaseEquipment[] = [
     criticalPercent: 0,
     penetrationPercent: 0,
     script: (character: Character2, _this: IBaseEquipment): void => {
-
       const upgrade = _this.equipUpgradeValue;
       _this.eATK = upgrade;
 
       if (character.monster.race === MonsterRace.UNDEAD) {
         _this.penetrationPercent = 0.05;
 
-        const refinePenetration = Number((new Big(Math.floor(upgrade / 2))).mul(0.01).valueOf());
-        _this.penetrationPercent = Number((new Big(_this.penetrationPercent)).plus(refinePenetration).valueOf());
+        const refinePenetration = Number(
+          new Big(Math.floor(upgrade / 2)).mul(0.01).valueOf()
+        );
+        _this.penetrationPercent = Number(
+          new Big(_this.penetrationPercent).plus(refinePenetration).valueOf()
+        );
       }
 
-      if (character.shadowRightAccessory && character.shadowRightAccessory?.id === 24166
-        && character.shadowLeftAccessory && character.shadowLeftAccessory?.id === 24167
+      if (
+        character.shadowRightAccessory &&
+        character.shadowRightAccessory?.id === 24166 &&
+        character.shadowLeftAccessory &&
+        character.shadowLeftAccessory?.id === 24167
       ) {
         _this.eATK += 5;
 
         if (character.monster.race === MonsterRace.UNDEAD) {
-          const earringRefine = character.shadowRightAccessory.equipUpgradeValue;
+          const earringRefine =
+            character.shadowRightAccessory.equipUpgradeValue;
           const pendantRefine = character.shadowLeftAccessory.equipUpgradeValue;
-          if ((earringRefine + pendantRefine + _this.equipUpgradeValue) >= 25) {
+          if (earringRefine + pendantRefine + _this.equipUpgradeValue >= 25) {
             _this.penetrationPercent = 1;
           }
         }
       }
-    }
+    },
   },
   {
     id: 24165,
@@ -632,31 +702,38 @@ export const shadowWeapons: IBaseEquipment[] = [
     criticalPercent: 0,
     penetrationPercent: 0,
     script: (character: Character2, _this: IBaseEquipment): void => {
-
       const upgrade = _this.equipUpgradeValue;
       _this.eATK = upgrade;
 
       if (character.monster.race === MonsterRace.PLANT) {
         _this.penetrationPercent = 0.05;
 
-        const refinePenetration = Number((new Big(Math.floor(upgrade / 2))).mul(0.01).valueOf());
-        _this.penetrationPercent = Number((new Big(_this.penetrationPercent)).plus(refinePenetration).valueOf());
+        const refinePenetration = Number(
+          new Big(Math.floor(upgrade / 2)).mul(0.01).valueOf()
+        );
+        _this.penetrationPercent = Number(
+          new Big(_this.penetrationPercent).plus(refinePenetration).valueOf()
+        );
       }
 
-      if (character.shadowRightAccessory && character.shadowRightAccessory?.id === 24166
-        && character.shadowLeftAccessory && character.shadowLeftAccessory?.id === 24167
+      if (
+        character.shadowRightAccessory &&
+        character.shadowRightAccessory?.id === 24166 &&
+        character.shadowLeftAccessory &&
+        character.shadowLeftAccessory?.id === 24167
       ) {
         _this.eATK += 5;
 
         if (character.monster.race === MonsterRace.PLANT) {
-          const earringRefine = character.shadowRightAccessory.equipUpgradeValue;
+          const earringRefine =
+            character.shadowRightAccessory.equipUpgradeValue;
           const pendantRefine = character.shadowLeftAccessory.equipUpgradeValue;
-          if ((earringRefine + pendantRefine + _this.equipUpgradeValue) >= 25) {
+          if (earringRefine + pendantRefine + _this.equipUpgradeValue >= 25) {
             _this.penetrationPercent = 1;
           }
         }
       }
-    }
+    },
   },
   {
     id: 24416,
@@ -694,7 +771,7 @@ export const shadowWeapons: IBaseEquipment[] = [
     script: (character: Character2, _this: IBaseEquipment): void => {
       const upgrade = _this.equipUpgradeValue;
       _this.eATK = upgrade;
-    }
+    },
   },
   {
     id: 24288,
@@ -735,10 +812,14 @@ export const shadowWeapons: IBaseEquipment[] = [
       _this.eATK = upgrade;
 
       if (character.playerTypeAtk === 2002) {
-        character.buffSkillPercert = Number(new Big(character.buffSkillPercert).plus(0.2).valueOf());
-        character.buffSkillPercert = Number(new Big(upgrade).mul(0.05).plus(character.buffSkillPercert).valueOf());
+        character.buffSkillPercert = Number(
+          new Big(character.buffSkillPercert).plus(0.2).valueOf()
+        );
+        character.buffSkillPercert = Number(
+          new Big(upgrade).mul(0.05).plus(character.buffSkillPercert).valueOf()
+        );
       }
-    }
+    },
   },
   {
     id: 24738,
@@ -777,8 +858,10 @@ export const shadowWeapons: IBaseEquipment[] = [
     penetrationPercent: 0,
     script: (character: Character2, _this: IBaseEquipment): void => {
       const upgrade = _this.equipUpgradeValue;
-      _this.criticalPercent = Number((new Big(Math.floor(upgrade / 2))).mul(0.01).valueOf());
-    }
+      _this.criticalPercent = Number(
+        new Big(Math.floor(upgrade / 2)).mul(0.01).valueOf()
+      );
+    },
   },
   {
     id: 24386,
@@ -812,7 +895,7 @@ export const shadowWeapons: IBaseEquipment[] = [
       class: 0,
     },
     options: {
-      ignoreSizePenalty: false
+      ignoreSizePenalty: false,
     },
     eATK: 0,
     cATK: 0,
@@ -822,12 +905,14 @@ export const shadowWeapons: IBaseEquipment[] = [
       _this.options.ignoreSizePenalty = false;
       _this.additionAtk.size = 0;
       const upgrade = _this.equipUpgradeValue;
-      _this.additionAtk.size = Number((new Big(Math.floor(upgrade / 3))).mul(0.01).valueOf());
+      _this.additionAtk.size = Number(
+        new Big(Math.floor(upgrade / 3)).mul(0.01).valueOf()
+      );
 
       if (upgrade >= 10) {
         _this.options.ignoreSizePenalty = true;
       }
-    }
+    },
   },
   {
     id: 24589,
@@ -868,20 +953,97 @@ export const shadowWeapons: IBaseEquipment[] = [
     script: (character: Character2, _this: IBaseEquipment): void => {
       _this.penetrationPercent = 0;
 
-      if (character.shadowBodyGear && character.shadowBodyGear?.id === 24584
-        && character.shadowLeftHand && character.shadowLeftHand?.id === 24585
-        && character.shadowShoes && character.shadowShoes?.id === 24586
-        && character.shadowRightAccessory && character.shadowRightAccessory?.id === 24587
-        && character.shadowLeftAccessory && character.shadowLeftAccessory?.id === 24588
+      if (
+        character.shadowBodyGear &&
+        character.shadowBodyGear?.id === 24584 &&
+        character.shadowLeftHand &&
+        character.shadowLeftHand?.id === 24585 &&
+        character.shadowShoes &&
+        character.shadowShoes?.id === 24586 &&
+        character.shadowRightAccessory &&
+        character.shadowRightAccessory?.id === 24587 &&
+        character.shadowLeftAccessory &&
+        character.shadowLeftAccessory?.id === 24588
       ) {
         if (character.monster.race !== MonsterRace.PLAYER) {
           _this.penetrationPercent = 0.7;
         }
 
         if (character.playerTypeAtk === 2006) {
-          character.buffSkillPercert = Number(new Big(character.buffSkillPercert).plus(0.15).valueOf());
+          character.buffSkillPercert = Number(
+            new Big(character.buffSkillPercert).plus(0.15).valueOf()
+          );
         }
       }
-    }
+    },
+  },
+  {
+    id: 24443,
+    name: 'Ignition Shadow Weapon',
+    type: EquipmentType.SHADOW_EQUIPMENT,
+    subType: EquipmentSubType.SHADOW_WEAPON,
+    location: EquipmentLocation.SHADOW_WEAPON,
+    compoundOn: null,
+    baseDef: 0,
+    baseATK: 0,
+    level: 1,
+    equipUpgradeValue: 0,
+    str: 0,
+    agi: 0,
+    vit: 0,
+    int: 0,
+    dex: 0,
+    luk: 0,
+    hpModA: 0,
+    hpModB: 0,
+    additionAtk: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    additionDef: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    options: {
+      ignoreSizePenalty: false,
+    },
+    eATK: 0,
+    cATK: 0,
+    criticalPercent: 0,
+    penetrationPercent: 0,
+    classActives: [ClassKey.RuneKnight],
+    script: (character: Character2, _this: IBaseEquipment): void => {
+      const upgrade = _this.equipUpgradeValue;
+      _this.eATK = upgrade;
+      _this.penetrationPercent = 0;
+
+      if (character.playerTypeAtk === 2006) {
+        if (
+          character.shadowRightAccessory?.id === 24445 &&
+          character.shadowLeftAccessory?.id === 24444
+        ) {
+          const refineRight = character.shadowRightAccessory.equipUpgradeValue;
+          const refineLeft = character.shadowLeftAccessory.equipUpgradeValue;
+
+          character.buffSkillPercert = Number(
+            new Big(character.buffSkillPercert)
+              .plus(refineRight + refineLeft)
+              .valueOf()
+          );
+        }
+      }
+
+      if (character.shadowLeftHand?.id === 24301) {
+        const refineLeftHand = character.shadowLeftHand.equipUpgradeValue;
+        const temp = Number(
+          new Big(upgrade + refineLeftHand).div(100).valueOf()
+        );
+        _this.penetrationPercent = Number(new Big(0.4).plus(temp).valueOf());
+      }
+    },
   },
 ];
