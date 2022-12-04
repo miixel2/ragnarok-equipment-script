@@ -9,7 +9,6 @@ import { shoes } from './general-equipments/shoes';
 import { upperHeadgear } from './general-equipments/upper-headgear';
 import { weapons } from './general-equipments/weapons';
 import { IBaseEquipment } from '../models/equipment';
-import { allOptions } from './option/options';
 import { shields } from './general-equipments/shields';
 
 export const equipments: IBaseEquipment[] = [
@@ -24,5 +23,4 @@ export const equipments: IBaseEquipment[] = [
   ...cards,
   ...accessories,
   ...enchants,
-  ...allOptions
 ];

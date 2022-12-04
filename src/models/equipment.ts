@@ -31,21 +31,21 @@ export interface IBaseEquipment {
   luk: number;
 
   additionAtk: {
-    size: number,
-    element: number,
-    race: number,
-    class: number,
+    size: number;
+    element: number;
+    race: number;
+    class: number;
     // atkPercent: number,
-    atkPercent2?: number
+    atkPercent2?: number;
   };
 
   additionDef: {
-    size: number,
-    element: number,
-    race: number,
-    class: number,
+    size: number;
+    element: number;
+    race: number;
+    class: number;
     // atkPercent: number,
-    atkPercent2?: number
+    atkPercent2?: number;
   };
 
   // options
@@ -68,13 +68,38 @@ export interface IBaseEquipment {
   slot3?: IBaseEquipment;
   slot4?: IBaseEquipment;
 
-  canSelectOnSlot1?: boolean;
-  canSelectOnSlot2?: boolean;
-  canSelectOnSlot3?: boolean;
-  canSelectOnSlot4?: boolean;
+  canSelectOnSlot_1?: {
+    actives: number[];
+  };
+  canSelectOnSlot_2?: {
+    actives: number[];
+  };
+  canSelectOnSlot_3?: {
+    actives: number[];
+  };
+  canSelectOnSlot_4?: {
+    actives: number[];
+  };
+
+  option1Enable?: boolean;
+  option2Enable?: boolean;
+  option3Enable?: boolean;
+
+  option1?: IBaseEquipment;
+  option2?: IBaseEquipment;
+  option3?: IBaseEquipment;
+
+  canSelectOnOption_1?: {
+    actives: number[];
+  };
+  canSelectOnOption_2?: {
+    actives: number[];
+  };
+  canSelectOnOption_3?: {
+    actives: number[];
+  };
 
   classActives?: ClassKey[];
-  enchantActives?: number[];
 
   prefix?: string;
   suffix?: string;
@@ -111,8 +136,10 @@ export interface EnchantOption {
   physicalRacePlantPercent?: number;
   physicalRacePlayerPercent?: number;
   physicalRaceUndeadPercent?: number;
+
   physicalBossPercent?: number;
   physicalNomalPercent?: number;
+
   penetrationRaceAngelPercent?: number;
   penetrationRaceBrutePercent?: number;
   penetrationRaceDemiHumanPercent?: number;
@@ -136,10 +163,10 @@ export interface EnchantOption {
   luk?: number;
   eATK?: number;
   criticalPercent?: number;
+  longRangePercent?: number;
 }
 
 export class BaseEquipment implements IBaseEquipment {
-
   public id: number = null;
   public name: string = null;
 
@@ -174,7 +201,7 @@ export class BaseEquipment implements IBaseEquipment {
     element: 0,
     race: 0,
     class: 0,
-    atkPercent2: 0
+    atkPercent2: 0,
   };
   // Addition DEF
   public additionDef = {
@@ -182,7 +209,7 @@ export class BaseEquipment implements IBaseEquipment {
     element: 0,
     race: 0,
     class: 0,
-    atkPercent2: 0
+    atkPercent2: 0,
   };
 
   public options: EnchantOption = null;
@@ -203,13 +230,53 @@ export class BaseEquipment implements IBaseEquipment {
   public slot3: IBaseEquipment = null;
   public slot4: IBaseEquipment = null;
 
-  public canSelectOnSlot1: boolean = false;
-  public canSelectOnSlot2: boolean = false;
-  public canSelectOnSlot3: boolean = false;
-  public canSelectOnSlot4: boolean = false;
+  public canSelectOnSlot_1: {
+    actives: number[];
+  } = {
+    actives: [],
+  };
+  public canSelectOnSlot_2: {
+    actives: number[];
+  } = {
+    actives: [],
+  };
+  public canSelectOnSlot_3: {
+    actives: number[];
+  } = {
+    actives: [],
+  };
+  public canSelectOnSlot_4: {
+    actives: number[];
+  } = {
+    actives: [],
+  };
+
+  public option1Enable: boolean = false;
+  public option2Enable: boolean = false;
+  public option3Enable: boolean = false;
+
+  public option1: IBaseEquipment = null;
+  public option2: IBaseEquipment = null;
+  public option3: IBaseEquipment = null;
+
+  public canSelectOnOption_1: {
+    actives: number[];
+  } = {
+    actives: [],
+  };
+  public canSelectOnOption_2: {
+    actives: number[];
+  } = {
+    actives: [],
+  };
+  public canSelectOnOption_3: {
+    actives: number[];
+  } = {
+    actives: [],
+  };
 
   public classActives: ClassKey[] = [];
-  public enchantActives: number[] = [];
+  // public enchantActives: number[] = [];
 
   public prefix: string = null;
   public suffix: string = null;
@@ -224,7 +291,7 @@ export enum EquipmentType {
   COSTUME = 'COSTUME',
   CARD = 'CARD',
   CONSUMABLE = 'CONSUMABLE',
-  SHADOW_EQUIPMENT = 'SHADOW_EQUIPMENT'
+  SHADOW_EQUIPMENT = 'SHADOW_EQUIPMENT',
 }
 
 export enum EquipmentSubType {
@@ -258,7 +325,7 @@ export enum EquipmentSubType {
   SHADOW_SHIELD = 'SHADOW_SHIELD',
   SHADOW_SHOES = 'SHADOW_SHOES',
   SHADOW_RIGHT_ACCESSORY = 'SHADOW_RIGHT_ACCESSORY',
-  SHADOW_LEFT_ACCESSORY = 'SHADOW_LEFT_ACCESSORY'
+  SHADOW_LEFT_ACCESSORY = 'SHADOW_LEFT_ACCESSORY',
 }
 
 export enum EquipmentLocation {
@@ -283,7 +350,7 @@ export enum EquipmentLocation {
   SHADOW_SHIELD = 'SHADOW_SHIELD',
   SHADOW_SHOES = 'SHADOW_SHOES',
   SHADOW_RIGHT_ACCESSORY = 'SHADOW_RIGHT_ACCESSORY',
-  SHADOW_LEFT_ACCESSORY = 'SHADOW_LEFT_ACCESSORY'
+  SHADOW_LEFT_ACCESSORY = 'SHADOW_LEFT_ACCESSORY',
 }
 
 export enum CompoundOn {

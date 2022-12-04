@@ -1,5 +1,10 @@
 import { Character2 } from '../models/character2';
-import { IBaseEquipment, EquipmentType, EquipmentLocation, CompoundOn } from '../models/equipment';
+import {
+  IBaseEquipment,
+  EquipmentType,
+  EquipmentLocation,
+  CompoundOn,
+} from '../models/equipment';
 import { costumeIds } from './costumes';
 
 const headGearLab5 = [18971, 18982];
@@ -44,8 +49,9 @@ export const enchants: IBaseEquipment[] = [
     cATK: 0,
     criticalPercent: 0,
     penetrationPercent: 0,
-    enchantActives: [15128],
-    canSelectOnSlot2: true,
+    canSelectOnSlot_2: {
+      actives: [15128],
+    },
     script: (character: Character2, _this: IBaseEquipment): void => {
       _this.eATK = 0;
 
@@ -53,14 +59,14 @@ export const enchants: IBaseEquipment[] = [
         const upgradeArmor = character.bodyGear.equipUpgradeValue;
         const baseStr = character.class.str0;
 
-        const multiplierStrLuk = Math.floor((baseStr) / 10);
+        const multiplierStrLuk = Math.floor(baseStr / 10);
         _this.eATK = multiplierStrLuk * 5;
 
         if (upgradeArmor >= 7) {
           _this.eATK += 10;
         }
       }
-    }
+    },
   },
   {
     id: 4986,
@@ -95,11 +101,16 @@ export const enchants: IBaseEquipment[] = [
     cATK: 0,
     criticalPercent: 0,
     penetrationPercent: 0,
-    enchantActives: [15128, 20773],
-    canSelectOnSlot2: true,
-    canSelectOnSlot3: true,
-    canSelectOnSlot4: true,
-    script: (character: Character2, _this: IBaseEquipment): void => { }
+    canSelectOnSlot_2: {
+      actives: [15128, 20773],
+    },
+    canSelectOnSlot_3: {
+      actives: [15128, 20773],
+    },
+    canSelectOnSlot_4: {
+      actives: [15128, 20773],
+    },
+    script: (character: Character2, _this: IBaseEquipment): void => {},
   },
   {
     id: 4994,
@@ -123,7 +134,7 @@ export const enchants: IBaseEquipment[] = [
       element: 0,
       race: 0,
       class: 0,
-      atkPercent2: 0
+      atkPercent2: 0,
     },
     additionDef: {
       size: 0,
@@ -135,7 +146,12 @@ export const enchants: IBaseEquipment[] = [
     cATK: 0,
     criticalPercent: 0,
     penetrationPercent: 0,
-    enchantActives: [15147],
+    canSelectOnSlot_3: {
+      actives: [15147],
+    },
+    canSelectOnSlot_4: {
+      actives: [15147],
+    },
     script: (character: Character2, _this: IBaseEquipment): void => {
       _this.additionAtk.race = 0;
       _this.str = 0;
@@ -151,7 +167,7 @@ export const enchants: IBaseEquipment[] = [
           }
         }
       }
-    }
+    },
   },
   {
     id: 4995,
@@ -175,7 +191,7 @@ export const enchants: IBaseEquipment[] = [
       element: 0,
       race: 0,
       class: 0,
-      atkPercent2: 0
+      atkPercent2: 0,
     },
     additionDef: {
       size: 0,
@@ -187,7 +203,12 @@ export const enchants: IBaseEquipment[] = [
     cATK: 0,
     criticalPercent: 0,
     penetrationPercent: 0,
-    enchantActives: [15147],
+    canSelectOnSlot_3: {
+      actives: [15147],
+    },
+    canSelectOnSlot_4: {
+      actives: [15147],
+    },
     script: (character: Character2, _this: IBaseEquipment): void => {
       _this.additionAtk.race = 0;
       _this.str = 0;
@@ -204,7 +225,7 @@ export const enchants: IBaseEquipment[] = [
           }
         }
       }
-    }
+    },
   },
   {
     id: 4996,
@@ -228,7 +249,7 @@ export const enchants: IBaseEquipment[] = [
       element: 0,
       race: 0,
       class: 0,
-      atkPercent2: 0
+      atkPercent2: 0,
     },
     additionDef: {
       size: 0,
@@ -240,7 +261,12 @@ export const enchants: IBaseEquipment[] = [
     cATK: 0,
     criticalPercent: 0,
     penetrationPercent: 0,
-    enchantActives: [15147],
+    canSelectOnSlot_3: {
+      actives: [15147],
+    },
+    canSelectOnSlot_4: {
+      actives: [15147],
+    },
     script: (character: Character2, _this: IBaseEquipment): void => {
       _this.additionAtk.race = 0;
       _this.str = 0;
@@ -258,11 +284,11 @@ export const enchants: IBaseEquipment[] = [
 
           if (upgradeArmor >= 13) {
             _this.str = 9;
-            _this.additionAtk.race = 0.10;
+            _this.additionAtk.race = 0.1;
           }
         }
       }
-    }
+    },
   },
   {
     id: 29003,
@@ -297,7 +323,12 @@ export const enchants: IBaseEquipment[] = [
     cATK: 0,
     criticalPercent: 0,
     penetrationPercent: 0,
-    enchantActives: [15147],
+    canSelectOnSlot_3: {
+      actives: [15147],
+    },
+    canSelectOnSlot_4: {
+      actives: [15147],
+    },
     script: (character: Character2, _this: IBaseEquipment): void => {
       _this.dex = 0;
 
@@ -308,7 +339,7 @@ export const enchants: IBaseEquipment[] = [
           _this.dex = 5;
         }
       }
-    }
+    },
   },
   {
     id: 29004,
@@ -343,7 +374,12 @@ export const enchants: IBaseEquipment[] = [
     cATK: 0,
     criticalPercent: 0,
     penetrationPercent: 0,
-    enchantActives: [15147],
+    canSelectOnSlot_3: {
+      actives: [15147],
+    },
+    canSelectOnSlot_4: {
+      actives: [15147],
+    },
     script: (character: Character2, _this: IBaseEquipment): void => {
       _this.dex = 0;
 
@@ -358,7 +394,7 @@ export const enchants: IBaseEquipment[] = [
           }
         }
       }
-    }
+    },
   },
   {
     id: 29005,
@@ -393,7 +429,12 @@ export const enchants: IBaseEquipment[] = [
     cATK: 0,
     criticalPercent: 0,
     penetrationPercent: 0,
-    enchantActives: [15147],
+    canSelectOnSlot_3: {
+      actives: [15147],
+    },
+    canSelectOnSlot_4: {
+      actives: [15147],
+    },
     script: (character: Character2, _this: IBaseEquipment): void => {
       _this.dex = 0;
 
@@ -412,7 +453,7 @@ export const enchants: IBaseEquipment[] = [
           }
         }
       }
-    }
+    },
   },
   {
     id: 29006,
@@ -447,7 +488,12 @@ export const enchants: IBaseEquipment[] = [
     cATK: 0,
     criticalPercent: 0,
     penetrationPercent: 0,
-    enchantActives: [15147],
+    canSelectOnSlot_3: {
+      actives: [15147],
+    },
+    canSelectOnSlot_4: {
+      actives: [15147],
+    },
     script: (character: Character2, _this: IBaseEquipment): void => {
       _this.luk = 0;
       _this.criticalPercent = 0;
@@ -463,7 +509,7 @@ export const enchants: IBaseEquipment[] = [
           }
         }
       }
-    }
+    },
   },
   {
     id: 29007,
@@ -498,7 +544,12 @@ export const enchants: IBaseEquipment[] = [
     cATK: 0,
     criticalPercent: 0,
     penetrationPercent: 0,
-    enchantActives: [15147],
+    canSelectOnSlot_3: {
+      actives: [15147],
+    },
+    canSelectOnSlot_4: {
+      actives: [15147],
+    },
     script: (character: Character2, _this: IBaseEquipment): void => {
       _this.luk = 0;
       _this.criticalPercent = 0;
@@ -515,7 +566,7 @@ export const enchants: IBaseEquipment[] = [
           }
         }
       }
-    }
+    },
   },
   {
     id: 29008,
@@ -550,7 +601,12 @@ export const enchants: IBaseEquipment[] = [
     cATK: 0,
     criticalPercent: 0,
     penetrationPercent: 0,
-    enchantActives: [15147],
+    canSelectOnSlot_3: {
+      actives: [15147],
+    },
+    canSelectOnSlot_4: {
+      actives: [15147],
+    },
     script: (character: Character2, _this: IBaseEquipment): void => {
       _this.luk = 0;
       _this.criticalPercent = 0;
@@ -572,7 +628,7 @@ export const enchants: IBaseEquipment[] = [
           }
         }
       }
-    }
+    },
   },
   {
     id: 29061,
@@ -596,7 +652,7 @@ export const enchants: IBaseEquipment[] = [
       element: 0,
       race: 0,
       class: 0,
-      atkPercent2: 0.03
+      atkPercent2: 0.03,
     },
     additionDef: {
       size: 0,
@@ -608,8 +664,10 @@ export const enchants: IBaseEquipment[] = [
     cATK: 0,
     criticalPercent: 0,
     penetrationPercent: 0,
-    enchantActives: [...headGearLab5],
-    script: (character: Character2, _this: IBaseEquipment): void => { }
+    canSelectOnSlot_2: {
+      actives: [...headGearLab5],
+    },
+    script: (character: Character2, _this: IBaseEquipment): void => {},
   },
   {
     id: 29062,
@@ -633,7 +691,7 @@ export const enchants: IBaseEquipment[] = [
       element: 0,
       race: 0,
       class: 0,
-      atkPercent2: 0.06
+      atkPercent2: 0.06,
     },
     additionDef: {
       size: 0,
@@ -645,8 +703,10 @@ export const enchants: IBaseEquipment[] = [
     cATK: 0,
     criticalPercent: 0,
     penetrationPercent: 0,
-    enchantActives: [...headGearLab5],
-    script: (character: Character2, _this: IBaseEquipment): void => { }
+    canSelectOnSlot_2: {
+      actives: [...headGearLab5],
+    },
+    script: (character: Character2, _this: IBaseEquipment): void => {},
   },
   {
     id: 29063,
@@ -670,7 +730,7 @@ export const enchants: IBaseEquipment[] = [
       element: 0,
       race: 0,
       class: 0,
-      atkPercent2: 0.09
+      atkPercent2: 0.09,
     },
     additionDef: {
       size: 0,
@@ -682,8 +742,10 @@ export const enchants: IBaseEquipment[] = [
     cATK: 0,
     criticalPercent: 0,
     penetrationPercent: 0,
-    enchantActives: [...headGearLab5],
-    script: (character: Character2, _this: IBaseEquipment): void => { }
+    canSelectOnSlot_2: {
+      actives: [...headGearLab5],
+    },
+    script: (character: Character2, _this: IBaseEquipment): void => {},
   },
   {
     id: 29064,
@@ -707,7 +769,7 @@ export const enchants: IBaseEquipment[] = [
       element: 0,
       race: 0,
       class: 0,
-      atkPercent2: 0.12
+      atkPercent2: 0.12,
     },
     additionDef: {
       size: 0,
@@ -719,8 +781,10 @@ export const enchants: IBaseEquipment[] = [
     cATK: 0,
     criticalPercent: 0,
     penetrationPercent: 0,
-    enchantActives: [...headGearLab5],
-    script: (character: Character2, _this: IBaseEquipment): void => { }
+    canSelectOnSlot_2: {
+      actives: [...headGearLab5],
+    },
+    script: (character: Character2, _this: IBaseEquipment): void => {},
   },
   {
     id: 29065,
@@ -744,7 +808,7 @@ export const enchants: IBaseEquipment[] = [
       element: 0,
       race: 0,
       class: 0,
-      atkPercent2: 0.15
+      atkPercent2: 0.15,
     },
     additionDef: {
       size: 0,
@@ -756,8 +820,10 @@ export const enchants: IBaseEquipment[] = [
     cATK: 0,
     criticalPercent: 0,
     penetrationPercent: 0,
-    enchantActives: [...headGearLab5],
-    script: (character: Character2, _this: IBaseEquipment): void => { }
+    canSelectOnSlot_2: {
+      actives: [...headGearLab5],
+    },
+    script: (character: Character2, _this: IBaseEquipment): void => {},
   },
   {
     id: 29066,
@@ -781,7 +847,7 @@ export const enchants: IBaseEquipment[] = [
       element: 0,
       race: 0,
       class: 0,
-      atkPercent2: 0.18
+      atkPercent2: 0.18,
     },
     additionDef: {
       size: 0,
@@ -793,8 +859,10 @@ export const enchants: IBaseEquipment[] = [
     cATK: 0,
     criticalPercent: 0,
     penetrationPercent: 0,
-    enchantActives: [...headGearLab5],
-    script: (character: Character2, _this: IBaseEquipment): void => { }
+    canSelectOnSlot_2: {
+      actives: [...headGearLab5],
+    },
+    script: (character: Character2, _this: IBaseEquipment): void => {},
   },
   {
     id: 29067,
@@ -818,7 +886,7 @@ export const enchants: IBaseEquipment[] = [
       element: 0,
       race: 0,
       class: 0,
-      atkPercent2: 0.21
+      atkPercent2: 0.21,
     },
     additionDef: {
       size: 0,
@@ -830,8 +898,10 @@ export const enchants: IBaseEquipment[] = [
     cATK: 0,
     criticalPercent: 0,
     penetrationPercent: 0,
-    enchantActives: [...headGearLab5],
-    script: (character: Character2, _this: IBaseEquipment): void => { }
+    canSelectOnSlot_2: {
+      actives: [...headGearLab5],
+    },
+    script: (character: Character2, _this: IBaseEquipment): void => {},
   },
   {
     id: 29068,
@@ -855,7 +925,7 @@ export const enchants: IBaseEquipment[] = [
       element: 0,
       race: 0,
       class: 0,
-      atkPercent2: 0.24
+      atkPercent2: 0.24,
     },
     additionDef: {
       size: 0,
@@ -867,8 +937,10 @@ export const enchants: IBaseEquipment[] = [
     cATK: 0,
     criticalPercent: 0,
     penetrationPercent: 0,
-    enchantActives: [...headGearLab5],
-    script: (character: Character2, _this: IBaseEquipment): void => { }
+    canSelectOnSlot_2: {
+      actives: [...headGearLab5],
+    },
+    script: (character: Character2, _this: IBaseEquipment): void => {},
   },
   {
     id: 29069,
@@ -892,7 +964,7 @@ export const enchants: IBaseEquipment[] = [
       element: 0,
       race: 0,
       class: 0,
-      atkPercent2: 0.27
+      atkPercent2: 0.27,
     },
     additionDef: {
       size: 0,
@@ -904,8 +976,10 @@ export const enchants: IBaseEquipment[] = [
     cATK: 0,
     criticalPercent: 0,
     penetrationPercent: 0,
-    enchantActives: [...headGearLab5],
-    script: (character: Character2, _this: IBaseEquipment): void => { }
+    canSelectOnSlot_2: {
+      actives: [...headGearLab5],
+    },
+    script: (character: Character2, _this: IBaseEquipment): void => {},
   },
   {
     id: 29070,
@@ -929,7 +1003,7 @@ export const enchants: IBaseEquipment[] = [
       element: 0,
       race: 0,
       class: 0,
-      atkPercent2: 0.33
+      atkPercent2: 0.33,
     },
     additionDef: {
       size: 0,
@@ -941,8 +1015,10 @@ export const enchants: IBaseEquipment[] = [
     cATK: 0,
     criticalPercent: 0,
     penetrationPercent: 0,
-    enchantActives: [...headGearLab5],
-    script: (character: Character2, _this: IBaseEquipment): void => { }
+    canSelectOnSlot_2: {
+      actives: [...headGearLab5],
+    },
+    script: (character: Character2, _this: IBaseEquipment): void => {},
   },
   {
     id: 29081,
@@ -977,8 +1053,10 @@ export const enchants: IBaseEquipment[] = [
     cATK: 0,
     criticalPercent: 0.1,
     penetrationPercent: 0,
-    enchantActives: [...headGearLab5],
-    script: (character: Character2, _this: IBaseEquipment): void => { }
+    canSelectOnSlot_2: {
+      actives: [...headGearLab5],
+    },
+    script: (character: Character2, _this: IBaseEquipment): void => {},
   },
   {
     id: 29082,
@@ -1013,8 +1091,10 @@ export const enchants: IBaseEquipment[] = [
     cATK: 0,
     criticalPercent: 0.2,
     penetrationPercent: 0,
-    enchantActives: [...headGearLab5],
-    script: (character: Character2, _this: IBaseEquipment): void => { }
+    canSelectOnSlot_2: {
+      actives: [...headGearLab5],
+    },
+    script: (character: Character2, _this: IBaseEquipment): void => {},
   },
   {
     id: 29083,
@@ -1049,8 +1129,10 @@ export const enchants: IBaseEquipment[] = [
     cATK: 0,
     criticalPercent: 0.3,
     penetrationPercent: 0,
-    enchantActives: [...headGearLab5],
-    script: (character: Character2, _this: IBaseEquipment): void => { }
+    canSelectOnSlot_2: {
+      actives: [...headGearLab5],
+    },
+    script: (character: Character2, _this: IBaseEquipment): void => {},
   },
   {
     id: 29084,
@@ -1085,8 +1167,10 @@ export const enchants: IBaseEquipment[] = [
     cATK: 0,
     criticalPercent: 0.4,
     penetrationPercent: 0,
-    enchantActives: [...headGearLab5],
-    script: (character: Character2, _this: IBaseEquipment): void => { }
+    canSelectOnSlot_2: {
+      actives: [...headGearLab5],
+    },
+    script: (character: Character2, _this: IBaseEquipment): void => {},
   },
   {
     id: 29085,
@@ -1121,8 +1205,10 @@ export const enchants: IBaseEquipment[] = [
     cATK: 0,
     criticalPercent: 0.5,
     penetrationPercent: 0,
-    enchantActives: [...headGearLab5],
-    script: (character: Character2, _this: IBaseEquipment): void => { }
+    canSelectOnSlot_2: {
+      actives: [...headGearLab5],
+    },
+    script: (character: Character2, _this: IBaseEquipment): void => {},
   },
   {
     id: 29086,
@@ -1157,8 +1243,10 @@ export const enchants: IBaseEquipment[] = [
     cATK: 0,
     criticalPercent: 0.6,
     penetrationPercent: 0,
-    enchantActives: [...headGearLab5],
-    script: (character: Character2, _this: IBaseEquipment): void => { }
+    canSelectOnSlot_2: {
+      actives: [...headGearLab5],
+    },
+    script: (character: Character2, _this: IBaseEquipment): void => {},
   },
   {
     id: 29087,
@@ -1193,8 +1281,10 @@ export const enchants: IBaseEquipment[] = [
     cATK: 0,
     criticalPercent: 0.7,
     penetrationPercent: 0,
-    enchantActives: [...headGearLab5],
-    script: (character: Character2, _this: IBaseEquipment): void => { }
+    canSelectOnSlot_2: {
+      actives: [...headGearLab5],
+    },
+    script: (character: Character2, _this: IBaseEquipment): void => {},
   },
   {
     id: 29088,
@@ -1229,8 +1319,10 @@ export const enchants: IBaseEquipment[] = [
     cATK: 0,
     criticalPercent: 0.8,
     penetrationPercent: 0,
-    enchantActives: [...headGearLab5],
-    script: (character: Character2, _this: IBaseEquipment): void => { }
+    canSelectOnSlot_2: {
+      actives: [...headGearLab5],
+    },
+    script: (character: Character2, _this: IBaseEquipment): void => {},
   },
   {
     id: 29089,
@@ -1265,8 +1357,10 @@ export const enchants: IBaseEquipment[] = [
     cATK: 0,
     criticalPercent: 0.9,
     penetrationPercent: 0,
-    enchantActives: [...headGearLab5],
-    script: (character: Character2, _this: IBaseEquipment): void => { }
+    canSelectOnSlot_2: {
+      actives: [...headGearLab5],
+    },
+    script: (character: Character2, _this: IBaseEquipment): void => {},
   },
   {
     id: 29090,
@@ -1301,8 +1395,10 @@ export const enchants: IBaseEquipment[] = [
     cATK: 0,
     criticalPercent: 1.1,
     penetrationPercent: 0,
-    enchantActives: [...headGearLab5],
-    script: (character: Character2, _this: IBaseEquipment): void => { }
+    canSelectOnSlot_2: {
+      actives: [...headGearLab5],
+    },
+    script: (character: Character2, _this: IBaseEquipment): void => {},
   },
   {
     id: 4700,
@@ -1337,8 +1433,16 @@ export const enchants: IBaseEquipment[] = [
     cATK: 0,
     criticalPercent: 0,
     penetrationPercent: 0,
-    enchantActives: [20718, ...malangdo, ...mora, ...racingCap],
-    script: (character: Character2, _this: IBaseEquipment): void => { }
+    canSelectOnSlot_2: {
+      actives: [20718, ...malangdo, ...mora, ...racingCap],
+    },
+    canSelectOnSlot_3: {
+      actives: [20718, ...malangdo, ...mora, ...racingCap],
+    },
+    canSelectOnSlot_4: {
+      actives: [20718, ...malangdo, ...mora, ...racingCap],
+    },
+    script: (character: Character2, _this: IBaseEquipment): void => {},
   },
   {
     id: 4701,
@@ -1373,8 +1477,16 @@ export const enchants: IBaseEquipment[] = [
     cATK: 0,
     criticalPercent: 0,
     penetrationPercent: 0,
-    enchantActives: [...headGearLab5, 20718, ...malangdo, ...mora, ...racingCap],
-    script: (character: Character2, _this: IBaseEquipment): void => { }
+    canSelectOnSlot_2: {
+      actives: [...headGearLab5, 20718, ...malangdo, ...mora, ...racingCap],
+    },
+    canSelectOnSlot_3: {
+      actives: [...headGearLab5, 20718, ...malangdo, ...mora, ...racingCap],
+    },
+    canSelectOnSlot_4: {
+      actives: [...headGearLab5, 20718, ...malangdo, ...mora, ...racingCap],
+    },
+    script: (character: Character2, _this: IBaseEquipment): void => {},
   },
   {
     id: 4702,
@@ -1409,8 +1521,43 @@ export const enchants: IBaseEquipment[] = [
     cATK: 0,
     criticalPercent: 0,
     penetrationPercent: 0,
-    enchantActives: [...headGearLab5, 2589, 20718, ...malangdo, ...mora, ...racingCap, 15388, 32228],
-    script: (character: Character2, _this: IBaseEquipment): void => { }
+    canSelectOnSlot_2: {
+      actives: [
+        ...headGearLab5,
+        2589,
+        20718,
+        ...malangdo,
+        ...mora,
+        ...racingCap,
+        15388,
+        32228,
+      ],
+    },
+    canSelectOnSlot_3: {
+      actives: [
+        ...headGearLab5,
+        2589,
+        20718,
+        ...malangdo,
+        ...mora,
+        ...racingCap,
+        15388,
+        32228,
+      ],
+    },
+    canSelectOnSlot_4: {
+      actives: [
+        ...headGearLab5,
+        2589,
+        20718,
+        ...malangdo,
+        ...mora,
+        ...racingCap,
+        15388,
+        32228,
+      ],
+    },
+    script: (character: Character2, _this: IBaseEquipment): void => {},
   },
   {
     id: 4703,
@@ -1445,8 +1592,40 @@ export const enchants: IBaseEquipment[] = [
     cATK: 0,
     criticalPercent: 0,
     penetrationPercent: 0,
-    enchantActives: [...headGearLab5, 2589, 20718, ...malangdo, ...mora, 15388, 32228],
-    script: (character: Character2, _this: IBaseEquipment): void => { }
+    canSelectOnSlot_2: {
+      actives: [
+        ...headGearLab5,
+        2589,
+        20718,
+        ...malangdo,
+        ...mora,
+        15388,
+        32228,
+      ],
+    },
+    canSelectOnSlot_3: {
+      actives: [
+        ...headGearLab5,
+        2589,
+        20718,
+        ...malangdo,
+        ...mora,
+        15388,
+        32228,
+      ],
+    },
+    canSelectOnSlot_4: {
+      actives: [
+        ...headGearLab5,
+        2589,
+        20718,
+        ...malangdo,
+        ...mora,
+        15388,
+        32228,
+      ],
+    },
+    script: (character: Character2, _this: IBaseEquipment): void => {},
   },
   {
     id: 4704,
@@ -1481,8 +1660,40 @@ export const enchants: IBaseEquipment[] = [
     cATK: 0,
     criticalPercent: 0,
     penetrationPercent: 0,
-    enchantActives: [...headGearLab5, 2589, 20718, ...malangdo, ...mora, 15388, 32228],
-    script: (character: Character2, _this: IBaseEquipment): void => { }
+    canSelectOnSlot_2: {
+      actives: [
+        ...headGearLab5,
+        2589,
+        20718,
+        ...malangdo,
+        ...mora,
+        15388,
+        32228,
+      ],
+    },
+    canSelectOnSlot_3: {
+      actives: [
+        ...headGearLab5,
+        2589,
+        20718,
+        ...malangdo,
+        ...mora,
+        15388,
+        32228,
+      ],
+    },
+    canSelectOnSlot_4: {
+      actives: [
+        ...headGearLab5,
+        2589,
+        20718,
+        ...malangdo,
+        ...mora,
+        15388,
+        32228,
+      ],
+    },
+    script: (character: Character2, _this: IBaseEquipment): void => {},
   },
   {
     id: 4705,
@@ -1517,8 +1728,16 @@ export const enchants: IBaseEquipment[] = [
     cATK: 0,
     criticalPercent: 0,
     penetrationPercent: 0,
-    enchantActives: [20718, ...malangdo],
-    script: (character: Character2, _this: IBaseEquipment): void => { }
+    canSelectOnSlot_2: {
+      actives: [20718, ...malangdo],
+    },
+    canSelectOnSlot_3: {
+      actives: [20718, ...malangdo],
+    },
+    canSelectOnSlot_4: {
+      actives: [20718, ...malangdo],
+    },
+    script: (character: Character2, _this: IBaseEquipment): void => {},
   },
   {
     id: 4706,
@@ -1553,8 +1772,16 @@ export const enchants: IBaseEquipment[] = [
     cATK: 0,
     criticalPercent: 0,
     penetrationPercent: 0,
-    enchantActives: [20718],
-    script: (character: Character2, _this: IBaseEquipment): void => { }
+    canSelectOnSlot_2: {
+      actives: [20718],
+    },
+    canSelectOnSlot_3: {
+      actives: [20718],
+    },
+    canSelectOnSlot_4: {
+      actives: [20718],
+    },
+    script: (character: Character2, _this: IBaseEquipment): void => {},
   },
   {
     id: 4720,
@@ -1589,8 +1816,16 @@ export const enchants: IBaseEquipment[] = [
     cATK: 0,
     criticalPercent: 0,
     penetrationPercent: 0,
-    enchantActives: [20718, ...malangdo, ...mora, ...racingCap],
-    script: (character: Character2, _this: IBaseEquipment): void => { }
+    canSelectOnSlot_2: {
+      actives: [20718, ...malangdo, ...mora, ...racingCap],
+    },
+    canSelectOnSlot_3: {
+      actives: [20718, ...malangdo, ...mora, ...racingCap],
+    },
+    canSelectOnSlot_4: {
+      actives: [20718, ...malangdo, ...mora, ...racingCap],
+    },
+    script: (character: Character2, _this: IBaseEquipment): void => {},
   },
   {
     id: 4721,
@@ -1625,8 +1860,16 @@ export const enchants: IBaseEquipment[] = [
     cATK: 0,
     criticalPercent: 0,
     penetrationPercent: 0,
-    enchantActives: [...headGearLab5, 20718, ...malangdo, ...mora, ...racingCap],
-    script: (character: Character2, _this: IBaseEquipment): void => { }
+    canSelectOnSlot_2: {
+      actives: [...headGearLab5, 20718, ...malangdo, ...mora, ...racingCap],
+    },
+    canSelectOnSlot_3: {
+      actives: [...headGearLab5, 20718, ...malangdo, ...mora, ...racingCap],
+    },
+    canSelectOnSlot_4: {
+      actives: [...headGearLab5, 20718, ...malangdo, ...mora, ...racingCap],
+    },
+    script: (character: Character2, _this: IBaseEquipment): void => {},
   },
   {
     id: 4722,
@@ -1661,8 +1904,43 @@ export const enchants: IBaseEquipment[] = [
     cATK: 0,
     criticalPercent: 0,
     penetrationPercent: 0,
-    enchantActives: [...headGearLab5, 2589, 20718, ...malangdo, ...mora, ...racingCap, 15388, 32228],
-    script: (character: Character2, _this: IBaseEquipment): void => { }
+    canSelectOnSlot_2: {
+      actives: [
+        ...headGearLab5,
+        2589,
+        20718,
+        ...malangdo,
+        ...mora,
+        ...racingCap,
+        15388,
+        32228,
+      ],
+    },
+    canSelectOnSlot_3: {
+      actives: [
+        ...headGearLab5,
+        2589,
+        20718,
+        ...malangdo,
+        ...mora,
+        ...racingCap,
+        15388,
+        32228,
+      ],
+    },
+    canSelectOnSlot_4: {
+      actives: [
+        ...headGearLab5,
+        2589,
+        20718,
+        ...malangdo,
+        ...mora,
+        ...racingCap,
+        15388,
+        32228,
+      ],
+    },
+    script: (character: Character2, _this: IBaseEquipment): void => {},
   },
   {
     id: 4723,
@@ -1697,8 +1975,40 @@ export const enchants: IBaseEquipment[] = [
     cATK: 0,
     criticalPercent: 0,
     penetrationPercent: 0,
-    enchantActives: [...headGearLab5, 2589, 20718, ...malangdo, ...mora, 15388, 32228],
-    script: (character: Character2, _this: IBaseEquipment): void => { }
+    canSelectOnSlot_2: {
+      actives: [
+        ...headGearLab5,
+        2589,
+        20718,
+        ...malangdo,
+        ...mora,
+        15388,
+        32228,
+      ],
+    },
+    canSelectOnSlot_3: {
+      actives: [
+        ...headGearLab5,
+        2589,
+        20718,
+        ...malangdo,
+        ...mora,
+        15388,
+        32228,
+      ],
+    },
+    canSelectOnSlot_4: {
+      actives: [
+        ...headGearLab5,
+        2589,
+        20718,
+        ...malangdo,
+        ...mora,
+        15388,
+        32228,
+      ],
+    },
+    script: (character: Character2, _this: IBaseEquipment): void => {},
   },
   {
     id: 4724,
@@ -1733,8 +2043,40 @@ export const enchants: IBaseEquipment[] = [
     cATK: 0,
     criticalPercent: 0,
     penetrationPercent: 0,
-    enchantActives: [...headGearLab5, 2589, 20718, ...malangdo, ...mora, 15388, 32228],
-    script: (character: Character2, _this: IBaseEquipment): void => { }
+    canSelectOnSlot_2: {
+      actives: [
+        ...headGearLab5,
+        2589,
+        20718,
+        ...malangdo,
+        ...mora,
+        15388,
+        32228,
+      ],
+    },
+    canSelectOnSlot_3: {
+      actives: [
+        ...headGearLab5,
+        2589,
+        20718,
+        ...malangdo,
+        ...mora,
+        15388,
+        32228,
+      ],
+    },
+    canSelectOnSlot_4: {
+      actives: [
+        ...headGearLab5,
+        2589,
+        20718,
+        ...malangdo,
+        ...mora,
+        15388,
+        32228,
+      ],
+    },
+    script: (character: Character2, _this: IBaseEquipment): void => {},
   },
   {
     id: 4725,
@@ -1769,8 +2111,16 @@ export const enchants: IBaseEquipment[] = [
     cATK: 0,
     criticalPercent: 0,
     penetrationPercent: 0,
-    enchantActives: [20718, ...malangdo],
-    script: (character: Character2, _this: IBaseEquipment): void => { }
+    canSelectOnSlot_2: {
+      actives: [20718, ...malangdo],
+    },
+    canSelectOnSlot_3: {
+      actives: [20718, ...malangdo],
+    },
+    canSelectOnSlot_4: {
+      actives: [20718, ...malangdo],
+    },
+    script: (character: Character2, _this: IBaseEquipment): void => {},
   },
   {
     id: 4726,
@@ -1805,8 +2155,16 @@ export const enchants: IBaseEquipment[] = [
     cATK: 0,
     criticalPercent: 0,
     penetrationPercent: 0,
-    enchantActives: [20718],
-    script: (character: Character2, _this: IBaseEquipment): void => { }
+    canSelectOnSlot_2: {
+      actives: [20718],
+    },
+    canSelectOnSlot_3: {
+      actives: [20718],
+    },
+    canSelectOnSlot_4: {
+      actives: [20718],
+    },
+    script: (character: Character2, _this: IBaseEquipment): void => {},
   },
   {
     id: 4750,
@@ -1841,8 +2199,16 @@ export const enchants: IBaseEquipment[] = [
     cATK: 0,
     criticalPercent: 0,
     penetrationPercent: 0,
-    enchantActives: [20718, ...malangdo, ...mora, ...racingCap],
-    script: (character: Character2, _this: IBaseEquipment): void => { }
+    canSelectOnSlot_2: {
+      actives: [20718, ...malangdo, ...mora, ...racingCap],
+    },
+    canSelectOnSlot_3: {
+      actives: [20718, ...malangdo, ...mora, ...racingCap],
+    },
+    canSelectOnSlot_4: {
+      actives: [20718, ...malangdo, ...mora, ...racingCap],
+    },
+    script: (character: Character2, _this: IBaseEquipment): void => {},
   },
   {
     id: 4751,
@@ -1877,8 +2243,16 @@ export const enchants: IBaseEquipment[] = [
     cATK: 0,
     criticalPercent: 0,
     penetrationPercent: 0,
-    enchantActives: [...headGearLab5, 20718, ...malangdo, ...mora, ...racingCap],
-    script: (character: Character2, _this: IBaseEquipment): void => { }
+    canSelectOnSlot_2: {
+      actives: [...headGearLab5, 20718, ...malangdo, ...mora, ...racingCap],
+    },
+    canSelectOnSlot_3: {
+      actives: [...headGearLab5, 20718, ...malangdo, ...mora, ...racingCap],
+    },
+    canSelectOnSlot_4: {
+      actives: [...headGearLab5, 20718, ...malangdo, ...mora, ...racingCap],
+    },
+    script: (character: Character2, _this: IBaseEquipment): void => {},
   },
   {
     id: 4752,
@@ -1913,8 +2287,43 @@ export const enchants: IBaseEquipment[] = [
     cATK: 0,
     criticalPercent: 0,
     penetrationPercent: 0,
-    enchantActives: [...headGearLab5, 2589, 20718, ...malangdo, ...mora, ...racingCap, 15388, 32228],
-    script: (character: Character2, _this: IBaseEquipment): void => { }
+    canSelectOnSlot_2: {
+      actives: [
+        ...headGearLab5,
+        2589,
+        20718,
+        ...malangdo,
+        ...mora,
+        ...racingCap,
+        15388,
+        32228,
+      ],
+    },
+    canSelectOnSlot_3: {
+      actives: [
+        ...headGearLab5,
+        2589,
+        20718,
+        ...malangdo,
+        ...mora,
+        ...racingCap,
+        15388,
+        32228,
+      ],
+    },
+    canSelectOnSlot_4: {
+      actives: [
+        ...headGearLab5,
+        2589,
+        20718,
+        ...malangdo,
+        ...mora,
+        ...racingCap,
+        15388,
+        32228,
+      ],
+    },
+    script: (character: Character2, _this: IBaseEquipment): void => {},
   },
   {
     id: 4753,
@@ -1949,8 +2358,40 @@ export const enchants: IBaseEquipment[] = [
     cATK: 0,
     criticalPercent: 0,
     penetrationPercent: 0,
-    enchantActives: [...headGearLab5, 2589, 20718, ...malangdo, ...mora, 15388, 32228],
-    script: (character: Character2, _this: IBaseEquipment): void => { }
+    canSelectOnSlot_2: {
+      actives: [
+        ...headGearLab5,
+        2589,
+        20718,
+        ...malangdo,
+        ...mora,
+        15388,
+        32228,
+      ],
+    },
+    canSelectOnSlot_3: {
+      actives: [
+        ...headGearLab5,
+        2589,
+        20718,
+        ...malangdo,
+        ...mora,
+        15388,
+        32228,
+      ],
+    },
+    canSelectOnSlot_4: {
+      actives: [
+        ...headGearLab5,
+        2589,
+        20718,
+        ...malangdo,
+        ...mora,
+        15388,
+        32228,
+      ],
+    },
+    script: (character: Character2, _this: IBaseEquipment): void => {},
   },
   {
     id: 4754,
@@ -1985,8 +2426,40 @@ export const enchants: IBaseEquipment[] = [
     cATK: 0,
     criticalPercent: 0,
     penetrationPercent: 0,
-    enchantActives: [...headGearLab5, 2589, 20718, ...malangdo, ...mora, 15388, 32228],
-    script: (character: Character2, _this: IBaseEquipment): void => { }
+    canSelectOnSlot_2: {
+      actives: [
+        ...headGearLab5,
+        2589,
+        20718,
+        ...malangdo,
+        ...mora,
+        15388,
+        32228,
+      ],
+    },
+    canSelectOnSlot_3: {
+      actives: [
+        ...headGearLab5,
+        2589,
+        20718,
+        ...malangdo,
+        ...mora,
+        15388,
+        32228,
+      ],
+    },
+    canSelectOnSlot_4: {
+      actives: [
+        ...headGearLab5,
+        2589,
+        20718,
+        ...malangdo,
+        ...mora,
+        15388,
+        32228,
+      ],
+    },
+    script: (character: Character2, _this: IBaseEquipment): void => {},
   },
   {
     id: 4755,
@@ -2021,8 +2494,16 @@ export const enchants: IBaseEquipment[] = [
     cATK: 0,
     criticalPercent: 0,
     penetrationPercent: 0,
-    enchantActives: [20718, ...malangdo],
-    script: (character: Character2, _this: IBaseEquipment): void => { }
+    canSelectOnSlot_2: {
+      actives: [20718, ...malangdo],
+    },
+    canSelectOnSlot_3: {
+      actives: [20718, ...malangdo],
+    },
+    canSelectOnSlot_4: {
+      actives: [20718, ...malangdo],
+    },
+    script: (character: Character2, _this: IBaseEquipment): void => {},
   },
   {
     id: 4756,
@@ -2057,8 +2538,16 @@ export const enchants: IBaseEquipment[] = [
     cATK: 0,
     criticalPercent: 0,
     penetrationPercent: 0,
-    enchantActives: [20718],
-    script: (character: Character2, _this: IBaseEquipment): void => { }
+    canSelectOnSlot_2: {
+      actives: [20718],
+    },
+    canSelectOnSlot_3: {
+      actives: [20718],
+    },
+    canSelectOnSlot_4: {
+      actives: [20718],
+    },
+    script: (character: Character2, _this: IBaseEquipment): void => {},
   },
   {
     id: 4811,
@@ -2093,8 +2582,16 @@ export const enchants: IBaseEquipment[] = [
     cATK: 0,
     criticalPercent: 0,
     penetrationPercent: 0,
-    enchantActives: [...mora],
-    script: (character: Character2, _this: IBaseEquipment): void => { }
+    canSelectOnSlot_2: {
+      actives: [...mora],
+    },
+    canSelectOnSlot_3: {
+      actives: [...mora],
+    },
+    canSelectOnSlot_4: {
+      actives: [...mora],
+    },
+    script: (character: Character2, _this: IBaseEquipment): void => {},
   },
   {
     id: 4810,
@@ -2129,8 +2626,16 @@ export const enchants: IBaseEquipment[] = [
     cATK: 0,
     criticalPercent: 0,
     penetrationPercent: 0,
-    enchantActives: [...mora],
-    script: (character: Character2, _this: IBaseEquipment): void => { }
+    canSelectOnSlot_2: {
+      actives: [...mora],
+    },
+    canSelectOnSlot_3: {
+      actives: [...mora],
+    },
+    canSelectOnSlot_4: {
+      actives: [...mora],
+    },
+    script: (character: Character2, _this: IBaseEquipment): void => {},
   },
   {
     id: 4809,
@@ -2165,8 +2670,16 @@ export const enchants: IBaseEquipment[] = [
     cATK: 0,
     criticalPercent: 0,
     penetrationPercent: 0,
-    enchantActives: [2589, ...mora],
-    script: (character: Character2, _this: IBaseEquipment): void => { }
+    canSelectOnSlot_2: {
+      actives: [2589, ...mora],
+    },
+    canSelectOnSlot_3: {
+      actives: [2589, ...mora],
+    },
+    canSelectOnSlot_4: {
+      actives: [2589, ...mora],
+    },
+    script: (character: Character2, _this: IBaseEquipment): void => {},
   },
   {
     id: 4808,
@@ -2201,8 +2714,16 @@ export const enchants: IBaseEquipment[] = [
     cATK: 0,
     criticalPercent: 0,
     penetrationPercent: 0,
-    enchantActives: [...malangdo, ...tempBoots, 2589, ...mora, 15389],
-    script: (character: Character2, _this: IBaseEquipment): void => { }
+    canSelectOnSlot_2: {
+      actives: [...malangdo, ...tempBoots, 2589, ...mora, 15389],
+    },
+    canSelectOnSlot_3: {
+      actives: [...malangdo, ...tempBoots, 2589, ...mora, 15389],
+    },
+    canSelectOnSlot_4: {
+      actives: [...malangdo, 2589, ...mora, 15389],
+    },
+    script: (character: Character2, _this: IBaseEquipment): void => {},
   },
   {
     id: 4820,
@@ -2237,8 +2758,16 @@ export const enchants: IBaseEquipment[] = [
     cATK: 0,
     criticalPercent: 0,
     penetrationPercent: 0,
-    enchantActives: [...malangdo, ...tempBoots, 2589, ...mora, 15389],
-    script: (character: Character2, _this: IBaseEquipment): void => { }
+    canSelectOnSlot_2: {
+      actives: [...malangdo, ...tempBoots, 2589, ...mora, 15389],
+    },
+    canSelectOnSlot_3: {
+      actives: [...malangdo, ...tempBoots, 2589, ...mora, 15389],
+    },
+    canSelectOnSlot_4: {
+      actives: [...malangdo, 2589, ...mora, 15389],
+    },
+    script: (character: Character2, _this: IBaseEquipment): void => {},
   },
   {
     id: 4821,
@@ -2273,8 +2802,16 @@ export const enchants: IBaseEquipment[] = [
     cATK: 0,
     criticalPercent: 0,
     penetrationPercent: 0,
-    enchantActives: [...malangdo, ...tempBoots, 2589, ...mora, 15389, 32228],
-    script: (character: Character2, _this: IBaseEquipment): void => { }
+    canSelectOnSlot_2: {
+      actives: [...malangdo, ...tempBoots, 2589, ...mora, 15389, 32228],
+    },
+    canSelectOnSlot_3: {
+      actives: [...malangdo, ...tempBoots, 2589, ...mora, 15389, 32228],
+    },
+    canSelectOnSlot_4: {
+      actives: [...malangdo, 2589, ...mora, 15389, 32228],
+    },
+    script: (character: Character2, _this: IBaseEquipment): void => {},
   },
   {
     id: 4822,
@@ -2309,8 +2846,16 @@ export const enchants: IBaseEquipment[] = [
     cATK: 0,
     criticalPercent: 0,
     penetrationPercent: 0,
-    enchantActives: [...malangdo, ...tempBoots, 32228],
-    script: (character: Character2, _this: IBaseEquipment): void => { }
+    canSelectOnSlot_2: {
+      actives: [...malangdo, ...tempBoots, 32228],
+    },
+    canSelectOnSlot_3: {
+      actives: [...malangdo, ...tempBoots, 32228],
+    },
+    canSelectOnSlot_4: {
+      actives: [...malangdo, 32228],
+    },
+    script: (character: Character2, _this: IBaseEquipment): void => {},
   },
   {
     id: 4823,
@@ -2345,8 +2890,16 @@ export const enchants: IBaseEquipment[] = [
     cATK: 0,
     criticalPercent: 0,
     penetrationPercent: 0,
-    enchantActives: [...malangdo],
-    script: (character: Character2, _this: IBaseEquipment): void => { }
+    canSelectOnSlot_2: {
+      actives: [...malangdo],
+    },
+    canSelectOnSlot_3: {
+      actives: [...malangdo],
+    },
+    canSelectOnSlot_4: {
+      actives: [...malangdo],
+    },
+    script: (character: Character2, _this: IBaseEquipment): void => {},
   },
   {
     id: 4875,
@@ -2381,8 +2934,10 @@ export const enchants: IBaseEquipment[] = [
     cATK: 0,
     criticalPercent: 0,
     penetrationPercent: 0,
-    enchantActives: [...tempBoots],
-    script: (character: Character2, _this: IBaseEquipment): void => { }
+    canSelectOnSlot_4: {
+      actives: [...tempBoots],
+    },
+    script: (character: Character2, _this: IBaseEquipment): void => {},
   },
   {
     id: 4879,
@@ -2417,8 +2972,10 @@ export const enchants: IBaseEquipment[] = [
     cATK: 0,
     criticalPercent: 0,
     penetrationPercent: 0,
-    enchantActives: [...tempBoots],
-    script: (character: Character2, _this: IBaseEquipment): void => { }
+    canSelectOnSlot_4: {
+      actives: [...tempBoots],
+    },
+    script: (character: Character2, _this: IBaseEquipment): void => {},
   },
   {
     id: 4880,
@@ -2453,8 +3010,10 @@ export const enchants: IBaseEquipment[] = [
     cATK: 0,
     criticalPercent: 0,
     penetrationPercent: 0,
-    enchantActives: [...tempBoots],
-    script: (character: Character2, _this: IBaseEquipment): void => { }
+    canSelectOnSlot_4: {
+      actives: [...tempBoots],
+    },
+    script: (character: Character2, _this: IBaseEquipment): void => {},
   },
   {
     id: 4878,
@@ -2489,8 +3048,10 @@ export const enchants: IBaseEquipment[] = [
     cATK: 0,
     criticalPercent: 0,
     penetrationPercent: 0,
-    enchantActives: [...tempBoots],
-    script: (character: Character2, _this: IBaseEquipment): void => { }
+    canSelectOnSlot_4: {
+      actives: [...tempBoots],
+    },
+    script: (character: Character2, _this: IBaseEquipment): void => {},
   },
   {
     id: 4876,
@@ -2525,8 +3086,10 @@ export const enchants: IBaseEquipment[] = [
     cATK: 0,
     criticalPercent: 0,
     penetrationPercent: 0,
-    enchantActives: [...tempBoots],
-    script: (character: Character2, _this: IBaseEquipment): void => { }
+    canSelectOnSlot_4: {
+      actives: [...tempBoots],
+    },
+    script: (character: Character2, _this: IBaseEquipment): void => {},
   },
   {
     id: 4877,
@@ -2561,8 +3124,10 @@ export const enchants: IBaseEquipment[] = [
     cATK: 0,
     criticalPercent: 0,
     penetrationPercent: 0,
-    enchantActives: [...tempBoots],
-    script: (character: Character2, _this: IBaseEquipment): void => { }
+    canSelectOnSlot_4: {
+      actives: [...tempBoots],
+    },
+    script: (character: Character2, _this: IBaseEquipment): void => {},
   },
   {
     id: 4807,
@@ -2597,8 +3162,16 @@ export const enchants: IBaseEquipment[] = [
     cATK: 0,
     criticalPercent: 0,
     penetrationPercent: 0,
-    enchantActives: [...malangdo],
-    script: (character: Character2, _this: IBaseEquipment): void => { }
+    canSelectOnSlot_2: {
+      actives: [...malangdo],
+    },
+    canSelectOnSlot_3: {
+      actives: [...malangdo],
+    },
+    canSelectOnSlot_4: {
+      actives: [...malangdo],
+    },
+    script: (character: Character2, _this: IBaseEquipment): void => {},
   },
   {
     id: 29362,
@@ -2633,8 +3206,10 @@ export const enchants: IBaseEquipment[] = [
     cATK: 0,
     criticalPercent: 0,
     penetrationPercent: 0,
-    enchantActives: [...costumes],
-    script: (character: Character2, _this: IBaseEquipment): void => { }
+    canSelectOnSlot_2: {
+      actives: [...costumes],
+    },
+    script: (character: Character2, _this: IBaseEquipment): void => {},
   },
   {
     id: 29359,
@@ -2669,16 +3244,22 @@ export const enchants: IBaseEquipment[] = [
     cATK: 0,
     criticalPercent: 0,
     penetrationPercent: 0,
-    enchantActives: [...costumes],
+    canSelectOnSlot_2: {
+      actives: [...costumes],
+    },
     script: (character: Character2, _this: IBaseEquipment): void => {
       _this.criticalPercent = 0.03;
-      if (character.costumeUpperHeadgear && character.costumeUpperHeadgear.slot1?.id === 29359
-        && character.costumeMiddleHeadgear && character.costumeMiddleHeadgear.slot1?.id === 29047
-        && character.costumeLowerHeadgear && character.costumeLowerHeadgear.slot1?.id === 29360
+      if (
+        character.costumeUpperHeadgear &&
+        character.costumeUpperHeadgear.slot1?.id === 29359 &&
+        character.costumeMiddleHeadgear &&
+        character.costumeMiddleHeadgear.slot1?.id === 29047 &&
+        character.costumeLowerHeadgear &&
+        character.costumeLowerHeadgear.slot1?.id === 29360
       ) {
         _this.criticalPercent = 0.09;
       }
-    }
+    },
   },
   {
     id: 4863,
@@ -2713,8 +3294,16 @@ export const enchants: IBaseEquipment[] = [
     cATK: 0,
     criticalPercent: 0.04,
     penetrationPercent: 0,
-    enchantActives: [2589, 15389],
-    script: (character: Character2, _this: IBaseEquipment): void => { }
+    canSelectOnSlot_2: {
+      actives: [2589, 15389],
+    },
+    canSelectOnSlot_3: {
+      actives: [2589, 15389],
+    },
+    canSelectOnSlot_4: {
+      actives: [2589, 15389],
+    },
+    script: (character: Character2, _this: IBaseEquipment): void => {},
   },
   {
     id: 4864,
@@ -2749,8 +3338,16 @@ export const enchants: IBaseEquipment[] = [
     cATK: 0,
     criticalPercent: 0.06,
     penetrationPercent: 0,
-    enchantActives: [2589, 15389, 32228],
-    script: (character: Character2, _this: IBaseEquipment): void => { }
+    canSelectOnSlot_2: {
+      actives: [2589, 15389, 32228],
+    },
+    canSelectOnSlot_3: {
+      actives: [2589, 15389, 32228],
+    },
+    canSelectOnSlot_4: {
+      actives: [2589, 15389, 32228],
+    },
+    script: (character: Character2, _this: IBaseEquipment): void => {},
   },
   {
     id: 4865,
@@ -2785,8 +3382,16 @@ export const enchants: IBaseEquipment[] = [
     cATK: 0,
     criticalPercent: 0.08,
     penetrationPercent: 0,
-    enchantActives: [2589, 15389, 32228],
-    script: (character: Character2, _this: IBaseEquipment): void => { }
+    canSelectOnSlot_2: {
+      actives: [2589, 15389, 32228],
+    },
+    canSelectOnSlot_3: {
+      actives: [2589, 15389, 32228],
+    },
+    canSelectOnSlot_4: {
+      actives: [2589, 15389, 32228],
+    },
+    script: (character: Character2, _this: IBaseEquipment): void => {},
   },
   {
     id: 4866,
@@ -2821,8 +3426,16 @@ export const enchants: IBaseEquipment[] = [
     cATK: 0,
     criticalPercent: 0.1,
     penetrationPercent: 0,
-    enchantActives: [2589],
-    script: (character: Character2, _this: IBaseEquipment): void => { }
+    canSelectOnSlot_2: {
+      actives: [2589],
+    },
+    canSelectOnSlot_3: {
+      actives: [2589],
+    },
+    canSelectOnSlot_4: {
+      actives: [2589],
+    },
+    script: (character: Character2, _this: IBaseEquipment): void => {},
   },
   {
     id: 29047,
@@ -2857,8 +3470,10 @@ export const enchants: IBaseEquipment[] = [
     cATK: 0,
     criticalPercent: 0.03,
     penetrationPercent: 0,
-    enchantActives: [...costumes],
-    script: (character: Character2, _this: IBaseEquipment): void => { }
+    canSelectOnSlot_2: {
+      actives: [...costumes],
+    },
+    script: (character: Character2, _this: IBaseEquipment): void => {},
   },
   {
     id: 29360,
@@ -2893,8 +3508,10 @@ export const enchants: IBaseEquipment[] = [
     cATK: 0,
     criticalPercent: 0.03,
     penetrationPercent: 0,
-    enchantActives: [...costumes],
-    script: (character: Character2, _this: IBaseEquipment): void => { }
+    canSelectOnSlot_2: {
+      actives: [...costumes],
+    },
+    script: (character: Character2, _this: IBaseEquipment): void => {},
   },
   {
     id: 29361,
@@ -2929,16 +3546,23 @@ export const enchants: IBaseEquipment[] = [
     cATK: 0,
     criticalPercent: 0.2,
     penetrationPercent: 0,
-    enchantActives: [...costumes],
+    canSelectOnSlot_2: {
+      actives: [...costumes],
+    },
     script: (character: Character2, _this: IBaseEquipment): void => {
-      if (character.costumeUpperHeadgear && character.costumeUpperHeadgear.slot1?.id === 29359
-        && character.costumeMiddleHeadgear && character.costumeMiddleHeadgear.slot1?.id === 29047
-        && character.costumeLowerHeadgear && character.costumeLowerHeadgear.slot1?.id === 29360
-        && character.costumeGarment && character.costumeGarment.slot1?.id === 29361
+      if (
+        character.costumeUpperHeadgear &&
+        character.costumeUpperHeadgear.slot1?.id === 29359 &&
+        character.costumeMiddleHeadgear &&
+        character.costumeMiddleHeadgear.slot1?.id === 29047 &&
+        character.costumeLowerHeadgear &&
+        character.costumeLowerHeadgear.slot1?.id === 29360 &&
+        character.costumeGarment &&
+        character.costumeGarment.slot1?.id === 29361
       ) {
         // _this.criticalRate = 10;
       }
-    }
+    },
   },
   {
     id: 4853,
@@ -2973,7 +3597,15 @@ export const enchants: IBaseEquipment[] = [
     cATK: 0,
     criticalPercent: 0,
     penetrationPercent: 0,
-    enchantActives: [20718, 2589],
+    canSelectOnSlot_2: {
+      actives: [20718, 2589],
+    },
+    canSelectOnSlot_3: {
+      actives: [20718, 2589],
+    },
+    canSelectOnSlot_4: {
+      actives: [20718, 2589],
+    },
     script: (character: Character2, _this: IBaseEquipment): void => {
       _this.str = 1;
       _this.additionAtk.class = 0;
@@ -2987,7 +3619,7 @@ export const enchants: IBaseEquipment[] = [
           _this.additionAtk.class = 0.01;
         }
       }
-    }
+    },
   },
   {
     id: 4858,
@@ -3022,7 +3654,15 @@ export const enchants: IBaseEquipment[] = [
     cATK: 0,
     criticalPercent: 0,
     penetrationPercent: 0,
-    enchantActives: [20718, 2589],
+    canSelectOnSlot_2: {
+      actives: [20718, 2589],
+    },
+    canSelectOnSlot_3: {
+      actives: [20718, 2589],
+    },
+    canSelectOnSlot_4: {
+      actives: [20718, 2589],
+    },
     script: (character: Character2, _this: IBaseEquipment): void => {
       _this.luk = 1;
 
@@ -3031,7 +3671,7 @@ export const enchants: IBaseEquipment[] = [
       if (upgrade >= 8) {
         _this.luk += 3;
       }
-    }
+    },
   },
   {
     id: 4857,
@@ -3066,7 +3706,15 @@ export const enchants: IBaseEquipment[] = [
     cATK: 0,
     criticalPercent: 0,
     penetrationPercent: 0,
-    enchantActives: [20718, 2589],
+    canSelectOnSlot_2: {
+      actives: [20718, 2589],
+    },
+    canSelectOnSlot_3: {
+      actives: [20718, 2589],
+    },
+    canSelectOnSlot_4: {
+      actives: [20718, 2589],
+    },
     script: (character: Character2, _this: IBaseEquipment): void => {
       _this.dex = 1;
 
@@ -3075,7 +3723,7 @@ export const enchants: IBaseEquipment[] = [
       if (upgrade >= 8) {
         _this.dex += 3;
       }
-    }
+    },
   },
   {
     id: 4854,
@@ -3110,7 +3758,15 @@ export const enchants: IBaseEquipment[] = [
     cATK: 0,
     criticalPercent: 0,
     penetrationPercent: 0,
-    enchantActives: [20718, 2589],
+    canSelectOnSlot_2: {
+      actives: [20718, 2589],
+    },
+    canSelectOnSlot_3: {
+      actives: [20718, 2589],
+    },
+    canSelectOnSlot_4: {
+      actives: [20718, 2589],
+    },
     script: (character: Character2, _this: IBaseEquipment): void => {
       _this.agi = 1;
       _this.additionAtk.class = 0;
@@ -3123,7 +3779,7 @@ export const enchants: IBaseEquipment[] = [
           _this.additionAtk.class = 0.01;
         }
       }
-    }
+    },
   },
   {
     id: 4819,
@@ -3158,8 +3814,16 @@ export const enchants: IBaseEquipment[] = [
     cATK: 0,
     criticalPercent: 0,
     penetrationPercent: 0,
-    enchantActives: [...mora],
-    script: (character: Character2, _this: IBaseEquipment): void => { }
+    canSelectOnSlot_2: {
+      actives: [...mora],
+    },
+    canSelectOnSlot_3: {
+      actives: [...mora],
+    },
+    canSelectOnSlot_4: {
+      actives: [...mora],
+    },
+    script: (character: Character2, _this: IBaseEquipment): void => {},
   },
   {
     id: 4766,
@@ -3194,8 +3858,16 @@ export const enchants: IBaseEquipment[] = [
     cATK: 0,
     criticalPercent: 0,
     penetrationPercent: 0,
-    enchantActives: [...mora],
-    script: (character: Character2, _this: IBaseEquipment): void => { }
+    canSelectOnSlot_2: {
+      actives: [...mora],
+    },
+    canSelectOnSlot_3: {
+      actives: [...mora],
+    },
+    canSelectOnSlot_4: {
+      actives: [...mora],
+    },
+    script: (character: Character2, _this: IBaseEquipment): void => {},
   },
   {
     id: 4767,
@@ -3230,8 +3902,16 @@ export const enchants: IBaseEquipment[] = [
     cATK: 0,
     criticalPercent: 0,
     penetrationPercent: 0,
-    enchantActives: [...mora],
-    script: (character: Character2, _this: IBaseEquipment): void => { }
+    canSelectOnSlot_2: {
+      actives: [...mora],
+    },
+    canSelectOnSlot_3: {
+      actives: [...mora],
+    },
+    canSelectOnSlot_4: {
+      actives: [...mora],
+    },
+    script: (character: Character2, _this: IBaseEquipment): void => {},
   },
   {
     id: 29310,
@@ -3266,8 +3946,16 @@ export const enchants: IBaseEquipment[] = [
     cATK: 0,
     criticalPercent: 0,
     penetrationPercent: 0,
-    enchantActives: [19195],
-    script: (character: Character2, _this: IBaseEquipment): void => { }
+    canSelectOnSlot_2: {
+      actives: [19195],
+    },
+    canSelectOnSlot_3: {
+      actives: [19195],
+    },
+    canSelectOnSlot_4: {
+      actives: [19195],
+    },
+    script: (character: Character2, _this: IBaseEquipment): void => {},
   },
   {
     id: 29311,
@@ -3302,8 +3990,16 @@ export const enchants: IBaseEquipment[] = [
     cATK: 0,
     criticalPercent: 0,
     penetrationPercent: 0,
-    enchantActives: [19195],
-    script: (character: Character2, _this: IBaseEquipment): void => { }
+    canSelectOnSlot_2: {
+      actives: [19195],
+    },
+    canSelectOnSlot_3: {
+      actives: [19195],
+    },
+    canSelectOnSlot_4: {
+      actives: [19195],
+    },
+    script: (character: Character2, _this: IBaseEquipment): void => {},
   },
   {
     id: 29312,
@@ -3338,8 +4034,16 @@ export const enchants: IBaseEquipment[] = [
     cATK: 0,
     criticalPercent: 0,
     penetrationPercent: 0,
-    enchantActives: [19195],
-    script: (character: Character2, _this: IBaseEquipment): void => { }
+    canSelectOnSlot_2: {
+      actives: [19195],
+    },
+    canSelectOnSlot_3: {
+      actives: [19195],
+    },
+    canSelectOnSlot_4: {
+      actives: [19195],
+    },
+    script: (character: Character2, _this: IBaseEquipment): void => {},
   },
   {
     id: 29322,
@@ -3374,8 +4078,16 @@ export const enchants: IBaseEquipment[] = [
     cATK: 0,
     criticalPercent: 0,
     penetrationPercent: 0,
-    enchantActives: [19191],
-    script: (character: Character2, _this: IBaseEquipment): void => { }
+    canSelectOnSlot_2: {
+      actives: [19191],
+    },
+    canSelectOnSlot_3: {
+      actives: [19191],
+    },
+    canSelectOnSlot_4: {
+      actives: [19191],
+    },
+    script: (character: Character2, _this: IBaseEquipment): void => {},
   },
   {
     id: 29323,
@@ -3410,8 +4122,16 @@ export const enchants: IBaseEquipment[] = [
     cATK: 0,
     criticalPercent: 0,
     penetrationPercent: 0,
-    enchantActives: [19191],
-    script: (character: Character2, _this: IBaseEquipment): void => { }
+    canSelectOnSlot_2: {
+      actives: [19191],
+    },
+    canSelectOnSlot_3: {
+      actives: [19191],
+    },
+    canSelectOnSlot_4: {
+      actives: [19191],
+    },
+    script: (character: Character2, _this: IBaseEquipment): void => {},
   },
   {
     id: 29324,
@@ -3446,8 +4166,16 @@ export const enchants: IBaseEquipment[] = [
     cATK: 0,
     criticalPercent: 0,
     penetrationPercent: 0,
-    enchantActives: [19191],
-    script: (character: Character2, _this: IBaseEquipment): void => { }
+    canSelectOnSlot_2: {
+      actives: [19191],
+    },
+    canSelectOnSlot_3: {
+      actives: [19191],
+    },
+    canSelectOnSlot_4: {
+      actives: [19191],
+    },
+    script: (character: Character2, _this: IBaseEquipment): void => {},
   },
   {
     id: 29587,
@@ -3482,13 +4210,19 @@ export const enchants: IBaseEquipment[] = [
     cATK: 0,
     criticalPercent: 0,
     penetrationPercent: 0,
-    enchantActives: [...kingInsignia],
+    canSelectOnSlot_4: {
+      actives: [...kingInsignia],
+    },
     script: (character: Character2, _this: IBaseEquipment): void => {
       _this.criticalPercent = 0;
-      if (character.shoes?.slot2?.id === 4877 || character.shoes?.slot3?.id === 4877 || character.shoes?.slot4?.id === 4877) {
+      if (
+        character.shoes?.slot2?.id === 4877 ||
+        character.shoes?.slot3?.id === 4877 ||
+        character.shoes?.slot4?.id === 4877
+      ) {
         _this.criticalPercent = 0.3;
       }
-    }
+    },
   },
   {
     id: 29588,
@@ -3523,13 +4257,19 @@ export const enchants: IBaseEquipment[] = [
     cATK: 0,
     criticalPercent: 0,
     penetrationPercent: 0,
-    enchantActives: [...kingInsignia],
+    canSelectOnSlot_4: {
+      actives: [...kingInsignia],
+    },
     script: (character: Character2, _this: IBaseEquipment): void => {
       _this.additionAtk.size = 0;
-      if (character.shoes?.slot2?.id === 4875 || character.shoes?.slot3?.id === 4875 || character.shoes?.slot4?.id === 4875) {
+      if (
+        character.shoes?.slot2?.id === 4875 ||
+        character.shoes?.slot3?.id === 4875 ||
+        character.shoes?.slot4?.id === 4875
+      ) {
         _this.additionAtk.size = 0.25;
       }
-    }
+    },
   },
   {
     id: 29589,
@@ -3564,13 +4304,19 @@ export const enchants: IBaseEquipment[] = [
     cATK: 0,
     criticalPercent: 0,
     penetrationPercent: 0,
-    enchantActives: [...kingInsignia],
+    canSelectOnSlot_4: {
+      actives: [...kingInsignia],
+    },
     script: (character: Character2, _this: IBaseEquipment): void => {
       _this.additionAtk.atkPercent2 = 0;
-      if (character.shoes?.slot2?.id === 4879 || character.shoes?.slot3?.id === 4879 || character.shoes?.slot4?.id === 4879) {
+      if (
+        character.shoes?.slot2?.id === 4879 ||
+        character.shoes?.slot3?.id === 4879 ||
+        character.shoes?.slot4?.id === 4879
+      ) {
         _this.additionAtk.atkPercent2 = 0.1;
       }
-    }
+    },
   },
   {
     id: 29590,
@@ -3605,10 +4351,17 @@ export const enchants: IBaseEquipment[] = [
     cATK: 0,
     criticalPercent: 0,
     penetrationPercent: 0,
-    enchantActives: [...kingInsignia],
+    canSelectOnSlot_4: {
+      actives: [...kingInsignia],
+    },
     script: (character: Character2, _this: IBaseEquipment): void => {
-      if (character.shoes?.slot2?.id === 4876 || character.shoes?.slot3?.id === 4876 || character.shoes?.slot4?.id === 4876) { }
-    }
+      if (
+        character.shoes?.slot2?.id === 4876 ||
+        character.shoes?.slot3?.id === 4876 ||
+        character.shoes?.slot4?.id === 4876
+      ) {
+      }
+    },
   },
   {
     id: 29591,
@@ -3643,10 +4396,17 @@ export const enchants: IBaseEquipment[] = [
     cATK: 0,
     criticalPercent: 0,
     penetrationPercent: 0,
-    enchantActives: [...kingInsignia],
+    canSelectOnSlot_4: {
+      actives: [...kingInsignia],
+    },
     script: (character: Character2, _this: IBaseEquipment): void => {
-      if (character.shoes?.slot2?.id === 4878 || character.shoes?.slot3?.id === 4878 || character.shoes?.slot4?.id === 4878) { }
-    }
+      if (
+        character.shoes?.slot2?.id === 4878 ||
+        character.shoes?.slot3?.id === 4878 ||
+        character.shoes?.slot4?.id === 4878
+      ) {
+      }
+    },
   },
   {
     id: 29592,
@@ -3681,10 +4441,17 @@ export const enchants: IBaseEquipment[] = [
     cATK: 0,
     criticalPercent: 0,
     penetrationPercent: 0,
-    enchantActives: [...kingInsignia],
+    canSelectOnSlot_4: {
+      actives: [...kingInsignia],
+    },
     script: (character: Character2, _this: IBaseEquipment): void => {
-      if (character.shoes?.slot2?.id === 4880 || character.shoes?.slot3?.id === 4880 || character.shoes?.slot4?.id === 4880) { }
-    }
+      if (
+        character.shoes?.slot2?.id === 4880 ||
+        character.shoes?.slot3?.id === 4880 ||
+        character.shoes?.slot4?.id === 4880
+      ) {
+      }
+    },
   },
   {
     id: 3000000,
@@ -3708,7 +4475,7 @@ export const enchants: IBaseEquipment[] = [
       element: 0,
       race: 0,
       class: 0,
-      atkPercent2: 0.01
+      atkPercent2: 0.01,
     },
     additionDef: {
       size: 0,
@@ -3720,8 +4487,16 @@ export const enchants: IBaseEquipment[] = [
     cATK: 0,
     criticalPercent: 0,
     penetrationPercent: 0,
-    enchantActives: [2963],
-    script: (character: Character2, _this: IBaseEquipment): void => { }
+    canSelectOnSlot_2: {
+      actives: [2963],
+    },
+    canSelectOnSlot_3: {
+      actives: [2963],
+    },
+    canSelectOnSlot_4: {
+      actives: [2963],
+    },
+    script: (character: Character2, _this: IBaseEquipment): void => {},
   },
   {
     id: 3000001,
@@ -3745,7 +4520,7 @@ export const enchants: IBaseEquipment[] = [
       element: 0,
       race: 0,
       class: 0,
-      atkPercent2: 0.02
+      atkPercent2: 0.02,
     },
     additionDef: {
       size: 0,
@@ -3757,8 +4532,16 @@ export const enchants: IBaseEquipment[] = [
     cATK: 0,
     criticalPercent: 0,
     penetrationPercent: 0,
-    enchantActives: [2963],
-    script: (character: Character2, _this: IBaseEquipment): void => { }
+    canSelectOnSlot_2: {
+      actives: [2963],
+    },
+    canSelectOnSlot_3: {
+      actives: [2963],
+    },
+    canSelectOnSlot_4: {
+      actives: [2963],
+    },
+    script: (character: Character2, _this: IBaseEquipment): void => {},
   },
   {
     id: 3000002,
@@ -3782,7 +4565,7 @@ export const enchants: IBaseEquipment[] = [
       element: 0,
       race: 0,
       class: 0,
-      atkPercent2: 0.03
+      atkPercent2: 0.03,
     },
     additionDef: {
       size: 0,
@@ -3794,12 +4577,20 @@ export const enchants: IBaseEquipment[] = [
     cATK: 0,
     criticalPercent: 0,
     penetrationPercent: 0,
-    enchantActives: [2963],
-    script: (character: Character2, _this: IBaseEquipment): void => { }
+    canSelectOnSlot_2: {
+      actives: [2963],
+    },
+    canSelectOnSlot_3: {
+      actives: [2963],
+    },
+    canSelectOnSlot_4: {
+      actives: [2963],
+    },
+    script: (character: Character2, _this: IBaseEquipment): void => {},
   },
   {
     id: 3000024,
-    name: 'CriDmg +5%',
+    name: 'Critical Damage 5%',
     type: EquipmentType.CARD,
     subType: null,
     location: null,
@@ -3818,7 +4609,7 @@ export const enchants: IBaseEquipment[] = [
       size: 0,
       element: 0,
       race: 0,
-      class: 0
+      class: 0,
     },
     additionDef: {
       size: 0,
@@ -3830,12 +4621,20 @@ export const enchants: IBaseEquipment[] = [
     cATK: 0,
     criticalPercent: 0.05,
     penetrationPercent: 0,
-    enchantActives: [2963],
-    script: (character: Character2, _this: IBaseEquipment): void => { }
+    canSelectOnSlot_2: {
+      actives: [2963],
+    },
+    canSelectOnSlot_3: {
+      actives: [2963],
+    },
+    canSelectOnSlot_4: {
+      actives: [2963],
+    },
+    script: (character: Character2, _this: IBaseEquipment): void => {},
   },
   {
     id: 3000025,
-    name: 'CriDmg +6%',
+    name: 'Critical Damage 6%',
     type: EquipmentType.CARD,
     subType: null,
     location: null,
@@ -3854,7 +4653,7 @@ export const enchants: IBaseEquipment[] = [
       size: 0,
       element: 0,
       race: 0,
-      class: 0
+      class: 0,
     },
     additionDef: {
       size: 0,
@@ -3866,12 +4665,20 @@ export const enchants: IBaseEquipment[] = [
     cATK: 0,
     criticalPercent: 0.06,
     penetrationPercent: 0,
-    enchantActives: [2963],
-    script: (character: Character2, _this: IBaseEquipment): void => { }
+    canSelectOnSlot_2: {
+      actives: [2963],
+    },
+    canSelectOnSlot_3: {
+      actives: [2963],
+    },
+    canSelectOnSlot_4: {
+      actives: [2963],
+    },
+    script: (character: Character2, _this: IBaseEquipment): void => {},
   },
   {
     id: 3000026,
-    name: 'CriDmg +7%',
+    name: 'Critical Damage 7%',
     type: EquipmentType.CARD,
     subType: null,
     location: null,
@@ -3890,7 +4697,7 @@ export const enchants: IBaseEquipment[] = [
       size: 0,
       element: 0,
       race: 0,
-      class: 0
+      class: 0,
     },
     additionDef: {
       size: 0,
@@ -3902,12 +4709,20 @@ export const enchants: IBaseEquipment[] = [
     cATK: 0,
     criticalPercent: 0.07,
     penetrationPercent: 0,
-    enchantActives: [2963],
-    script: (character: Character2, _this: IBaseEquipment): void => { }
+    canSelectOnSlot_2: {
+      actives: [2963],
+    },
+    canSelectOnSlot_3: {
+      actives: [2963],
+    },
+    canSelectOnSlot_4: {
+      actives: [2963],
+    },
+    script: (character: Character2, _this: IBaseEquipment): void => {},
   },
   {
     id: 3000027,
-    name: 'CriDmg +8%',
+    name: 'Critical Damage 8%',
     type: EquipmentType.CARD,
     subType: null,
     location: null,
@@ -3926,7 +4741,7 @@ export const enchants: IBaseEquipment[] = [
       size: 0,
       element: 0,
       race: 0,
-      class: 0
+      class: 0,
     },
     additionDef: {
       size: 0,
@@ -3938,7 +4753,15 @@ export const enchants: IBaseEquipment[] = [
     cATK: 0,
     criticalPercent: 0.08,
     penetrationPercent: 0,
-    enchantActives: [2963],
-    script: (character: Character2, _this: IBaseEquipment): void => { }
+    canSelectOnSlot_2: {
+      actives: [2963],
+    },
+    canSelectOnSlot_3: {
+      actives: [2963],
+    },
+    canSelectOnSlot_4: {
+      actives: [2963],
+    },
+    script: (character: Character2, _this: IBaseEquipment): void => {},
   },
 ];

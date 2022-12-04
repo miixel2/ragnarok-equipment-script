@@ -10,6 +10,7 @@ export const lowerHeadgear: IBaseEquipment[] = [
     subType: EquipmentSubType.COSTUME_HELM,
     location: EquipmentLocation.COSTUME_LOWER_HEADGEAR,
     compoundOn: null,
+    slot2Enable: true,
     baseDef: 0,
     baseATK: 0,
     level: 1,

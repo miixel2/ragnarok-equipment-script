@@ -1,16 +1,14 @@
 {
   "name": "equipment-script",
-  "version": "1.2.13",
+  "version": "1.2.16",
   "description": "",
   "main": "dist/library-starter.js",
   "module": "dist/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "webpack --mode production && sh copy-to-site.sh",
-    "start-windows": "webpack --mode production && copy-to-site.bat",
+    "start": "webpack --mode production",
     "build:stats": "webpack --profile --json > stats.json",
-    "build": "npm version patch --no-git-tag-version && npm run start",
-    "build-windows": "npm version patch --no-git-tag-version && npm run start-windows"
+    "build": "npm version patch --no-git-tag-version && npm run start"
   },
   "author": "",
   "license": "ISC",
