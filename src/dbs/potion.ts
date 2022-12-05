@@ -20,7 +20,7 @@ export const potionItems: IPotionItem[] = [
     dex: 10,
     int: 10,
     luk: 10,
-    script: (character: Character2, _this: IBuffSkill): void => { }
+    script: (character: Character2, _this: IBuffSkill): void => {},
   },
   {
     id: 23898,
@@ -31,7 +31,7 @@ export const potionItems: IPotionItem[] = [
     potionMAtk: 30,
     atkPercent2: 0.01,
     matkPercent2: 0.01,
-    script: (character: Character2, _this: IBuffSkill): void => { }
+    script: (character: Character2, _this: IBuffSkill): void => {},
   },
   {
     id: 12796,
@@ -42,7 +42,7 @@ export const potionItems: IPotionItem[] = [
     potionMAtk: 30,
     hpModB: 0.1,
     spModB: 0.1,
-    script: (character: Character2, _this: IBuffSkill): void => { }
+    script: (character: Character2, _this: IBuffSkill): void => {},
   },
   {
     id: 23475,
@@ -52,7 +52,7 @@ export const potionItems: IPotionItem[] = [
     hpModB: 0.05,
     spModB: 0.05,
     criticalPercent: 0.05,
-    script: (character: Character2, _this: IBuffSkill): void => { }
+    script: (character: Character2, _this: IBuffSkill): void => {},
   },
   {
     id: 12418,
@@ -60,7 +60,7 @@ export const potionItems: IPotionItem[] = [
     name: 'Full SwingK',
     classActives: [],
     potionAtk: 50,
-    script: (character: Character2, _this: IBuffSkill): void => { }
+    script: (character: Character2, _this: IBuffSkill): void => {},
   },
   {
     id: 6623,
@@ -69,7 +69,7 @@ export const potionItems: IPotionItem[] = [
     classActives: [],
     potionAtk: 5,
     potionMAtk: 5,
-    script: (character: Character2, _this: IBuffSkill): void => { }
+    script: (character: Character2, _this: IBuffSkill): void => {},
   },
   {
     id: 6624,
@@ -78,7 +78,7 @@ export const potionItems: IPotionItem[] = [
     classActives: [],
     potionAtk: 10,
     potionMAtk: 10,
-    script: (character: Character2, _this: IBuffSkill): void => { }
+    script: (character: Character2, _this: IBuffSkill): void => {},
   },
   {
     id: 6625,
@@ -87,6 +87,6 @@ export const potionItems: IPotionItem[] = [
     classActives: [],
     potionAtk: 15,
     potionMAtk: 15,
-    script: (character: Character2, _this: IBuffSkill): void => { }
+    script: (character: Character2, _this: IBuffSkill): void => {},
   },
 ];

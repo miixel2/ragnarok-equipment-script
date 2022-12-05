@@ -1,9 +1,14 @@
 import Big from 'big.js';
-import { Character2 } from "../../models/character2";
+import { Character2 } from '../../models/character2';
 import { ClassKey } from '../../models/class';
 import { E_Element } from '../../models/element';
-import { IBaseEquipment, EquipmentType, CompoundOn, EquipmentSubType } from "../../models/equipment";
-import { MonsterRace, MonsterType, Scale } from "../../models/monster";
+import {
+  IBaseEquipment,
+  EquipmentType,
+  CompoundOn,
+  EquipmentSubType,
+} from '../../models/equipment';
+import { MonsterRace, MonsterType, Scale } from '../../models/monster';
 
 export const cards: IBaseEquipment[] = [
   {
@@ -40,7 +45,7 @@ export const cards: IBaseEquipment[] = [
     criticalPercent: 0,
     penetrationPercent: 0,
     suffix: 'of Mad Berserker',
-    script: (character: Character2, _this: IBaseEquipment): void => { }
+    script: (character: Character2, _this: IBaseEquipment): void => {},
   },
   {
     id: 4468,
@@ -76,7 +81,7 @@ export const cards: IBaseEquipment[] = [
     criticalPercent: 0,
     penetrationPercent: 0,
     prefix: 'Pollution',
-    script: (character: Character2, _this: IBaseEquipment): void => { }
+    script: (character: Character2, _this: IBaseEquipment): void => {},
   },
   {
     id: 4337,
@@ -112,7 +117,7 @@ export const cards: IBaseEquipment[] = [
     criticalPercent: 0,
     penetrationPercent: 0,
     suffix: 'of Wild Cat',
-    script: (character: Character2, _this: IBaseEquipment): void => { }
+    script: (character: Character2, _this: IBaseEquipment): void => {},
   },
   {
     id: 4608,
@@ -153,7 +158,7 @@ export const cards: IBaseEquipment[] = [
       if ([Scale.MEDIUM, Scale.LARGE].includes(character.monster?.scale)) {
         _this.additionAtk.size = 0.2;
       }
-    }
+    },
   },
   {
     id: 4594,
@@ -191,8 +196,10 @@ export const cards: IBaseEquipment[] = [
     suffix: 'of Death Blow',
     script: (character: Character2, _this: IBaseEquipment): void => {
       const baseLuk = character.class.luk0;
-      _this.criticalPercent = Number((new Big(Math.floor((baseLuk) / 10))).mul(0.02).valueOf());
-    }
+      _this.criticalPercent = Number(
+        new Big(Math.floor(baseLuk / 10)).mul(0.02).valueOf()
+      );
+    },
   },
   {
     id: 4588,
@@ -230,8 +237,8 @@ export const cards: IBaseEquipment[] = [
     suffix: 'of Power',
     script: (character: Character2, _this: IBaseEquipment): void => {
       const baseStr = character.class.str0;
-      _this.eATK = Number((new Big(Math.floor((baseStr) / 10))).mul(5).valueOf());
-    }
+      _this.eATK = Number(new Big(Math.floor(baseStr / 10)).mul(5).valueOf());
+    },
   },
   {
     id: 4140,
@@ -273,7 +280,7 @@ export const cards: IBaseEquipment[] = [
       if (character.monster.type === MonsterType.BOSS) {
         _this.additionAtk.class = 0.25;
       }
-    }
+    },
   },
   {
     id: 300291,
@@ -309,7 +316,7 @@ export const cards: IBaseEquipment[] = [
     criticalPercent: 0,
     penetrationPercent: 0,
     prefix: 'The First',
-    script: (character: Character2, _this: IBaseEquipment): void => { }
+    script: (character: Character2, _this: IBaseEquipment): void => {},
   },
   {
     id: 4521,
@@ -345,7 +352,7 @@ export const cards: IBaseEquipment[] = [
     criticalPercent: 0.15,
     penetrationPercent: 0,
     prefix: 'Mortal Blow',
-    script: (character: Character2, _this: IBaseEquipment): void => { }
+    script: (character: Character2, _this: IBaseEquipment): void => {},
   },
   {
     id: 4643,
@@ -391,7 +398,7 @@ export const cards: IBaseEquipment[] = [
           _this.eATK += 15;
         }
       }
-    }
+    },
   },
   {
     id: 4091,
@@ -427,7 +434,7 @@ export const cards: IBaseEquipment[] = [
     criticalPercent: 0,
     penetrationPercent: 0,
     suffix: 'of Counter',
-    script: (character: Character2, _this: IBaseEquipment): void => { }
+    script: (character: Character2, _this: IBaseEquipment): void => {},
   },
   {
     id: 4464,
@@ -463,7 +470,7 @@ export const cards: IBaseEquipment[] = [
     criticalPercent: 0.2,
     penetrationPercent: 0,
     prefix: 'Fatal',
-    script: (character: Character2, _this: IBaseEquipment): void => { }
+    script: (character: Character2, _this: IBaseEquipment): void => {},
   },
   {
     id: 4137,
@@ -495,14 +502,14 @@ export const cards: IBaseEquipment[] = [
       class: 0,
     },
     options: {
-      ignoreSizePenalty: true
+      ignoreSizePenalty: true,
     },
     eATK: 0,
     cATK: 0,
     criticalPercent: 0,
     penetrationPercent: 0,
     suffix: 'of Infinity',
-    script: (character: Character2, _this: IBaseEquipment): void => { }
+    script: (character: Character2, _this: IBaseEquipment): void => {},
   },
   {
     id: 4305,
@@ -538,7 +545,7 @@ export const cards: IBaseEquipment[] = [
     criticalPercent: 0,
     penetrationPercent: 0,
     prefix: 'Blast',
-    script: (character: Character2, _this: IBaseEquipment): void => { }
+    script: (character: Character2, _this: IBaseEquipment): void => {},
   },
   {
     id: 4494,
@@ -578,9 +585,11 @@ export const cards: IBaseEquipment[] = [
       _this.additionAtk.class = 0.1;
       const upgrade = _this.equipUpgradeValue || 0;
       if (upgrade >= 15) {
-        _this.additionAtk.class = Number((new Big(_this.additionAtk.class)).plus(0.05).valueOf());
+        _this.additionAtk.class = Number(
+          new Big(_this.additionAtk.class).plus(0.05).valueOf()
+        );
       }
-    }
+    },
   },
   {
     id: 31017,
@@ -620,9 +629,13 @@ export const cards: IBaseEquipment[] = [
       _this.additionAtk.class = 0.01;
 
       const upgrade = _this.equipUpgradeValue || 0;
-      const tempPercentUpgrade = Number((new Big(Math.floor(upgrade / 2))).mul(0.01).valueOf());
-      _this.additionAtk.class = Number((new Big(_this.additionAtk.class)).plus(tempPercentUpgrade).valueOf());
-    }
+      const tempPercentUpgrade = Number(
+        new Big(Math.floor(upgrade / 2)).mul(0.01).valueOf()
+      );
+      _this.additionAtk.class = Number(
+        new Big(_this.additionAtk.class).plus(tempPercentUpgrade).valueOf()
+      );
+    },
   },
   {
     id: 31024,
@@ -646,21 +659,21 @@ export const cards: IBaseEquipment[] = [
       element: 0,
       race: 0,
       class: 0,
-      atkPercent2: 0.1
+      atkPercent2: 0.1,
     },
     additionDef: {
       size: 0,
       element: 0,
       race: 0,
       class: 0,
-      atkPercent2: 0
+      atkPercent2: 0,
     },
     eATK: 0,
     cATK: 0,
     criticalPercent: 0,
     penetrationPercent: 0,
     prefix: 'Volcanic',
-    script: (character: Character2, _this: IBaseEquipment): void => { }
+    script: (character: Character2, _this: IBaseEquipment): void => {},
   },
   {
     id: 4583,
@@ -706,7 +719,7 @@ export const cards: IBaseEquipment[] = [
       if (character.monster.race === MonsterRace.PLANT) {
         _this.penetrationPercent = 0.3;
       }
-    }
+    },
   },
   {
     id: 4601,
@@ -742,7 +755,7 @@ export const cards: IBaseEquipment[] = [
     criticalPercent: 0,
     penetrationPercent: 0,
     suffix: 'of Explosion',
-    script: (character: Character2, _this: IBaseEquipment): void => { }
+    script: (character: Character2, _this: IBaseEquipment): void => {},
   },
   {
     id: 4602,
@@ -778,7 +791,7 @@ export const cards: IBaseEquipment[] = [
     criticalPercent: 0,
     penetrationPercent: 0,
     suffix: 'of Fury',
-    script: (character: Character2, _this: IBaseEquipment): void => { }
+    script: (character: Character2, _this: IBaseEquipment): void => {},
   },
   {
     id: 4513,
@@ -819,10 +832,14 @@ export const cards: IBaseEquipment[] = [
 
       if (character.class.classKey === ClassKey.GuillotineCross) {
         const upgrade = _this.equipUpgradeValue || 0;
-        const tempPercentUpgrade = Number((new Big(Math.floor(upgrade / 2))).mul(0.01).valueOf());
-        _this.criticalPercent = Number((new Big(_this.criticalPercent)).plus(tempPercentUpgrade).valueOf());
+        const tempPercentUpgrade = Number(
+          new Big(Math.floor(upgrade / 2)).mul(0.01).valueOf()
+        );
+        _this.criticalPercent = Number(
+          new Big(_this.criticalPercent).plus(tempPercentUpgrade).valueOf()
+        );
       }
-    }
+    },
   },
   {
     id: 27107,
@@ -860,10 +877,14 @@ export const cards: IBaseEquipment[] = [
     prefix: 'Dancing',
     script: (character: Character2, _this: IBaseEquipment): void => {
       _this.additionAtk.element = 0;
-      if (character.monster && character.monster.element === E_Element.NEUTRAL && character.leftAccessory?.slot1?.id === 27108) {
+      if (
+        character.monster &&
+        character.monster.element === E_Element.NEUTRAL &&
+        character.leftAccessory?.slot1?.id === 27108
+      ) {
         _this.additionAtk.element = 0.2;
       }
-    }
+    },
   },
   {
     id: 27108,
@@ -899,7 +920,7 @@ export const cards: IBaseEquipment[] = [
     criticalPercent: 0,
     penetrationPercent: 0,
     prefix: 'Singing',
-    script: (character: Character2, _this: IBaseEquipment): void => { }
+    script: (character: Character2, _this: IBaseEquipment): void => {},
   },
   {
     id: 27109,
@@ -936,7 +957,7 @@ export const cards: IBaseEquipment[] = [
     criticalPercent: 0,
     penetrationPercent: 0,
     prefix: `Jitterbug's`,
-    script: (character: Character2, _this: IBaseEquipment): void => { }
+    script: (character: Character2, _this: IBaseEquipment): void => {},
   },
   {
     id: 4689,
@@ -975,15 +996,21 @@ export const cards: IBaseEquipment[] = [
     prefix: 'Ignition',
     script: (character: Character2, _this: IBaseEquipment): void => {
       if (character.playerTypeAtk === 2006) {
-        character.buffSkillPercert = Number(new Big(character.buffSkillPercert).plus(0.2).valueOf());
+        character.buffSkillPercert = Number(
+          new Big(character.buffSkillPercert).plus(0.2).valueOf()
+        );
         if (character.weapon.level === 4) {
-          character.buffSkillPercert = Number(new Big(character.buffSkillPercert).plus(0.2).valueOf());
+          character.buffSkillPercert = Number(
+            new Big(character.buffSkillPercert).plus(0.2).valueOf()
+          );
           if (character.weapon.equipUpgradeValue >= 10) {
-            character.buffSkillPercert = Number(new Big(character.buffSkillPercert).plus(0.2).valueOf());
+            character.buffSkillPercert = Number(
+              new Big(character.buffSkillPercert).plus(0.2).valueOf()
+            );
           }
         }
       }
-    }
+    },
   },
   {
     id: 4684,
@@ -1022,15 +1049,21 @@ export const cards: IBaseEquipment[] = [
     prefix: 'Cross',
     script: (character: Character2, _this: IBaseEquipment): void => {
       if (character.playerTypeAtk === 2022) {
-        character.buffSkillPercert = Number(new Big(character.buffSkillPercert).plus(0.2).valueOf());
+        character.buffSkillPercert = Number(
+          new Big(character.buffSkillPercert).plus(0.2).valueOf()
+        );
         if (character.weapon.level === 4) {
-          character.buffSkillPercert = Number(new Big(character.buffSkillPercert).plus(0.2).valueOf());
+          character.buffSkillPercert = Number(
+            new Big(character.buffSkillPercert).plus(0.2).valueOf()
+          );
           if (character.weapon.equipUpgradeValue >= 10) {
-            character.buffSkillPercert = Number(new Big(character.buffSkillPercert).plus(0.2).valueOf());
+            character.buffSkillPercert = Number(
+              new Big(character.buffSkillPercert).plus(0.2).valueOf()
+            );
           }
         }
       }
-    }
+    },
   },
   {
     id: 4399,
@@ -1067,7 +1100,7 @@ export const cards: IBaseEquipment[] = [
     criticalPercent: 0,
     penetrationPercent: 0,
     prefix: 'Penetration',
-    script: (character: Character2, _this: IBaseEquipment): void => { }
+    script: (character: Character2, _this: IBaseEquipment): void => {},
   },
   {
     id: 4574,
@@ -1107,10 +1140,13 @@ export const cards: IBaseEquipment[] = [
     script: (character: Character2, _this: IBaseEquipment): void => {
       _this.eATK = 0;
 
-      if (character.rightHand?.subType === EquipmentSubType.TWO_HANDED_SWORD || character.rightHand?.subType === EquipmentSubType.SWORD) {
+      if (
+        character.rightHand?.subType === EquipmentSubType.TWO_HANDED_SWORD ||
+        character.rightHand?.subType === EquipmentSubType.SWORD
+      ) {
         _this.eATK = 100;
       }
-    }
+    },
   },
   {
     id: 4609,
@@ -1161,10 +1197,13 @@ export const cards: IBaseEquipment[] = [
         hasCard = true;
       }
 
-      if (hasCard && [Scale.MEDIUM, Scale.LARGE].includes(character.monster?.scale)) {
+      if (
+        hasCard &&
+        [Scale.MEDIUM, Scale.LARGE].includes(character.monster?.scale)
+      ) {
         _this.additionAtk.size = 0.15;
       }
-    }
+    },
   },
   {
     id: 4434,
@@ -1207,7 +1246,7 @@ export const cards: IBaseEquipment[] = [
       if (character.monster?.race === MonsterRace.FORMLESS) {
         _this.additionAtk.race = 0.05;
       }
-    }
+    },
   },
   {
     id: 4908,
@@ -1244,7 +1283,7 @@ export const cards: IBaseEquipment[] = [
     criticalPercent: 0,
     penetrationPercent: 0,
     prefix: 'Strong',
-    script: (character: Character2, _this: IBaseEquipment): void => { }
+    script: (character: Character2, _this: IBaseEquipment): void => {},
   },
   {
     id: 4909,
@@ -1281,7 +1320,7 @@ export const cards: IBaseEquipment[] = [
     criticalPercent: 0,
     penetrationPercent: 0,
     prefix: 'Strong',
-    script: (character: Character2, _this: IBaseEquipment): void => { }
+    script: (character: Character2, _this: IBaseEquipment): void => {},
   },
   {
     id: 4910,
@@ -1318,7 +1357,7 @@ export const cards: IBaseEquipment[] = [
     criticalPercent: 0,
     penetrationPercent: 0,
     prefix: 'Strong',
-    script: (character: Character2, _this: IBaseEquipment): void => { }
+    script: (character: Character2, _this: IBaseEquipment): void => {},
   },
   {
     id: 27116,
@@ -1362,20 +1401,21 @@ export const cards: IBaseEquipment[] = [
         return;
       }
 
-      if (character.leftHand?.slot1?.id === 27117
-        || character.leftHand?.slot2?.id === 27117
-        || character.leftHand?.slot3?.id === 27117
-        || character.leftHand?.slot4?.id === 27117
-        || character.rightHand?.slot1?.id === 27117
-        || character.rightHand?.slot2?.id === 27117
-        || character.rightHand?.slot3?.id === 27117
-        || character.rightHand?.slot4?.id === 27117
+      if (
+        character.leftHand?.slot1?.id === 27117 ||
+        character.leftHand?.slot2?.id === 27117 ||
+        character.leftHand?.slot3?.id === 27117 ||
+        character.leftHand?.slot4?.id === 27117 ||
+        character.rightHand?.slot1?.id === 27117 ||
+        character.rightHand?.slot2?.id === 27117 ||
+        character.rightHand?.slot3?.id === 27117 ||
+        character.rightHand?.slot4?.id === 27117
       ) {
         // cri rate + 5
         _this.criticalPercent = 0.07;
         character.comboSet.push('27116_27117');
       }
-    }
+    },
   },
   {
     id: 27117,
@@ -1415,15 +1455,26 @@ export const cards: IBaseEquipment[] = [
       _this.criticalPercent = 0.1;
       _this.eATK = 0;
 
-      if ([EquipmentSubType.TWO_HANDED_SWORD, EquipmentSubType.TWO_HANDED_SPEAR, EquipmentSubType.WHIP, EquipmentSubType.BOOK].includes(character.rightHand?.subType)) {
+      if (
+        [
+          EquipmentSubType.TWO_HANDED_SWORD,
+          EquipmentSubType.TWO_HANDED_SPEAR,
+          EquipmentSubType.WHIP,
+          EquipmentSubType.BOOK,
+        ].includes(character.rightHand?.subType)
+      ) {
         // cri rate + 5
         const upgrade = _this.equipUpgradeValue || 0;
-        const tempPercentUpgrade = Number((new Big(Math.floor(upgrade))).mul(0.01).valueOf());
-        _this.criticalPercent = Number((new Big(_this.criticalPercent)).plus(tempPercentUpgrade).valueOf());
-        const tempAtk = Number((new Big(Math.floor(upgrade))).mul(3).valueOf());
-        _this.eATK = Number((new Big(_this.eATK)).plus(tempAtk).valueOf());
+        const tempPercentUpgrade = Number(
+          new Big(Math.floor(upgrade)).mul(0.01).valueOf()
+        );
+        _this.criticalPercent = Number(
+          new Big(_this.criticalPercent).plus(tempPercentUpgrade).valueOf()
+        );
+        const tempAtk = Number(new Big(Math.floor(upgrade)).mul(3).valueOf());
+        _this.eATK = Number(new Big(_this.eATK).plus(tempAtk).valueOf());
       }
-    }
+    },
   },
   {
     id: 27082,
@@ -1467,7 +1518,7 @@ export const cards: IBaseEquipment[] = [
       if (upgrade >= 10) {
         // cri rate + 15
       }
-    }
+    },
   },
   {
     id: 27176,
@@ -1505,12 +1556,12 @@ export const cards: IBaseEquipment[] = [
     prefix: 'Dirty',
     script: (character: Character2, _this: IBaseEquipment): void => {
       const baseStr = character.class.str0;
-      _this.eATK = Number((new Big(Math.floor((baseStr) / 10))).mul(3).valueOf());
+      _this.eATK = Number(new Big(Math.floor(baseStr / 10)).mul(3).valueOf());
 
       if (baseStr >= 120) {
         _this.eATK = Number(new Big(_this.eATK).plus(40).valueOf());
       }
-    }
+    },
   },
   {
     id: 27361,
@@ -1551,7 +1602,7 @@ export const cards: IBaseEquipment[] = [
       if ([Scale.MEDIUM, Scale.LARGE].includes(character.monster?.scale)) {
         _this.additionAtk.size = 0.3;
       }
-    }
+    },
   },
   {
     id: 4485,
@@ -1590,20 +1641,26 @@ export const cards: IBaseEquipment[] = [
     script: (character: Character2, _this: IBaseEquipment): void => {
       _this.additionAtk.race = 0;
       _this.additionAtk.element = 0;
-      if (character.monster?.element === E_Element.HOLY || character.monster?.element === E_Element.SHADOW) {
+      if (
+        character.monster?.element === E_Element.HOLY ||
+        character.monster?.element === E_Element.SHADOW
+      ) {
         _this.additionAtk.race = 0.2;
 
         if (character.bodyGear?.equipUpgradeValue >= 15) {
           _this.additionAtk.race = 0.3;
         }
       }
-      if (character.monster?.race === MonsterRace.ANGEL || character.monster?.race === MonsterRace.DEMON) {
+      if (
+        character.monster?.race === MonsterRace.ANGEL ||
+        character.monster?.race === MonsterRace.DEMON
+      ) {
         _this.additionAtk.element = 0.2;
         if (character.bodyGear?.equipUpgradeValue >= 15) {
           _this.additionAtk.element = 0.3;
         }
       }
-    }
+    },
   },
   {
     id: 4408,
@@ -1642,13 +1699,19 @@ export const cards: IBaseEquipment[] = [
     script: (character: Character2, _this: IBaseEquipment): void => {
       _this.additionAtk.race = 0;
       _this.additionAtk.element = 0;
-      if (character.monster?.element === E_Element.HOLY || character.monster?.element === E_Element.SHADOW) {
+      if (
+        character.monster?.element === E_Element.HOLY ||
+        character.monster?.element === E_Element.SHADOW
+      ) {
         _this.additionAtk.race = 0.4;
       }
-      if (character.monster?.race === MonsterRace.ANGEL || character.monster?.race === MonsterRace.DEMON) {
+      if (
+        character.monster?.race === MonsterRace.ANGEL ||
+        character.monster?.race === MonsterRace.DEMON
+      ) {
         _this.additionAtk.element = 0.4;
       }
-    }
+    },
   },
   {
     id: 27103,
@@ -1684,6 +1747,6 @@ export const cards: IBaseEquipment[] = [
     criticalPercent: 0,
     penetrationPercent: 0,
     prefix: 'Vigor',
-    script: (character: Character2, _this: IBaseEquipment): void => { }
+    script: (character: Character2, _this: IBaseEquipment): void => {},
   },
 ];

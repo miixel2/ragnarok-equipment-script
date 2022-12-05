@@ -1,6 +1,10 @@
-import Big from 'big.js';
 import { Character2 } from '../../models/character2';
-import { IBaseEquipment, EquipmentType, EquipmentSubType, EquipmentLocation } from '../../models/equipment';
+import {
+  IBaseEquipment,
+  EquipmentType,
+  EquipmentSubType,
+  EquipmentLocation,
+} from '../../models/equipment';
 
 export const upperHeadgear: IBaseEquipment[] = [
   {
@@ -25,18 +29,18 @@ export const upperHeadgear: IBaseEquipment[] = [
       size: 0,
       element: 0,
       race: 0,
-      class: 0
+      class: 0,
     },
     additionDef: {
       size: 0,
       element: 0,
       race: 0,
-      class: 0
+      class: 0,
     },
     eATK: 0,
     cATK: 0,
     criticalPercent: 0,
     penetrationPercent: 0,
-    script: (character: Character2, _this: IBaseEquipment): void => { }
-  }
+    script: (character: Character2, _this: IBaseEquipment): void => {},
+  },
 ];

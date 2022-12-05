@@ -1,6 +1,11 @@
 import Big from 'big.js';
 import { Character2 } from '../../models/character2';
-import { IBaseEquipment, EquipmentType, EquipmentSubType, EquipmentLocation } from '../../models/equipment';
+import {
+  IBaseEquipment,
+  EquipmentType,
+  EquipmentSubType,
+  EquipmentLocation,
+} from '../../models/equipment';
 
 export const middleHeadgear: IBaseEquipment[] = [
   {
@@ -37,7 +42,7 @@ export const middleHeadgear: IBaseEquipment[] = [
     cATK: 0,
     criticalPercent: 0,
     penetrationPercent: 0,
-    script: (character: Character2, _this: IBaseEquipment): void => { }
+    script: (character: Character2, _this: IBaseEquipment): void => {},
   },
   {
     id: 5918,
@@ -74,18 +79,29 @@ export const middleHeadgear: IBaseEquipment[] = [
     penetrationPercent: 0,
     script: (character: Character2, _this: IBaseEquipment): void => {
       _this.criticalPercent = 0.03;
-      _this.criticalPercent = Number((new Big((Math.floor(character.class.dex0 / 10) * 0.02))).mul(-1).plus(_this.criticalPercent).valueOf());
+      _this.criticalPercent = Number(
+        new Big(Math.floor(character.class.dex0 / 10) * 0.02)
+          .mul(-1)
+          .plus(_this.criticalPercent)
+          .valueOf()
+      );
 
-      _this.eATK = Number((new Big(Math.floor(character.class.luk0 / 10))).mul(2).valueOf());
+      _this.eATK = Number(
+        new Big(Math.floor(character.class.luk0 / 10)).mul(2).valueOf()
+      );
 
       if (character.class.luk0 >= 108) {
-        _this.criticalPercent = Number((new Big(_this.criticalPercent)).plus(0.1).valueOf());
+        _this.criticalPercent = Number(
+          new Big(_this.criticalPercent).plus(0.1).valueOf()
+        );
       }
 
       if (character.class.luk0 >= 120) {
-        _this.criticalPercent = Number((new Big(_this.criticalPercent)).plus(0.17).valueOf());
+        _this.criticalPercent = Number(
+          new Big(_this.criticalPercent).plus(0.17).valueOf()
+        );
       }
-    }
+    },
   },
   {
     id: 5389,
@@ -120,7 +136,7 @@ export const middleHeadgear: IBaseEquipment[] = [
     cATK: 0,
     criticalPercent: 0,
     penetrationPercent: 0,
-    script: (character: Character2, _this: IBaseEquipment): void => { }
+    script: (character: Character2, _this: IBaseEquipment): void => {},
   },
   {
     id: 19087,
@@ -156,7 +172,7 @@ export const middleHeadgear: IBaseEquipment[] = [
     cATK: 0,
     criticalPercent: 0,
     penetrationPercent: 0,
-    script: (character: Character2, _this: IBaseEquipment): void => { }
+    script: (character: Character2, _this: IBaseEquipment): void => {},
   },
   {
     id: 18823,
@@ -191,7 +207,7 @@ export const middleHeadgear: IBaseEquipment[] = [
     cATK: 0,
     criticalPercent: 0,
     penetrationPercent: 0,
-    script: (character: Character2, _this: IBaseEquipment): void => { }
+    script: (character: Character2, _this: IBaseEquipment): void => {},
   },
   {
     id: 19138,
@@ -231,7 +247,7 @@ export const middleHeadgear: IBaseEquipment[] = [
 
       const baseInt = character.class.int0;
 
-      _this.eATK = Number((new Big((Math.floor(baseInt / 8) * 5))).valueOf());
+      _this.eATK = Number(new Big(Math.floor(baseInt / 8) * 5).valueOf());
 
       if (baseInt >= 108) {
         _this.eATK += 50;
@@ -239,7 +255,7 @@ export const middleHeadgear: IBaseEquipment[] = [
           _this.eATK += 125;
         }
       }
-    }
+    },
   },
   {
     id: 18912,
@@ -275,7 +291,7 @@ export const middleHeadgear: IBaseEquipment[] = [
     cATK: 0,
     criticalPercent: 0,
     penetrationPercent: 0,
-    script: (character: Character2, _this: IBaseEquipment): void => { }
+    script: (character: Character2, _this: IBaseEquipment): void => {},
   },
   {
     id: 18603,
@@ -311,7 +327,7 @@ export const middleHeadgear: IBaseEquipment[] = [
     cATK: 0,
     criticalPercent: 0,
     penetrationPercent: 0,
-    script: (character: Character2, _this: IBaseEquipment): void => { }
+    script: (character: Character2, _this: IBaseEquipment): void => {},
   },
   {
     id: 18937,
@@ -357,24 +373,36 @@ export const middleHeadgear: IBaseEquipment[] = [
       _this.eATK = 0;
       _this.spModB = 0;
 
-      if (character.leftAccessory?.id === 2659 || character.rightAccessory?.id === 28302) {
+      if (
+        character.leftAccessory?.id === 2659 ||
+        character.rightAccessory?.id === 28302
+      ) {
         _this.int = 8;
         _this.spModB = 0.2;
       }
 
-      if (character.leftAccessory?.id === 2660 || character.rightAccessory?.id === 28303) {
+      if (
+        character.leftAccessory?.id === 2660 ||
+        character.rightAccessory?.id === 28303
+      ) {
         _this.str = 8;
         _this.eATK = 20;
       }
 
-      if (character.leftAccessory?.id === 2661 || character.rightAccessory?.id === 28304) {
+      if (
+        character.leftAccessory?.id === 2661 ||
+        character.rightAccessory?.id === 28304
+      ) {
         _this.agi = 8;
       }
 
-      if (character.leftAccessory?.id === 2662 || character.rightAccessory?.id === 28305) {
+      if (
+        character.leftAccessory?.id === 2662 ||
+        character.rightAccessory?.id === 28305
+      ) {
         _this.dex = 8;
       }
-    }
+    },
   },
   {
     id: 410136,
@@ -443,10 +471,12 @@ export const middleHeadgear: IBaseEquipment[] = [
         _this.eATK = _this.eATK + 50;
         const garmentUpgrade = character.garment.equipUpgradeValue;
         if (garmentUpgrade >= 11) {
-          const mulVal = garmentUpgrade >= 15 ? 5 : (garmentUpgrade - 10);
-          _this.additionAtk.class = Number(new Big(mulVal).mul(0.02).plus(_this.additionAtk.class).valueOf());
+          const mulVal = garmentUpgrade >= 15 ? 5 : garmentUpgrade - 10;
+          _this.additionAtk.class = Number(
+            new Big(mulVal).mul(0.02).plus(_this.additionAtk.class).valueOf()
+          );
         }
       }
-    }
+    },
   },
 ];

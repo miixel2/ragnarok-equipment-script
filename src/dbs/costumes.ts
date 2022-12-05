@@ -14,7 +14,7 @@ export const costumeIds: number[] = [
   ...upperHeadgear,
   ...middleHeadgear,
   ...lowerHeadgear,
-  ...garments
+  ...garments,
 ].map((m) => m.id);
 
 export const shadowIds: number[] = [

@@ -1,6 +1,6 @@
 import Big from 'big.js';
-import { Character2 } from "../models/character2";
-import { ClassKey } from "../models/class";
+import { Character2 } from '../models/character2';
+import { ClassKey } from '../models/class';
 import { E_Element } from '../models/element';
 
 interface SkillLevel {
@@ -26,9 +26,9 @@ export const atkSkills: IAtkSkill[] = [
     level: [
       {
         level: 1,
-        skillPercent: 1
-      }
-    ]
+        skillPercent: 1,
+      },
+    ],
   },
   {
     id: 2006,
@@ -39,27 +39,32 @@ export const atkSkills: IAtkSkill[] = [
     level: [
       {
         level: 1,
-        skillPercent: 3
+        skillPercent: 3,
       },
       {
         level: 2,
-        skillPercent: 6
+        skillPercent: 6,
       },
       {
         level: 3,
-        skillPercent: 9
+        skillPercent: 9,
       },
       {
         level: 4,
-        skillPercent: 12
+        skillPercent: 12,
       },
       {
         level: 5,
-        skillPercent: 15
-      }
+        skillPercent: 15,
+      },
     ],
     script: (character: Character2, _this: SkillLevel): number => {
-      let sumPercent =  Number(new Big(_this.skillPercent).mul(character.class.baseLv).div(100).valueOf());
+      let sumPercent = Number(
+        new Big(_this.skillPercent)
+          .mul(character.class.baseLv)
+          .div(100)
+          .valueOf()
+      );
 
       if (character.elementalConverter === E_Element.FIRE) {
         const bonus = Number(new Big(_this.level).mul(100).div(100).valueOf());
@@ -67,7 +72,7 @@ export const atkSkills: IAtkSkill[] = [
       }
 
       return sumPercent;
-    }
+    },
   },
   {
     id: 2022,
@@ -78,29 +83,34 @@ export const atkSkills: IAtkSkill[] = [
     level: [
       {
         level: 1,
-        skillPercent: 11
+        skillPercent: 11,
       },
       {
         level: 2,
-        skillPercent: 12
+        skillPercent: 12,
       },
       {
         level: 3,
-        skillPercent: 13
+        skillPercent: 13,
       },
       {
         level: 4,
-        skillPercent: 14
+        skillPercent: 14,
       },
       {
         level: 5,
-        skillPercent: 15
-      }
+        skillPercent: 15,
+      },
     ],
     script: (character: Character2, _this: SkillLevel): number => {
       // return Number(new Big(character.class.baseLv).div(120).mul(_this.skillPercent));
-      return Number(new Big(_this.skillPercent).mul(character.class.baseLv).div(120).valueOf());
-    }
+      return Number(
+        new Big(_this.skillPercent)
+          .mul(character.class.baseLv)
+          .div(120)
+          .valueOf()
+      );
+    },
   },
   {
     id: 62,
@@ -111,44 +121,44 @@ export const atkSkills: IAtkSkill[] = [
     level: [
       {
         level: 1,
-        skillPercent: 1.4
+        skillPercent: 1.4,
       },
       {
         level: 2,
-        skillPercent: 1.8
+        skillPercent: 1.8,
       },
       {
         level: 3,
-        skillPercent: 2.2
+        skillPercent: 2.2,
       },
       {
         level: 4,
-        skillPercent: 2.6
+        skillPercent: 2.6,
       },
       {
         level: 5,
-        skillPercent: 3
+        skillPercent: 3,
       },
       {
         level: 6,
-        skillPercent: 3.4
+        skillPercent: 3.4,
       },
       {
         level: 7,
-        skillPercent: 3.8
+        skillPercent: 3.8,
       },
       {
         level: 8,
-        skillPercent: 4.2
+        skillPercent: 4.2,
       },
       {
         level: 9,
-        skillPercent: 4.6
+        skillPercent: 4.6,
       },
       {
         level: 10,
-        skillPercent: 5
-      }
+        skillPercent: 5,
+      },
     ],
   },
   {
@@ -160,28 +170,28 @@ export const atkSkills: IAtkSkill[] = [
     level: [
       {
         level: 1,
-        skillPercent: 6
+        skillPercent: 6,
       },
       {
         level: 2,
-        skillPercent: 7
+        skillPercent: 7,
       },
       {
         level: 3,
-        skillPercent: 8
+        skillPercent: 8,
       },
       {
         level: 4,
-        skillPercent: 9
+        skillPercent: 9,
       },
       {
         level: 5,
-        skillPercent: 10
-      }
+        skillPercent: 10,
+      },
     ],
     script: (character: Character2, _this: SkillLevel): number => {
       const baseLv = new Big(character.class.baseLv - 100).div(200).plus(1);
       return Number(new Big(_this.skillPercent).mul(baseLv).valueOf());
-    }
+    },
   },
 ];

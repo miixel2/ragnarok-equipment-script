@@ -58,10 +58,10 @@ export interface IBaseEquipment {
   longRangePercent?: number;
   penetrationPercent: number;
 
-  slot1Enable?: boolean;
-  slot2Enable?: boolean;
-  slot3Enable?: boolean;
-  slot4Enable?: boolean;
+  slot1Enable?: boolean | 'CARD' | 'ENCHANT';
+  slot2Enable?: boolean | 'CARD' | 'ENCHANT';
+  slot3Enable?: boolean | 'CARD' | 'ENCHANT';
+  slot4Enable?: boolean | 'CARD' | 'ENCHANT';
 
   slot1?: IBaseEquipment;
   slot2?: IBaseEquipment;
@@ -220,10 +220,10 @@ export class BaseEquipment implements IBaseEquipment {
   public longRangePercent: number = 0;
   public penetrationPercent: number = 0;
 
-  public slot1Enable: boolean = false;
-  public slot2Enable: boolean = false;
-  public slot3Enable: boolean = false;
-  public slot4Enable: boolean = false;
+  public slot1Enable: boolean | 'CARD' | 'ENCHANT' = false;
+  public slot2Enable: boolean | 'CARD' | 'ENCHANT' = false;
+  public slot3Enable: boolean | 'CARD' | 'ENCHANT' = false;
+  public slot4Enable: boolean | 'CARD' | 'ENCHANT' = false;
 
   public slot1: IBaseEquipment = null;
   public slot2: IBaseEquipment = null;

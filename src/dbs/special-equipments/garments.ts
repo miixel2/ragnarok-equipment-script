@@ -1,6 +1,10 @@
-import Big from 'big.js';
 import { Character2 } from '../../models/character2';
-import { IBaseEquipment, EquipmentType, EquipmentSubType, EquipmentLocation } from '../../models/equipment';
+import {
+  IBaseEquipment,
+  EquipmentType,
+  EquipmentSubType,
+  EquipmentLocation,
+} from '../../models/equipment';
 
 export const garments: IBaseEquipment[] = [
   {
@@ -37,7 +41,7 @@ export const garments: IBaseEquipment[] = [
     cATK: 0,
     criticalPercent: 0,
     penetrationPercent: 0,
-    script: (character: Character2, _this: IBaseEquipment): void => { }
+    script: (character: Character2, _this: IBaseEquipment): void => {},
   },
   {
     id: 20614,
@@ -73,7 +77,7 @@ export const garments: IBaseEquipment[] = [
     cATK: 0,
     criticalPercent: 0,
     penetrationPercent: 0,
-    script: (character: Character2, _this: IBaseEquipment): void => { }
+    script: (character: Character2, _this: IBaseEquipment): void => {},
   },
   {
     id: 20514,
@@ -109,7 +113,7 @@ export const garments: IBaseEquipment[] = [
     cATK: 0,
     criticalPercent: 0,
     penetrationPercent: 0,
-    script: (character: Character2, _this: IBaseEquipment): void => { }
+    script: (character: Character2, _this: IBaseEquipment): void => {},
   },
   {
     id: 20535,
@@ -145,6 +149,6 @@ export const garments: IBaseEquipment[] = [
     cATK: 0,
     criticalPercent: 0,
     penetrationPercent: 0,
-    script: (character: Character2, _this: IBaseEquipment): void => { }
+    script: (character: Character2, _this: IBaseEquipment): void => {},
   },
 ];

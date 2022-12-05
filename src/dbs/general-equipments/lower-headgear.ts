@@ -1,6 +1,11 @@
 import Big from 'big.js';
 import { Character2 } from '../../models/character2';
-import { IBaseEquipment, EquipmentType, EquipmentSubType, EquipmentLocation } from '../../models/equipment';
+import {
+  IBaseEquipment,
+  EquipmentType,
+  EquipmentSubType,
+  EquipmentLocation,
+} from '../../models/equipment';
 
 export const lowerHeadgear: IBaseEquipment[] = [
   {
@@ -27,7 +32,7 @@ export const lowerHeadgear: IBaseEquipment[] = [
       element: 0,
       race: 0,
       class: 0,
-      atkPercent2: 0
+      atkPercent2: 0,
     },
     additionDef: {
       size: 0,
@@ -51,16 +56,20 @@ export const lowerHeadgear: IBaseEquipment[] = [
 
         const multiplierStrLuk = Math.floor((baseStr + baseLuk) / 80);
         if (multiplierStrLuk > 0) {
-          _this.additionAtk.class = Number((new Big(0.06)).mul(multiplierStrLuk).valueOf());
-          _this.criticalPercent = Number((new Big(0.1)).mul(multiplierStrLuk).valueOf());
+          _this.additionAtk.class = Number(
+            new Big(0.06).mul(multiplierStrLuk).valueOf()
+          );
+          _this.criticalPercent = Number(
+            new Big(0.1).mul(multiplierStrLuk).valueOf()
+          );
         }
 
         const multiplierAgiVit = Math.floor((baseAgi + baseVit) / 80);
         if (multiplierAgiVit > 0) {
-          _this.hpModB = Number((new Big(0.05)).mul(multiplierAgiVit).valueOf());
+          _this.hpModB = Number(new Big(0.05).mul(multiplierAgiVit).valueOf());
         }
       }
-    }
+    },
   },
   {
     id: 19306,
@@ -99,20 +108,28 @@ export const lowerHeadgear: IBaseEquipment[] = [
       _this.criticalPercent = 0.05;
 
       if (character.middleHeadgear && character.middleHeadgear.id === 5918) {
-        _this.criticalPercent = Number((new Big(_this.criticalPercent)).plus(0.2).valueOf());
+        _this.criticalPercent = Number(
+          new Big(_this.criticalPercent).plus(0.2).valueOf()
+        );
 
         if (character.class.luk0 >= 108) {
-          _this.criticalPercent = Number((new Big(_this.criticalPercent)).plus(0.02).valueOf());
+          _this.criticalPercent = Number(
+            new Big(_this.criticalPercent).plus(0.02).valueOf()
+          );
         }
 
         if (character.class.luk0 >= 120) {
-          _this.criticalPercent = Number((new Big(_this.criticalPercent)).plus(0.04).valueOf());
+          _this.criticalPercent = Number(
+            new Big(_this.criticalPercent).plus(0.04).valueOf()
+          );
         }
 
-        const tem = (Math.floor(character.class.dex0 / 10) * 0.02);
-        _this.criticalPercent = Number((new Big(_this.criticalPercent)).plus(tem).valueOf());
+        const tem = Math.floor(character.class.dex0 / 10) * 0.02;
+        _this.criticalPercent = Number(
+          new Big(_this.criticalPercent).plus(tem).valueOf()
+        );
       }
-    }
+    },
   },
   {
     id: 18936,
@@ -147,7 +164,7 @@ export const lowerHeadgear: IBaseEquipment[] = [
     cATK: 0,
     criticalPercent: 0,
     penetrationPercent: 0,
-    script: (character: Character2, _this: IBaseEquipment): void => { }
+    script: (character: Character2, _this: IBaseEquipment): void => {},
   },
   {
     id: 18858,
@@ -184,7 +201,7 @@ export const lowerHeadgear: IBaseEquipment[] = [
     cATK: 0,
     criticalPercent: 0,
     penetrationPercent: 0,
-    script: (character: Character2, _this: IBaseEquipment): void => { }
+    script: (character: Character2, _this: IBaseEquipment): void => {},
   },
   {
     id: 18962,
@@ -219,7 +236,7 @@ export const lowerHeadgear: IBaseEquipment[] = [
     cATK: 0,
     criticalPercent: 0,
     penetrationPercent: 0,
-    script: (character: Character2, _this: IBaseEquipment): void => { }
+    script: (character: Character2, _this: IBaseEquipment): void => {},
   },
   {
     id: 18968,
@@ -256,7 +273,7 @@ export const lowerHeadgear: IBaseEquipment[] = [
     cATK: 0,
     criticalPercent: 0,
     penetrationPercent: 0,
-    script: (character: Character2, _this: IBaseEquipment): void => { }
+    script: (character: Character2, _this: IBaseEquipment): void => {},
   },
   {
     id: 5548,
@@ -291,7 +308,7 @@ export const lowerHeadgear: IBaseEquipment[] = [
     cATK: 0,
     criticalPercent: 0,
     penetrationPercent: 0,
-    script: (character: Character2, _this: IBaseEquipment): void => { }
+    script: (character: Character2, _this: IBaseEquipment): void => {},
   },
   {
     id: 19327,
@@ -326,7 +343,7 @@ export const lowerHeadgear: IBaseEquipment[] = [
     cATK: 0,
     criticalPercent: 0,
     penetrationPercent: 0,
-    script: (character: Character2, _this: IBaseEquipment): void => { }
+    script: (character: Character2, _this: IBaseEquipment): void => {},
   },
   {
     id: 19268,
@@ -369,11 +386,11 @@ export const lowerHeadgear: IBaseEquipment[] = [
         const baseStr = character.class.str0;
         const baseLuk = character.class.luk0;
 
-        _this.eATK = Number((new Big(Math.floor(baseStr / 20))).mul(5).valueOf());
+        _this.eATK = Number(new Big(Math.floor(baseStr / 20)).mul(5).valueOf());
         const tempLukMul = Math.floor(baseLuk / 20);
-        _this.criticalPercent = Number((new Big(0.03)).mul(tempLukMul).valueOf());
+        _this.criticalPercent = Number(new Big(0.03).mul(tempLukMul).valueOf());
       }
-    }
+    },
   },
   {
     id: 19246,
@@ -397,7 +414,7 @@ export const lowerHeadgear: IBaseEquipment[] = [
       element: 0,
       race: 0,
       class: 0,
-      atkPercent2: 0
+      atkPercent2: 0,
     },
     additionDef: {
       size: 0,
@@ -422,7 +439,7 @@ export const lowerHeadgear: IBaseEquipment[] = [
           }
         }
       }
-    }
+    },
   },
   {
     id: 420129,
@@ -460,14 +477,19 @@ export const lowerHeadgear: IBaseEquipment[] = [
     script: (character: Character2, _this: IBaseEquipment): void => {
       _this.additionAtk.class = 0;
 
-      if (character.rightAccessory?.id === 2910 || character.leftAccessory?.id === 2910) {
+      if (
+        character.rightAccessory?.id === 2910 ||
+        character.leftAccessory?.id === 2910
+      ) {
         const baseStr = character.class.str0;
         const baseLuk = character.class.luk0;
 
         const multiplierStrLuk = Math.floor((baseStr + baseLuk) / 40);
-        _this.additionAtk.class = Number((new Big(multiplierStrLuk)).mul(0.01).valueOf());
+        _this.additionAtk.class = Number(
+          new Big(multiplierStrLuk).mul(0.01).valueOf()
+        );
       }
-    }
+    },
   },
   {
     id: 15932,
@@ -508,12 +530,14 @@ export const lowerHeadgear: IBaseEquipment[] = [
 
       const baseLevel = character.class.baseLv;
       const multiplierBaseLevel = Math.floor(baseLevel / 35);
-      _this.meleePercent = Number((new Big(multiplierBaseLevel)).mul(0.01).valueOf());
+      _this.meleePercent = Number(
+        new Big(multiplierBaseLevel).mul(0.01).valueOf()
+      );
 
       if (baseLevel >= 175) {
         _this.meleePercent = _this.meleePercent * 2;
       }
-    }
+    },
   },
   {
     id: 400000,
@@ -537,7 +561,7 @@ export const lowerHeadgear: IBaseEquipment[] = [
       element: 0,
       race: 0,
       class: 0,
-      atkPercent2: 0.01
+      atkPercent2: 0.01,
     },
     additionDef: {
       size: 0,
@@ -552,13 +576,23 @@ export const lowerHeadgear: IBaseEquipment[] = [
     meleePercent: 0,
     script: (character: Character2, _this: IBaseEquipment): void => {
       _this.criticalPercent = 0;
-      if (character.rightAccessory?.id === 2992 && character.leftAccessory?.id === 2992) {
-        _this.criticalPercent = Number((new Big(_this.criticalPercent)).plus(0.1).valueOf());
+      if (
+        character.rightAccessory?.id === 2992 &&
+        character.leftAccessory?.id === 2992
+      ) {
+        _this.criticalPercent = Number(
+          new Big(_this.criticalPercent).plus(0.1).valueOf()
+        );
       }
 
-      if (character.rightAccessory?.id === 2991 && character.leftAccessory?.id === 2991) {
-        _this.criticalPercent = Number((new Big(_this.criticalPercent)).plus(0.1).valueOf());
+      if (
+        character.rightAccessory?.id === 2991 &&
+        character.leftAccessory?.id === 2991
+      ) {
+        _this.criticalPercent = Number(
+          new Big(_this.criticalPercent).plus(0.1).valueOf()
+        );
       }
-    }
+    },
   },
 ];

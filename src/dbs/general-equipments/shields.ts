@@ -1,5 +1,10 @@
 import { Character2 } from '../../models/character2';
-import { IBaseEquipment, EquipmentType, EquipmentSubType, EquipmentLocation } from '../../models/equipment';
+import {
+  IBaseEquipment,
+  EquipmentType,
+  EquipmentSubType,
+  EquipmentLocation,
+} from '../../models/equipment';
 
 export const shields: IBaseEquipment[] = [
   {
@@ -37,7 +42,7 @@ export const shields: IBaseEquipment[] = [
     criticalPercent: 0,
     penetrationPercent: 0,
     classActives: [],
-    script: (character: Character2, _this: IBaseEquipment): void => { }
+    script: (character: Character2, _this: IBaseEquipment): void => {},
   },
   {
     id: 28902,
@@ -85,7 +90,7 @@ export const shields: IBaseEquipment[] = [
           _this.eATK += 15;
         }
       }
-    }
+    },
   },
   {
     id: 28945,
@@ -130,6 +135,6 @@ export const shields: IBaseEquipment[] = [
       if (upgrade >= 7) {
         _this.eATK = 10;
       }
-    }
+    },
   },
 ];

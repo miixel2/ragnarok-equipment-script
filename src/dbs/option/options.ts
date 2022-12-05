@@ -8,6 +8,7 @@ import { shadowIds } from '../costumes';
 
 const temporalManteausId = [20846, 20963, 20964, 20968];
 const shadowsId = shadowIds;
+const geffen = [2963];
 
 // const vmGroup1 = [1600, 2026];
 const vmGroup2 = [1900, 1996, 13128, 18121];
@@ -4621,7 +4622,11 @@ export const allOptions: IBaseEquipment[] = [
         ...vmGroup4,
         ...vmGroup5,
         ...shadowsId,
+        ...geffen,
       ],
+    },
+    canSelectOnOption_2: {
+      actives: [...geffen],
     },
     script: (character: Character2, _this: IBaseEquipment): void => {},
   },
@@ -4668,7 +4673,11 @@ export const allOptions: IBaseEquipment[] = [
         ...vmGroup4,
         ...vmGroup5,
         ...shadowsId,
+        ...geffen,
       ],
+    },
+    canSelectOnOption_2: {
+      actives: [...geffen],
     },
     script: (character: Character2, _this: IBaseEquipment): void => {},
   },
@@ -4715,7 +4724,11 @@ export const allOptions: IBaseEquipment[] = [
         ...vmGroup4,
         ...vmGroup5,
         ...shadowsId,
+        ...geffen,
       ],
+    },
+    canSelectOnOption_2: {
+      actives: [...geffen],
     },
     script: (character: Character2, _this: IBaseEquipment): void => {},
   },
@@ -21427,6 +21440,12 @@ export const allOptions: IBaseEquipment[] = [
     cATK: 0,
     criticalPercent: 0,
     penetrationPercent: 0,
+    canSelectOnOption_1: {
+      actives: [...geffen],
+    },
+    canSelectOnOption_2: {
+      actives: [...geffen],
+    },
     canSelectOnOption_3: {
       actives: [...vmGroup2, ...vmGroup3, ...vmGroup5],
     },
@@ -21468,6 +21487,12 @@ export const allOptions: IBaseEquipment[] = [
     cATK: 0,
     criticalPercent: 0,
     penetrationPercent: 0,
+    canSelectOnOption_1: {
+      actives: [...geffen],
+    },
+    canSelectOnOption_2: {
+      actives: [...geffen],
+    },
     canSelectOnOption_3: {
       actives: [...vmGroup2, ...vmGroup3, ...vmGroup5],
     },
@@ -21509,6 +21534,12 @@ export const allOptions: IBaseEquipment[] = [
     cATK: 0,
     criticalPercent: 0,
     penetrationPercent: 0,
+    canSelectOnOption_1: {
+      actives: [...geffen],
+    },
+    canSelectOnOption_2: {
+      actives: [...geffen],
+    },
     canSelectOnOption_3: {
       actives: [...vmGroup2, ...vmGroup3, ...vmGroup5],
     },
@@ -21550,6 +21581,12 @@ export const allOptions: IBaseEquipment[] = [
     cATK: 0,
     criticalPercent: 0,
     penetrationPercent: 0,
+    canSelectOnOption_1: {
+      actives: [...geffen],
+    },
+    canSelectOnOption_2: {
+      actives: [...geffen],
+    },
     canSelectOnOption_3: {
       actives: [...vmGroup2, ...vmGroup3, ...vmGroup5],
     },

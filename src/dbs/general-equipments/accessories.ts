@@ -1,7 +1,12 @@
 import Big from 'big.js';
 import { Character2 } from '../../models/character2';
 import { ClassKey } from '../../models/class';
-import { EquipmentLocation, EquipmentSubType, EquipmentType, IBaseEquipment } from '../../models/equipment';
+import {
+  EquipmentLocation,
+  EquipmentSubType,
+  EquipmentType,
+  IBaseEquipment,
+} from '../../models/equipment';
 
 export const accessories: IBaseEquipment[] = [
   {
@@ -30,7 +35,7 @@ export const accessories: IBaseEquipment[] = [
       element: 0,
       race: 0,
       class: 0,
-      atkPercent2: 0.06
+      atkPercent2: 0.06,
     },
     additionDef: {
       size: 0,
@@ -42,7 +47,7 @@ export const accessories: IBaseEquipment[] = [
     cATK: 0,
     criticalPercent: 0,
     penetrationPercent: 0,
-    script: (character: Character2, _this: IBaseEquipment): void => { }
+    script: (character: Character2, _this: IBaseEquipment): void => {},
   },
   {
     id: 2746,
@@ -78,7 +83,7 @@ export const accessories: IBaseEquipment[] = [
     criticalPercent: 0,
     penetrationPercent: 0,
     classActives: [ClassKey.GuillotineCross],
-    script: (character: Character2, _this: IBaseEquipment): void => { }
+    script: (character: Character2, _this: IBaseEquipment): void => {},
   },
   {
     id: 2620,
@@ -119,7 +124,7 @@ export const accessories: IBaseEquipment[] = [
       if (character.class.agi0 >= 90) {
         _this.eATK = 10;
       }
-    }
+    },
   },
   {
     id: 490147,
@@ -157,7 +162,6 @@ export const accessories: IBaseEquipment[] = [
     criticalPercent: 0,
     penetrationPercent: 0,
     script: (character: Character2, _this: IBaseEquipment): void => {
-
       _this.additionAtk.class = 0;
       _this.additionAtk.atkPercent2 = 0;
       _this.additionAtk.size = 0;
@@ -169,41 +173,59 @@ export const accessories: IBaseEquipment[] = [
       }
 
       // STR
-      if ([22000, 22006, 22107, 22113].includes(character.shoes.id) && character.class.str0 >= 120) {
+      if (
+        [22000, 22006, 22107, 22113].includes(character.shoes.id) &&
+        character.class.str0 >= 120
+      ) {
         _this.additionAtk.atkPercent2 = 0.08;
         _this.additionAtk.size = 0.08;
         return;
       }
 
       // AGI
-      if ([22002, 22010, 22109, 22115].includes(character.shoes.id) && character.class.agi0 >= 120) {
+      if (
+        [22002, 22010, 22109, 22115].includes(character.shoes.id) &&
+        character.class.agi0 >= 120
+      ) {
         _this.criticalPercent = 0.15;
         return;
       }
 
       // VIT
-      if ([22003, 22007, 22110, 22116].includes(character.shoes.id) && character.class.vit0 >= 120) {
+      if (
+        [22003, 22007, 22110, 22116].includes(character.shoes.id) &&
+        character.class.vit0 >= 120
+      ) {
         _this.hpModB = 0.08;
         return;
       }
 
       // INT
-      if ([22001, 22009, 22108, 22114].includes(character.shoes.id) && character.class.int0 >= 120) {
+      if (
+        [22001, 22009, 22108, 22114].includes(character.shoes.id) &&
+        character.class.int0 >= 120
+      ) {
         return;
       }
 
       // DEX
-      if ([22004, 22008, 22111, 22117].includes(character.shoes.id) && character.class.dex0 >= 120) {
+      if (
+        [22004, 22008, 22111, 22117].includes(character.shoes.id) &&
+        character.class.dex0 >= 120
+      ) {
         _this.additionAtk.atkPercent2 = 0.08;
         return;
       }
 
       // LUK
-      if ([22005, 22011, 22112, 22118].includes(character.shoes.id) && character.class.luk0 >= 120) {
+      if (
+        [22005, 22011, 22112, 22118].includes(character.shoes.id) &&
+        character.class.luk0 >= 120
+      ) {
         _this.criticalPercent = 0.1;
         return;
       }
-    }
+    },
   },
   {
     id: 2910,
@@ -238,7 +260,7 @@ export const accessories: IBaseEquipment[] = [
     cATK: 0,
     criticalPercent: 0,
     penetrationPercent: 0,
-    script: (character: Character2, _this: IBaseEquipment): void => { }
+    script: (character: Character2, _this: IBaseEquipment): void => {},
   },
   {
     id: 2928,
@@ -279,7 +301,7 @@ export const accessories: IBaseEquipment[] = [
       if (character.class.luk0 >= 110) {
         _this.criticalPercent = 0.01;
       }
-    }
+    },
   },
   {
     id: 2965,
@@ -315,7 +337,7 @@ export const accessories: IBaseEquipment[] = [
     cATK: 0,
     criticalPercent: 0,
     penetrationPercent: 0,
-    script: (character: Character2, _this: IBaseEquipment): void => { }
+    script: (character: Character2, _this: IBaseEquipment): void => {},
   },
   {
     id: 2990,
@@ -358,7 +380,10 @@ export const accessories: IBaseEquipment[] = [
       _this.dex = 0;
       _this.luk = 0;
 
-      if (character.rightAccessory?.id === 2991 || character.leftAccessory?.id === 2991) {
+      if (
+        character.rightAccessory?.id === 2991 ||
+        character.leftAccessory?.id === 2991
+      ) {
         _this.str += 5;
         _this.agi += 5;
         _this.vit += 5;
@@ -366,7 +391,7 @@ export const accessories: IBaseEquipment[] = [
         _this.dex += 5;
         _this.luk += 5;
       }
-    }
+    },
   },
   {
     id: 2991,
@@ -401,7 +426,7 @@ export const accessories: IBaseEquipment[] = [
     cATK: 0,
     criticalPercent: 0,
     penetrationPercent: 0,
-    script: (character: Character2, _this: IBaseEquipment): void => { }
+    script: (character: Character2, _this: IBaseEquipment): void => {},
   },
   {
     id: 2992,
@@ -437,7 +462,7 @@ export const accessories: IBaseEquipment[] = [
     cATK: 0,
     criticalPercent: 0,
     penetrationPercent: 0,
-    script: (character: Character2, _this: IBaseEquipment): void => { }
+    script: (character: Character2, _this: IBaseEquipment): void => {},
   },
   {
     id: 2729,
@@ -477,7 +502,7 @@ export const accessories: IBaseEquipment[] = [
     cATK: 0,
     criticalPercent: 0,
     penetrationPercent: 0,
-    script: (character: Character2, _this: IBaseEquipment): void => { }
+    script: (character: Character2, _this: IBaseEquipment): void => {},
   },
   {
     id: 2728,
@@ -513,7 +538,7 @@ export const accessories: IBaseEquipment[] = [
     cATK: 0,
     criticalPercent: 0,
     penetrationPercent: 0,
-    script: (character: Character2, _this: IBaseEquipment): void => { }
+    script: (character: Character2, _this: IBaseEquipment): void => {},
   },
   {
     id: 32221,
@@ -549,7 +574,7 @@ export const accessories: IBaseEquipment[] = [
     cATK: 0,
     criticalPercent: 0,
     penetrationPercent: 0,
-    script: (character: Character2, _this: IBaseEquipment): void => { }
+    script: (character: Character2, _this: IBaseEquipment): void => {},
   },
   {
     id: 2884,
@@ -587,7 +612,7 @@ export const accessories: IBaseEquipment[] = [
     criticalPercent: 0,
     penetrationPercent: 0,
     classActives: [ClassKey.RuneKnight],
-    script: (character: Character2, _this: IBaseEquipment): void => { }
+    script: (character: Character2, _this: IBaseEquipment): void => {},
   },
   {
     id: 28505,
@@ -650,15 +675,21 @@ export const accessories: IBaseEquipment[] = [
 
       // Dark Lord Essence Force 1 (id: 4908)
       if (checkEssence(4908)) {
-        _this.additionAtk.class = Number(new Big(_this.additionAtk.class).plus(0.05).valueOf());
+        _this.additionAtk.class = Number(
+          new Big(_this.additionAtk.class).plus(0.05).valueOf()
+        );
       }
       if (checkEssence(4909)) {
-        _this.additionAtk.class = Number(new Big(_this.additionAtk.class).plus(0.05).valueOf());
+        _this.additionAtk.class = Number(
+          new Big(_this.additionAtk.class).plus(0.05).valueOf()
+        );
       }
       if (checkEssence(4910)) {
-        _this.additionAtk.class = Number(new Big(_this.additionAtk.class).plus(0.05).valueOf());
+        _this.additionAtk.class = Number(
+          new Big(_this.additionAtk.class).plus(0.05).valueOf()
+        );
       }
-    }
+    },
   },
   {
     id: 28302,
@@ -696,7 +727,7 @@ export const accessories: IBaseEquipment[] = [
     criticalPercent: 0,
     penetrationPercent: 0,
     classActives: [],
-    script: (character: Character2, _this: IBaseEquipment): void => { }
+    script: (character: Character2, _this: IBaseEquipment): void => {},
   },
   {
     id: 28303,
@@ -733,7 +764,7 @@ export const accessories: IBaseEquipment[] = [
     criticalPercent: 0,
     penetrationPercent: 0,
     classActives: [],
-    script: (character: Character2, _this: IBaseEquipment): void => { }
+    script: (character: Character2, _this: IBaseEquipment): void => {},
   },
   {
     id: 28304,
@@ -770,7 +801,7 @@ export const accessories: IBaseEquipment[] = [
     criticalPercent: 0,
     penetrationPercent: 0,
     classActives: [],
-    script: (character: Character2, _this: IBaseEquipment): void => { }
+    script: (character: Character2, _this: IBaseEquipment): void => {},
   },
   {
     id: 28305,
@@ -807,7 +838,7 @@ export const accessories: IBaseEquipment[] = [
     criticalPercent: 0,
     penetrationPercent: 0,
     classActives: [],
-    script: (character: Character2, _this: IBaseEquipment): void => { }
+    script: (character: Character2, _this: IBaseEquipment): void => {},
   },
   {
     id: 490182,
@@ -845,7 +876,7 @@ export const accessories: IBaseEquipment[] = [
     longRangePercent: 0,
     penetrationPercent: 0,
     classActives: [],
-    script: (character: Character2, _this: IBaseEquipment): void => { }
+    script: (character: Character2, _this: IBaseEquipment): void => {},
   },
   {
     id: 28496,
@@ -881,7 +912,7 @@ export const accessories: IBaseEquipment[] = [
     cATK: 0,
     criticalPercent: 0,
     penetrationPercent: 0,
-    script: (character: Character2, _this: IBaseEquipment): void => { }
+    script: (character: Character2, _this: IBaseEquipment): void => {},
   },
   {
     id: 28495,
@@ -938,7 +969,7 @@ export const accessories: IBaseEquipment[] = [
       if (baseVit >= 90) {
         _this.hpModA = 1000;
       }
-    }
+    },
   },
   {
     id: 490246,
@@ -979,12 +1010,14 @@ export const accessories: IBaseEquipment[] = [
 
       const baseLevel = character.class.baseLv;
       const multiplierBaseLevel = Math.floor(baseLevel / 35);
-      _this.criticalPercent = Number((new Big(multiplierBaseLevel)).mul(0.01).valueOf());
+      _this.criticalPercent = Number(
+        new Big(multiplierBaseLevel).mul(0.01).valueOf()
+      );
 
       if (baseLevel >= 175) {
         _this.criticalPercent = _this.criticalPercent * 2;
       }
-    }
+    },
   },
   {
     id: 32228,
@@ -993,10 +1026,10 @@ export const accessories: IBaseEquipment[] = [
     subType: EquipmentSubType.ACCESSORY,
     location: EquipmentLocation.LEFT_ACCESSORY,
     compoundOn: null,
-    slot1Enable: true,
-    slot2Enable: true,
-    slot3Enable: true,
-    slot4Enable: true,
+    slot1Enable: 'CARD',
+    slot2Enable: 'ENCHANT',
+    slot3Enable: 'ENCHANT',
+    slot4Enable: 'ENCHANT',
     baseDef: 0,
     baseATK: 0,
     level: 1,
@@ -1029,7 +1062,47 @@ export const accessories: IBaseEquipment[] = [
       if (character.bodyGear?.id === 15389 && character.garment?.id === 15389) {
         _this.eATK = 25;
       }
-    }
+    },
+  },
+  {
+    id: 32229,
+    name: `King Schmidt's Divine Power Insignia [1]`,
+    type: EquipmentType.ARMOR,
+    subType: EquipmentSubType.ACCESSORY,
+    location: EquipmentLocation.LEFT_ACCESSORY,
+    compoundOn: null,
+    slot1Enable: 'CARD',
+    slot2Enable: 'ENCHANT',
+    slot3Enable: 'ENCHANT',
+    slot4Enable: 'ENCHANT',
+    baseDef: 0,
+    baseATK: 0,
+    level: 1,
+    equipUpgradeValue: 0,
+    str: 0,
+    agi: 0,
+    vit: 0,
+    int: 0,
+    dex: 0,
+    luk: 0,
+    additionAtk: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+      atkPercent2: 0,
+    },
+    additionDef: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    eATK: 0,
+    cATK: 0,
+    criticalPercent: 0,
+    penetrationPercent: 0,
+    script: (character: Character2, _this: IBaseEquipment): void => {},
   },
   {
     id: 32230,
@@ -1038,10 +1111,10 @@ export const accessories: IBaseEquipment[] = [
     subType: EquipmentSubType.ACCESSORY,
     location: EquipmentLocation.LEFT_ACCESSORY,
     compoundOn: null,
-    slot1Enable: true,
-    slot2Enable: true,
-    slot3Enable: true,
-    slot4Enable: true,
+    slot1Enable: 'CARD',
+    slot2Enable: 'ENCHANT',
+    slot3Enable: 'ENCHANT',
+    slot4Enable: 'ENCHANT',
     baseDef: 0,
     baseATK: 0,
     level: 1,
@@ -1075,7 +1148,7 @@ export const accessories: IBaseEquipment[] = [
         _this.additionAtk.atkPercent2 = 0.05;
         _this.criticalPercent = 0.14;
       }
-    }
+    },
   },
   {
     id: 32231,
@@ -1084,10 +1157,10 @@ export const accessories: IBaseEquipment[] = [
     subType: EquipmentSubType.ACCESSORY,
     location: EquipmentLocation.LEFT_ACCESSORY,
     compoundOn: null,
-    slot1Enable: true,
-    slot2Enable: true,
-    slot3Enable: true,
-    slot4Enable: true,
+    slot1Enable: 'CARD',
+    slot2Enable: 'ENCHANT',
+    slot3Enable: 'ENCHANT',
+    slot4Enable: 'ENCHANT',
     baseDef: 0,
     baseATK: 0,
     level: 1,
@@ -1121,7 +1194,7 @@ export const accessories: IBaseEquipment[] = [
       if (character.bodyGear?.id === 15389 && character.garment?.id === 15389) {
         _this.hpModB = 0.05;
       }
-    }
+    },
   },
   {
     id: 32232,
@@ -1130,10 +1203,10 @@ export const accessories: IBaseEquipment[] = [
     subType: EquipmentSubType.ACCESSORY,
     location: EquipmentLocation.LEFT_ACCESSORY,
     compoundOn: null,
-    slot1Enable: true,
-    slot2Enable: true,
-    slot3Enable: true,
-    slot4Enable: true,
+    slot1Enable: 'CARD',
+    slot2Enable: 'ENCHANT',
+    slot3Enable: 'ENCHANT',
+    slot4Enable: 'ENCHANT',
     baseDef: 0,
     baseATK: 0,
     level: 1,
@@ -1162,7 +1235,7 @@ export const accessories: IBaseEquipment[] = [
     cATK: 0,
     criticalPercent: 0,
     penetrationPercent: 0,
-    script: (character: Character2, _this: IBaseEquipment): void => { }
+    script: (character: Character2, _this: IBaseEquipment): void => {},
   },
   {
     id: 32233,
@@ -1171,10 +1244,10 @@ export const accessories: IBaseEquipment[] = [
     subType: EquipmentSubType.ACCESSORY,
     location: EquipmentLocation.LEFT_ACCESSORY,
     compoundOn: null,
-    slot1Enable: true,
-    slot2Enable: true,
-    slot3Enable: true,
-    slot4Enable: true,
+    slot1Enable: 'CARD',
+    slot2Enable: 'ENCHANT',
+    slot3Enable: 'ENCHANT',
+    slot4Enable: 'ENCHANT',
     baseDef: 0,
     baseATK: 0,
     level: 1,
@@ -1209,7 +1282,7 @@ export const accessories: IBaseEquipment[] = [
       if (character.bodyGear?.id === 15389 && character.garment?.id === 15389) {
         _this.longRangePercent = 0.14;
       }
-    }
+    },
   },
   {
     id: 2963,
@@ -1219,8 +1292,8 @@ export const accessories: IBaseEquipment[] = [
     location: EquipmentLocation.ACCESSORY,
     compoundOn: null,
     slot1Enable: true,
-    slot2Enable: true,
-    slot3Enable: true,
+    option1Enable: true,
+    option2Enable: true,
     baseDef: 0,
     baseATK: 0,
     level: 1,
@@ -1250,7 +1323,7 @@ export const accessories: IBaseEquipment[] = [
     criticalPercent: 0,
     penetrationPercent: 0,
     longRangePercent: 0,
-    script: (character: Character2, _this: IBaseEquipment): void => {}
+    script: (character: Character2, _this: IBaseEquipment): void => {},
   },
   {
     id: 2616,
@@ -1288,6 +1361,6 @@ export const accessories: IBaseEquipment[] = [
     criticalPercent: 0,
     penetrationPercent: 0,
     longRangePercent: 0,
-    script: (character: Character2, _this: IBaseEquipment): void => {}
+    script: (character: Character2, _this: IBaseEquipment): void => {},
   },
 ];

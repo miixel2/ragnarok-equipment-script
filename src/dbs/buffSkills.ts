@@ -66,7 +66,6 @@ export class BuffSkill implements IBuffSkill {
   private findScript(data: IBuffSkill, skillDatas: IBuffSkill[]): void {
     const obj = skillDatas.find((f) => f.id === data.id);
     if (obj) {
-
       for (const key in obj) {
         if (Object.prototype.hasOwnProperty.call(obj, key)) {
           const element = obj[key];
@@ -87,7 +86,7 @@ export const buffSkills: IBuffSkill[] = [
     str: 10,
     dex: 10,
     int: 10,
-    script: (character: Character2, _this: IBuffSkill): void => { }
+    script: (character: Character2, _this: IBuffSkill): void => {},
   },
   {
     id: 2,
@@ -97,10 +96,13 @@ export const buffSkills: IBuffSkill[] = [
     mastery: 0,
     script: (character: Character2, _this: IBuffSkill): void => {
       _this.mastery = 0;
-      if (character.rightHand && character.rightHand.subType === EquipmentSubType.SWORD) {
+      if (
+        character.rightHand &&
+        character.rightHand.subType === EquipmentSubType.SWORD
+      ) {
         _this.mastery = 40;
       }
-    }
+    },
   },
   {
     id: 3,
@@ -110,10 +112,13 @@ export const buffSkills: IBuffSkill[] = [
     mastery: 0,
     script: (character: Character2, _this: IBuffSkill): void => {
       _this.mastery = 0;
-      if (character.rightHand && character.rightHand.subType === EquipmentSubType.TWO_HANDED_SWORD) {
+      if (
+        character.rightHand &&
+        character.rightHand.subType === EquipmentSubType.TWO_HANDED_SWORD
+      ) {
         _this.mastery = 40;
       }
-    }
+    },
   },
   {
     id: 55,
@@ -123,10 +128,13 @@ export const buffSkills: IBuffSkill[] = [
     mastery: 0,
     script: (character: Character2, _this: IBuffSkill): void => {
       _this.mastery = 0;
-      if (character.rightHand && character.rightHand.subType === EquipmentSubType.SPEAR) {
+      if (
+        character.rightHand &&
+        character.rightHand.subType === EquipmentSubType.SPEAR
+      ) {
         _this.mastery = 40;
       }
-    }
+    },
   },
   {
     id: 134,
@@ -136,10 +144,13 @@ export const buffSkills: IBuffSkill[] = [
     mastery: 0,
     script: (character: Character2, _this: IBuffSkill): void => {
       _this.mastery = 0;
-      if (character.rightHand && character.rightHand.subType === EquipmentSubType.KATAR) {
+      if (
+        character.rightHand &&
+        character.rightHand.subType === EquipmentSubType.KATAR
+      ) {
         _this.mastery = 30;
       }
-    }
+    },
   },
   {
     id: 357,
@@ -147,7 +158,7 @@ export const buffSkills: IBuffSkill[] = [
     level: 5,
     classActives: [ClassKey.RuneKnight],
     buffAtkPercent: 0.25,
-    script: (character: Character2, _this: IBuffSkill): void => { }
+    script: (character: Character2, _this: IBuffSkill): void => {},
   },
   {
     id: 355,
@@ -155,7 +166,7 @@ export const buffSkills: IBuffSkill[] = [
     level: 5,
     classActives: [ClassKey.RuneKnight],
     pureAtk: 100,
-    script: (character: Character2, _this: IBuffSkill): void => { }
+    script: (character: Character2, _this: IBuffSkill): void => {},
   },
   {
     id: 359,
@@ -163,7 +174,7 @@ export const buffSkills: IBuffSkill[] = [
     level: 1,
     classActives: [ClassKey.RuneKnight],
     buffAtkPercent: 2,
-    script: (character: Character2, _this: IBuffSkill): void => { }
+    script: (character: Character2, _this: IBuffSkill): void => {},
   },
   {
     id: 12731,
@@ -172,8 +183,10 @@ export const buffSkills: IBuffSkill[] = [
     type: 'item',
     classActives: [ClassKey.RuneKnight],
     script: (character: Character2, _this: IBuffSkill): void => {
-      character.flatDmg = Number(new Big(character.flatDmg).plus(2.5).valueOf());
-    }
+      character.flatDmg = Number(
+        new Big(character.flatDmg).plus(2.5).valueOf()
+      );
+    },
   },
   {
     id: 376,
@@ -182,10 +195,13 @@ export const buffSkills: IBuffSkill[] = [
     classActives: [ClassKey.GuillotineCross],
     buffAtkPercent: 0,
     script: (character: Character2, _this: IBuffSkill): void => {
-      if (character.rightHand && character.rightHand.subType === EquipmentSubType.KATAR) {
+      if (
+        character.rightHand &&
+        character.rightHand.subType === EquipmentSubType.KATAR
+      ) {
         character.akm = 1.2;
       }
-    }
+    },
   },
   {
     id: 378,
@@ -193,7 +209,7 @@ export const buffSkills: IBuffSkill[] = [
     level: 5,
     classActives: [ClassKey.GuillotineCross],
     edp: 4,
-    script: (character: Character2, _this: IBuffSkill): void => { }
+    script: (character: Character2, _this: IBuffSkill): void => {},
   },
   {
     id: 5001,
@@ -201,7 +217,7 @@ export const buffSkills: IBuffSkill[] = [
     level: 5,
     classActives: [ClassKey.GuillotineCross],
     mulMeleeAtk: 2.5,
-    script: (character: Character2, _this: IBuffSkill): void => { }
+    script: (character: Character2, _this: IBuffSkill): void => {},
   },
   {
     id: 2021,
@@ -209,6 +225,6 @@ export const buffSkills: IBuffSkill[] = [
     level: 5,
     classActives: [ClassKey.GuillotineCross],
     vi: 0.5,
-    script: (character: Character2, _this: IBuffSkill): void => { }
-  }
+    script: (character: Character2, _this: IBuffSkill): void => {},
+  },
 ];

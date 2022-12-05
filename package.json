@@ -1,6 +1,6 @@
 {
   "name": "equipment-script",
-  "version": "1.2.16",
+  "version": "1.3.0",
   "description": "",
   "main": "dist/library-starter.js",
   "module": "dist/index.js",
