@@ -6,6 +6,8 @@ import { atkSkills as AtkSkills } from './dbs/atkSkills';
 import { potionItems as PotionItems } from './dbs/potion';
 import { classShadowSkill as ClassShadowSkill } from './dbs/class-shadow-skill';
 import { allOptions as allOption } from './dbs/option/options';
+import { cards } from './dbs/general-equipments/cards';
+import { enchants } from './dbs/enchants';
 
 export const equipments = orderBy(
   [...Equipments],
@@ -28,3 +30,4 @@ export const atkSkills = orderBy(AtkSkills, ['id'], ['asc']);
 export const potionItems = orderBy(PotionItems, ['id'], ['asc']);
 export const classShadowSkill = ClassShadowSkill;
 export const allOptions = allOption;
+export const allCards = orderBy([...cards, ...enchants], ['id'], ['asc']);

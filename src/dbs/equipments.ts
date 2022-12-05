@@ -1,7 +1,5 @@
 import { accessories } from './general-equipments/accessories';
 import { armors } from './general-equipments/armors';
-import { cards } from './general-equipments/cards';
-import { enchants } from './enchants';
 import { garments } from './general-equipments/garments';
 import { lowerHeadgear } from './general-equipments/lower-headgear';
 import { middleHeadgear } from './general-equipments/middle-headgear';
@@ -20,7 +18,5 @@ export const equipments: IBaseEquipment[] = [
   ...shields,
   ...garments,
   ...shoes,
-  ...cards,
   ...accessories,
-  ...enchants,
 ];
