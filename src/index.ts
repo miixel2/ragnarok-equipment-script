@@ -1,4 +1,3 @@
-import { orderBy } from 'lodash';
 import { equipments as Equipments } from './dbs/equipments';
 import { specialEquipments as SpecialEquipments } from './dbs/special-equipments';
 import { buffSkills as BuffSkills } from './dbs/buffSkills';
@@ -9,25 +8,13 @@ import { allOptions as allOption } from './dbs/option/options';
 import { cards } from './dbs/general-equipments/cards';
 import { enchants } from './dbs/enchants';
 
-export const equipments = orderBy(
-  [...Equipments],
-  ['id', 'name'],
-  ['asc', 'asc']
-);
-export const specialEquipments = orderBy(
-  [...SpecialEquipments],
-  ['id', 'name'],
-  ['asc', 'asc']
-);
-export const allEquipments = orderBy(
-  [...Equipments, ...SpecialEquipments],
-  ['id', 'name'],
-  ['asc', 'asc']
-);
+export const equipments = Equipments;
+export const specialEquipments = SpecialEquipments;
+export const allEquipments = [...Equipments, ...SpecialEquipments];
 export const version = require('../package.json').version;
-export const buffSkills = orderBy(BuffSkills, ['id'], ['asc']);
-export const atkSkills = orderBy(AtkSkills, ['id'], ['asc']);
-export const potionItems = orderBy(PotionItems, ['id'], ['asc']);
+export const buffSkills = BuffSkills;
+export const atkSkills = AtkSkills;
+export const potionItems = PotionItems;
 export const classShadowSkill = ClassShadowSkill;
 export const allOptions = allOption;
-export const allCards = orderBy([...cards, ...enchants], ['id'], ['asc']);
+export const allCards = [...cards, ...enchants];
