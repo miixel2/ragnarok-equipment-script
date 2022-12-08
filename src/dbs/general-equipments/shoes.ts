@@ -352,4 +352,66 @@ export const shoes: IBaseEquipment[] = [
       }
     },
   },
+  {
+    id: 22196,
+    name: 'Illusion Leg A-type [1]',
+    type: EquipmentType.ARMOR,
+    subType: EquipmentSubType.SHOES,
+    location: EquipmentLocation.SHOES,
+    compoundOn: null,
+    slot1Enable: 'CARD',
+    slot2Enable: 'ENCHANT',
+    slot3Enable: 'ENCHANT',
+    slot4Enable: 'ENCHANT',
+    baseDef: 20,
+    baseATK: 0,
+    level: 1,
+    equipUpgradeValue: 0,
+    str: 0,
+    agi: 0,
+    vit: 0,
+    int: 0,
+    dex: 0,
+    luk: 0,
+    hpModA: 0,
+    spModA: 0,
+    additionAtk: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+      atkPercent2: 0,
+    },
+    additionDef: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    eATK: 0,
+    cATK: 0,
+    criticalPercent: 0,
+    longRangePercent: 0,
+    penetrationPercent: 0,
+    classActives: [],
+    script: (character: Character2, _this: IBaseEquipment): void => {
+      _this.spModA = 200;
+      _this.longRangePercent = 0;
+      _this.additionAtk.atkPercent2 = 0;
+
+      const upgrade = _this.equipUpgradeValue;
+
+      if (upgrade >= 7) {
+        _this.longRangePercent = 0.05;
+      }
+
+      _this.spModA = Number(
+        new Big(Math.floor(upgrade / 2)).mul(20).plus(_this.spModA).valueOf()
+      );
+
+      if (character.bodyGear?.id === 15376) {
+        _this.additionAtk.atkPercent2 = 0.05;
+      }
+    },
+  },
 ];

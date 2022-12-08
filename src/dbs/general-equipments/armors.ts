@@ -626,4 +626,57 @@ export const armors: IBaseEquipment[] = [
       }
     },
   },
+  {
+    id: 15376,
+    name: 'Illusion Armor A-type [1]',
+    type: EquipmentType.ARMOR,
+    subType: EquipmentSubType.ARMOR,
+    location: EquipmentLocation.BODY,
+    compoundOn: null,
+    slot1Enable: 'CARD',
+    slot2Enable: 'ENCHANT',
+    slot3Enable: 'ENCHANT',
+    slot4Enable: 'ENCHANT',
+    baseDef: 105,
+    baseATK: 0,
+    level: 1,
+    equipUpgradeValue: 0,
+    str: 0,
+    agi: 0,
+    vit: 0,
+    int: 0,
+    dex: 0,
+    luk: 0,
+    hpModA: 0,
+    spModA: 0,
+    additionAtk: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    additionDef: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    eATK: 0,
+    cATK: 0,
+    criticalPercent: 0,
+    penetrationPercent: 0,
+    classActives: [],
+    script: (character: Character2, _this: IBaseEquipment): void => {
+      _this.eATK = 100;
+
+      const upgrade = _this.equipUpgradeValue;
+      _this.eATK = Number(
+        new Big(Math.floor(upgrade / 2)).mul(10).plus(_this.eATK).valueOf()
+      );
+
+      if (character.garment?.id === 20933) {
+        _this.eATK += 50;
+      }
+    },
+  },
 ];

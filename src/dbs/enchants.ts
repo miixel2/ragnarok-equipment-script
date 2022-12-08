@@ -17,6 +17,12 @@ const tempBoots = [22006, 22011];
 const costumes = costumeIds;
 const racingCap = [19191, 19195];
 const kingInsignia = [32228, 32229, 32230, 32231, 32232, 32233];
+const illusion17_1_all = [15376, 20933, 22196, 32207, 32208];
+const illusion17_1_armor = [15376];
+const illusion17_1_garment = [20933];
+const illusion17_1_shoes = [22196];
+const illusion17_1_acc_right = [32207];
+const illusion17_1_acc_left = [32208];
 
 export const enchants: IBaseEquipment[] = [
   {
@@ -2570,7 +2576,7 @@ export const enchants: IBaseEquipment[] = [
       actives: [...malangdo, 2589, ...moraAtkSlot, 15389],
     },
     canSelectOnSlot_4: {
-      actives: [...malangdo, 2589, 15389, ...tempBoots],
+      actives: [...malangdo, 2589, 15389, ...tempBoots, 490030],
     },
     script: (character: Character2, _this: IBaseEquipment): void => {},
   },
@@ -2614,7 +2620,7 @@ export const enchants: IBaseEquipment[] = [
       actives: [...malangdo, 2589, 15389],
     },
     canSelectOnSlot_4: {
-      actives: [...malangdo, 2589, 15389, ...tempBoots],
+      actives: [...malangdo, 2589, 15389, ...tempBoots, 490030],
     },
     script: (character: Character2, _this: IBaseEquipment): void => {},
   },
@@ -2655,10 +2661,10 @@ export const enchants: IBaseEquipment[] = [
       actives: [2589, ...moraAtkSlot, 15389],
     },
     canSelectOnSlot_3: {
-      actives: [...malangdo, 2589, 15389, ...kingInsignia],
+      actives: [...malangdo, 15389, ...kingInsignia],
     },
     canSelectOnSlot_4: {
-      actives: [...malangdo, 2589, 15389, ...tempBoots],
+      actives: [...malangdo, 15389, ...tempBoots, 490030],
     },
     script: (character: Character2, _this: IBaseEquipment): void => {},
   },
@@ -2699,7 +2705,7 @@ export const enchants: IBaseEquipment[] = [
       actives: [...malangdo, ...kingInsignia],
     },
     canSelectOnSlot_4: {
-      actives: [...malangdo, ...tempBoots],
+      actives: [...malangdo, ...tempBoots, 490030],
     },
     script: (character: Character2, _this: IBaseEquipment): void => {},
   },
@@ -2740,9 +2746,313 @@ export const enchants: IBaseEquipment[] = [
       actives: [...malangdo],
     },
     canSelectOnSlot_4: {
-      actives: [...malangdo],
+      actives: [...malangdo, 490030],
     },
     script: (character: Character2, _this: IBaseEquipment): void => {},
+  },
+  {
+    id: 4824,
+    name: 'Fighting Spirit 9Lv',
+    type: EquipmentType.CARD,
+    subType: null,
+    location: null,
+    compoundOn: CompoundOn.ENCHANT,
+    baseDef: 0,
+    baseATK: 0,
+    level: 1,
+    equipUpgradeValue: 0,
+    str: 0,
+    agi: 0,
+    vit: 0,
+    int: 0,
+    dex: 0,
+    luk: 0,
+    additionAtk: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    additionDef: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    eATK: 30,
+    cATK: 0,
+    criticalPercent: 0,
+    penetrationPercent: 0,
+    canSelectOnSlot_4: {
+      actives: [490030],
+    },
+    script: (character: Character2, _this: IBaseEquipment): void => {},
+  },
+  {
+    id: 4825,
+    name: 'Fighting Spirit 10Lv',
+    type: EquipmentType.CARD,
+    subType: null,
+    location: null,
+    compoundOn: CompoundOn.ENCHANT,
+    baseDef: 0,
+    baseATK: 0,
+    level: 1,
+    equipUpgradeValue: 0,
+    str: 0,
+    agi: 0,
+    vit: 0,
+    int: 0,
+    dex: 0,
+    luk: 0,
+    additionAtk: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    additionDef: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    eATK: 50,
+    cATK: 0,
+    criticalPercent: 0,
+    penetrationPercent: 0,
+    canSelectOnSlot_4: {
+      actives: [490030],
+    },
+    script: (character: Character2, _this: IBaseEquipment): void => {},
+  },
+  {
+    id: 4818,
+    name: 'Sharp 1Lv',
+    type: EquipmentType.CARD,
+    subType: null,
+    location: null,
+    compoundOn: CompoundOn.ENCHANT,
+    baseDef: 0,
+    baseATK: 0,
+    level: 1,
+    equipUpgradeValue: 0,
+    str: 0,
+    agi: 0,
+    vit: 0,
+    int: 0,
+    dex: 0,
+    luk: 0,
+    additionAtk: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    additionDef: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    eATK: 0,
+    cATK: 0,
+    criticalPercent: 0,
+    penetrationPercent: 0,
+    canSelectOnSlot_2: {
+      actives: [...moraCriSlot],
+    },
+    canSelectOnSlot_3: {
+      actives: [...moraCriSlot],
+    },
+    canSelectOnSlot_4: {
+      actives: [...moraCriSlot],
+    },
+    script: (character: Character2, _this: IBaseEquipment): void => {
+      // Cri 6
+      // Hit 2
+      character.comboSet.push('4818');
+    },
+  },
+  {
+    id: 4817,
+    name: 'Sharp 2Lv',
+    type: EquipmentType.CARD,
+    subType: null,
+    location: null,
+    compoundOn: CompoundOn.ENCHANT,
+    baseDef: 0,
+    baseATK: 0,
+    level: 1,
+    equipUpgradeValue: 0,
+    str: 0,
+    agi: 0,
+    vit: 0,
+    int: 0,
+    dex: 0,
+    luk: 0,
+    additionAtk: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    additionDef: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    eATK: 0,
+    cATK: 0,
+    criticalPercent: 0,
+    penetrationPercent: 0,
+    canSelectOnSlot_3: {
+      actives: [...malangdo, ...moraCriSlot],
+    },
+    canSelectOnSlot_4: {
+      actives: [...malangdo, ...moraCriSlot],
+    },
+    script: (character: Character2, _this: IBaseEquipment): void => {
+      // Cri 9
+      // Hit 3
+      character.comboSet.push('4817');
+    },
+  },
+  {
+    id: 4816,
+    name: 'Sharp 3Lv',
+    type: EquipmentType.CARD,
+    subType: null,
+    location: null,
+    compoundOn: CompoundOn.ENCHANT,
+    baseDef: 0,
+    baseATK: 0,
+    level: 1,
+    equipUpgradeValue: 0,
+    str: 0,
+    agi: 0,
+    vit: 0,
+    int: 0,
+    dex: 0,
+    luk: 0,
+    additionAtk: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    additionDef: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    eATK: 0,
+    cATK: 0,
+    criticalPercent: 0,
+    penetrationPercent: 0,
+    canSelectOnSlot_2: {
+      actives: [...moraCriSlot],
+    },
+    canSelectOnSlot_3: {
+      actives: [...malangdo],
+    },
+    canSelectOnSlot_4: {
+      actives: [...malangdo],
+    },
+    script: (character: Character2, _this: IBaseEquipment): void => {
+      // Cri 12
+      // Hit 4
+    },
+  },
+  {
+    id: 4843,
+    name: 'Sharp 4Lv',
+    type: EquipmentType.CARD,
+    subType: null,
+    location: null,
+    compoundOn: CompoundOn.ENCHANT,
+    baseDef: 0,
+    baseATK: 0,
+    level: 1,
+    equipUpgradeValue: 0,
+    str: 0,
+    agi: 0,
+    vit: 0,
+    int: 0,
+    dex: 0,
+    luk: 0,
+    additionAtk: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    additionDef: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    eATK: 0,
+    cATK: 0,
+    criticalPercent: 0,
+    penetrationPercent: 0,
+    canSelectOnSlot_3: {
+      actives: [...malangdo],
+    },
+    canSelectOnSlot_4: {
+      actives: [...malangdo],
+    },
+    script: (character: Character2, _this: IBaseEquipment): void => {
+      // Cri 14
+      // Hit 5
+    },
+  },
+  {
+    id: 4844,
+    name: 'Sharp 5Lv',
+    type: EquipmentType.CARD,
+    subType: null,
+    location: null,
+    compoundOn: CompoundOn.ENCHANT,
+    baseDef: 0,
+    baseATK: 0,
+    level: 1,
+    equipUpgradeValue: 0,
+    str: 0,
+    agi: 0,
+    vit: 0,
+    int: 0,
+    dex: 0,
+    luk: 0,
+    additionAtk: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    additionDef: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    eATK: 0,
+    cATK: 0,
+    criticalPercent: 0,
+    penetrationPercent: 0,
+    canSelectOnSlot_3: {
+      actives: [...malangdo],
+    },
+    canSelectOnSlot_4: {
+      actives: [...malangdo],
+    },
+    script: (character: Character2, _this: IBaseEquipment): void => {
+      // Cri 15
+      // Hit 6
+    },
   },
   {
     id: 4875,
@@ -2780,7 +3090,9 @@ export const enchants: IBaseEquipment[] = [
     canSelectOnSlot_3: {
       actives: [...tempBoots],
     },
-    script: (character: Character2, _this: IBaseEquipment): void => {},
+    script: (character: Character2, _this: IBaseEquipment): void => {
+      character.comboSet.push('4875');
+    },
   },
   {
     id: 4879,
@@ -2818,7 +3130,9 @@ export const enchants: IBaseEquipment[] = [
     canSelectOnSlot_3: {
       actives: [...tempBoots],
     },
-    script: (character: Character2, _this: IBaseEquipment): void => {},
+    script: (character: Character2, _this: IBaseEquipment): void => {
+      character.comboSet.push('4879');
+    },
   },
   {
     id: 4880,
@@ -2856,7 +3170,9 @@ export const enchants: IBaseEquipment[] = [
     canSelectOnSlot_3: {
       actives: [...tempBoots],
     },
-    script: (character: Character2, _this: IBaseEquipment): void => {},
+    script: (character: Character2, _this: IBaseEquipment): void => {
+      character.comboSet.push('4880');
+    },
   },
   {
     id: 4878,
@@ -2894,7 +3210,9 @@ export const enchants: IBaseEquipment[] = [
     canSelectOnSlot_3: {
       actives: [...tempBoots],
     },
-    script: (character: Character2, _this: IBaseEquipment): void => {},
+    script: (character: Character2, _this: IBaseEquipment): void => {
+      character.comboSet.push('4878');
+    },
   },
   {
     id: 4876,
@@ -2932,7 +3250,9 @@ export const enchants: IBaseEquipment[] = [
     canSelectOnSlot_3: {
       actives: [...tempBoots],
     },
-    script: (character: Character2, _this: IBaseEquipment): void => {},
+    script: (character: Character2, _this: IBaseEquipment): void => {
+      character.comboSet.push('4876');
+    },
   },
   {
     id: 4877,
@@ -2970,7 +3290,9 @@ export const enchants: IBaseEquipment[] = [
     canSelectOnSlot_3: {
       actives: [...tempBoots],
     },
-    script: (character: Character2, _this: IBaseEquipment): void => {},
+    script: (character: Character2, _this: IBaseEquipment): void => {
+      character.comboSet.push('4877');
+    },
   },
   {
     id: 4807,
@@ -3011,7 +3333,9 @@ export const enchants: IBaseEquipment[] = [
     canSelectOnSlot_4: {
       actives: [...malangdo],
     },
-    script: (character: Character2, _this: IBaseEquipment): void => {},
+    script: (character: Character2, _this: IBaseEquipment): void => {
+      character.comboSet.push('4807');
+    },
   },
   {
     id: 29362,
@@ -3267,12 +3591,6 @@ export const enchants: IBaseEquipment[] = [
     criticalPercent: 0.1,
     penetrationPercent: 0,
     canSelectOnSlot_2: {
-      actives: [2589],
-    },
-    canSelectOnSlot_3: {
-      actives: [2589],
-    },
-    canSelectOnSlot_4: {
       actives: [2589],
     },
     script: (character: Character2, _this: IBaseEquipment): void => {},
@@ -4221,6 +4539,707 @@ export const enchants: IBaseEquipment[] = [
         character.shoes?.slot3?.id === 4880 ||
         character.shoes?.slot4?.id === 4880
       ) {
+      }
+    },
+  },
+  {
+    id: 25670,
+    name: 'Modification Module (Defense)',
+    type: EquipmentType.CARD,
+    subType: null,
+    location: null,
+    compoundOn: CompoundOn.ENCHANT,
+    baseDef: 0,
+    baseATK: 0,
+    level: 1,
+    equipUpgradeValue: 0,
+    str: 0,
+    agi: 0,
+    vit: 0,
+    int: 0,
+    dex: 0,
+    luk: 0,
+    additionAtk: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    additionDef: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    eATK: 0,
+    cATK: 0,
+    criticalPercent: 0,
+    penetrationPercent: 0,
+    canSelectOnSlot_2: {
+      actives: [...illusion17_1_all],
+    },
+    canSelectOnSlot_3: {
+      actives: [...illusion17_1_all],
+    },
+    canSelectOnSlot_4: {
+      actives: [...illusion17_1_all],
+    },
+    script: (character: Character2, _this: IBaseEquipment): void => {
+      _this.baseDef = 25;
+
+      const upgrade = _this.equipUpgradeValue;
+
+      if (upgrade >= 7) {
+        _this.baseDef += 10;
+
+        if (upgrade >= 9) {
+          _this.baseDef += 10;
+        }
+      }
+    },
+  },
+  {
+    id: 25672,
+    name: 'Modification Module (Vit)',
+    type: EquipmentType.CARD,
+    subType: null,
+    location: null,
+    compoundOn: CompoundOn.ENCHANT,
+    baseDef: 0,
+    baseATK: 0,
+    level: 1,
+    equipUpgradeValue: 0,
+    str: 0,
+    agi: 0,
+    vit: 3,
+    int: 0,
+    dex: 0,
+    luk: 0,
+    additionAtk: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    additionDef: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    eATK: 0,
+    cATK: 0,
+    criticalPercent: 0,
+    penetrationPercent: 0,
+    canSelectOnSlot_2: {
+      actives: [...illusion17_1_acc_right, ...illusion17_1_acc_left],
+    },
+    canSelectOnSlot_3: {
+      actives: [...illusion17_1_acc_right, ...illusion17_1_acc_left],
+    },
+    canSelectOnSlot_4: {
+      actives: [...illusion17_1_acc_right, ...illusion17_1_acc_left],
+    },
+    script: (character: Character2, _this: IBaseEquipment): void => {},
+  },
+  {
+    id: 25673,
+    name: 'Modification Module (Luk)',
+    type: EquipmentType.CARD,
+    subType: null,
+    location: null,
+    compoundOn: CompoundOn.ENCHANT,
+    baseDef: 0,
+    baseATK: 0,
+    level: 1,
+    equipUpgradeValue: 0,
+    str: 0,
+    agi: 0,
+    vit: 0,
+    int: 0,
+    dex: 0,
+    luk: 3,
+    additionAtk: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    additionDef: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    eATK: 0,
+    cATK: 0,
+    criticalPercent: 0,
+    penetrationPercent: 0,
+    canSelectOnSlot_2: {
+      actives: [...illusion17_1_acc_right, ...illusion17_1_acc_left],
+    },
+    canSelectOnSlot_3: {
+      actives: [...illusion17_1_acc_right, ...illusion17_1_acc_left],
+    },
+    canSelectOnSlot_4: {
+      actives: [...illusion17_1_acc_right, ...illusion17_1_acc_left],
+    },
+    script: (character: Character2, _this: IBaseEquipment): void => {},
+  },
+  {
+    id: 25674,
+    name: 'Modification Module (Str)',
+    type: EquipmentType.CARD,
+    subType: null,
+    location: null,
+    compoundOn: CompoundOn.ENCHANT,
+    baseDef: 0,
+    baseATK: 0,
+    level: 1,
+    equipUpgradeValue: 0,
+    str: 3,
+    agi: 0,
+    vit: 0,
+    int: 0,
+    dex: 0,
+    luk: 0,
+    additionAtk: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    additionDef: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    eATK: 0,
+    cATK: 0,
+    criticalPercent: 0,
+    penetrationPercent: 0,
+    canSelectOnSlot_2: {
+      actives: [...illusion17_1_acc_right],
+    },
+    canSelectOnSlot_3: {
+      actives: [...illusion17_1_acc_right],
+    },
+    canSelectOnSlot_4: {
+      actives: [...illusion17_1_acc_right],
+    },
+    script: (character: Character2, _this: IBaseEquipment): void => {},
+  },
+  {
+    id: 25675,
+    name: 'Modification Module (Agi)',
+    type: EquipmentType.CARD,
+    subType: null,
+    location: null,
+    compoundOn: CompoundOn.ENCHANT,
+    baseDef: 0,
+    baseATK: 0,
+    level: 1,
+    equipUpgradeValue: 0,
+    str: 0,
+    agi: 3,
+    vit: 0,
+    int: 0,
+    dex: 0,
+    luk: 0,
+    additionAtk: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    additionDef: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    eATK: 0,
+    cATK: 0,
+    criticalPercent: 0,
+    penetrationPercent: 0,
+    canSelectOnSlot_2: {
+      actives: [...illusion17_1_acc_right],
+    },
+    canSelectOnSlot_3: {
+      actives: [...illusion17_1_acc_right],
+    },
+    canSelectOnSlot_4: {
+      actives: [...illusion17_1_acc_right],
+    },
+    script: (character: Character2, _this: IBaseEquipment): void => {},
+  },
+  {
+    id: 25676,
+    name: 'Modification Module (Int)',
+    type: EquipmentType.CARD,
+    subType: null,
+    location: null,
+    compoundOn: CompoundOn.ENCHANT,
+    baseDef: 0,
+    baseATK: 0,
+    level: 1,
+    equipUpgradeValue: 0,
+    str: 0,
+    agi: 0,
+    vit: 0,
+    int: 3,
+    dex: 0,
+    luk: 0,
+    additionAtk: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    additionDef: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    eATK: 0,
+    cATK: 0,
+    criticalPercent: 0,
+    penetrationPercent: 0,
+    canSelectOnSlot_2: {
+      actives: [...illusion17_1_acc_left],
+    },
+    canSelectOnSlot_3: {
+      actives: [...illusion17_1_acc_left],
+    },
+    canSelectOnSlot_4: {
+      actives: [...illusion17_1_acc_left],
+    },
+    script: (character: Character2, _this: IBaseEquipment): void => {},
+  },
+  {
+    id: 25677,
+    name: 'Modification Module (Dex)',
+    type: EquipmentType.CARD,
+    subType: null,
+    location: null,
+    compoundOn: CompoundOn.ENCHANT,
+    baseDef: 0,
+    baseATK: 0,
+    level: 1,
+    equipUpgradeValue: 0,
+    str: 0,
+    agi: 0,
+    vit: 0,
+    int: 0,
+    dex: 3,
+    luk: 0,
+    additionAtk: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    additionDef: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    eATK: 0,
+    cATK: 0,
+    criticalPercent: 0,
+    penetrationPercent: 0,
+    canSelectOnSlot_2: {
+      actives: [...illusion17_1_acc_left],
+    },
+    canSelectOnSlot_3: {
+      actives: [...illusion17_1_acc_left],
+    },
+    canSelectOnSlot_4: {
+      actives: [...illusion17_1_acc_left],
+    },
+    script: (character: Character2, _this: IBaseEquipment): void => {},
+  },
+  {
+    id: 25682,
+    name: 'Modification Module (Fatal)',
+    type: EquipmentType.CARD,
+    subType: null,
+    location: null,
+    compoundOn: CompoundOn.ENCHANT,
+    baseDef: 0,
+    baseATK: 0,
+    level: 1,
+    equipUpgradeValue: 0,
+    str: 0,
+    agi: 0,
+    vit: 0,
+    int: 0,
+    dex: 0,
+    luk: 0,
+    additionAtk: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    additionDef: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    eATK: 0,
+    cATK: 0,
+    criticalPercent: 0.1,
+    penetrationPercent: 0,
+    canSelectOnSlot_2: {
+      actives: [...illusion17_1_acc_right, ...illusion17_1_acc_left],
+    },
+    canSelectOnSlot_3: {
+      actives: [...illusion17_1_acc_right, ...illusion17_1_acc_left],
+    },
+    canSelectOnSlot_4: {
+      actives: [...illusion17_1_acc_right, ...illusion17_1_acc_left],
+    },
+    script: (character: Character2, _this: IBaseEquipment): void => {},
+  },
+  {
+    id: 25683,
+    name: 'Modification Module (Expert Archer)',
+    type: EquipmentType.CARD,
+    subType: null,
+    location: null,
+    compoundOn: CompoundOn.ENCHANT,
+    baseDef: 0,
+    baseATK: 0,
+    level: 1,
+    equipUpgradeValue: 0,
+    str: 0,
+    agi: 0,
+    vit: 0,
+    int: 0,
+    dex: 0,
+    luk: 0,
+    additionAtk: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    additionDef: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    eATK: 0,
+    cATK: 0,
+    criticalPercent: 0,
+    longRangePercent: 0.1,
+    penetrationPercent: 0,
+    canSelectOnSlot_2: {
+      actives: [...illusion17_1_acc_right, ...illusion17_1_acc_left],
+    },
+    canSelectOnSlot_3: {
+      actives: [...illusion17_1_acc_right, ...illusion17_1_acc_left],
+    },
+    canSelectOnSlot_4: {
+      actives: [...illusion17_1_acc_right, ...illusion17_1_acc_left],
+    },
+    script: (character: Character2, _this: IBaseEquipment): void => {},
+  },
+  {
+    id: 25684,
+    name: 'Modification Module (Vital)',
+    type: EquipmentType.CARD,
+    subType: null,
+    location: null,
+    compoundOn: CompoundOn.ENCHANT,
+    baseDef: 0,
+    baseATK: 0,
+    level: 1,
+    equipUpgradeValue: 0,
+    str: 0,
+    agi: 0,
+    vit: 0,
+    int: 0,
+    dex: 0,
+    luk: 0,
+    hpModA: 0,
+    hpModB: 0,
+    additionAtk: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    additionDef: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    eATK: 0,
+    cATK: 0,
+    criticalPercent: 0,
+    penetrationPercent: 0,
+    canSelectOnSlot_2: {
+      actives: [...illusion17_1_shoes],
+    },
+    canSelectOnSlot_3: {
+      actives: [...illusion17_1_shoes],
+    },
+    canSelectOnSlot_4: {
+      actives: [...illusion17_1_shoes],
+    },
+    script: (character: Character2, _this: IBaseEquipment): void => {
+      _this.hpModA = 0;
+      _this.hpModB = 0.05;
+
+      const upgrade = _this.equipUpgradeValue;
+
+      if (upgrade >= 7) {
+        _this.hpModA += 500;
+
+        if (upgrade >= 9) {
+          _this.hpModA += 750;
+        }
+      }
+    },
+  },
+  {
+    id: 25685,
+    name: 'Modification Module (Mental)',
+    type: EquipmentType.CARD,
+    subType: null,
+    location: null,
+    compoundOn: CompoundOn.ENCHANT,
+    baseDef: 0,
+    baseATK: 0,
+    level: 1,
+    equipUpgradeValue: 0,
+    str: 0,
+    agi: 0,
+    vit: 0,
+    int: 0,
+    dex: 0,
+    luk: 0,
+    spModA: 0,
+    spModB: 0,
+    additionAtk: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    additionDef: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    eATK: 0,
+    cATK: 0,
+    criticalPercent: 0,
+    penetrationPercent: 0,
+    canSelectOnSlot_2: {
+      actives: [...illusion17_1_shoes],
+    },
+    canSelectOnSlot_3: {
+      actives: [...illusion17_1_shoes],
+    },
+    canSelectOnSlot_4: {
+      actives: [...illusion17_1_shoes],
+    },
+    script: (character: Character2, _this: IBaseEquipment): void => {
+      _this.spModA = 0;
+      _this.spModB = 0.05;
+
+      const upgrade = _this.equipUpgradeValue;
+
+      if (upgrade >= 7) {
+        _this.spModA += 100;
+
+        if (upgrade >= 9) {
+          _this.spModA += 150;
+        }
+      }
+    },
+  },
+  {
+    id: 25687,
+    name: 'Modification Module (Attack Power)',
+    type: EquipmentType.CARD,
+    subType: null,
+    location: null,
+    compoundOn: CompoundOn.ENCHANT,
+    baseDef: 0,
+    baseATK: 0,
+    level: 1,
+    equipUpgradeValue: 0,
+    str: 0,
+    agi: 0,
+    vit: 0,
+    int: 0,
+    dex: 0,
+    luk: 0,
+    additionAtk: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+      atkPercent2: 0,
+    },
+    additionDef: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    eATK: 0,
+    cATK: 0,
+    criticalPercent: 0,
+    penetrationPercent: 0,
+    canSelectOnSlot_2: {
+      actives: [...illusion17_1_armor],
+    },
+    canSelectOnSlot_3: {
+      actives: [...illusion17_1_armor],
+    },
+    canSelectOnSlot_4: {
+      actives: [...illusion17_1_armor],
+    },
+    script: (character: Character2, _this: IBaseEquipment): void => {
+      _this.additionAtk.atkPercent2 = 0.05;
+      _this.eATK = 0;
+
+      const upgrade = _this.equipUpgradeValue;
+
+      if (upgrade >= 7) {
+        _this.eATK += 25;
+
+        if (upgrade >= 9) {
+          _this.eATK += 25;
+        }
+      }
+    },
+  },
+  {
+    id: 25689,
+    name: 'Modification Module (Shooter)',
+    type: EquipmentType.CARD,
+    subType: null,
+    location: null,
+    compoundOn: CompoundOn.ENCHANT,
+    baseDef: 0,
+    baseATK: 0,
+    level: 1,
+    equipUpgradeValue: 0,
+    str: 0,
+    agi: 0,
+    vit: 0,
+    int: 0,
+    dex: 0,
+    luk: 0,
+    additionAtk: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+      atkPercent2: 0,
+    },
+    additionDef: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    eATK: 0,
+    cATK: 0,
+    criticalPercent: 0,
+    longRangePercent: 0,
+    penetrationPercent: 0,
+    canSelectOnSlot_2: {
+      actives: [...illusion17_1_armor],
+    },
+    canSelectOnSlot_3: {
+      actives: [...illusion17_1_armor],
+    },
+    canSelectOnSlot_4: {
+      actives: [...illusion17_1_armor],
+    },
+    script: (character: Character2, _this: IBaseEquipment): void => {
+      _this.longRangePercent = 0.03;
+
+      const upgrade = _this.equipUpgradeValue;
+
+      if (upgrade >= 7) {
+        _this.longRangePercent = 0.05;
+
+        if (upgrade >= 9) {
+          _this.longRangePercent = 0.07;
+        }
+      }
+    },
+  },
+  {
+    id: 25692,
+    name: 'Modification Module (Critical)',
+    type: EquipmentType.CARD,
+    subType: null,
+    location: null,
+    compoundOn: CompoundOn.ENCHANT,
+    baseDef: 0,
+    baseATK: 0,
+    level: 1,
+    equipUpgradeValue: 0,
+    str: 0,
+    agi: 0,
+    vit: 0,
+    int: 0,
+    dex: 0,
+    luk: 0,
+    additionAtk: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+      atkPercent2: 0,
+    },
+    additionDef: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    eATK: 0,
+    cATK: 0,
+    criticalPercent: 0,
+    longRangePercent: 0,
+    penetrationPercent: 0,
+    canSelectOnSlot_2: {
+      actives: [...illusion17_1_garment],
+    },
+    canSelectOnSlot_3: {
+      actives: [...illusion17_1_garment],
+    },
+    canSelectOnSlot_4: {
+      actives: [...illusion17_1_garment],
+    },
+    script: (character: Character2, _this: IBaseEquipment): void => {
+      _this.criticalPercent = 0;
+
+      const upgrade = _this.equipUpgradeValue;
+
+      if (upgrade >= 7) {
+        _this.criticalPercent = 0.05;
+
+        if (upgrade >= 9) {
+          _this.criticalPercent = 0.1;
+        }
       }
     },
   },

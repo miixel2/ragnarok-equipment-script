@@ -150,7 +150,7 @@ export const classShadowSkill = [
     name: 'Arrow Shadow Armor',
     class: [ClassKey.Ranger],
     server: {
-      ggt: false,
+      ggt: true,
     },
   },
   {
@@ -158,7 +158,7 @@ export const classShadowSkill = [
     name: 'Arrow Shadow Shield',
     class: [ClassKey.Ranger],
     server: {
-      ggt: false,
+      ggt: true,
     },
   },
   {
@@ -166,7 +166,7 @@ export const classShadowSkill = [
     name: 'Arrow Shadow Shoes',
     class: [ClassKey.Ranger],
     server: {
-      ggt: false,
+      ggt: true,
     },
   },
   {
@@ -870,7 +870,7 @@ export const classShadowSkill = [
     name: 'Dust Shadow Armor',
     class: [ClassKey.Sorcerer],
     server: {
-      ggt: false,
+      ggt: true,
     },
   },
   {
@@ -878,7 +878,7 @@ export const classShadowSkill = [
     name: 'Dust Shadow Shield',
     class: [ClassKey.Sorcerer],
     server: {
-      ggt: false,
+      ggt: true,
     },
   },
   {
@@ -886,7 +886,7 @@ export const classShadowSkill = [
     name: 'Dust Shadow Shoes',
     class: [ClassKey.Sorcerer],
     server: {
-      ggt: false,
+      ggt: true,
     },
   },
   {
@@ -1134,7 +1134,7 @@ export const classShadowSkill = [
     name: 'Genesis Shadow Weapon',
     class: [ClassKey.RoyalGuard],
     server: {
-      ggt: false,
+      ggt: true,
     },
   },
   {
@@ -1142,7 +1142,7 @@ export const classShadowSkill = [
     name: 'Genesis Shadow Pendant',
     class: [ClassKey.RoyalGuard],
     server: {
-      ggt: false,
+      ggt: true,
     },
   },
   {
@@ -1150,7 +1150,7 @@ export const classShadowSkill = [
     name: 'Genesis Shadow Earrings',
     class: [ClassKey.RoyalGuard],
     server: {
-      ggt: false,
+      ggt: true,
     },
   },
 ];
