@@ -2,6 +2,7 @@ import { BaseClass, RuneKnight } from './class';
 import { BaseEquipment } from './equipment';
 import { Monster } from './monster';
 import { E_Element } from './element';
+import { IBuffSkill } from '../dbs/buffSkills';
 
 class AdditionATKPercent {
   public size: number = 0; // Skeleton Worker Card
@@ -167,6 +168,8 @@ export class Character2 {
   public shadowLeftAccessory: BaseEquipment = null;
 
   public ignoreSizePenalty: boolean = false;
+
+  public buffSkills: IBuffSkill[] = [];
 
   public comboSet: string[] = [];
 }

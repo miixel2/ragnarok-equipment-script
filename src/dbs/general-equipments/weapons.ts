@@ -1558,4 +1558,219 @@ export const weapons: IBaseEquipment[] = [
       }
     },
   },
+  {
+    id: 610000,
+    name: 'Boosting Katar [2]',
+    type: EquipmentType.WEAPON,
+    subType: EquipmentSubType.KATAR,
+    location: EquipmentLocation.BOTH_HAND,
+    compoundOn: null,
+    slot1Enable: 'CARD',
+    slot2Enable: 'CARD',
+    baseDef: 0,
+    baseATK: 150,
+    level: 4,
+    equipUpgradeValue: 0,
+    str: 0,
+    agi: 0,
+    vit: 0,
+    int: 0,
+    dex: 0,
+    luk: 0,
+    additionAtk: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    additionDef: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    eATK: 0,
+    cATK: 0,
+    criticalPercent: 0,
+    penetrationPercent: 0,
+    classActives: [ClassKey.GuillotineCross],
+    script: (character: Character2, _this: IBaseEquipment): void => {
+      _this.additionAtk.class = 0.02;
+      _this.criticalPercent = 0.03;
+      _this.additionAtk.element = 0;
+
+      const upgrade = _this.equipUpgradeValue;
+      _this.eATK = upgrade * 3;
+
+      const baseLv = Math.min(Math.max(character.class.baseLv, 1), 180);
+      const multipleLv = Math.floor(baseLv);
+      _this.eATK += multipleLv * 3;
+
+      if (upgrade >= 7) {
+        if (character.buffSkills.findIndex((f) => f.id === 134) > -1) {
+          _this.criticalPercent = Number(
+            new Big(_this.criticalPercent).plus(0.1).valueOf()
+          );
+        }
+
+        if (upgrade >= 9) {
+          _this.additionAtk.class = Number(
+            new Big(_this.additionAtk.class).plus(0.1).valueOf()
+          );
+        }
+      }
+
+      // Attacker Booster set
+      if (
+        character.bodyGear?.id === 450001 &&
+        character.shoes?.id === 470000 &&
+        character.garment?.id === 480000 &&
+        (character.leftAccessory?.id === 490004 ||
+          character.rightAccessory?.id === 490004)
+      ) {
+        _this.criticalPercent = Number(
+          new Big(_this.criticalPercent).plus(0.1).valueOf()
+        );
+
+        _this.additionAtk.element = Number(
+          new Big(multipleLv)
+            .mul(0.01)
+            .plus(_this.additionAtk.element)
+            .valueOf()
+        );
+
+        if (character.buffSkills.findIndex((f) => f.id === 378) > -1) {
+          _this.additionAtk.element = Number(
+            new Big(0.1).plus(_this.additionAtk.element).valueOf()
+          );
+        }
+      }
+
+      // Range Booster set
+      if (
+        character.bodyGear?.id === 450004 &&
+        character.shoes?.id === 470003 &&
+        character.garment?.id === 480003 &&
+        (character.leftAccessory?.id === 490007 ||
+          character.rightAccessory?.id === 490007)
+      ) {
+        _this.additionAtk.class = Number(
+          new Big(_this.additionAtk.class).plus(0.1).valueOf()
+        );
+
+        if (character.playerTypeAtk === 2036) {
+          character.buffSkillPercert = Number(
+            new Big(multipleLv)
+              .mul(0.01)
+              .plus(character.buffSkillPercert)
+              .valueOf()
+          );
+
+          if (character.buffSkills.findIndex((f) => f.id === 378) > -1) {
+            character.buffSkillPercert = Number(
+              new Big(0.2).plus(character.buffSkillPercert).valueOf()
+            );
+          }
+        }
+      }
+    },
+  },
+  {
+    id: 600001,
+    name: 'Boosting Two-handed Sword [2]',
+    type: EquipmentType.WEAPON,
+    subType: EquipmentSubType.KATAR,
+    location: EquipmentLocation.BOTH_HAND,
+    compoundOn: null,
+    slot1Enable: 'CARD',
+    slot2Enable: 'CARD',
+    baseDef: 0,
+    baseATK: 250,
+    level: 4,
+    equipUpgradeValue: 0,
+    str: 0,
+    agi: 0,
+    vit: 0,
+    int: 0,
+    dex: 0,
+    luk: 0,
+    hpModB: 0,
+    additionAtk: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    additionDef: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    eATK: 0,
+    cATK: 0,
+    criticalPercent: 0,
+    penetrationPercent: 0,
+    classActives: [ClassKey.RuneKnight],
+    script: (character: Character2, _this: IBaseEquipment): void => {
+      _this.hpModB = 0.03;
+      _this.criticalPercent = 0;
+
+      const upgrade = _this.equipUpgradeValue;
+      _this.eATK = upgrade * 3;
+
+      const baseLv = Math.min(Math.max(character.class.baseLv, 1), 180);
+      const multipleLv = Math.floor(baseLv);
+      _this.eATK += multipleLv * 3;
+
+      if (upgrade >= 7) {
+        // if (character.buffSkills.findIndex((f) => f.id === 60) > -1) {}
+
+        if (upgrade >= 9) {
+          _this.criticalPercent = Number(
+            new Big(_this.criticalPercent).plus(0.1).valueOf()
+          );
+        }
+      }
+
+      // Attacker Booster set
+      if (
+        character.bodyGear?.id === 450001 &&
+        character.shoes?.id === 470000 &&
+        character.garment?.id === 480000 &&
+        (character.leftAccessory?.id === 490004 ||
+          character.rightAccessory?.id === 490004)
+      ) {
+        _this.criticalPercent = Number(
+          new Big(_this.criticalPercent).plus(0.1).valueOf()
+        );
+
+        if (character.playerTypeAtk === 2002) {
+          character.buffSkillPercert = Number(
+            new Big(multipleLv)
+              .mul(0.02)
+              .plus(character.buffSkillPercert)
+              .valueOf()
+          );
+
+          if (character.buffSkills.findIndex((f) => f.id === 357) > -1) {
+            character.buffSkillPercert = Number(
+              new Big(0.35).plus(character.buffSkillPercert).valueOf()
+            );
+          }
+        }
+      }
+
+      // Range Booster set
+      if (
+        character.bodyGear?.id === 450004 &&
+        character.shoes?.id === 470003 &&
+        character.garment?.id === 480003 &&
+        (character.leftAccessory?.id === 490007 ||
+          character.rightAccessory?.id === 490007)
+      ) {
+        _this.hpModB = 0.13;
+      }
+    },
+  },
 ];

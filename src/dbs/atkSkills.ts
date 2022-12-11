@@ -103,11 +103,47 @@ export const atkSkills: IAtkSkill[] = [
       },
     ],
     script: (character: Character2, _this: SkillLevel): number => {
-      // return Number(new Big(character.class.baseLv).div(120).mul(_this.skillPercent));
       return Number(
         new Big(_this.skillPercent)
           .mul(character.class.baseLv)
           .div(120)
+          .valueOf()
+      );
+    },
+  },
+  {
+    id: 2036,
+    name: 'Rolling Cutter',
+    type: 'melee',
+    maxLevel: 5,
+    classActives: [ClassKey.GuillotineCross],
+    level: [
+      {
+        level: 1,
+        skillPercent: 1,
+      },
+      {
+        level: 2,
+        skillPercent: 1.5,
+      },
+      {
+        level: 3,
+        skillPercent: 2,
+      },
+      {
+        level: 4,
+        skillPercent: 2.5,
+      },
+      {
+        level: 5,
+        skillPercent: 3,
+      },
+    ],
+    script: (character: Character2, _this: SkillLevel): number => {
+      return Number(
+        new Big(_this.skillPercent)
+          .mul(character.class.baseLv)
+          .div(100)
           .valueOf()
       );
     },

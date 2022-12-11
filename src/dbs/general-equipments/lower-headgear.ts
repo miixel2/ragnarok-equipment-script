@@ -595,4 +595,57 @@ export const lowerHeadgear: IBaseEquipment[] = [
       }
     },
   },
+  {
+    id: 31671,
+    name: 'Twin Cannons',
+    type: EquipmentType.ARMOR,
+    subType: EquipmentSubType.HELM,
+    location: EquipmentLocation.LOWER_HEADGEAR,
+    compoundOn: null,
+    baseDef: 0,
+    baseATK: 0,
+    level: 1,
+    equipUpgradeValue: 0,
+    str: 0,
+    agi: 0,
+    vit: 0,
+    int: 0,
+    dex: 0,
+    luk: 0,
+    additionAtk: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+      atkPercent2: 0,
+    },
+    additionDef: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    eATK: 0,
+    cATK: 0,
+    criticalPercent: 0,
+    penetrationPercent: 0,
+    meleePercent: 0,
+    script: (character: Character2, _this: IBaseEquipment): void => {
+      _this.meleePercent = 0;
+      _this.longRangePercent = 0;
+      _this.additionAtk.class = 0;
+
+      if (character.comboSet.indexOf('25690') > -1) {
+        _this.meleePercent = 0.04;
+        _this.longRangePercent = 0.04;
+      }
+
+      if (character.comboSet.indexOf('25691') > -1) {
+      }
+
+      if (character.comboSet.indexOf('25692') > -1) {
+        _this.additionAtk.class = 0.06;
+      }
+    },
+  },
 ];

@@ -5186,6 +5186,106 @@ export const enchants: IBaseEquipment[] = [
     },
   },
   {
+    id: 25690,
+    name: 'Modification Module (Fast)',
+    type: EquipmentType.CARD,
+    subType: null,
+    location: null,
+    compoundOn: CompoundOn.ENCHANT,
+    baseDef: 0,
+    baseATK: 0,
+    level: 1,
+    equipUpgradeValue: 0,
+    str: 0,
+    agi: 0,
+    vit: 0,
+    int: 0,
+    dex: 0,
+    luk: 0,
+    additionAtk: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+      atkPercent2: 0,
+    },
+    additionDef: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    eATK: 0,
+    cATK: 0,
+    criticalPercent: 0,
+    longRangePercent: 0,
+    penetrationPercent: 0,
+    canSelectOnSlot_2: {
+      actives: [...illusion17_1_garment],
+    },
+    canSelectOnSlot_3: {
+      actives: [...illusion17_1_garment],
+    },
+    canSelectOnSlot_4: {
+      actives: [...illusion17_1_garment],
+    },
+    script: (character: Character2, _this: IBaseEquipment): void => {
+      if (character.comboSet.indexOf('25690') === -1) {
+        character.comboSet.push('25690');
+      }
+    },
+  },
+  {
+    id: 25691,
+    name: 'Modification Module (Caster)',
+    type: EquipmentType.CARD,
+    subType: null,
+    location: null,
+    compoundOn: CompoundOn.ENCHANT,
+    baseDef: 0,
+    baseATK: 0,
+    level: 1,
+    equipUpgradeValue: 0,
+    str: 0,
+    agi: 0,
+    vit: 0,
+    int: 0,
+    dex: 0,
+    luk: 0,
+    additionAtk: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+      atkPercent2: 0,
+    },
+    additionDef: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    eATK: 0,
+    cATK: 0,
+    criticalPercent: 0,
+    longRangePercent: 0,
+    penetrationPercent: 0,
+    canSelectOnSlot_2: {
+      actives: [...illusion17_1_garment],
+    },
+    canSelectOnSlot_3: {
+      actives: [...illusion17_1_garment],
+    },
+    canSelectOnSlot_4: {
+      actives: [...illusion17_1_garment],
+    },
+    script: (character: Character2, _this: IBaseEquipment): void => {
+      if (character.comboSet.indexOf('25691') === -1) {
+        character.comboSet.push('25691');
+      }
+    },
+  },
+  {
     id: 25692,
     name: 'Modification Module (Critical)',
     type: EquipmentType.CARD,
@@ -5230,6 +5330,10 @@ export const enchants: IBaseEquipment[] = [
       actives: [...illusion17_1_garment],
     },
     script: (character: Character2, _this: IBaseEquipment): void => {
+      if (character.comboSet.indexOf('25692') === -1) {
+        character.comboSet.push('25692');
+      }
+
       _this.criticalPercent = 0;
 
       const upgrade = _this.equipUpgradeValue;

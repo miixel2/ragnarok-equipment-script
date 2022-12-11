@@ -121,6 +121,13 @@ export const buffSkills: IBuffSkill[] = [
     },
   },
   {
+    id: 60,
+    name: 'Two hand Quicken',
+    level: 10,
+    classActives: [ClassKey.RuneKnight],
+    script: (character: Character2, _this: IBuffSkill): void => {},
+  },
+  {
     id: 55,
     name: 'Spear Mastery',
     level: 10,
