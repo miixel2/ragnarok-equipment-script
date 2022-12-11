@@ -61,7 +61,7 @@ export const upperHeadgear: IBaseEquipment[] = [
         }
       }
 
-      if (character.rightHand?.id === 19263) {
+      if (character.rightHand?.id === 1171) {
         _this.eATK = Number(new Big(Math.floor(upgrade / 2)).mul(20).valueOf());
       }
     },

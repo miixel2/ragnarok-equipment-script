@@ -409,6 +409,92 @@ export const armors: IBaseEquipment[] = [
     },
   },
   {
+    id: 15353,
+    name: 'Splendid Swift Armor [1]',
+    type: EquipmentType.ARMOR,
+    subType: EquipmentSubType.ARMOR,
+    location: EquipmentLocation.BODY,
+    compoundOn: null,
+    slot1Enable: true,
+    slot2Enable: false,
+    slot3Enable: false,
+    slot4Enable: false,
+    baseDef: 120,
+    baseATK: 0,
+    level: 1,
+    equipUpgradeValue: 0,
+    str: 0,
+    agi: 0,
+    vit: 0,
+    int: 0,
+    dex: 0,
+    luk: 0,
+    additionAtk: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    additionDef: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    eATK: 0,
+    cATK: 0,
+    criticalPercent: 0,
+    penetrationPercent: 0,
+    script: (character: Character2, _this: IBaseEquipment): void => {
+      _this.eATK = 50;
+      _this.penetrationPercent = 0;
+      _this.additionAtk.race = 0;
+      _this.additionAtk.element = 0;
+      const upgrade = _this.equipUpgradeValue;
+
+      if (upgrade >= 7) {
+        if (
+          character.monster.race === MonsterRace.BRUTE ||
+          character.monster.race === MonsterRace.DEMON
+        ) {
+          _this.penetrationPercent = 0.3;
+        }
+
+        if (upgrade >= 9) {
+          if (
+            character.monster.race === MonsterRace.BRUTE ||
+            character.monster.race === MonsterRace.DEMON
+          ) {
+            _this.additionAtk.race = 0.1;
+          }
+
+          if (upgrade >= 11) {
+            if (
+              character.monster.element === E_Element.WIND ||
+              character.monster.element === E_Element.EARTH
+            ) {
+              _this.additionAtk.element = 0.1;
+            }
+          }
+        }
+      }
+
+      if (character.shoes.id === 22010) {
+        const shoesUpgrade = character.shoes.equipUpgradeValue;
+        if (upgrade + shoesUpgrade >= 21) {
+          if (
+            character.monster.race === MonsterRace.BRUTE ||
+            character.monster.race === MonsterRace.DEMON
+          ) {
+            _this.penetrationPercent = Number(
+              new Big(_this.penetrationPercent).plus(0.2).valueOf()
+            );
+          }
+        }
+      }
+    },
+  },
+  {
     id: 15039,
     name: `Nab's Cloth [1]`,
     type: EquipmentType.ARMOR,

@@ -12,7 +12,7 @@ const moraPhySlot = [15037];
 const moraCriSlot = [15037, 15039];
 
 const headGearLab5 = [18971, 18982];
-const malangdo = [21018, 28010, 1185, 1186, 1171, 13412, 13413];
+const malangdo = [21018, 28010, 1185, 1186, 1171, 13412, 13413, 1418];
 const tempBoots = [22006, 22011];
 const costumes = costumeIds;
 const racingCap = [19191, 19195];

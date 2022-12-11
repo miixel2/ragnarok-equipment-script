@@ -80,50 +80,6 @@ export const atkSkills: IAtkSkill[] = [
     ],
   },
   {
-    id: 2006,
-    name: 'Ignition Break',
-    type: 'melee',
-    maxLevel: 5,
-    classActives: [ClassKey.RuneKnight],
-    level: [
-      {
-        level: 1,
-        skillPercent: 3,
-      },
-      {
-        level: 2,
-        skillPercent: 6,
-      },
-      {
-        level: 3,
-        skillPercent: 9,
-      },
-      {
-        level: 4,
-        skillPercent: 12,
-      },
-      {
-        level: 5,
-        skillPercent: 15,
-      },
-    ],
-    script: (character: Character2, _this: SkillLevel): number => {
-      let sumPercent = Number(
-        new Big(_this.skillPercent)
-          .mul(character.class.baseLv)
-          .div(100)
-          .valueOf()
-      );
-
-      if (character.elementalConverter === E_Element.FIRE) {
-        const bonus = Number(new Big(_this.level).mul(100).div(100).valueOf());
-        sumPercent = Number(new Big(sumPercent).plus(bonus).valueOf());
-      }
-
-      return sumPercent;
-    },
-  },
-  {
     id: 2022,
     name: 'Cross Impact',
     type: 'melee',
@@ -277,6 +233,50 @@ export const atkSkills: IAtkSkill[] = [
     script: (character: Character2, _this: SkillLevel): number => {
       const baseLv = new Big(character.class.baseLv - 100).div(200).plus(1);
       return Number(new Big(_this.skillPercent).mul(baseLv).valueOf());
+    },
+  },
+  {
+    id: 2006,
+    name: 'Ignition Break',
+    type: 'melee',
+    maxLevel: 5,
+    classActives: [ClassKey.RuneKnight],
+    level: [
+      {
+        level: 1,
+        skillPercent: 3,
+      },
+      {
+        level: 2,
+        skillPercent: 6,
+      },
+      {
+        level: 3,
+        skillPercent: 9,
+      },
+      {
+        level: 4,
+        skillPercent: 12,
+      },
+      {
+        level: 5,
+        skillPercent: 15,
+      },
+    ],
+    script: (character: Character2, _this: SkillLevel): number => {
+      let sumPercent = Number(
+        new Big(_this.skillPercent)
+          .mul(character.class.baseLv)
+          .div(100)
+          .valueOf()
+      );
+
+      if (character.elementalConverter === E_Element.FIRE) {
+        const bonus = Number(new Big(_this.level).mul(100).div(100).valueOf());
+        sumPercent = Number(new Big(sumPercent).plus(bonus).valueOf());
+      }
+
+      return sumPercent;
     },
   },
 ];
