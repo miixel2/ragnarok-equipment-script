@@ -31,6 +31,55 @@ export const atkSkills: IAtkSkill[] = [
     ],
   },
   {
+    id: 7,
+    name: 'Magnum Break',
+    type: 'melee',
+    maxLevel: 10,
+    classActives: [ClassKey.RuneKnight],
+    level: [
+      {
+        level: 1,
+        skillPercent: 1.2,
+      },
+      {
+        level: 2,
+        skillPercent: 1.4,
+      },
+      {
+        level: 3,
+        skillPercent: 1.6,
+      },
+      {
+        level: 4,
+        skillPercent: 1.8,
+      },
+      {
+        level: 5,
+        skillPercent: 2,
+      },
+      {
+        level: 6,
+        skillPercent: 2.2,
+      },
+      {
+        level: 7,
+        skillPercent: 2.4,
+      },
+      {
+        level: 8,
+        skillPercent: 2.6,
+      },
+      {
+        level: 9,
+        skillPercent: 2.8,
+      },
+      {
+        level: 10,
+        skillPercent: 3,
+      },
+    ],
+  },
+  {
     id: 2006,
     name: 'Ignition Break',
     type: 'melee',
