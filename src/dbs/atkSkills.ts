@@ -21,7 +21,7 @@ export interface IAtkSkill {
 export const atkSkills: IAtkSkill[] = [
   {
     id: 0,
-    name: 'Basic Attact',
+    name: 'Basic Attack',
     maxLevel: 1,
     level: [
       {
