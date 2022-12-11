@@ -898,8 +898,8 @@ export const garments: IBaseEquipment[] = [
     penetrationPercent: 0,
     script: (character: Character2, _this: IBaseEquipment): void => {
       if (character.playerTypeAtk === 2022) {
-        character.buffSkillPercert = Number(
-          new Big(character.buffSkillPercert).plus(0.1).valueOf()
+        character.buffSkillPercent = Number(
+          new Big(character.buffSkillPercent).plus(0.1).valueOf()
         );
       }
     },

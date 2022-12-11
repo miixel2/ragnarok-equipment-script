@@ -825,11 +825,11 @@ export const shadowWeapons: IBaseEquipment[] = [
       _this.eATK = upgrade;
 
       if (character.playerTypeAtk === 2002) {
-        character.buffSkillPercert = Number(
-          new Big(character.buffSkillPercert).plus(0.2).valueOf()
+        character.buffSkillPercent = Number(
+          new Big(character.buffSkillPercent).plus(0.2).valueOf()
         );
-        character.buffSkillPercert = Number(
-          new Big(upgrade).mul(0.05).plus(character.buffSkillPercert).valueOf()
+        character.buffSkillPercent = Number(
+          new Big(upgrade).mul(0.05).plus(character.buffSkillPercent).valueOf()
         );
       }
     },
@@ -986,8 +986,8 @@ export const shadowWeapons: IBaseEquipment[] = [
         }
 
         if (character.playerTypeAtk === 2006) {
-          character.buffSkillPercert = Number(
-            new Big(character.buffSkillPercert).plus(0.15).valueOf()
+          character.buffSkillPercent = Number(
+            new Big(character.buffSkillPercent).plus(0.15).valueOf()
           );
         }
       }
@@ -1046,8 +1046,8 @@ export const shadowWeapons: IBaseEquipment[] = [
           const refineRight = character.shadowRightAccessory.equipUpgradeValue;
           const refineLeft = character.shadowLeftAccessory.equipUpgradeValue;
 
-          character.buffSkillPercert = Number(
-            new Big(character.buffSkillPercert)
+          character.buffSkillPercent = Number(
+            new Big(character.buffSkillPercent)
               .plus(refineRight + refineLeft)
               .valueOf()
           );

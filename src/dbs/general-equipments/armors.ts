@@ -57,8 +57,8 @@ export const armors: IBaseEquipment[] = [
         (character.leftAccessory?.id === 2884 ||
           character.rightAccessory?.id === 2884)
       ) {
-        character.buffSkillPercert = Number(
-          new Big(character.buffSkillPercert).plus(1).valueOf()
+        character.buffSkillPercent = Number(
+          new Big(character.buffSkillPercent).plus(1).valueOf()
         );
       }
     },

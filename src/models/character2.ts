@@ -100,7 +100,7 @@ export class Character2 {
   public akm: number = 1;
   public skillPercent: number = 1;
   public buffAtkPercent: number = 0;
-  public buffSkillPercert: number = 1;
+  public buffSkillPercent: number = 1;
   public pureAtk: number = 0;
   public flatDmg: number = 0;
   public mulMeleeAtk: number = 0;

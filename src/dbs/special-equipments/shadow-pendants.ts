@@ -305,8 +305,8 @@ export const shadowPendants: IBaseEquipment[] = [
           new Big(Math.floor(upgrade / 2)).mul(0.02).valueOf()
         );
 
-        character.buffSkillPercert = Number(
-          new Big(character.buffSkillPercert).plus(0.05).plus(refine).valueOf()
+        character.buffSkillPercent = Number(
+          new Big(character.buffSkillPercent).plus(0.05).plus(refine).valueOf()
         );
       }
     },

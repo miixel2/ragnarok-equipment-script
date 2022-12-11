@@ -385,8 +385,8 @@ export const shadowShields: IBaseEquipment[] = [
           const refineRight = character.shadowBodyGear.equipUpgradeValue;
           const refineLeft = character.shadowShoes.equipUpgradeValue;
 
-          character.buffSkillPercert = Number(
-            new Big(character.buffSkillPercert)
+          character.buffSkillPercent = Number(
+            new Big(character.buffSkillPercent)
               .plus(refineRight + refineLeft)
               .valueOf()
           );

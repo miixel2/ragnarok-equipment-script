@@ -996,16 +996,16 @@ export const cards: IBaseEquipment[] = [
     prefix: 'Ignition',
     script: (character: Character2, _this: IBaseEquipment): void => {
       if (character.playerTypeAtk === 2006) {
-        character.buffSkillPercert = Number(
-          new Big(character.buffSkillPercert).plus(0.2).valueOf()
+        character.buffSkillPercent = Number(
+          new Big(character.buffSkillPercent).plus(0.2).valueOf()
         );
         if (character.weapon.level === 4) {
-          character.buffSkillPercert = Number(
-            new Big(character.buffSkillPercert).plus(0.2).valueOf()
+          character.buffSkillPercent = Number(
+            new Big(character.buffSkillPercent).plus(0.2).valueOf()
           );
           if (character.weapon.equipUpgradeValue >= 10) {
-            character.buffSkillPercert = Number(
-              new Big(character.buffSkillPercert).plus(0.2).valueOf()
+            character.buffSkillPercent = Number(
+              new Big(character.buffSkillPercent).plus(0.2).valueOf()
             );
           }
         }
@@ -1049,16 +1049,16 @@ export const cards: IBaseEquipment[] = [
     prefix: 'Cross',
     script: (character: Character2, _this: IBaseEquipment): void => {
       if (character.playerTypeAtk === 2022) {
-        character.buffSkillPercert = Number(
-          new Big(character.buffSkillPercert).plus(0.2).valueOf()
+        character.buffSkillPercent = Number(
+          new Big(character.buffSkillPercent).plus(0.2).valueOf()
         );
         if (character.weapon.level === 4) {
-          character.buffSkillPercert = Number(
-            new Big(character.buffSkillPercert).plus(0.2).valueOf()
+          character.buffSkillPercent = Number(
+            new Big(character.buffSkillPercent).plus(0.2).valueOf()
           );
           if (character.weapon.equipUpgradeValue >= 10) {
-            character.buffSkillPercert = Number(
-              new Big(character.buffSkillPercert).plus(0.2).valueOf()
+            character.buffSkillPercent = Number(
+              new Big(character.buffSkillPercent).plus(0.2).valueOf()
             );
           }
         }
@@ -1826,8 +1826,8 @@ export const cards: IBaseEquipment[] = [
           character.rightHand?.subType
         )
       ) {
-        character.buffSkillPercert = Number(
-          new Big(character.buffSkillPercert).plus(0.25).valueOf()
+        character.buffSkillPercent = Number(
+          new Big(character.buffSkillPercent).plus(0.25).valueOf()
         );
       }
     },

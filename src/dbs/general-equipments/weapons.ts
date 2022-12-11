@@ -890,10 +890,10 @@ export const weapons: IBaseEquipment[] = [
       _this.eATK = Number(new Big(Math.floor(upgrade / 2)).mul(10).valueOf());
 
       if (character.playerTypeAtk === 2002) {
-        character.buffSkillPercert = Number(
+        character.buffSkillPercent = Number(
           new Big(Math.floor(upgrade / 3))
             .mul(0.1)
-            .plus(character.buffSkillPercert)
+            .plus(character.buffSkillPercent)
             .valueOf()
         );
       }
@@ -1659,16 +1659,16 @@ export const weapons: IBaseEquipment[] = [
         );
 
         if (character.playerTypeAtk === 2036) {
-          character.buffSkillPercert = Number(
+          character.buffSkillPercent = Number(
             new Big(multipleLv)
               .mul(0.01)
-              .plus(character.buffSkillPercert)
+              .plus(character.buffSkillPercent)
               .valueOf()
           );
 
           if (character.buffSkills.findIndex((f) => f.id === 378) > -1) {
-            character.buffSkillPercert = Number(
-              new Big(0.2).plus(character.buffSkillPercert).valueOf()
+            character.buffSkillPercent = Number(
+              new Big(0.2).plus(character.buffSkillPercent).valueOf()
             );
           }
         }
@@ -1746,16 +1746,16 @@ export const weapons: IBaseEquipment[] = [
         );
 
         if (character.playerTypeAtk === 2002) {
-          character.buffSkillPercert = Number(
+          character.buffSkillPercent = Number(
             new Big(multipleLv)
               .mul(0.02)
-              .plus(character.buffSkillPercert)
+              .plus(character.buffSkillPercent)
               .valueOf()
           );
 
           if (character.buffSkills.findIndex((f) => f.id === 357) > -1) {
-            character.buffSkillPercert = Number(
-              new Big(0.35).plus(character.buffSkillPercert).valueOf()
+            character.buffSkillPercent = Number(
+              new Big(0.35).plus(character.buffSkillPercent).valueOf()
             );
           }
         }

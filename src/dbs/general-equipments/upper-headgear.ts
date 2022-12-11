@@ -181,8 +181,8 @@ export const upperHeadgear: IBaseEquipment[] = [
         const skillMultiple = Number(
           new Big(Math.floor(upgrade / 2)).mul(0.2).valueOf()
         );
-        character.buffSkillPercert = Number(
-          new Big(character.buffSkillPercert).plus(skillMultiple).valueOf()
+        character.buffSkillPercent = Number(
+          new Big(character.buffSkillPercent).plus(skillMultiple).valueOf()
         );
       }
     },
@@ -241,8 +241,8 @@ export const upperHeadgear: IBaseEquipment[] = [
         const skillMultiple = Number(
           new Big(Math.floor(upgrade / 2)).mul(0.1).valueOf()
         );
-        character.buffSkillPercert = Number(
-          new Big(character.buffSkillPercert).plus(skillMultiple).valueOf()
+        character.buffSkillPercent = Number(
+          new Big(character.buffSkillPercent).plus(skillMultiple).valueOf()
         );
       }
     },
