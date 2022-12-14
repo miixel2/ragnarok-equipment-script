@@ -16,6 +16,7 @@ export const shields: IBaseEquipment[] = [
     compoundOn: null,
     slot1Enable: true,
     baseDef: 80,
+    baseMDEF: 0,
     baseATK: 0,
     level: 1,
     equipUpgradeValue: 0,
@@ -68,6 +69,15 @@ export const shields: IBaseEquipment[] = [
       race: 0.05,
       class: 0,
     },
+    additionMAtk: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+      matkPercent: 0.05,
+      flatNamePercent: 0,
+      skillElement: 0,
+    },
     additionDef: {
       size: 0,
       element: 0,
@@ -75,19 +85,29 @@ export const shields: IBaseEquipment[] = [
       class: 0,
     },
     eATK: 0,
+    eMATK: 0,
     cATK: 0,
+    criRate: 0,
     criticalPercent: 0,
     penetrationPercent: 0,
     classActives: [],
     script: (character: Character2, _this: IBaseEquipment): void => {
       _this.eATK = 0;
+      _this.eMATK = 0;
+      _this.criRate = 0;
       const upgrade = _this.equipUpgradeValue;
 
       if (upgrade >= 7) {
         _this.eATK = 5;
+        _this.eMATK = 5;
 
         if (upgrade >= 9) {
           _this.eATK += 15;
+          _this.eMATK += 15;
+
+          if (upgrade >= 12) {
+            _this.criRate = 10;
+          }
         }
       }
     },
@@ -117,6 +137,15 @@ export const shields: IBaseEquipment[] = [
       class: 0,
       atkPercent2: 0.03,
     },
+    additionMAtk: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+      matkPercent: 0.03,
+      flatNamePercent: 0,
+      skillElement: 0,
+    },
     additionDef: {
       size: 0,
       element: 0,
@@ -124,16 +153,32 @@ export const shields: IBaseEquipment[] = [
       class: 0,
     },
     eATK: 0,
+    eMATK: 0,
     cATK: 0,
+    aspd: 0.1,
+    aspdFlat: 0,
+    acd: 0,
     criticalPercent: 0,
     penetrationPercent: 0,
     classActives: [],
     script: (character: Character2, _this: IBaseEquipment): void => {
       _this.eATK = 0;
+      _this.eMATK = 0;
+      _this.aspdFlat = 0;
+      _this.acd = 0;
       const upgrade = _this.equipUpgradeValue;
 
       if (upgrade >= 7) {
         _this.eATK = 10;
+        _this.eMATK = 10;
+
+        if (upgrade >= 9) {
+          _this.aspdFlat = 1;
+
+          if (upgrade >= 12) {
+            _this.acd = 0.03;
+          }
+        }
       }
     },
   },
