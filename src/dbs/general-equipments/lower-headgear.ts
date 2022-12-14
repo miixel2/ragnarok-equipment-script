@@ -1,4 +1,5 @@
 import Big from 'big.js';
+import { CheckItemInSlots } from '../../utils/utils';
 import { Character2 } from '../../models/character2';
 import {
   IBaseEquipment,
@@ -34,6 +35,15 @@ export const lowerHeadgear: IBaseEquipment[] = [
       class: 0,
       atkPercent2: 0,
     },
+    additionMAtk: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+      matkPercent: 0,
+      flatNamePercent: 0,
+      skillElement: 0,
+    },
     additionDef: {
       size: 0,
       element: 0,
@@ -41,18 +51,26 @@ export const lowerHeadgear: IBaseEquipment[] = [
       class: 0,
     },
     eATK: 0,
+    eMATK: 0,
     cATK: 0,
+    criRate: 0,
+    aspd: 0,
     criticalPercent: 0,
     penetrationPercent: 0,
     script: (character: Character2, _this: IBaseEquipment): void => {
       _this.additionAtk.class = 0;
       _this.criticalPercent = 0;
       _this.hpModB = 0;
+      _this.eMATK = 0;
+      _this.criRate = 0;
+      _this.aspd = 0;
       if (character.middleHeadgear && character.middleHeadgear.id === 2202) {
         const baseStr = character.class.str0;
         const baseLuk = character.class.luk0;
         const baseAgi = character.class.agi0;
         const baseVit = character.class.vit0;
+        const baseInt = character.class.int0;
+        const baseDex = character.class.dex0;
 
         const multiplierStrLuk = Math.floor((baseStr + baseLuk) / 80);
         if (multiplierStrLuk > 0) {
@@ -62,11 +80,19 @@ export const lowerHeadgear: IBaseEquipment[] = [
           _this.criticalPercent = Number(
             new Big(0.1).mul(multiplierStrLuk).valueOf()
           );
+          _this.criRate = Number(new Big(5).mul(multiplierStrLuk).valueOf());
         }
 
         const multiplierAgiVit = Math.floor((baseAgi + baseVit) / 80);
         if (multiplierAgiVit > 0) {
           _this.hpModB = Number(new Big(0.05).mul(multiplierAgiVit).valueOf());
+          _this.aspd = Number(new Big(0.05).mul(multiplierAgiVit).valueOf());
+        }
+
+        const multiplierIntDex = Math.floor((baseInt + baseDex) / 80);
+        if (multiplierIntDex > 0) {
+          _this.eMATK = Number(new Big(120).mul(multiplierIntDex).valueOf());
+          _this.vct = Number(new Big(0.03).mul(multiplierIntDex).valueOf());
         }
       }
     },
@@ -619,6 +645,15 @@ export const lowerHeadgear: IBaseEquipment[] = [
       class: 0,
       atkPercent2: 0,
     },
+    additionMAtk: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+      matkPercent: 0,
+      flatNamePercent: 0,
+      skillElement: 0,
+    },
     additionDef: {
       size: 0,
       element: 0,
@@ -627,6 +662,7 @@ export const lowerHeadgear: IBaseEquipment[] = [
     },
     eATK: 0,
     cATK: 0,
+    acd: 0.05,
     criticalPercent: 0,
     penetrationPercent: 0,
     meleePercent: 0,
@@ -634,17 +670,33 @@ export const lowerHeadgear: IBaseEquipment[] = [
       _this.meleePercent = 0;
       _this.longRangePercent = 0;
       _this.additionAtk.class = 0;
+      _this.additionMAtk.class = 0;
 
-      if (character.comboSet.indexOf('25690') > -1) {
+      if (
+        CheckItemInSlots(character, 25690) &&
+        character.comboSet.indexOf('31671_25690') === -1
+      ) {
         _this.meleePercent = 0.04;
         _this.longRangePercent = 0.04;
+
+        character.comboSet.push('31671_25690');
       }
 
-      if (character.comboSet.indexOf('25691') > -1) {
+      if (
+        CheckItemInSlots(character, 25691) &&
+        character.comboSet.indexOf('31671_25691') === -1
+      ) {
+        _this.additionMAtk.class = 0.06;
+
+        character.comboSet.push('31671_25691');
       }
 
-      if (character.comboSet.indexOf('25692') > -1) {
+      if (
+        CheckItemInSlots(character, 25692) &&
+        character.comboSet.indexOf('31671_25692') === -1
+      ) {
         _this.additionAtk.class = 0.06;
+        character.comboSet.push('31671_25692');
       }
     },
   },

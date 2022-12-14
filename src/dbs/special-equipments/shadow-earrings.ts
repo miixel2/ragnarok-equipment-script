@@ -290,6 +290,7 @@ export const shadowEarrings: IBaseEquipment[] = [
       class: 0,
     },
     eATK: 0,
+    eMATK: 15,
     cATK: 0,
     criticalPercent: 0,
     penetrationPercent: 0,

@@ -6,6 +6,7 @@ import { E_Element } from '../models/element';
 interface SkillLevel {
   level: number;
   skillPercent: number;
+  hit?: number;
 }
 
 export interface IAtkSkill {
@@ -15,6 +16,7 @@ export interface IAtkSkill {
   maxLevel: number;
   classActives?: ClassKey[];
   level: SkillLevel[];
+  element?: E_Element;
   script?: (character: Character2, _this: SkillLevel) => number;
 }
 
@@ -277,6 +279,230 @@ export const atkSkills: IAtkSkill[] = [
       }
 
       return sumPercent;
+    },
+  },
+  {
+    id: 2446,
+    name: 'Earth Grave',
+    type: 'magic',
+    maxLevel: 5,
+    element: E_Element.EARTH,
+    classActives: [ClassKey.Sorcerer],
+    level: [
+      {
+        level: 1,
+        skillPercent: 1,
+        hit: 3,
+      },
+      {
+        level: 2,
+        skillPercent: 1,
+        hit: 3,
+      },
+      {
+        level: 3,
+        skillPercent: 1,
+        hit: 3,
+      },
+      {
+        level: 4,
+        skillPercent: 1,
+        hit: 3,
+      },
+      {
+        level: 5,
+        skillPercent: 1,
+        hit: 3,
+      },
+    ],
+    script: (character: Character2, _this: SkillLevel): number => {
+      // EndowQuake_Lv
+      const eq = 5;
+
+      const set1 = new Big(_this.level).mul(
+        character.class.int0 + character.class._int
+      );
+      const set2 = new Big(eq).mul(200);
+      return Number(
+        new Big(set1)
+          .plus(set2)
+          .mul(character.class.baseLv)
+          .div(100)
+          .mul(0.01)
+          .valueOf()
+      );
+    },
+  },
+  {
+    id: 2447,
+    name: 'Diamond Dust',
+    type: 'magic',
+    maxLevel: 5,
+    element: E_Element.WATER,
+    classActives: [ClassKey.Sorcerer],
+    level: [
+      {
+        level: 1,
+        skillPercent: 1,
+        hit: 5,
+      },
+      {
+        level: 2,
+        skillPercent: 1,
+        hit: 5,
+      },
+      {
+        level: 3,
+        skillPercent: 1,
+        hit: 5,
+      },
+      {
+        level: 4,
+        skillPercent: 1,
+        hit: 5,
+      },
+      {
+        level: 5,
+        skillPercent: 1,
+        hit: 5,
+      },
+    ],
+    script: (character: Character2, _this: SkillLevel): number => {
+      // Endow_Tsunami_Lv
+      const et = 5;
+
+      const set1 = new Big(_this.level).mul(
+        character.class.int0 + character.class._int
+      );
+      const set2 = new Big(et).mul(200);
+      return Number(
+        new Big(set1)
+          .plus(set2)
+          .mul(character.class.baseLv)
+          .div(100)
+          .mul(0.01)
+          .valueOf()
+      );
+    },
+  },
+  {
+    id: 2449,
+    name: 'Psychic Wave',
+    type: 'magic',
+    maxLevel: 5,
+    classActives: [ClassKey.Sorcerer],
+    level: [
+      {
+        level: 1,
+        skillPercent: 0.7,
+        hit: 1,
+      },
+      {
+        level: 2,
+        skillPercent: 1.4,
+        hit: 1,
+      },
+      {
+        level: 3,
+        skillPercent: 2.1,
+        hit: 1,
+      },
+      {
+        level: 4,
+        skillPercent: 2.8,
+        hit: 1,
+      },
+      {
+        level: 5,
+        skillPercent: 3.5,
+        hit: 1,
+      },
+    ],
+    script: (character: Character2, _this: SkillLevel): number => {
+      const set1 = new Big(_this.skillPercent).mul(
+        character.class.int0 + character.class._int
+      );
+      const set2 = new Big(character.class.baseLv).div(100);
+      return Number(new Big(set1).mul(set2).valueOf());
+    },
+  },
+  {
+    id: 2454,
+    name: 'Varetyr Spear',
+    type: 'magic',
+    maxLevel: 10,
+    element: E_Element.WIND,
+    classActives: [ClassKey.Sorcerer],
+    level: [
+      {
+        level: 1,
+        skillPercent: 1,
+        hit: 3,
+      },
+      {
+        level: 2,
+        skillPercent: 1,
+        hit: 3,
+      },
+      {
+        level: 3,
+        skillPercent: 1,
+        hit: 3,
+      },
+      {
+        level: 4,
+        skillPercent: 1,
+        hit: 3,
+      },
+      {
+        level: 5,
+        skillPercent: 1,
+        hit: 3,
+      },
+      {
+        level: 6,
+        skillPercent: 1,
+        hit: 3,
+      },
+      {
+        level: 7,
+        skillPercent: 1,
+        hit: 3,
+      },
+      {
+        level: 8,
+        skillPercent: 1,
+        hit: 3,
+      },
+      {
+        level: 9,
+        skillPercent: 1,
+        hit: 3,
+      },
+      {
+        level: 10,
+        skillPercent: 1,
+        hit: 3,
+      },
+    ],
+    script: (character: Character2, _this: SkillLevel): number => {
+      // Lightning Loader
+      const ll = 5;
+      // Striking
+      const striking = 5;
+
+      const set1 = new Big(ll + striking).mul(120);
+      const set2 = new Big(character.class.int0 + character.class._int)
+        .div(2)
+        .mul(_this.level);
+      return Number(
+        new Big(set1)
+          .plus(set2)
+          .mul(character.class.baseLv)
+          .div(100)
+          .mul(0.01)
+          .valueOf()
+      );
     },
   },
 ];

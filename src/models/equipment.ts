@@ -14,7 +14,9 @@ export interface IBaseEquipment {
   element?: E_Element;
 
   baseDef: number;
+  baseMDEF?: number;
   baseATK: number;
+  baseMATK?: number;
   level: 1 | 2 | 3 | 4;
   equipUpgradeValue: number;
 
@@ -30,12 +32,23 @@ export interface IBaseEquipment {
   dex: number;
   luk: number;
 
+  hit?: number;
+  criRate?: number;
+  aspd?: number;
+  aspdFlat?: number;
+  flee?: number;
+  perfectDodge?: number;
+
+  vct?: number;
+  fct?: number;
+  acd?: number;
+  skillCD?: number;
+
   additionAtk: {
     size: number;
     element: number;
     race: number;
     class: number;
-    // atkPercent: number,
     atkPercent2?: number;
   };
 
@@ -44,19 +57,41 @@ export interface IBaseEquipment {
     element: number;
     race: number;
     class: number;
-    // atkPercent: number,
     atkPercent2?: number;
+  };
+
+  additionMAtk?: {
+    size: number;
+    element: number;
+    race: number;
+    class: number;
+    matkPercent: number;
+    flatNamePercent: number;
+    skillElement: number;
+  };
+
+  additionMDef?: {
+    size: number;
+    element: number;
+    race: number;
+    class: number;
+    matkPercent: number;
+    flatNamePercent: number;
+    skillElement: number;
   };
 
   // options
   options?: EnchantOption;
 
   eATK: number;
+  eMATK?: number;
   cATK: number;
+  cMATK?: number;
   criticalPercent: number;
   meleePercent?: number;
   longRangePercent?: number;
   penetrationPercent: number;
+  penetrationMPercent?: number;
 
   slot1Enable?: boolean | 'CARD' | 'ENCHANT';
   slot2Enable?: boolean | 'CARD' | 'ENCHANT';
@@ -120,9 +155,19 @@ export interface EnchantOption {
   physicalShadowPercent?: number;
   physicalGhostPercent?: number;
   physicalUndeadPercent?: number;
+  magicalNeutralPercent?: number;
+  magicalWaterPercent?: number;
+  magicalEarthPercent?: number;
+  magicalFirePercent?: number;
+  magicalWindPercent?: number;
+  magicalPoisonPercent?: number;
+  magicalHolyPercent?: number;
+  magicalShadowPercent?: number;
+  magicalGhostPercent?: number;
+  magicalUndeadPercent?: number;
   weapenElement?: E_Element;
   atkPercent2?: number;
-  matkPercent2?: number;
+  matkPercent?: number;
 
   // slot3
   physicalRaceAngelPercent?: number;
@@ -136,9 +181,22 @@ export interface EnchantOption {
   physicalRacePlantPercent?: number;
   physicalRacePlayerPercent?: number;
   physicalRaceUndeadPercent?: number;
+  magicalRaceAngelPercent?: number;
+  magicalRaceBrutePercent?: number;
+  magicalRaceDemiHumanPercent?: number;
+  magicalRaceDemonPercent?: number;
+  magicalRaceDragonPercent?: number;
+  magicalRaceFishPercent?: number;
+  magicalRaceFormlessPercent?: number;
+  magicalRaceInsectPercent?: number;
+  magicalRacePlantPercent?: number;
+  magicalRacePlayerPercent?: number;
+  magicalRaceUndeadPercent?: number;
 
   physicalBossPercent?: number;
   physicalNomalPercent?: number;
+  magicalBossPercent?: number;
+  magicalNomalPercent?: number;
 
   penetrationRaceAngelPercent?: number;
   penetrationRaceBrutePercent?: number;
@@ -153,6 +211,19 @@ export interface EnchantOption {
   penetrationRaceUndeadPercent?: number;
   penetrationBossPercent?: number;
   penetrationNormalPercent?: number;
+  penetrationMRaceAngelPercent?: number;
+  penetrationMRaceBrutePercent?: number;
+  penetrationMRaceDemiHumanPercent?: number;
+  penetrationMRaceDemonPercent?: number;
+  penetrationMRaceDragonPercent?: number;
+  penetrationMRaceFishPercent?: number;
+  penetrationMRaceFormlessPercent?: number;
+  penetrationMRaceInsectPercent?: number;
+  penetrationMRacePlantPercent?: number;
+  penetrationMRacePlayerPercent?: number;
+  penetrationMRaceUndeadPercent?: number;
+  penetrationMBossPercent?: number;
+  penetrationMNormalPercent?: number;
 
   // slot4
   str?: number;
@@ -162,126 +233,21 @@ export interface EnchantOption {
   dex?: number;
   luk?: number;
   eATK?: number;
+  eMATK?: number;
   criticalPercent?: number;
   longRangePercent?: number;
-}
+  vct?: number;
+  acd?: number;
+  criRate?: number;
+  aspd?: number;
+  aspdFlat?: number;
 
-export class BaseEquipment implements IBaseEquipment {
-  public id: number = null;
-  public name: string = null;
-
-  public type: EquipmentType = null;
-  public subType: EquipmentSubType = null;
-  public location: EquipmentLocation = null;
-  public compoundOn: CompoundOn = null;
-
-  public element: E_Element = E_Element.NEUTRAL;
-
-  public baseDef: number = 0;
-  public baseATK: number = 0;
-  public level: 1 | 2 | 3 | 4 = 1;
-  public equipUpgradeValue: number = 0;
-
-  public hpModA: number = 0;
-  public hpModB: number = 0;
-  public spModA: number = 0;
-  public spModB: number = 0;
-
-  // Stat
-  public str: number = 0;
-  public agi: number = 0;
-  public vit: number = 0;
-  public int: number = 0;
-  public dex: number = 0;
-  public luk: number = 0;
-
-  // Addition ATK
-  public additionAtk = {
-    size: 0,
-    element: 0,
-    race: 0,
-    class: 0,
-    atkPercent2: 0,
-  };
-  // Addition DEF
-  public additionDef = {
-    size: 0,
-    element: 0,
-    race: 0,
-    class: 0,
-    atkPercent2: 0,
-  };
-
-  public options: EnchantOption = null;
-
-  public eATK: number = 0;
-  public cATK: number = 0;
-  public criticalPercent: number = 0;
-  public longRangePercent: number = 0;
-  public penetrationPercent: number = 0;
-
-  public slot1Enable: boolean | 'CARD' | 'ENCHANT' = false;
-  public slot2Enable: boolean | 'CARD' | 'ENCHANT' = false;
-  public slot3Enable: boolean | 'CARD' | 'ENCHANT' = false;
-  public slot4Enable: boolean | 'CARD' | 'ENCHANT' = false;
-
-  public slot1: IBaseEquipment = null;
-  public slot2: IBaseEquipment = null;
-  public slot3: IBaseEquipment = null;
-  public slot4: IBaseEquipment = null;
-
-  public canSelectOnSlot_1: {
-    actives: number[];
-  } = {
-    actives: [],
-  };
-  public canSelectOnSlot_2: {
-    actives: number[];
-  } = {
-    actives: [],
-  };
-  public canSelectOnSlot_3: {
-    actives: number[];
-  } = {
-    actives: [],
-  };
-  public canSelectOnSlot_4: {
-    actives: number[];
-  } = {
-    actives: [],
-  };
-
-  public option1Enable: boolean = false;
-  public option2Enable: boolean = false;
-  public option3Enable: boolean = false;
-
-  public option1: IBaseEquipment = null;
-  public option2: IBaseEquipment = null;
-  public option3: IBaseEquipment = null;
-
-  public canSelectOnOption_1: {
-    actives: number[];
-  } = {
-    actives: [],
-  };
-  public canSelectOnOption_2: {
-    actives: number[];
-  } = {
-    actives: [],
-  };
-  public canSelectOnOption_3: {
-    actives: number[];
-  } = {
-    actives: [],
-  };
-
-  public classActives: ClassKey[] = [];
-  // public enchantActives: number[] = [];
-
-  public prefix: string = null;
-  public suffix: string = null;
-
-  public script: (character: Character2, _this: IBaseEquipment) => void = null;
+  meleePercent?: number;
+  flee?: number;
+  hit?: number;
+  perfectDodge?: number;
+  fct?: number;
+  skillCD?: number;
 }
 
 export enum EquipmentType {

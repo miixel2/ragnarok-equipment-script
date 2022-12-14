@@ -1413,7 +1413,9 @@ export const cards: IBaseEquipment[] = [
       ) {
         // cri rate + 5
         _this.criticalPercent = 0.07;
-        character.comboSet.push('27116_27117');
+        if (character.comboSet.indexOf('27116_27117') === -1) {
+          character.comboSet.push('27116_27117');
+        }
       }
     },
   },

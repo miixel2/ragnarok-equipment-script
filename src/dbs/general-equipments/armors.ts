@@ -869,4 +869,142 @@ export const armors: IBaseEquipment[] = [
       }
     },
   },
+  {
+    id: 450002,
+    name: 'Elemental Booster Robe [1]',
+    type: EquipmentType.ARMOR,
+    subType: EquipmentSubType.ARMOR,
+    location: EquipmentLocation.BODY,
+    compoundOn: null,
+    slot1Enable: 'CARD',
+    baseDef: 80,
+    baseATK: 0,
+    level: 1,
+    equipUpgradeValue: 0,
+    str: 0,
+    agi: 0,
+    vit: 0,
+    int: 0,
+    dex: 0,
+    luk: 0,
+    hpModA: 0,
+    spModA: 0,
+    additionAtk: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    additionMAtk: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+      matkPercent: 0,
+      flatNamePercent: 0,
+      skillElement: 0,
+    },
+    additionDef: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    eATK: 0,
+    eMATK: 0,
+    cATK: 0,
+    criticalPercent: 0,
+    longRangePercent: 0,
+    penetrationPercent: 0,
+    vct: 0,
+    acd: 0,
+    classActives: [],
+    script: (character: Character2, _this: IBaseEquipment): void => {
+      _this.eMATK = 100;
+
+      const upgrade = _this.equipUpgradeValue;
+      _this.additionMAtk.matkPercent = Number(
+        new Big(Math.floor(upgrade / 2)).mul(0.01).valueOf()
+      );
+
+      _this.vct = Number(new Big(Math.floor(upgrade / 3)).mul(0.01).valueOf());
+
+      if (upgrade >= 7) {
+        _this.eMATK = 150;
+      }
+
+      if (upgrade >= 9) {
+        _this.acd = 0.05;
+      }
+    },
+  },
+  {
+    id: 450003,
+    name: 'Defunct Booster Robe [1]',
+    type: EquipmentType.ARMOR,
+    subType: EquipmentSubType.ARMOR,
+    location: EquipmentLocation.BODY,
+    compoundOn: null,
+    slot1Enable: 'CARD',
+    baseDef: 90,
+    baseATK: 0,
+    level: 1,
+    equipUpgradeValue: 0,
+    str: 0,
+    agi: 0,
+    vit: 0,
+    int: 0,
+    dex: 0,
+    luk: 0,
+    hpModA: 0,
+    spModA: 0,
+    additionAtk: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    additionMAtk: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+      matkPercent: 0,
+      flatNamePercent: 0,
+      skillElement: 0,
+    },
+    additionDef: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    eATK: 0,
+    eMATK: 0,
+    cATK: 0,
+    criticalPercent: 0,
+    longRangePercent: 0,
+    penetrationPercent: 0,
+    vct: 0,
+    acd: 0,
+    classActives: [],
+    script: (character: Character2, _this: IBaseEquipment): void => {
+      _this.eMATK = 100;
+
+      const upgrade = _this.equipUpgradeValue;
+      _this.additionMAtk.matkPercent = Number(
+        new Big(Math.floor(upgrade / 2)).mul(0.01).valueOf()
+      );
+
+      _this.vct = Number(new Big(Math.floor(upgrade / 3)).mul(0.01).valueOf());
+
+      if (upgrade >= 7) {
+        _this.eMATK = 150;
+      }
+
+      if (upgrade >= 9) {
+        _this.acd = 0.05;
+      }
+    },
+  },
 ];

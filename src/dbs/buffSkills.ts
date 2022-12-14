@@ -14,7 +14,6 @@ export interface IBuffSkill {
   atkPercent?: number;
   matkPercent?: number;
   atkPercent2?: number;
-  matkPercent2?: number;
   mastery?: number;
   mulMeleeAtk?: number;
   buffAtkPercent?: number;
@@ -32,8 +31,23 @@ export interface IBuffSkill {
   dex?: number;
   luk?: number;
 
+  hit?: number;
+  criRate?: number;
+  aspd?: number;
+  aspdFlat?: number;
+  flee?: number;
+  perfectDodge?: number;
+
+  vct?: number;
+  fct?: number;
+  acd?: number;
+  skillCD?: number;
+
   criticalPercent?: number;
+  meleePercent?: number;
+  longRangePercent?: number;
   penetrationPercent?: number;
+  penetrationMPercent?: number;
 
   classActives?: ClassKey[];
 
@@ -41,40 +55,6 @@ export interface IBuffSkill {
   vi?: number;
 
   script: (character: Character2, _this: IBuffSkill) => void;
-}
-
-export class BuffSkill implements IBuffSkill {
-  public id: number = null;
-  public name: string = null;
-  public level: number = 1;
-
-  public script: (character: Character2, _this: IBuffSkill) => void = null;
-
-  constructor(data: IBuffSkill = null, skillDatas: IBuffSkill[]) {
-    if (data) {
-      for (const key in data) {
-        if (Object.prototype.hasOwnProperty.call(data, key)) {
-          const element = data[key];
-          this[key] = element;
-        }
-      }
-
-      this.findScript(data, skillDatas);
-    }
-  }
-
-  private findScript(data: IBuffSkill, skillDatas: IBuffSkill[]): void {
-    const obj = skillDatas.find((f) => f.id === data.id);
-    if (obj) {
-      for (const key in obj) {
-        if (Object.prototype.hasOwnProperty.call(obj, key)) {
-          const element = obj[key];
-
-          this[key] = element;
-        }
-      }
-    }
-  }
 }
 
 export const buffSkills: IBuffSkill[] = [

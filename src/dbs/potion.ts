@@ -30,7 +30,7 @@ export const potionItems: IPotionItem[] = [
     potionAtk: 30,
     potionMAtk: 30,
     atkPercent2: 0.01,
-    matkPercent2: 0.01,
+    matkPercent: 0.01,
     script: (character: Character2, _this: IBuffSkill): void => {},
   },
   {

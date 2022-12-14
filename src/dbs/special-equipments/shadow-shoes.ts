@@ -322,6 +322,7 @@ export const shadowShoes: IBaseEquipment[] = [
     },
     eATK: 0,
     cATK: 0,
+    aspd: 0.07,
     criticalPercent: 0,
     penetrationPercent: 0,
     script: (character: Character2, _this: IBaseEquipment): void => {},

@@ -1063,4 +1063,76 @@ export const shadowWeapons: IBaseEquipment[] = [
       }
     },
   },
+  {
+    id: 24596,
+    name: 'Sorcerer Booster Shadow Weapon',
+    type: EquipmentType.SHADOW_EQUIPMENT,
+    subType: EquipmentSubType.SHADOW_WEAPON,
+    location: EquipmentLocation.SHADOW_WEAPON,
+    compoundOn: null,
+    option1Enable: true,
+    baseDef: 0,
+    baseATK: 0,
+    level: 1,
+    equipUpgradeValue: 0,
+    str: 0,
+    agi: 0,
+    vit: 0,
+    int: 0,
+    dex: 0,
+    luk: 0,
+    hpModA: 0,
+    hpModB: 0,
+    additionAtk: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    additionMAtk: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+      matkPercent: 0,
+      flatNamePercent: 0,
+      skillElement: 0,
+    },
+    additionDef: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    eATK: 10,
+    eMATK: 10,
+    cATK: 0,
+    criticalPercent: 0,
+    penetrationPercent: 0,
+    penetrationMPercent: 0,
+    classActives: [ClassKey.Sorcerer],
+    script: (character: Character2, _this: IBaseEquipment): void => {
+      _this.penetrationMPercent = 0;
+      _this.additionMAtk.size = 0;
+
+      if (
+        character.shadowBodyGear &&
+        character.shadowBodyGear?.id === 24584 &&
+        character.shadowLeftHand &&
+        character.shadowLeftHand?.id === 24585 &&
+        character.shadowShoes &&
+        character.shadowShoes?.id === 24586 &&
+        character.shadowRightAccessory &&
+        character.shadowRightAccessory?.id === 24587 &&
+        character.shadowLeftAccessory &&
+        character.shadowLeftAccessory?.id === 24588
+      ) {
+        if (character.monster.race !== MonsterRace.PLAYER) {
+          _this.penetrationMPercent = 0.7;
+        }
+
+        _this.additionMAtk.size = 0.1;
+      }
+    },
+  },
 ];

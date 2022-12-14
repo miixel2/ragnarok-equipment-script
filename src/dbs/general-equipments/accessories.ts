@@ -1,4 +1,5 @@
 import Big from 'big.js';
+import { CheckItemInSlots } from '../../utils/utils';
 import { Character2 } from '../../models/character2';
 import { ClassKey } from '../../models/class';
 import {
@@ -7,6 +8,7 @@ import {
   EquipmentType,
   IBaseEquipment,
 } from '../../models/equipment';
+import { E_Element } from '../../models/element';
 
 export const accessories: IBaseEquipment[] = [
   {
@@ -362,6 +364,15 @@ export const accessories: IBaseEquipment[] = [
       race: 0,
       class: 0,
     },
+    additionMAtk: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+      matkPercent: 0.06,
+      flatNamePercent: 0,
+      skillElement: 0,
+    },
     additionDef: {
       size: 0,
       element: 0,
@@ -451,6 +462,15 @@ export const accessories: IBaseEquipment[] = [
       element: 0,
       race: 0,
       class: 0.06,
+    },
+    additionMAtk: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+      matkPercent: 0.06,
+      flatNamePercent: 0,
+      skillElement: 0,
     },
     additionDef: {
       size: 0,
@@ -1411,23 +1431,27 @@ export const accessories: IBaseEquipment[] = [
       }
 
       if (
-        character.comboSet.indexOf('4818') > -1 &&
+        CheckItemInSlots(character, 4818) &&
         character.comboSet.indexOf('32270_4818') === -1
       ) {
         _this.criticalPercent = Number(
           new Big(_this.criticalPercent).plus(0.05).valueOf()
         );
-        character.comboSet.push('32270_4818');
+        if (character.comboSet.indexOf('32270_4818') === -1) {
+          character.comboSet.push('32270_4818');
+        }
       }
 
       if (
-        character.comboSet.indexOf('4817') > -1 &&
+        CheckItemInSlots(character, 4817) &&
         character.comboSet.indexOf('32270_4817') === -1
       ) {
         _this.criticalPercent = Number(
           new Big(_this.criticalPercent).plus(0.05).valueOf()
         );
-        character.comboSet.push('32270_4817');
+        if (character.comboSet.indexOf('32270_4817') === -1) {
+          character.comboSet.push('32270_4817');
+        }
       }
     },
   },
@@ -1476,44 +1500,54 @@ export const accessories: IBaseEquipment[] = [
       _this.longRangePercent = 0;
       _this.criticalPercent = 0;
       if (
-        character.comboSet.indexOf('4875') > -1 &&
+        CheckItemInSlots(character, 4875) &&
         character.comboSet.indexOf('490030_4875') === -1
       ) {
         _this.eATK = 50;
-        character.comboSet.push('490030_4875');
+        if (character.comboSet.indexOf('490030_4875') === -1) {
+          character.comboSet.push('490030_4875');
+        }
       }
 
       if (
-        character.comboSet.indexOf('4879') > -1 &&
+        CheckItemInSlots(character, 4879) &&
         character.comboSet.indexOf('490030_4879') === -1
       ) {
         _this.longRangePercent = 0.1;
-        character.comboSet.push('490030_4879');
+        if (character.comboSet.indexOf('490030_4879') === -1) {
+          character.comboSet.push('490030_4879');
+        }
       }
 
       if (
-        character.comboSet.indexOf('4880') > -1 &&
+        CheckItemInSlots(character, 4880) &&
         character.comboSet.indexOf('490030_4880') === -1
       ) {
         _this.criticalPercent = 0.1;
-        character.comboSet.push('490030_4880');
+        if (character.comboSet.indexOf('490030_4880') === -1) {
+          character.comboSet.push('490030_4880');
+        }
       }
 
       if (
-        character.comboSet.indexOf('4878') > -1 &&
+        CheckItemInSlots(character, 4878) &&
         character.comboSet.indexOf('490030_4878') === -1
       ) {
         _this.hpModB = 0.15;
-        character.comboSet.push('490030_4878');
+        if (character.comboSet.indexOf('490030_4878') === -1) {
+          character.comboSet.push('490030_4878');
+        }
       }
 
       if (
-        character.shoes?.id === 22202 &&
+        CheckItemInSlots(character, 22202) &&
         character.comboSet.indexOf('490030_22202') === -1
       ) {
         _this.hpModB = 0.15;
         _this.spModB = 0.05;
-        character.comboSet.push('490030_22202');
+        if (character.comboSet.indexOf('490030_22202') === -1) {
+          character.comboSet.push('490030_22202');
+        }
       }
     },
   },
@@ -1673,5 +1707,142 @@ export const accessories: IBaseEquipment[] = [
     longRangePercent: 0.02,
     penetrationPercent: 0,
     script: (character: Character2, _this: IBaseEquipment): void => {},
+  },
+  {
+    id: 490005,
+    name: 'Elemental Booster Earring [1]',
+    type: EquipmentType.ARMOR,
+    subType: EquipmentSubType.ACCESSORY,
+    location: EquipmentLocation.ACCESSORY,
+    compoundOn: null,
+    slot1Enable: 'CARD',
+    baseDef: 0,
+    baseATK: 0,
+    level: 1,
+    equipUpgradeValue: 0,
+    str: 0,
+    agi: 0,
+    vit: 0,
+    int: 0,
+    dex: 0,
+    luk: 0,
+    hpModA: 0,
+    spModA: 0,
+    spModB: 0.03,
+    additionAtk: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+      atkPercent2: 0,
+    },
+    additionMAtk: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+      matkPercent: 0,
+      flatNamePercent: 0,
+      skillElement: 0,
+    },
+    additionDef: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    eATK: 0,
+    eMATK: 0,
+    cATK: 0,
+    flee: 0,
+    fct: 0,
+    vct: 0.1,
+    aspd: 0.1,
+    criticalPercent: 0,
+    longRangePercent: 0,
+    penetrationPercent: 0,
+    classActives: [],
+    script: (character: Character2, _this: IBaseEquipment): void => {
+      _this.additionMAtk.skillElement = 0;
+      if (
+        [
+          E_Element.WATER,
+          E_Element.WIND,
+          E_Element.EARTH,
+          E_Element.FIRE,
+        ].includes(character.elementalConverter)
+      ) {
+        _this.additionMAtk.skillElement = 0.05;
+      }
+    },
+  },
+  {
+    id: 490006,
+    name: 'Defunct Booster Earring [1]',
+    type: EquipmentType.ARMOR,
+    subType: EquipmentSubType.ACCESSORY,
+    location: EquipmentLocation.ACCESSORY,
+    compoundOn: null,
+    slot1Enable: 'CARD',
+    baseDef: 0,
+    baseATK: 0,
+    level: 1,
+    equipUpgradeValue: 0,
+    str: 0,
+    agi: 0,
+    vit: 0,
+    int: 0,
+    dex: 0,
+    luk: 0,
+    hpModA: 0,
+    spModA: 0,
+    spModB: 0.03,
+    additionAtk: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+      atkPercent2: 0,
+    },
+    additionMAtk: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+      matkPercent: 0,
+      flatNamePercent: 0,
+      skillElement: 0,
+    },
+    additionDef: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    eATK: 0,
+    eMATK: 0,
+    cATK: 0,
+    flee: 0,
+    fct: 0,
+    vct: 0.1,
+    aspd: 0.1,
+    criticalPercent: 0,
+    longRangePercent: 0,
+    penetrationPercent: 0,
+    classActives: [],
+    script: (character: Character2, _this: IBaseEquipment): void => {
+      _this.additionMAtk.skillElement = 0;
+      if (
+        [
+          E_Element.GHOST,
+          E_Element.HOLY,
+          E_Element.SHADOW,
+          E_Element.UNDEAD,
+          E_Element.POISON,
+        ].includes(character.elementalConverter)
+      ) {
+        _this.additionMAtk.skillElement = 0.05;
+      }
+    },
   },
 ];

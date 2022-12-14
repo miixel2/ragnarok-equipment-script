@@ -2871,7 +2871,6 @@ export const enchants: IBaseEquipment[] = [
     script: (character: Character2, _this: IBaseEquipment): void => {
       // Cri 6
       // Hit 2
-      character.comboSet.push('4818');
     },
   },
   {
@@ -2916,7 +2915,6 @@ export const enchants: IBaseEquipment[] = [
     script: (character: Character2, _this: IBaseEquipment): void => {
       // Cri 9
       // Hit 3
-      character.comboSet.push('4817');
     },
   },
   {
@@ -3090,9 +3088,7 @@ export const enchants: IBaseEquipment[] = [
     canSelectOnSlot_3: {
       actives: [...tempBoots],
     },
-    script: (character: Character2, _this: IBaseEquipment): void => {
-      character.comboSet.push('4875');
-    },
+    script: (character: Character2, _this: IBaseEquipment): void => {},
   },
   {
     id: 4879,
@@ -3130,9 +3126,7 @@ export const enchants: IBaseEquipment[] = [
     canSelectOnSlot_3: {
       actives: [...tempBoots],
     },
-    script: (character: Character2, _this: IBaseEquipment): void => {
-      character.comboSet.push('4879');
-    },
+    script: (character: Character2, _this: IBaseEquipment): void => {},
   },
   {
     id: 4880,
@@ -3170,9 +3164,7 @@ export const enchants: IBaseEquipment[] = [
     canSelectOnSlot_3: {
       actives: [...tempBoots],
     },
-    script: (character: Character2, _this: IBaseEquipment): void => {
-      character.comboSet.push('4880');
-    },
+    script: (character: Character2, _this: IBaseEquipment): void => {},
   },
   {
     id: 4878,
@@ -3210,9 +3202,7 @@ export const enchants: IBaseEquipment[] = [
     canSelectOnSlot_3: {
       actives: [...tempBoots],
     },
-    script: (character: Character2, _this: IBaseEquipment): void => {
-      character.comboSet.push('4878');
-    },
+    script: (character: Character2, _this: IBaseEquipment): void => {},
   },
   {
     id: 4876,
@@ -3250,9 +3240,7 @@ export const enchants: IBaseEquipment[] = [
     canSelectOnSlot_3: {
       actives: [...tempBoots],
     },
-    script: (character: Character2, _this: IBaseEquipment): void => {
-      character.comboSet.push('4876');
-    },
+    script: (character: Character2, _this: IBaseEquipment): void => {},
   },
   {
     id: 4877,
@@ -3290,9 +3278,7 @@ export const enchants: IBaseEquipment[] = [
     canSelectOnSlot_3: {
       actives: [...tempBoots],
     },
-    script: (character: Character2, _this: IBaseEquipment): void => {
-      character.comboSet.push('4877');
-    },
+    script: (character: Character2, _this: IBaseEquipment): void => {},
   },
   {
     id: 4807,
@@ -3333,9 +3319,7 @@ export const enchants: IBaseEquipment[] = [
     canSelectOnSlot_4: {
       actives: [...malangdo],
     },
-    script: (character: Character2, _this: IBaseEquipment): void => {
-      character.comboSet.push('4807');
-    },
+    script: (character: Character2, _this: IBaseEquipment): void => {},
   },
   {
     id: 29362,
@@ -5229,11 +5213,7 @@ export const enchants: IBaseEquipment[] = [
     canSelectOnSlot_4: {
       actives: [...illusion17_1_garment],
     },
-    script: (character: Character2, _this: IBaseEquipment): void => {
-      if (character.comboSet.indexOf('25690') === -1) {
-        character.comboSet.push('25690');
-      }
-    },
+    script: (character: Character2, _this: IBaseEquipment): void => {},
   },
   {
     id: 25691,
@@ -5279,11 +5259,7 @@ export const enchants: IBaseEquipment[] = [
     canSelectOnSlot_4: {
       actives: [...illusion17_1_garment],
     },
-    script: (character: Character2, _this: IBaseEquipment): void => {
-      if (character.comboSet.indexOf('25691') === -1) {
-        character.comboSet.push('25691');
-      }
-    },
+    script: (character: Character2, _this: IBaseEquipment): void => {},
   },
   {
     id: 25692,
@@ -5330,10 +5306,6 @@ export const enchants: IBaseEquipment[] = [
       actives: [...illusion17_1_garment],
     },
     script: (character: Character2, _this: IBaseEquipment): void => {
-      if (character.comboSet.indexOf('25692') === -1) {
-        character.comboSet.push('25692');
-      }
-
       _this.criticalPercent = 0;
 
       const upgrade = _this.equipUpgradeValue;

@@ -246,18 +246,16 @@ export const weapons: IBaseEquipment[] = [
       class: 0,
     },
     eATK: 0,
+    eMATK: 0,
     cATK: 0,
     criticalPercent: 0,
     penetrationPercent: 0,
     classActives: [ClassKey.GuillotineCross],
     script: (character: Character2, _this: IBaseEquipment): void => {
-      const upgrade = _this.equipUpgradeValue;
+      const upgrade = Math.min(Math.max(_this.equipUpgradeValue, 0), 15);
 
-      if (upgrade > 15) {
-        _this.eATK = 15 * 15;
-      } else {
-        _this.eATK = upgrade * upgrade;
-      }
+      _this.eATK = upgrade * upgrade;
+      _this.eMATK = Math.floor((upgrade * upgrade) / 2);
 
       if (character.class.baseLv >= 70) {
         _this.eATK += Math.floor((character.class.baseLv - 70) / 10) * 5;
@@ -298,19 +296,16 @@ export const weapons: IBaseEquipment[] = [
       class: 0,
     },
     eATK: 0,
+    eMATK: 0,
     cATK: 0,
     criticalPercent: 0,
     penetrationPercent: 0,
     classActives: [ClassKey.RuneKnight],
     script: (character: Character2, _this: IBaseEquipment): void => {
-      _this.eATK = 0;
-      const upgrade = _this.equipUpgradeValue;
+      const upgrade = Math.min(Math.max(_this.equipUpgradeValue, 0), 15);
 
-      if (upgrade > 15) {
-        _this.eATK = 15 * 15;
-      } else {
-        _this.eATK = upgrade * upgrade;
-      }
+      _this.eATK = upgrade * upgrade;
+      _this.eMATK = Math.floor((upgrade * upgrade) / 2);
 
       if (character.class.baseLv >= 70) {
         _this.eATK += Math.floor((character.class.baseLv - 70) / 10) * 5;
@@ -351,20 +346,16 @@ export const weapons: IBaseEquipment[] = [
       class: 0,
     },
     eATK: 0,
+    eMATK: 0,
     cATK: 0,
     criticalPercent: 0,
     penetrationPercent: 0,
     classActives: [ClassKey.RuneKnight],
     script: (character: Character2, _this: IBaseEquipment): void => {
-      _this.eATK = 0;
+      const upgrade = Math.min(Math.max(_this.equipUpgradeValue, 0), 15);
 
-      const upgrade = _this.equipUpgradeValue;
-
-      if (upgrade > 15) {
-        _this.eATK = 15 * 15;
-      } else {
-        _this.eATK = upgrade * upgrade;
-      }
+      _this.eATK = upgrade * upgrade;
+      _this.eMATK = Math.floor((upgrade * upgrade) / 2);
 
       if (character.class.baseLv >= 70) {
         _this.eATK += Math.floor((character.class.baseLv - 70) / 10) * 5;
@@ -1603,7 +1594,7 @@ export const weapons: IBaseEquipment[] = [
       _this.eATK = upgrade * 3;
 
       const baseLv = Math.min(Math.max(character.class.baseLv, 1), 180);
-      const multipleLv = Math.floor(baseLv);
+      const multipleLv = Math.floor(baseLv / 15);
       _this.eATK += multipleLv * 3;
 
       if (upgrade >= 7) {
@@ -1720,7 +1711,7 @@ export const weapons: IBaseEquipment[] = [
       _this.eATK = upgrade * 3;
 
       const baseLv = Math.min(Math.max(character.class.baseLv, 1), 180);
-      const multipleLv = Math.floor(baseLv);
+      const multipleLv = Math.floor(baseLv / 15);
       _this.eATK += multipleLv * 3;
 
       if (upgrade >= 7) {
@@ -1812,5 +1803,369 @@ export const weapons: IBaseEquipment[] = [
     penetrationPercent: 0,
     classActives: [ClassKey.RuneKnight],
     script: (character: Character2, _this: IBaseEquipment): void => {},
+  },
+  {
+    id: 1602,
+    name: 'Rod [4]',
+    type: EquipmentType.WEAPON,
+    subType: EquipmentSubType.ROD,
+    location: EquipmentLocation.RIGHT_HAND,
+    compoundOn: null,
+    slot1Enable: 'CARD',
+    slot2Enable: 'CARD',
+    slot3Enable: 'CARD',
+    slot4Enable: 'CARD',
+    baseDef: 0,
+    baseATK: 15,
+    baseMATK: 30,
+    level: 1,
+    equipUpgradeValue: 0,
+    str: 0,
+    agi: 0,
+    vit: 0,
+    int: 0,
+    dex: 0,
+    luk: 0,
+    additionAtk: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    additionDef: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    eATK: 0,
+    cATK: 0,
+    criticalPercent: 0,
+    penetrationPercent: 0,
+    classActives: [ClassKey.Sorcerer],
+    script: (character: Character2, _this: IBaseEquipment): void => {},
+  },
+  {
+    id: 1584,
+    name: 'Chilly Spell Book [2]',
+    type: EquipmentType.WEAPON,
+    subType: EquipmentSubType.ROD,
+    location: EquipmentLocation.RIGHT_HAND,
+    compoundOn: null,
+    slot1Enable: 'CARD',
+    slot2Enable: 'CARD',
+    baseDef: 0,
+    baseATK: 100,
+    baseMATK: 160,
+    level: 4,
+    equipUpgradeValue: 0,
+    str: 0,
+    agi: 0,
+    vit: 0,
+    int: 0,
+    dex: 1,
+    luk: 0,
+    additionAtk: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    additionMAtk: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+      matkPercent: 0,
+      flatNamePercent: 0,
+      skillElement: 0,
+    },
+    additionDef: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    eATK: 0,
+    eMATK: 0,
+    cATK: 0,
+    criticalPercent: 0,
+    penetrationPercent: 0,
+    vct: 0,
+    classActives: [ClassKey.Sorcerer],
+    script: (character: Character2, _this: IBaseEquipment): void => {
+      const upgrade = _this.equipUpgradeValue;
+
+      if (character.playerTypeAtk === 2447) {
+        character.buffMagicSkillPercent = Number(
+          new Big(3)
+            .mul(upgrade)
+            .mul(0.01)
+            .plus(character.buffMagicSkillPercent)
+            .valueOf()
+        );
+      }
+    },
+  },
+  {
+    id: 26118,
+    name: 'Shadow Staff [2]',
+    type: EquipmentType.WEAPON,
+    subType: EquipmentSubType.ROD,
+    location: EquipmentLocation.RIGHT_HAND,
+    compoundOn: null,
+    slot1Enable: 'CARD',
+    slot2Enable: 'CARD',
+    baseDef: 0,
+    baseATK: 40,
+    baseMATK: 155,
+    level: 4,
+    equipUpgradeValue: 0,
+    str: 0,
+    agi: 0,
+    vit: 0,
+    int: 0,
+    dex: 0,
+    luk: 0,
+    additionAtk: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    additionMAtk: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+      matkPercent: 0,
+      flatNamePercent: 0,
+      skillElement: 0,
+    },
+    additionDef: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    eATK: 0,
+    eMATK: 0,
+    cATK: 0,
+    criticalPercent: 0,
+    penetrationPercent: 0,
+    vct: 0,
+    classActives: [ClassKey.Sorcerer],
+    script: (character: Character2, _this: IBaseEquipment): void => {
+      _this.vct = 0;
+      const upgrade = _this.equipUpgradeValue;
+      _this.eMATK = Number(new Big(Math.floor(upgrade / 2)).mul(10).valueOf());
+
+      if (character.playerTypeAtk === 2446) {
+        character.buffMagicSkillPercent = Number(
+          new Big(Math.floor(upgrade / 3))
+            .mul(0.12)
+            .plus(character.buffMagicSkillPercent)
+            .valueOf()
+        );
+      }
+
+      if (upgrade >= 9) {
+        _this.vct = 0.1;
+      }
+    },
+  },
+  {
+    id: 26151,
+    name: 'Rutilus Stick-OS [2]',
+    type: EquipmentType.WEAPON,
+    subType: EquipmentSubType.ROD,
+    location: EquipmentLocation.RIGHT_HAND,
+    compoundOn: null,
+    slot1Enable: 'CARD',
+    slot2Enable: 'CARD',
+    option1Enable: true,
+    option2Enable: true,
+    baseDef: 0,
+    baseATK: 80,
+    baseMATK: 175,
+    level: 4,
+    equipUpgradeValue: 0,
+    str: 0,
+    agi: 0,
+    vit: 0,
+    int: 0,
+    dex: 0,
+    luk: 0,
+    additionAtk: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    additionMAtk: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+      matkPercent: 0,
+      flatNamePercent: 0,
+      skillElement: 0,
+    },
+    additionDef: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    eATK: 0,
+    eMATK: 0,
+    cATK: 0,
+    criticalPercent: 0,
+    penetrationPercent: 0,
+    vct: 0,
+    acd: 0,
+    classActives: [ClassKey.Sorcerer, ClassKey.Warlock],
+    script: (character: Character2, _this: IBaseEquipment): void => {
+      _this.vct = 0;
+      _this.acd = 0;
+      const upgrade = _this.equipUpgradeValue;
+
+      if (
+        character.monster.element === E_Element.NEUTRAL ||
+        character.monster.element === E_Element.EARTH
+      ) {
+        _this.additionMAtk.element = 0.05;
+      }
+
+      if (upgrade >= 7) {
+        _this.vct = 0.07;
+      }
+
+      if (upgrade >= 11) {
+        _this.acd = 0.1;
+      }
+    },
+  },
+  {
+    id: 540000,
+    name: 'Boosting Spellbook [2]',
+    type: EquipmentType.WEAPON,
+    subType: EquipmentSubType.BOOK,
+    location: EquipmentLocation.RIGHT_HAND,
+    compoundOn: null,
+    slot1Enable: 'CARD',
+    slot2Enable: 'CARD',
+    baseDef: 0,
+    baseATK: 165,
+    baseMATK: 165,
+    level: 4,
+    equipUpgradeValue: 0,
+    str: 0,
+    agi: 0,
+    vit: 0,
+    int: 0,
+    dex: 0,
+    luk: 0,
+    hpModB: 0,
+    additionAtk: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    additionMAtk: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+      matkPercent: 0,
+      flatNamePercent: 0,
+      skillElement: 0,
+    },
+    additionDef: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    eATK: 0,
+    eMATK: 0,
+    cATK: 0,
+    criticalPercent: 0,
+    penetrationPercent: 0,
+    aspdFlat: 0,
+    classActives: [ClassKey.Sorcerer],
+    script: (character: Character2, _this: IBaseEquipment): void => {
+      _this.additionMAtk.skillElement = 0;
+      _this.additionMAtk.size = 0;
+      _this.aspdFlat = 0;
+
+      const upgrade = _this.equipUpgradeValue;
+      _this.eMATK = upgrade * 3;
+
+      const baseLv = Math.min(Math.max(character.class.baseLv, 1), 180);
+      const multipleLv = Math.floor(baseLv / 15);
+      _this.eMATK += multipleLv * 3;
+
+      if (upgrade >= 7) {
+        if (character.elementalConverter === E_Element.NEUTRAL) {
+          _this.additionMAtk.skillElement = Number(
+            new Big(5).plus(0.1).valueOf()
+          );
+        }
+
+        if (upgrade >= 9) {
+          _this.additionMAtk.size = 0.1;
+        }
+      }
+
+      // Elemental Booster set
+      if (
+        character.bodyGear?.id === 450002 &&
+        character.shoes?.id === 470001 &&
+        character.garment?.id === 480001 &&
+        (character.leftAccessory?.id === 490005 ||
+          character.rightAccessory?.id === 490005)
+      ) {
+        _this.eMATK += 20;
+        _this.additionMAtk.size = Number(
+          new Big(_this.additionMAtk.size).plus(0.1).valueOf()
+        );
+
+        if (character.playerTypeAtk === 2449) {
+          character.buffMagicSkillPercent = Number(
+            new Big(multipleLv)
+              .mul(0.01)
+              .plus(character.buffMagicSkillPercent)
+              .valueOf()
+          );
+        }
+      }
+
+      // Defunct Booster set
+      if (
+        character.bodyGear?.id === 450003 &&
+        character.shoes?.id === 470002 &&
+        character.garment?.id === 480002 &&
+        (character.leftAccessory?.id === 490006 ||
+          character.rightAccessory?.id === 490006)
+      ) {
+        _this.eMATK += 20;
+        _this.aspdFlat = 2;
+
+        if (
+          character.playerTypeAtk === 14 ||
+          character.playerTypeAtk === 19 ||
+          character.playerTypeAtk === 20
+        ) {
+          character.buffMagicSkillPercent = Number(
+            new Big(multipleLv)
+              .mul(0.02)
+              .plus(character.buffMagicSkillPercent)
+              .valueOf()
+          );
+        }
+      }
+    },
   },
 ];

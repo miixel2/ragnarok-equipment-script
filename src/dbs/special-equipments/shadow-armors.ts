@@ -691,6 +691,7 @@ export const shadowArmors: IBaseEquipment[] = [
     },
     eATK: 0,
     cATK: 0,
+    aspdFlat: 1,
     criticalPercent: 0,
     penetrationPercent: 0,
     script: (character: Character2, _this: IBaseEquipment): void => {},
