@@ -7,6 +7,7 @@ import {
   EquipmentSubType,
   EquipmentLocation,
 } from '../../models/equipment';
+import { E_Element } from '../../models/element';
 
 export const lowerHeadgear: IBaseEquipment[] = [
   {
@@ -55,6 +56,7 @@ export const lowerHeadgear: IBaseEquipment[] = [
     cATK: 0,
     criRate: 0,
     aspd: 0,
+    vct: 0,
     criticalPercent: 0,
     penetrationPercent: 0,
     script: (character: Character2, _this: IBaseEquipment): void => {
@@ -64,6 +66,7 @@ export const lowerHeadgear: IBaseEquipment[] = [
       _this.eMATK = 0;
       _this.criRate = 0;
       _this.aspd = 0;
+      _this.vct = 0;
       if (character.middleHeadgear && character.middleHeadgear.id === 2202) {
         const baseStr = character.class.str0;
         const baseLuk = character.class.luk0;
@@ -128,31 +131,36 @@ export const lowerHeadgear: IBaseEquipment[] = [
     },
     eATK: 0,
     cATK: 0,
+    aspdFlat: 0,
     criticalPercent: 0,
     penetrationPercent: 0,
     script: (character: Character2, _this: IBaseEquipment): void => {
       _this.criticalPercent = 0.05;
+      _this.aspdFlat = 0;
 
       if (character.middleHeadgear && character.middleHeadgear.id === 5918) {
         _this.criticalPercent = Number(
           new Big(_this.criticalPercent).plus(0.2).valueOf()
         );
+        _this.aspdFlat = 1;
 
         if (character.class.luk0 >= 108) {
           _this.criticalPercent = Number(
             new Big(_this.criticalPercent).plus(0.02).valueOf()
           );
+          _this.aspdFlat = 2;
         }
 
         if (character.class.luk0 >= 120) {
           _this.criticalPercent = Number(
             new Big(_this.criticalPercent).plus(0.04).valueOf()
           );
+          _this.aspdFlat = 4;
         }
 
-        const tem = Math.floor(character.class.dex0 / 10) * 0.02;
+        const tem = Math.floor(character.class.dex0 / 10);
         _this.criticalPercent = Number(
-          new Big(_this.criticalPercent).plus(tem).valueOf()
+          new Big(0.02).mul(tem).plus(_this.criticalPercent).valueOf()
         );
       }
     },
@@ -187,6 +195,7 @@ export const lowerHeadgear: IBaseEquipment[] = [
       class: 0,
     },
     eATK: 10,
+    eMATK: 10,
     cATK: 0,
     criticalPercent: 0,
     penetrationPercent: 0,
@@ -225,6 +234,7 @@ export const lowerHeadgear: IBaseEquipment[] = [
     },
     eATK: 0,
     cATK: 0,
+    aspdFlat: 1,
     criticalPercent: 0,
     penetrationPercent: 0,
     script: (character: Character2, _this: IBaseEquipment): void => {},
@@ -260,6 +270,7 @@ export const lowerHeadgear: IBaseEquipment[] = [
     },
     eATK: 0,
     cATK: 0,
+    aspdFlat: 1,
     criticalPercent: 0,
     penetrationPercent: 0,
     script: (character: Character2, _this: IBaseEquipment): void => {},
@@ -296,6 +307,7 @@ export const lowerHeadgear: IBaseEquipment[] = [
       class: 0,
     },
     eATK: 5,
+    eMATK: 5,
     cATK: 0,
     criticalPercent: 0,
     penetrationPercent: 0,
@@ -318,11 +330,21 @@ export const lowerHeadgear: IBaseEquipment[] = [
     int: 0,
     dex: 0,
     luk: 0,
+    spModA: 30,
     additionAtk: {
-      size: 0.01,
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0.01,
+    },
+    additionMAtk: {
+      size: 0,
       element: 0,
       race: 0,
       class: 0,
+      matkPercent: 0.01,
+      flatNamePercent: 0,
+      skillElement: 0,
     },
     additionDef: {
       size: 0,
@@ -367,9 +389,24 @@ export const lowerHeadgear: IBaseEquipment[] = [
     },
     eATK: 0,
     cATK: 0,
+    vct: 0,
     criticalPercent: 0,
     penetrationPercent: 0,
-    script: (character: Character2, _this: IBaseEquipment): void => {},
+    script: (character: Character2, _this: IBaseEquipment): void => {
+      _this.vct = 0;
+      if (character.middleHeadgear?.id === 19138) {
+        const baseInt = character.class.int0;
+        const multiple = Math.floor(baseInt / 8);
+        _this.vct = Number(new Big(multiple).mul(0.01).valueOf());
+
+        if (baseInt >= 108) {
+          _this.vct = Number(new Big(_this.vct).plus(0.04).valueOf());
+          if (baseInt >= 125) {
+            _this.vct = Number(new Big(_this.vct).plus(0.06).valueOf());
+          }
+        }
+      }
+    },
   },
   {
     id: 19268,
@@ -394,6 +431,15 @@ export const lowerHeadgear: IBaseEquipment[] = [
       race: 0,
       class: 0,
     },
+    additionMAtk: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+      matkPercent: 0,
+      flatNamePercent: 0,
+      skillElement: 0,
+    },
     additionDef: {
       size: 0,
       element: 0,
@@ -402,19 +448,43 @@ export const lowerHeadgear: IBaseEquipment[] = [
     },
     eATK: 0,
     cATK: 0,
+    vct: 0,
+    aspd: 0,
     criticalPercent: 0,
+    longRangePercent: 0,
     penetrationPercent: 0,
     script: (character: Character2, _this: IBaseEquipment): void => {
       _this.eATK = 0;
       _this.criticalPercent = 0;
+      _this.vct = 0;
+      _this.aspd = 0;
+      _this.longRangePercent = 0;
+      _this.additionMAtk.skillElement = 0;
 
-      if (character.garment && [20718, 20717].includes(character.garment.id)) {
+      if (character.elementalConverter === E_Element.FIRE) {
+        _this.additionMAtk.skillElement = 0.01;
+      }
+
+      if ([20718, 20717].includes(character.garment?.id)) {
         const baseStr = character.class.str0;
+        const baseAgi = character.class.agi0;
+        const baseInt = character.class.int0;
+        const baseDex = character.class.dex0;
         const baseLuk = character.class.luk0;
 
         _this.eATK = Number(new Big(Math.floor(baseStr / 20)).mul(5).valueOf());
-        const tempLukMul = Math.floor(baseLuk / 20);
-        _this.criticalPercent = Number(new Big(0.03).mul(tempLukMul).valueOf());
+        _this.criticalPercent = Number(
+          new Big(0.03).mul(Math.floor(baseLuk / 20)).valueOf()
+        );
+        _this.vct = Number(
+          new Big(Math.floor(baseInt / 20)).mul(0.04).valueOf()
+        );
+        _this.aspd = Number(
+          new Big(Math.floor(baseAgi / 20)).mul(0.03).valueOf()
+        );
+        _this.longRangePercent = Number(
+          new Big(Math.floor(baseDex / 20)).mul(0.01).valueOf()
+        );
       }
     },
   },
@@ -450,18 +520,24 @@ export const lowerHeadgear: IBaseEquipment[] = [
     },
     eATK: 0,
     cATK: 0,
+    aspd: 0,
+    aspdFlat: 1,
     criticalPercent: 0,
     penetrationPercent: 0,
     script: (character: Character2, _this: IBaseEquipment): void => {
       _this.eATK = 0;
+      _this.aspd = 0;
       if (character.middleHeadgear && character.middleHeadgear.id === 18823) {
         const baseAgi = character.class.agi0;
         _this.eATK = 40;
+        _this.aspd = 0.03;
 
         if (baseAgi >= 108) {
           _this.eATK += 60;
+          _this.aspd = 0.08;
           if (baseAgi >= 120) {
             _this.eATK += 80;
+            _this.aspd = 0.15;
           }
         }
       }
@@ -484,11 +560,21 @@ export const lowerHeadgear: IBaseEquipment[] = [
     int: 0,
     dex: 0,
     luk: 0,
+    hpModB: 0,
     additionAtk: {
       size: 0,
       element: 0,
       race: 0,
       class: 0,
+    },
+    additionMAtk: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+      matkPercent: 0,
+      flatNamePercent: 0,
+      skillElement: 0,
     },
     additionDef: {
       size: 0,
@@ -498,10 +584,14 @@ export const lowerHeadgear: IBaseEquipment[] = [
     },
     eATK: 0,
     cATK: 0,
+    fct: 0,
     criticalPercent: 0,
     penetrationPercent: 0,
     script: (character: Character2, _this: IBaseEquipment): void => {
       _this.additionAtk.class = 0;
+      _this.additionMAtk.matkPercent = 0;
+      _this.hpModB = 0;
+      _this.fct = 0;
 
       if (
         character.rightAccessory?.id === 2910 ||
@@ -514,6 +604,27 @@ export const lowerHeadgear: IBaseEquipment[] = [
         _this.additionAtk.class = Number(
           new Big(multiplierStrLuk).mul(0.01).valueOf()
         );
+      }
+
+      if (
+        character.rightAccessory?.id === 2907 ||
+        character.leftAccessory?.id === 2907
+      ) {
+        _this.fct = 0.2;
+
+        const baseInt = character.class.int0;
+        const baseDex = character.class.dex0;
+        const multiplierIntDex = Math.floor((baseInt + baseDex) / 40);
+        _this.additionMAtk.matkPercent = Number(
+          new Big(multiplierIntDex).mul(0.01).valueOf()
+        );
+      }
+
+      if (
+        character.rightAccessory?.id === 2911 ||
+        character.leftAccessory?.id === 2911
+      ) {
+        _this.hpModB = 0.07;
       }
     },
   },
@@ -548,20 +659,24 @@ export const lowerHeadgear: IBaseEquipment[] = [
     },
     eATK: 0,
     cATK: 0,
+    hit: 0,
     criticalPercent: 0,
     penetrationPercent: 0,
     meleePercent: 0,
     script: (character: Character2, _this: IBaseEquipment): void => {
       _this.meleePercent = 0;
+      _this.hit = 0;
 
       const baseLevel = character.class.baseLv;
       const multiplierBaseLevel = Math.floor(baseLevel / 35);
       _this.meleePercent = Number(
         new Big(multiplierBaseLevel).mul(0.01).valueOf()
       );
+      _this.hit = multiplierBaseLevel * 2;
 
       if (baseLevel >= 175) {
         _this.meleePercent = _this.meleePercent * 2;
+        _this.hit = _this.hit * 2;
       }
     },
   },
@@ -589,6 +704,15 @@ export const lowerHeadgear: IBaseEquipment[] = [
       class: 0,
       atkPercent2: 0.01,
     },
+    additionMAtk: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+      matkPercent: 0.01,
+      flatNamePercent: 0,
+      skillElement: 0,
+    },
     additionDef: {
       size: 0,
       element: 0,
@@ -597,11 +721,13 @@ export const lowerHeadgear: IBaseEquipment[] = [
     },
     eATK: 0,
     cATK: 0,
+    vct: 0,
     criticalPercent: 0,
     penetrationPercent: 0,
     meleePercent: 0,
     script: (character: Character2, _this: IBaseEquipment): void => {
       _this.criticalPercent = 0;
+      _this.vct = 0;
       if (
         character.rightAccessory?.id === 2992 &&
         character.leftAccessory?.id === 2992
@@ -609,11 +735,21 @@ export const lowerHeadgear: IBaseEquipment[] = [
         _this.criticalPercent = Number(
           new Big(_this.criticalPercent).plus(0.1).valueOf()
         );
+        _this.vct = Number(new Big(_this.vct).plus(0.1).valueOf());
       }
 
       if (
         character.rightAccessory?.id === 2991 &&
         character.leftAccessory?.id === 2991
+      ) {
+        _this.criticalPercent = Number(
+          new Big(_this.criticalPercent).plus(0.1).valueOf()
+        );
+      }
+
+      if (
+        character.rightAccessory?.id === 2990 &&
+        character.leftAccessory?.id === 2990
       ) {
         _this.criticalPercent = Number(
           new Big(_this.criticalPercent).plus(0.1).valueOf()

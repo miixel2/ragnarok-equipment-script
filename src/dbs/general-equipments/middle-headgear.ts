@@ -273,10 +273,10 @@ export const middleHeadgear: IBaseEquipment[] = [
 
       if (baseInt >= 108) {
         _this.eATK += 50;
-        _this.vct = Number(new Big(_this.vct).minus(-0.04).valueOf());
+        _this.vct = Number(new Big(_this.vct).minus(0.04).valueOf());
         if (baseInt >= 125) {
           _this.eATK += 125;
-          _this.vct = Number(new Big(_this.vct).minus(-0.06).valueOf());
+          _this.vct = Number(new Big(_this.vct).minus(0.06).valueOf());
         }
       }
     },
