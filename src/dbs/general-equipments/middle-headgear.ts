@@ -635,7 +635,7 @@ export const middleHeadgear: IBaseEquipment[] = [
     script: (character: Character2, _this: IBaseEquipment): void => {},
   },
   {
-    id: 31715,
+    id: 15968,
     name: 'Orange Rabbit',
     type: EquipmentType.ARMOR,
     subType: EquipmentSubType.HELM,

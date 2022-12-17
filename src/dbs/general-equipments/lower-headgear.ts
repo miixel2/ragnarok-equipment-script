@@ -758,7 +758,7 @@ export const lowerHeadgear: IBaseEquipment[] = [
     },
   },
   {
-    id: 31671,
+    id: 15969,
     name: 'Twin Cannons',
     type: EquipmentType.ARMOR,
     subType: EquipmentSubType.HELM,
@@ -810,29 +810,29 @@ export const lowerHeadgear: IBaseEquipment[] = [
 
       if (
         CheckItemInSlots(character, 25690) &&
-        character.comboSet.indexOf('31671_25690') === -1
+        character.comboSet.indexOf('15969_25690') === -1
       ) {
         _this.meleePercent = 0.04;
         _this.longRangePercent = 0.04;
 
-        character.comboSet.push('31671_25690');
+        character.comboSet.push('15969_25690');
       }
 
       if (
         CheckItemInSlots(character, 25691) &&
-        character.comboSet.indexOf('31671_25691') === -1
+        character.comboSet.indexOf('15969_25691') === -1
       ) {
         _this.additionMAtk.class = 0.06;
 
-        character.comboSet.push('31671_25691');
+        character.comboSet.push('15969_25691');
       }
 
       if (
         CheckItemInSlots(character, 25692) &&
-        character.comboSet.indexOf('31671_25692') === -1
+        character.comboSet.indexOf('15969_25692') === -1
       ) {
         _this.additionAtk.class = 0.06;
-        character.comboSet.push('31671_25692');
+        character.comboSet.push('15969_25692');
       }
     },
   },
