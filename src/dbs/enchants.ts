@@ -3398,12 +3398,9 @@ export const enchants: IBaseEquipment[] = [
     script: (character: Character2, _this: IBaseEquipment): void => {
       _this.criticalPercent = 0.03;
       if (
-        character.costumeUpperHeadgear &&
-        character.costumeUpperHeadgear.slot1?.id === 29359 &&
-        character.costumeMiddleHeadgear &&
-        character.costumeMiddleHeadgear.slot1?.id === 29047 &&
-        character.costumeLowerHeadgear &&
-        character.costumeLowerHeadgear.slot1?.id === 29360
+        character.costumeUpperHeadgear.slot2?.id === 29359 &&
+        character.costumeMiddleHeadgear.slot2?.id === 29047 &&
+        character.costumeLowerHeadgear.slot2?.id === 29360
       ) {
         _this.criticalPercent = 0.09;
       }
