@@ -67,8 +67,8 @@ export const potionItems: IPotionItem[] = [
     level: 1,
     name: 'Rough Energy Crystal',
     classActives: [],
-    potionAtk: 5,
-    potionMAtk: 5,
+    eATK: 5,
+    mATK: 5,
     script: (character: Character2, _this: IBuffSkill): void => {},
   },
   {
@@ -76,8 +76,8 @@ export const potionItems: IPotionItem[] = [
     level: 1,
     name: 'Purified Energy Crysta',
     classActives: [],
-    potionAtk: 10,
-    potionMAtk: 10,
+    eATK: 10,
+    mATK: 10,
     script: (character: Character2, _this: IBuffSkill): void => {},
   },
   {
@@ -85,8 +85,8 @@ export const potionItems: IPotionItem[] = [
     level: 1,
     name: 'High Energy Crystal',
     classActives: [],
-    potionAtk: 15,
-    potionMAtk: 15,
+    eATK: 15,
+    mATK: 15,
     script: (character: Character2, _this: IBuffSkill): void => {},
   },
 ];
