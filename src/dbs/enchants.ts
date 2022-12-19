@@ -3398,9 +3398,9 @@ export const enchants: IBaseEquipment[] = [
     script: (character: Character2, _this: IBaseEquipment): void => {
       _this.criticalPercent = 0.03;
       if (
-        character.costumeUpperHeadgear.slot2?.id === 29359 &&
-        character.costumeMiddleHeadgear.slot2?.id === 29047 &&
-        character.costumeLowerHeadgear.slot2?.id === 29360
+        character.costumeUpperHeadgear?.slot2?.id === 29359 &&
+        character.costumeMiddleHeadgear?.slot2?.id === 29047 &&
+        character.costumeLowerHeadgear?.slot2?.id === 29360
       ) {
         _this.criticalPercent = 0.09;
       }
@@ -3683,23 +3683,21 @@ export const enchants: IBaseEquipment[] = [
     },
     eATK: 0,
     cATK: 0,
+    criRate: 0,
     criticalPercent: 0.2,
     penetrationPercent: 0,
     canSelectOnSlot_2: {
       actives: [...costumes],
     },
     script: (character: Character2, _this: IBaseEquipment): void => {
+      _this.criRate = 0;
       if (
-        character.costumeUpperHeadgear &&
-        character.costumeUpperHeadgear.slot1?.id === 29359 &&
-        character.costumeMiddleHeadgear &&
-        character.costumeMiddleHeadgear.slot1?.id === 29047 &&
-        character.costumeLowerHeadgear &&
-        character.costumeLowerHeadgear.slot1?.id === 29360 &&
-        character.costumeGarment &&
-        character.costumeGarment.slot1?.id === 29361
+        character.costumeUpperHeadgear?.slot2?.id === 29359 &&
+        character.costumeMiddleHeadgear?.slot2?.id === 29047 &&
+        character.costumeLowerHeadgear?.slot2?.id === 29360 &&
+        character.costumeGarment?.slot2?.id === 29361
       ) {
-        // _this.criticalRate = 10;
+        _this.criRate = 10;
       }
     },
   },
