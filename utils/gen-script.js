@@ -59,15 +59,15 @@ const geneText = (name, key, id, value, canSelectOnOption, actives) => {
 
 const groups = [
   {
-    name: 'Critical damage',
-    option: 'criticalPercent',
-    start: 2006001,
+    name: 'Ranged damage',
+    option: 'longRangePercent',
+    start: 2006051,
   },
 ];
 
 for (const group of groups) {
   const cnt = 50;
-  let start = 1;
+  let start = 3;
   const end = 9;
 
   console.log(
@@ -81,8 +81,8 @@ for (const group of groups) {
         `${group.option}`,
         group.start + (start - 1),
         (index / 100).toFixed(2),
-        'canSelectOnOption_3',
-        '[...vmGroup2, ...vmGroup3, ...vmGroup5]'
+        'canSelectOnOption_1',
+        '[...temporalManteausId]'
       )
     );
     start++;

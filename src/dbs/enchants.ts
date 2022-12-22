@@ -15,7 +15,7 @@ const headGearLab5 = [18971, 18982];
 const malangdo = [21018, 28010, 1185, 1186, 1171, 13412, 13413, 1418];
 const tempBoots = [
   22006, 22007, 22008, 22009, 22010, 22011, 22113, 22114, 22115, 22116, 22117,
-  22118,
+  22118, 22202,
 ];
 const costumes = costumeIds;
 const racingCap = [19191, 19195];
@@ -3325,8 +3325,8 @@ export const enchants: IBaseEquipment[] = [
     script: (character: Character2, _this: IBaseEquipment): void => {},
   },
   {
-    id: 29362,
-    name: 'Double Attack',
+    id: 6908,
+    name: 'ASPD Stone(Garment)',
     type: EquipmentType.CARD,
     subType: null,
     location: EquipmentLocation.COSTUME_GARMENT,
@@ -3355,6 +3355,7 @@ export const enchants: IBaseEquipment[] = [
     },
     eATK: 0,
     cATK: 0,
+    aspdFlat: 1,
     criticalPercent: 0,
     penetrationPercent: 0,
     canSelectOnSlot_2: {

@@ -9,6 +9,7 @@ import {
   EquipmentLocation,
 } from '../../models/equipment';
 import { MonsterRace } from '../../models/monster';
+import { CheckItemInSlots } from '../../utils/utils';
 
 export const garments: IBaseEquipment[] = [
   {
@@ -591,8 +592,10 @@ export const garments: IBaseEquipment[] = [
     cATK: 0,
     criticalPercent: 0,
     penetrationPercent: 0,
+    penetrationMPercent: 0,
     script: (character: Character2, _this: IBaseEquipment): void => {
       _this.penetrationPercent = 0;
+      _this.penetrationMPercent = 0;
       _this.additionAtk.atkPercent2 = 0;
 
       const upgrade = _this.equipUpgradeValue;
@@ -616,10 +619,14 @@ export const garments: IBaseEquipment[] = [
             )
           ) {
             _this.penetrationPercent = 0.2;
+            _this.penetrationMPercent = 0.2;
 
             if (upgrade >= 11) {
               _this.penetrationPercent = Number(
                 new Big(_this.penetrationPercent).plus(0.1).valueOf()
+              );
+              _this.penetrationMPercent = Number(
+                new Big(_this.penetrationMPercent).plus(0.1).valueOf()
               );
             }
           }
@@ -637,6 +644,9 @@ export const garments: IBaseEquipment[] = [
           ) {
             _this.penetrationPercent = Number(
               new Big(_this.penetrationPercent).plus(0.3).valueOf()
+            );
+            _this.penetrationMPercent = Number(
+              new Big(_this.penetrationMPercent).plus(0.3).valueOf()
             );
           }
         }
@@ -680,8 +690,10 @@ export const garments: IBaseEquipment[] = [
     cATK: 0,
     criticalPercent: 0,
     penetrationPercent: 0,
+    penetrationMPercent: 0,
     script: (character: Character2, _this: IBaseEquipment): void => {
       _this.penetrationPercent = 0;
+      _this.penetrationMPercent = 0;
       _this.additionAtk.atkPercent2 = 0;
 
       const upgrade = _this.equipUpgradeValue;
@@ -705,10 +717,14 @@ export const garments: IBaseEquipment[] = [
             )
           ) {
             _this.penetrationPercent = 0.2;
+            _this.penetrationMPercent = 0.2;
 
             if (upgrade >= 11) {
               _this.penetrationPercent = Number(
                 new Big(_this.penetrationPercent).plus(0.1).valueOf()
+              );
+              _this.penetrationMPercent = Number(
+                new Big(_this.penetrationMPercent).plus(0.1).valueOf()
               );
             }
           }
@@ -728,6 +744,498 @@ export const garments: IBaseEquipment[] = [
           ) {
             _this.penetrationPercent = Number(
               new Big(_this.penetrationPercent).plus(0.3).valueOf()
+            );
+            _this.penetrationMPercent = Number(
+              new Big(_this.penetrationMPercent).plus(0.3).valueOf()
+            );
+          }
+        }
+      }
+    },
+  },
+  {
+    id: 20965,
+    name: 'Temporal Vit Manteau [1]',
+    type: EquipmentType.ARMOR,
+    subType: EquipmentSubType.GARMENT,
+    location: EquipmentLocation.GARMENT,
+    compoundOn: null,
+    slot1Enable: true,
+    option1Enable: true,
+    baseDef: 38,
+    baseATK: 0,
+    level: 1,
+    equipUpgradeValue: 0,
+    str: 0,
+    agi: 0,
+    vit: 0,
+    int: 0,
+    dex: 0,
+    luk: 0,
+    hpModA: 0,
+    hpModB: 0,
+    additionAtk: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    additionDef: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    eATK: 0,
+    cATK: 0,
+    acd: 0,
+    criticalPercent: 0,
+    penetrationPercent: 0,
+    penetrationMPercent: 0,
+    script: (character: Character2, _this: IBaseEquipment): void => {
+      _this.penetrationPercent = 0;
+      _this.penetrationMPercent = 0;
+      _this.additionAtk.atkPercent2 = 0;
+      _this.acd = 0;
+
+      const upgrade = _this.equipUpgradeValue;
+
+      _this.eATK = Number(new Big(Math.floor(upgrade / 2)).mul(10).valueOf());
+      _this.hpModA = Number(
+        new Big(Math.floor(upgrade / 2)).mul(400).valueOf()
+      );
+      _this.hpModB = Number(
+        new Big(Math.floor(upgrade / 4)).mul(0.03).valueOf()
+      );
+
+      if (upgrade >= 7) {
+        _this.additionAtk.atkPercent2 = Number(
+          new Big(_this.additionAtk.atkPercent2).plus(0.07).valueOf()
+        );
+        if (upgrade >= 9) {
+          if (
+            [MonsterRace.BRUTE, MonsterRace.DEMON].includes(
+              character.monster?.race
+            )
+          ) {
+            _this.penetrationPercent = 0.2;
+            _this.penetrationMPercent = 0.2;
+
+            if (upgrade >= 11) {
+              _this.penetrationPercent = Number(
+                new Big(_this.penetrationPercent).plus(0.1).valueOf()
+              );
+              _this.penetrationMPercent = Number(
+                new Big(_this.penetrationMPercent).plus(0.1).valueOf()
+              );
+            }
+          }
+        }
+      }
+
+      if ([22010, 22115].includes(character.shoes?.id)) {
+        _this.acd = 0.05;
+
+        if (upgrade >= 10) {
+          if (
+            [MonsterRace.BRUTE, MonsterRace.DEMON].includes(
+              character.monster?.race
+            )
+          ) {
+            _this.penetrationPercent = Number(
+              new Big(_this.penetrationPercent).plus(0.3).valueOf()
+            );
+            _this.penetrationMPercent = Number(
+              new Big(_this.penetrationMPercent).plus(0.3).valueOf()
+            );
+          }
+        }
+      }
+    },
+  },
+  {
+    id: 20966,
+    name: 'Temporal Int Manteau [1]',
+    type: EquipmentType.ARMOR,
+    subType: EquipmentSubType.GARMENT,
+    location: EquipmentLocation.GARMENT,
+    compoundOn: null,
+    slot1Enable: true,
+    option1Enable: true,
+    baseDef: 38,
+    baseATK: 0,
+    level: 1,
+    equipUpgradeValue: 0,
+    str: 0,
+    agi: 0,
+    vit: 0,
+    int: 0,
+    dex: 0,
+    luk: 0,
+    hpModA: 0,
+    hpModB: 0,
+    additionAtk: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    additionMAtk: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+      flatNamePercent: 0,
+      matkPercent: 0,
+      skillElement: 0,
+    },
+    additionDef: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    eATK: 0,
+    eMATK: 0,
+    cATK: 0,
+    criticalPercent: 0,
+    penetrationPercent: 0,
+    penetrationMPercent: 0,
+    script: (character: Character2, _this: IBaseEquipment): void => {
+      _this.penetrationPercent = 0;
+      _this.penetrationMPercent = 0;
+
+      const upgrade = _this.equipUpgradeValue;
+
+      _this.eMATK = Number(new Big(Math.floor(upgrade / 2)).mul(10).valueOf());
+      _this.additionMAtk.matkPercent = Number(
+        new Big(Math.floor(upgrade / 2)).mul(0.01).valueOf()
+      );
+      _this.additionMAtk.skillElement = Number(
+        new Big(Math.floor(upgrade / 4)).mul(0.03).valueOf()
+      );
+
+      if (upgrade >= 7) {
+        _this.additionMAtk.matkPercent = Number(
+          new Big(_this.additionMAtk.matkPercent).plus(0.07).valueOf()
+        );
+        if (upgrade >= 9) {
+          if (
+            [MonsterRace.BRUTE, MonsterRace.DEMON].includes(
+              character.monster?.race
+            )
+          ) {
+            _this.penetrationPercent = 0.2;
+            _this.penetrationMPercent = 0.2;
+
+            if (upgrade >= 11) {
+              _this.penetrationPercent = Number(
+                new Big(_this.penetrationPercent).plus(0.1).valueOf()
+              );
+              _this.penetrationMPercent = Number(
+                new Big(_this.penetrationMPercent).plus(0.1).valueOf()
+              );
+            }
+          }
+        }
+      }
+
+      if ([22010, 22115].includes(character.shoes?.id)) {
+        _this.eMATK += 50;
+
+        if (upgrade >= 10) {
+          if (
+            [MonsterRace.BRUTE, MonsterRace.DEMON].includes(
+              character.monster?.race
+            )
+          ) {
+            _this.penetrationPercent = Number(
+              new Big(_this.penetrationPercent).plus(0.3).valueOf()
+            );
+            _this.penetrationMPercent = Number(
+              new Big(_this.penetrationMPercent).plus(0.3).valueOf()
+            );
+          }
+        }
+      }
+    },
+  },
+  {
+    id: 20967,
+    name: 'Temporal Dex Manteau [1]',
+    type: EquipmentType.ARMOR,
+    subType: EquipmentSubType.GARMENT,
+    location: EquipmentLocation.GARMENT,
+    compoundOn: null,
+    slot1Enable: true,
+    option1Enable: true,
+    baseDef: 38,
+    baseATK: 0,
+    level: 1,
+    equipUpgradeValue: 0,
+    str: 0,
+    agi: 0,
+    vit: 0,
+    int: 0,
+    dex: 0,
+    luk: 0,
+    hpModA: 0,
+    hpModB: 0,
+    additionAtk: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    additionDef: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    eATK: 0,
+    cATK: 0,
+    criticalPercent: 0,
+    longRangePercent: 0,
+    penetrationPercent: 0,
+    penetrationMPercent: 0,
+    script: (character: Character2, _this: IBaseEquipment): void => {
+      _this.penetrationPercent = 0;
+      _this.penetrationMPercent = 0;
+      _this.additionAtk.atkPercent2 = 0;
+
+      const upgrade = _this.equipUpgradeValue;
+
+      _this.eATK = Number(new Big(Math.floor(upgrade / 2)).mul(10).valueOf());
+      _this.longRangePercent = Number(
+        new Big(Math.floor(upgrade / 2)).mul(0.03).valueOf()
+      );
+      _this.criticalPercent = Number(
+        new Big(Math.floor(upgrade / 4)).mul(0.05).valueOf()
+      );
+
+      if (upgrade >= 7) {
+        _this.additionAtk.atkPercent2 = 0.07;
+        if (upgrade >= 9) {
+          if (
+            [MonsterRace.BRUTE, MonsterRace.DEMON].includes(
+              character.monster?.race
+            )
+          ) {
+            _this.penetrationPercent = 0.2;
+            _this.penetrationMPercent = 0.2;
+
+            if (upgrade >= 11) {
+              _this.penetrationPercent = Number(
+                new Big(_this.penetrationPercent).plus(0.1).valueOf()
+              );
+              _this.penetrationMPercent = Number(
+                new Big(_this.penetrationMPercent).plus(0.1).valueOf()
+              );
+            }
+          }
+        }
+      }
+
+      if ([22010, 22115].includes(character.shoes?.id)) {
+        _this.longRangePercent = Number(
+          new Big(_this.longRangePercent).plus(0.07).valueOf()
+        );
+
+        if (upgrade >= 10) {
+          if (
+            [MonsterRace.BRUTE, MonsterRace.DEMON].includes(
+              character.monster?.race
+            )
+          ) {
+            _this.penetrationPercent = Number(
+              new Big(_this.penetrationPercent).plus(0.3).valueOf()
+            );
+            _this.penetrationMPercent = Number(
+              new Big(_this.penetrationMPercent).plus(0.3).valueOf()
+            );
+          }
+        }
+      }
+    },
+  },
+  {
+    id: 480076,
+    name: 'Exotic Temporal Manteau [1]',
+    type: EquipmentType.ARMOR,
+    subType: EquipmentSubType.GARMENT,
+    location: EquipmentLocation.GARMENT,
+    compoundOn: null,
+    slot1Enable: true,
+    option1Enable: true,
+    baseDef: 40,
+    baseATK: 0,
+    level: 1,
+    equipUpgradeValue: 0,
+    str: 0,
+    agi: 0,
+    vit: 0,
+    int: 0,
+    dex: 0,
+    luk: 0,
+    hpModA: 0,
+    hpModB: 0,
+    additionAtk: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+      atkPercent2: 0,
+    },
+    additionMAtk: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+      flatNamePercent: 0,
+      matkPercent: 0,
+      skillElement: 0,
+    },
+    additionDef: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    eATK: 0,
+    cATK: 0,
+    aspd: 0,
+    aspdFlat: 0,
+    acd: 0,
+    criRate: 0,
+    criticalPercent: 0,
+    longRangePercent: 0,
+    penetrationPercent: 0,
+    penetrationMPercent: 0,
+    script: (character: Character2, _this: IBaseEquipment): void => {
+      _this.eATK = 0;
+      _this.acd = 0;
+      _this.eMATK = 0;
+      _this.baseMDEF = 0;
+      _this.aspdFlat = 0;
+
+      const upgrade = _this.equipUpgradeValue;
+
+      const multiple2 = Math.floor(upgrade / 2);
+      _this.additionAtk.atkPercent2 = Number(
+        new Big(multiple2).mul(0.01).valueOf()
+      );
+      _this.additionMAtk.matkPercent = Number(
+        new Big(multiple2).mul(0.01).valueOf()
+      );
+      _this.criticalPercent = Number(new Big(multiple2).mul(0.01).valueOf());
+      _this.longRangePercent = Number(new Big(multiple2).mul(0.01).valueOf());
+      _this.criRate = Number(new Big(multiple2).mul(3).valueOf());
+
+      const multiple4 = Math.floor(upgrade / 4);
+      _this.additionAtk.size = Number(new Big(multiple4).mul(0.03).valueOf());
+      _this.additionMAtk.element = Number(
+        new Big(multiple4).mul(0.03).valueOf()
+      );
+      _this.hpModB = Number(new Big(multiple4).mul(0.03).valueOf());
+      _this.acd = Number(new Big(multiple4).mul(0.03).valueOf());
+      _this.criticalPercent = Number(
+        new Big(multiple4).mul(0.03).plus(_this.criticalPercent).valueOf()
+      );
+      _this.aspd = Number(new Big(multiple4).mul(0.03).valueOf());
+
+      if (upgrade >= 9) {
+        _this.additionAtk.atkPercent2 = Number(
+          new Big(0.07).plus(_this.additionAtk.atkPercent2).valueOf()
+        );
+        _this.additionMAtk.matkPercent = Number(
+          new Big(0.07).plus(_this.additionMAtk.matkPercent).valueOf()
+        );
+
+        if (
+          (character.rightAccessory?.id === 490030 ||
+            character.leftAccessory?.id === 490030) &&
+          CheckItemInSlots(character, 4875)
+        ) {
+          _this.eATK = 25;
+        }
+
+        if (
+          (character.rightAccessory?.id === 490030 ||
+            character.leftAccessory?.id === 490030) &&
+          CheckItemInSlots(character, 4877)
+        ) {
+          _this.acd = 0.04;
+        }
+
+        if (
+          (character.rightAccessory?.id === 490030 ||
+            character.leftAccessory?.id === 490030) &&
+          CheckItemInSlots(character, 4878)
+        ) {
+          _this.hpModB = Number(new Big(0.07).plus(_this.hpModB).valueOf());
+        }
+
+        if (
+          (character.rightAccessory?.id === 490030 ||
+            character.leftAccessory?.id === 490030) &&
+          CheckItemInSlots(character, 4876)
+        ) {
+          _this.eMATK = 25;
+        }
+
+        if (
+          (character.rightAccessory?.id === 490030 ||
+            character.leftAccessory?.id === 490030) &&
+          CheckItemInSlots(character, 4879)
+        ) {
+          _this.longRangePercent = Number(
+            new Big(_this.longRangePercent).plus(0.05).valueOf()
+          );
+        }
+
+        if (
+          (character.rightAccessory?.id === 490030 ||
+            character.leftAccessory?.id === 490030) &&
+          CheckItemInSlots(character, 4880)
+        ) {
+          _this.criticalPercent = Number(
+            new Big(_this.criticalPercent).plus(0.05).valueOf()
+          );
+        }
+      }
+
+      if (character.shoes?.id === 22202) {
+        _this.baseMDEF = 5;
+
+        const shoesUpgrade = character.shoes.equipUpgradeValue;
+
+        if (shoesUpgrade + upgrade >= 22) {
+          if (character.class.str0 >= 108) {
+            _this.eATK += 50;
+          }
+
+          if (character.class.agi0 >= 108) {
+            _this.aspdFlat = 1;
+          }
+
+          if (character.class.vit0 >= 108) {
+            _this.acd = Number(new Big(_this.acd).plus(0.05).valueOf());
+          }
+
+          if (character.class.int0 >= 108) {
+            _this.eMATK += 50;
+          }
+
+          if (character.class.dex0 >= 108) {
+            _this.longRangePercent = Number(
+              new Big(_this.longRangePercent).plus(0.07).valueOf()
+            );
+          }
+
+          if (character.class.luk0 >= 108) {
+            _this.criticalPercent = Number(
+              new Big(_this.criticalPercent).plus(0.07).valueOf()
             );
           }
         }
@@ -773,8 +1281,10 @@ export const garments: IBaseEquipment[] = [
     aspdFlat: 0,
     criticalPercent: 0,
     penetrationPercent: 0,
+    penetrationMPercent: 0,
     script: (character: Character2, _this: IBaseEquipment): void => {
       _this.penetrationPercent = 0;
+      _this.penetrationMPercent = 0;
       _this.additionAtk.atkPercent2 = 0;
       _this.aspd = 0;
       _this.aspdFlat = 0;
@@ -797,10 +1307,14 @@ export const garments: IBaseEquipment[] = [
             )
           ) {
             _this.penetrationPercent = 0.2;
+            _this.penetrationMPercent = 0.2;
 
             if (upgrade >= 11) {
               _this.penetrationPercent = Number(
                 new Big(_this.penetrationPercent).plus(0.1).valueOf()
+              );
+              _this.penetrationMPercent = Number(
+                new Big(_this.penetrationMPercent).plus(0.1).valueOf()
               );
             }
           }
@@ -818,6 +1332,9 @@ export const garments: IBaseEquipment[] = [
           ) {
             _this.penetrationPercent = Number(
               new Big(_this.penetrationPercent).plus(0.3).valueOf()
+            );
+            _this.penetrationMPercent = Number(
+              new Big(_this.penetrationMPercent).plus(0.3).valueOf()
             );
           }
         }

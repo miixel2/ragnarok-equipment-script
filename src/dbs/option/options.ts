@@ -6,7 +6,9 @@ import {
 } from '../../models/equipment';
 import { shadowIds } from '../costumes';
 
-const temporalManteausId = [20846, 20963, 20964, 20968];
+const temporalManteausId = [
+  20846, 20963, 20964, 20965, 20966, 20967, 20968, 480076,
+];
 const shadowsId = shadowIds;
 const geffen = [2963];
 
@@ -4623,6 +4625,7 @@ export const allOptions: IBaseEquipment[] = [
         ...vmGroup5,
         ...shadowsId,
         ...geffen,
+        ...temporalManteausId,
       ],
     },
     canSelectOnOption_2: {
@@ -4674,6 +4677,7 @@ export const allOptions: IBaseEquipment[] = [
         ...vmGroup5,
         ...shadowsId,
         ...geffen,
+        ...temporalManteausId,
       ],
     },
     canSelectOnOption_2: {
@@ -4725,6 +4729,7 @@ export const allOptions: IBaseEquipment[] = [
         ...vmGroup5,
         ...shadowsId,
         ...geffen,
+        ...temporalManteausId,
       ],
     },
     canSelectOnOption_2: {
@@ -4769,7 +4774,13 @@ export const allOptions: IBaseEquipment[] = [
     criticalPercent: 0,
     penetrationPercent: 0,
     canSelectOnOption_1: {
-      actives: [...vmGroup2, ...vmGroup3, ...vmGroup4, ...vmGroup5],
+      actives: [
+        ...vmGroup2,
+        ...vmGroup3,
+        ...vmGroup4,
+        ...vmGroup5,
+        ...temporalManteausId,
+      ],
     },
     script: (character: Character2, _this: IBaseEquipment): void => {},
   },
@@ -4810,7 +4821,13 @@ export const allOptions: IBaseEquipment[] = [
     criticalPercent: 0,
     penetrationPercent: 0,
     canSelectOnOption_1: {
-      actives: [...vmGroup2, ...vmGroup3, ...vmGroup4, ...vmGroup5],
+      actives: [
+        ...vmGroup2,
+        ...vmGroup3,
+        ...vmGroup4,
+        ...vmGroup5,
+        ...temporalManteausId,
+      ],
     },
     script: (character: Character2, _this: IBaseEquipment): void => {},
   },
@@ -4851,7 +4868,13 @@ export const allOptions: IBaseEquipment[] = [
     criticalPercent: 0,
     penetrationPercent: 0,
     canSelectOnOption_1: {
-      actives: [...vmGroup2, ...vmGroup3, ...vmGroup4, ...vmGroup5],
+      actives: [
+        ...vmGroup2,
+        ...vmGroup3,
+        ...vmGroup4,
+        ...vmGroup5,
+        ...temporalManteausId,
+      ],
     },
     script: (character: Character2, _this: IBaseEquipment): void => {},
   },
@@ -21358,6 +21381,9 @@ export const allOptions: IBaseEquipment[] = [
     cATK: 0,
     criticalPercent: 0,
     penetrationPercent: 0,
+    canSelectOnOption_1: {
+      actives: [...temporalManteausId],
+    },
     canSelectOnOption_3: {
       actives: [...vmGroup2, ...vmGroup3, ...vmGroup5],
     },
@@ -21399,6 +21425,9 @@ export const allOptions: IBaseEquipment[] = [
     cATK: 0,
     criticalPercent: 0,
     penetrationPercent: 0,
+    canSelectOnOption_1: {
+      actives: [...temporalManteausId],
+    },
     canSelectOnOption_3: {
       actives: [...vmGroup2, ...vmGroup3, ...vmGroup5],
     },
@@ -21441,7 +21470,7 @@ export const allOptions: IBaseEquipment[] = [
     criticalPercent: 0,
     penetrationPercent: 0,
     canSelectOnOption_1: {
-      actives: [...geffen],
+      actives: [...geffen, ...temporalManteausId],
     },
     canSelectOnOption_2: {
       actives: [...geffen],
@@ -21488,7 +21517,7 @@ export const allOptions: IBaseEquipment[] = [
     criticalPercent: 0,
     penetrationPercent: 0,
     canSelectOnOption_1: {
-      actives: [...geffen],
+      actives: [...geffen, ...temporalManteausId],
     },
     canSelectOnOption_2: {
       actives: [...geffen],
@@ -21535,7 +21564,7 @@ export const allOptions: IBaseEquipment[] = [
     criticalPercent: 0,
     penetrationPercent: 0,
     canSelectOnOption_1: {
-      actives: [...geffen],
+      actives: [...geffen, ...temporalManteausId],
     },
     canSelectOnOption_2: {
       actives: [...geffen],
@@ -21582,7 +21611,7 @@ export const allOptions: IBaseEquipment[] = [
     criticalPercent: 0,
     penetrationPercent: 0,
     canSelectOnOption_1: {
-      actives: [...geffen],
+      actives: [...geffen, ...temporalManteausId],
     },
     canSelectOnOption_2: {
       actives: [...geffen],
@@ -21628,6 +21657,9 @@ export const allOptions: IBaseEquipment[] = [
     cATK: 0,
     criticalPercent: 0,
     penetrationPercent: 0,
+    canSelectOnOption_1: {
+      actives: [...temporalManteausId],
+    },
     canSelectOnOption_3: {
       actives: [...vmGroup2, ...vmGroup3, ...vmGroup5],
     },
@@ -21669,6 +21701,9 @@ export const allOptions: IBaseEquipment[] = [
     cATK: 0,
     criticalPercent: 0,
     penetrationPercent: 0,
+    canSelectOnOption_1: {
+      actives: [...temporalManteausId],
+    },
     canSelectOnOption_3: {
       actives: [...vmGroup2, ...vmGroup3, ...vmGroup5],
     },
@@ -22086,6 +22121,293 @@ export const allOptions: IBaseEquipment[] = [
   },
   // Ranged damage +x% [2006051 - 2006100]
   {
+    id: 2006053,
+    name: `Ranged damage +3%`,
+    type: EquipmentType.CARD,
+    subType: null,
+    location: null,
+    compoundOn: CompoundOn.ENCHANT,
+    baseDef: 0,
+    baseATK: 0,
+    level: 1,
+    equipUpgradeValue: 0,
+    str: 0,
+    agi: 0,
+    vit: 0,
+    int: 0,
+    dex: 0,
+    luk: 0,
+    additionAtk: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    additionDef: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    options: {
+      longRangePercent: 0.03,
+    },
+    eATK: 0,
+    cATK: 0,
+    criticalPercent: 0,
+    penetrationPercent: 0,
+    canSelectOnOption_1: {
+      actives: [...temporalManteausId],
+    },
+    script: (character: Character2, _this: IBaseEquipment): void => {},
+  },
+  {
+    id: 2006054,
+    name: `Ranged damage +4%`,
+    type: EquipmentType.CARD,
+    subType: null,
+    location: null,
+    compoundOn: CompoundOn.ENCHANT,
+    baseDef: 0,
+    baseATK: 0,
+    level: 1,
+    equipUpgradeValue: 0,
+    str: 0,
+    agi: 0,
+    vit: 0,
+    int: 0,
+    dex: 0,
+    luk: 0,
+    additionAtk: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    additionDef: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    options: {
+      longRangePercent: 0.04,
+    },
+    eATK: 0,
+    cATK: 0,
+    criticalPercent: 0,
+    penetrationPercent: 0,
+    canSelectOnOption_1: {
+      actives: [...temporalManteausId],
+    },
+    script: (character: Character2, _this: IBaseEquipment): void => {},
+  },
+  {
+    id: 2006055,
+    name: `Ranged damage +5%`,
+    type: EquipmentType.CARD,
+    subType: null,
+    location: null,
+    compoundOn: CompoundOn.ENCHANT,
+    baseDef: 0,
+    baseATK: 0,
+    level: 1,
+    equipUpgradeValue: 0,
+    str: 0,
+    agi: 0,
+    vit: 0,
+    int: 0,
+    dex: 0,
+    luk: 0,
+    additionAtk: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    additionDef: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    options: {
+      longRangePercent: 0.05,
+    },
+    eATK: 0,
+    cATK: 0,
+    criticalPercent: 0,
+    penetrationPercent: 0,
+    canSelectOnOption_1: {
+      actives: [...temporalManteausId],
+    },
+    script: (character: Character2, _this: IBaseEquipment): void => {},
+  },
+  {
+    id: 2006056,
+    name: `Ranged damage +6%`,
+    type: EquipmentType.CARD,
+    subType: null,
+    location: null,
+    compoundOn: CompoundOn.ENCHANT,
+    baseDef: 0,
+    baseATK: 0,
+    level: 1,
+    equipUpgradeValue: 0,
+    str: 0,
+    agi: 0,
+    vit: 0,
+    int: 0,
+    dex: 0,
+    luk: 0,
+    additionAtk: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    additionDef: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    options: {
+      longRangePercent: 0.06,
+    },
+    eATK: 0,
+    cATK: 0,
+    criticalPercent: 0,
+    penetrationPercent: 0,
+    canSelectOnOption_1: {
+      actives: [...temporalManteausId],
+    },
+    script: (character: Character2, _this: IBaseEquipment): void => {},
+  },
+  {
+    id: 2006057,
+    name: `Ranged damage +7%`,
+    type: EquipmentType.CARD,
+    subType: null,
+    location: null,
+    compoundOn: CompoundOn.ENCHANT,
+    baseDef: 0,
+    baseATK: 0,
+    level: 1,
+    equipUpgradeValue: 0,
+    str: 0,
+    agi: 0,
+    vit: 0,
+    int: 0,
+    dex: 0,
+    luk: 0,
+    additionAtk: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    additionDef: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    options: {
+      longRangePercent: 0.07,
+    },
+    eATK: 0,
+    cATK: 0,
+    criticalPercent: 0,
+    penetrationPercent: 0,
+    canSelectOnOption_1: {
+      actives: [...temporalManteausId],
+    },
+    script: (character: Character2, _this: IBaseEquipment): void => {},
+  },
+  {
+    id: 2006058,
+    name: `Ranged damage +8%`,
+    type: EquipmentType.CARD,
+    subType: null,
+    location: null,
+    compoundOn: CompoundOn.ENCHANT,
+    baseDef: 0,
+    baseATK: 0,
+    level: 1,
+    equipUpgradeValue: 0,
+    str: 0,
+    agi: 0,
+    vit: 0,
+    int: 0,
+    dex: 0,
+    luk: 0,
+    additionAtk: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    additionDef: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    options: {
+      longRangePercent: 0.08,
+    },
+    eATK: 0,
+    cATK: 0,
+    criticalPercent: 0,
+    penetrationPercent: 0,
+    canSelectOnOption_1: {
+      actives: [...temporalManteausId],
+    },
+    script: (character: Character2, _this: IBaseEquipment): void => {},
+  },
+  {
+    id: 2006059,
+    name: `Ranged damage +9%`,
+    type: EquipmentType.CARD,
+    subType: null,
+    location: null,
+    compoundOn: CompoundOn.ENCHANT,
+    baseDef: 0,
+    baseATK: 0,
+    level: 1,
+    equipUpgradeValue: 0,
+    str: 0,
+    agi: 0,
+    vit: 0,
+    int: 0,
+    dex: 0,
+    luk: 0,
+    additionAtk: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    additionDef: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    options: {
+      longRangePercent: 0.09,
+    },
+    eATK: 0,
+    cATK: 0,
+    criticalPercent: 0,
+    penetrationPercent: 0,
+    canSelectOnOption_1: {
+      actives: [...temporalManteausId],
+    },
+    script: (character: Character2, _this: IBaseEquipment): void => {},
+  },
+  {
     id: 2006060,
     name: `Ranged damage +10%`,
     type: EquipmentType.CARD,
@@ -22121,6 +22443,9 @@ export const allOptions: IBaseEquipment[] = [
     cATK: 0,
     criticalPercent: 0,
     penetrationPercent: 0,
+    canSelectOnOption_1: {
+      actives: [...temporalManteausId],
+    },
     canSelectOnOption_3: {
       actives: [...vmGroup2, ...vmGroup3, ...vmGroup5],
     },
@@ -22774,7 +23099,7 @@ export const allOptions: IBaseEquipment[] = [
     criticalPercent: 0,
     penetrationPercent: 0,
     canSelectOnOption_1: {
-      actives: [...shadowsId],
+      actives: [...shadowsId, ...temporalManteausId],
     },
     canSelectOnOption_3: {
       actives: [
@@ -22824,7 +23149,7 @@ export const allOptions: IBaseEquipment[] = [
     criticalPercent: 0,
     penetrationPercent: 0,
     canSelectOnOption_1: {
-      actives: [...shadowsId],
+      actives: [...shadowsId, ...temporalManteausId],
     },
     canSelectOnOption_3: {
       actives: [
@@ -22874,7 +23199,7 @@ export const allOptions: IBaseEquipment[] = [
     criticalPercent: 0,
     penetrationPercent: 0,
     canSelectOnOption_1: {
-      actives: [...shadowsId],
+      actives: [...shadowsId, ...temporalManteausId],
     },
     canSelectOnOption_3: {
       actives: [
@@ -22924,7 +23249,7 @@ export const allOptions: IBaseEquipment[] = [
     criticalPercent: 0,
     penetrationPercent: 0,
     canSelectOnOption_1: {
-      actives: [...shadowsId],
+      actives: [...shadowsId, ...temporalManteausId],
     },
     canSelectOnOption_3: {
       actives: [
@@ -22974,7 +23299,7 @@ export const allOptions: IBaseEquipment[] = [
     criticalPercent: 0,
     penetrationPercent: 0,
     canSelectOnOption_1: {
-      actives: [...shadowsId],
+      actives: [...shadowsId, ...temporalManteausId],
     },
     canSelectOnOption_3: {
       actives: [
@@ -23024,7 +23349,7 @@ export const allOptions: IBaseEquipment[] = [
     criticalPercent: 0,
     penetrationPercent: 0,
     canSelectOnOption_1: {
-      actives: [...shadowsId],
+      actives: [...shadowsId, ...temporalManteausId],
     },
     canSelectOnOption_3: {
       actives: [
@@ -23074,7 +23399,7 @@ export const allOptions: IBaseEquipment[] = [
     criticalPercent: 0,
     penetrationPercent: 0,
     canSelectOnOption_1: {
-      actives: [...shadowsId],
+      actives: [...shadowsId, ...temporalManteausId],
     },
     canSelectOnOption_3: {
       actives: [
@@ -23124,7 +23449,7 @@ export const allOptions: IBaseEquipment[] = [
     criticalPercent: 0,
     penetrationPercent: 0,
     canSelectOnOption_1: {
-      actives: [...shadowsId],
+      actives: [...shadowsId, ...temporalManteausId],
     },
     canSelectOnOption_3: {
       actives: [
@@ -23174,7 +23499,7 @@ export const allOptions: IBaseEquipment[] = [
     criticalPercent: 0,
     penetrationPercent: 0,
     canSelectOnOption_1: {
-      actives: [...shadowsId],
+      actives: [...shadowsId, ...temporalManteausId],
     },
     canSelectOnOption_3: {
       actives: [
@@ -23224,7 +23549,7 @@ export const allOptions: IBaseEquipment[] = [
     criticalPercent: 0,
     penetrationPercent: 0,
     canSelectOnOption_1: {
-      actives: [...shadowsId],
+      actives: [...shadowsId, ...temporalManteausId],
     },
     canSelectOnOption_3: {
       actives: [
@@ -23274,7 +23599,7 @@ export const allOptions: IBaseEquipment[] = [
     criticalPercent: 0,
     penetrationPercent: 0,
     canSelectOnOption_1: {
-      actives: [...shadowsId],
+      actives: [...shadowsId, ...temporalManteausId],
     },
     canSelectOnOption_3: {
       actives: [
@@ -23323,6 +23648,9 @@ export const allOptions: IBaseEquipment[] = [
     cATK: 0,
     criticalPercent: 0,
     penetrationPercent: 0,
+    canSelectOnOption_1: {
+      actives: [...temporalManteausId],
+    },
     canSelectOnOption_3: {
       actives: [
         ...vmGroup2,
@@ -23370,6 +23698,9 @@ export const allOptions: IBaseEquipment[] = [
     cATK: 0,
     criticalPercent: 0,
     penetrationPercent: 0,
+    canSelectOnOption_1: {
+      actives: [...temporalManteausId],
+    },
     canSelectOnOption_3: {
       actives: [
         ...vmGroup2,
@@ -23417,6 +23748,9 @@ export const allOptions: IBaseEquipment[] = [
     cATK: 0,
     criticalPercent: 0,
     penetrationPercent: 0,
+    canSelectOnOption_1: {
+      actives: [...temporalManteausId],
+    },
     canSelectOnOption_3: {
       actives: [
         ...vmGroup2,
@@ -23464,6 +23798,9 @@ export const allOptions: IBaseEquipment[] = [
     cATK: 0,
     criticalPercent: 0,
     penetrationPercent: 0,
+    canSelectOnOption_1: {
+      actives: [...temporalManteausId],
+    },
     canSelectOnOption_3: {
       actives: [
         ...vmGroup2,
@@ -23511,6 +23848,9 @@ export const allOptions: IBaseEquipment[] = [
     cATK: 0,
     criticalPercent: 0,
     penetrationPercent: 0,
+    canSelectOnOption_1: {
+      actives: [...temporalManteausId],
+    },
     canSelectOnOption_3: {
       actives: [
         ...vmGroup2,
@@ -23558,6 +23898,9 @@ export const allOptions: IBaseEquipment[] = [
     cATK: 0,
     criticalPercent: 0,
     penetrationPercent: 0,
+    canSelectOnOption_1: {
+      actives: [...temporalManteausId],
+    },
     canSelectOnOption_3: {
       actives: [
         ...vmGroup2,
@@ -23605,6 +23948,9 @@ export const allOptions: IBaseEquipment[] = [
     cATK: 0,
     criticalPercent: 0,
     penetrationPercent: 0,
+    canSelectOnOption_1: {
+      actives: [...temporalManteausId],
+    },
     canSelectOnOption_3: {
       actives: [
         ...vmGroup2,
@@ -23652,6 +23998,9 @@ export const allOptions: IBaseEquipment[] = [
     cATK: 0,
     criticalPercent: 0,
     penetrationPercent: 0,
+    canSelectOnOption_1: {
+      actives: [...temporalManteausId],
+    },
     canSelectOnOption_3: {
       actives: [
         ...vmGroup2,
@@ -23699,6 +24048,9 @@ export const allOptions: IBaseEquipment[] = [
     cATK: 0,
     criticalPercent: 0,
     penetrationPercent: 0,
+    canSelectOnOption_1: {
+      actives: [...temporalManteausId],
+    },
     canSelectOnOption_3: {
       actives: [
         ...vmGroup2,
@@ -23746,6 +24098,9 @@ export const allOptions: IBaseEquipment[] = [
     cATK: 0,
     criticalPercent: 0,
     penetrationPercent: 0,
+    canSelectOnOption_1: {
+      actives: [...temporalManteausId],
+    },
     canSelectOnOption_3: {
       actives: [
         ...vmGroup2,
@@ -23793,6 +24148,9 @@ export const allOptions: IBaseEquipment[] = [
     cATK: 0,
     criticalPercent: 0,
     penetrationPercent: 0,
+    canSelectOnOption_1: {
+      actives: [...temporalManteausId],
+    },
     canSelectOnOption_3: {
       actives: [
         ...vmGroup2,
@@ -23840,6 +24198,9 @@ export const allOptions: IBaseEquipment[] = [
     cATK: 0,
     criticalPercent: 0,
     penetrationPercent: 0,
+    canSelectOnOption_1: {
+      actives: [...temporalManteausId],
+    },
     canSelectOnOption_3: {
       actives: [
         ...vmGroup2,
@@ -23887,6 +24248,9 @@ export const allOptions: IBaseEquipment[] = [
     cATK: 0,
     criticalPercent: 0,
     penetrationPercent: 0,
+    canSelectOnOption_1: {
+      actives: [...temporalManteausId],
+    },
     canSelectOnOption_3: {
       actives: [
         ...vmGroup2,
@@ -23934,6 +24298,9 @@ export const allOptions: IBaseEquipment[] = [
     cATK: 0,
     criticalPercent: 0,
     penetrationPercent: 0,
+    canSelectOnOption_1: {
+      actives: [...temporalManteausId],
+    },
     canSelectOnOption_3: {
       actives: [
         ...vmGroup2,
@@ -23981,6 +24348,9 @@ export const allOptions: IBaseEquipment[] = [
     cATK: 0,
     criticalPercent: 0,
     penetrationPercent: 0,
+    canSelectOnOption_1: {
+      actives: [...temporalManteausId],
+    },
     canSelectOnOption_3: {
       actives: [
         ...vmGroup2,
@@ -24028,6 +24398,9 @@ export const allOptions: IBaseEquipment[] = [
     cATK: 0,
     criticalPercent: 0,
     penetrationPercent: 0,
+    canSelectOnOption_1: {
+      actives: [...temporalManteausId],
+    },
     canSelectOnOption_3: {
       actives: [
         ...vmGroup2,
@@ -24075,6 +24448,9 @@ export const allOptions: IBaseEquipment[] = [
     cATK: 0,
     criticalPercent: 0,
     penetrationPercent: 0,
+    canSelectOnOption_1: {
+      actives: [...temporalManteausId],
+    },
     canSelectOnOption_3: {
       actives: [
         ...vmGroup2,
@@ -24122,6 +24498,9 @@ export const allOptions: IBaseEquipment[] = [
     cATK: 0,
     criticalPercent: 0,
     penetrationPercent: 0,
+    canSelectOnOption_1: {
+      actives: [...temporalManteausId],
+    },
     canSelectOnOption_3: {
       actives: [
         ...vmGroup2,
@@ -24169,6 +24548,9 @@ export const allOptions: IBaseEquipment[] = [
     cATK: 0,
     criticalPercent: 0,
     penetrationPercent: 0,
+    canSelectOnOption_1: {
+      actives: [...temporalManteausId],
+    },
     canSelectOnOption_3: {
       actives: [
         ...vmGroup2,
@@ -24216,6 +24598,9 @@ export const allOptions: IBaseEquipment[] = [
     cATK: 0,
     criticalPercent: 0,
     penetrationPercent: 0,
+    canSelectOnOption_1: {
+      actives: [...temporalManteausId],
+    },
     canSelectOnOption_3: {
       actives: [
         ...vmGroup2,
@@ -24263,6 +24648,9 @@ export const allOptions: IBaseEquipment[] = [
     cATK: 0,
     criticalPercent: 0,
     penetrationPercent: 0,
+    canSelectOnOption_1: {
+      actives: [...temporalManteausId],
+    },
     canSelectOnOption_3: {
       actives: [
         ...vmGroup2,
@@ -24310,6 +24698,9 @@ export const allOptions: IBaseEquipment[] = [
     cATK: 0,
     criticalPercent: 0,
     penetrationPercent: 0,
+    canSelectOnOption_1: {
+      actives: [...temporalManteausId],
+    },
     canSelectOnOption_3: {
       actives: [
         ...vmGroup2,
@@ -24357,6 +24748,9 @@ export const allOptions: IBaseEquipment[] = [
     cATK: 0,
     criticalPercent: 0,
     penetrationPercent: 0,
+    canSelectOnOption_1: {
+      actives: [...temporalManteausId],
+    },
     canSelectOnOption_3: {
       actives: [
         ...vmGroup2,
@@ -24404,6 +24798,9 @@ export const allOptions: IBaseEquipment[] = [
     cATK: 0,
     criticalPercent: 0,
     penetrationPercent: 0,
+    canSelectOnOption_1: {
+      actives: [...temporalManteausId],
+    },
     canSelectOnOption_3: {
       actives: [
         ...vmGroup2,
@@ -24451,6 +24848,9 @@ export const allOptions: IBaseEquipment[] = [
     cATK: 0,
     criticalPercent: 0,
     penetrationPercent: 0,
+    canSelectOnOption_1: {
+      actives: [...temporalManteausId],
+    },
     canSelectOnOption_3: {
       actives: [
         ...vmGroup2,
