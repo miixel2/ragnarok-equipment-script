@@ -13,7 +13,10 @@ const moraCriSlot = [15037, 15039];
 
 const headGearLab5 = [18971, 18982];
 const malangdo = [21018, 28010, 1185, 1186, 1171, 13412, 13413, 1418];
-const tempBoots = [22006, 22011];
+const tempBoots = [
+  22006, 22007, 22008, 22009, 22010, 22011, 22113, 22114, 22115, 22116, 22117,
+  22118,
+];
 const costumes = costumeIds;
 const racingCap = [19191, 19195];
 const kingInsignia = [32228, 32229, 32230, 32231, 32232, 32233];

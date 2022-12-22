@@ -19,9 +19,6 @@ export const garments: IBaseEquipment[] = [
     location: EquipmentLocation.GARMENT,
     compoundOn: null,
     slot1Enable: true,
-    slot2Enable: false,
-    slot3Enable: false,
-    slot4Enable: false,
     baseDef: 20,
     baseATK: 0,
     level: 1,
@@ -45,20 +42,43 @@ export const garments: IBaseEquipment[] = [
       class: 0,
     },
     eATK: 0,
+    eMATK: 0,
     cATK: 0,
+    aspd: 0,
+    aspdFlat: 0,
     criticalPercent: 0,
+    longRangePercent: 0,
     penetrationPercent: 0,
     script: (character: Character2, _this: IBaseEquipment): void => {
       _this.eATK = 0;
       _this.criticalPercent = 0;
+      _this.aspd = 0;
+      _this.aspdFlat = 0;
+      _this.eMATK = 0;
+      _this.longRangePercent = 0;
 
       const upgrade = _this.equipUpgradeValue;
       const baseStr = character.class.str0;
       const baseLuk = character.class.luk0;
+      const baseAgi = character.class.agi0;
+      const baseInt = character.class.int0;
+      const baseDex = character.class.dex0;
 
       if (upgrade >= 7) {
         if (baseStr >= 90) {
           _this.eATK = 20;
+        }
+
+        if (baseAgi >= 90) {
+          _this.aspd = 0.08;
+        }
+
+        if (baseInt >= 90) {
+          _this.eMATK = 30;
+        }
+
+        if (baseDex >= 90) {
+          _this.longRangePercent = 0.05;
         }
 
         if (baseLuk >= 90) {
@@ -68,6 +88,18 @@ export const garments: IBaseEquipment[] = [
         if (upgrade >= 9) {
           if (baseStr >= 90) {
             _this.eATK = 30;
+          }
+
+          if (baseAgi >= 90) {
+            _this.aspdFlat = 1;
+          }
+
+          if (baseInt >= 90) {
+            _this.eMATK = 50;
+          }
+
+          if (baseDex >= 90) {
+            _this.longRangePercent = 0.1;
           }
 
           if (baseLuk >= 90) {
@@ -85,9 +117,9 @@ export const garments: IBaseEquipment[] = [
     location: EquipmentLocation.GARMENT,
     compoundOn: null,
     slot1Enable: false,
-    slot2Enable: true,
-    slot3Enable: true,
-    slot4Enable: true,
+    slot2Enable: 'ENCHANT',
+    slot3Enable: 'ENCHANT',
+    slot4Enable: 'ENCHANT',
     baseDef: 40,
     baseATK: 0,
     level: 1,
@@ -112,9 +144,20 @@ export const garments: IBaseEquipment[] = [
     },
     eATK: 0,
     cATK: 0,
+    perfectDodge: 0,
+    flee: 0,
     criticalPercent: 0,
     penetrationPercent: 0,
-    script: (character: Character2, _this: IBaseEquipment): void => {},
+    script: (character: Character2, _this: IBaseEquipment): void => {
+      _this.perfectDodge = 8;
+      _this.flee = 0;
+
+      if (character.class.baseLv >= 130) {
+        _this.perfectDodge = 10;
+        const upgrade = _this.equipUpgradeValue;
+        _this.flee = upgrade * 2;
+      }
+    },
   },
   {
     id: 2524,
@@ -123,9 +166,6 @@ export const garments: IBaseEquipment[] = [
     subType: EquipmentSubType.GARMENT,
     location: EquipmentLocation.GARMENT,
     slot1Enable: true,
-    slot2Enable: false,
-    slot3Enable: false,
-    slot4Enable: false,
     compoundOn: null,
     baseDef: 10,
     baseATK: 0,
@@ -151,9 +191,40 @@ export const garments: IBaseEquipment[] = [
     },
     eATK: 0,
     cATK: 0,
+    perfectDodge: 0,
     criticalPercent: 0,
     penetrationPercent: 0,
-    script: (character: Character2, _this: IBaseEquipment): void => {},
+    script: (character: Character2, _this: IBaseEquipment): void => {
+      _this.perfectDodge = 0;
+
+      const upgrade = _this.equipUpgradeValue;
+
+      if (
+        [
+          ClassKey.Warlock,
+          ClassKey.Sorcerer,
+          ClassKey.Ranger,
+          ClassKey.Minstrel,
+          ClassKey.Wanderer,
+          ClassKey.ArchBishop,
+          ClassKey.Sura,
+        ].includes(ClassKey[character.class.classKey])
+      ) {
+        _this.perfectDodge = upgrade * 2 + 5;
+      }
+
+      if (
+        [
+          ClassKey.RuneKnight,
+          ClassKey.RoyalGuard,
+          ClassKey.Mechanic,
+          ClassKey.Genetic,
+          ClassKey.GuillotineCross,
+          ClassKey.ShadowChaser,
+        ].includes(ClassKey[character.class.classKey])
+      ) {
+      }
+    },
   },
   {
     id: 2589,
@@ -189,16 +260,30 @@ export const garments: IBaseEquipment[] = [
       class: 0,
     },
     eATK: 0,
+    eMATK: 0,
+    aspd: 0,
     cATK: 0,
     criticalPercent: 0,
+    longRangePercent: 0,
     penetrationPercent: 0,
     script: (character: Character2, _this: IBaseEquipment): void => {
       const baseStr = character.class.str0;
       const baseLuk = character.class.luk0;
+      const baseAgi = character.class.agi0;
+      const baseInt = character.class.int0;
+      const baseDex = character.class.dex0;
 
       _this.eATK = Number(new Big(Math.floor(baseStr / 20)).mul(1).valueOf());
-      const tempLukMul = Math.floor(baseLuk / 20);
-      _this.criticalPercent = Number(new Big(0.01).mul(tempLukMul).valueOf());
+      _this.criticalPercent = Number(
+        new Big(Math.floor(baseLuk / 20)).mul(0.01).valueOf()
+      );
+      _this.longRangePercent = Number(
+        new Big(Math.floor(baseDex / 20)).mul(0.01).valueOf()
+      );
+      _this.eMATK = Number(new Big(Math.floor(baseInt / 20)).mul(1).valueOf());
+      _this.aspd = Number(
+        new Big(Math.floor(baseAgi / 20)).mul(0.01).valueOf()
+      );
     },
   },
   {
@@ -213,6 +298,7 @@ export const garments: IBaseEquipment[] = [
     slot4Enable: 'ENCHANT',
     compoundOn: null,
     baseDef: 38,
+    baseMDEF: 10,
     baseATK: 0,
     level: 1,
     equipUpgradeValue: 0,
@@ -246,8 +332,10 @@ export const garments: IBaseEquipment[] = [
       _this.hpModB = 0;
       _this.spModB = 0;
       if (
-        character.shoes &&
-        [22006, 22011, 22202].includes(character.shoes.id)
+        [
+          22006, 22007, 22008, 22009, 22010, 22011, 22113, 22114, 22115, 22116,
+          22117, 22118,
+        ].includes(character.shoes?.id)
       ) {
         _this.hpModB = 0.15;
         _this.spModB = 0.05;
@@ -292,31 +380,69 @@ export const garments: IBaseEquipment[] = [
       class: 0,
     },
     eATK: 0,
+    eMATK: 0,
     cATK: 0,
+    aspdFlat: 0,
     criticalPercent: 0,
+    longRangePercent: 0,
     penetrationPercent: 0,
     script: (character: Character2, _this: IBaseEquipment): void => {
       _this.eATK = 0;
       _this.criticalPercent = 0;
       _this.hpModB = 0;
       _this.spModB = 0;
+      _this.aspdFlat = 0;
+      _this.eMATK = 0;
+      _this.longRangePercent = 0;
 
       const upgrade = _this.equipUpgradeValue;
       const baseStr = character.class.str0;
       const baseLuk = character.class.luk0;
+      const baseAgi = character.class.agi0;
+      const baseInt = character.class.int0;
+      const baseDex = character.class.dex0;
       const baseVit = character.class.vit0;
 
       if (baseStr >= 90) {
         _this.eATK = 15;
 
         if (upgrade >= 9) {
-          _this.eATK += 15;
+          _this.eATK = 30;
+        }
+      }
+
+      if (baseAgi >= 90) {
+        _this.aspdFlat = 1;
+
+        if (upgrade >= 9) {
+          _this.aspdFlat = 2;
+        }
+      }
+
+      if (baseInt >= 90) {
+        _this.eMATK = 15;
+
+        if (upgrade >= 9) {
+          _this.eMATK = 30;
+        }
+      }
+
+      if (baseDex >= 90) {
+        _this.longRangePercent = 0.05;
+
+        if (upgrade >= 9) {
+          _this.longRangePercent = 0.1;
         }
       }
 
       if (baseVit >= 90) {
         _this.hpModB = 0.05;
         _this.spModB = 0.05;
+
+        if (upgrade >= 9) {
+          _this.hpModB = 0.1;
+          _this.spModB = 0.1;
+        }
       }
 
       if (baseLuk >= 90) {
@@ -336,6 +462,7 @@ export const garments: IBaseEquipment[] = [
     compoundOn: null,
     slot1Enable: true,
     baseDef: 38,
+    baseMDEF: 10,
     baseATK: 0,
     level: 1,
     equipUpgradeValue: 0,
@@ -346,7 +473,7 @@ export const garments: IBaseEquipment[] = [
     dex: 0,
     luk: 0,
     hpModA: 0,
-    hpModB: 0,
+    hpModB: 0.15,
     additionAtk: {
       size: 0,
       element: 0,
@@ -360,66 +487,68 @@ export const garments: IBaseEquipment[] = [
       class: 0,
     },
     eATK: 0,
+    eMATK: 0,
     cATK: 0,
+    aspd: 0,
     criticalPercent: 0,
+    longRangePercent: 0,
     penetrationPercent: 0,
     script: (character: Character2, _this: IBaseEquipment): void => {
       _this.eATK = 0;
       _this.criticalPercent = 0;
-      _this.hpModB = 0;
+      _this.eMATK = 0;
+      _this.aspd = 0;
+      _this.longRangePercent = 0;
 
       // STR
       if (
-        [22000, 22006, 22107, 22113].includes(character.shoes.id) &&
+        [22000, 22006, 22107, 22113].includes(character.shoes?.id) &&
         character.class.str0 >= 120
       ) {
-        _this.hpModB = 0.15;
         _this.eATK = 30;
         return;
       }
 
       // AGI
       if (
-        [22002, 22010, 22109, 22115].includes(character.shoes.id) &&
+        [22002, 22010, 22109, 22115].includes(character.shoes?.id) &&
         character.class.agi0 >= 120
       ) {
-        _this.hpModB = 0.15;
+        _this.aspd = 0.05;
         return;
       }
 
       // VIT
       if (
-        [22003, 22007, 22110, 22116].includes(character.shoes.id) &&
+        [22003, 22007, 22110, 22116].includes(character.shoes?.id) &&
         character.class.vit0 >= 120
       ) {
-        _this.hpModB = 0.15;
         return;
       }
 
       // INT
       if (
-        [22001, 22009, 22108, 22114].includes(character.shoes.id) &&
+        [22001, 22009, 22108, 22114].includes(character.shoes?.id) &&
         character.class.int0 >= 120
       ) {
-        _this.hpModB = 0.15;
+        _this.eMATK = 30;
         return;
       }
 
       // DEX
       if (
-        [22004, 22008, 22111, 22117].includes(character.shoes.id) &&
+        [22004, 22008, 22111, 22117].includes(character.shoes?.id) &&
         character.class.dex0 >= 120
       ) {
-        _this.hpModB = 0.15;
+        _this.longRangePercent = 0.05;
         return;
       }
 
       // LUK
       if (
-        [22005, 22011, 22112, 22118].includes(character.shoes.id) &&
+        [22005, 22011, 22112, 22118].includes(character.shoes?.id) &&
         character.class.luk0 >= 120
       ) {
-        _this.hpModB = 0.15;
         _this.criticalPercent = 0.05;
         return;
       }
@@ -433,6 +562,7 @@ export const garments: IBaseEquipment[] = [
     location: EquipmentLocation.GARMENT,
     compoundOn: null,
     slot1Enable: true,
+    option1Enable: true,
     baseDef: 38,
     baseATK: 0,
     level: 1,
@@ -481,9 +611,8 @@ export const garments: IBaseEquipment[] = [
         );
         if (upgrade >= 9) {
           if (
-            character.monster &&
             [MonsterRace.BRUTE, MonsterRace.DEMON].includes(
-              character.monster.race
+              character.monster?.race
             )
           ) {
             _this.penetrationPercent = 0.2;
@@ -497,17 +626,13 @@ export const garments: IBaseEquipment[] = [
         }
       }
 
-      if (
-        [22006, 22113].includes(character.shoes.id) &&
-        character.class.str0 >= 120
-      ) {
+      if ([22006, 22113].includes(character.shoes.id)) {
         _this.eATK += 50;
 
         if (upgrade >= 10) {
           if (
-            character.monster &&
             [MonsterRace.BRUTE, MonsterRace.DEMON].includes(
-              character.monster.race
+              character.monster?.race
             )
           ) {
             _this.penetrationPercent = Number(
@@ -526,6 +651,7 @@ export const garments: IBaseEquipment[] = [
     location: EquipmentLocation.GARMENT,
     compoundOn: null,
     slot1Enable: true,
+    option1Enable: true,
     baseDef: 38,
     baseATK: 0,
     level: 1,
@@ -574,9 +700,8 @@ export const garments: IBaseEquipment[] = [
         );
         if (upgrade >= 9) {
           if (
-            character.monster &&
             [MonsterRace.BRUTE, MonsterRace.DEMON].includes(
-              character.monster.race
+              character.monster?.race
             )
           ) {
             _this.penetrationPercent = 0.2;
@@ -590,19 +715,15 @@ export const garments: IBaseEquipment[] = [
         }
       }
 
-      if (
-        [22010, 22115].includes(character.shoes.id) &&
-        character.class.str0 >= 120
-      ) {
+      if ([22010, 22115].includes(character.shoes?.id)) {
         _this.criticalPercent = Number(
           new Big(_this.criticalPercent).plus(0.07).valueOf()
         );
 
         if (upgrade >= 10) {
           if (
-            character.monster &&
             [MonsterRace.BRUTE, MonsterRace.DEMON].includes(
-              character.monster.race
+              character.monster?.race
             )
           ) {
             _this.penetrationPercent = Number(
@@ -621,6 +742,7 @@ export const garments: IBaseEquipment[] = [
     location: EquipmentLocation.GARMENT,
     compoundOn: null,
     slot1Enable: true,
+    option1Enable: true,
     baseDef: 38,
     baseATK: 0,
     level: 1,
@@ -647,20 +769,22 @@ export const garments: IBaseEquipment[] = [
     },
     eATK: 0,
     cATK: 0,
+    aspd: 0,
+    aspdFlat: 0,
     criticalPercent: 0,
     penetrationPercent: 0,
     script: (character: Character2, _this: IBaseEquipment): void => {
       _this.penetrationPercent = 0;
       _this.additionAtk.atkPercent2 = 0;
+      _this.aspd = 0;
+      _this.aspdFlat = 0;
 
       const upgrade = _this.equipUpgradeValue;
 
       _this.criticalPercent = Number(
         new Big(Math.floor(upgrade / 2)).mul(0.03).valueOf()
       );
-      _this.additionAtk.size = Number(
-        new Big(Math.floor(upgrade / 4)).mul(0.05).valueOf()
-      );
+      _this.aspd = Number(new Big(Math.floor(upgrade / 4)).mul(0.05).valueOf());
 
       if (upgrade >= 7) {
         _this.additionAtk.atkPercent2 = Number(
@@ -668,9 +792,8 @@ export const garments: IBaseEquipment[] = [
         );
         if (upgrade >= 9) {
           if (
-            character.monster &&
             [MonsterRace.BRUTE, MonsterRace.DEMON].includes(
-              character.monster.race
+              character.monster?.race
             )
           ) {
             _this.penetrationPercent = 0.2;
@@ -684,15 +807,13 @@ export const garments: IBaseEquipment[] = [
         }
       }
 
-      if (
-        [22010, 22115].includes(character.shoes.id) &&
-        character.class.str0 >= 120
-      ) {
+      if ([22010, 22115].includes(character.shoes?.id)) {
+        _this.aspdFlat = 1;
+
         if (upgrade >= 10) {
           if (
-            character.monster &&
             [MonsterRace.BRUTE, MonsterRace.DEMON].includes(
-              character.monster.race
+              character.monster?.race
             )
           ) {
             _this.penetrationPercent = Number(
@@ -710,7 +831,6 @@ export const garments: IBaseEquipment[] = [
     subType: EquipmentSubType.GARMENT,
     location: EquipmentLocation.GARMENT,
     compoundOn: null,
-    slot1Enable: true,
     baseDef: 20,
     baseATK: 0,
     level: 1,
@@ -736,20 +856,54 @@ export const garments: IBaseEquipment[] = [
       class: 0,
     },
     eATK: 0,
+    eMATK: 0,
     cATK: 0,
+    aspd: 0,
+    aspdFlat: 0,
     criticalPercent: 0,
+    longRangePercent: 0,
     penetrationPercent: 0,
     script: (character: Character2, _this: IBaseEquipment): void => {
       _this.eATK = 0;
       _this.criticalPercent = 0;
+      _this.eMATK = 0;
+      _this.aspd = 0;
+      _this.aspdFlat = 0;
+      _this.longRangePercent = 0;
 
       const upgrade = _this.equipUpgradeValue;
       const baseStr = character.class.str0;
       const baseLuk = character.class.luk0;
+      const baseAgi = character.class.agi0;
+      const baseInt = character.class.int0;
+      const baseDex = character.class.dex0;
 
       if (baseStr >= 90) {
-        _this.eATK = 10;
-        _this.eATK += Number(new Big(Math.floor(upgrade)).mul(2).valueOf());
+        _this.eATK += Number(
+          new Big(Math.floor(upgrade)).mul(2).plus(10).valueOf()
+        );
+      }
+
+      if (baseInt >= 90) {
+        _this.eMATK += Number(
+          new Big(Math.floor(upgrade)).mul(3).plus(20).valueOf()
+        );
+      }
+
+      if (baseAgi >= 90) {
+        _this.aspd += Number(
+          new Big(Math.floor(upgrade / 2)).mul(0.01).valueOf()
+        );
+
+        if (upgrade >= 10) {
+          _this.aspdFlat = 1;
+        }
+      }
+
+      if (baseDex >= 90) {
+        _this.longRangePercent += Number(
+          new Big(Math.floor(upgrade / 2)).mul(0.01).plus(0.03).valueOf()
+        );
       }
 
       if (baseLuk >= 90) {
@@ -794,16 +948,27 @@ export const garments: IBaseEquipment[] = [
       class: 0,
     },
     eATK: 0,
+    eMATK: 0,
     cATK: 0,
+    aspd: 0,
+    aspdFlat: 0,
     criticalPercent: 0,
+    longRangePercent: 0,
     penetrationPercent: 0,
     script: (character: Character2, _this: IBaseEquipment): void => {
       _this.eATK = 0;
       _this.criticalPercent = 0;
+      _this.eMATK = 0;
+      _this.aspd = 0;
+      _this.aspdFlat = 0;
+      _this.longRangePercent = 0;
 
       const upgrade = _this.equipUpgradeValue;
       const baseStr = character.class.str0;
       const baseLuk = character.class.luk0;
+      const baseAgi = character.class.agi0;
+      const baseInt = character.class.int0;
+      const baseDex = character.class.dex0;
 
       _this.hpModB = Number(
         new Big(Math.floor(upgrade / 2)).mul(0.01).valueOf()
@@ -813,8 +978,31 @@ export const garments: IBaseEquipment[] = [
       );
 
       if (baseStr >= 90) {
-        _this.eATK = 10;
-        _this.eATK += Number(new Big(Math.floor(upgrade)).mul(2).valueOf());
+        _this.eATK += Number(
+          new Big(Math.floor(upgrade)).mul(2).plus(10).valueOf()
+        );
+      }
+
+      if (baseInt >= 90) {
+        _this.eMATK += Number(
+          new Big(Math.floor(upgrade)).mul(3).plus(20).valueOf()
+        );
+      }
+
+      if (baseAgi >= 90) {
+        _this.aspd += Number(
+          new Big(Math.floor(upgrade / 2)).mul(0.01).valueOf()
+        );
+
+        if (upgrade >= 10) {
+          _this.aspdFlat = 1;
+        }
+      }
+
+      if (baseDex >= 90) {
+        _this.longRangePercent += Number(
+          new Big(Math.floor(upgrade / 2)).mul(0.01).plus(0.03).valueOf()
+        );
       }
 
       if (baseLuk >= 90) {
@@ -902,10 +1090,23 @@ export const garments: IBaseEquipment[] = [
     },
     eATK: 0,
     cATK: 0,
+    flee: 30,
+    hit: 10,
+    aspd: 0.1,
+    vct: 0,
+    fct: 0,
     criticalPercent: 0,
     penetrationPercent: 0,
     classActives: [],
-    script: (character: Character2, _this: IBaseEquipment): void => {},
+    script: (character: Character2, _this: IBaseEquipment): void => {
+      _this.vct = 0.1;
+      _this.fct = 0;
+
+      if (character.shoes?.id === 22204) {
+        _this.vct = 0.2;
+        _this.fct = 0.5;
+      }
+    },
   },
   {
     id: 2575,
@@ -938,6 +1139,8 @@ export const garments: IBaseEquipment[] = [
     },
     eATK: 0,
     cATK: 0,
+    flee: 10,
+    criRate: 10,
     criticalPercent: 0,
     penetrationPercent: 0,
     classActives: [ClassKey.RuneKnight],
@@ -1005,6 +1208,15 @@ export const garments: IBaseEquipment[] = [
       }
 
       if (character.upperHeadgear?.id === 18982) {
+        if (character.playerTypeAtk === 2029) {
+          character.buffSkillPercent = Number(
+            new Big(Math.floor(upgrade / 2))
+              .plus(0.03)
+              .plus(character.buffSkillPercent)
+              .valueOf()
+          );
+        }
+
         if (upgrade >= 12) {
           _this.additionAtk.race = 0.05;
         }
@@ -1042,6 +1254,15 @@ export const garments: IBaseEquipment[] = [
       race: 0,
       class: 0,
     },
+    additionMAtk: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+      flatNamePercent: 0,
+      matkPercent: 0,
+      skillElement: 0,
+    },
     additionDef: {
       size: 0,
       element: 0,
@@ -1055,10 +1276,22 @@ export const garments: IBaseEquipment[] = [
     classActives: [],
     script: (character: Character2, _this: IBaseEquipment): void => {
       const upgrade = _this.equipUpgradeValue;
+
       _this.additionAtk.race = 0;
-      _this.additionAtk.element = Number(
-        new Big(Math.floor(upgrade / 3)).mul(0.02).valueOf()
-      );
+      _this.additionAtk.element = 0;
+      _this.additionMAtk.element = 0;
+      _this.additionMAtk.race = 0;
+
+      if (
+        [E_Element.FIRE, E_Element.SHADOW].includes(character.monster?.element)
+      ) {
+        _this.additionAtk.element = Number(
+          new Big(Math.floor(upgrade / 3)).mul(0.02).valueOf()
+        );
+        _this.additionMAtk.element = Number(
+          new Big(Math.floor(upgrade / 3)).mul(0.02).valueOf()
+        );
+      }
 
       if (upgrade >= 11) {
         if (
@@ -1066,6 +1299,7 @@ export const garments: IBaseEquipment[] = [
           character.monster?.race === MonsterRace.FORMLESS
         ) {
           _this.additionAtk.race = 0.15;
+          _this.additionMAtk.race = 0.15;
         }
       }
     },
@@ -1107,17 +1341,20 @@ export const garments: IBaseEquipment[] = [
     eATK: 0,
     cATK: 0,
     criticalPercent: 0,
+    criRate: 0,
     penetrationPercent: 0,
     classActives: [],
     script: (character: Character2, _this: IBaseEquipment): void => {
       const upgrade = _this.equipUpgradeValue;
       _this.criticalPercent = 0.03;
+      _this.criRate = 0;
 
       if (
         character.rightAccessory?.id === 2616 ||
         character.leftAccessory?.id === 2616
       ) {
         _this.criticalPercent = 0.08;
+        _this.criRate = 10;
 
         if (upgrade >= 5) {
           _this.criticalPercent = 0.11;
@@ -1168,20 +1405,32 @@ export const garments: IBaseEquipment[] = [
     },
     eATK: 0,
     cATK: 0,
+    aspd: 0,
+    vct: 0,
     criticalPercent: 0,
     penetrationPercent: 0,
     classActives: [],
     script: (character: Character2, _this: IBaseEquipment): void => {
       _this.hpModA = 1000;
       _this.criticalPercent = 0;
+      _this.aspd = 0;
+      _this.vct = 0;
 
       const upgrade = _this.equipUpgradeValue;
       _this.hpModA = Number(
         new Big(Math.floor(upgrade / 2)).mul(100).plus(_this.hpModA).valueOf()
       );
 
+      if (upgrade >= 7) {
+        _this.aspd = 0.05;
+      }
+
       if (character.shoes?.id === 22196) {
         _this.criticalPercent = 0.1;
+      }
+
+      if (character.shoes?.id === 22197) {
+        _this.vct = 0.1;
       }
     },
   },
@@ -1221,19 +1470,24 @@ export const garments: IBaseEquipment[] = [
     },
     eATK: 20,
     cATK: 0,
+    aspd: 0.05,
+    acd: 0,
+    criRate: 0,
     criticalPercent: 0,
     penetrationPercent: 0,
     classActives: [],
     script: (character: Character2, _this: IBaseEquipment): void => {
-      _this.hpModB = 0;
+      _this.criticalPercent = 0;
+      _this.acd = 0;
 
       const upgrade = _this.equipUpgradeValue;
-      _this.hpModB = Number(
-        new Big(Math.floor(upgrade / 3)).mul(0.01).valueOf()
-      );
+      _this.criRate = Number(new Big(Math.floor(upgrade / 3)).mul(2).valueOf());
 
       if (upgrade >= 7) {
-        _this.hpModB = Number(new Big(0.05).plus(_this.hpModB).valueOf());
+        _this.criticalPercent = 0.05;
+        if (upgrade >= 9) {
+          _this.acd = 0.1;
+        }
       }
     },
   },
@@ -1273,18 +1527,24 @@ export const garments: IBaseEquipment[] = [
     },
     eATK: 0,
     cATK: 0,
+    vct: 0.05,
+    acd: 0,
     criticalPercent: 0,
     longRangePercent: 0,
     penetrationPercent: 0,
     classActives: [],
     script: (character: Character2, _this: IBaseEquipment): void => {
       _this.longRangePercent = 0;
+      _this.acd = 0;
 
       const upgrade = _this.equipUpgradeValue;
       _this.eATK = Number(new Big(Math.floor(upgrade / 3)).mul(2).valueOf());
 
       if (upgrade >= 7) {
         _this.longRangePercent = 0.05;
+        if (upgrade >= 9) {
+          _this.acd = 0.1;
+        }
       }
     },
   },
