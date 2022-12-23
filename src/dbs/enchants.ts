@@ -674,6 +674,7 @@ export const enchants: IBaseEquipment[] = [
     },
     eATK: 0,
     cATK: 0,
+    hit: 3,
     criticalPercent: 0,
     penetrationPercent: 0,
     canSelectOnSlot_2: {
@@ -713,6 +714,7 @@ export const enchants: IBaseEquipment[] = [
     },
     eATK: 0,
     cATK: 0,
+    hit: 6,
     criticalPercent: 0,
     penetrationPercent: 0,
     canSelectOnSlot_2: {
@@ -752,6 +754,7 @@ export const enchants: IBaseEquipment[] = [
     },
     eATK: 0,
     cATK: 0,
+    hit: 9,
     criticalPercent: 0,
     penetrationPercent: 0,
     canSelectOnSlot_2: {
@@ -791,6 +794,7 @@ export const enchants: IBaseEquipment[] = [
     },
     eATK: 0,
     cATK: 0,
+    hit: 12,
     criticalPercent: 0,
     penetrationPercent: 0,
     canSelectOnSlot_2: {
@@ -830,6 +834,7 @@ export const enchants: IBaseEquipment[] = [
     },
     eATK: 0,
     cATK: 0,
+    hit: 15,
     criticalPercent: 0,
     penetrationPercent: 0,
     canSelectOnSlot_2: {
@@ -869,6 +874,7 @@ export const enchants: IBaseEquipment[] = [
     },
     eATK: 0,
     cATK: 0,
+    hit: 18,
     criticalPercent: 0,
     penetrationPercent: 0,
     canSelectOnSlot_2: {
@@ -908,6 +914,7 @@ export const enchants: IBaseEquipment[] = [
     },
     eATK: 0,
     cATK: 0,
+    hit: 21,
     criticalPercent: 0,
     penetrationPercent: 0,
     canSelectOnSlot_2: {
@@ -947,6 +954,7 @@ export const enchants: IBaseEquipment[] = [
     },
     eATK: 0,
     cATK: 0,
+    hit: 24,
     criticalPercent: 0,
     penetrationPercent: 0,
     canSelectOnSlot_2: {
@@ -986,6 +994,7 @@ export const enchants: IBaseEquipment[] = [
     },
     eATK: 0,
     cATK: 0,
+    hit: 27,
     criticalPercent: 0,
     penetrationPercent: 0,
     canSelectOnSlot_2: {
@@ -1025,6 +1034,7 @@ export const enchants: IBaseEquipment[] = [
     },
     eATK: 0,
     cATK: 0,
+    hit: 30,
     criticalPercent: 0,
     penetrationPercent: 0,
     canSelectOnSlot_2: {
@@ -1553,6 +1563,7 @@ export const enchants: IBaseEquipment[] = [
     },
     eATK: 0,
     cATK: 0,
+    criRate: 3,
     criticalPercent: 0.1,
     penetrationPercent: 0,
     canSelectOnSlot_2: {
@@ -1591,6 +1602,7 @@ export const enchants: IBaseEquipment[] = [
     },
     eATK: 0,
     cATK: 0,
+    criRate: 6,
     criticalPercent: 0.2,
     penetrationPercent: 0,
     canSelectOnSlot_2: {
@@ -1629,6 +1641,7 @@ export const enchants: IBaseEquipment[] = [
     },
     eATK: 0,
     cATK: 0,
+    criRate: 9,
     criticalPercent: 0.3,
     penetrationPercent: 0,
     canSelectOnSlot_2: {
@@ -1667,6 +1680,7 @@ export const enchants: IBaseEquipment[] = [
     },
     eATK: 0,
     cATK: 0,
+    criRate: 12,
     criticalPercent: 0.4,
     penetrationPercent: 0,
     canSelectOnSlot_2: {
@@ -1705,6 +1719,7 @@ export const enchants: IBaseEquipment[] = [
     },
     eATK: 0,
     cATK: 0,
+    criRate: 15,
     criticalPercent: 0.5,
     penetrationPercent: 0,
     canSelectOnSlot_2: {
@@ -1743,6 +1758,7 @@ export const enchants: IBaseEquipment[] = [
     },
     eATK: 0,
     cATK: 0,
+    criRate: 18,
     criticalPercent: 0.6,
     penetrationPercent: 0,
     canSelectOnSlot_2: {
@@ -1781,6 +1797,7 @@ export const enchants: IBaseEquipment[] = [
     },
     eATK: 0,
     cATK: 0,
+    criRate: 21,
     criticalPercent: 0.7,
     penetrationPercent: 0,
     canSelectOnSlot_2: {
@@ -1819,6 +1836,7 @@ export const enchants: IBaseEquipment[] = [
     },
     eATK: 0,
     cATK: 0,
+    criRate: 24,
     criticalPercent: 0.8,
     penetrationPercent: 0,
     canSelectOnSlot_2: {
@@ -1857,6 +1875,7 @@ export const enchants: IBaseEquipment[] = [
     },
     eATK: 0,
     cATK: 0,
+    criRate: 27,
     criticalPercent: 0.9,
     penetrationPercent: 0,
     canSelectOnSlot_2: {
@@ -1895,6 +1914,7 @@ export const enchants: IBaseEquipment[] = [
     },
     eATK: 0,
     cATK: 0,
+    criRate: 30,
     criticalPercent: 1.1,
     penetrationPercent: 0,
     canSelectOnSlot_2: {
