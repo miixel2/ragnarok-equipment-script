@@ -5123,6 +5123,8 @@ export const enchants: IBaseEquipment[] = [
     },
     eATK: 0,
     cATK: 0,
+    hit: 2,
+    criRate: 6,
     criticalPercent: 0,
     penetrationPercent: 0,
     canSelectOnSlot_2: {
@@ -5134,10 +5136,7 @@ export const enchants: IBaseEquipment[] = [
     canSelectOnSlot_4: {
       actives: [...moraCriSlot],
     },
-    script: (character: Character2, _this: IBaseEquipment): void => {
-      // Cri 6
-      // Hit 2
-    },
+    script: (character: Character2, _this: IBaseEquipment): void => {},
   },
   {
     id: 4817,
@@ -5170,6 +5169,8 @@ export const enchants: IBaseEquipment[] = [
     },
     eATK: 0,
     cATK: 0,
+    hit: 3,
+    criRate: 9,
     criticalPercent: 0,
     penetrationPercent: 0,
     canSelectOnSlot_3: {
@@ -5178,10 +5179,7 @@ export const enchants: IBaseEquipment[] = [
     canSelectOnSlot_4: {
       actives: [...malangdo, ...moraCriSlot],
     },
-    script: (character: Character2, _this: IBaseEquipment): void => {
-      // Cri 9
-      // Hit 3
-    },
+    script: (character: Character2, _this: IBaseEquipment): void => {},
   },
   {
     id: 4816,
@@ -5214,6 +5212,8 @@ export const enchants: IBaseEquipment[] = [
     },
     eATK: 0,
     cATK: 0,
+    hit: 4,
+    criRate: 12,
     criticalPercent: 0,
     penetrationPercent: 0,
     canSelectOnSlot_2: {
@@ -5225,10 +5225,7 @@ export const enchants: IBaseEquipment[] = [
     canSelectOnSlot_4: {
       actives: [...malangdo],
     },
-    script: (character: Character2, _this: IBaseEquipment): void => {
-      // Cri 12
-      // Hit 4
-    },
+    script: (character: Character2, _this: IBaseEquipment): void => {},
   },
   {
     id: 4843,
@@ -5261,6 +5258,8 @@ export const enchants: IBaseEquipment[] = [
     },
     eATK: 0,
     cATK: 0,
+    hit: 5,
+    criRate: 14,
     criticalPercent: 0,
     penetrationPercent: 0,
     canSelectOnSlot_3: {
@@ -5269,10 +5268,7 @@ export const enchants: IBaseEquipment[] = [
     canSelectOnSlot_4: {
       actives: [...malangdo],
     },
-    script: (character: Character2, _this: IBaseEquipment): void => {
-      // Cri 14
-      // Hit 5
-    },
+    script: (character: Character2, _this: IBaseEquipment): void => {},
   },
   {
     id: 4844,
@@ -5305,6 +5301,8 @@ export const enchants: IBaseEquipment[] = [
     },
     eATK: 0,
     cATK: 0,
+    hit: 6,
+    criRate: 15,
     criticalPercent: 0,
     penetrationPercent: 0,
     canSelectOnSlot_3: {
@@ -5313,10 +5311,7 @@ export const enchants: IBaseEquipment[] = [
     canSelectOnSlot_4: {
       actives: [...malangdo],
     },
-    script: (character: Character2, _this: IBaseEquipment): void => {
-      // Cri 15
-      // Hit 6
-    },
+    script: (character: Character2, _this: IBaseEquipment): void => {},
   },
   {
     id: 4875,
