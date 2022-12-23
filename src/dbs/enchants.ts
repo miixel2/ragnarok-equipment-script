@@ -5127,6 +5127,15 @@ export const enchants: IBaseEquipment[] = [
     cATK: 0,
     criticalPercent: 0,
     penetrationPercent: 0,
+    canSelectOnSlot_2: {
+      actives: [],
+    },
+    canSelectOnSlot_3: {
+      actives: [],
+    },
+    canSelectOnSlot_4: {
+      actives: [],
+    },
     script: (character: Character2, _this: IBaseEquipment): void => {},
   },
   {
@@ -6596,6 +6605,7 @@ export const enchants: IBaseEquipment[] = [
     },
     eATK: 0,
     cATK: 0,
+    criRate: 1,
     criticalPercent: 0.04,
     penetrationPercent: 0,
     canSelectOnSlot_2: {
@@ -6640,6 +6650,7 @@ export const enchants: IBaseEquipment[] = [
     },
     eATK: 0,
     cATK: 0,
+    criRate: 2,
     criticalPercent: 0.06,
     penetrationPercent: 0,
     canSelectOnSlot_2: {
@@ -6684,6 +6695,7 @@ export const enchants: IBaseEquipment[] = [
     },
     eATK: 0,
     cATK: 0,
+    criRate: 3,
     criticalPercent: 0.08,
     penetrationPercent: 0,
     canSelectOnSlot_2: {
@@ -6728,6 +6740,7 @@ export const enchants: IBaseEquipment[] = [
     },
     eATK: 0,
     cATK: 0,
+    criRate: 4,
     criticalPercent: 0.1,
     penetrationPercent: 0,
     canSelectOnSlot_2: {
@@ -7437,7 +7450,7 @@ export const enchants: IBaseEquipment[] = [
     cATK: 0,
     criticalPercent: 0,
     penetrationPercent: 0,
-    canSelectOnSlot_4: {
+    canSelectOnSlot_2: {
       actives: [...kingInsignia],
     },
     script: (character: Character2, _this: IBaseEquipment): void => {
@@ -7484,7 +7497,7 @@ export const enchants: IBaseEquipment[] = [
     cATK: 0,
     criticalPercent: 0,
     penetrationPercent: 0,
-    canSelectOnSlot_4: {
+    canSelectOnSlot_2: {
       actives: [...kingInsignia],
     },
     script: (character: Character2, _this: IBaseEquipment): void => {
@@ -7531,7 +7544,7 @@ export const enchants: IBaseEquipment[] = [
     cATK: 0,
     criticalPercent: 0,
     penetrationPercent: 0,
-    canSelectOnSlot_4: {
+    canSelectOnSlot_2: {
       actives: [...kingInsignia],
     },
     script: (character: Character2, _this: IBaseEquipment): void => {
@@ -7568,6 +7581,15 @@ export const enchants: IBaseEquipment[] = [
       race: 0,
       class: 0,
     },
+    additionMAtk: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+      flatNamePercent: 0,
+      matkPercent: 0,
+      skillElement: 0,
+    },
     additionDef: {
       size: 0,
       element: 0,
@@ -7578,15 +7600,17 @@ export const enchants: IBaseEquipment[] = [
     cATK: 0,
     criticalPercent: 0,
     penetrationPercent: 0,
-    canSelectOnSlot_4: {
+    canSelectOnSlot_2: {
       actives: [...kingInsignia],
     },
     script: (character: Character2, _this: IBaseEquipment): void => {
+      _this.additionMAtk.race = 0;
       if (
         character.shoes?.slot2?.id === 4876 ||
         character.shoes?.slot3?.id === 4876 ||
         character.shoes?.slot4?.id === 4876
       ) {
+        _this.additionMAtk.race = 0.15;
       }
     },
   },
@@ -7621,17 +7645,20 @@ export const enchants: IBaseEquipment[] = [
     },
     eATK: 0,
     cATK: 0,
+    acd: 0,
     criticalPercent: 0,
     penetrationPercent: 0,
-    canSelectOnSlot_4: {
+    canSelectOnSlot_2: {
       actives: [...kingInsignia],
     },
     script: (character: Character2, _this: IBaseEquipment): void => {
+      _this.acd = 0;
       if (
         character.shoes?.slot2?.id === 4878 ||
         character.shoes?.slot3?.id === 4878 ||
         character.shoes?.slot4?.id === 4878
       ) {
+        _this.acd = 0.1;
       }
     },
   },
@@ -7666,17 +7693,20 @@ export const enchants: IBaseEquipment[] = [
     },
     eATK: 0,
     cATK: 0,
+    aspdFlat: 0,
     criticalPercent: 0,
     penetrationPercent: 0,
-    canSelectOnSlot_4: {
+    canSelectOnSlot_2: {
       actives: [...kingInsignia],
     },
     script: (character: Character2, _this: IBaseEquipment): void => {
+      _this.aspdFlat = 0;
       if (
         character.shoes?.slot2?.id === 4880 ||
         character.shoes?.slot3?.id === 4880 ||
         character.shoes?.slot4?.id === 4880
       ) {
+        _this.aspdFlat = 2;
       }
     },
   },
