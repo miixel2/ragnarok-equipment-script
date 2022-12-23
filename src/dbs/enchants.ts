@@ -27,6 +27,7 @@ const illusion17_1_garment = [20933];
 const illusion17_1_shoes = [22196];
 const illusion17_1_acc_right = [32207];
 const illusion17_1_acc_left = [32208];
+const rovRof = [15146, 15147];
 
 export const enchants: IBaseEquipment[] = [
   {
@@ -160,10 +161,10 @@ export const enchants: IBaseEquipment[] = [
     criticalPercent: 0,
     penetrationPercent: 0,
     canSelectOnSlot_3: {
-      actives: [15147],
+      actives: [...rovRof],
     },
     canSelectOnSlot_4: {
-      actives: [15147],
+      actives: [...rovRof],
     },
     script: (character: Character2, _this: IBaseEquipment): void => {
       _this.additionAtk.race = 0;
@@ -217,10 +218,10 @@ export const enchants: IBaseEquipment[] = [
     criticalPercent: 0,
     penetrationPercent: 0,
     canSelectOnSlot_3: {
-      actives: [15147],
+      actives: [...rovRof],
     },
     canSelectOnSlot_4: {
-      actives: [15147],
+      actives: [...rovRof],
     },
     script: (character: Character2, _this: IBaseEquipment): void => {
       _this.additionAtk.race = 0;
@@ -275,10 +276,10 @@ export const enchants: IBaseEquipment[] = [
     criticalPercent: 0,
     penetrationPercent: 0,
     canSelectOnSlot_3: {
-      actives: [15147],
+      actives: [...rovRof],
     },
     canSelectOnSlot_4: {
-      actives: [15147],
+      actives: [...rovRof],
     },
     script: (character: Character2, _this: IBaseEquipment): void => {
       _this.additionAtk.race = 0;
@@ -298,6 +299,389 @@ export const enchants: IBaseEquipment[] = [
           if (upgradeArmor >= 13) {
             _this.str = 9;
             _this.additionAtk.race = 0.1;
+          }
+        }
+      }
+    },
+  },
+  {
+    id: 4997,
+    name: 'Rune of Agility Lv 1',
+    type: EquipmentType.CARD,
+    subType: null,
+    location: null,
+    compoundOn: CompoundOn.ENCHANT,
+    baseDef: 0,
+    baseATK: 0,
+    level: 1,
+    equipUpgradeValue: 0,
+    str: 0,
+    agi: 0,
+    vit: 0,
+    int: 0,
+    dex: 0,
+    luk: 0,
+    additionAtk: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+      atkPercent2: 0,
+    },
+    additionDef: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    eATK: 0,
+    cATK: 0,
+    perfectDodge: 0,
+    criticalPercent: 0,
+    penetrationPercent: 0,
+    canSelectOnSlot_3: {
+      actives: [...rovRof],
+    },
+    canSelectOnSlot_4: {
+      actives: [...rovRof],
+    },
+    script: (character: Character2, _this: IBaseEquipment): void => {
+      _this.perfectDodge = 0;
+      _this.agi = 0;
+
+      if (character.bodyGear) {
+        const upgradeArmor = character.bodyGear.equipUpgradeValue;
+
+        if (upgradeArmor >= 7) {
+          _this.agi = 5;
+
+          if (upgradeArmor >= 10) {
+            _this.perfectDodge = 5;
+          }
+        }
+      }
+    },
+  },
+  {
+    id: 4998,
+    name: 'Rune of Agility Lv 2',
+    type: EquipmentType.CARD,
+    subType: null,
+    location: null,
+    compoundOn: CompoundOn.ENCHANT,
+    baseDef: 0,
+    baseATK: 0,
+    level: 1,
+    equipUpgradeValue: 0,
+    str: 0,
+    agi: 0,
+    vit: 0,
+    int: 0,
+    dex: 0,
+    luk: 0,
+    additionAtk: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+      atkPercent2: 0,
+    },
+    additionDef: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    eATK: 0,
+    cATK: 0,
+    perfectDodge: 0,
+    criticalPercent: 0,
+    penetrationPercent: 0,
+    canSelectOnSlot_3: {
+      actives: [...rovRof],
+    },
+    canSelectOnSlot_4: {
+      actives: [...rovRof],
+    },
+    script: (character: Character2, _this: IBaseEquipment): void => {
+      _this.perfectDodge = 0;
+      _this.agi = 0;
+
+      if (character.bodyGear) {
+        const upgradeArmor = character.bodyGear.equipUpgradeValue;
+
+        if (upgradeArmor >= 7) {
+          _this.agi = 6;
+
+          if (upgradeArmor >= 11) {
+            _this.agi = 7;
+            _this.perfectDodge = 7;
+          }
+        }
+      }
+    },
+  },
+  {
+    id: 4999,
+    name: 'Rune of Agility Lv 3',
+    type: EquipmentType.CARD,
+    subType: null,
+    location: null,
+    compoundOn: CompoundOn.ENCHANT,
+    baseDef: 0,
+    baseATK: 0,
+    level: 1,
+    equipUpgradeValue: 0,
+    str: 0,
+    agi: 0,
+    vit: 0,
+    int: 0,
+    dex: 0,
+    luk: 0,
+    additionAtk: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+      atkPercent2: 0,
+    },
+    additionDef: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    eATK: 0,
+    cATK: 0,
+    perfectDodge: 0,
+    criticalPercent: 0,
+    penetrationPercent: 0,
+    canSelectOnSlot_3: {
+      actives: [...rovRof],
+    },
+    canSelectOnSlot_4: {
+      actives: [...rovRof],
+    },
+    script: (character: Character2, _this: IBaseEquipment): void => {
+      _this.perfectDodge = 0;
+      _this.agi = 0;
+
+      if (character.bodyGear) {
+        const upgradeArmor = character.bodyGear.equipUpgradeValue;
+
+        if (upgradeArmor >= 7) {
+          _this.agi = 7;
+
+          if (upgradeArmor >= 12) {
+            _this.agi = 8;
+            _this.perfectDodge = 5;
+
+            if (upgradeArmor >= 13) {
+              _this.agi = 9;
+              _this.perfectDodge = 10;
+            }
+          }
+        }
+      }
+    },
+  },
+  {
+    id: 29000,
+    name: 'Rune of Intelligence Lv 1',
+    type: EquipmentType.CARD,
+    subType: null,
+    location: null,
+    compoundOn: CompoundOn.ENCHANT,
+    baseDef: 0,
+    baseATK: 0,
+    level: 1,
+    equipUpgradeValue: 0,
+    str: 0,
+    agi: 0,
+    vit: 0,
+    int: 0,
+    dex: 0,
+    luk: 0,
+    additionAtk: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    additionMAtk: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+      flatNamePercent: 0,
+      matkPercent: 0,
+      skillElement: 0,
+    },
+    additionDef: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    eATK: 0,
+    cATK: 0,
+    criticalPercent: 0,
+    penetrationPercent: 0,
+    canSelectOnSlot_3: {
+      actives: [...rovRof],
+    },
+    canSelectOnSlot_4: {
+      actives: [...rovRof],
+    },
+    script: (character: Character2, _this: IBaseEquipment): void => {
+      _this.int = 0;
+      _this.additionMAtk.matkPercent = 0;
+
+      if (character.bodyGear) {
+        const upgradeArmor = character.bodyGear.equipUpgradeValue;
+
+        if (upgradeArmor >= 7) {
+          _this.int = 5;
+
+          if (upgradeArmor >= 10) {
+            _this.additionMAtk.matkPercent = 0.05;
+          }
+        }
+      }
+    },
+  },
+  {
+    id: 29001,
+    name: 'Rune of Intelligence Lv 2',
+    type: EquipmentType.CARD,
+    subType: null,
+    location: null,
+    compoundOn: CompoundOn.ENCHANT,
+    baseDef: 0,
+    baseATK: 0,
+    level: 1,
+    equipUpgradeValue: 0,
+    str: 0,
+    agi: 0,
+    vit: 0,
+    int: 0,
+    dex: 0,
+    luk: 0,
+    additionAtk: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    additionMAtk: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+      flatNamePercent: 0,
+      matkPercent: 0,
+      skillElement: 0,
+    },
+    additionDef: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    eATK: 0,
+    cATK: 0,
+    criticalPercent: 0,
+    penetrationPercent: 0,
+    canSelectOnSlot_3: {
+      actives: [...rovRof],
+    },
+    canSelectOnSlot_4: {
+      actives: [...rovRof],
+    },
+    script: (character: Character2, _this: IBaseEquipment): void => {
+      _this.int = 0;
+      _this.additionMAtk.matkPercent = 0;
+
+      if (character.bodyGear) {
+        const upgradeArmor = character.bodyGear.equipUpgradeValue;
+
+        if (upgradeArmor >= 7) {
+          _this.int = 6;
+
+          if (upgradeArmor >= 11) {
+            _this.int = 7;
+            _this.additionMAtk.matkPercent = 0.07;
+          }
+        }
+      }
+    },
+  },
+  {
+    id: 29002,
+    name: 'Rune of Intelligence Lv 3',
+    type: EquipmentType.CARD,
+    subType: null,
+    location: null,
+    compoundOn: CompoundOn.ENCHANT,
+    baseDef: 0,
+    baseATK: 0,
+    level: 1,
+    equipUpgradeValue: 0,
+    str: 0,
+    agi: 0,
+    vit: 0,
+    int: 0,
+    dex: 0,
+    luk: 0,
+    additionAtk: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    additionMAtk: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+      flatNamePercent: 0,
+      matkPercent: 0,
+      skillElement: 0,
+    },
+    additionDef: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    eATK: 0,
+    cATK: 0,
+    criticalPercent: 0,
+    penetrationPercent: 0,
+    canSelectOnSlot_3: {
+      actives: [...rovRof],
+    },
+    canSelectOnSlot_4: {
+      actives: [...rovRof],
+    },
+    script: (character: Character2, _this: IBaseEquipment): void => {
+      _this.int = 0;
+      _this.additionMAtk.matkPercent = 0;
+
+      if (character.bodyGear) {
+        const upgradeArmor = character.bodyGear.equipUpgradeValue;
+
+        if (upgradeArmor >= 7) {
+          _this.int = 7;
+
+          if (upgradeArmor >= 12) {
+            _this.int = 8;
+            _this.additionMAtk.matkPercent = 0.08;
+
+            if (upgradeArmor >= 13) {
+              _this.int = 9;
+              _this.additionMAtk.matkPercent = 0.1;
+            }
           }
         }
       }
@@ -335,21 +719,27 @@ export const enchants: IBaseEquipment[] = [
     eATK: 0,
     cATK: 0,
     criticalPercent: 0,
+    longRangePercent: 0,
     penetrationPercent: 0,
     canSelectOnSlot_3: {
-      actives: [15147],
+      actives: [...rovRof],
     },
     canSelectOnSlot_4: {
-      actives: [15147],
+      actives: [...rovRof],
     },
     script: (character: Character2, _this: IBaseEquipment): void => {
       _this.dex = 0;
+      _this.longRangePercent = 0;
 
       if (character.bodyGear) {
         const upgradeArmor = character.bodyGear.equipUpgradeValue;
 
         if (upgradeArmor >= 7) {
           _this.dex = 5;
+
+          if (upgradeArmor >= 10) {
+            _this.longRangePercent = 0.05;
+          }
         }
       }
     },
@@ -386,15 +776,17 @@ export const enchants: IBaseEquipment[] = [
     eATK: 0,
     cATK: 0,
     criticalPercent: 0,
+    longRangePercent: 0,
     penetrationPercent: 0,
     canSelectOnSlot_3: {
-      actives: [15147],
+      actives: [...rovRof],
     },
     canSelectOnSlot_4: {
-      actives: [15147],
+      actives: [...rovRof],
     },
     script: (character: Character2, _this: IBaseEquipment): void => {
       _this.dex = 0;
+      _this.longRangePercent = 0;
 
       if (character.bodyGear) {
         const upgradeArmor = character.bodyGear.equipUpgradeValue;
@@ -404,6 +796,7 @@ export const enchants: IBaseEquipment[] = [
 
           if (upgradeArmor >= 11) {
             _this.dex = 7;
+            _this.longRangePercent = 0.07;
           }
         }
       }
@@ -441,15 +834,17 @@ export const enchants: IBaseEquipment[] = [
     eATK: 0,
     cATK: 0,
     criticalPercent: 0,
+    longRangePercent: 0,
     penetrationPercent: 0,
     canSelectOnSlot_3: {
-      actives: [15147],
+      actives: [...rovRof],
     },
     canSelectOnSlot_4: {
-      actives: [15147],
+      actives: [...rovRof],
     },
     script: (character: Character2, _this: IBaseEquipment): void => {
       _this.dex = 0;
+      _this.longRangePercent = 0;
 
       if (character.bodyGear) {
         const upgradeArmor = character.bodyGear.equipUpgradeValue;
@@ -459,10 +854,12 @@ export const enchants: IBaseEquipment[] = [
 
           if (upgradeArmor >= 12) {
             _this.dex = 8;
+            _this.longRangePercent = 0.08;
           }
 
           if (upgradeArmor >= 13) {
             _this.dex = 9;
+            _this.longRangePercent = 0.1;
           }
         }
       }
@@ -502,10 +899,10 @@ export const enchants: IBaseEquipment[] = [
     criticalPercent: 0,
     penetrationPercent: 0,
     canSelectOnSlot_3: {
-      actives: [15147],
+      actives: [...rovRof],
     },
     canSelectOnSlot_4: {
-      actives: [15147],
+      actives: [...rovRof],
     },
     script: (character: Character2, _this: IBaseEquipment): void => {
       _this.luk = 0;
@@ -558,10 +955,10 @@ export const enchants: IBaseEquipment[] = [
     criticalPercent: 0,
     penetrationPercent: 0,
     canSelectOnSlot_3: {
-      actives: [15147],
+      actives: [...rovRof],
     },
     canSelectOnSlot_4: {
-      actives: [15147],
+      actives: [...rovRof],
     },
     script: (character: Character2, _this: IBaseEquipment): void => {
       _this.luk = 0;
@@ -615,10 +1012,10 @@ export const enchants: IBaseEquipment[] = [
     criticalPercent: 0,
     penetrationPercent: 0,
     canSelectOnSlot_3: {
-      actives: [15147],
+      actives: [...rovRof],
     },
     canSelectOnSlot_4: {
-      actives: [15147],
+      actives: [...rovRof],
     },
     script: (character: Character2, _this: IBaseEquipment): void => {
       _this.luk = 0;
@@ -638,6 +1035,184 @@ export const enchants: IBaseEquipment[] = [
           if (upgradeArmor >= 13) {
             _this.luk = 9;
             _this.criticalPercent = 0.14;
+          }
+        }
+      }
+    },
+  },
+  {
+    id: 29009,
+    name: 'Rune of Vitality Lv 1',
+    type: EquipmentType.CARD,
+    subType: null,
+    location: null,
+    compoundOn: CompoundOn.ENCHANT,
+    baseDef: 0,
+    baseATK: 0,
+    level: 1,
+    equipUpgradeValue: 0,
+    str: 0,
+    agi: 0,
+    vit: 0,
+    int: 0,
+    dex: 0,
+    luk: 0,
+    hpModB: 0,
+    additionAtk: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    additionDef: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    eATK: 0,
+    cATK: 0,
+    criticalPercent: 0,
+    penetrationPercent: 0,
+    canSelectOnSlot_3: {
+      actives: [...rovRof],
+    },
+    canSelectOnSlot_4: {
+      actives: [...rovRof],
+    },
+    script: (character: Character2, _this: IBaseEquipment): void => {
+      _this.vit = 0;
+      _this.hpModB = 0;
+
+      if (character.bodyGear) {
+        const upgradeArmor = character.bodyGear.equipUpgradeValue;
+
+        if (upgradeArmor >= 7) {
+          _this.vit = 5;
+
+          if (upgradeArmor >= 10) {
+            _this.hpModB = 0.05;
+          }
+        }
+      }
+    },
+  },
+  {
+    id: 29010,
+    name: 'Rune of Vitality Lv 2',
+    type: EquipmentType.CARD,
+    subType: null,
+    location: null,
+    compoundOn: CompoundOn.ENCHANT,
+    baseDef: 0,
+    baseATK: 0,
+    level: 1,
+    equipUpgradeValue: 0,
+    str: 0,
+    agi: 0,
+    vit: 0,
+    int: 0,
+    dex: 0,
+    luk: 0,
+    hpModB: 0,
+    additionAtk: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    additionDef: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    eATK: 0,
+    cATK: 0,
+    criticalPercent: 0,
+    penetrationPercent: 0,
+    canSelectOnSlot_3: {
+      actives: [...rovRof],
+    },
+    canSelectOnSlot_4: {
+      actives: [...rovRof],
+    },
+    script: (character: Character2, _this: IBaseEquipment): void => {
+      _this.vit = 0;
+      _this.hpModB = 0;
+
+      if (character.bodyGear) {
+        const upgradeArmor = character.bodyGear.equipUpgradeValue;
+
+        if (upgradeArmor >= 7) {
+          _this.vit = 6;
+
+          if (upgradeArmor >= 11) {
+            _this.vit = 7;
+            _this.hpModB = 0.07;
+          }
+        }
+      }
+    },
+  },
+  {
+    id: 29011,
+    name: 'Rune of Vitality Lv 3',
+    type: EquipmentType.CARD,
+    subType: null,
+    location: null,
+    compoundOn: CompoundOn.ENCHANT,
+    baseDef: 0,
+    baseATK: 0,
+    level: 1,
+    equipUpgradeValue: 0,
+    str: 0,
+    agi: 0,
+    vit: 0,
+    int: 0,
+    dex: 0,
+    luk: 0,
+    hpModB: 0,
+    additionAtk: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    additionDef: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    eATK: 0,
+    cATK: 0,
+    criticalPercent: 0,
+    penetrationPercent: 0,
+    canSelectOnSlot_3: {
+      actives: [...rovRof],
+    },
+    canSelectOnSlot_4: {
+      actives: [...rovRof],
+    },
+    script: (character: Character2, _this: IBaseEquipment): void => {
+      _this.vit = 0;
+      _this.hpModB = 0;
+
+      if (character.bodyGear) {
+        const upgradeArmor = character.bodyGear.equipUpgradeValue;
+
+        if (upgradeArmor >= 7) {
+          _this.vit = 7;
+
+          if (upgradeArmor >= 12) {
+            _this.vit = 8;
+            _this.hpModB = 0.08;
+
+            if (upgradeArmor >= 13) {
+              _this.vit = 9;
+              _this.hpModB = 0.1;
+            }
           }
         }
       }

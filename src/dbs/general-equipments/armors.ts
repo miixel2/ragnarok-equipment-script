@@ -142,10 +142,10 @@ export const armors: IBaseEquipment[] = [
     subType: EquipmentSubType.ARMOR,
     location: EquipmentLocation.BODY,
     compoundOn: null,
-    slot1Enable: true,
+    slot1Enable: 'CARD',
     slot2Enable: false,
-    slot3Enable: true,
-    slot4Enable: true,
+    slot3Enable: 'ENCHANT',
+    slot4Enable: 'ENCHANT',
     baseDef: 0,
     baseATK: 0,
     level: 1,
@@ -163,6 +163,7 @@ export const armors: IBaseEquipment[] = [
       element: 0,
       race: 0,
       class: 0,
+      atkPercent2: 0,
     },
     additionDef: {
       size: 0,
@@ -176,8 +177,7 @@ export const armors: IBaseEquipment[] = [
     penetrationPercent: 0,
     script: (character: Character2, _this: IBaseEquipment): void => {
       _this.penetrationPercent = 0;
-      _this.luk = 0;
-      _this.additionAtk.class = 0;
+      _this.additionAtk.atkPercent2 = 0;
       _this.hpModB = 0;
 
       if (
@@ -213,13 +213,66 @@ export const armors: IBaseEquipment[] = [
             .valueOf()
         );
 
-        _this.additionAtk.class = 0.02;
-        _this.additionAtk.class = Number(
+        _this.additionAtk.atkPercent2 = 0.02;
+        _this.additionAtk.atkPercent2 = Number(
           new Big(_this.equipUpgradeValue)
             .mul(0.01)
-            .plus(_this.additionAtk.class)
+            .plus(_this.additionAtk.atkPercent2)
             .valueOf()
         );
+      }
+    },
+  },
+  {
+    id: 15146,
+    name: 'Robe Of Flattery [1]',
+    type: EquipmentType.ARMOR,
+    subType: EquipmentSubType.ARMOR,
+    location: EquipmentLocation.BODY,
+    compoundOn: null,
+    slot1Enable: 'CARD',
+    slot2Enable: false,
+    slot3Enable: 'ENCHANT',
+    slot4Enable: 'ENCHANT',
+    baseDef: 0,
+    baseATK: 0,
+    level: 1,
+    equipUpgradeValue: 0,
+    str: 0,
+    agi: 0,
+    vit: 0,
+    int: 0,
+    dex: 0,
+    luk: 0,
+    hpModA: 0,
+    hpModB: 0,
+    additionAtk: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+      atkPercent2: 0,
+    },
+    additionDef: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    eATK: 0,
+    eMATK: 0,
+    cATK: 0,
+    criticalPercent: 0,
+    penetrationPercent: 0,
+    script: (character: Character2, _this: IBaseEquipment): void => {
+      _this.eMATK = 50;
+
+      if (character.class.baseLv >= 120) {
+        _this.eMATK = 100;
+
+        if (character.class.baseLv >= 140) {
+          _this.eMATK = 150;
+        }
       }
     },
   },
