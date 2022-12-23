@@ -4,6 +4,7 @@ import {
   EquipmentType,
   EquipmentLocation,
   CompoundOn,
+  EquipmentSubType,
 } from '../models/equipment';
 import { costumeIds } from './costumes';
 
@@ -1921,6 +1922,456 @@ export const enchants: IBaseEquipment[] = [
       actives: [...headGearLab5],
     },
     script: (character: Character2, _this: IBaseEquipment): void => {},
+  },
+  {
+    id: 29091,
+    name: 'Master Archer Lv. 1',
+    type: EquipmentType.CARD,
+    subType: null,
+    location: null,
+    compoundOn: CompoundOn.ENCHANT,
+    baseDef: 0,
+    baseATK: 0,
+    level: 1,
+    equipUpgradeValue: 0,
+    str: 0,
+    agi: 0,
+    vit: 0,
+    int: 0,
+    dex: 0,
+    luk: 0,
+    additionAtk: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    additionDef: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    eATK: 0,
+    cATK: 0,
+    aspd: 0.01,
+    criticalPercent: 0,
+    longRangePercent: 0,
+    penetrationPercent: 0,
+    canSelectOnSlot_2: {
+      actives: [...headGearLab5],
+    },
+    script: (character: Character2, _this: IBaseEquipment): void => {
+      _this.longRangePercent = 0;
+      if (character.rightHand?.subType === EquipmentSubType.BOW) {
+        _this.longRangePercent = 0.04;
+      }
+    },
+  },
+  {
+    id: 29092,
+    name: 'Master Archer Lv. 2',
+    type: EquipmentType.CARD,
+    subType: null,
+    location: null,
+    compoundOn: CompoundOn.ENCHANT,
+    baseDef: 0,
+    baseATK: 0,
+    level: 1,
+    equipUpgradeValue: 0,
+    str: 0,
+    agi: 0,
+    vit: 0,
+    int: 0,
+    dex: 0,
+    luk: 0,
+    additionAtk: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    additionDef: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    eATK: 0,
+    cATK: 0,
+    aspd: 0.02,
+    criticalPercent: 0,
+    longRangePercent: 0,
+    penetrationPercent: 0,
+    canSelectOnSlot_2: {
+      actives: [...headGearLab5],
+    },
+    script: (character: Character2, _this: IBaseEquipment): void => {
+      _this.longRangePercent = 0;
+      if (character.rightHand?.subType === EquipmentSubType.BOW) {
+        _this.longRangePercent = 0.08;
+      }
+    },
+  },
+  {
+    id: 29093,
+    name: 'Master Archer Lv. 3',
+    type: EquipmentType.CARD,
+    subType: null,
+    location: null,
+    compoundOn: CompoundOn.ENCHANT,
+    baseDef: 0,
+    baseATK: 0,
+    level: 1,
+    equipUpgradeValue: 0,
+    str: 0,
+    agi: 0,
+    vit: 0,
+    int: 0,
+    dex: 0,
+    luk: 0,
+    additionAtk: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    additionDef: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    eATK: 0,
+    cATK: 0,
+    aspd: 0.03,
+    criticalPercent: 0,
+    longRangePercent: 0,
+    penetrationPercent: 0,
+    canSelectOnSlot_2: {
+      actives: [...headGearLab5],
+    },
+    script: (character: Character2, _this: IBaseEquipment): void => {
+      _this.longRangePercent = 0;
+      if (character.rightHand?.subType === EquipmentSubType.BOW) {
+        _this.longRangePercent = 0.12;
+      }
+    },
+  },
+  {
+    id: 29094,
+    name: 'Master Archer Lv. 4',
+    type: EquipmentType.CARD,
+    subType: null,
+    location: null,
+    compoundOn: CompoundOn.ENCHANT,
+    baseDef: 0,
+    baseATK: 0,
+    level: 1,
+    equipUpgradeValue: 0,
+    str: 0,
+    agi: 0,
+    vit: 0,
+    int: 0,
+    dex: 0,
+    luk: 0,
+    additionAtk: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    additionDef: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    eATK: 0,
+    cATK: 0,
+    aspd: 0.04,
+    criticalPercent: 0,
+    longRangePercent: 0,
+    penetrationPercent: 0,
+    canSelectOnSlot_2: {
+      actives: [...headGearLab5],
+    },
+    script: (character: Character2, _this: IBaseEquipment): void => {
+      _this.longRangePercent = 0;
+      if (character.rightHand?.subType === EquipmentSubType.BOW) {
+        _this.longRangePercent = 0.16;
+      }
+    },
+  },
+  {
+    id: 29095,
+    name: 'Master Archer Lv. 5',
+    type: EquipmentType.CARD,
+    subType: null,
+    location: null,
+    compoundOn: CompoundOn.ENCHANT,
+    baseDef: 0,
+    baseATK: 0,
+    level: 1,
+    equipUpgradeValue: 0,
+    str: 0,
+    agi: 0,
+    vit: 0,
+    int: 0,
+    dex: 0,
+    luk: 0,
+    additionAtk: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    additionDef: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    eATK: 0,
+    cATK: 0,
+    aspd: 0.05,
+    criticalPercent: 0,
+    longRangePercent: 0,
+    penetrationPercent: 0,
+    canSelectOnSlot_2: {
+      actives: [...headGearLab5],
+    },
+    script: (character: Character2, _this: IBaseEquipment): void => {
+      _this.longRangePercent = 0;
+      if (character.rightHand?.subType === EquipmentSubType.BOW) {
+        _this.longRangePercent = 0.2;
+      }
+    },
+  },
+  {
+    id: 29096,
+    name: 'Master Archer Lv. 6',
+    type: EquipmentType.CARD,
+    subType: null,
+    location: null,
+    compoundOn: CompoundOn.ENCHANT,
+    baseDef: 0,
+    baseATK: 0,
+    level: 1,
+    equipUpgradeValue: 0,
+    str: 0,
+    agi: 0,
+    vit: 0,
+    int: 0,
+    dex: 0,
+    luk: 0,
+    additionAtk: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    additionDef: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    eATK: 0,
+    cATK: 0,
+    aspd: 0.06,
+    criticalPercent: 0,
+    longRangePercent: 0,
+    penetrationPercent: 0,
+    canSelectOnSlot_2: {
+      actives: [...headGearLab5],
+    },
+    script: (character: Character2, _this: IBaseEquipment): void => {
+      _this.longRangePercent = 0;
+      if (character.rightHand?.subType === EquipmentSubType.BOW) {
+        _this.longRangePercent = 0.24;
+      }
+    },
+  },
+  {
+    id: 29097,
+    name: 'Master Archer Lv. 7',
+    type: EquipmentType.CARD,
+    subType: null,
+    location: null,
+    compoundOn: CompoundOn.ENCHANT,
+    baseDef: 0,
+    baseATK: 0,
+    level: 1,
+    equipUpgradeValue: 0,
+    str: 0,
+    agi: 0,
+    vit: 0,
+    int: 0,
+    dex: 0,
+    luk: 0,
+    additionAtk: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    additionDef: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    eATK: 0,
+    cATK: 0,
+    aspd: 0.07,
+    criticalPercent: 0,
+    longRangePercent: 0,
+    penetrationPercent: 0,
+    canSelectOnSlot_2: {
+      actives: [...headGearLab5],
+    },
+    script: (character: Character2, _this: IBaseEquipment): void => {
+      _this.longRangePercent = 0;
+      if (character.rightHand?.subType === EquipmentSubType.BOW) {
+        _this.longRangePercent = 0.28;
+      }
+    },
+  },
+  {
+    id: 29098,
+    name: 'Master Archer Lv. 8',
+    type: EquipmentType.CARD,
+    subType: null,
+    location: null,
+    compoundOn: CompoundOn.ENCHANT,
+    baseDef: 0,
+    baseATK: 0,
+    level: 1,
+    equipUpgradeValue: 0,
+    str: 0,
+    agi: 0,
+    vit: 0,
+    int: 0,
+    dex: 0,
+    luk: 0,
+    additionAtk: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    additionDef: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    eATK: 0,
+    cATK: 0,
+    aspd: 0.08,
+    criticalPercent: 0,
+    longRangePercent: 0,
+    penetrationPercent: 0,
+    canSelectOnSlot_2: {
+      actives: [...headGearLab5],
+    },
+    script: (character: Character2, _this: IBaseEquipment): void => {
+      _this.longRangePercent = 0;
+      if (character.rightHand?.subType === EquipmentSubType.BOW) {
+        _this.longRangePercent = 0.32;
+      }
+    },
+  },
+  {
+    id: 29099,
+    name: 'Master Archer Lv. 9',
+    type: EquipmentType.CARD,
+    subType: null,
+    location: null,
+    compoundOn: CompoundOn.ENCHANT,
+    baseDef: 0,
+    baseATK: 0,
+    level: 1,
+    equipUpgradeValue: 0,
+    str: 0,
+    agi: 0,
+    vit: 0,
+    int: 0,
+    dex: 0,
+    luk: 0,
+    additionAtk: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    additionDef: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    eATK: 0,
+    cATK: 0,
+    aspd: 0.09,
+    criticalPercent: 0,
+    longRangePercent: 0,
+    penetrationPercent: 0,
+    canSelectOnSlot_2: {
+      actives: [...headGearLab5],
+    },
+    script: (character: Character2, _this: IBaseEquipment): void => {
+      _this.longRangePercent = 0;
+      if (character.rightHand?.subType === EquipmentSubType.BOW) {
+        _this.longRangePercent = 0.36;
+      }
+    },
+  },
+  {
+    id: 29100,
+    name: 'Master Archer Lv. 10',
+    type: EquipmentType.CARD,
+    subType: null,
+    location: null,
+    compoundOn: CompoundOn.ENCHANT,
+    baseDef: 0,
+    baseATK: 0,
+    level: 1,
+    equipUpgradeValue: 0,
+    str: 0,
+    agi: 0,
+    vit: 0,
+    int: 0,
+    dex: 0,
+    luk: 0,
+    additionAtk: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    additionDef: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    eATK: 0,
+    cATK: 0,
+    aspd: 0.1,
+    criticalPercent: 0,
+    longRangePercent: 0,
+    penetrationPercent: 0,
+    canSelectOnSlot_2: {
+      actives: [...headGearLab5],
+    },
+    script: (character: Character2, _this: IBaseEquipment): void => {
+      _this.longRangePercent = 0;
+      if (character.rightHand?.subType === EquipmentSubType.BOW) {
+        _this.longRangePercent = 0.44;
+      }
+    },
   },
   {
     id: 4700,
