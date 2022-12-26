@@ -90,7 +90,7 @@ export const cards: IBaseEquipment[] = [
     subType: null,
     location: null,
     compoundOn: CompoundOn.ARMOR,
-    baseDef: 0,
+    baseDef: -5,
     baseATK: 0,
     level: 1,
     equipUpgradeValue: 0,
@@ -312,6 +312,7 @@ export const cards: IBaseEquipment[] = [
       class: 0,
     },
     eATK: 15,
+    eMATK: 15,
     cATK: 0,
     criticalPercent: 0,
     penetrationPercent: 0,
@@ -393,9 +394,9 @@ export const cards: IBaseEquipment[] = [
 
       const upgrade = _this.equipUpgradeValue || 0;
       if (upgrade >= 7) {
-        _this.eATK += 10;
+        _this.eATK = 20;
         if (upgrade >= 9) {
-          _this.eATK += 15;
+          _this.eATK = 35;
         }
       }
     },
@@ -431,6 +432,7 @@ export const cards: IBaseEquipment[] = [
     },
     eATK: 0,
     cATK: 0,
+    criRate: 4,
     criticalPercent: 0,
     penetrationPercent: 0,
     suffix: 'of Counter',
@@ -608,11 +610,21 @@ export const cards: IBaseEquipment[] = [
     int: 0,
     dex: 0,
     luk: 0,
+    hpModB: 0,
     additionAtk: {
       size: 0,
       element: 0,
       race: 0,
       class: 0,
+    },
+    additionMAtk: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+      flatNamePercent: 0,
+      matkPercent: 0,
+      skillElement: 0,
     },
     additionDef: {
       size: 0,
@@ -627,6 +639,8 @@ export const cards: IBaseEquipment[] = [
     suffix: 'of Hate',
     script: (character: Character2, _this: IBaseEquipment): void => {
       _this.additionAtk.class = 0.01;
+      _this.additionMAtk.matkPercent = 0.01;
+      _this.hpModB = -0.02;
 
       const upgrade = _this.equipUpgradeValue || 0;
       const tempPercentUpgrade = Number(
@@ -634,6 +648,14 @@ export const cards: IBaseEquipment[] = [
       );
       _this.additionAtk.class = Number(
         new Big(_this.additionAtk.class).plus(tempPercentUpgrade).valueOf()
+      );
+      _this.additionMAtk.matkPercent = Number(
+        new Big(_this.additionMAtk.matkPercent)
+          .plus(tempPercentUpgrade)
+          .valueOf()
+      );
+      _this.hpModB = Number(
+        new Big(Math.floor(upgrade / 2)).mul(-0.02).plus(_this.hpModB).valueOf()
       );
     },
   },
@@ -744,6 +766,15 @@ export const cards: IBaseEquipment[] = [
       race: 0,
       class: 0.15,
     },
+    additionMAtk: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+      flatNamePercent: 0,
+      matkPercent: 0.15,
+      skillElement: 0,
+    },
     additionDef: {
       size: 0,
       element: 0,
@@ -779,6 +810,15 @@ export const cards: IBaseEquipment[] = [
       element: 0,
       race: 0,
       class: 0.2,
+    },
+    additionMAtk: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+      flatNamePercent: 0,
+      matkPercent: 0.2,
+      skillElement: 0,
     },
     additionDef: {
       size: 0,
@@ -909,6 +949,15 @@ export const cards: IBaseEquipment[] = [
       race: 0,
       class: 0,
     },
+    additionMAtk: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+      flatNamePercent: 0,
+      matkPercent: 0,
+      skillElement: 0,
+    },
     additionDef: {
       size: 0,
       element: 0,
@@ -920,7 +969,16 @@ export const cards: IBaseEquipment[] = [
     criticalPercent: 0,
     penetrationPercent: 0,
     prefix: 'Singing',
-    script: (character: Character2, _this: IBaseEquipment): void => {},
+    script: (character: Character2, _this: IBaseEquipment): void => {
+      _this.additionMAtk.element = 0;
+      if (
+        character.monster &&
+        character.monster.element === E_Element.NEUTRAL &&
+        character.rightAccessory?.slot1?.id === 27107
+      ) {
+        _this.additionMAtk.element = 0.2;
+      }
+    },
   },
   {
     id: 27109,
@@ -1390,12 +1448,13 @@ export const cards: IBaseEquipment[] = [
     },
     eATK: 0,
     cATK: 0,
+    criRate: 0,
     criticalPercent: 0,
     penetrationPercent: 0,
     prefix: 'Dual Critical',
     script: (character: Character2, _this: IBaseEquipment): void => {
-      // cri rate + 3
       _this.criticalPercent = 0.05;
+      _this.criRate = 3;
 
       if (character.comboSet.indexOf('27116_27117') > -1) {
         return;
@@ -1411,8 +1470,8 @@ export const cards: IBaseEquipment[] = [
         character.rightHand?.slot3?.id === 27117 ||
         character.rightHand?.slot4?.id === 27117
       ) {
-        // cri rate + 5
         _this.criticalPercent = 0.07;
+        _this.criRate = 5;
         if (character.comboSet.indexOf('27116_27117') === -1) {
           character.comboSet.push('27116_27117');
         }
@@ -1450,12 +1509,14 @@ export const cards: IBaseEquipment[] = [
     },
     eATK: 0,
     cATK: 0,
+    criRate: 0,
     criticalPercent: 0,
     penetrationPercent: 0,
     prefix: 'Lethal',
     script: (character: Character2, _this: IBaseEquipment): void => {
       _this.criticalPercent = 0.1;
       _this.eATK = 0;
+      _this.criRate = 0;
 
       if (
         [
@@ -1465,7 +1526,7 @@ export const cards: IBaseEquipment[] = [
           EquipmentSubType.BOOK,
         ].includes(character.rightHand?.subType)
       ) {
-        // cri rate + 5
+        _this.criRate = 5;
         const upgrade = _this.equipUpgradeValue || 0;
         const tempPercentUpgrade = Number(
           new Big(Math.floor(upgrade)).mul(0.01).valueOf()
@@ -1509,16 +1570,17 @@ export const cards: IBaseEquipment[] = [
     },
     eATK: 0,
     cATK: 0,
+    criRate: 0,
     criticalPercent: 0,
     penetrationPercent: 0,
     prefix: 'Fox Tail',
     script: (character: Character2, _this: IBaseEquipment): void => {
-      // cri rate + 5
+      _this.criRate = 5;
       _this.criticalPercent = 0.1;
 
       const upgrade = _this.equipUpgradeValue || 0;
       if (upgrade >= 10) {
-        // cri rate + 15
+        _this.criRate = 15;
       }
     },
   },
@@ -1553,12 +1615,15 @@ export const cards: IBaseEquipment[] = [
     },
     eATK: 0,
     cATK: 0,
+    aspd: 0,
     criticalPercent: 0,
     penetrationPercent: 0,
     prefix: 'Dirty',
     script: (character: Character2, _this: IBaseEquipment): void => {
       const baseStr = character.class.str0;
-      _this.eATK = Number(new Big(Math.floor(baseStr / 10)).mul(3).valueOf());
+      const strMul = Math.floor(baseStr / 10);
+      _this.eATK = Number(new Big(strMul).mul(3).valueOf());
+      _this.aspd = Number(new Big(strMul).mul(0.01).valueOf());
 
       if (baseStr >= 120) {
         _this.eATK = Number(new Big(_this.eATK).plus(40).valueOf());

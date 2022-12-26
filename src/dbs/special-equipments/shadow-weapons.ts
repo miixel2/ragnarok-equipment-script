@@ -41,12 +41,14 @@ export const shadowWeapons: IBaseEquipment[] = [
       class: 0,
     },
     eATK: 0,
+    eMATK: 0,
     cATK: 0,
     criticalPercent: 0,
     penetrationPercent: 0,
     script: (character: Character2, _this: IBaseEquipment): void => {
       const upgrade = _this.equipUpgradeValue;
       _this.eATK = upgrade;
+      _this.eMATK = upgrade;
 
       if (character.monster.race === MonsterRace.FORMLESS) {
         _this.penetrationPercent = 0.05;
@@ -109,12 +111,14 @@ export const shadowWeapons: IBaseEquipment[] = [
       class: 0,
     },
     eATK: 10,
+    eMATK: 0,
     cATK: 0,
     criticalPercent: 0,
     penetrationPercent: 0,
     script: (character: Character2, _this: IBaseEquipment): void => {
       const upgrade = _this.equipUpgradeValue;
       _this.eATK = upgrade;
+      _this.eMATK = upgrade;
 
       if (upgrade >= 7) {
         _this.criticalPercent = 0.01;
@@ -165,12 +169,14 @@ export const shadowWeapons: IBaseEquipment[] = [
       class: 0,
     },
     eATK: 0,
+    eMATK: 0,
     cATK: 0,
     criticalPercent: 0,
     penetrationPercent: 0,
     script: (character: Character2, _this: IBaseEquipment): void => {
       const upgrade = _this.equipUpgradeValue;
       _this.eATK = upgrade;
+      _this.eMATK = upgrade;
 
       if (character.monster.race === MonsterRace.DEMI_HUMAN) {
         _this.penetrationPercent = 0.05;
@@ -233,12 +239,14 @@ export const shadowWeapons: IBaseEquipment[] = [
       class: 0,
     },
     eATK: 0,
+    eMATK: 0,
     cATK: 0,
     criticalPercent: 0,
     penetrationPercent: 0,
     script: (character: Character2, _this: IBaseEquipment): void => {
       const upgrade = _this.equipUpgradeValue;
       _this.eATK = upgrade;
+      _this.eMATK = upgrade;
 
       if (character.monster.race === MonsterRace.DEMON) {
         _this.penetrationPercent = 0.05;
@@ -301,12 +309,14 @@ export const shadowWeapons: IBaseEquipment[] = [
       class: 0,
     },
     eATK: 0,
+    eMATK: 0,
     cATK: 0,
     criticalPercent: 0,
     penetrationPercent: 0,
     script: (character: Character2, _this: IBaseEquipment): void => {
       const upgrade = _this.equipUpgradeValue;
       _this.eATK = upgrade;
+      _this.eMATK = upgrade;
 
       if (character.monster.race === MonsterRace.BRUTE) {
         _this.penetrationPercent = 0.05;
@@ -369,12 +379,14 @@ export const shadowWeapons: IBaseEquipment[] = [
       class: 0,
     },
     eATK: 0,
+    eMATK: 0,
     cATK: 0,
     criticalPercent: 0,
     penetrationPercent: 0,
     script: (character: Character2, _this: IBaseEquipment): void => {
       const upgrade = _this.equipUpgradeValue;
       _this.eATK = upgrade;
+      _this.eMATK = upgrade;
 
       if (character.monster.race === MonsterRace.INSECT) {
         _this.penetrationPercent = 0.05;
@@ -437,12 +449,14 @@ export const shadowWeapons: IBaseEquipment[] = [
       class: 0,
     },
     eATK: 0,
+    eMATK: 0,
     cATK: 0,
     criticalPercent: 0,
     penetrationPercent: 0,
     script: (character: Character2, _this: IBaseEquipment): void => {
       const upgrade = _this.equipUpgradeValue;
       _this.eATK = upgrade;
+      _this.eMATK = upgrade;
 
       if (character.monster.race === MonsterRace.FISH) {
         _this.penetrationPercent = 0.05;
@@ -505,12 +519,14 @@ export const shadowWeapons: IBaseEquipment[] = [
       class: 0,
     },
     eATK: 0,
+    eMATK: 0,
     cATK: 0,
     criticalPercent: 0,
     penetrationPercent: 0,
     script: (character: Character2, _this: IBaseEquipment): void => {
       const upgrade = _this.equipUpgradeValue;
       _this.eATK = upgrade;
+      _this.eMATK = upgrade;
 
       if (character.monster.race === MonsterRace.DRAGON) {
         _this.penetrationPercent = 0.05;
@@ -573,12 +589,14 @@ export const shadowWeapons: IBaseEquipment[] = [
       class: 0,
     },
     eATK: 0,
+    eMATK: 0,
     cATK: 0,
     criticalPercent: 0,
     penetrationPercent: 0,
     script: (character: Character2, _this: IBaseEquipment): void => {
       const upgrade = _this.equipUpgradeValue;
       _this.eATK = upgrade;
+      _this.eMATK = upgrade;
 
       if (character.monster.race === MonsterRace.ANGEL) {
         _this.penetrationPercent = 0.05;
@@ -641,12 +659,14 @@ export const shadowWeapons: IBaseEquipment[] = [
       class: 0,
     },
     eATK: 0,
+    eMATK: 0,
     cATK: 0,
     criticalPercent: 0,
     penetrationPercent: 0,
     script: (character: Character2, _this: IBaseEquipment): void => {
       const upgrade = _this.equipUpgradeValue;
       _this.eATK = upgrade;
+      _this.eMATK = upgrade;
 
       if (character.monster.race === MonsterRace.UNDEAD) {
         _this.penetrationPercent = 0.05;
@@ -709,12 +729,14 @@ export const shadowWeapons: IBaseEquipment[] = [
       class: 0,
     },
     eATK: 0,
+    eMATK: 0,
     cATK: 0,
     criticalPercent: 0,
     penetrationPercent: 0,
     script: (character: Character2, _this: IBaseEquipment): void => {
       const upgrade = _this.equipUpgradeValue;
       _this.eATK = upgrade;
+      _this.eMATK = upgrade;
 
       if (character.monster.race === MonsterRace.PLANT) {
         _this.penetrationPercent = 0.05;
@@ -777,12 +799,14 @@ export const shadowWeapons: IBaseEquipment[] = [
       class: 0,
     },
     eATK: 0,
+    eMATK: 0,
     cATK: 0,
     criticalPercent: 0.07,
     penetrationPercent: 0,
     script: (character: Character2, _this: IBaseEquipment): void => {
       const upgrade = _this.equipUpgradeValue;
       _this.eATK = upgrade;
+      _this.eMATK = upgrade;
     },
   },
   {
@@ -816,6 +840,7 @@ export const shadowWeapons: IBaseEquipment[] = [
       class: 0,
     },
     eATK: 0,
+    eMATK: 0,
     cATK: 0,
     criticalPercent: 0,
     penetrationPercent: 0,
@@ -823,6 +848,7 @@ export const shadowWeapons: IBaseEquipment[] = [
     script: (character: Character2, _this: IBaseEquipment): void => {
       const upgrade = _this.equipUpgradeValue;
       _this.eATK = upgrade;
+      _this.eMATK = upgrade;
 
       if (character.playerTypeAtk === 2002) {
         character.buffSkillPercent = Number(
@@ -866,12 +892,16 @@ export const shadowWeapons: IBaseEquipment[] = [
       race: 0,
       class: 0,
     },
-    eATK: 15,
+    eATK: 0,
+    eMATK: 0,
     cATK: 0,
     criticalPercent: 0,
     penetrationPercent: 0,
     script: (character: Character2, _this: IBaseEquipment): void => {
       const upgrade = _this.equipUpgradeValue;
+      _this.eATK = upgrade + 15;
+      _this.eMATK = upgrade;
+
       _this.criticalPercent = Number(
         new Big(Math.floor(upgrade / 2)).mul(0.01).valueOf()
       );
@@ -913,6 +943,7 @@ export const shadowWeapons: IBaseEquipment[] = [
       ignoreSizePenalty: false,
     },
     eATK: 0,
+    eMATK: 0,
     cATK: 0,
     criticalPercent: 0,
     penetrationPercent: 0,
@@ -920,6 +951,8 @@ export const shadowWeapons: IBaseEquipment[] = [
       _this.options.ignoreSizePenalty = false;
       _this.additionAtk.size = 0;
       const upgrade = _this.equipUpgradeValue;
+      _this.eATK = upgrade;
+      _this.eMATK = upgrade;
       _this.additionAtk.size = Number(
         new Big(Math.floor(upgrade / 3)).mul(0.01).valueOf()
       );
@@ -961,12 +994,16 @@ export const shadowWeapons: IBaseEquipment[] = [
       race: 0,
       class: 0,
     },
-    eATK: 10,
+    eATK: 0,
+    eMATK: 0,
     cATK: 0,
     criticalPercent: 0,
     penetrationPercent: 0,
     classActives: [ClassKey.RuneKnight],
     script: (character: Character2, _this: IBaseEquipment): void => {
+      const upgrade = _this.equipUpgradeValue;
+      _this.eATK = upgrade + 10;
+      _this.eMATK = upgrade;
       _this.penetrationPercent = 0;
 
       if (
@@ -1029,6 +1066,7 @@ export const shadowWeapons: IBaseEquipment[] = [
       ignoreSizePenalty: false,
     },
     eATK: 0,
+    eMATK: 0,
     cATK: 0,
     criticalPercent: 0,
     penetrationPercent: 0,
@@ -1036,6 +1074,7 @@ export const shadowWeapons: IBaseEquipment[] = [
     script: (character: Character2, _this: IBaseEquipment): void => {
       const upgrade = _this.equipUpgradeValue;
       _this.eATK = upgrade;
+      _this.eMATK = upgrade;
       _this.penetrationPercent = 0;
 
       if (character.playerTypeAtk === 2006) {
@@ -1104,14 +1143,18 @@ export const shadowWeapons: IBaseEquipment[] = [
       race: 0,
       class: 0,
     },
-    eATK: 10,
-    eMATK: 10,
+    eATK: 0,
+    eMATK: 0,
     cATK: 0,
     criticalPercent: 0,
     penetrationPercent: 0,
     penetrationMPercent: 0,
     classActives: [ClassKey.Sorcerer],
     script: (character: Character2, _this: IBaseEquipment): void => {
+      const upgrade = _this.equipUpgradeValue;
+      _this.eATK = upgrade;
+      _this.eMATK = upgrade + 10;
+
       _this.penetrationMPercent = 0;
       _this.additionMAtk.size = 0;
 
