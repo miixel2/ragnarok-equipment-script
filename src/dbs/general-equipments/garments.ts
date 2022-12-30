@@ -2220,4 +2220,79 @@ export const garments: IBaseEquipment[] = [
       }
     },
   },
+  {
+    id: 480256,
+    name: 'DID Cape [1]',
+    type: EquipmentType.ARMOR,
+    subType: EquipmentSubType.GARMENT,
+    location: EquipmentLocation.GARMENT,
+    compoundOn: null,
+    slot1Enable: 'CARD',
+    baseDef: 8,
+    baseATK: 0,
+    level: 1,
+    equipUpgradeValue: 0,
+    str: 0,
+    agi: 0,
+    vit: 0,
+    int: 0,
+    dex: 0,
+    luk: 0,
+    additionAtk: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    additionDef: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    eATK: 0,
+    cATK: 0,
+    hit: 0,
+    acd: 0,
+    aspd: 0,
+    criticalPercent: 0,
+    meleePercent: 0,
+    penetrationPercent: 0,
+    script: (character: Character2, _this: IBaseEquipment): void => {
+      _this.eATK = 30;
+      _this.acd = 0;
+      _this.aspd = 0;
+      _this.hit += 30;
+      _this.str = 0;
+      _this.agi = 0;
+      _this.vit = 0;
+      _this.int = 0;
+      _this.dex = 0;
+      _this.luk = 0;
+      const upgrade = _this.equipUpgradeValue;
+      _this.hit = Number(new Big(Math.floor(upgrade / 3)).mul(8).valueOf());
+      _this.meleePercent = Number(
+        new Big(Math.floor(upgrade / 3)).mul(0.03).valueOf()
+      );
+
+      if (character.class.classKey === ClassKey.GuillotineCross) {
+        _this.acd = 0.05;
+        _this.aspd = 0.2;
+      }
+
+      if (upgrade >= 11) {
+        _this.hit += 30;
+        _this.str = 5;
+        _this.agi = 5;
+        _this.vit = 5;
+        _this.int = 5;
+        _this.dex = 5;
+        _this.luk = 5;
+
+        _this.meleePercent = Number(
+          new Big(_this.meleePercent).plus(0.05).valueOf()
+        );
+      }
+    },
+  },
 ];

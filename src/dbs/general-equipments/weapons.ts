@@ -2284,4 +2284,69 @@ export const weapons: IBaseEquipment[] = [
     ],
     script: (character: Character2, _this: IBaseEquipment): void => {},
   },
+  {
+    id: 28787,
+    name: 'Rotten Garden Knife [4]',
+    type: EquipmentType.WEAPON,
+    subType: EquipmentSubType.DAGGER,
+    location: EquipmentLocation.RIGHT_HAND,
+    compoundOn: null,
+    slot1Enable: true,
+    slot2Enable: true,
+    slot3Enable: true,
+    slot4Enable: true,
+    baseDef: 0,
+    baseATK: 10,
+    level: 3,
+    equipUpgradeValue: 0,
+    str: 0,
+    agi: 0,
+    vit: 0,
+    int: 0,
+    dex: 0,
+    luk: 0,
+    additionAtk: {
+      size: 0.25,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    additionMAtk: {
+      size: 0.25,
+      element: 0,
+      race: 0,
+      class: 0,
+      flatNamePercent: 0,
+      matkPercent: 0,
+      skillElement: 0,
+    },
+    additionDef: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    eATK: 0,
+    cATK: 0,
+    acd: 0.05,
+    criticalPercent: 0,
+    penetrationPercent: 0,
+    script: (character: Character2, _this: IBaseEquipment): void => {
+      _this.additionAtk.element = 0;
+      if (
+        character.leftHand?.id === 28787 &&
+        character.comboSet.indexOf('28787') === -1
+      ) {
+        character.comboSet.push('28787');
+        const upgrade = _this.equipUpgradeValue;
+
+        if (upgrade >= 10) {
+          const multi = upgrade - 10;
+          _this.additionAtk.element = Number(
+            new Big(multi).mul(0.02).valueOf()
+          );
+        }
+      }
+    },
+  },
 ];

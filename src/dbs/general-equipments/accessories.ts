@@ -9,6 +9,7 @@ import {
   IBaseEquipment,
 } from '../../models/equipment';
 import { E_Element } from '../../models/element';
+import { MonsterType } from '../../models/monster';
 
 export const accessories: IBaseEquipment[] = [
   {
@@ -2079,6 +2080,264 @@ export const accessories: IBaseEquipment[] = [
         ].includes(character.elementalConverter)
       ) {
         _this.additionMAtk.skillElement = 0.05;
+      }
+    },
+  },
+  {
+    id: 2629,
+    name: 'Megingjard',
+    type: EquipmentType.ARMOR,
+    subType: EquipmentSubType.ACCESSORY,
+    location: EquipmentLocation.ACCESSORY,
+    compoundOn: null,
+    baseDef: 0,
+    baseMDEF: 7,
+    baseATK: 0,
+    level: 1,
+    equipUpgradeValue: 0,
+    str: 0,
+    agi: 0,
+    vit: 0,
+    int: 0,
+    dex: 0,
+    luk: 0,
+    additionAtk: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+      atkPercent2: 0,
+    },
+    additionDef: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    eATK: 0,
+    cATK: 0,
+    criticalPercent: 0,
+    penetrationPercent: 0,
+    script: (character: Character2, _this: IBaseEquipment): void => {
+      _this.additionAtk.class = 0;
+      _this.str = 40 + Math.floor(character.class.baseLv / 5);
+      const baseStr = character.class.str0;
+
+      if (baseStr >= 120 && character.monster?.type === MonsterType.BOSS) {
+        _this.additionAtk.class = 0.1;
+      }
+    },
+  },
+  {
+    id: 490309,
+    name: '[Upgrade] Illusion Ring [1]',
+    type: EquipmentType.ARMOR,
+    subType: EquipmentSubType.ACCESSORY,
+    location: EquipmentLocation.LEFT_ACCESSORY,
+    compoundOn: null,
+    slot1Enable: 'CARD',
+    slot2Enable: 'ENCHANT',
+    slot3Enable: 'ENCHANT',
+    slot4Enable: 'ENCHANT',
+    baseDef: 0,
+    baseMDEF: 0,
+    baseATK: 0,
+    level: 1,
+    equipUpgradeValue: 0,
+    str: 0,
+    agi: 0,
+    vit: 0,
+    int: 0,
+    dex: 0,
+    luk: 0,
+    hpModB: 0,
+    spModB: 0,
+    additionAtk: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+      atkPercent2: 0,
+    },
+    additionMAtk: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+      flatNamePercent: 0,
+      matkPercent: 0,
+      skillElement: 0,
+    },
+    additionDef: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    eATK: 0,
+    cATK: 0,
+    acd: 0,
+    vct: 0,
+    fct: 0,
+    flee: 0,
+    criticalPercent: 0,
+    longRangePercent: 0,
+    penetrationPercent: 0,
+    penetrationMPercent: 0,
+    script: (character: Character2, _this: IBaseEquipment): void => {
+      _this.additionAtk.atkPercent2 = 0.05;
+      _this.additionMAtk.matkPercent = 0.05;
+      _this.str = 1;
+      _this.agi = 1;
+      _this.vit = 1;
+      _this.int = 1;
+      _this.dex = 1;
+      _this.luk = 1;
+      _this.acd = 0.05;
+      _this.hpModB = 0;
+      _this.spModB = 0;
+      _this.additionAtk.class = 0;
+      _this.additionMAtk.class = 0;
+      _this.baseMDEF = 0;
+      _this.fct = 0;
+
+      if (character.rightAccessory?.id === 32207) {
+        if (character.monster.type === MonsterType.BOSS) {
+          _this.additionAtk.class = 0.1;
+        }
+      }
+
+      if (character.rightAccessory?.id === 32208) {
+        _this.hpModB = 0.1;
+        _this.spModB = 0.1;
+      }
+
+      if (character.rightAccessory?.id === 32209) {
+        _this.int = 6;
+        _this.dex = 6;
+        if (character.monster.type === MonsterType.BOSS) {
+          _this.additionMAtk.class = 0.1;
+        }
+      }
+
+      if (character.rightAccessory?.id === 32210) {
+        _this.baseMDEF = 15;
+        _this.fct = 0.3;
+      }
+    },
+  },
+  {
+    id: 490310,
+    name: 'Secret Illusion Ring [1]',
+    type: EquipmentType.ARMOR,
+    subType: EquipmentSubType.ACCESSORY,
+    location: EquipmentLocation.LEFT_ACCESSORY,
+    compoundOn: null,
+    slot1Enable: 'CARD',
+    slot2Enable: 'ENCHANT',
+    slot3Enable: 'ENCHANT',
+    slot4Enable: 'ENCHANT',
+    baseDef: 0,
+    baseMDEF: 15,
+    baseATK: 0,
+    level: 1,
+    equipUpgradeValue: 0,
+    str: 0,
+    agi: 0,
+    vit: 0,
+    int: 0,
+    dex: 0,
+    luk: 0,
+    hpModB: 0,
+    spModB: 0,
+    additionAtk: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+      atkPercent2: 0,
+    },
+    additionMAtk: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+      flatNamePercent: 0,
+      matkPercent: 0,
+      skillElement: 0,
+    },
+    additionDef: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    eATK: 0,
+    cATK: 0,
+    acd: 0,
+    vct: 0,
+    fct: 0,
+    flee: 0,
+    criticalPercent: 0,
+    longRangePercent: 0,
+    penetrationPercent: 0,
+    penetrationMPercent: 0,
+    script: (character: Character2, _this: IBaseEquipment): void => {
+      _this.additionAtk.atkPercent2 = 0.05;
+      _this.additionMAtk.matkPercent = 0.05;
+      _this.str = 1;
+      _this.agi = 1;
+      _this.vit = 1;
+      _this.int = 6;
+      _this.dex = 6;
+      _this.luk = 1;
+      _this.acd = 0.05;
+      _this.fct = 0.3;
+      _this.vct = 0;
+      _this.hpModB = 0.1;
+      _this.spModB = 0.1;
+      _this.penetrationMPercent = 0;
+      _this.longRangePercent = 0;
+      _this.flee = 0;
+
+      if (
+        character.shoes?.slot2?.id === 25700 ||
+        character.shoes?.slot3?.id === 25700 ||
+        character.shoes?.slot4?.id === 25700
+      ) {
+        _this.vct = 0.2;
+      }
+
+      if (
+        character.shoes?.slot2?.id === 25701 ||
+        character.shoes?.slot3?.id === 25701 ||
+        character.shoes?.slot4?.id === 25701
+      ) {
+        _this.penetrationMPercent = 0.5;
+      }
+
+      if (
+        character.shoes?.slot2?.id === 25703 ||
+        character.shoes?.slot3?.id === 25703 ||
+        character.shoes?.slot4?.id === 25703
+      ) {
+        _this.hpModB = 0.25;
+      }
+
+      if (
+        character.shoes?.slot2?.id === 25704 ||
+        character.shoes?.slot3?.id === 25704 ||
+        character.shoes?.slot4?.id === 25704
+      ) {
+        _this.longRangePercent = 0.08;
+      }
+
+      if (
+        character.shoes?.slot2?.id === 25705 ||
+        character.shoes?.slot3?.id === 25705 ||
+        character.shoes?.slot4?.id === 25705
+      ) {
+        _this.flee = 40;
       }
     },
   },

@@ -747,4 +747,55 @@ export const shadowArmors: IBaseEquipment[] = [
       }
     },
   },
+  {
+    id: 24536,
+    name: 'Rolling Shadow Armor',
+    type: EquipmentType.SHADOW_EQUIPMENT,
+    subType: EquipmentSubType.SHADOW_ARMOR,
+    location: EquipmentLocation.SHADOW_ARMOR,
+    compoundOn: null,
+    option1Enable: true,
+    baseDef: 0,
+    baseATK: 0,
+    level: 1,
+    equipUpgradeValue: 0,
+    str: 0,
+    agi: 0,
+    vit: 0,
+    int: 0,
+    dex: 0,
+    luk: 0,
+    hpModA: 0,
+    additionAtk: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    additionDef: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    eATK: 0,
+    cATK: 0,
+    criticalPercent: 0,
+    penetrationPercent: 0,
+    classActives: [ClassKey.GuillotineCross],
+    script: (character: Character2, _this: IBaseEquipment): void => {
+      const upgrade = _this.equipUpgradeValue;
+      _this.hpModA = upgrade * 10;
+
+      if (character.playerTypeAtk === 2036) {
+        const refine = Number(
+          new Big(Math.floor(upgrade / 2)).mul(0.02).valueOf()
+        );
+
+        character.buffSkillPercent = Number(
+          new Big(character.buffSkillPercent).plus(0.05).plus(refine).valueOf()
+        );
+      }
+    },
+  },
 ];

@@ -470,6 +470,7 @@ export const upperHeadgear: IBaseEquipment[] = [
       element: 0,
       race: 0,
       class: 0,
+      flatNamePercent: 0,
     },
     additionMAtk: {
       size: 0,
@@ -491,6 +492,7 @@ export const upperHeadgear: IBaseEquipment[] = [
     criticalPercent: 0,
     penetrationPercent: 0,
     script: (character: Character2, _this: IBaseEquipment): void => {
+      _this.additionAtk.flatNamePercent = 0;
       _this.additionMAtk.flatNamePercent = 0;
       if (
         [
@@ -498,22 +500,16 @@ export const upperHeadgear: IBaseEquipment[] = [
           3074,
         ].includes(character.monster?.id)
       ) {
-        character.mulMeleeAtk = Number(
-          new Big(character.mulMeleeAtk).plus(0.15).valueOf()
-        );
+        _this.additionAtk.flatNamePercent = 0.15;
         _this.additionMAtk.flatNamePercent = 0.15;
 
         const upgrade = _this.equipUpgradeValue;
         if (upgrade >= 7) {
-          character.mulMeleeAtk = Number(
-            new Big(character.mulMeleeAtk).plus(0.15).valueOf()
-          );
+          _this.additionAtk.flatNamePercent = 0.3;
           _this.additionMAtk.flatNamePercent = 0.3;
 
           if (upgrade >= 9) {
-            character.mulMeleeAtk = Number(
-              new Big(character.mulMeleeAtk).plus(0.2).valueOf()
-            );
+            _this.additionAtk.flatNamePercent = 0.5;
             _this.additionMAtk.flatNamePercent = 0.5;
           }
         }
@@ -642,6 +638,7 @@ export const upperHeadgear: IBaseEquipment[] = [
       element: 0,
       race: 0,
       class: 0,
+      flatNamePercent: 0,
     },
     additionMAtk: {
       size: 0,
@@ -664,14 +661,12 @@ export const upperHeadgear: IBaseEquipment[] = [
     criticalPercent: 0,
     penetrationPercent: 0,
     script: (character: Character2, _this: IBaseEquipment): void => {
+      _this.additionAtk.flatNamePercent = 0;
       _this.additionMAtk.flatNamePercent = 0;
       if (
         [3799, 3800, 3801, 3802, 3803, 3804].includes(character.monster?.id)
       ) {
-        character.mulMeleeAtk = Number(
-          new Big(character.mulMeleeAtk).plus(0.5).valueOf()
-        );
-
+        _this.additionAtk.flatNamePercent = 0.5;
         _this.additionMAtk.flatNamePercent = 0.5;
       }
     },

@@ -1,7 +1,4 @@
-import { elementPenaltyTable, E_Element } from './element';
-import { sizePenaltyTable } from './size';
-import { Character2 } from './character2';
-import { BaseEquipment, EquipmentSubType } from './equipment';
+import { E_Element } from './element';
 
 export enum MonsterRace {
   ANGEL = 'ANGEL',

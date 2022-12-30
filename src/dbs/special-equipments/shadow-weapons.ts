@@ -1178,4 +1178,143 @@ export const shadowWeapons: IBaseEquipment[] = [
       }
     },
   },
+  {
+    id: 24224,
+    name: 'Force Shadow Weapon',
+    type: EquipmentType.SHADOW_EQUIPMENT,
+    subType: EquipmentSubType.SHADOW_WEAPON,
+    location: EquipmentLocation.SHADOW_WEAPON,
+    compoundOn: null,
+    option1Enable: true,
+    baseDef: 0,
+    baseATK: 0,
+    level: 1,
+    equipUpgradeValue: 0,
+    str: 0,
+    agi: 0,
+    vit: 0,
+    int: 0,
+    dex: 0,
+    luk: 0,
+    additionAtk: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    additionDef: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    eATK: 0,
+    cATK: 0,
+    criticalPercent: 0,
+    penetrationPercent: 0,
+    script: (character: Character2, _this: IBaseEquipment): void => {
+      _this.additionAtk.size = 0.01;
+      const upgrade = _this.equipUpgradeValue;
+      _this.eATK = upgrade;
+
+      if (upgrade >= 7) {
+        _this.additionAtk.size = 0.02;
+
+        if (upgrade >= 9) {
+          _this.additionAtk.size = 0.03;
+        }
+      }
+
+      if (
+        character.shadowRightAccessory?.id === 24225 &&
+        character.shadowLeftAccessory?.id === 24226
+      ) {
+        _this.eATK += 10;
+
+        const earringRefine = character.shadowRightAccessory.equipUpgradeValue;
+        const pendantRefine = character.shadowLeftAccessory.equipUpgradeValue;
+        const sum = earringRefine + pendantRefine + upgrade;
+
+        if (sum >= 20) {
+          _this.additionAtk.size = Number(
+            new Big(_this.additionAtk.size).mul(0.01).valueOf()
+          );
+
+          if (sum >= 25) {
+            _this.additionAtk.size = Number(
+              new Big(_this.additionAtk.size).mul(0.01).valueOf()
+            );
+          }
+        }
+      }
+    },
+  },
+  {
+    id: 24223,
+    name: 'Enhanced Force Shadow Weapon',
+    type: EquipmentType.SHADOW_EQUIPMENT,
+    subType: EquipmentSubType.SHADOW_WEAPON,
+    location: EquipmentLocation.SHADOW_WEAPON,
+    compoundOn: null,
+    option1Enable: true,
+    baseDef: 0,
+    baseATK: 0,
+    level: 1,
+    equipUpgradeValue: 0,
+    str: 0,
+    agi: 0,
+    vit: 0,
+    int: 0,
+    dex: 0,
+    luk: 0,
+    additionAtk: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    additionDef: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    eATK: 0,
+    cATK: 0,
+    criticalPercent: 0,
+    penetrationPercent: 0,
+    script: (character: Character2, _this: IBaseEquipment): void => {
+      const upgrade = _this.equipUpgradeValue;
+      _this.eATK = upgrade + 10;
+
+      _this.additionAtk.class = Number(
+        new Big(Math.floor(upgrade / 2)).mul(0.01).valueOf()
+      );
+
+      if (
+        character.shadowRightAccessory?.id === 24225 &&
+        character.shadowLeftAccessory?.id === 24226
+      ) {
+        _this.additionAtk.class = Number(
+          new Big(_this.additionAtk.class).mul(0.01).valueOf()
+        );
+
+        const earringRefine = character.shadowRightAccessory.equipUpgradeValue;
+        const pendantRefine = character.shadowLeftAccessory.equipUpgradeValue;
+        const sum = earringRefine + pendantRefine + upgrade;
+
+        if (sum >= 20) {
+          _this.additionAtk.class = Number(
+            new Big(_this.additionAtk.class).mul(0.01).valueOf()
+          );
+
+          if (sum >= 25) {
+            _this.additionAtk.class = Number(
+              new Big(_this.additionAtk.class).mul(0.01).valueOf()
+            );
+          }
+        }
+      }
+    },
+  },
 ];

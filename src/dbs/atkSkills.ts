@@ -17,6 +17,11 @@ export interface IAtkSkill {
   classActives?: ClassKey[];
   level: SkillLevel[];
   element?: E_Element;
+  canCritical?: boolean;
+  options?: {
+    byPassDef?: boolean;
+    byPassMDef?: boolean;
+  };
   script?: (character: Character2, _this: SkillLevel) => number;
 }
 
@@ -86,6 +91,7 @@ export const atkSkills: IAtkSkill[] = [
     name: 'Cross Impact',
     type: 'melee',
     maxLevel: 5,
+    canCritical: true,
     classActives: [ClassKey.GuillotineCross],
     level: [
       {
@@ -114,6 +120,71 @@ export const atkSkills: IAtkSkill[] = [
         new Big(_this.skillPercent)
           .mul(character.class.baseLv)
           .div(120)
+          .valueOf()
+      );
+    },
+  },
+  {
+    id: 2029,
+    name: 'Counter Slash',
+    type: 'melee',
+    maxLevel: 10,
+    options: {
+      byPassDef: true,
+    },
+    classActives: [ClassKey.GuillotineCross],
+    level: [
+      {
+        level: 1,
+        skillPercent: 4.5,
+      },
+      {
+        level: 2,
+        skillPercent: 6,
+      },
+      {
+        level: 3,
+        skillPercent: 7.5,
+      },
+      {
+        level: 4,
+        skillPercent: 9,
+      },
+      {
+        level: 5,
+        skillPercent: 10.5,
+      },
+      {
+        level: 6,
+        skillPercent: 12,
+      },
+      {
+        level: 7,
+        skillPercent: 13.5,
+      },
+      {
+        level: 8,
+        skillPercent: 15,
+      },
+      {
+        level: 9,
+        skillPercent: 16.5,
+      },
+      {
+        level: 10,
+        skillPercent: 18,
+      },
+    ],
+    script: (character: Character2, _this: SkillLevel): number => {
+      const agi = new Big(character.class.agi0 + character.class._agi).mul(2)
+      const job = new Big(character.class.jobLv).mul(4);
+      return Number(
+        new Big(new Big(_this.skillPercent).mul(100))
+          .mul(character.class.baseLv)
+          .div(120)
+          .plus(agi)
+          .plus(job)
+          .mul(0.01)
           .valueOf()
       );
     },
@@ -209,6 +280,7 @@ export const atkSkills: IAtkSkill[] = [
     name: 'Sonic Wave',
     type: 'range',
     maxLevel: 5,
+    canCritical: true,
     classActives: [ClassKey.RuneKnight],
     level: [
       {
@@ -242,6 +314,7 @@ export const atkSkills: IAtkSkill[] = [
     name: 'Ignition Break',
     type: 'melee',
     maxLevel: 5,
+    canCritical: true,
     classActives: [ClassKey.RuneKnight],
     level: [
       {

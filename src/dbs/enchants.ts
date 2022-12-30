@@ -9078,4 +9078,416 @@ export const enchants: IBaseEquipment[] = [
       }
     },
   },
+  {
+    id: 25700,
+    name: 'Modification Module (Unlimited Vital)',
+    type: EquipmentType.CARD,
+    subType: null,
+    location: null,
+    compoundOn: CompoundOn.ENCHANT,
+    baseDef: 0,
+    baseATK: 0,
+    level: 1,
+    equipUpgradeValue: 0,
+    str: 0,
+    agi: 0,
+    vit: 0,
+    int: 0,
+    dex: 0,
+    luk: 0,
+    spModA: 0,
+    spModB: 0,
+    additionAtk: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    additionDef: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    eATK: 0,
+    cATK: 0,
+    criticalPercent: 0,
+    penetrationPercent: 0,
+    canSelectOnSlot_2: {
+      actives: [...illusion17_1_shoes],
+    },
+    canSelectOnSlot_3: {
+      actives: [...illusion17_1_shoes],
+    },
+    canSelectOnSlot_4: {
+      actives: [...illusion17_1_shoes],
+    },
+    script: (character: Character2, _this: IBaseEquipment): void => {},
+  },
+  {
+    id: 25701,
+    name: 'Modification Module (Spell Buster)',
+    type: EquipmentType.CARD,
+    subType: null,
+    location: null,
+    compoundOn: CompoundOn.ENCHANT,
+    baseDef: 0,
+    baseATK: 0,
+    level: 1,
+    equipUpgradeValue: 0,
+    str: 0,
+    agi: 0,
+    vit: 0,
+    int: 0,
+    dex: 0,
+    luk: 0,
+    spModA: 0,
+    spModB: 0,
+    additionAtk: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    additionDef: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    eATK: 0,
+    cATK: 0,
+    criticalPercent: 0,
+    penetrationPercent: 0,
+    canSelectOnSlot_2: {
+      actives: [...illusion17_1_shoes],
+    },
+    canSelectOnSlot_3: {
+      actives: [...illusion17_1_shoes],
+    },
+    canSelectOnSlot_4: {
+      actives: [...illusion17_1_shoes],
+    },
+    script: (character: Character2, _this: IBaseEquipment): void => {},
+  },
+  {
+    id: 25702,
+    name: 'Modification Module (Firing Shot)',
+    type: EquipmentType.CARD,
+    subType: null,
+    location: null,
+    compoundOn: CompoundOn.ENCHANT,
+    baseDef: 0,
+    baseATK: 0,
+    level: 1,
+    equipUpgradeValue: 0,
+    str: 0,
+    agi: 0,
+    vit: 0,
+    int: 0,
+    dex: 0,
+    luk: 0,
+    spModA: 0,
+    spModB: 0,
+    additionAtk: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    additionDef: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    eATK: 0,
+    cATK: 0,
+    criticalPercent: 0,
+    penetrationPercent: 0,
+    canSelectOnSlot_2: {
+      actives: [...illusion17_1_shoes],
+    },
+    canSelectOnSlot_3: {
+      actives: [...illusion17_1_shoes],
+    },
+    canSelectOnSlot_4: {
+      actives: [...illusion17_1_shoes],
+    },
+    script: (character: Character2, _this: IBaseEquipment): void => {},
+  },
+  {
+    id: 25703,
+    name: 'Modification Module (Overpower)',
+    type: EquipmentType.CARD,
+    subType: null,
+    location: null,
+    compoundOn: CompoundOn.ENCHANT,
+    baseDef: 0,
+    baseATK: 0,
+    level: 1,
+    equipUpgradeValue: 0,
+    str: 0,
+    agi: 0,
+    vit: 0,
+    int: 0,
+    dex: 0,
+    luk: 0,
+    spModA: 0,
+    spModB: 0,
+    additionAtk: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    additionDef: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    eATK: 0,
+    cATK: 0,
+    criticalPercent: 0,
+    penetrationPercent: 0,
+    canSelectOnSlot_2: {
+      actives: [...illusion17_1_shoes],
+    },
+    canSelectOnSlot_3: {
+      actives: [...illusion17_1_shoes],
+    },
+    canSelectOnSlot_4: {
+      actives: [...illusion17_1_shoes],
+    },
+    script: (character: Character2, _this: IBaseEquipment): void => {},
+  },
+  {
+    id: 25704,
+    name: 'Modification Module (Fatal Flash)',
+    type: EquipmentType.CARD,
+    subType: null,
+    location: null,
+    compoundOn: CompoundOn.ENCHANT,
+    baseDef: 0,
+    baseATK: 0,
+    level: 1,
+    equipUpgradeValue: 0,
+    str: 0,
+    agi: 0,
+    vit: 0,
+    int: 0,
+    dex: 0,
+    luk: 0,
+    spModA: 0,
+    spModB: 0,
+    additionAtk: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    additionDef: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    eATK: 0,
+    cATK: 0,
+    criticalPercent: 0,
+    penetrationPercent: 0,
+    canSelectOnSlot_2: {
+      actives: [...illusion17_1_shoes],
+    },
+    canSelectOnSlot_3: {
+      actives: [...illusion17_1_shoes],
+    },
+    canSelectOnSlot_4: {
+      actives: [...illusion17_1_shoes],
+    },
+    script: (character: Character2, _this: IBaseEquipment): void => {},
+  },
+  {
+    id: 25705,
+    name: 'Modification Module (Lucky Strike)',
+    type: EquipmentType.CARD,
+    subType: null,
+    location: null,
+    compoundOn: CompoundOn.ENCHANT,
+    baseDef: 0,
+    baseATK: 0,
+    level: 1,
+    equipUpgradeValue: 0,
+    str: 0,
+    agi: 0,
+    vit: 0,
+    int: 0,
+    dex: 0,
+    luk: 0,
+    spModA: 0,
+    spModB: 0,
+    additionAtk: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    additionDef: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    eATK: 0,
+    cATK: 0,
+    criticalPercent: 0,
+    penetrationPercent: 0,
+    canSelectOnSlot_2: {
+      actives: [...illusion17_1_shoes],
+    },
+    canSelectOnSlot_3: {
+      actives: [...illusion17_1_shoes],
+    },
+    canSelectOnSlot_4: {
+      actives: [...illusion17_1_shoes],
+    },
+    script: (character: Character2, _this: IBaseEquipment): void => {},
+  },
+  {
+    id: 25927,
+    name: 'Modification Module(Vestige of Varmundt)',
+    type: EquipmentType.CARD,
+    subType: null,
+    location: null,
+    compoundOn: CompoundOn.ENCHANT,
+    baseDef: 0,
+    baseATK: 0,
+    level: 1,
+    equipUpgradeValue: 0,
+    str: 0,
+    agi: 0,
+    vit: 0,
+    int: 0,
+    dex: 0,
+    luk: 0,
+    hpModB: 0,
+    additionAtk: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    additionDef: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    eATK: 0,
+    cATK: 0,
+    vct: 0,
+    criticalPercent: 0,
+    longRangePercent: 0,
+    penetrationPercent: 0,
+    penetrationMPercent: 0,
+    canSelectOnSlot_2: {
+      actives: [490310],
+    },
+    canSelectOnSlot_3: {
+      actives: [],
+    },
+    canSelectOnSlot_4: {
+      actives: [],
+    },
+    script: (character: Character2, _this: IBaseEquipment): void => {
+      _this.vct = 0;
+      _this.penetrationMPercent = 0;
+      _this.hpModB = 0;
+      _this.longRangePercent = 0;
+      _this.flee = 0;
+      if (
+        character.shoes?.slot2?.id === 25700 ||
+        character.shoes?.slot3?.id === 25700 ||
+        character.shoes?.slot4?.id === 25700
+      ) {
+        _this.vct = 0.2;
+      }
+
+      if (
+        character.shoes?.slot2?.id === 25701 ||
+        character.shoes?.slot3?.id === 25701 ||
+        character.shoes?.slot4?.id === 25701
+      ) {
+        _this.penetrationMPercent = 0.5;
+      }
+
+      if (
+        character.shoes?.slot2?.id === 25703 ||
+        character.shoes?.slot3?.id === 25703 ||
+        character.shoes?.slot4?.id === 25703
+      ) {
+        _this.hpModB = 0.25;
+      }
+
+      if (
+        character.shoes?.slot2?.id === 25704 ||
+        character.shoes?.slot3?.id === 25704 ||
+        character.shoes?.slot4?.id === 25704
+      ) {
+        _this.longRangePercent = 0.08;
+      }
+
+      if (
+        character.shoes?.slot2?.id === 25705 ||
+        character.shoes?.slot3?.id === 25705 ||
+        character.shoes?.slot4?.id === 25705
+      ) {
+        _this.flee = 40;
+      }
+    },
+  },
+  {
+    id: 29521,
+    name: 'Assassin Cross Stone (Upper)',
+    type: EquipmentType.CARD,
+    subType: null,
+    location: EquipmentLocation.COSTUME_UPPER_HEADGEAR,
+    compoundOn: CompoundOn.ENCHANT,
+    baseDef: 0,
+    baseATK: 0,
+    level: 1,
+    equipUpgradeValue: 0,
+    str: 0,
+    agi: 0,
+    vit: 0,
+    int: 0,
+    dex: 0,
+    luk: 0,
+    additionAtk: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    additionDef: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    eATK: 0,
+    cATK: 0,
+    criticalPercent: 0,
+    penetrationPercent: 0,
+    canSelectOnSlot_2: {
+      actives: [...costumes],
+    },
+    script: (character: Character2, _this: IBaseEquipment): void => {
+      _this.eATK = 0;
+      if (character.buffSkills.findIndex((f) => f.id === 134) > -1) {
+        _this.eATK = 20;
+      }
+    },
+  },
 ];

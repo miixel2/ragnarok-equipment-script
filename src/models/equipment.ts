@@ -50,6 +50,7 @@ export interface IBaseEquipment {
     race: number;
     class: number;
     atkPercent2?: number;
+    flatNamePercent?: number;
   };
 
   additionDef: {

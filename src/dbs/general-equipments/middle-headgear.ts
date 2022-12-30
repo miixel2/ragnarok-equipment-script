@@ -680,4 +680,109 @@ export const middleHeadgear: IBaseEquipment[] = [
     penetrationPercent: 0,
     script: (character: Character2, _this: IBaseEquipment): void => {},
   },
+  {
+    id: 15948,
+    name: 'Eye Patch Of Power',
+    type: EquipmentType.ARMOR,
+    subType: EquipmentSubType.HELM,
+    location: EquipmentLocation.MIDDLE_HEADGEAR,
+    compoundOn: null,
+    baseDef: 0,
+    baseATK: 0,
+    level: 1,
+    equipUpgradeValue: 0,
+    str: 0,
+    agi: 0,
+    vit: 0,
+    int: 0,
+    dex: 0,
+    luk: 0,
+    additionAtk: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    additionDef: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    eATK: 0,
+    cATK: 0,
+    criticalPercent: 0,
+    penetrationPercent: 0,
+    script: (character: Character2, _this: IBaseEquipment): void => {
+      _this.eATK = 60;
+
+      if (character.class.baseLv >= 170) {
+        _this.eATK = 120;
+      }
+
+      if (
+        character.upperHeadgear?.slot1?.id === 4143 ||
+        character.middleHeadgear?.slot1?.id
+      ) {
+        _this.eATK += 50;
+
+        if (character.class.baseLv >= 170) {
+          _this.eATK += 50;
+        }
+      }
+    },
+  },
+  {
+    id: 15950,
+    name: 'Eye Patch Of Power [1]',
+    type: EquipmentType.ARMOR,
+    subType: EquipmentSubType.HELM,
+    location: EquipmentLocation.MIDDLE_HEADGEAR,
+    compoundOn: null,
+    slot1Enable: 'CARD',
+    baseDef: 0,
+    baseATK: 0,
+    level: 1,
+    equipUpgradeValue: 0,
+    str: 0,
+    agi: 0,
+    vit: 0,
+    int: 0,
+    dex: 0,
+    luk: 0,
+    additionAtk: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    additionDef: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    eATK: 0,
+    cATK: 0,
+    criticalPercent: 0,
+    penetrationPercent: 0,
+    script: (character: Character2, _this: IBaseEquipment): void => {
+      _this.eATK = 40;
+
+      if (character.class.baseLv >= 170) {
+        _this.eATK = 80;
+      }
+
+      if (
+        character.upperHeadgear?.slot1?.id === 4143 ||
+        character.middleHeadgear?.slot1?.id
+      ) {
+        _this.eATK += 30;
+
+        if (character.class.baseLv >= 170) {
+          _this.eATK += 30;
+        }
+      }
+    },
+  },
 ];

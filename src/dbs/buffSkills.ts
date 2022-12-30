@@ -31,6 +31,25 @@ export interface IBuffSkill {
   dex?: number;
   luk?: number;
 
+  additionAtk?: {
+    size?: number;
+    element?: number;
+    race?: number;
+    class?: number;
+    atkPercent2?: number;
+    flatNamePercent?: number;
+  };
+
+  additionMAtk?: {
+    size?: number;
+    element?: number;
+    race?: number;
+    class?: number;
+    matkPercent?: number;
+    flatNamePercent?: number;
+    skillElement?: number;
+  };
+
   hit?: number;
   criRate?: number;
   aspd?: number;
@@ -59,6 +78,15 @@ export interface IBuffSkill {
 
 export const buffSkills: IBuffSkill[] = [
   {
+    id: 29,
+    name: 'Increase AGI',
+    level: 10,
+    classActives: [],
+    agi: 12,
+    aspd: 0.1,
+    script: (character: Character2, _this: IBuffSkill): void => {},
+  },
+  {
     id: 34,
     name: 'Blessing',
     level: 10,
@@ -78,7 +106,9 @@ export const buffSkills: IBuffSkill[] = [
       _this.mastery = 0;
       if (
         character.rightHand &&
-        character.rightHand.subType === EquipmentSubType.SWORD
+        [EquipmentSubType.SWORD, EquipmentSubType.DAGGER].includes(
+          character.rightHand.subType
+        )
       ) {
         _this.mastery = 40;
       }
@@ -203,7 +233,7 @@ export const buffSkills: IBuffSkill[] = [
     name: 'Dark Claw',
     level: 5,
     classActives: [ClassKey.GuillotineCross],
-    mulMeleeAtk: 2.5,
+    mulMeleeAtk: 1.5,
     script: (character: Character2, _this: IBuffSkill): void => {},
   },
   {

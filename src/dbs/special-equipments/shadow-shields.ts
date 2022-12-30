@@ -364,6 +364,7 @@ export const shadowShields: IBaseEquipment[] = [
     cATK: 0,
     criticalPercent: 0,
     penetrationPercent: 0,
+    classActives: [ClassKey.RuneKnight],
     script: (character: Character2, _this: IBaseEquipment): void => {
       const upgrade = _this.equipUpgradeValue;
       _this.hpModA = upgrade * 10;
@@ -395,6 +396,81 @@ export const shadowShields: IBaseEquipment[] = [
       }
 
       if (character.shadowRightHand?.id === 24288) {
+        const refineRightHand = character.shadowRightHand.equipUpgradeValue;
+        const temp = Number(
+          new Big(upgrade + refineRightHand).div(100).valueOf()
+        );
+        _this.penetrationPercent = Number(new Big(0.4).plus(temp).valueOf());
+      }
+    },
+  },
+  {
+    id: 24537,
+    name: 'Rolling Shadow Shield',
+    type: EquipmentType.SHADOW_EQUIPMENT,
+    subType: EquipmentSubType.SHADOW_SHIELD,
+    location: EquipmentLocation.SHADOW_SHIELD,
+    compoundOn: null,
+    option1Enable: true,
+    baseDef: 0,
+    baseATK: 0,
+    level: 1,
+    equipUpgradeValue: 0,
+    str: 0,
+    agi: 0,
+    vit: 0,
+    int: 0,
+    dex: 0,
+    luk: 0,
+    hpModA: 0,
+    additionAtk: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    additionDef: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    eATK: 0,
+    cATK: 0,
+    criticalPercent: 0,
+    penetrationPercent: 0,
+    classActives: [ClassKey.GuillotineCross],
+    script: (character: Character2, _this: IBaseEquipment): void => {
+      const upgrade = _this.equipUpgradeValue;
+      _this.hpModA = upgrade * 10;
+      _this.additionAtk.size = 0.03;
+      _this.penetrationPercent = 0;
+
+      if (upgrade >= 7) {
+        _this.additionAtk.size = 0.06;
+
+        if (upgrade >= 9) {
+          _this.additionAtk.size = 0.1;
+        }
+      }
+
+      if (character.playerTypeAtk === 2036) {
+        if (
+          character.shadowBodyGear?.id === 24536 &&
+          character.shadowShoes?.id === 24538
+        ) {
+          const refineRight = character.shadowBodyGear.equipUpgradeValue;
+          const refineLeft = character.shadowShoes.equipUpgradeValue;
+
+          character.buffSkillPercent = Number(
+            new Big(character.buffSkillPercent)
+              .plus(refineRight + refineLeft)
+              .valueOf()
+          );
+        }
+      }
+
+      if (character.shadowRightHand?.id === 24294) {
         const refineRightHand = character.shadowRightHand.equipUpgradeValue;
         const temp = Number(
           new Big(upgrade + refineRightHand).div(100).valueOf()
