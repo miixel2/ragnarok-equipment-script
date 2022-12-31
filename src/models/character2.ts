@@ -11,6 +11,8 @@ class AdditionATKPercent {
   public race: number = 0; // Hydra Card
   public class: number = 0; // Abysmal Knight Card
   public atkPercent: number = 0; // ATK%
+  public flatNamePercent: number = 0;
+  public skillElement: number = 0;
 
   public value: number = 0;
 }

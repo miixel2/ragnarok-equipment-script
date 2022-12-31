@@ -38,6 +38,7 @@ export interface IBuffSkill {
     class?: number;
     atkPercent2?: number;
     flatNamePercent?: number;
+    skillElement?: number;
   };
 
   additionMAtk?: {

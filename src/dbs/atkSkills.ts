@@ -30,6 +30,7 @@ export const atkSkills: IAtkSkill[] = [
     id: 0,
     name: 'Basic Attack',
     maxLevel: 1,
+    canCritical: true,
     level: [
       {
         level: 1,
