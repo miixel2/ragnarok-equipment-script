@@ -20,6 +20,48 @@ const vmGroup5 = [21016, 1450, 1400, 28008, 1800];
 
 export const allOptions: IBaseEquipment[] = [
   {
+    id: 1999999,
+    name: 'ASPD + 1',
+    type: EquipmentType.CARD,
+    subType: null,
+    location: null,
+    compoundOn: CompoundOn.ENCHANT,
+    baseDef: 0,
+    baseATK: 0,
+    level: 1,
+    equipUpgradeValue: 0,
+    str: 0,
+    agi: 0,
+    vit: 0,
+    int: 0,
+    dex: 0,
+    luk: 0,
+    additionAtk: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    additionDef: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    options: {
+      ignoreSizePenalty: true,
+    },
+    eATK: 0,
+    cATK: 0,
+    aspdFlat: 1,
+    criticalPercent: 0,
+    penetrationPercent: 0,
+    canSelectOnOption_1: {
+      actives: [...shadowsId],
+    },
+    script: (character: Character2, _this: IBaseEquipment): void => {},
+  },
+  {
     id: 2000000,
     name: 'No weapon size penalty',
     type: EquipmentType.CARD,

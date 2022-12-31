@@ -8929,6 +8929,64 @@ export const enchants: IBaseEquipment[] = [
     },
   },
   {
+    id: 25693,
+    name: 'Modification Module (Delay after skill)',
+    type: EquipmentType.CARD,
+    subType: null,
+    location: null,
+    compoundOn: CompoundOn.ENCHANT,
+    baseDef: 0,
+    baseATK: 0,
+    level: 1,
+    equipUpgradeValue: 0,
+    str: 0,
+    agi: 0,
+    vit: 0,
+    int: 0,
+    dex: 0,
+    luk: 0,
+    additionAtk: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+      atkPercent2: 0,
+    },
+    additionDef: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    eATK: 0,
+    cATK: 0,
+    acd: 0,
+    criticalPercent: 0,
+    penetrationPercent: 0,
+    canSelectOnSlot_2: {
+      actives: [...illusion17_1_armor],
+    },
+    canSelectOnSlot_3: {
+      actives: [],
+    },
+    canSelectOnSlot_4: {
+      actives: [],
+    },
+    script: (character: Character2, _this: IBaseEquipment): void => {
+      _this.acd = 0.05;
+
+      const upgrade = _this.equipUpgradeValue;
+
+      if (upgrade >= 7) {
+        _this.acd = 0.1;
+
+        if (upgrade >= 9) {
+          _this.acd = 0.15;
+        }
+      }
+    },
+  },
+  {
     id: 25690,
     name: 'Modification Module (Fast)',
     type: EquipmentType.CARD,
