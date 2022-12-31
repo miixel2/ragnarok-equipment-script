@@ -98,29 +98,40 @@ export const atkSkills: IAtkSkill[] = [
       {
         level: 1,
         skillPercent: 11,
+        hit: 7,
       },
       {
         level: 2,
         skillPercent: 12,
+        hit: 7,
       },
       {
         level: 3,
         skillPercent: 13,
+        hit: 7,
       },
       {
         level: 4,
         skillPercent: 14,
+        hit: 7,
       },
       {
         level: 5,
         skillPercent: 15,
+        hit: 7,
       },
     ],
     script: (character: Character2, _this: SkillLevel): number => {
+      let edpBug = 1;
+      if (character.edp === 4) {
+        edpBug = 2;
+      }
+
       return Number(
         new Big(_this.skillPercent)
           .mul(character.class.baseLv)
           .div(120)
+          .div(edpBug)
           .valueOf()
       );
     },
@@ -177,8 +188,14 @@ export const atkSkills: IAtkSkill[] = [
       },
     ],
     script: (character: Character2, _this: SkillLevel): number => {
-      const agi = new Big(character.class.agi0 + character.class._agi).mul(2)
+      const agi = new Big(character.class.agi0 + character.class._agi).mul(2);
       const job = new Big(character.class.jobLv).mul(4);
+
+      let edpBug = 1;
+      if (character.edp === 4) {
+        edpBug = 2;
+      }
+
       return Number(
         new Big(new Big(_this.skillPercent).mul(100))
           .mul(character.class.baseLv)
@@ -186,6 +203,7 @@ export const atkSkills: IAtkSkill[] = [
           .plus(agi)
           .plus(job)
           .mul(0.01)
+          .div(edpBug)
           .valueOf()
       );
     },
