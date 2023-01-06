@@ -9,17 +9,22 @@ export interface IPotionItem extends IBuffSkill {
 
 export const potionItems: IPotionItem[] = [
   {
+    id: 645,
+    level: 1,
+    name: 'Awakening Potion',
+    classActives: [ClassKey.ArchBishop, ClassKey.Minstrel, ClassKey.Wanderer],
+    aspd: 0.1,
+    script: (character: Character2, _this: IBuffSkill): void => {},
+  },
+  {
     id: 656,
     level: 1,
     name: 'Awakening Potion',
     classActives: [
-      ClassKey.ArchBishop,
       ClassKey.Sura,
       ClassKey.GuillotineCross,
-      ClassKey.Minstrel,
       ClassKey.Ranger,
       ClassKey.Sorcerer,
-      ClassKey.Wanderer,
     ],
     aspd: 0.15,
     script: (character: Character2, _this: IBuffSkill): void => {},

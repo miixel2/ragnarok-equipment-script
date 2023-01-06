@@ -4,12 +4,13 @@ import {
   EquipmentType,
   IBaseEquipment,
 } from '../../models/equipment';
-import { shadowIds } from '../costumes';
-
-const shadowsId = shadowIds;
-const vmGroup1 = [1600, 2026];
-const vmGroup4 = [13328, 28605, 28706];
-const vmGroup5 = [21016, 1450, 1400, 28008, 1800];
+import {
+  vmGroup1,
+  vmGroup4,
+  shadowsId,
+  vmGroup5,
+  temporalManteausId,
+} from './equomentIds';
 
 export const otherPercent: IBaseEquipment[] = [
   // Variable cast time +x% [2108001 - 2108100]
@@ -144,7 +145,7 @@ export const otherPercent: IBaseEquipment[] = [
     criticalPercent: 0,
     penetrationPercent: 0,
     canSelectOnOption_1: {
-      actives: [],
+      actives: [...temporalManteausId],
     },
     canSelectOnOption_2: {
       actives: [],
@@ -191,7 +192,7 @@ export const otherPercent: IBaseEquipment[] = [
     criticalPercent: 0,
     penetrationPercent: 0,
     canSelectOnOption_1: {
-      actives: [],
+      actives: [...temporalManteausId],
     },
     canSelectOnOption_2: {
       actives: [],
@@ -238,7 +239,7 @@ export const otherPercent: IBaseEquipment[] = [
     criticalPercent: 0,
     penetrationPercent: 0,
     canSelectOnOption_1: {
-      actives: [],
+      actives: [...temporalManteausId],
     },
     canSelectOnOption_2: {
       actives: [],
@@ -285,7 +286,7 @@ export const otherPercent: IBaseEquipment[] = [
     criticalPercent: 0,
     penetrationPercent: 0,
     canSelectOnOption_1: {
-      actives: [],
+      actives: [...temporalManteausId],
     },
     canSelectOnOption_2: {
       actives: [],
@@ -332,7 +333,7 @@ export const otherPercent: IBaseEquipment[] = [
     criticalPercent: 0,
     penetrationPercent: 0,
     canSelectOnOption_1: {
-      actives: [],
+      actives: [...temporalManteausId],
     },
     canSelectOnOption_2: {
       actives: [],
@@ -379,7 +380,7 @@ export const otherPercent: IBaseEquipment[] = [
     criticalPercent: 0,
     penetrationPercent: 0,
     canSelectOnOption_1: {
-      actives: [],
+      actives: [...temporalManteausId],
     },
     canSelectOnOption_2: {
       actives: [],
@@ -426,7 +427,7 @@ export const otherPercent: IBaseEquipment[] = [
     criticalPercent: 0,
     penetrationPercent: 0,
     canSelectOnOption_1: {
-      actives: [],
+      actives: [...temporalManteausId],
     },
     canSelectOnOption_2: {
       actives: [],
@@ -473,7 +474,7 @@ export const otherPercent: IBaseEquipment[] = [
     criticalPercent: 0,
     penetrationPercent: 0,
     canSelectOnOption_1: {
-      actives: [],
+      actives: [...temporalManteausId],
     },
     canSelectOnOption_2: {
       actives: [],
@@ -1085,7 +1086,7 @@ export const otherPercent: IBaseEquipment[] = [
     criticalPercent: 0,
     penetrationPercent: 0,
     canSelectOnOption_1: {
-      actives: [],
+      actives: [...temporalManteausId],
     },
     canSelectOnOption_2: {
       actives: [],
@@ -1132,7 +1133,7 @@ export const otherPercent: IBaseEquipment[] = [
     criticalPercent: 0,
     penetrationPercent: 0,
     canSelectOnOption_1: {
-      actives: [],
+      actives: [...temporalManteausId],
     },
     canSelectOnOption_2: {
       actives: [],
@@ -1179,7 +1180,7 @@ export const otherPercent: IBaseEquipment[] = [
     criticalPercent: 0,
     penetrationPercent: 0,
     canSelectOnOption_1: {
-      actives: [],
+      actives: [...temporalManteausId],
     },
     canSelectOnOption_2: {
       actives: [],
@@ -1226,7 +1227,7 @@ export const otherPercent: IBaseEquipment[] = [
     criticalPercent: 0,
     penetrationPercent: 0,
     canSelectOnOption_1: {
-      actives: [],
+      actives: [...temporalManteausId],
     },
     canSelectOnOption_2: {
       actives: [],
@@ -1273,7 +1274,7 @@ export const otherPercent: IBaseEquipment[] = [
     criticalPercent: 0,
     penetrationPercent: 0,
     canSelectOnOption_1: {
-      actives: [],
+      actives: [...temporalManteausId],
     },
     canSelectOnOption_2: {
       actives: [],
@@ -1320,7 +1321,7 @@ export const otherPercent: IBaseEquipment[] = [
     criticalPercent: 0,
     penetrationPercent: 0,
     canSelectOnOption_1: {
-      actives: [],
+      actives: [...temporalManteausId],
     },
     canSelectOnOption_2: {
       actives: [],
@@ -1367,7 +1368,7 @@ export const otherPercent: IBaseEquipment[] = [
     criticalPercent: 0,
     penetrationPercent: 0,
     canSelectOnOption_1: {
-      actives: [],
+      actives: [...temporalManteausId],
     },
     canSelectOnOption_2: {
       actives: [],
@@ -1414,7 +1415,7 @@ export const otherPercent: IBaseEquipment[] = [
     criticalPercent: 0,
     penetrationPercent: 0,
     canSelectOnOption_1: {
-      actives: [],
+      actives: [...temporalManteausId],
     },
     canSelectOnOption_2: {
       actives: [],
@@ -1461,7 +1462,7 @@ export const otherPercent: IBaseEquipment[] = [
     criticalPercent: 0,
     penetrationPercent: 0,
     canSelectOnOption_1: {
-      actives: [],
+      actives: [...temporalManteausId],
     },
     canSelectOnOption_2: {
       actives: [],
@@ -1508,7 +1509,7 @@ export const otherPercent: IBaseEquipment[] = [
     criticalPercent: 0,
     penetrationPercent: 0,
     canSelectOnOption_1: {
-      actives: [],
+      actives: [...temporalManteausId],
     },
     canSelectOnOption_2: {
       actives: [],
@@ -1555,7 +1556,7 @@ export const otherPercent: IBaseEquipment[] = [
     criticalPercent: 0,
     penetrationPercent: 0,
     canSelectOnOption_1: {
-      actives: [],
+      actives: [...temporalManteausId],
     },
     canSelectOnOption_2: {
       actives: [],
@@ -1602,7 +1603,7 @@ export const otherPercent: IBaseEquipment[] = [
     criticalPercent: 0,
     penetrationPercent: 0,
     canSelectOnOption_1: {
-      actives: [],
+      actives: [...temporalManteausId],
     },
     canSelectOnOption_2: {
       actives: [],
@@ -1649,7 +1650,7 @@ export const otherPercent: IBaseEquipment[] = [
     criticalPercent: 0,
     penetrationPercent: 0,
     canSelectOnOption_1: {
-      actives: [],
+      actives: [...temporalManteausId],
     },
     canSelectOnOption_2: {
       actives: [],
@@ -2026,7 +2027,7 @@ export const otherPercent: IBaseEquipment[] = [
     criticalPercent: 0,
     penetrationPercent: 0,
     canSelectOnOption_1: {
-      actives: [...shadowsId],
+      actives: [...shadowsId, ...temporalManteausId],
     },
     canSelectOnOption_2: {
       actives: [],
@@ -2073,7 +2074,7 @@ export const otherPercent: IBaseEquipment[] = [
     criticalPercent: 0,
     penetrationPercent: 0,
     canSelectOnOption_1: {
-      actives: [...shadowsId],
+      actives: [...shadowsId, ...temporalManteausId],
     },
     canSelectOnOption_2: {
       actives: [],
@@ -2120,13 +2121,248 @@ export const otherPercent: IBaseEquipment[] = [
     criticalPercent: 0,
     penetrationPercent: 0,
     canSelectOnOption_1: {
-      actives: [...shadowsId],
+      actives: [...shadowsId, ...temporalManteausId],
     },
     canSelectOnOption_2: {
       actives: [],
     },
     canSelectOnOption_3: {
       actives: [...vmGroup4, ...vmGroup5],
+    },
+    script: (character: Character2, _this: IBaseEquipment): void => {},
+  },
+  {
+    id: 2108506,
+    name: `ASPD +6%`,
+    type: EquipmentType.CARD,
+    subType: null,
+    location: null,
+    compoundOn: CompoundOn.ENCHANT,
+    baseDef: 0,
+    baseATK: 0,
+    level: 1,
+    equipUpgradeValue: 0,
+    str: 0,
+    agi: 0,
+    vit: 0,
+    int: 0,
+    dex: 0,
+    luk: 0,
+    additionAtk: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    additionDef: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    options: {
+      aspd: 0.06,
+    },
+    eATK: 0,
+    cATK: 0,
+    criticalPercent: 0,
+    penetrationPercent: 0,
+    canSelectOnOption_1: {
+      actives: [...temporalManteausId],
+    },
+    canSelectOnOption_2: {
+      actives: [],
+    },
+    canSelectOnOption_3: {
+      actives: [],
+    },
+    script: (character: Character2, _this: IBaseEquipment): void => {},
+  },
+  {
+    id: 2108507,
+    name: `ASPD +7%`,
+    type: EquipmentType.CARD,
+    subType: null,
+    location: null,
+    compoundOn: CompoundOn.ENCHANT,
+    baseDef: 0,
+    baseATK: 0,
+    level: 1,
+    equipUpgradeValue: 0,
+    str: 0,
+    agi: 0,
+    vit: 0,
+    int: 0,
+    dex: 0,
+    luk: 0,
+    additionAtk: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    additionDef: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    options: {
+      aspd: 0.07,
+    },
+    eATK: 0,
+    cATK: 0,
+    criticalPercent: 0,
+    penetrationPercent: 0,
+    canSelectOnOption_1: {
+      actives: [...temporalManteausId],
+    },
+    canSelectOnOption_2: {
+      actives: [],
+    },
+    canSelectOnOption_3: {
+      actives: [],
+    },
+    script: (character: Character2, _this: IBaseEquipment): void => {},
+  },
+  {
+    id: 2108508,
+    name: `ASPD +8%`,
+    type: EquipmentType.CARD,
+    subType: null,
+    location: null,
+    compoundOn: CompoundOn.ENCHANT,
+    baseDef: 0,
+    baseATK: 0,
+    level: 1,
+    equipUpgradeValue: 0,
+    str: 0,
+    agi: 0,
+    vit: 0,
+    int: 0,
+    dex: 0,
+    luk: 0,
+    additionAtk: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    additionDef: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    options: {
+      aspd: 0.08,
+    },
+    eATK: 0,
+    cATK: 0,
+    criticalPercent: 0,
+    penetrationPercent: 0,
+    canSelectOnOption_1: {
+      actives: [...temporalManteausId],
+    },
+    canSelectOnOption_2: {
+      actives: [],
+    },
+    canSelectOnOption_3: {
+      actives: [],
+    },
+    script: (character: Character2, _this: IBaseEquipment): void => {},
+  },
+  {
+    id: 2108509,
+    name: `ASPD +9%`,
+    type: EquipmentType.CARD,
+    subType: null,
+    location: null,
+    compoundOn: CompoundOn.ENCHANT,
+    baseDef: 0,
+    baseATK: 0,
+    level: 1,
+    equipUpgradeValue: 0,
+    str: 0,
+    agi: 0,
+    vit: 0,
+    int: 0,
+    dex: 0,
+    luk: 0,
+    additionAtk: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    additionDef: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    options: {
+      aspd: 0.09,
+    },
+    eATK: 0,
+    cATK: 0,
+    criticalPercent: 0,
+    penetrationPercent: 0,
+    canSelectOnOption_1: {
+      actives: [...temporalManteausId],
+    },
+    canSelectOnOption_2: {
+      actives: [],
+    },
+    canSelectOnOption_3: {
+      actives: [],
+    },
+    script: (character: Character2, _this: IBaseEquipment): void => {},
+  },
+  {
+    id: 2108510,
+    name: `ASPD +10%`,
+    type: EquipmentType.CARD,
+    subType: null,
+    location: null,
+    compoundOn: CompoundOn.ENCHANT,
+    baseDef: 0,
+    baseATK: 0,
+    level: 1,
+    equipUpgradeValue: 0,
+    str: 0,
+    agi: 0,
+    vit: 0,
+    int: 0,
+    dex: 0,
+    luk: 0,
+    additionAtk: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    additionDef: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    options: {
+      aspd: 0.1,
+    },
+    eATK: 0,
+    cATK: 0,
+    criticalPercent: 0,
+    penetrationPercent: 0,
+    canSelectOnOption_1: {
+      actives: [...temporalManteausId],
+    },
+    canSelectOnOption_2: {
+      actives: [],
+    },
+    canSelectOnOption_3: {
+      actives: [],
     },
     script: (character: Character2, _this: IBaseEquipment): void => {},
   },

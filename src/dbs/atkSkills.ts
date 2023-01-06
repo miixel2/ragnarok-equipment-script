@@ -298,33 +298,53 @@ export const atkSkills: IAtkSkill[] = [
     id: 2002,
     name: 'Sonic Wave',
     type: 'range',
-    maxLevel: 5,
+    maxLevel: 10,
     canCritical: true,
     classActives: [ClassKey.RuneKnight],
     level: [
       {
         level: 1,
-        skillPercent: 6,
-      },
-      {
-        level: 2,
-        skillPercent: 7,
-      },
-      {
-        level: 3,
         skillPercent: 8,
       },
       {
-        level: 4,
+        level: 2,
         skillPercent: 9,
       },
       {
-        level: 5,
+        level: 3,
         skillPercent: 10,
+      },
+      {
+        level: 4,
+        skillPercent: 11,
+      },
+      {
+        level: 5,
+        skillPercent: 12,
+      },
+      {
+        level: 6,
+        skillPercent: 13,
+      },
+      {
+        level: 7,
+        skillPercent: 14,
+      },
+      {
+        level: 8,
+        skillPercent: 15,
+      },
+      {
+        level: 9,
+        skillPercent: 16,
+      },
+      {
+        level: 10,
+        skillPercent: 17,
       },
     ],
     script: (character: Character2, _this: SkillLevel): number => {
-      const baseLv = new Big(character.class.baseLv - 100).div(200).plus(1);
+      const baseLv = new Big(character.class.baseLv - 100).div(100).plus(1);
       return Number(new Big(_this.skillPercent).mul(baseLv).valueOf());
     },
   },
@@ -595,6 +615,70 @@ export const atkSkills: IAtkSkill[] = [
           .mul(0.01)
           .valueOf()
       );
+    },
+  },
+  {
+    id: 2040,
+    name: 'Adoramus',
+    type: 'magic',
+    maxLevel: 10,
+    element: E_Element.HOLY,
+    classActives: [ClassKey.ArchBishop],
+    level: [
+      {
+        level: 1,
+        skillPercent: 4,
+        hit: 10,
+      },
+      {
+        level: 2,
+        skillPercent: 4.7,
+        hit: 10,
+      },
+      {
+        level: 3,
+        skillPercent: 5.4,
+        hit: 10,
+      },
+      {
+        level: 4,
+        skillPercent: 6.1,
+        hit: 10,
+      },
+      {
+        level: 5,
+        skillPercent: 6.8,
+        hit: 10,
+      },
+      {
+        level: 6,
+        skillPercent: 7.5,
+        hit: 10,
+      },
+      {
+        level: 7,
+        skillPercent: 8.2,
+        hit: 10,
+      },
+      {
+        level: 8,
+        skillPercent: 8.9,
+        hit: 10,
+      },
+      {
+        level: 9,
+        skillPercent: 9.6,
+        hit: 10,
+      },
+      {
+        level: 10,
+        skillPercent: 10.3,
+        hit: 10,
+      },
+    ],
+    script: (character: Character2, _this: SkillLevel): number => {
+      const baseLv = new Big(character.class.baseLv).div(100);
+      return Number(new Big(_this.skillPercent).mul(baseLv).valueOf());
     },
   },
 ];

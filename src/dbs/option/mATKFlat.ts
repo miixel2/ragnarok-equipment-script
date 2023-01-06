@@ -4,9 +4,7 @@ import {
   EquipmentType,
   IBaseEquipment,
 } from '../../models/equipment';
-
-const vmGroup1 = [1600, 2026];
-const vmGroup4 = [13328, 28605, 28706];
+import { vmGroup1, vmGroup4, temporalManteausId } from './equomentIds';
 
 export const matkFlat: IBaseEquipment[] = [
   // MATK +x [2107001 - 2107200]
@@ -235,7 +233,7 @@ export const matkFlat: IBaseEquipment[] = [
     criticalPercent: 0,
     penetrationPercent: 0,
     canSelectOnOption_1: {
-      actives: [],
+      actives: [...temporalManteausId],
     },
     canSelectOnOption_2: {
       actives: [],
@@ -282,7 +280,7 @@ export const matkFlat: IBaseEquipment[] = [
     criticalPercent: 0,
     penetrationPercent: 0,
     canSelectOnOption_1: {
-      actives: [],
+      actives: [...temporalManteausId],
     },
     canSelectOnOption_2: {
       actives: [],
@@ -329,7 +327,7 @@ export const matkFlat: IBaseEquipment[] = [
     criticalPercent: 0,
     penetrationPercent: 0,
     canSelectOnOption_1: {
-      actives: [],
+      actives: [...temporalManteausId],
     },
     canSelectOnOption_2: {
       actives: [],
@@ -376,7 +374,7 @@ export const matkFlat: IBaseEquipment[] = [
     criticalPercent: 0,
     penetrationPercent: 0,
     canSelectOnOption_1: {
-      actives: [],
+      actives: [...temporalManteausId],
     },
     canSelectOnOption_2: {
       actives: [],
@@ -423,7 +421,7 @@ export const matkFlat: IBaseEquipment[] = [
     criticalPercent: 0,
     penetrationPercent: 0,
     canSelectOnOption_1: {
-      actives: [],
+      actives: [...temporalManteausId],
     },
     canSelectOnOption_2: {
       actives: [],
@@ -470,7 +468,7 @@ export const matkFlat: IBaseEquipment[] = [
     criticalPercent: 0,
     penetrationPercent: 0,
     canSelectOnOption_1: {
-      actives: [],
+      actives: [...temporalManteausId],
     },
     canSelectOnOption_2: {
       actives: [],
@@ -517,7 +515,7 @@ export const matkFlat: IBaseEquipment[] = [
     criticalPercent: 0,
     penetrationPercent: 0,
     canSelectOnOption_1: {
-      actives: [],
+      actives: [...temporalManteausId],
     },
     canSelectOnOption_2: {
       actives: [],
@@ -564,7 +562,7 @@ export const matkFlat: IBaseEquipment[] = [
     criticalPercent: 0,
     penetrationPercent: 0,
     canSelectOnOption_1: {
-      actives: [],
+      actives: [...temporalManteausId],
     },
     canSelectOnOption_2: {
       actives: [],
@@ -611,7 +609,7 @@ export const matkFlat: IBaseEquipment[] = [
     criticalPercent: 0,
     penetrationPercent: 0,
     canSelectOnOption_1: {
-      actives: [],
+      actives: [...temporalManteausId],
     },
     canSelectOnOption_2: {
       actives: [],
@@ -658,7 +656,7 @@ export const matkFlat: IBaseEquipment[] = [
     criticalPercent: 0,
     penetrationPercent: 0,
     canSelectOnOption_1: {
-      actives: [],
+      actives: [...temporalManteausId],
     },
     canSelectOnOption_2: {
       actives: [],
@@ -705,7 +703,7 @@ export const matkFlat: IBaseEquipment[] = [
     criticalPercent: 0,
     penetrationPercent: 0,
     canSelectOnOption_1: {
-      actives: [],
+      actives: [...temporalManteausId],
     },
     canSelectOnOption_2: {
       actives: [],
@@ -752,7 +750,7 @@ export const matkFlat: IBaseEquipment[] = [
     criticalPercent: 0,
     penetrationPercent: 0,
     canSelectOnOption_1: {
-      actives: [],
+      actives: [...temporalManteausId],
     },
     canSelectOnOption_2: {
       actives: [],
@@ -799,7 +797,7 @@ export const matkFlat: IBaseEquipment[] = [
     criticalPercent: 0,
     penetrationPercent: 0,
     canSelectOnOption_1: {
-      actives: [],
+      actives: [...temporalManteausId],
     },
     canSelectOnOption_2: {
       actives: [],
@@ -846,7 +844,7 @@ export const matkFlat: IBaseEquipment[] = [
     criticalPercent: 0,
     penetrationPercent: 0,
     canSelectOnOption_1: {
-      actives: [],
+      actives: [...temporalManteausId],
     },
     canSelectOnOption_2: {
       actives: [],
@@ -893,7 +891,7 @@ export const matkFlat: IBaseEquipment[] = [
     criticalPercent: 0,
     penetrationPercent: 0,
     canSelectOnOption_1: {
-      actives: [],
+      actives: [...temporalManteausId],
     },
     canSelectOnOption_2: {
       actives: [],
@@ -940,7 +938,7 @@ export const matkFlat: IBaseEquipment[] = [
     criticalPercent: 0,
     penetrationPercent: 0,
     canSelectOnOption_1: {
-      actives: [],
+      actives: [...temporalManteausId],
     },
     canSelectOnOption_2: {
       actives: [],
@@ -987,7 +985,7 @@ export const matkFlat: IBaseEquipment[] = [
     criticalPercent: 0,
     penetrationPercent: 0,
     canSelectOnOption_1: {
-      actives: [],
+      actives: [...temporalManteausId],
     },
     canSelectOnOption_2: {
       actives: [],
@@ -1034,7 +1032,7 @@ export const matkFlat: IBaseEquipment[] = [
     criticalPercent: 0,
     penetrationPercent: 0,
     canSelectOnOption_1: {
-      actives: [],
+      actives: [...temporalManteausId],
     },
     canSelectOnOption_2: {
       actives: [],
@@ -1081,7 +1079,7 @@ export const matkFlat: IBaseEquipment[] = [
     criticalPercent: 0,
     penetrationPercent: 0,
     canSelectOnOption_1: {
-      actives: [],
+      actives: [...temporalManteausId],
     },
     canSelectOnOption_2: {
       actives: [],
@@ -1128,7 +1126,7 @@ export const matkFlat: IBaseEquipment[] = [
     criticalPercent: 0,
     penetrationPercent: 0,
     canSelectOnOption_1: {
-      actives: [],
+      actives: [...temporalManteausId],
     },
     canSelectOnOption_2: {
       actives: [],
@@ -1175,7 +1173,7 @@ export const matkFlat: IBaseEquipment[] = [
     criticalPercent: 0,
     penetrationPercent: 0,
     canSelectOnOption_1: {
-      actives: [],
+      actives: [...temporalManteausId],
     },
     canSelectOnOption_2: {
       actives: [],
@@ -1222,7 +1220,7 @@ export const matkFlat: IBaseEquipment[] = [
     criticalPercent: 0,
     penetrationPercent: 0,
     canSelectOnOption_1: {
-      actives: [],
+      actives: [...temporalManteausId],
     },
     canSelectOnOption_2: {
       actives: [],
@@ -1269,7 +1267,7 @@ export const matkFlat: IBaseEquipment[] = [
     criticalPercent: 0,
     penetrationPercent: 0,
     canSelectOnOption_1: {
-      actives: [],
+      actives: [...temporalManteausId],
     },
     canSelectOnOption_2: {
       actives: [],
@@ -1316,7 +1314,7 @@ export const matkFlat: IBaseEquipment[] = [
     criticalPercent: 0,
     penetrationPercent: 0,
     canSelectOnOption_1: {
-      actives: [],
+      actives: [...temporalManteausId],
     },
     canSelectOnOption_2: {
       actives: [],
@@ -1363,7 +1361,7 @@ export const matkFlat: IBaseEquipment[] = [
     criticalPercent: 0,
     penetrationPercent: 0,
     canSelectOnOption_1: {
-      actives: [],
+      actives: [...temporalManteausId],
     },
     canSelectOnOption_2: {
       actives: [],
@@ -1410,7 +1408,7 @@ export const matkFlat: IBaseEquipment[] = [
     criticalPercent: 0,
     penetrationPercent: 0,
     canSelectOnOption_1: {
-      actives: [],
+      actives: [...temporalManteausId],
     },
     canSelectOnOption_2: {
       actives: [],
@@ -1457,7 +1455,7 @@ export const matkFlat: IBaseEquipment[] = [
     criticalPercent: 0,
     penetrationPercent: 0,
     canSelectOnOption_1: {
-      actives: [],
+      actives: [...temporalManteausId],
     },
     canSelectOnOption_2: {
       actives: [],
@@ -1504,7 +1502,7 @@ export const matkFlat: IBaseEquipment[] = [
     criticalPercent: 0,
     penetrationPercent: 0,
     canSelectOnOption_1: {
-      actives: [],
+      actives: [...temporalManteausId],
     },
     canSelectOnOption_2: {
       actives: [],
@@ -1551,7 +1549,7 @@ export const matkFlat: IBaseEquipment[] = [
     criticalPercent: 0,
     penetrationPercent: 0,
     canSelectOnOption_1: {
-      actives: [],
+      actives: [...temporalManteausId],
     },
     canSelectOnOption_2: {
       actives: [],
@@ -1598,7 +1596,7 @@ export const matkFlat: IBaseEquipment[] = [
     criticalPercent: 0,
     penetrationPercent: 0,
     canSelectOnOption_1: {
-      actives: [],
+      actives: [...temporalManteausId],
     },
     canSelectOnOption_2: {
       actives: [],
@@ -1645,7 +1643,7 @@ export const matkFlat: IBaseEquipment[] = [
     criticalPercent: 0,
     penetrationPercent: 0,
     canSelectOnOption_1: {
-      actives: [],
+      actives: [...temporalManteausId],
     },
     canSelectOnOption_2: {
       actives: [],
@@ -1692,7 +1690,7 @@ export const matkFlat: IBaseEquipment[] = [
     criticalPercent: 0,
     penetrationPercent: 0,
     canSelectOnOption_1: {
-      actives: [],
+      actives: [...temporalManteausId],
     },
     canSelectOnOption_2: {
       actives: [],
@@ -1739,7 +1737,7 @@ export const matkFlat: IBaseEquipment[] = [
     criticalPercent: 0,
     penetrationPercent: 0,
     canSelectOnOption_1: {
-      actives: [],
+      actives: [...temporalManteausId],
     },
     canSelectOnOption_2: {
       actives: [],
@@ -1786,7 +1784,7 @@ export const matkFlat: IBaseEquipment[] = [
     criticalPercent: 0,
     penetrationPercent: 0,
     canSelectOnOption_1: {
-      actives: [],
+      actives: [...temporalManteausId],
     },
     canSelectOnOption_2: {
       actives: [],
@@ -1833,7 +1831,7 @@ export const matkFlat: IBaseEquipment[] = [
     criticalPercent: 0,
     penetrationPercent: 0,
     canSelectOnOption_1: {
-      actives: [],
+      actives: [...temporalManteausId],
     },
     canSelectOnOption_2: {
       actives: [],
@@ -1880,7 +1878,7 @@ export const matkFlat: IBaseEquipment[] = [
     criticalPercent: 0,
     penetrationPercent: 0,
     canSelectOnOption_1: {
-      actives: [],
+      actives: [...temporalManteausId],
     },
     canSelectOnOption_2: {
       actives: [],

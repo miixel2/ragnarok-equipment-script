@@ -4,8 +4,7 @@ import {
   EquipmentType,
   CompoundOn,
 } from '../../models/equipment';
-
-const vmGroup1 = [1600, 2026];
+import { temporalManteausId, vmGroup1 } from './equomentIds';
 
 export const matkPercent: IBaseEquipment[] = [
   // MATK +x% [2102001 - 2102100]
@@ -46,7 +45,7 @@ export const matkPercent: IBaseEquipment[] = [
     criticalPercent: 0,
     penetrationPercent: 0,
     canSelectOnOption_1: {
-      actives: [...vmGroup1],
+      actives: [...vmGroup1, ...temporalManteausId],
     },
     canSelectOnOption_2: {
       actives: [],
@@ -93,7 +92,7 @@ export const matkPercent: IBaseEquipment[] = [
     criticalPercent: 0,
     penetrationPercent: 0,
     canSelectOnOption_1: {
-      actives: [...vmGroup1],
+      actives: [...vmGroup1, ...temporalManteausId],
     },
     canSelectOnOption_2: {
       actives: [],
@@ -140,7 +139,7 @@ export const matkPercent: IBaseEquipment[] = [
     criticalPercent: 0,
     penetrationPercent: 0,
     canSelectOnOption_1: {
-      actives: [...vmGroup1],
+      actives: [...vmGroup1, ...temporalManteausId],
     },
     canSelectOnOption_2: {
       actives: [],
@@ -187,7 +186,7 @@ export const matkPercent: IBaseEquipment[] = [
     criticalPercent: 0,
     penetrationPercent: 0,
     canSelectOnOption_1: {
-      actives: [...vmGroup1],
+      actives: [...vmGroup1, ...temporalManteausId],
     },
     canSelectOnOption_2: {
       actives: [],
@@ -234,7 +233,7 @@ export const matkPercent: IBaseEquipment[] = [
     criticalPercent: 0,
     penetrationPercent: 0,
     canSelectOnOption_1: {
-      actives: [...vmGroup1],
+      actives: [...vmGroup1, ...temporalManteausId],
     },
     canSelectOnOption_2: {
       actives: [],
@@ -281,7 +280,7 @@ export const matkPercent: IBaseEquipment[] = [
     criticalPercent: 0,
     penetrationPercent: 0,
     canSelectOnOption_1: {
-      actives: [...vmGroup1],
+      actives: [...vmGroup1, ...temporalManteausId],
     },
     canSelectOnOption_2: {
       actives: [],

@@ -4,8 +4,7 @@ import {
   EquipmentType,
   CompoundOn,
 } from '../../models/equipment';
-
-const vmGroup1 = [1600, 2026];
+import { vmGroup1 } from './equomentIds';
 
 export const matkRacePercent: IBaseEquipment[] = [
   // Magic damage to Angel +x% [2102101 - 2102300]

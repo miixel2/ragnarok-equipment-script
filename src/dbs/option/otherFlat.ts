@@ -4,13 +4,14 @@ import {
   EquipmentType,
   CompoundOn,
 } from '../../models/equipment';
-import { shadowIds } from '../costumes';
-
-const shadowsId = shadowIds;
-const vmGroup2 = [1900, 1996, 13128, 18121];
-const vmGroup3 = [28107, 16041, 13455];
-const vmGroup4 = [13328, 28605, 28706];
-const vmGroup5 = [21016, 1450, 1400, 28008, 1800];
+import {
+  shadowsId,
+  temporalManteausId,
+  vmGroup2,
+  vmGroup3,
+  vmGroup4,
+  vmGroup5,
+} from './equomentIds';
 
 export const otherFlat: IBaseEquipment[] = [
   // ASPD +x [2108601 - 2108700]
@@ -381,7 +382,7 @@ export const otherFlat: IBaseEquipment[] = [
     criticalPercent: 0,
     penetrationPercent: 0,
     canSelectOnOption_1: {
-      actives: [...shadowsId],
+      actives: [...shadowsId, ...temporalManteausId],
     },
     canSelectOnOption_2: {
       actives: [],
@@ -428,7 +429,7 @@ export const otherFlat: IBaseEquipment[] = [
     criticalPercent: 0,
     penetrationPercent: 0,
     canSelectOnOption_1: {
-      actives: [...shadowsId],
+      actives: [...shadowsId, ...temporalManteausId],
     },
     canSelectOnOption_2: {
       actives: [],
@@ -475,7 +476,7 @@ export const otherFlat: IBaseEquipment[] = [
     criticalPercent: 0,
     penetrationPercent: 0,
     canSelectOnOption_1: {
-      actives: [...shadowsId],
+      actives: [...shadowsId, ...temporalManteausId],
     },
     canSelectOnOption_2: {
       actives: [],
@@ -522,7 +523,7 @@ export const otherFlat: IBaseEquipment[] = [
     criticalPercent: 0,
     penetrationPercent: 0,
     canSelectOnOption_1: {
-      actives: [],
+      actives: [...temporalManteausId],
     },
     canSelectOnOption_2: {
       actives: [],
@@ -569,7 +570,7 @@ export const otherFlat: IBaseEquipment[] = [
     criticalPercent: 0,
     penetrationPercent: 0,
     canSelectOnOption_1: {
-      actives: [],
+      actives: [...temporalManteausId],
     },
     canSelectOnOption_2: {
       actives: [],
@@ -616,7 +617,7 @@ export const otherFlat: IBaseEquipment[] = [
     criticalPercent: 0,
     penetrationPercent: 0,
     canSelectOnOption_1: {
-      actives: [],
+      actives: [...temporalManteausId],
     },
     canSelectOnOption_2: {
       actives: [],
@@ -663,7 +664,7 @@ export const otherFlat: IBaseEquipment[] = [
     criticalPercent: 0,
     penetrationPercent: 0,
     canSelectOnOption_1: {
-      actives: [],
+      actives: [...temporalManteausId],
     },
     canSelectOnOption_2: {
       actives: [],
@@ -710,7 +711,7 @@ export const otherFlat: IBaseEquipment[] = [
     criticalPercent: 0,
     penetrationPercent: 0,
     canSelectOnOption_1: {
-      actives: [],
+      actives: [...temporalManteausId],
     },
     canSelectOnOption_2: {
       actives: [],

@@ -4,8 +4,7 @@ import {
   CompoundOn,
   IBaseEquipment,
 } from '../../models/equipment';
-
-const vmGroup1 = [1600, 2026];
+import { vmGroup1 } from './equomentIds';
 
 export const matkElementPercent: IBaseEquipment[] = [
   // Magic damage to Neutral +x% [2100001 - 2100200]

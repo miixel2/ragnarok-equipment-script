@@ -4,25 +4,22 @@ import {
   CompoundOn,
   IBaseEquipment,
 } from '../../models/equipment';
-import { shadowIds } from '../costumes';
 import { byPassMDEF } from './byPassMDEF';
+import {
+  vmGroup2,
+  vmGroup3,
+  vmGroup4,
+  vmGroup5,
+  shadowsId,
+  geffen,
+  temporalManteausId,
+} from './equomentIds';
 import { matkElementPercent } from './mATKElement';
 import { matkFlat } from './mATKFlat';
 import { matkPercent } from './mATKPercent';
 import { matkRacePercent } from './mATKRace';
 import { otherFlat } from './otherFlat';
 import { otherPercent } from './otherPercent';
-
-const temporalManteausId = [
-  20846, 20963, 20964, 20965, 20966, 20967, 20968, 480076,
-];
-const shadowsId = shadowIds;
-const geffen = [2963];
-
-const vmGroup2 = [1900, 1996, 13128, 18121];
-const vmGroup3 = [28107, 16041, 13455];
-const vmGroup4 = [13328, 28605, 28706];
-const vmGroup5 = [21016, 1450, 1400, 28008, 1800];
 
 export const allOptions: IBaseEquipment[] = [
   {
