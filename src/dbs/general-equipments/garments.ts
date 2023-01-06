@@ -1134,7 +1134,7 @@ export const garments: IBaseEquipment[] = [
 
       const multiple4 = Math.floor(upgrade / 4);
       _this.additionAtk.size = Number(new Big(multiple4).mul(0.03).valueOf());
-      _this.additionMAtk.element = Number(
+      _this.additionMAtk.skillElement = Number(
         new Big(multiple4).mul(0.03).valueOf()
       );
       _this.hpModB = Number(new Big(multiple4).mul(0.03).valueOf());
@@ -2292,6 +2292,71 @@ export const garments: IBaseEquipment[] = [
         _this.meleePercent = Number(
           new Big(_this.meleePercent).plus(0.05).valueOf()
         );
+      }
+    },
+  },
+  {
+    id: 2537,
+    name: 'Diabolus Manteau [1]',
+    type: EquipmentType.ARMOR,
+    subType: EquipmentSubType.GARMENT,
+    location: EquipmentLocation.GARMENT,
+    compoundOn: null,
+    slot1Enable: 'CARD',
+    baseDef: 15,
+    baseATK: 0,
+    level: 1,
+    equipUpgradeValue: 0,
+    str: 0,
+    agi: 0,
+    vit: 0,
+    int: 0,
+    dex: 0,
+    luk: 0,
+    hpModA: 100,
+    hpModB: 0,
+    additionAtk: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+      flatNamePercent: 0,
+    },
+    additionDef: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    additionMAtk: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+      flatNamePercent: 0,
+      matkPercent: 0,
+      skillElement: 0,
+    },
+    eATK: 0,
+    cATK: 0,
+    perfectDodge: 0,
+    flee: 0,
+    criticalPercent: 0,
+    penetrationPercent: 0,
+    script: (character: Character2, _this: IBaseEquipment): void => {
+      _this.hpModB = 0;
+      _this.additionAtk.flatNamePercent = 0;
+      _this.additionMAtk.flatNamePercent = 0;
+
+      if (character.shoes?.id === 2433) {
+        _this.hpModB = 0.06;
+      }
+
+      if (
+        [1916, 1917, 1922, 1923, 1924, 1925].includes(character.monster?.id)
+      ) {
+        _this.additionAtk.flatNamePercent = 0.1;
+        _this.additionMAtk.flatNamePercent = 0.1;
       }
     },
   },

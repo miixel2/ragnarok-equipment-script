@@ -569,6 +569,7 @@ export const accessories: IBaseEquipment[] = [
       element: 0,
       race: 0,
       class: 0,
+      flatNamePercent: 0,
     },
     additionDef: {
       size: 0,
@@ -576,11 +577,29 @@ export const accessories: IBaseEquipment[] = [
       race: 0,
       class: 0,
     },
+    additionMAtk: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+      flatNamePercent: 0,
+      matkPercent: 0,
+      skillElement: 0,
+    },
     eATK: 0,
     cATK: 0,
     criticalPercent: 0,
     penetrationPercent: 0,
-    script: (character: Character2, _this: IBaseEquipment): void => {},
+    script: (character: Character2, _this: IBaseEquipment): void => {
+      _this.additionAtk.flatNamePercent = 0;
+      _this.additionMAtk.flatNamePercent = 0;
+      if (
+        [1916, 1917, 1922, 1923, 1924, 1925].includes(character.monster?.id)
+      ) {
+        _this.additionAtk.flatNamePercent = 0.1;
+        _this.additionMAtk.flatNamePercent = 0.1;
+      }
+    },
   },
   {
     id: 2728,

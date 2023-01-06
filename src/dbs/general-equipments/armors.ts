@@ -1021,4 +1021,133 @@ export const armors: IBaseEquipment[] = [
       }
     },
   },
+  {
+    id: 2374,
+    name: 'Diabolus Robe [1]',
+    type: EquipmentType.ARMOR,
+    subType: EquipmentSubType.ARMOR,
+    location: EquipmentLocation.BODY,
+    compoundOn: null,
+    slot1Enable: 'CARD',
+    baseDef: 57,
+    baseMDEF: 5,
+    baseATK: 0,
+    level: 1,
+    equipUpgradeValue: 0,
+    str: 2,
+    agi: 0,
+    vit: 0,
+    int: 0,
+    dex: 1,
+    luk: 0,
+    spModA: 150,
+    additionAtk: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+      atkPercent2: 0,
+    },
+    additionDef: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    additionMAtk: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+      flatNamePercent: 0,
+      matkPercent: 0,
+      skillElement: 0,
+    },
+    eATK: 0,
+    cATK: 0,
+    acd: 0.1,
+    criticalPercent: 0,
+    penetrationPercent: 0,
+    classActives: [
+      ClassKey.Warlock,
+      ClassKey.Sorcerer,
+      ClassKey.ArchBishop,
+      ClassKey.Sura,
+      ClassKey.Ranger,
+      ClassKey.Wanderer,
+      ClassKey.Minstrel,
+    ],
+    script: (character: Character2, _this: IBaseEquipment): void => {
+      _this.additionAtk.atkPercent2 = 0;
+      _this.additionMAtk.matkPercent = 0;
+
+      if (character.rightAccessory?.id === 2729) {
+        _this.additionAtk.atkPercent2 = 0.03;
+        _this.additionMAtk.matkPercent = 0.03;
+      }
+    },
+  },
+  {
+    id: 2375,
+    name: 'Diabolus Armor [1]',
+    type: EquipmentType.ARMOR,
+    subType: EquipmentSubType.ARMOR,
+    location: EquipmentLocation.BODY,
+    compoundOn: null,
+    slot1Enable: 'CARD',
+    baseDef: 79,
+    baseATK: 0,
+    level: 1,
+    equipUpgradeValue: 0,
+    str: 2,
+    agi: 0,
+    vit: 0,
+    int: 0,
+    dex: 1,
+    luk: 0,
+    hpModA: 150,
+    additionAtk: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+      atkPercent2: 0,
+    },
+    additionDef: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    additionMAtk: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+      flatNamePercent: 0,
+      matkPercent: 0,
+      skillElement: 0,
+    },
+    eATK: 0,
+    cATK: 0,
+    criticalPercent: 0,
+    penetrationPercent: 0,
+    classActives: [
+      ClassKey.RuneKnight,
+      ClassKey.RoyalGuard,
+      ClassKey.Genetic,
+      ClassKey.Mechanic,
+      ClassKey.GuillotineCross,
+      ClassKey.ShadowChaser,
+    ],
+    script: (character: Character2, _this: IBaseEquipment): void => {
+      _this.additionAtk.atkPercent2 = 0;
+      _this.additionMAtk.matkPercent = 0;
+
+      if (character.rightAccessory?.id === 2729) {
+        _this.additionAtk.atkPercent2 = 0.03;
+        _this.additionMAtk.matkPercent = 0.03;
+      }
+    },
+  },
 ];

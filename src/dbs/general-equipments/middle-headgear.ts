@@ -324,7 +324,6 @@ export const middleHeadgear: IBaseEquipment[] = [
     subType: EquipmentSubType.HELM,
     location: EquipmentLocation.MIDDLE_HEADGEAR,
     compoundOn: null,
-    slot1Enable: true,
     baseDef: 0,
     baseATK: 0,
     baseMDEF: 7,
@@ -781,6 +780,98 @@ export const middleHeadgear: IBaseEquipment[] = [
 
         if (character.class.baseLv >= 170) {
           _this.eATK += 30;
+        }
+      }
+    },
+  },
+  {
+    id: 19495,
+    name: 'Diabolus Wing [1]',
+    type: EquipmentType.ARMOR,
+    subType: EquipmentSubType.HELM,
+    location: EquipmentLocation.MIDDLE_HEADGEAR,
+    compoundOn: null,
+    baseDef: 2,
+    baseMDEF: 0,
+    baseATK: 0,
+    level: 1,
+    equipUpgradeValue: 0,
+    str: 0,
+    agi: 0,
+    vit: 0,
+    int: 0,
+    dex: 0,
+    luk: 0,
+    hpModA: 0,
+    spModA: 0,
+    additionAtk: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    additionDef: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    eATK: 0,
+    eMATK: 0,
+    cATK: 0,
+    acd: 0,
+    criticalPercent: 0,
+    penetrationPercent: 0,
+    script: (character: Character2, _this: IBaseEquipment): void => {
+      _this.str = 5;
+      _this.agi = 5;
+      _this.vit = 5;
+      _this.int = 5;
+      _this.dex = 5;
+      _this.luk = 5;
+      _this.hpModA = 0;
+      _this.spModA = 0;
+      _this.acd = 0;
+      _this.eATK = 0;
+      _this.eMATK = 0;
+      _this.baseMDEF = 0;
+
+      if (character.bodyGear) {
+        const upgrade = character.bodyGear.equipUpgradeValue;
+        if (character.bodyGear.id === 2375) {
+          _this.str += 8;
+          _this.dex += 4;
+          _this.hpModA += 1350;
+          _this.eATK += Math.min(Math.max(upgrade, 0), 12) * 15;
+        } else if (character.bodyGear.id === 2374) {
+          _this.baseMDEF = 25;
+          _this.spModA = 350;
+          _this.acd = 0.1;
+          _this.eMATK += Math.min(Math.max(upgrade, 0), 12) * 15;
+        }
+      }
+
+      if (character.garment) {
+        if (character.bodyGear.id === 2537) {
+          _this.hpModA += 900;
+        }
+      }
+
+      if (character.shoes) {
+        const upgrade = character.shoes.equipUpgradeValue;
+        if (character.shoes.id === 2433) {
+          _this.hpModA += Number(
+            new Big(Math.floor(character.class.baseLv / 3)).mul(100).valueOf()
+          );
+          _this.eATK += Math.min(Math.max(upgrade, 0), 12) * 12;
+          _this.eMATK += Math.min(Math.max(upgrade, 0), 12) * 12;
+        }
+      }
+
+      if (character.rightAccessory) {
+        if (character.rightAccessory.id === 2729) {
+          _this.hpModA += 2000;
+          _this.spModA += 200;
         }
       }
     },
