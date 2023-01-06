@@ -179,14 +179,6 @@ export const buffSkills: IBuffSkill[] = [
     script: (character: Character2, _this: IBuffSkill): void => {},
   },
   {
-    id: 355,
-    name: 'Aura Blade',
-    level: 5,
-    classActives: [ClassKey.RuneKnight],
-    pureAtk: 100,
-    script: (character: Character2, _this: IBuffSkill): void => {},
-  },
-  {
     id: 359,
     name: 'Frenzy',
     level: 1,

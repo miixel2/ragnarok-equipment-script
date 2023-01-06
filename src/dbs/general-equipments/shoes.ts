@@ -611,7 +611,6 @@ export const shoes: IBaseEquipment[] = [
     int: 0,
     dex: 0,
     luk: 0,
-    hpModA: 0,
     spModA: 0,
     additionAtk: {
       size: 0,
@@ -655,6 +654,80 @@ export const shoes: IBaseEquipment[] = [
 
       if (character.bodyGear?.id === 15377) {
         _this.aspd = 0.05;
+      }
+    },
+  },
+  {
+    id: 22197,
+    name: 'Illusion Leg B-type [1]',
+    type: EquipmentType.ARMOR,
+    subType: EquipmentSubType.SHOES,
+    location: EquipmentLocation.SHOES,
+    compoundOn: null,
+    slot1Enable: 'CARD',
+    slot2Enable: 'ENCHANT',
+    slot3Enable: 'ENCHANT',
+    slot4Enable: 'ENCHANT',
+    baseDef: 20,
+    baseATK: 0,
+    level: 1,
+    equipUpgradeValue: 0,
+    str: 0,
+    agi: 0,
+    vit: 0,
+    int: 0,
+    dex: 0,
+    luk: 0,
+    spModA: 0,
+    spModB: 0,
+    additionAtk: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+      atkPercent2: 0,
+    },
+    additionDef: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    additionMAtk: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+      flatNamePercent: 0,
+      matkPercent: 0,
+      skillElement: 0,
+    },
+    eATK: 0,
+    cATK: 0,
+    criticalPercent: 0,
+    penetrationPercent: 0,
+    classActives: [],
+    script: (character: Character2, _this: IBaseEquipment): void => {
+      _this.spModA = 200;
+      _this.spModB = 0;
+      _this.additionMAtk.matkPercent = 0;
+
+      const upgrade = _this.equipUpgradeValue;
+
+      if (upgrade >= 7) {
+        _this.additionMAtk.skillElement = 0.05;
+      }
+
+      _this.spModA = Number(
+        new Big(Math.floor(upgrade / 2)).mul(20).plus(_this.spModA).valueOf()
+      );
+
+      if (character.bodyGear?.id === 15376) {
+        _this.spModB = 0.05;
+      }
+
+      if (character.bodyGear?.id === 15377) {
+        _this.additionMAtk.matkPercent = 0.05;
       }
     },
   },

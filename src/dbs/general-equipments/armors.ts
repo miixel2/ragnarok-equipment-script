@@ -737,13 +737,12 @@ export const armors: IBaseEquipment[] = [
     penetrationPercent: 0,
     classActives: [],
     script: (character: Character2, _this: IBaseEquipment): void => {
-      _this.eATK = 100;
       _this.aspd = 0;
       _this.acd = 0;
 
       const upgrade = _this.equipUpgradeValue;
       _this.eATK = Number(
-        new Big(Math.floor(upgrade / 2)).mul(10).plus(_this.eATK).valueOf()
+        new Big(Math.floor(upgrade / 2)).mul(10).plus(100).valueOf()
       );
 
       if (upgrade >= 7) {
@@ -752,10 +751,71 @@ export const armors: IBaseEquipment[] = [
 
       if (character.garment?.id === 20933) {
         _this.eATK += 50;
+      } else if (character.garment?.id === 20934) {
+        _this.acd = 0.1;
+      }
+    },
+  },
+  {
+    id: 15377,
+    name: 'Illusion Armor B-type [1]',
+    type: EquipmentType.ARMOR,
+    subType: EquipmentSubType.ARMOR,
+    location: EquipmentLocation.BODY,
+    compoundOn: null,
+    slot1Enable: 'CARD',
+    slot2Enable: 'ENCHANT',
+    slot3Enable: 'ENCHANT',
+    slot4Enable: 'ENCHANT',
+    baseDef: 105,
+    baseATK: 0,
+    level: 1,
+    equipUpgradeValue: 0,
+    str: 0,
+    agi: 0,
+    vit: 0,
+    int: 0,
+    dex: 0,
+    luk: 0,
+    hpModA: 0,
+    spModA: 0,
+    additionAtk: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    additionDef: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    eATK: 0,
+    eMATK: 0,
+    cATK: 0,
+    aspd: 0,
+    vct: 0,
+    criticalPercent: 0,
+    penetrationPercent: 0,
+    classActives: [],
+    script: (character: Character2, _this: IBaseEquipment): void => {
+      _this.aspd = 0;
+      _this.vct = 0;
+
+      const upgrade = _this.equipUpgradeValue;
+      _this.eMATK = Number(
+        new Big(Math.floor(upgrade / 2)).mul(10).plus(100).valueOf()
+      );
+
+      if (upgrade >= 7) {
+        _this.vct = 0.1;
       }
 
-      if (character.garment?.id === 20934) {
-        _this.acd = 0.1;
+      if (character.garment?.id === 20933) {
+        _this.aspd = 0.1;
+      } else if (character.garment?.id === 20934) {
+        _this.eMATK += 50;
       }
     },
   },
