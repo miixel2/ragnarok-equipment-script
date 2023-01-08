@@ -2592,4 +2592,62 @@ export const accessories: IBaseEquipment[] = [
       }
     },
   },
+  {
+    id: 490316,
+    name: 'Brooch of Matador [1]',
+    type: EquipmentType.ARMOR,
+    subType: EquipmentSubType.ACCESSORY,
+    location: EquipmentLocation.ACCESSORY,
+    compoundOn: null,
+    slot1Enable: 'CARD',
+    baseDef: 0,
+    baseATK: 0,
+    level: 1,
+    equipUpgradeValue: 0,
+    str: 0,
+    agi: 0,
+    vit: 0,
+    int: 0,
+    dex: 0,
+    luk: 0,
+    additionAtk: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+      atkPercent2: 0,
+    },
+    additionMAtk: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+      flatNamePercent: 0,
+      matkPercent: 0,
+      skillElement: 0,
+    },
+    additionDef: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    eATK: 0,
+    cATK: 0,
+    acd: 0,
+    criticalPercent: 0,
+    penetrationPercent: 0,
+    script: (character: Character2, _this: IBaseEquipment): void => {
+      _this.acd = 0.05;
+      _this.additionAtk.class = 0.1;
+      _this.additionMAtk.class = 0.1;
+
+      if (character.leftAccessory?.id === 490316) {
+        if (character.comboSet.indexOf('490316_L') === -1) {
+          _this.acd = 0.12;
+          character.comboSet.push('490316_L');
+        }
+      }
+    },
+  },
 ];
