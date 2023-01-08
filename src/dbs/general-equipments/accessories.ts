@@ -2458,4 +2458,138 @@ export const accessories: IBaseEquipment[] = [
       }
     },
   },
+  {
+    id: 28513,
+    name: `Celine's Brooch [1]`,
+    type: EquipmentType.ARMOR,
+    subType: EquipmentSubType.ACCESSORY,
+    location: EquipmentLocation.ACCESSORY,
+    compoundOn: null,
+    slot1Enable: 'CARD',
+    baseDef: 0,
+    baseATK: 0,
+    level: 1,
+    equipUpgradeValue: 0,
+    str: 0,
+    agi: 0,
+    vit: 0,
+    int: 0,
+    dex: 0,
+    luk: 0,
+    hpModA: 500,
+    spModA: 250,
+    additionAtk: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+      atkPercent2: 0,
+    },
+    additionMAtk: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+      flatNamePercent: 0,
+      matkPercent: 0.05,
+      skillElement: 0,
+    },
+    additionDef: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    eATK: 0,
+    eMATK: 0,
+    cATK: 0,
+    vct: 0.1,
+    aspdFlat: 1,
+    criticalPercent: 0,
+    penetrationPercent: 0,
+    script: (character: Character2, _this: IBaseEquipment): void => {
+      _this.additionMAtk.class = 0;
+
+      if (
+        character.upperHeadgear?.id === 18849 &&
+        character.comboSet.indexOf('18849_28513') === -1
+      ) {
+        const upgrade = character.upperHeadgear.equipUpgradeValue;
+
+        if (upgrade >= 7) {
+          if (character.monster?.type === MonsterType.BOSS) {
+            _this.additionMAtk.class = 0.2;
+          }
+
+          if (upgrade >= 9) {
+            if (character.monster?.type === MonsterType.BOSS) {
+              _this.additionMAtk.class = 0.4;
+            }
+          }
+        }
+
+        character.comboSet.push('18849_28513');
+      }
+    },
+  },
+  {
+    id: 28507,
+    name: `Magician's Gloves [1]`,
+    type: EquipmentType.ARMOR,
+    subType: EquipmentSubType.ACCESSORY,
+    location: EquipmentLocation.ACCESSORY,
+    compoundOn: null,
+    slot1Enable: 'CARD',
+    baseDef: 0,
+    baseATK: 0,
+    level: 1,
+    equipUpgradeValue: 0,
+    str: 0,
+    agi: 0,
+    vit: 0,
+    int: 0,
+    dex: 0,
+    luk: 0,
+    additionAtk: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+      atkPercent2: 0,
+    },
+    additionMAtk: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+      flatNamePercent: 0,
+      matkPercent: 0,
+      skillElement: 0,
+    },
+    additionDef: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    eATK: 0,
+    cATK: 0,
+    criticalPercent: 0,
+    penetrationPercent: 0,
+    penetrationMPercent: 0.5,
+    script: (character: Character2, _this: IBaseEquipment): void => {
+      _this.additionMAtk.skillElement = 0;
+      if (character.elementalConverter === E_Element.NEUTRAL) {
+        _this.additionMAtk.skillElement = 0.05;
+      } else if (character.elementalConverter === E_Element.WIND) {
+        _this.additionMAtk.skillElement = 0.05;
+      } else if (character.elementalConverter === E_Element.EARTH) {
+        _this.additionMAtk.skillElement = 0.05;
+      } else if (character.elementalConverter === E_Element.FIRE) {
+        _this.additionMAtk.skillElement = 0.05;
+      } else if (character.elementalConverter === E_Element.WATER) {
+        _this.additionMAtk.skillElement = 0.05;
+      }
+    },
+  },
 ];

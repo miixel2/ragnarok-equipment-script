@@ -1,4 +1,5 @@
 import { Character2 } from '../../models/character2';
+import { E_Element } from '../../models/element';
 import {
   IBaseEquipment,
   EquipmentType,
@@ -177,6 +178,73 @@ export const shields: IBaseEquipment[] = [
 
           if (upgrade >= 12) {
             _this.acd = 0.03;
+          }
+        }
+      }
+    },
+  },
+  {
+    id: 28973,
+    name: 'Themis Balance [1]',
+    type: EquipmentType.ARMOR,
+    subType: EquipmentSubType.SHIELD,
+    location: EquipmentLocation.LEFT_HAND,
+    compoundOn: null,
+    slot1Enable: true,
+    baseDef: 90,
+    baseMDEF: 10,
+    baseATK: 0,
+    level: 1,
+    equipUpgradeValue: 0,
+    str: 0,
+    agi: 0,
+    vit: 0,
+    int: 0,
+    dex: 0,
+    luk: 0,
+    additionAtk: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    additionMAtk: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+      matkPercent: 0,
+      flatNamePercent: 0,
+      skillElement: 0,
+    },
+    additionDef: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    eATK: 0,
+    eMATK: 0,
+    cATK: 0,
+    vct: 0,
+    criticalPercent: 0,
+    penetrationPercent: 0,
+    classActives: [],
+    script: (character: Character2, _this: IBaseEquipment): void => {
+      _this.vct = 0.05;
+      _this.additionMAtk.skillElement = 0;
+      _this.additionMAtk.class = 0;
+      const upgrade = _this.equipUpgradeValue;
+
+      if (upgrade >= 9) {
+        if (character.elementalConverter === E_Element.HOLY) {
+          _this.additionMAtk.skillElement = 0.15;
+        }
+
+        if (upgrade >= 11) {
+          if (character.middleHeadgear?.id === 18609) {
+            _this.vct = 0.1;
+            _this.additionMAtk.class = 0.05;
           }
         }
       }

@@ -1541,8 +1541,10 @@ export const weapons: IBaseEquipment[] = [
     subType: EquipmentSubType.TWO_HANDED_SWORD,
     location: EquipmentLocation.BOTH_HAND,
     compoundOn: null,
-    slot1Enable: true,
-    slot2Enable: true,
+    slot1Enable: 'CARD',
+    slot2Enable: 'CARD',
+    option1Enable: true,
+    option2Enable: true,
     baseDef: 0,
     baseATK: 250,
     level: 4,
@@ -1582,6 +1584,72 @@ export const weapons: IBaseEquipment[] = [
         _this.aspd = 0.07;
         if (upgrade >= 9) {
           _this.criticalPercent = 0.15;
+
+          if (upgrade >= 11) {
+            if (
+              [Scale.SMALL, Scale.MEDIUM].includes(character.monster?.scale)
+            ) {
+              _this.additionAtk.size = 0.2;
+            }
+          }
+        }
+      }
+    },
+  },
+  {
+    id: 28038,
+    name: 'Meuchler-OS [2]',
+    type: EquipmentType.WEAPON,
+    subType: EquipmentSubType.KATAR,
+    location: EquipmentLocation.BOTH_HAND,
+    compoundOn: null,
+    slot1Enable: 'CARD',
+    slot2Enable: 'CARD',
+    option1Enable: true,
+    option2Enable: true,
+    baseDef: 0,
+    baseATK: 190,
+    level: 4,
+    equipUpgradeValue: 0,
+    str: 0,
+    agi: 0,
+    vit: 0,
+    int: 0,
+    dex: 0,
+    luk: 0,
+    additionAtk: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+      atkPercent2: 0,
+    },
+    additionDef: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    eATK: 0,
+    cATK: 0,
+    aspd: 0,
+    criticalPercent: 0,
+    penetrationPercent: 0,
+    classActives: [ClassKey.GuillotineCross],
+    script: (character: Character2, _this: IBaseEquipment): void => {
+      _this.additionAtk.atkPercent2 = 0.03;
+      _this.additionAtk.size = 0;
+      _this.aspd = 0;
+      const upgrade = _this.equipUpgradeValue;
+
+      if (upgrade >= 7) {
+        _this.aspd = 0.07;
+        if (upgrade >= 9) {
+          if (character.playerTypeAtk === 2037) {
+            character.buffSkillPercent = Number(
+              new Big(character.buffSkillPercent).plus(0.15).valueOf()
+            );
+          }
 
           if (upgrade >= 11) {
             if (
@@ -2038,78 +2106,6 @@ export const weapons: IBaseEquipment[] = [
     },
   },
   {
-    id: 26151,
-    name: 'Rutilus Stick-OS [2]',
-    type: EquipmentType.WEAPON,
-    subType: EquipmentSubType.ROD,
-    location: EquipmentLocation.RIGHT_HAND,
-    compoundOn: null,
-    slot1Enable: 'CARD',
-    slot2Enable: 'CARD',
-    option1Enable: true,
-    option2Enable: true,
-    baseDef: 0,
-    baseATK: 80,
-    baseMATK: 175,
-    level: 4,
-    equipUpgradeValue: 0,
-    str: 0,
-    agi: 0,
-    vit: 0,
-    int: 0,
-    dex: 0,
-    luk: 0,
-    additionAtk: {
-      size: 0,
-      element: 0,
-      race: 0,
-      class: 0,
-    },
-    additionMAtk: {
-      size: 0,
-      element: 0,
-      race: 0,
-      class: 0,
-      matkPercent: 0,
-      flatNamePercent: 0,
-      skillElement: 0,
-    },
-    additionDef: {
-      size: 0,
-      element: 0,
-      race: 0,
-      class: 0,
-    },
-    eATK: 0,
-    eMATK: 0,
-    cATK: 0,
-    criticalPercent: 0,
-    penetrationPercent: 0,
-    vct: 0,
-    acd: 0,
-    classActives: [ClassKey.Sorcerer, ClassKey.Warlock],
-    script: (character: Character2, _this: IBaseEquipment): void => {
-      _this.vct = 0;
-      _this.acd = 0;
-      const upgrade = _this.equipUpgradeValue;
-
-      if (
-        character.monster.element === E_Element.NEUTRAL ||
-        character.monster.element === E_Element.EARTH
-      ) {
-        _this.additionMAtk.element = 0.05;
-      }
-
-      if (upgrade >= 7) {
-        _this.vct = 0.07;
-      }
-
-      if (upgrade >= 11) {
-        _this.acd = 0.1;
-      }
-    },
-  },
-  {
     id: 540000,
     name: 'Boosting Spellbook [2]',
     type: EquipmentType.WEAPON,
@@ -2346,13 +2342,13 @@ export const weapons: IBaseEquipment[] = [
     dex: 0,
     luk: 0,
     additionAtk: {
-      size: 0.25,
+      size: 0,
       element: 0,
       race: 0,
       class: 0,
     },
     additionMAtk: {
-      size: 0.25,
+      size: 0,
       element: 0,
       race: 0,
       class: 0,
@@ -2385,6 +2381,159 @@ export const weapons: IBaseEquipment[] = [
           _this.additionAtk.element = Number(
             new Big(multi).mul(0.02).valueOf()
           );
+        }
+      }
+    },
+  },
+  {
+    id: 16089,
+    name: 'Ultio-OS [2]',
+    type: EquipmentType.WEAPON,
+    subType: EquipmentSubType.MACE,
+    location: EquipmentLocation.RIGHT_HAND,
+    compoundOn: null,
+    slot1Enable: 'CARD',
+    slot2Enable: 'CARD',
+    option1Enable: true,
+    option2Enable: true,
+    baseDef: 0,
+    baseATK: 150,
+    baseMATK: 170,
+    level: 4,
+    equipUpgradeValue: 0,
+    str: 0,
+    agi: 0,
+    vit: 0,
+    int: 0,
+    dex: 0,
+    luk: 0,
+    additionAtk: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    additionMAtk: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+      flatNamePercent: 0,
+      matkPercent: 0.03,
+      skillElement: 0,
+    },
+    additionDef: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    eATK: 0,
+    cATK: 0,
+    aspd: 0,
+    criticalPercent: 0,
+    penetrationPercent: 0,
+    classActives: [ClassKey.ArchBishop],
+    script: (character: Character2, _this: IBaseEquipment): void => {
+      const upgrade = _this.equipUpgradeValue;
+      _this.aspd = 0;
+      _this.additionMAtk.skillElement = 0;
+
+      if (upgrade >= 7) {
+        _this.aspd = 0.07;
+
+        if (upgrade >= 9) {
+          if (character.playerTypeAtk === 2040) {
+            character.buffMagicSkillPercent = Number(
+              new Big(character.buffMagicSkillPercent).plus(0.2).valueOf()
+            );
+          }
+
+          if (upgrade >= 11) {
+            if (character.elementalConverter === E_Element.HOLY) {
+              _this.additionMAtk.skillElement = 0.15;
+            }
+          }
+        }
+      }
+    },
+  },
+  {
+    id: 26151,
+    name: 'Rutilus Stick-OS [2]',
+    type: EquipmentType.WEAPON,
+    subType: EquipmentSubType.ROD,
+    location: EquipmentLocation.RIGHT_HAND,
+    compoundOn: null,
+    slot1Enable: 'CARD',
+    slot2Enable: 'CARD',
+    option1Enable: true,
+    option2Enable: true,
+    baseDef: 0,
+    baseATK: 80,
+    baseMATK: 175,
+    level: 4,
+    equipUpgradeValue: 0,
+    str: 0,
+    agi: 0,
+    vit: 0,
+    int: 0,
+    dex: 0,
+    luk: 0,
+    additionAtk: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    additionMAtk: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+      flatNamePercent: 0,
+      matkPercent: 0,
+      skillElement: 0,
+    },
+    additionDef: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    eATK: 0,
+    cATK: 0,
+    vct: 0,
+    acd: 0,
+    criticalPercent: 0,
+    penetrationPercent: 0,
+    classActives: [
+      ClassKey.ArchBishop,
+      ClassKey.Sorcerer,
+      ClassKey.Warlock,
+      ClassKey.Sura,
+    ],
+    script: (character: Character2, _this: IBaseEquipment): void => {
+      const upgrade = _this.equipUpgradeValue;
+      _this.additionMAtk.skillElement = 0;
+      _this.vct = 0;
+      _this.acd = 0;
+
+      if (
+        [E_Element.NEUTRAL, E_Element.EARTH].includes(
+          character.elementalConverter
+        )
+      ) {
+        _this.additionMAtk.skillElement = 0.05;
+      }
+
+      if (upgrade >= 7) {
+        _this.vct = 0.07;
+
+        if (upgrade >= 9) {
+          if (upgrade >= 11) {
+            _this.acd = 0.1;
+          }
         }
       }
     },

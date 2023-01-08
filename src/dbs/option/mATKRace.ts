@@ -4,7 +4,7 @@ import {
   EquipmentType,
   CompoundOn,
 } from '../../models/equipment';
-import { vmGroup1 } from './equomentIds';
+import { osWeapon, vmGroup1 } from './equipmentIds';
 
 export const matkRacePercent: IBaseEquipment[] = [
   // Magic damage to Angel +x% [2102101 - 2102300]
@@ -48,7 +48,7 @@ export const matkRacePercent: IBaseEquipment[] = [
       actives: [],
     },
     canSelectOnOption_2: {
-      actives: [...vmGroup1],
+      actives: [...vmGroup1, ...osWeapon],
     },
     canSelectOnOption_3: {
       actives: [],
@@ -95,7 +95,7 @@ export const matkRacePercent: IBaseEquipment[] = [
       actives: [],
     },
     canSelectOnOption_2: {
-      actives: [...vmGroup1],
+      actives: [...vmGroup1, ...osWeapon],
     },
     canSelectOnOption_3: {
       actives: [],
@@ -142,7 +142,7 @@ export const matkRacePercent: IBaseEquipment[] = [
       actives: [],
     },
     canSelectOnOption_2: {
-      actives: [...vmGroup1],
+      actives: [...vmGroup1, ...osWeapon],
     },
     canSelectOnOption_3: {
       actives: [],
@@ -189,7 +189,7 @@ export const matkRacePercent: IBaseEquipment[] = [
       actives: [],
     },
     canSelectOnOption_2: {
-      actives: [...vmGroup1],
+      actives: [...vmGroup1, ...osWeapon],
     },
     canSelectOnOption_3: {
       actives: [],
@@ -236,7 +236,7 @@ export const matkRacePercent: IBaseEquipment[] = [
       actives: [],
     },
     canSelectOnOption_2: {
-      actives: [...vmGroup1],
+      actives: [...vmGroup1, ...osWeapon],
     },
     canSelectOnOption_3: {
       actives: [],
@@ -283,7 +283,7 @@ export const matkRacePercent: IBaseEquipment[] = [
       actives: [],
     },
     canSelectOnOption_2: {
-      actives: [...vmGroup1],
+      actives: [...vmGroup1, ...osWeapon],
     },
     canSelectOnOption_3: {
       actives: [],
@@ -330,7 +330,7 @@ export const matkRacePercent: IBaseEquipment[] = [
       actives: [],
     },
     canSelectOnOption_2: {
-      actives: [...vmGroup1],
+      actives: [...vmGroup1, ...osWeapon],
     },
     canSelectOnOption_3: {
       actives: [],
@@ -377,7 +377,7 @@ export const matkRacePercent: IBaseEquipment[] = [
       actives: [],
     },
     canSelectOnOption_2: {
-      actives: [...vmGroup1],
+      actives: [...vmGroup1, ...osWeapon],
     },
     canSelectOnOption_3: {
       actives: [],
@@ -424,7 +424,7 @@ export const matkRacePercent: IBaseEquipment[] = [
       actives: [],
     },
     canSelectOnOption_2: {
-      actives: [...vmGroup1],
+      actives: [...vmGroup1, ...osWeapon],
     },
     canSelectOnOption_3: {
       actives: [],
@@ -471,7 +471,7 @@ export const matkRacePercent: IBaseEquipment[] = [
       actives: [],
     },
     canSelectOnOption_2: {
-      actives: [...vmGroup1],
+      actives: [...vmGroup1, ...osWeapon],
     },
     canSelectOnOption_3: {
       actives: [],
@@ -518,7 +518,7 @@ export const matkRacePercent: IBaseEquipment[] = [
       actives: [],
     },
     canSelectOnOption_2: {
-      actives: [...vmGroup1],
+      actives: [...vmGroup1, ...osWeapon],
     },
     canSelectOnOption_3: {
       actives: [],
@@ -566,7 +566,7 @@ export const matkRacePercent: IBaseEquipment[] = [
       actives: [],
     },
     canSelectOnOption_2: {
-      actives: [...vmGroup1],
+      actives: [...vmGroup1, ...osWeapon],
     },
     canSelectOnOption_3: {
       actives: [],
@@ -613,7 +613,7 @@ export const matkRacePercent: IBaseEquipment[] = [
       actives: [],
     },
     canSelectOnOption_2: {
-      actives: [...vmGroup1],
+      actives: [...vmGroup1, ...osWeapon],
     },
     canSelectOnOption_3: {
       actives: [],
@@ -660,7 +660,7 @@ export const matkRacePercent: IBaseEquipment[] = [
       actives: [],
     },
     canSelectOnOption_2: {
-      actives: [...vmGroup1],
+      actives: [...vmGroup1, ...osWeapon],
     },
     canSelectOnOption_3: {
       actives: [],
@@ -707,7 +707,7 @@ export const matkRacePercent: IBaseEquipment[] = [
       actives: [],
     },
     canSelectOnOption_2: {
-      actives: [...vmGroup1],
+      actives: [...vmGroup1, ...osWeapon],
     },
     canSelectOnOption_3: {
       actives: [],
@@ -754,7 +754,7 @@ export const matkRacePercent: IBaseEquipment[] = [
       actives: [],
     },
     canSelectOnOption_2: {
-      actives: [...vmGroup1],
+      actives: [...vmGroup1, ...osWeapon],
     },
     canSelectOnOption_3: {
       actives: [],
@@ -801,7 +801,7 @@ export const matkRacePercent: IBaseEquipment[] = [
       actives: [],
     },
     canSelectOnOption_2: {
-      actives: [...vmGroup1],
+      actives: [...vmGroup1, ...osWeapon],
     },
     canSelectOnOption_3: {
       actives: [],
@@ -848,7 +848,7 @@ export const matkRacePercent: IBaseEquipment[] = [
       actives: [],
     },
     canSelectOnOption_2: {
-      actives: [...vmGroup1],
+      actives: [...vmGroup1, ...osWeapon],
     },
     canSelectOnOption_3: {
       actives: [],
@@ -895,7 +895,7 @@ export const matkRacePercent: IBaseEquipment[] = [
       actives: [],
     },
     canSelectOnOption_2: {
-      actives: [...vmGroup1],
+      actives: [...vmGroup1, ...osWeapon],
     },
     canSelectOnOption_3: {
       actives: [],
@@ -942,7 +942,7 @@ export const matkRacePercent: IBaseEquipment[] = [
       actives: [],
     },
     canSelectOnOption_2: {
-      actives: [...vmGroup1],
+      actives: [...vmGroup1, ...osWeapon],
     },
     canSelectOnOption_3: {
       actives: [],
@@ -989,7 +989,7 @@ export const matkRacePercent: IBaseEquipment[] = [
       actives: [],
     },
     canSelectOnOption_2: {
-      actives: [...vmGroup1],
+      actives: [...vmGroup1, ...osWeapon],
     },
     canSelectOnOption_3: {
       actives: [],
@@ -1036,7 +1036,7 @@ export const matkRacePercent: IBaseEquipment[] = [
       actives: [],
     },
     canSelectOnOption_2: {
-      actives: [...vmGroup1],
+      actives: [...vmGroup1, ...osWeapon],
     },
     canSelectOnOption_3: {
       actives: [],
@@ -1084,7 +1084,7 @@ export const matkRacePercent: IBaseEquipment[] = [
       actives: [],
     },
     canSelectOnOption_2: {
-      actives: [...vmGroup1],
+      actives: [...vmGroup1, ...osWeapon],
     },
     canSelectOnOption_3: {
       actives: [],
@@ -1131,7 +1131,7 @@ export const matkRacePercent: IBaseEquipment[] = [
       actives: [],
     },
     canSelectOnOption_2: {
-      actives: [...vmGroup1],
+      actives: [...vmGroup1, ...osWeapon],
     },
     canSelectOnOption_3: {
       actives: [],
@@ -1178,7 +1178,7 @@ export const matkRacePercent: IBaseEquipment[] = [
       actives: [],
     },
     canSelectOnOption_2: {
-      actives: [...vmGroup1],
+      actives: [...vmGroup1, ...osWeapon],
     },
     canSelectOnOption_3: {
       actives: [],
@@ -1225,7 +1225,7 @@ export const matkRacePercent: IBaseEquipment[] = [
       actives: [],
     },
     canSelectOnOption_2: {
-      actives: [...vmGroup1],
+      actives: [...vmGroup1, ...osWeapon],
     },
     canSelectOnOption_3: {
       actives: [],
@@ -1272,7 +1272,7 @@ export const matkRacePercent: IBaseEquipment[] = [
       actives: [],
     },
     canSelectOnOption_2: {
-      actives: [...vmGroup1],
+      actives: [...vmGroup1, ...osWeapon],
     },
     canSelectOnOption_3: {
       actives: [],
@@ -1319,7 +1319,7 @@ export const matkRacePercent: IBaseEquipment[] = [
       actives: [],
     },
     canSelectOnOption_2: {
-      actives: [...vmGroup1],
+      actives: [...vmGroup1, ...osWeapon],
     },
     canSelectOnOption_3: {
       actives: [],
@@ -1366,7 +1366,7 @@ export const matkRacePercent: IBaseEquipment[] = [
       actives: [],
     },
     canSelectOnOption_2: {
-      actives: [...vmGroup1],
+      actives: [...vmGroup1, ...osWeapon],
     },
     canSelectOnOption_3: {
       actives: [],
@@ -1413,7 +1413,7 @@ export const matkRacePercent: IBaseEquipment[] = [
       actives: [],
     },
     canSelectOnOption_2: {
-      actives: [...vmGroup1],
+      actives: [...vmGroup1, ...osWeapon],
     },
     canSelectOnOption_3: {
       actives: [],
@@ -1460,7 +1460,7 @@ export const matkRacePercent: IBaseEquipment[] = [
       actives: [],
     },
     canSelectOnOption_2: {
-      actives: [...vmGroup1],
+      actives: [...vmGroup1, ...osWeapon],
     },
     canSelectOnOption_3: {
       actives: [],
@@ -1507,7 +1507,7 @@ export const matkRacePercent: IBaseEquipment[] = [
       actives: [],
     },
     canSelectOnOption_2: {
-      actives: [...vmGroup1],
+      actives: [...vmGroup1, ...osWeapon],
     },
     canSelectOnOption_3: {
       actives: [],
@@ -1554,7 +1554,7 @@ export const matkRacePercent: IBaseEquipment[] = [
       actives: [],
     },
     canSelectOnOption_2: {
-      actives: [...vmGroup1],
+      actives: [...vmGroup1, ...osWeapon],
     },
     canSelectOnOption_3: {
       actives: [],
@@ -1602,7 +1602,7 @@ export const matkRacePercent: IBaseEquipment[] = [
       actives: [],
     },
     canSelectOnOption_2: {
-      actives: [...vmGroup1],
+      actives: [...vmGroup1, ...osWeapon],
     },
     canSelectOnOption_3: {
       actives: [],
@@ -1649,7 +1649,7 @@ export const matkRacePercent: IBaseEquipment[] = [
       actives: [],
     },
     canSelectOnOption_2: {
-      actives: [...vmGroup1],
+      actives: [...vmGroup1, ...osWeapon],
     },
     canSelectOnOption_3: {
       actives: [],
@@ -1696,7 +1696,7 @@ export const matkRacePercent: IBaseEquipment[] = [
       actives: [],
     },
     canSelectOnOption_2: {
-      actives: [...vmGroup1],
+      actives: [...vmGroup1, ...osWeapon],
     },
     canSelectOnOption_3: {
       actives: [],
@@ -1743,7 +1743,7 @@ export const matkRacePercent: IBaseEquipment[] = [
       actives: [],
     },
     canSelectOnOption_2: {
-      actives: [...vmGroup1],
+      actives: [...vmGroup1, ...osWeapon],
     },
     canSelectOnOption_3: {
       actives: [],
@@ -1790,7 +1790,7 @@ export const matkRacePercent: IBaseEquipment[] = [
       actives: [],
     },
     canSelectOnOption_2: {
-      actives: [...vmGroup1],
+      actives: [...vmGroup1, ...osWeapon],
     },
     canSelectOnOption_3: {
       actives: [],
@@ -1837,7 +1837,7 @@ export const matkRacePercent: IBaseEquipment[] = [
       actives: [],
     },
     canSelectOnOption_2: {
-      actives: [...vmGroup1],
+      actives: [...vmGroup1, ...osWeapon],
     },
     canSelectOnOption_3: {
       actives: [],
@@ -1884,7 +1884,7 @@ export const matkRacePercent: IBaseEquipment[] = [
       actives: [],
     },
     canSelectOnOption_2: {
-      actives: [...vmGroup1],
+      actives: [...vmGroup1, ...osWeapon],
     },
     canSelectOnOption_3: {
       actives: [],
@@ -1931,7 +1931,7 @@ export const matkRacePercent: IBaseEquipment[] = [
       actives: [],
     },
     canSelectOnOption_2: {
-      actives: [...vmGroup1],
+      actives: [...vmGroup1, ...osWeapon],
     },
     canSelectOnOption_3: {
       actives: [],
@@ -1978,7 +1978,7 @@ export const matkRacePercent: IBaseEquipment[] = [
       actives: [],
     },
     canSelectOnOption_2: {
-      actives: [...vmGroup1],
+      actives: [...vmGroup1, ...osWeapon],
     },
     canSelectOnOption_3: {
       actives: [],
@@ -2025,7 +2025,7 @@ export const matkRacePercent: IBaseEquipment[] = [
       actives: [],
     },
     canSelectOnOption_2: {
-      actives: [...vmGroup1],
+      actives: [...vmGroup1, ...osWeapon],
     },
     canSelectOnOption_3: {
       actives: [],
@@ -2072,7 +2072,7 @@ export const matkRacePercent: IBaseEquipment[] = [
       actives: [],
     },
     canSelectOnOption_2: {
-      actives: [...vmGroup1],
+      actives: [...vmGroup1, ...osWeapon],
     },
     canSelectOnOption_3: {
       actives: [],
@@ -2120,7 +2120,7 @@ export const matkRacePercent: IBaseEquipment[] = [
       actives: [],
     },
     canSelectOnOption_2: {
-      actives: [...vmGroup1],
+      actives: [...vmGroup1, ...osWeapon],
     },
     canSelectOnOption_3: {
       actives: [],
@@ -2167,7 +2167,7 @@ export const matkRacePercent: IBaseEquipment[] = [
       actives: [],
     },
     canSelectOnOption_2: {
-      actives: [...vmGroup1],
+      actives: [...vmGroup1, ...osWeapon],
     },
     canSelectOnOption_3: {
       actives: [],
@@ -2214,7 +2214,7 @@ export const matkRacePercent: IBaseEquipment[] = [
       actives: [],
     },
     canSelectOnOption_2: {
-      actives: [...vmGroup1],
+      actives: [...vmGroup1, ...osWeapon],
     },
     canSelectOnOption_3: {
       actives: [],
@@ -2261,7 +2261,7 @@ export const matkRacePercent: IBaseEquipment[] = [
       actives: [],
     },
     canSelectOnOption_2: {
-      actives: [...vmGroup1],
+      actives: [...vmGroup1, ...osWeapon],
     },
     canSelectOnOption_3: {
       actives: [],
@@ -2308,7 +2308,7 @@ export const matkRacePercent: IBaseEquipment[] = [
       actives: [],
     },
     canSelectOnOption_2: {
-      actives: [...vmGroup1],
+      actives: [...vmGroup1, ...osWeapon],
     },
     canSelectOnOption_3: {
       actives: [],
@@ -2355,7 +2355,7 @@ export const matkRacePercent: IBaseEquipment[] = [
       actives: [],
     },
     canSelectOnOption_2: {
-      actives: [...vmGroup1],
+      actives: [...vmGroup1, ...osWeapon],
     },
     canSelectOnOption_3: {
       actives: [],
@@ -2402,7 +2402,7 @@ export const matkRacePercent: IBaseEquipment[] = [
       actives: [],
     },
     canSelectOnOption_2: {
-      actives: [...vmGroup1],
+      actives: [...vmGroup1, ...osWeapon],
     },
     canSelectOnOption_3: {
       actives: [],
@@ -2449,7 +2449,7 @@ export const matkRacePercent: IBaseEquipment[] = [
       actives: [],
     },
     canSelectOnOption_2: {
-      actives: [...vmGroup1],
+      actives: [...vmGroup1, ...osWeapon],
     },
     canSelectOnOption_3: {
       actives: [],
@@ -2496,7 +2496,7 @@ export const matkRacePercent: IBaseEquipment[] = [
       actives: [],
     },
     canSelectOnOption_2: {
-      actives: [...vmGroup1],
+      actives: [...vmGroup1, ...osWeapon],
     },
     canSelectOnOption_3: {
       actives: [],
@@ -2543,7 +2543,7 @@ export const matkRacePercent: IBaseEquipment[] = [
       actives: [],
     },
     canSelectOnOption_2: {
-      actives: [...vmGroup1],
+      actives: [...vmGroup1, ...osWeapon],
     },
     canSelectOnOption_3: {
       actives: [],
@@ -2590,7 +2590,7 @@ export const matkRacePercent: IBaseEquipment[] = [
       actives: [],
     },
     canSelectOnOption_2: {
-      actives: [...vmGroup1],
+      actives: [...vmGroup1, ...osWeapon],
     },
     canSelectOnOption_3: {
       actives: [],
@@ -2638,7 +2638,7 @@ export const matkRacePercent: IBaseEquipment[] = [
       actives: [],
     },
     canSelectOnOption_2: {
-      actives: [...vmGroup1],
+      actives: [...vmGroup1, ...osWeapon],
     },
     canSelectOnOption_3: {
       actives: [],
@@ -2685,7 +2685,7 @@ export const matkRacePercent: IBaseEquipment[] = [
       actives: [],
     },
     canSelectOnOption_2: {
-      actives: [...vmGroup1],
+      actives: [...vmGroup1, ...osWeapon],
     },
     canSelectOnOption_3: {
       actives: [],
@@ -2732,7 +2732,7 @@ export const matkRacePercent: IBaseEquipment[] = [
       actives: [],
     },
     canSelectOnOption_2: {
-      actives: [...vmGroup1],
+      actives: [...vmGroup1, ...osWeapon],
     },
     canSelectOnOption_3: {
       actives: [],
@@ -2779,7 +2779,7 @@ export const matkRacePercent: IBaseEquipment[] = [
       actives: [],
     },
     canSelectOnOption_2: {
-      actives: [...vmGroup1],
+      actives: [...vmGroup1, ...osWeapon],
     },
     canSelectOnOption_3: {
       actives: [],
@@ -2826,7 +2826,7 @@ export const matkRacePercent: IBaseEquipment[] = [
       actives: [],
     },
     canSelectOnOption_2: {
-      actives: [...vmGroup1],
+      actives: [...vmGroup1, ...osWeapon],
     },
     canSelectOnOption_3: {
       actives: [],
@@ -2873,7 +2873,7 @@ export const matkRacePercent: IBaseEquipment[] = [
       actives: [],
     },
     canSelectOnOption_2: {
-      actives: [...vmGroup1],
+      actives: [...vmGroup1, ...osWeapon],
     },
     canSelectOnOption_3: {
       actives: [],
@@ -2920,7 +2920,7 @@ export const matkRacePercent: IBaseEquipment[] = [
       actives: [],
     },
     canSelectOnOption_2: {
-      actives: [...vmGroup1],
+      actives: [...vmGroup1, ...osWeapon],
     },
     canSelectOnOption_3: {
       actives: [],
@@ -2967,7 +2967,7 @@ export const matkRacePercent: IBaseEquipment[] = [
       actives: [],
     },
     canSelectOnOption_2: {
-      actives: [...vmGroup1],
+      actives: [...vmGroup1, ...osWeapon],
     },
     canSelectOnOption_3: {
       actives: [],
@@ -3014,7 +3014,7 @@ export const matkRacePercent: IBaseEquipment[] = [
       actives: [],
     },
     canSelectOnOption_2: {
-      actives: [...vmGroup1],
+      actives: [...vmGroup1, ...osWeapon],
     },
     canSelectOnOption_3: {
       actives: [],
@@ -3061,7 +3061,7 @@ export const matkRacePercent: IBaseEquipment[] = [
       actives: [],
     },
     canSelectOnOption_2: {
-      actives: [...vmGroup1],
+      actives: [...vmGroup1, ...osWeapon],
     },
     canSelectOnOption_3: {
       actives: [],
@@ -3108,7 +3108,7 @@ export const matkRacePercent: IBaseEquipment[] = [
       actives: [],
     },
     canSelectOnOption_2: {
-      actives: [...vmGroup1],
+      actives: [...vmGroup1, ...osWeapon],
     },
     canSelectOnOption_3: {
       actives: [],
@@ -3156,7 +3156,7 @@ export const matkRacePercent: IBaseEquipment[] = [
       actives: [],
     },
     canSelectOnOption_2: {
-      actives: [...vmGroup1],
+      actives: [...vmGroup1, ...osWeapon],
     },
     canSelectOnOption_3: {
       actives: [],
@@ -3203,7 +3203,7 @@ export const matkRacePercent: IBaseEquipment[] = [
       actives: [],
     },
     canSelectOnOption_2: {
-      actives: [...vmGroup1],
+      actives: [...vmGroup1, ...osWeapon],
     },
     canSelectOnOption_3: {
       actives: [],
@@ -3250,7 +3250,7 @@ export const matkRacePercent: IBaseEquipment[] = [
       actives: [],
     },
     canSelectOnOption_2: {
-      actives: [...vmGroup1],
+      actives: [...vmGroup1, ...osWeapon],
     },
     canSelectOnOption_3: {
       actives: [],
@@ -3297,7 +3297,7 @@ export const matkRacePercent: IBaseEquipment[] = [
       actives: [],
     },
     canSelectOnOption_2: {
-      actives: [...vmGroup1],
+      actives: [...vmGroup1, ...osWeapon],
     },
     canSelectOnOption_3: {
       actives: [],
@@ -3344,7 +3344,7 @@ export const matkRacePercent: IBaseEquipment[] = [
       actives: [],
     },
     canSelectOnOption_2: {
-      actives: [...vmGroup1],
+      actives: [...vmGroup1, ...osWeapon],
     },
     canSelectOnOption_3: {
       actives: [],
@@ -3391,7 +3391,7 @@ export const matkRacePercent: IBaseEquipment[] = [
       actives: [],
     },
     canSelectOnOption_2: {
-      actives: [...vmGroup1],
+      actives: [...vmGroup1, ...osWeapon],
     },
     canSelectOnOption_3: {
       actives: [],
@@ -3438,7 +3438,7 @@ export const matkRacePercent: IBaseEquipment[] = [
       actives: [],
     },
     canSelectOnOption_2: {
-      actives: [...vmGroup1],
+      actives: [...vmGroup1, ...osWeapon],
     },
     canSelectOnOption_3: {
       actives: [],
@@ -3485,7 +3485,7 @@ export const matkRacePercent: IBaseEquipment[] = [
       actives: [],
     },
     canSelectOnOption_2: {
-      actives: [...vmGroup1],
+      actives: [...vmGroup1, ...osWeapon],
     },
     canSelectOnOption_3: {
       actives: [],
@@ -3532,7 +3532,7 @@ export const matkRacePercent: IBaseEquipment[] = [
       actives: [],
     },
     canSelectOnOption_2: {
-      actives: [...vmGroup1],
+      actives: [...vmGroup1, ...osWeapon],
     },
     canSelectOnOption_3: {
       actives: [],
@@ -3579,7 +3579,7 @@ export const matkRacePercent: IBaseEquipment[] = [
       actives: [],
     },
     canSelectOnOption_2: {
-      actives: [...vmGroup1],
+      actives: [...vmGroup1, ...osWeapon],
     },
     canSelectOnOption_3: {
       actives: [],
@@ -3626,7 +3626,7 @@ export const matkRacePercent: IBaseEquipment[] = [
       actives: [],
     },
     canSelectOnOption_2: {
-      actives: [...vmGroup1],
+      actives: [...vmGroup1, ...osWeapon],
     },
     canSelectOnOption_3: {
       actives: [],
@@ -3674,7 +3674,7 @@ export const matkRacePercent: IBaseEquipment[] = [
       actives: [],
     },
     canSelectOnOption_2: {
-      actives: [...vmGroup1],
+      actives: [...vmGroup1, ...osWeapon],
     },
     canSelectOnOption_3: {
       actives: [],
@@ -3721,7 +3721,7 @@ export const matkRacePercent: IBaseEquipment[] = [
       actives: [],
     },
     canSelectOnOption_2: {
-      actives: [...vmGroup1],
+      actives: [...vmGroup1, ...osWeapon],
     },
     canSelectOnOption_3: {
       actives: [],
@@ -3768,7 +3768,7 @@ export const matkRacePercent: IBaseEquipment[] = [
       actives: [],
     },
     canSelectOnOption_2: {
-      actives: [...vmGroup1],
+      actives: [...vmGroup1, ...osWeapon],
     },
     canSelectOnOption_3: {
       actives: [],
@@ -3815,7 +3815,7 @@ export const matkRacePercent: IBaseEquipment[] = [
       actives: [],
     },
     canSelectOnOption_2: {
-      actives: [...vmGroup1],
+      actives: [...vmGroup1, ...osWeapon],
     },
     canSelectOnOption_3: {
       actives: [],
@@ -3862,7 +3862,7 @@ export const matkRacePercent: IBaseEquipment[] = [
       actives: [],
     },
     canSelectOnOption_2: {
-      actives: [...vmGroup1],
+      actives: [...vmGroup1, ...osWeapon],
     },
     canSelectOnOption_3: {
       actives: [],
@@ -3909,7 +3909,7 @@ export const matkRacePercent: IBaseEquipment[] = [
       actives: [],
     },
     canSelectOnOption_2: {
-      actives: [...vmGroup1],
+      actives: [...vmGroup1, ...osWeapon],
     },
     canSelectOnOption_3: {
       actives: [],
@@ -3956,7 +3956,7 @@ export const matkRacePercent: IBaseEquipment[] = [
       actives: [],
     },
     canSelectOnOption_2: {
-      actives: [...vmGroup1],
+      actives: [...vmGroup1, ...osWeapon],
     },
     canSelectOnOption_3: {
       actives: [],
@@ -4003,7 +4003,7 @@ export const matkRacePercent: IBaseEquipment[] = [
       actives: [],
     },
     canSelectOnOption_2: {
-      actives: [...vmGroup1],
+      actives: [...vmGroup1, ...osWeapon],
     },
     canSelectOnOption_3: {
       actives: [],
@@ -4050,7 +4050,7 @@ export const matkRacePercent: IBaseEquipment[] = [
       actives: [],
     },
     canSelectOnOption_2: {
-      actives: [...vmGroup1],
+      actives: [...vmGroup1, ...osWeapon],
     },
     canSelectOnOption_3: {
       actives: [],
@@ -4097,7 +4097,7 @@ export const matkRacePercent: IBaseEquipment[] = [
       actives: [],
     },
     canSelectOnOption_2: {
-      actives: [...vmGroup1],
+      actives: [...vmGroup1, ...osWeapon],
     },
     canSelectOnOption_3: {
       actives: [],
@@ -4144,7 +4144,7 @@ export const matkRacePercent: IBaseEquipment[] = [
       actives: [],
     },
     canSelectOnOption_2: {
-      actives: [...vmGroup1],
+      actives: [...vmGroup1, ...osWeapon],
     },
     canSelectOnOption_3: {
       actives: [],
@@ -4192,7 +4192,7 @@ export const matkRacePercent: IBaseEquipment[] = [
       actives: [],
     },
     canSelectOnOption_2: {
-      actives: [...vmGroup1],
+      actives: [...vmGroup1, ...osWeapon],
     },
     canSelectOnOption_3: {
       actives: [],
@@ -4239,7 +4239,7 @@ export const matkRacePercent: IBaseEquipment[] = [
       actives: [],
     },
     canSelectOnOption_2: {
-      actives: [...vmGroup1],
+      actives: [...vmGroup1, ...osWeapon],
     },
     canSelectOnOption_3: {
       actives: [],
@@ -4286,7 +4286,7 @@ export const matkRacePercent: IBaseEquipment[] = [
       actives: [],
     },
     canSelectOnOption_2: {
-      actives: [...vmGroup1],
+      actives: [...vmGroup1, ...osWeapon],
     },
     canSelectOnOption_3: {
       actives: [],
@@ -4333,7 +4333,7 @@ export const matkRacePercent: IBaseEquipment[] = [
       actives: [],
     },
     canSelectOnOption_2: {
-      actives: [...vmGroup1],
+      actives: [...vmGroup1, ...osWeapon],
     },
     canSelectOnOption_3: {
       actives: [],
@@ -4380,7 +4380,7 @@ export const matkRacePercent: IBaseEquipment[] = [
       actives: [],
     },
     canSelectOnOption_2: {
-      actives: [...vmGroup1],
+      actives: [...vmGroup1, ...osWeapon],
     },
     canSelectOnOption_3: {
       actives: [],
@@ -4427,7 +4427,7 @@ export const matkRacePercent: IBaseEquipment[] = [
       actives: [],
     },
     canSelectOnOption_2: {
-      actives: [...vmGroup1],
+      actives: [...vmGroup1, ...osWeapon],
     },
     canSelectOnOption_3: {
       actives: [],
@@ -4474,7 +4474,7 @@ export const matkRacePercent: IBaseEquipment[] = [
       actives: [],
     },
     canSelectOnOption_2: {
-      actives: [...vmGroup1],
+      actives: [...vmGroup1, ...osWeapon],
     },
     canSelectOnOption_3: {
       actives: [],
@@ -4521,7 +4521,7 @@ export const matkRacePercent: IBaseEquipment[] = [
       actives: [],
     },
     canSelectOnOption_2: {
-      actives: [...vmGroup1],
+      actives: [...vmGroup1, ...osWeapon],
     },
     canSelectOnOption_3: {
       actives: [],
@@ -4568,7 +4568,7 @@ export const matkRacePercent: IBaseEquipment[] = [
       actives: [],
     },
     canSelectOnOption_2: {
-      actives: [...vmGroup1],
+      actives: [...vmGroup1, ...osWeapon],
     },
     canSelectOnOption_3: {
       actives: [],
@@ -4615,7 +4615,7 @@ export const matkRacePercent: IBaseEquipment[] = [
       actives: [],
     },
     canSelectOnOption_2: {
-      actives: [...vmGroup1],
+      actives: [...vmGroup1, ...osWeapon],
     },
     canSelectOnOption_3: {
       actives: [],
@@ -4662,7 +4662,7 @@ export const matkRacePercent: IBaseEquipment[] = [
       actives: [],
     },
     canSelectOnOption_2: {
-      actives: [...vmGroup1],
+      actives: [...vmGroup1, ...osWeapon],
     },
     canSelectOnOption_3: {
       actives: [],
@@ -4710,7 +4710,7 @@ export const matkRacePercent: IBaseEquipment[] = [
       actives: [],
     },
     canSelectOnOption_2: {
-      actives: [...vmGroup1],
+      actives: [...vmGroup1, ...osWeapon],
     },
     canSelectOnOption_3: {
       actives: [],
@@ -4757,7 +4757,7 @@ export const matkRacePercent: IBaseEquipment[] = [
       actives: [],
     },
     canSelectOnOption_2: {
-      actives: [...vmGroup1],
+      actives: [...vmGroup1, ...osWeapon],
     },
     canSelectOnOption_3: {
       actives: [],
@@ -4804,7 +4804,7 @@ export const matkRacePercent: IBaseEquipment[] = [
       actives: [],
     },
     canSelectOnOption_2: {
-      actives: [...vmGroup1],
+      actives: [...vmGroup1, ...osWeapon],
     },
     canSelectOnOption_3: {
       actives: [],
@@ -4851,7 +4851,7 @@ export const matkRacePercent: IBaseEquipment[] = [
       actives: [],
     },
     canSelectOnOption_2: {
-      actives: [...vmGroup1],
+      actives: [...vmGroup1, ...osWeapon],
     },
     canSelectOnOption_3: {
       actives: [],
@@ -4898,7 +4898,7 @@ export const matkRacePercent: IBaseEquipment[] = [
       actives: [],
     },
     canSelectOnOption_2: {
-      actives: [...vmGroup1],
+      actives: [...vmGroup1, ...osWeapon],
     },
     canSelectOnOption_3: {
       actives: [],
@@ -4945,7 +4945,7 @@ export const matkRacePercent: IBaseEquipment[] = [
       actives: [],
     },
     canSelectOnOption_2: {
-      actives: [...vmGroup1],
+      actives: [...vmGroup1, ...osWeapon],
     },
     canSelectOnOption_3: {
       actives: [],
@@ -4992,7 +4992,7 @@ export const matkRacePercent: IBaseEquipment[] = [
       actives: [],
     },
     canSelectOnOption_2: {
-      actives: [...vmGroup1],
+      actives: [...vmGroup1, ...osWeapon],
     },
     canSelectOnOption_3: {
       actives: [],
@@ -5039,7 +5039,7 @@ export const matkRacePercent: IBaseEquipment[] = [
       actives: [],
     },
     canSelectOnOption_2: {
-      actives: [...vmGroup1],
+      actives: [...vmGroup1, ...osWeapon],
     },
     canSelectOnOption_3: {
       actives: [],
@@ -5086,7 +5086,7 @@ export const matkRacePercent: IBaseEquipment[] = [
       actives: [],
     },
     canSelectOnOption_2: {
-      actives: [...vmGroup1],
+      actives: [...vmGroup1, ...osWeapon],
     },
     canSelectOnOption_3: {
       actives: [],
@@ -5133,7 +5133,7 @@ export const matkRacePercent: IBaseEquipment[] = [
       actives: [],
     },
     canSelectOnOption_2: {
-      actives: [...vmGroup1],
+      actives: [...vmGroup1, ...osWeapon],
     },
     canSelectOnOption_3: {
       actives: [],
@@ -5180,7 +5180,7 @@ export const matkRacePercent: IBaseEquipment[] = [
       actives: [],
     },
     canSelectOnOption_2: {
-      actives: [...vmGroup1],
+      actives: [...vmGroup1, ...osWeapon],
     },
     canSelectOnOption_3: {
       actives: [],
@@ -6217,6 +6217,2547 @@ export const matkRacePercent: IBaseEquipment[] = [
     },
     canSelectOnOption_2: {
       actives: [...vmGroup1],
+    },
+    canSelectOnOption_3: {
+      actives: [],
+    },
+    script: (character: Character2, _this: IBaseEquipment): void => {},
+  },
+  // Magic damage to Small +x% [2109001 - 2109100]
+  {
+    id: 2109003,
+    name: `Magic damage to Small +3%`,
+    type: EquipmentType.CARD,
+    subType: null,
+    location: null,
+    compoundOn: CompoundOn.ENCHANT,
+    baseDef: 0,
+    baseATK: 0,
+    level: 1,
+    equipUpgradeValue: 0,
+    str: 0,
+    agi: 0,
+    vit: 0,
+    int: 0,
+    dex: 0,
+    luk: 0,
+    additionAtk: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    additionDef: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    options: {
+      magicalSmallPercent: 0.03,
+    },
+    eATK: 0,
+    cATK: 0,
+    criticalPercent: 0,
+    penetrationPercent: 0,
+    canSelectOnOption_1: {
+      actives: [],
+    },
+    canSelectOnOption_2: {
+      actives: [...osWeapon],
+    },
+    canSelectOnOption_3: {
+      actives: [],
+    },
+    script: (character: Character2, _this: IBaseEquipment): void => {},
+  },
+  {
+    id: 2109004,
+    name: `Magic damage to Small +4%`,
+    type: EquipmentType.CARD,
+    subType: null,
+    location: null,
+    compoundOn: CompoundOn.ENCHANT,
+    baseDef: 0,
+    baseATK: 0,
+    level: 1,
+    equipUpgradeValue: 0,
+    str: 0,
+    agi: 0,
+    vit: 0,
+    int: 0,
+    dex: 0,
+    luk: 0,
+    additionAtk: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    additionDef: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    options: {
+      magicalSmallPercent: 0.04,
+    },
+    eATK: 0,
+    cATK: 0,
+    criticalPercent: 0,
+    penetrationPercent: 0,
+    canSelectOnOption_1: {
+      actives: [],
+    },
+    canSelectOnOption_2: {
+      actives: [...osWeapon],
+    },
+    canSelectOnOption_3: {
+      actives: [],
+    },
+    script: (character: Character2, _this: IBaseEquipment): void => {},
+  },
+  {
+    id: 2109005,
+    name: `Magic damage to Small +5%`,
+    type: EquipmentType.CARD,
+    subType: null,
+    location: null,
+    compoundOn: CompoundOn.ENCHANT,
+    baseDef: 0,
+    baseATK: 0,
+    level: 1,
+    equipUpgradeValue: 0,
+    str: 0,
+    agi: 0,
+    vit: 0,
+    int: 0,
+    dex: 0,
+    luk: 0,
+    additionAtk: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    additionDef: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    options: {
+      magicalSmallPercent: 0.05,
+    },
+    eATK: 0,
+    cATK: 0,
+    criticalPercent: 0,
+    penetrationPercent: 0,
+    canSelectOnOption_1: {
+      actives: [],
+    },
+    canSelectOnOption_2: {
+      actives: [...osWeapon],
+    },
+    canSelectOnOption_3: {
+      actives: [],
+    },
+    script: (character: Character2, _this: IBaseEquipment): void => {},
+  },
+  {
+    id: 2109006,
+    name: `Magic damage to Small +6%`,
+    type: EquipmentType.CARD,
+    subType: null,
+    location: null,
+    compoundOn: CompoundOn.ENCHANT,
+    baseDef: 0,
+    baseATK: 0,
+    level: 1,
+    equipUpgradeValue: 0,
+    str: 0,
+    agi: 0,
+    vit: 0,
+    int: 0,
+    dex: 0,
+    luk: 0,
+    additionAtk: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    additionDef: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    options: {
+      magicalSmallPercent: 0.06,
+    },
+    eATK: 0,
+    cATK: 0,
+    criticalPercent: 0,
+    penetrationPercent: 0,
+    canSelectOnOption_1: {
+      actives: [],
+    },
+    canSelectOnOption_2: {
+      actives: [...osWeapon],
+    },
+    canSelectOnOption_3: {
+      actives: [],
+    },
+    script: (character: Character2, _this: IBaseEquipment): void => {},
+  },
+  {
+    id: 2109007,
+    name: `Magic damage to Small +7%`,
+    type: EquipmentType.CARD,
+    subType: null,
+    location: null,
+    compoundOn: CompoundOn.ENCHANT,
+    baseDef: 0,
+    baseATK: 0,
+    level: 1,
+    equipUpgradeValue: 0,
+    str: 0,
+    agi: 0,
+    vit: 0,
+    int: 0,
+    dex: 0,
+    luk: 0,
+    additionAtk: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    additionDef: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    options: {
+      magicalSmallPercent: 0.07,
+    },
+    eATK: 0,
+    cATK: 0,
+    criticalPercent: 0,
+    penetrationPercent: 0,
+    canSelectOnOption_1: {
+      actives: [],
+    },
+    canSelectOnOption_2: {
+      actives: [...osWeapon],
+    },
+    canSelectOnOption_3: {
+      actives: [],
+    },
+    script: (character: Character2, _this: IBaseEquipment): void => {},
+  },
+  {
+    id: 2109008,
+    name: `Magic damage to Small +8%`,
+    type: EquipmentType.CARD,
+    subType: null,
+    location: null,
+    compoundOn: CompoundOn.ENCHANT,
+    baseDef: 0,
+    baseATK: 0,
+    level: 1,
+    equipUpgradeValue: 0,
+    str: 0,
+    agi: 0,
+    vit: 0,
+    int: 0,
+    dex: 0,
+    luk: 0,
+    additionAtk: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    additionDef: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    options: {
+      magicalSmallPercent: 0.08,
+    },
+    eATK: 0,
+    cATK: 0,
+    criticalPercent: 0,
+    penetrationPercent: 0,
+    canSelectOnOption_1: {
+      actives: [],
+    },
+    canSelectOnOption_2: {
+      actives: [...osWeapon],
+    },
+    canSelectOnOption_3: {
+      actives: [],
+    },
+    script: (character: Character2, _this: IBaseEquipment): void => {},
+  },
+  {
+    id: 2109009,
+    name: `Magic damage to Small +9%`,
+    type: EquipmentType.CARD,
+    subType: null,
+    location: null,
+    compoundOn: CompoundOn.ENCHANT,
+    baseDef: 0,
+    baseATK: 0,
+    level: 1,
+    equipUpgradeValue: 0,
+    str: 0,
+    agi: 0,
+    vit: 0,
+    int: 0,
+    dex: 0,
+    luk: 0,
+    additionAtk: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    additionDef: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    options: {
+      magicalSmallPercent: 0.09,
+    },
+    eATK: 0,
+    cATK: 0,
+    criticalPercent: 0,
+    penetrationPercent: 0,
+    canSelectOnOption_1: {
+      actives: [],
+    },
+    canSelectOnOption_2: {
+      actives: [...osWeapon],
+    },
+    canSelectOnOption_3: {
+      actives: [],
+    },
+    script: (character: Character2, _this: IBaseEquipment): void => {},
+  },
+  {
+    id: 2109010,
+    name: `Magic damage to Small +10%`,
+    type: EquipmentType.CARD,
+    subType: null,
+    location: null,
+    compoundOn: CompoundOn.ENCHANT,
+    baseDef: 0,
+    baseATK: 0,
+    level: 1,
+    equipUpgradeValue: 0,
+    str: 0,
+    agi: 0,
+    vit: 0,
+    int: 0,
+    dex: 0,
+    luk: 0,
+    additionAtk: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    additionDef: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    options: {
+      magicalSmallPercent: 0.1,
+    },
+    eATK: 0,
+    cATK: 0,
+    criticalPercent: 0,
+    penetrationPercent: 0,
+    canSelectOnOption_1: {
+      actives: [],
+    },
+    canSelectOnOption_2: {
+      actives: [...osWeapon],
+    },
+    canSelectOnOption_3: {
+      actives: [],
+    },
+    script: (character: Character2, _this: IBaseEquipment): void => {},
+  },
+  {
+    id: 2109011,
+    name: `Magic damage to Small +11%`,
+    type: EquipmentType.CARD,
+    subType: null,
+    location: null,
+    compoundOn: CompoundOn.ENCHANT,
+    baseDef: 0,
+    baseATK: 0,
+    level: 1,
+    equipUpgradeValue: 0,
+    str: 0,
+    agi: 0,
+    vit: 0,
+    int: 0,
+    dex: 0,
+    luk: 0,
+    additionAtk: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    additionDef: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    options: {
+      magicalSmallPercent: 0.11,
+    },
+    eATK: 0,
+    cATK: 0,
+    criticalPercent: 0,
+    penetrationPercent: 0,
+    canSelectOnOption_1: {
+      actives: [],
+    },
+    canSelectOnOption_2: {
+      actives: [...osWeapon],
+    },
+    canSelectOnOption_3: {
+      actives: [],
+    },
+    script: (character: Character2, _this: IBaseEquipment): void => {},
+  },
+  {
+    id: 2109012,
+    name: `Magic damage to Small +12%`,
+    type: EquipmentType.CARD,
+    subType: null,
+    location: null,
+    compoundOn: CompoundOn.ENCHANT,
+    baseDef: 0,
+    baseATK: 0,
+    level: 1,
+    equipUpgradeValue: 0,
+    str: 0,
+    agi: 0,
+    vit: 0,
+    int: 0,
+    dex: 0,
+    luk: 0,
+    additionAtk: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    additionDef: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    options: {
+      magicalSmallPercent: 0.12,
+    },
+    eATK: 0,
+    cATK: 0,
+    criticalPercent: 0,
+    penetrationPercent: 0,
+    canSelectOnOption_1: {
+      actives: [],
+    },
+    canSelectOnOption_2: {
+      actives: [...osWeapon],
+    },
+    canSelectOnOption_3: {
+      actives: [],
+    },
+    script: (character: Character2, _this: IBaseEquipment): void => {},
+  },
+  {
+    id: 2109013,
+    name: `Magic damage to Small +13%`,
+    type: EquipmentType.CARD,
+    subType: null,
+    location: null,
+    compoundOn: CompoundOn.ENCHANT,
+    baseDef: 0,
+    baseATK: 0,
+    level: 1,
+    equipUpgradeValue: 0,
+    str: 0,
+    agi: 0,
+    vit: 0,
+    int: 0,
+    dex: 0,
+    luk: 0,
+    additionAtk: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    additionDef: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    options: {
+      magicalSmallPercent: 0.13,
+    },
+    eATK: 0,
+    cATK: 0,
+    criticalPercent: 0,
+    penetrationPercent: 0,
+    canSelectOnOption_1: {
+      actives: [],
+    },
+    canSelectOnOption_2: {
+      actives: [...osWeapon],
+    },
+    canSelectOnOption_3: {
+      actives: [],
+    },
+    script: (character: Character2, _this: IBaseEquipment): void => {},
+  },
+  {
+    id: 2109014,
+    name: `Magic damage to Small +14%`,
+    type: EquipmentType.CARD,
+    subType: null,
+    location: null,
+    compoundOn: CompoundOn.ENCHANT,
+    baseDef: 0,
+    baseATK: 0,
+    level: 1,
+    equipUpgradeValue: 0,
+    str: 0,
+    agi: 0,
+    vit: 0,
+    int: 0,
+    dex: 0,
+    luk: 0,
+    additionAtk: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    additionDef: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    options: {
+      magicalSmallPercent: 0.14,
+    },
+    eATK: 0,
+    cATK: 0,
+    criticalPercent: 0,
+    penetrationPercent: 0,
+    canSelectOnOption_1: {
+      actives: [],
+    },
+    canSelectOnOption_2: {
+      actives: [...osWeapon],
+    },
+    canSelectOnOption_3: {
+      actives: [],
+    },
+    script: (character: Character2, _this: IBaseEquipment): void => {},
+  },
+  {
+    id: 2109015,
+    name: `Magic damage to Small +15%`,
+    type: EquipmentType.CARD,
+    subType: null,
+    location: null,
+    compoundOn: CompoundOn.ENCHANT,
+    baseDef: 0,
+    baseATK: 0,
+    level: 1,
+    equipUpgradeValue: 0,
+    str: 0,
+    agi: 0,
+    vit: 0,
+    int: 0,
+    dex: 0,
+    luk: 0,
+    additionAtk: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    additionDef: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    options: {
+      magicalSmallPercent: 0.15,
+    },
+    eATK: 0,
+    cATK: 0,
+    criticalPercent: 0,
+    penetrationPercent: 0,
+    canSelectOnOption_1: {
+      actives: [],
+    },
+    canSelectOnOption_2: {
+      actives: [...osWeapon],
+    },
+    canSelectOnOption_3: {
+      actives: [],
+    },
+    script: (character: Character2, _this: IBaseEquipment): void => {},
+  },
+  {
+    id: 2109016,
+    name: `Magic damage to Small +16%`,
+    type: EquipmentType.CARD,
+    subType: null,
+    location: null,
+    compoundOn: CompoundOn.ENCHANT,
+    baseDef: 0,
+    baseATK: 0,
+    level: 1,
+    equipUpgradeValue: 0,
+    str: 0,
+    agi: 0,
+    vit: 0,
+    int: 0,
+    dex: 0,
+    luk: 0,
+    additionAtk: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    additionDef: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    options: {
+      magicalSmallPercent: 0.16,
+    },
+    eATK: 0,
+    cATK: 0,
+    criticalPercent: 0,
+    penetrationPercent: 0,
+    canSelectOnOption_1: {
+      actives: [],
+    },
+    canSelectOnOption_2: {
+      actives: [...osWeapon],
+    },
+    canSelectOnOption_3: {
+      actives: [],
+    },
+    script: (character: Character2, _this: IBaseEquipment): void => {},
+  },
+  {
+    id: 2109017,
+    name: `Magic damage to Small +17%`,
+    type: EquipmentType.CARD,
+    subType: null,
+    location: null,
+    compoundOn: CompoundOn.ENCHANT,
+    baseDef: 0,
+    baseATK: 0,
+    level: 1,
+    equipUpgradeValue: 0,
+    str: 0,
+    agi: 0,
+    vit: 0,
+    int: 0,
+    dex: 0,
+    luk: 0,
+    additionAtk: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    additionDef: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    options: {
+      magicalSmallPercent: 0.17,
+    },
+    eATK: 0,
+    cATK: 0,
+    criticalPercent: 0,
+    penetrationPercent: 0,
+    canSelectOnOption_1: {
+      actives: [],
+    },
+    canSelectOnOption_2: {
+      actives: [...osWeapon],
+    },
+    canSelectOnOption_3: {
+      actives: [],
+    },
+    script: (character: Character2, _this: IBaseEquipment): void => {},
+  },
+  {
+    id: 2109018,
+    name: `Magic damage to Small +18%`,
+    type: EquipmentType.CARD,
+    subType: null,
+    location: null,
+    compoundOn: CompoundOn.ENCHANT,
+    baseDef: 0,
+    baseATK: 0,
+    level: 1,
+    equipUpgradeValue: 0,
+    str: 0,
+    agi: 0,
+    vit: 0,
+    int: 0,
+    dex: 0,
+    luk: 0,
+    additionAtk: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    additionDef: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    options: {
+      magicalSmallPercent: 0.18,
+    },
+    eATK: 0,
+    cATK: 0,
+    criticalPercent: 0,
+    penetrationPercent: 0,
+    canSelectOnOption_1: {
+      actives: [],
+    },
+    canSelectOnOption_2: {
+      actives: [...osWeapon],
+    },
+    canSelectOnOption_3: {
+      actives: [],
+    },
+    script: (character: Character2, _this: IBaseEquipment): void => {},
+  },
+  {
+    id: 2109019,
+    name: `Magic damage to Small +19%`,
+    type: EquipmentType.CARD,
+    subType: null,
+    location: null,
+    compoundOn: CompoundOn.ENCHANT,
+    baseDef: 0,
+    baseATK: 0,
+    level: 1,
+    equipUpgradeValue: 0,
+    str: 0,
+    agi: 0,
+    vit: 0,
+    int: 0,
+    dex: 0,
+    luk: 0,
+    additionAtk: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    additionDef: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    options: {
+      magicalSmallPercent: 0.19,
+    },
+    eATK: 0,
+    cATK: 0,
+    criticalPercent: 0,
+    penetrationPercent: 0,
+    canSelectOnOption_1: {
+      actives: [],
+    },
+    canSelectOnOption_2: {
+      actives: [...osWeapon],
+    },
+    canSelectOnOption_3: {
+      actives: [],
+    },
+    script: (character: Character2, _this: IBaseEquipment): void => {},
+  },
+  {
+    id: 2109020,
+    name: `Magic damage to Small +20%`,
+    type: EquipmentType.CARD,
+    subType: null,
+    location: null,
+    compoundOn: CompoundOn.ENCHANT,
+    baseDef: 0,
+    baseATK: 0,
+    level: 1,
+    equipUpgradeValue: 0,
+    str: 0,
+    agi: 0,
+    vit: 0,
+    int: 0,
+    dex: 0,
+    luk: 0,
+    additionAtk: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    additionDef: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    options: {
+      magicalSmallPercent: 0.2,
+    },
+    eATK: 0,
+    cATK: 0,
+    criticalPercent: 0,
+    penetrationPercent: 0,
+    canSelectOnOption_1: {
+      actives: [],
+    },
+    canSelectOnOption_2: {
+      actives: [...osWeapon],
+    },
+    canSelectOnOption_3: {
+      actives: [],
+    },
+    script: (character: Character2, _this: IBaseEquipment): void => {},
+  },
+  // Magic damage to Medium +x% [2109101 - 2109200]
+  {
+    id: 2109103,
+    name: `Magic damage to Medium +3%`,
+    type: EquipmentType.CARD,
+    subType: null,
+    location: null,
+    compoundOn: CompoundOn.ENCHANT,
+    baseDef: 0,
+    baseATK: 0,
+    level: 1,
+    equipUpgradeValue: 0,
+    str: 0,
+    agi: 0,
+    vit: 0,
+    int: 0,
+    dex: 0,
+    luk: 0,
+    additionAtk: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    additionDef: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    options: {
+      magicalMediumPercent: 0.03,
+    },
+    eATK: 0,
+    cATK: 0,
+    criticalPercent: 0,
+    penetrationPercent: 0,
+    canSelectOnOption_1: {
+      actives: [],
+    },
+    canSelectOnOption_2: {
+      actives: [...osWeapon],
+    },
+    canSelectOnOption_3: {
+      actives: [],
+    },
+    script: (character: Character2, _this: IBaseEquipment): void => {},
+  },
+  {
+    id: 2109104,
+    name: `Magic damage to Medium +4%`,
+    type: EquipmentType.CARD,
+    subType: null,
+    location: null,
+    compoundOn: CompoundOn.ENCHANT,
+    baseDef: 0,
+    baseATK: 0,
+    level: 1,
+    equipUpgradeValue: 0,
+    str: 0,
+    agi: 0,
+    vit: 0,
+    int: 0,
+    dex: 0,
+    luk: 0,
+    additionAtk: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    additionDef: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    options: {
+      magicalMediumPercent: 0.04,
+    },
+    eATK: 0,
+    cATK: 0,
+    criticalPercent: 0,
+    penetrationPercent: 0,
+    canSelectOnOption_1: {
+      actives: [],
+    },
+    canSelectOnOption_2: {
+      actives: [...osWeapon],
+    },
+    canSelectOnOption_3: {
+      actives: [],
+    },
+    script: (character: Character2, _this: IBaseEquipment): void => {},
+  },
+  {
+    id: 2109105,
+    name: `Magic damage to Medium +5%`,
+    type: EquipmentType.CARD,
+    subType: null,
+    location: null,
+    compoundOn: CompoundOn.ENCHANT,
+    baseDef: 0,
+    baseATK: 0,
+    level: 1,
+    equipUpgradeValue: 0,
+    str: 0,
+    agi: 0,
+    vit: 0,
+    int: 0,
+    dex: 0,
+    luk: 0,
+    additionAtk: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    additionDef: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    options: {
+      magicalMediumPercent: 0.05,
+    },
+    eATK: 0,
+    cATK: 0,
+    criticalPercent: 0,
+    penetrationPercent: 0,
+    canSelectOnOption_1: {
+      actives: [],
+    },
+    canSelectOnOption_2: {
+      actives: [...osWeapon],
+    },
+    canSelectOnOption_3: {
+      actives: [],
+    },
+    script: (character: Character2, _this: IBaseEquipment): void => {},
+  },
+  {
+    id: 2109106,
+    name: `Magic damage to Medium +6%`,
+    type: EquipmentType.CARD,
+    subType: null,
+    location: null,
+    compoundOn: CompoundOn.ENCHANT,
+    baseDef: 0,
+    baseATK: 0,
+    level: 1,
+    equipUpgradeValue: 0,
+    str: 0,
+    agi: 0,
+    vit: 0,
+    int: 0,
+    dex: 0,
+    luk: 0,
+    additionAtk: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    additionDef: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    options: {
+      magicalMediumPercent: 0.06,
+    },
+    eATK: 0,
+    cATK: 0,
+    criticalPercent: 0,
+    penetrationPercent: 0,
+    canSelectOnOption_1: {
+      actives: [],
+    },
+    canSelectOnOption_2: {
+      actives: [...osWeapon],
+    },
+    canSelectOnOption_3: {
+      actives: [],
+    },
+    script: (character: Character2, _this: IBaseEquipment): void => {},
+  },
+  {
+    id: 2109107,
+    name: `Magic damage to Medium +7%`,
+    type: EquipmentType.CARD,
+    subType: null,
+    location: null,
+    compoundOn: CompoundOn.ENCHANT,
+    baseDef: 0,
+    baseATK: 0,
+    level: 1,
+    equipUpgradeValue: 0,
+    str: 0,
+    agi: 0,
+    vit: 0,
+    int: 0,
+    dex: 0,
+    luk: 0,
+    additionAtk: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    additionDef: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    options: {
+      magicalMediumPercent: 0.07,
+    },
+    eATK: 0,
+    cATK: 0,
+    criticalPercent: 0,
+    penetrationPercent: 0,
+    canSelectOnOption_1: {
+      actives: [],
+    },
+    canSelectOnOption_2: {
+      actives: [...osWeapon],
+    },
+    canSelectOnOption_3: {
+      actives: [],
+    },
+    script: (character: Character2, _this: IBaseEquipment): void => {},
+  },
+  {
+    id: 2109108,
+    name: `Magic damage to Medium +8%`,
+    type: EquipmentType.CARD,
+    subType: null,
+    location: null,
+    compoundOn: CompoundOn.ENCHANT,
+    baseDef: 0,
+    baseATK: 0,
+    level: 1,
+    equipUpgradeValue: 0,
+    str: 0,
+    agi: 0,
+    vit: 0,
+    int: 0,
+    dex: 0,
+    luk: 0,
+    additionAtk: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    additionDef: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    options: {
+      magicalMediumPercent: 0.08,
+    },
+    eATK: 0,
+    cATK: 0,
+    criticalPercent: 0,
+    penetrationPercent: 0,
+    canSelectOnOption_1: {
+      actives: [],
+    },
+    canSelectOnOption_2: {
+      actives: [...osWeapon],
+    },
+    canSelectOnOption_3: {
+      actives: [],
+    },
+    script: (character: Character2, _this: IBaseEquipment): void => {},
+  },
+  {
+    id: 2109109,
+    name: `Magic damage to Medium +9%`,
+    type: EquipmentType.CARD,
+    subType: null,
+    location: null,
+    compoundOn: CompoundOn.ENCHANT,
+    baseDef: 0,
+    baseATK: 0,
+    level: 1,
+    equipUpgradeValue: 0,
+    str: 0,
+    agi: 0,
+    vit: 0,
+    int: 0,
+    dex: 0,
+    luk: 0,
+    additionAtk: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    additionDef: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    options: {
+      magicalMediumPercent: 0.09,
+    },
+    eATK: 0,
+    cATK: 0,
+    criticalPercent: 0,
+    penetrationPercent: 0,
+    canSelectOnOption_1: {
+      actives: [],
+    },
+    canSelectOnOption_2: {
+      actives: [...osWeapon],
+    },
+    canSelectOnOption_3: {
+      actives: [],
+    },
+    script: (character: Character2, _this: IBaseEquipment): void => {},
+  },
+  {
+    id: 2109110,
+    name: `Magic damage to Medium +10%`,
+    type: EquipmentType.CARD,
+    subType: null,
+    location: null,
+    compoundOn: CompoundOn.ENCHANT,
+    baseDef: 0,
+    baseATK: 0,
+    level: 1,
+    equipUpgradeValue: 0,
+    str: 0,
+    agi: 0,
+    vit: 0,
+    int: 0,
+    dex: 0,
+    luk: 0,
+    additionAtk: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    additionDef: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    options: {
+      magicalMediumPercent: 0.1,
+    },
+    eATK: 0,
+    cATK: 0,
+    criticalPercent: 0,
+    penetrationPercent: 0,
+    canSelectOnOption_1: {
+      actives: [],
+    },
+    canSelectOnOption_2: {
+      actives: [...osWeapon],
+    },
+    canSelectOnOption_3: {
+      actives: [],
+    },
+    script: (character: Character2, _this: IBaseEquipment): void => {},
+  },
+  {
+    id: 2109111,
+    name: `Magic damage to Medium +11%`,
+    type: EquipmentType.CARD,
+    subType: null,
+    location: null,
+    compoundOn: CompoundOn.ENCHANT,
+    baseDef: 0,
+    baseATK: 0,
+    level: 1,
+    equipUpgradeValue: 0,
+    str: 0,
+    agi: 0,
+    vit: 0,
+    int: 0,
+    dex: 0,
+    luk: 0,
+    additionAtk: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    additionDef: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    options: {
+      magicalMediumPercent: 0.11,
+    },
+    eATK: 0,
+    cATK: 0,
+    criticalPercent: 0,
+    penetrationPercent: 0,
+    canSelectOnOption_1: {
+      actives: [],
+    },
+    canSelectOnOption_2: {
+      actives: [...osWeapon],
+    },
+    canSelectOnOption_3: {
+      actives: [],
+    },
+    script: (character: Character2, _this: IBaseEquipment): void => {},
+  },
+  {
+    id: 2109112,
+    name: `Magic damage to Medium +12%`,
+    type: EquipmentType.CARD,
+    subType: null,
+    location: null,
+    compoundOn: CompoundOn.ENCHANT,
+    baseDef: 0,
+    baseATK: 0,
+    level: 1,
+    equipUpgradeValue: 0,
+    str: 0,
+    agi: 0,
+    vit: 0,
+    int: 0,
+    dex: 0,
+    luk: 0,
+    additionAtk: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    additionDef: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    options: {
+      magicalMediumPercent: 0.12,
+    },
+    eATK: 0,
+    cATK: 0,
+    criticalPercent: 0,
+    penetrationPercent: 0,
+    canSelectOnOption_1: {
+      actives: [],
+    },
+    canSelectOnOption_2: {
+      actives: [...osWeapon],
+    },
+    canSelectOnOption_3: {
+      actives: [],
+    },
+    script: (character: Character2, _this: IBaseEquipment): void => {},
+  },
+  {
+    id: 2109113,
+    name: `Magic damage to Medium +13%`,
+    type: EquipmentType.CARD,
+    subType: null,
+    location: null,
+    compoundOn: CompoundOn.ENCHANT,
+    baseDef: 0,
+    baseATK: 0,
+    level: 1,
+    equipUpgradeValue: 0,
+    str: 0,
+    agi: 0,
+    vit: 0,
+    int: 0,
+    dex: 0,
+    luk: 0,
+    additionAtk: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    additionDef: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    options: {
+      magicalMediumPercent: 0.13,
+    },
+    eATK: 0,
+    cATK: 0,
+    criticalPercent: 0,
+    penetrationPercent: 0,
+    canSelectOnOption_1: {
+      actives: [],
+    },
+    canSelectOnOption_2: {
+      actives: [...osWeapon],
+    },
+    canSelectOnOption_3: {
+      actives: [],
+    },
+    script: (character: Character2, _this: IBaseEquipment): void => {},
+  },
+  {
+    id: 2109114,
+    name: `Magic damage to Medium +14%`,
+    type: EquipmentType.CARD,
+    subType: null,
+    location: null,
+    compoundOn: CompoundOn.ENCHANT,
+    baseDef: 0,
+    baseATK: 0,
+    level: 1,
+    equipUpgradeValue: 0,
+    str: 0,
+    agi: 0,
+    vit: 0,
+    int: 0,
+    dex: 0,
+    luk: 0,
+    additionAtk: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    additionDef: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    options: {
+      magicalMediumPercent: 0.14,
+    },
+    eATK: 0,
+    cATK: 0,
+    criticalPercent: 0,
+    penetrationPercent: 0,
+    canSelectOnOption_1: {
+      actives: [],
+    },
+    canSelectOnOption_2: {
+      actives: [...osWeapon],
+    },
+    canSelectOnOption_3: {
+      actives: [],
+    },
+    script: (character: Character2, _this: IBaseEquipment): void => {},
+  },
+  {
+    id: 2109115,
+    name: `Magic damage to Medium +15%`,
+    type: EquipmentType.CARD,
+    subType: null,
+    location: null,
+    compoundOn: CompoundOn.ENCHANT,
+    baseDef: 0,
+    baseATK: 0,
+    level: 1,
+    equipUpgradeValue: 0,
+    str: 0,
+    agi: 0,
+    vit: 0,
+    int: 0,
+    dex: 0,
+    luk: 0,
+    additionAtk: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    additionDef: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    options: {
+      magicalMediumPercent: 0.15,
+    },
+    eATK: 0,
+    cATK: 0,
+    criticalPercent: 0,
+    penetrationPercent: 0,
+    canSelectOnOption_1: {
+      actives: [],
+    },
+    canSelectOnOption_2: {
+      actives: [...osWeapon],
+    },
+    canSelectOnOption_3: {
+      actives: [],
+    },
+    script: (character: Character2, _this: IBaseEquipment): void => {},
+  },
+  {
+    id: 2109116,
+    name: `Magic damage to Medium +16%`,
+    type: EquipmentType.CARD,
+    subType: null,
+    location: null,
+    compoundOn: CompoundOn.ENCHANT,
+    baseDef: 0,
+    baseATK: 0,
+    level: 1,
+    equipUpgradeValue: 0,
+    str: 0,
+    agi: 0,
+    vit: 0,
+    int: 0,
+    dex: 0,
+    luk: 0,
+    additionAtk: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    additionDef: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    options: {
+      magicalMediumPercent: 0.16,
+    },
+    eATK: 0,
+    cATK: 0,
+    criticalPercent: 0,
+    penetrationPercent: 0,
+    canSelectOnOption_1: {
+      actives: [],
+    },
+    canSelectOnOption_2: {
+      actives: [...osWeapon],
+    },
+    canSelectOnOption_3: {
+      actives: [],
+    },
+    script: (character: Character2, _this: IBaseEquipment): void => {},
+  },
+  {
+    id: 2109117,
+    name: `Magic damage to Medium +17%`,
+    type: EquipmentType.CARD,
+    subType: null,
+    location: null,
+    compoundOn: CompoundOn.ENCHANT,
+    baseDef: 0,
+    baseATK: 0,
+    level: 1,
+    equipUpgradeValue: 0,
+    str: 0,
+    agi: 0,
+    vit: 0,
+    int: 0,
+    dex: 0,
+    luk: 0,
+    additionAtk: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    additionDef: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    options: {
+      magicalMediumPercent: 0.17,
+    },
+    eATK: 0,
+    cATK: 0,
+    criticalPercent: 0,
+    penetrationPercent: 0,
+    canSelectOnOption_1: {
+      actives: [],
+    },
+    canSelectOnOption_2: {
+      actives: [...osWeapon],
+    },
+    canSelectOnOption_3: {
+      actives: [],
+    },
+    script: (character: Character2, _this: IBaseEquipment): void => {},
+  },
+  {
+    id: 2109118,
+    name: `Magic damage to Medium +18%`,
+    type: EquipmentType.CARD,
+    subType: null,
+    location: null,
+    compoundOn: CompoundOn.ENCHANT,
+    baseDef: 0,
+    baseATK: 0,
+    level: 1,
+    equipUpgradeValue: 0,
+    str: 0,
+    agi: 0,
+    vit: 0,
+    int: 0,
+    dex: 0,
+    luk: 0,
+    additionAtk: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    additionDef: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    options: {
+      magicalMediumPercent: 0.18,
+    },
+    eATK: 0,
+    cATK: 0,
+    criticalPercent: 0,
+    penetrationPercent: 0,
+    canSelectOnOption_1: {
+      actives: [],
+    },
+    canSelectOnOption_2: {
+      actives: [...osWeapon],
+    },
+    canSelectOnOption_3: {
+      actives: [],
+    },
+    script: (character: Character2, _this: IBaseEquipment): void => {},
+  },
+  {
+    id: 2109119,
+    name: `Magic damage to Medium +19%`,
+    type: EquipmentType.CARD,
+    subType: null,
+    location: null,
+    compoundOn: CompoundOn.ENCHANT,
+    baseDef: 0,
+    baseATK: 0,
+    level: 1,
+    equipUpgradeValue: 0,
+    str: 0,
+    agi: 0,
+    vit: 0,
+    int: 0,
+    dex: 0,
+    luk: 0,
+    additionAtk: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    additionDef: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    options: {
+      magicalMediumPercent: 0.19,
+    },
+    eATK: 0,
+    cATK: 0,
+    criticalPercent: 0,
+    penetrationPercent: 0,
+    canSelectOnOption_1: {
+      actives: [],
+    },
+    canSelectOnOption_2: {
+      actives: [...osWeapon],
+    },
+    canSelectOnOption_3: {
+      actives: [],
+    },
+    script: (character: Character2, _this: IBaseEquipment): void => {},
+  },
+  {
+    id: 2109120,
+    name: `Magic damage to Medium +20%`,
+    type: EquipmentType.CARD,
+    subType: null,
+    location: null,
+    compoundOn: CompoundOn.ENCHANT,
+    baseDef: 0,
+    baseATK: 0,
+    level: 1,
+    equipUpgradeValue: 0,
+    str: 0,
+    agi: 0,
+    vit: 0,
+    int: 0,
+    dex: 0,
+    luk: 0,
+    additionAtk: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    additionDef: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    options: {
+      magicalMediumPercent: 0.2,
+    },
+    eATK: 0,
+    cATK: 0,
+    criticalPercent: 0,
+    penetrationPercent: 0,
+    canSelectOnOption_1: {
+      actives: [],
+    },
+    canSelectOnOption_2: {
+      actives: [...osWeapon],
+    },
+    canSelectOnOption_3: {
+      actives: [],
+    },
+    script: (character: Character2, _this: IBaseEquipment): void => {},
+  },
+  // Magic damage to Large +x% [2109201 - 2109300]
+  {
+    id: 2109203,
+    name: `Magic damage to Large +3%`,
+    type: EquipmentType.CARD,
+    subType: null,
+    location: null,
+    compoundOn: CompoundOn.ENCHANT,
+    baseDef: 0,
+    baseATK: 0,
+    level: 1,
+    equipUpgradeValue: 0,
+    str: 0,
+    agi: 0,
+    vit: 0,
+    int: 0,
+    dex: 0,
+    luk: 0,
+    additionAtk: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    additionDef: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    options: {
+      magicalLargePercent: 0.03,
+    },
+    eATK: 0,
+    cATK: 0,
+    criticalPercent: 0,
+    penetrationPercent: 0,
+    canSelectOnOption_1: {
+      actives: [],
+    },
+    canSelectOnOption_2: {
+      actives: [...osWeapon],
+    },
+    canSelectOnOption_3: {
+      actives: [],
+    },
+    script: (character: Character2, _this: IBaseEquipment): void => {},
+  },
+  {
+    id: 2109204,
+    name: `Magic damage to Large +4%`,
+    type: EquipmentType.CARD,
+    subType: null,
+    location: null,
+    compoundOn: CompoundOn.ENCHANT,
+    baseDef: 0,
+    baseATK: 0,
+    level: 1,
+    equipUpgradeValue: 0,
+    str: 0,
+    agi: 0,
+    vit: 0,
+    int: 0,
+    dex: 0,
+    luk: 0,
+    additionAtk: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    additionDef: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    options: {
+      magicalLargePercent: 0.04,
+    },
+    eATK: 0,
+    cATK: 0,
+    criticalPercent: 0,
+    penetrationPercent: 0,
+    canSelectOnOption_1: {
+      actives: [],
+    },
+    canSelectOnOption_2: {
+      actives: [...osWeapon],
+    },
+    canSelectOnOption_3: {
+      actives: [],
+    },
+    script: (character: Character2, _this: IBaseEquipment): void => {},
+  },
+  {
+    id: 2109205,
+    name: `Magic damage to Large +5%`,
+    type: EquipmentType.CARD,
+    subType: null,
+    location: null,
+    compoundOn: CompoundOn.ENCHANT,
+    baseDef: 0,
+    baseATK: 0,
+    level: 1,
+    equipUpgradeValue: 0,
+    str: 0,
+    agi: 0,
+    vit: 0,
+    int: 0,
+    dex: 0,
+    luk: 0,
+    additionAtk: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    additionDef: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    options: {
+      magicalLargePercent: 0.05,
+    },
+    eATK: 0,
+    cATK: 0,
+    criticalPercent: 0,
+    penetrationPercent: 0,
+    canSelectOnOption_1: {
+      actives: [],
+    },
+    canSelectOnOption_2: {
+      actives: [...osWeapon],
+    },
+    canSelectOnOption_3: {
+      actives: [],
+    },
+    script: (character: Character2, _this: IBaseEquipment): void => {},
+  },
+  {
+    id: 2109206,
+    name: `Magic damage to Large +6%`,
+    type: EquipmentType.CARD,
+    subType: null,
+    location: null,
+    compoundOn: CompoundOn.ENCHANT,
+    baseDef: 0,
+    baseATK: 0,
+    level: 1,
+    equipUpgradeValue: 0,
+    str: 0,
+    agi: 0,
+    vit: 0,
+    int: 0,
+    dex: 0,
+    luk: 0,
+    additionAtk: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    additionDef: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    options: {
+      magicalLargePercent: 0.06,
+    },
+    eATK: 0,
+    cATK: 0,
+    criticalPercent: 0,
+    penetrationPercent: 0,
+    canSelectOnOption_1: {
+      actives: [],
+    },
+    canSelectOnOption_2: {
+      actives: [...osWeapon],
+    },
+    canSelectOnOption_3: {
+      actives: [],
+    },
+    script: (character: Character2, _this: IBaseEquipment): void => {},
+  },
+  {
+    id: 2109207,
+    name: `Magic damage to Large +7%`,
+    type: EquipmentType.CARD,
+    subType: null,
+    location: null,
+    compoundOn: CompoundOn.ENCHANT,
+    baseDef: 0,
+    baseATK: 0,
+    level: 1,
+    equipUpgradeValue: 0,
+    str: 0,
+    agi: 0,
+    vit: 0,
+    int: 0,
+    dex: 0,
+    luk: 0,
+    additionAtk: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    additionDef: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    options: {
+      magicalLargePercent: 0.07,
+    },
+    eATK: 0,
+    cATK: 0,
+    criticalPercent: 0,
+    penetrationPercent: 0,
+    canSelectOnOption_1: {
+      actives: [],
+    },
+    canSelectOnOption_2: {
+      actives: [...osWeapon],
+    },
+    canSelectOnOption_3: {
+      actives: [],
+    },
+    script: (character: Character2, _this: IBaseEquipment): void => {},
+  },
+  {
+    id: 2109208,
+    name: `Magic damage to Large +8%`,
+    type: EquipmentType.CARD,
+    subType: null,
+    location: null,
+    compoundOn: CompoundOn.ENCHANT,
+    baseDef: 0,
+    baseATK: 0,
+    level: 1,
+    equipUpgradeValue: 0,
+    str: 0,
+    agi: 0,
+    vit: 0,
+    int: 0,
+    dex: 0,
+    luk: 0,
+    additionAtk: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    additionDef: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    options: {
+      magicalLargePercent: 0.08,
+    },
+    eATK: 0,
+    cATK: 0,
+    criticalPercent: 0,
+    penetrationPercent: 0,
+    canSelectOnOption_1: {
+      actives: [],
+    },
+    canSelectOnOption_2: {
+      actives: [...osWeapon],
+    },
+    canSelectOnOption_3: {
+      actives: [],
+    },
+    script: (character: Character2, _this: IBaseEquipment): void => {},
+  },
+  {
+    id: 2109209,
+    name: `Magic damage to Large +9%`,
+    type: EquipmentType.CARD,
+    subType: null,
+    location: null,
+    compoundOn: CompoundOn.ENCHANT,
+    baseDef: 0,
+    baseATK: 0,
+    level: 1,
+    equipUpgradeValue: 0,
+    str: 0,
+    agi: 0,
+    vit: 0,
+    int: 0,
+    dex: 0,
+    luk: 0,
+    additionAtk: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    additionDef: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    options: {
+      magicalLargePercent: 0.09,
+    },
+    eATK: 0,
+    cATK: 0,
+    criticalPercent: 0,
+    penetrationPercent: 0,
+    canSelectOnOption_1: {
+      actives: [],
+    },
+    canSelectOnOption_2: {
+      actives: [...osWeapon],
+    },
+    canSelectOnOption_3: {
+      actives: [],
+    },
+    script: (character: Character2, _this: IBaseEquipment): void => {},
+  },
+  {
+    id: 2109210,
+    name: `Magic damage to Large +10%`,
+    type: EquipmentType.CARD,
+    subType: null,
+    location: null,
+    compoundOn: CompoundOn.ENCHANT,
+    baseDef: 0,
+    baseATK: 0,
+    level: 1,
+    equipUpgradeValue: 0,
+    str: 0,
+    agi: 0,
+    vit: 0,
+    int: 0,
+    dex: 0,
+    luk: 0,
+    additionAtk: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    additionDef: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    options: {
+      magicalLargePercent: 0.1,
+    },
+    eATK: 0,
+    cATK: 0,
+    criticalPercent: 0,
+    penetrationPercent: 0,
+    canSelectOnOption_1: {
+      actives: [],
+    },
+    canSelectOnOption_2: {
+      actives: [...osWeapon],
+    },
+    canSelectOnOption_3: {
+      actives: [],
+    },
+    script: (character: Character2, _this: IBaseEquipment): void => {},
+  },
+  {
+    id: 2109211,
+    name: `Magic damage to Large +11%`,
+    type: EquipmentType.CARD,
+    subType: null,
+    location: null,
+    compoundOn: CompoundOn.ENCHANT,
+    baseDef: 0,
+    baseATK: 0,
+    level: 1,
+    equipUpgradeValue: 0,
+    str: 0,
+    agi: 0,
+    vit: 0,
+    int: 0,
+    dex: 0,
+    luk: 0,
+    additionAtk: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    additionDef: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    options: {
+      magicalLargePercent: 0.11,
+    },
+    eATK: 0,
+    cATK: 0,
+    criticalPercent: 0,
+    penetrationPercent: 0,
+    canSelectOnOption_1: {
+      actives: [],
+    },
+    canSelectOnOption_2: {
+      actives: [...osWeapon],
+    },
+    canSelectOnOption_3: {
+      actives: [],
+    },
+    script: (character: Character2, _this: IBaseEquipment): void => {},
+  },
+  {
+    id: 2109212,
+    name: `Magic damage to Large +12%`,
+    type: EquipmentType.CARD,
+    subType: null,
+    location: null,
+    compoundOn: CompoundOn.ENCHANT,
+    baseDef: 0,
+    baseATK: 0,
+    level: 1,
+    equipUpgradeValue: 0,
+    str: 0,
+    agi: 0,
+    vit: 0,
+    int: 0,
+    dex: 0,
+    luk: 0,
+    additionAtk: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    additionDef: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    options: {
+      magicalLargePercent: 0.12,
+    },
+    eATK: 0,
+    cATK: 0,
+    criticalPercent: 0,
+    penetrationPercent: 0,
+    canSelectOnOption_1: {
+      actives: [],
+    },
+    canSelectOnOption_2: {
+      actives: [...osWeapon],
+    },
+    canSelectOnOption_3: {
+      actives: [],
+    },
+    script: (character: Character2, _this: IBaseEquipment): void => {},
+  },
+  {
+    id: 2109213,
+    name: `Magic damage to Large +13%`,
+    type: EquipmentType.CARD,
+    subType: null,
+    location: null,
+    compoundOn: CompoundOn.ENCHANT,
+    baseDef: 0,
+    baseATK: 0,
+    level: 1,
+    equipUpgradeValue: 0,
+    str: 0,
+    agi: 0,
+    vit: 0,
+    int: 0,
+    dex: 0,
+    luk: 0,
+    additionAtk: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    additionDef: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    options: {
+      magicalLargePercent: 0.13,
+    },
+    eATK: 0,
+    cATK: 0,
+    criticalPercent: 0,
+    penetrationPercent: 0,
+    canSelectOnOption_1: {
+      actives: [],
+    },
+    canSelectOnOption_2: {
+      actives: [...osWeapon],
+    },
+    canSelectOnOption_3: {
+      actives: [],
+    },
+    script: (character: Character2, _this: IBaseEquipment): void => {},
+  },
+  {
+    id: 2109214,
+    name: `Magic damage to Large +14%`,
+    type: EquipmentType.CARD,
+    subType: null,
+    location: null,
+    compoundOn: CompoundOn.ENCHANT,
+    baseDef: 0,
+    baseATK: 0,
+    level: 1,
+    equipUpgradeValue: 0,
+    str: 0,
+    agi: 0,
+    vit: 0,
+    int: 0,
+    dex: 0,
+    luk: 0,
+    additionAtk: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    additionDef: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    options: {
+      magicalLargePercent: 0.14,
+    },
+    eATK: 0,
+    cATK: 0,
+    criticalPercent: 0,
+    penetrationPercent: 0,
+    canSelectOnOption_1: {
+      actives: [],
+    },
+    canSelectOnOption_2: {
+      actives: [...osWeapon],
+    },
+    canSelectOnOption_3: {
+      actives: [],
+    },
+    script: (character: Character2, _this: IBaseEquipment): void => {},
+  },
+  {
+    id: 2109215,
+    name: `Magic damage to Large +15%`,
+    type: EquipmentType.CARD,
+    subType: null,
+    location: null,
+    compoundOn: CompoundOn.ENCHANT,
+    baseDef: 0,
+    baseATK: 0,
+    level: 1,
+    equipUpgradeValue: 0,
+    str: 0,
+    agi: 0,
+    vit: 0,
+    int: 0,
+    dex: 0,
+    luk: 0,
+    additionAtk: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    additionDef: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    options: {
+      magicalLargePercent: 0.15,
+    },
+    eATK: 0,
+    cATK: 0,
+    criticalPercent: 0,
+    penetrationPercent: 0,
+    canSelectOnOption_1: {
+      actives: [],
+    },
+    canSelectOnOption_2: {
+      actives: [...osWeapon],
+    },
+    canSelectOnOption_3: {
+      actives: [],
+    },
+    script: (character: Character2, _this: IBaseEquipment): void => {},
+  },
+  {
+    id: 2109216,
+    name: `Magic damage to Large +16%`,
+    type: EquipmentType.CARD,
+    subType: null,
+    location: null,
+    compoundOn: CompoundOn.ENCHANT,
+    baseDef: 0,
+    baseATK: 0,
+    level: 1,
+    equipUpgradeValue: 0,
+    str: 0,
+    agi: 0,
+    vit: 0,
+    int: 0,
+    dex: 0,
+    luk: 0,
+    additionAtk: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    additionDef: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    options: {
+      magicalLargePercent: 0.16,
+    },
+    eATK: 0,
+    cATK: 0,
+    criticalPercent: 0,
+    penetrationPercent: 0,
+    canSelectOnOption_1: {
+      actives: [],
+    },
+    canSelectOnOption_2: {
+      actives: [...osWeapon],
+    },
+    canSelectOnOption_3: {
+      actives: [],
+    },
+    script: (character: Character2, _this: IBaseEquipment): void => {},
+  },
+  {
+    id: 2109217,
+    name: `Magic damage to Large +17%`,
+    type: EquipmentType.CARD,
+    subType: null,
+    location: null,
+    compoundOn: CompoundOn.ENCHANT,
+    baseDef: 0,
+    baseATK: 0,
+    level: 1,
+    equipUpgradeValue: 0,
+    str: 0,
+    agi: 0,
+    vit: 0,
+    int: 0,
+    dex: 0,
+    luk: 0,
+    additionAtk: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    additionDef: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    options: {
+      magicalLargePercent: 0.17,
+    },
+    eATK: 0,
+    cATK: 0,
+    criticalPercent: 0,
+    penetrationPercent: 0,
+    canSelectOnOption_1: {
+      actives: [],
+    },
+    canSelectOnOption_2: {
+      actives: [...osWeapon],
+    },
+    canSelectOnOption_3: {
+      actives: [],
+    },
+    script: (character: Character2, _this: IBaseEquipment): void => {},
+  },
+  {
+    id: 2109218,
+    name: `Magic damage to Large +18%`,
+    type: EquipmentType.CARD,
+    subType: null,
+    location: null,
+    compoundOn: CompoundOn.ENCHANT,
+    baseDef: 0,
+    baseATK: 0,
+    level: 1,
+    equipUpgradeValue: 0,
+    str: 0,
+    agi: 0,
+    vit: 0,
+    int: 0,
+    dex: 0,
+    luk: 0,
+    additionAtk: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    additionDef: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    options: {
+      magicalLargePercent: 0.18,
+    },
+    eATK: 0,
+    cATK: 0,
+    criticalPercent: 0,
+    penetrationPercent: 0,
+    canSelectOnOption_1: {
+      actives: [],
+    },
+    canSelectOnOption_2: {
+      actives: [...osWeapon],
+    },
+    canSelectOnOption_3: {
+      actives: [],
+    },
+    script: (character: Character2, _this: IBaseEquipment): void => {},
+  },
+  {
+    id: 2109219,
+    name: `Magic damage to Large +19%`,
+    type: EquipmentType.CARD,
+    subType: null,
+    location: null,
+    compoundOn: CompoundOn.ENCHANT,
+    baseDef: 0,
+    baseATK: 0,
+    level: 1,
+    equipUpgradeValue: 0,
+    str: 0,
+    agi: 0,
+    vit: 0,
+    int: 0,
+    dex: 0,
+    luk: 0,
+    additionAtk: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    additionDef: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    options: {
+      magicalLargePercent: 0.19,
+    },
+    eATK: 0,
+    cATK: 0,
+    criticalPercent: 0,
+    penetrationPercent: 0,
+    canSelectOnOption_1: {
+      actives: [],
+    },
+    canSelectOnOption_2: {
+      actives: [...osWeapon],
+    },
+    canSelectOnOption_3: {
+      actives: [],
+    },
+    script: (character: Character2, _this: IBaseEquipment): void => {},
+  },
+  {
+    id: 2109220,
+    name: `Magic damage to Large +20%`,
+    type: EquipmentType.CARD,
+    subType: null,
+    location: null,
+    compoundOn: CompoundOn.ENCHANT,
+    baseDef: 0,
+    baseATK: 0,
+    level: 1,
+    equipUpgradeValue: 0,
+    str: 0,
+    agi: 0,
+    vit: 0,
+    int: 0,
+    dex: 0,
+    luk: 0,
+    additionAtk: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    additionDef: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    options: {
+      magicalLargePercent: 0.2,
+    },
+    eATK: 0,
+    cATK: 0,
+    criticalPercent: 0,
+    penetrationPercent: 0,
+    canSelectOnOption_1: {
+      actives: [],
+    },
+    canSelectOnOption_2: {
+      actives: [...osWeapon],
     },
     canSelectOnOption_3: {
       actives: [],

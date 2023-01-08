@@ -55,44 +55,5 @@ export enum ClassKey {
   Sura = 'Sura',
   Minstrel = 'Minstrel',
   Wanderer = 'Wanderer',
-}
-
-export class RuneKnight extends BaseClass {
-  public className: string = 'Rune Knight';
-  public classKey: string = ClassKey.RuneKnight;
-
-  public str1: number = 5;
-  public agi1: number = 4;
-  public vit1: number = 6;
-  public int1: number = 10;
-  public dex1: number = 8;
-  public luk1: number = 4;
-
-  public readonly transMod: number = 1.25;
-  public readonly hpJobA: number = 1.5;
-  public readonly hpJobB: number = 5;
-  public hpModA: number = 0;
-  public hpModB: number = 0;
-
-  public readonly spJob: number = 3;
-  public spModA: number = 0;
-  public spModB: number = 0;
-
-  constructor(data: RuneKnight = null) {
-    super();
-
-    if (data) {
-      for (const key in data) {
-        if (Object.prototype.hasOwnProperty.call(data, key)) {
-          const element = data[key];
-          this[key] = element;
-        }
-      }
-
-      this.transMod = 1.25;
-      this.hpJobA = 1.5;
-      this.hpJobB = 5;
-      this.spJob = 3;
-    }
-  }
+  StarEmperor = 'StarEmperor',
 }

@@ -199,6 +199,13 @@ export interface EnchantOption {
   magicalBossPercent?: number;
   magicalNomalPercent?: number;
 
+  physicalSmallPercent?: number;
+  physicalMediumPercent?: number;
+  physicalLargePercent?: number;
+  magicalSmallPercent?: number;
+  magicalMediumPercent?: number;
+  magicalLargePercent?: number;
+
   penetrationRaceAngelPercent?: number;
   penetrationRaceBrutePercent?: number;
   penetrationRaceDemiHumanPercent?: number;

@@ -1,4 +1,4 @@
-import { BaseClass, RuneKnight } from './class';
+import { BaseClass } from './class';
 import { IBaseEquipment } from './equipment';
 import { Monster } from './monster';
 import { E_Element } from './element';
@@ -212,7 +212,7 @@ export class Character2 {
   public skillCD: number = 0;
 
   // Classes
-  public class: BaseClass = new RuneKnight();
+  public class: BaseClass = new BaseClass();
   public additionATKPercent: AdditionATKPercent = new AdditionATKPercent();
   public additionDEFPercent: AdditionDEFPercent = new AdditionDEFPercent();
   public additionMATKPercent: AdditionMATKPercent = new AdditionMATKPercent();

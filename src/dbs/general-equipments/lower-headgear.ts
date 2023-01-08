@@ -836,4 +836,90 @@ export const lowerHeadgear: IBaseEquipment[] = [
       }
     },
   },
+  {
+    id: 420134,
+    name: 'The Spirit Of World',
+    type: EquipmentType.ARMOR,
+    subType: EquipmentSubType.HELM,
+    location: EquipmentLocation.LOWER_HEADGEAR,
+    compoundOn: null,
+    baseDef: 0,
+    baseATK: 0,
+    level: 1,
+    equipUpgradeValue: 0,
+    str: 0,
+    agi: 0,
+    vit: 0,
+    int: 0,
+    dex: 0,
+    luk: 0,
+    additionAtk: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+      atkPercent2: 0,
+    },
+    additionMAtk: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+      matkPercent: 0,
+      flatNamePercent: 0,
+      skillElement: 0,
+    },
+    additionDef: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    eATK: 0,
+    eMATK: 60,
+    cATK: 0,
+    criticalPercent: 0,
+    penetrationPercent: 0,
+    script: (character: Character2, _this: IBaseEquipment): void => {
+      _this.additionMAtk.skillElement = 0;
+
+      const baseStr = character.class.str0;
+      const baseLuk = character.class.luk0;
+      const baseAgi = character.class.agi0;
+      const baseVit = character.class.vit0;
+      const baseInt = character.class.int0;
+      const baseDex = character.class.dex0;
+
+      if (character.elementalConverter === E_Element.NEUTRAL) {
+        _this.additionMAtk.skillElement = Number(
+          new Big(Math.floor(baseStr / 10)).mul(0.02).valueOf()
+        );
+      } else if (character.elementalConverter === E_Element.WIND) {
+        _this.additionMAtk.skillElement = Number(
+          new Big(Math.floor(baseAgi / 10)).mul(0.02).valueOf()
+        );
+      } else if (character.elementalConverter === E_Element.EARTH) {
+        _this.additionMAtk.skillElement = Number(
+          new Big(Math.floor(baseVit / 10)).mul(0.02).valueOf()
+        );
+      } else if (character.elementalConverter === E_Element.FIRE) {
+        _this.additionMAtk.skillElement = Number(
+          new Big(Math.floor(baseInt / 10)).mul(0.02).valueOf()
+        );
+      } else if (character.elementalConverter === E_Element.WATER) {
+        _this.additionMAtk.skillElement = Number(
+          new Big(Math.floor(baseDex / 10)).mul(0.02).valueOf()
+        );
+      } else if (character.elementalConverter === E_Element.HOLY) {
+        _this.additionMAtk.skillElement = Number(
+          new Big(Math.floor(baseLuk / 10)).mul(0.02).valueOf()
+        );
+      } else if (character.elementalConverter === E_Element.GHOST) {
+        const sum = baseStr + baseLuk + baseAgi + baseVit + baseInt + baseDex;
+        _this.additionMAtk.skillElement = Number(
+          new Big(Math.floor(sum / 60)).mul(0.02).valueOf()
+        );
+      }
+    },
+  },
 ];

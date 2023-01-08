@@ -1,6 +1,7 @@
 import Big from 'big.js';
 import { Character2 } from '../../models/character2';
 import { ClassKey } from '../../models/class';
+import { E_Element } from '../../models/element';
 import {
   IBaseEquipment,
   EquipmentType,
@@ -780,6 +781,358 @@ export const upperHeadgear: IBaseEquipment[] = [
         if (character.playerTypeAtk === 2592) {
           const skillMultiple = Number(
             new Big(Math.floor(upgrade / 2)).mul(0.04).valueOf()
+          );
+          character.buffSkillPercent = Number(
+            new Big(character.buffSkillPercent).plus(skillMultiple).valueOf()
+          );
+        }
+      }
+    },
+  },
+  {
+    id: 18849,
+    name: `Celine's Ribbon [1]`,
+    type: EquipmentType.ARMOR,
+    subType: EquipmentSubType.HELM,
+    location: EquipmentLocation.UPPER_HEADGEAR,
+    compoundOn: null,
+    slot1Enable: 'CARD',
+    slot3Enable: 'ENCHANT',
+    slot4Enable: 'ENCHANT',
+    baseDef: 0,
+    baseATK: 0,
+    level: 1,
+    equipUpgradeValue: 0,
+    str: 0,
+    agi: 0,
+    vit: 0,
+    int: 0,
+    dex: 3,
+    luk: 0,
+    additionAtk: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+      flatNamePercent: 0,
+    },
+    additionMAtk: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+      matkPercent: 0,
+      flatNamePercent: 0,
+      skillElement: 0,
+    },
+    additionDef: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    eATK: 0,
+    eMATK: 0,
+    cATK: 0,
+    criticalPercent: 0,
+    penetrationPercent: 0,
+    script: (character: Character2, _this: IBaseEquipment): void => {
+      const upgrade = _this.equipUpgradeValue;
+      _this.eMATK = 7 * upgrade + 40;
+    },
+  },
+  {
+    id: 400044,
+    name: 'Phantom of Masquerade [1]',
+    type: EquipmentType.ARMOR,
+    subType: EquipmentSubType.HELM,
+    location: EquipmentLocation.UPPER_HEADGEAR,
+    compoundOn: null,
+    slot1Enable: 'CARD',
+    baseDef: 0,
+    baseATK: 0,
+    level: 1,
+    equipUpgradeValue: 0,
+    str: 0,
+    agi: 0,
+    vit: 0,
+    int: 0,
+    dex: 0,
+    luk: 0,
+    additionAtk: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+      flatNamePercent: 0,
+    },
+    additionMAtk: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+      matkPercent: 0,
+      flatNamePercent: 0,
+      skillElement: 0,
+    },
+    additionDef: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    eATK: 0,
+    eMATK: 0,
+    cATK: 0,
+    vct: 0,
+    fct: 0,
+    criticalPercent: 0,
+    penetrationPercent: 0,
+    script: (character: Character2, _this: IBaseEquipment): void => {
+      _this.vct = 0;
+      _this.additionMAtk.skillElement = 0;
+      _this.additionMAtk.size = 0;
+      const upgrade = _this.equipUpgradeValue;
+      _this.eMATK = Number(new Big(Math.floor(upgrade / 2)).mul(20).valueOf());
+
+      if (upgrade >= 7) {
+        _this.vct = 0.15;
+
+        if (upgrade >= 7) {
+          _this.additionMAtk.skillElement = 0.15;
+
+          if (upgrade >= 11) {
+            if (
+              [Scale.SMALL, Scale.MEDIUM].includes(character.monster?.scale)
+            ) {
+              _this.additionMAtk.size = 0.15;
+            }
+
+            _this.fct = 0.2;
+          }
+        }
+      }
+
+      if (character.rightHand?.id === 26164) {
+        if (character.playerTypeAtk === 5028) {
+          const skillMultiple = Number(
+            new Big(Math.floor(upgrade / 2)).mul(0.04).valueOf()
+          );
+          character.buffSkillPercent = Number(
+            new Big(character.buffSkillPercent).plus(skillMultiple).valueOf()
+          );
+        }
+      } else if (character.rightHand?.id === 26151) {
+        _this.eMATK += 30;
+
+        if (character.playerTypeAtk === 2602) {
+          const skillMultiple = Number(
+            new Big(Math.floor(upgrade / 2)).mul(0.04).valueOf()
+          );
+          character.buffSkillPercent = Number(
+            new Big(character.buffSkillPercent).plus(skillMultiple).valueOf()
+          );
+        }
+      } else if (character.rightHand?.id === 16089) {
+        _this.vct = Number(
+          new Big(Math.floor(upgrade / 2)).mul(0.03).plus(_this.vct).valueOf()
+        );
+
+        if (character.elementalConverter === E_Element.HOLY) {
+          _this.additionMAtk.skillElement = Number(
+            new Big(_this.additionMAtk.skillElement).plus(0.05).valueOf()
+          );
+        }
+      }
+    },
+  },
+  {
+    id: 400059,
+    name: 'Scorpio Celestial Coronet K [1]',
+    type: EquipmentType.ARMOR,
+    subType: EquipmentSubType.HELM,
+    location: EquipmentLocation.UPPER_HEADGEAR,
+    compoundOn: null,
+    slot1Enable: 'CARD',
+    baseDef: 0,
+    baseATK: 0,
+    level: 1,
+    equipUpgradeValue: 0,
+    str: 0,
+    agi: 0,
+    vit: 0,
+    int: 0,
+    dex: 0,
+    luk: 0,
+    additionAtk: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+      flatNamePercent: 0,
+    },
+    additionMAtk: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+      matkPercent: 0,
+      flatNamePercent: 0,
+      skillElement: 0,
+    },
+    additionDef: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    eATK: 0,
+    eMATK: 0,
+    cATK: 0,
+    vct: 0,
+    fct: 0,
+    criticalPercent: 0,
+    penetrationPercent: 0,
+    script: (character: Character2, _this: IBaseEquipment): void => {
+      _this.vct = 0;
+      _this.additionMAtk.skillElement = 0;
+      _this.additionMAtk.size = 0;
+      const upgrade = _this.equipUpgradeValue;
+      _this.eMATK = Number(new Big(Math.floor(upgrade / 2)).mul(20).valueOf());
+
+      if (upgrade >= 7) {
+        _this.vct = 0.15;
+
+        if (upgrade >= 7) {
+          _this.additionMAtk.skillElement = 0.15;
+
+          if (upgrade >= 11) {
+            if (
+              [Scale.SMALL, Scale.MEDIUM].includes(character.monster?.scale)
+            ) {
+              _this.additionMAtk.size = 0.15;
+            }
+
+            _this.fct = 0.2;
+          }
+        }
+      }
+
+      if (character.rightHand?.id === 13493) {
+        if (character.elementalConverter === E_Element.HOLY) {
+          _this.additionMAtk.skillElement = Number(
+            new Big(_this.additionMAtk.skillElement).plus(0.05).valueOf()
+          );
+        }
+      } else if (character.rightHand?.id === 26151) {
+        _this.eMATK += 30;
+
+        if (character.playerTypeAtk === 2449) {
+          const skillMultiple = Number(
+            new Big(Math.floor(upgrade / 2)).mul(0.03).valueOf()
+          );
+          character.buffSkillPercent = Number(
+            new Big(character.buffSkillPercent).plus(skillMultiple).valueOf()
+          );
+        }
+      } else if (character.rightHand?.id === 16089) {
+        if (character.elementalConverter === E_Element.HOLY) {
+          _this.additionMAtk.skillElement = Number(
+            new Big(_this.additionMAtk.skillElement).plus(0.05).valueOf()
+          );
+        }
+
+        if (character.playerTypeAtk === 2038) {
+          const skillMultiple = Number(
+            new Big(Math.floor(upgrade / 2)).mul(0.03).valueOf()
+          );
+          character.buffSkillPercent = Number(
+            new Big(character.buffSkillPercent).plus(skillMultiple).valueOf()
+          );
+        }
+      }
+    },
+  },
+  {
+    id: 400054,
+    name: 'Great Sorcerer Crown [1]',
+    type: EquipmentType.ARMOR,
+    subType: EquipmentSubType.HELM,
+    location: EquipmentLocation.UPPER_HEADGEAR,
+    compoundOn: null,
+    slot1Enable: 'CARD',
+    baseDef: 0,
+    baseATK: 0,
+    level: 1,
+    equipUpgradeValue: 0,
+    str: 0,
+    agi: 0,
+    vit: 0,
+    int: 0,
+    dex: 0,
+    luk: 0,
+    additionAtk: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+      flatNamePercent: 0,
+    },
+    additionMAtk: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+      matkPercent: 0,
+      flatNamePercent: 0,
+      skillElement: 0,
+    },
+    additionDef: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    eATK: 0,
+    eMATK: 0,
+    cATK: 0,
+    vct: 0,
+    fct: 0,
+    criticalPercent: 0,
+    penetrationPercent: 0,
+    script: (character: Character2, _this: IBaseEquipment): void => {
+      _this.vct = 0;
+      _this.additionMAtk.skillElement = 0;
+      _this.additionMAtk.size = 0;
+      const upgrade = _this.equipUpgradeValue;
+      _this.eMATK = Number(new Big(Math.floor(upgrade / 2)).mul(20).valueOf());
+
+      if (upgrade >= 7) {
+        _this.vct = 0.15;
+
+        if (upgrade >= 7) {
+          _this.additionMAtk.skillElement = 0.15;
+
+          if (upgrade >= 11) {
+            if (
+              [Scale.SMALL, Scale.MEDIUM].includes(character.monster?.scale)
+            ) {
+              _this.additionMAtk.size = 0.15;
+            }
+
+            _this.fct = 0.2;
+          }
+        }
+      }
+
+      if (character.rightHand?.id === 13493) {
+        _this.eMATK += 30;
+      } else if (character.rightHand?.id === 26151) {
+        _this.eMATK += 30;
+
+        if (character.playerTypeAtk === 2213) {
+          const skillMultiple = Number(
+            new Big(Math.floor(upgrade / 2)).mul(0.05).valueOf()
           );
           character.buffSkillPercent = Number(
             new Big(character.buffSkillPercent).plus(skillMultiple).valueOf()

@@ -1,6 +1,7 @@
 import Big from 'big.js';
 import { Character2 } from '../../models/character2';
 import { ClassKey } from '../../models/class';
+import { E_Element } from '../../models/element';
 import {
   IBaseEquipment,
   EquipmentType,
@@ -999,27 +1000,25 @@ export const shadowWeapons: IBaseEquipment[] = [
     cATK: 0,
     criticalPercent: 0,
     penetrationPercent: 0,
+    penetrationMPercent: 0,
     classActives: [ClassKey.RuneKnight],
     script: (character: Character2, _this: IBaseEquipment): void => {
       const upgrade = _this.equipUpgradeValue;
       _this.eATK = upgrade + 10;
-      _this.eMATK = upgrade;
+      _this.eMATK = upgrade + 10;
       _this.penetrationPercent = 0;
+      _this.penetrationMPercent = 0;
 
       if (
-        character.shadowBodyGear &&
         character.shadowBodyGear?.id === 24584 &&
-        character.shadowLeftHand &&
         character.shadowLeftHand?.id === 24585 &&
-        character.shadowShoes &&
         character.shadowShoes?.id === 24586 &&
-        character.shadowRightAccessory &&
         character.shadowRightAccessory?.id === 24587 &&
-        character.shadowLeftAccessory &&
         character.shadowLeftAccessory?.id === 24588
       ) {
         if (character.monster.race !== MonsterRace.PLAYER) {
           _this.penetrationPercent = 0.7;
+          _this.penetrationMPercent = 0.7;
         }
 
         if (character.playerTypeAtk === 2006) {
@@ -1062,20 +1061,19 @@ export const shadowWeapons: IBaseEquipment[] = [
       race: 0,
       class: 0,
     },
-    options: {
-      ignoreSizePenalty: false,
-    },
     eATK: 0,
     eMATK: 0,
     cATK: 0,
     criticalPercent: 0,
     penetrationPercent: 0,
+    penetrationMPercent: 0,
     classActives: [ClassKey.RuneKnight],
     script: (character: Character2, _this: IBaseEquipment): void => {
       const upgrade = _this.equipUpgradeValue;
       _this.eATK = upgrade;
       _this.eMATK = upgrade;
       _this.penetrationPercent = 0;
+      _this.penetrationMPercent = 0;
 
       if (character.playerTypeAtk === 2006) {
         if (
@@ -1084,11 +1082,12 @@ export const shadowWeapons: IBaseEquipment[] = [
         ) {
           const refineRight = character.shadowRightAccessory.equipUpgradeValue;
           const refineLeft = character.shadowLeftAccessory.equipUpgradeValue;
+          const refineRate = Number(
+            new Big(upgrade + refineRight + refineLeft).div(100).valueOf()
+          );
 
           character.buffSkillPercent = Number(
-            new Big(character.buffSkillPercent)
-              .plus(refineRight + refineLeft)
-              .valueOf()
+            new Big(character.buffSkillPercent).plus(refineRate).valueOf()
           );
         }
       }
@@ -1099,6 +1098,7 @@ export const shadowWeapons: IBaseEquipment[] = [
           new Big(upgrade + refineLeftHand).div(100).valueOf()
         );
         _this.penetrationPercent = Number(new Big(0.4).plus(temp).valueOf());
+        _this.penetrationMPercent = _this.penetrationPercent;
       }
     },
   },
@@ -1152,25 +1152,21 @@ export const shadowWeapons: IBaseEquipment[] = [
     classActives: [ClassKey.Sorcerer],
     script: (character: Character2, _this: IBaseEquipment): void => {
       const upgrade = _this.equipUpgradeValue;
-      _this.eATK = upgrade;
+      _this.eATK = upgrade + 10;
       _this.eMATK = upgrade + 10;
-
+      _this.penetrationPercent = 0;
       _this.penetrationMPercent = 0;
       _this.additionMAtk.size = 0;
 
       if (
-        character.shadowBodyGear &&
         character.shadowBodyGear?.id === 24584 &&
-        character.shadowLeftHand &&
         character.shadowLeftHand?.id === 24585 &&
-        character.shadowShoes &&
         character.shadowShoes?.id === 24586 &&
-        character.shadowRightAccessory &&
         character.shadowRightAccessory?.id === 24587 &&
-        character.shadowLeftAccessory &&
         character.shadowLeftAccessory?.id === 24588
       ) {
         if (character.monster.race !== MonsterRace.PLAYER) {
+          _this.penetrationPercent = 0.7;
           _this.penetrationMPercent = 0.7;
         }
 
@@ -1314,6 +1310,367 @@ export const shadowWeapons: IBaseEquipment[] = [
             );
           }
         }
+      }
+    },
+  },
+  {
+    id: 24597,
+    name: 'Arch Bishop Booster Shadow Weapon',
+    type: EquipmentType.SHADOW_EQUIPMENT,
+    subType: EquipmentSubType.SHADOW_WEAPON,
+    location: EquipmentLocation.SHADOW_WEAPON,
+    compoundOn: null,
+    option1Enable: true,
+    baseDef: 0,
+    baseATK: 0,
+    level: 1,
+    equipUpgradeValue: 0,
+    str: 0,
+    agi: 0,
+    vit: 0,
+    int: 0,
+    dex: 0,
+    luk: 0,
+    hpModA: 0,
+    hpModB: 0,
+    additionAtk: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    additionDef: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    eATK: 0,
+    eMATK: 0,
+    cATK: 0,
+    criticalPercent: 0,
+    penetrationPercent: 0,
+    penetrationMPercent: 0,
+    classActives: [ClassKey.ArchBishop],
+    script: (character: Character2, _this: IBaseEquipment): void => {
+      const upgrade = _this.equipUpgradeValue;
+      _this.eATK = upgrade + 10;
+      _this.eMATK = upgrade + 10;
+      _this.penetrationPercent = 0;
+      _this.penetrationMPercent = 0;
+
+      if (
+        character.shadowBodyGear?.id === 24584 &&
+        character.shadowLeftHand?.id === 24585 &&
+        character.shadowShoes?.id === 24586 &&
+        character.shadowRightAccessory?.id === 24587 &&
+        character.shadowLeftAccessory?.id === 24588
+      ) {
+        if (character.monster.race !== MonsterRace.PLAYER) {
+          _this.penetrationPercent = 0.7;
+          _this.penetrationMPercent = 0.7;
+        }
+
+        if (character.playerTypeAtk === 2040) {
+          character.buffMagicSkillPercent = Number(
+            new Big(character.buffMagicSkillPercent).plus(0.15).valueOf()
+          );
+        }
+      }
+    },
+  },
+  {
+    id: 24593,
+    name: 'Guillotine Cross Booster Shadow Weapon',
+    type: EquipmentType.SHADOW_EQUIPMENT,
+    subType: EquipmentSubType.SHADOW_WEAPON,
+    location: EquipmentLocation.SHADOW_WEAPON,
+    compoundOn: null,
+    option1Enable: true,
+    baseDef: 0,
+    baseATK: 0,
+    level: 1,
+    equipUpgradeValue: 0,
+    str: 0,
+    agi: 0,
+    vit: 0,
+    int: 0,
+    dex: 0,
+    luk: 0,
+    hpModA: 0,
+    hpModB: 0,
+    additionAtk: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    additionDef: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    eATK: 0,
+    eMATK: 0,
+    cATK: 0,
+    criticalPercent: 0,
+    meleePercent: 0,
+    penetrationPercent: 0,
+    penetrationMPercent: 0,
+    classActives: [ClassKey.GuillotineCross],
+    script: (character: Character2, _this: IBaseEquipment): void => {
+      const upgrade = _this.equipUpgradeValue;
+      _this.eATK = upgrade + 10;
+      _this.eMATK = upgrade + 10;
+      _this.penetrationPercent = 0;
+      _this.penetrationMPercent = 0;
+      _this.acd = 0;
+
+      if (
+        character.shadowBodyGear?.id === 24584 &&
+        character.shadowLeftHand?.id === 24585 &&
+        character.shadowShoes?.id === 24586 &&
+        character.shadowRightAccessory?.id === 24587 &&
+        character.shadowLeftAccessory?.id === 24588
+      ) {
+        if (character.monster.race !== MonsterRace.PLAYER) {
+          _this.penetrationPercent = 0.7;
+          _this.penetrationMPercent = 0.7;
+        }
+
+        _this.acd = 0.1;
+
+        if ([2029, 2036].includes(character.playerTypeAtk)) {
+          character.buffSkillPercent = Number(
+            new Big(character.buffSkillPercent).plus(0.15).valueOf()
+          );
+        }
+      }
+    },
+  },
+  {
+    id: 24740,
+    name: 'Star Emperor Booster Shadow Weapon',
+    type: EquipmentType.SHADOW_EQUIPMENT,
+    subType: EquipmentSubType.SHADOW_WEAPON,
+    location: EquipmentLocation.SHADOW_WEAPON,
+    compoundOn: null,
+    option1Enable: true,
+    baseDef: 0,
+    baseATK: 0,
+    level: 1,
+    equipUpgradeValue: 0,
+    str: 0,
+    agi: 0,
+    vit: 0,
+    int: 0,
+    dex: 0,
+    luk: 0,
+    hpModA: 0,
+    hpModB: 0,
+    additionAtk: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    additionDef: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    eATK: 0,
+    eMATK: 0,
+    cATK: 0,
+    criticalPercent: 0,
+    meleePercent: 0,
+    penetrationPercent: 0,
+    penetrationMPercent: 0,
+    classActives: [ClassKey.StarEmperor],
+    script: (character: Character2, _this: IBaseEquipment): void => {
+      const upgrade = _this.equipUpgradeValue;
+      _this.eATK = upgrade + 10;
+      _this.eMATK = upgrade + 10;
+      _this.penetrationPercent = 0;
+      _this.penetrationMPercent = 0;
+      _this.meleePercent = 0;
+      _this.acd = 0;
+      _this.vct = 0;
+
+      if (
+        character.shadowBodyGear?.id === 24584 &&
+        character.shadowLeftHand?.id === 24585 &&
+        character.shadowShoes?.id === 24586 &&
+        character.shadowRightAccessory?.id === 24587 &&
+        character.shadowLeftAccessory?.id === 24588
+      ) {
+        if (character.monster.race !== MonsterRace.PLAYER) {
+          _this.penetrationPercent = 0.7;
+          _this.penetrationMPercent = 0.7;
+        }
+
+        _this.meleePercent = 0.15;
+        _this.acd = 0.15;
+        _this.vct = 0.15;
+
+        if ([2576, 2579, 2584, 2592, 2593].includes(character.playerTypeAtk)) {
+          character.buffSkillPercent = Number(
+            new Big(character.buffSkillPercent).plus(0.15).valueOf()
+          );
+        }
+      }
+    },
+  },
+  {
+    id: 24292,
+    name: 'Arch Bishop Shadow Weapon',
+    type: EquipmentType.SHADOW_EQUIPMENT,
+    subType: EquipmentSubType.SHADOW_WEAPON,
+    location: EquipmentLocation.SHADOW_WEAPON,
+    compoundOn: null,
+    option1Enable: true,
+    baseDef: 0,
+    baseATK: 0,
+    level: 1,
+    equipUpgradeValue: 0,
+    str: 0,
+    agi: 0,
+    vit: 0,
+    int: 0,
+    dex: 0,
+    luk: 0,
+    additionAtk: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    additionDef: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    eATK: 0,
+    eMATK: 0,
+    cATK: 0,
+    criticalPercent: 0,
+    penetrationPercent: 0,
+    classActives: [ClassKey.ArchBishop],
+    script: (character: Character2, _this: IBaseEquipment): void => {
+      const upgrade = _this.equipUpgradeValue;
+      _this.eATK = upgrade;
+      _this.eMATK = upgrade;
+
+      if (character.playerTypeAtk === 2054) {
+        character.buffSkillPercent = Number(
+          new Big(character.buffSkillPercent).plus(0.2).valueOf()
+        );
+        character.buffSkillPercent = Number(
+          new Big(upgrade).mul(0.05).plus(character.buffSkillPercent).valueOf()
+        );
+      }
+    },
+  },
+  {
+    id: 24491,
+    name: 'Adora Shadow Weapon',
+    type: EquipmentType.SHADOW_EQUIPMENT,
+    subType: EquipmentSubType.SHADOW_WEAPON,
+    location: EquipmentLocation.SHADOW_WEAPON,
+    compoundOn: null,
+    option1Enable: true,
+    baseDef: 0,
+    baseATK: 0,
+    level: 1,
+    equipUpgradeValue: 0,
+    str: 0,
+    agi: 0,
+    vit: 0,
+    int: 0,
+    dex: 0,
+    luk: 0,
+    hpModA: 0,
+    hpModB: 0,
+    additionAtk: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    additionMAtk: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+      flatNamePercent: 0,
+      matkPercent: 0,
+      skillElement: 0,
+    },
+    additionDef: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    eATK: 0,
+    eMATK: 0,
+    cATK: 0,
+    criticalPercent: 0,
+    penetrationPercent: 0,
+    penetrationMPercent: 0,
+    classActives: [ClassKey.ArchBishop],
+    script: (character: Character2, _this: IBaseEquipment): void => {
+      const upgrade = _this.equipUpgradeValue;
+      _this.eATK = upgrade;
+      _this.eMATK = upgrade;
+      _this.penetrationPercent = 0;
+      _this.penetrationMPercent = 0;
+      _this.additionMAtk.skillElement = 0;
+
+      if (character.elementalConverter === E_Element.HOLY) {
+        _this.additionMAtk.skillElement = 0.03;
+
+        if (upgrade >= 7) {
+          _this.additionMAtk.skillElement = 0.06;
+
+          if (upgrade >= 9) {
+            _this.additionMAtk.skillElement = 0.1;
+          }
+        }
+      }
+
+      if (character.playerTypeAtk === 2040) {
+        if (
+          character.shadowRightAccessory?.id === 24493 &&
+          character.shadowLeftAccessory?.id === 24492
+        ) {
+          const refineRight = character.shadowRightAccessory.equipUpgradeValue;
+          const refineLeft = character.shadowLeftAccessory.equipUpgradeValue;
+          const refineRate = Number(
+            new Big(upgrade + refineRight + refineLeft)
+              .div(2)
+              .div(100)
+              .valueOf()
+          );
+
+          character.buffSkillPercent = Number(
+            new Big(character.buffSkillPercent)
+              .plus(Math.floor(refineRate))
+              .valueOf()
+          );
+        }
+      }
+
+      if (character.shadowLeftHand?.id === 24305) {
+        const refineLeftHand = character.shadowLeftHand.equipUpgradeValue;
+        const temp = Number(
+          new Big(upgrade + refineLeftHand).div(100).valueOf()
+        );
+        _this.penetrationPercent = Number(new Big(0.4).plus(temp).valueOf());
+        _this.penetrationMPercent = _this.penetrationPercent;
       }
     },
   },

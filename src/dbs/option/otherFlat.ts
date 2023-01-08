@@ -5,13 +5,14 @@ import {
   CompoundOn,
 } from '../../models/equipment';
 import {
+  osWeapon,
   shadowsId,
   temporalManteausId,
   vmGroup2,
   vmGroup3,
   vmGroup4,
   vmGroup5,
-} from './equomentIds';
+} from './equipmentIds';
 
 export const otherFlat: IBaseEquipment[] = [
   // ASPD +x [2108601 - 2108700]
@@ -58,7 +59,13 @@ export const otherFlat: IBaseEquipment[] = [
       actives: [],
     },
     canSelectOnOption_3: {
-      actives: [...vmGroup2, ...vmGroup3, ...vmGroup4, ...vmGroup5],
+      actives: [
+        ...vmGroup2,
+        ...vmGroup3,
+        ...vmGroup4,
+        ...vmGroup5,
+        ...osWeapon,
+      ],
     },
     script: (character: Character2, _this: IBaseEquipment): void => {},
   },
@@ -105,7 +112,13 @@ export const otherFlat: IBaseEquipment[] = [
       actives: [],
     },
     canSelectOnOption_3: {
-      actives: [...vmGroup2, ...vmGroup3, ...vmGroup4, ...vmGroup5],
+      actives: [
+        ...vmGroup2,
+        ...vmGroup3,
+        ...vmGroup4,
+        ...vmGroup5,
+        ...osWeapon,
+      ],
     },
     script: (character: Character2, _this: IBaseEquipment): void => {},
   },
@@ -288,7 +301,7 @@ export const otherFlat: IBaseEquipment[] = [
     criticalPercent: 0,
     penetrationPercent: 0,
     canSelectOnOption_1: {
-      actives: [...shadowsId],
+      actives: [...shadowsId, ...osWeapon],
     },
     canSelectOnOption_2: {
       actives: [],
@@ -335,7 +348,7 @@ export const otherFlat: IBaseEquipment[] = [
     criticalPercent: 0,
     penetrationPercent: 0,
     canSelectOnOption_1: {
-      actives: [...shadowsId],
+      actives: [...shadowsId, ...osWeapon],
     },
     canSelectOnOption_2: {
       actives: [],
@@ -382,7 +395,7 @@ export const otherFlat: IBaseEquipment[] = [
     criticalPercent: 0,
     penetrationPercent: 0,
     canSelectOnOption_1: {
-      actives: [...shadowsId, ...temporalManteausId],
+      actives: [...shadowsId, ...osWeapon, ...temporalManteausId],
     },
     canSelectOnOption_2: {
       actives: [],
@@ -429,7 +442,7 @@ export const otherFlat: IBaseEquipment[] = [
     criticalPercent: 0,
     penetrationPercent: 0,
     canSelectOnOption_1: {
-      actives: [...shadowsId, ...temporalManteausId],
+      actives: [...shadowsId, ...osWeapon, ...temporalManteausId],
     },
     canSelectOnOption_2: {
       actives: [],
@@ -476,7 +489,7 @@ export const otherFlat: IBaseEquipment[] = [
     criticalPercent: 0,
     penetrationPercent: 0,
     canSelectOnOption_1: {
-      actives: [...shadowsId, ...temporalManteausId],
+      actives: [...shadowsId, ...osWeapon, ...temporalManteausId],
     },
     canSelectOnOption_2: {
       actives: [],
@@ -523,7 +536,7 @@ export const otherFlat: IBaseEquipment[] = [
     criticalPercent: 0,
     penetrationPercent: 0,
     canSelectOnOption_1: {
-      actives: [...temporalManteausId],
+      actives: [...temporalManteausId, ...osWeapon],
     },
     canSelectOnOption_2: {
       actives: [],
@@ -570,7 +583,7 @@ export const otherFlat: IBaseEquipment[] = [
     criticalPercent: 0,
     penetrationPercent: 0,
     canSelectOnOption_1: {
-      actives: [...temporalManteausId],
+      actives: [...temporalManteausId, ...osWeapon],
     },
     canSelectOnOption_2: {
       actives: [],
@@ -617,7 +630,7 @@ export const otherFlat: IBaseEquipment[] = [
     criticalPercent: 0,
     penetrationPercent: 0,
     canSelectOnOption_1: {
-      actives: [...temporalManteausId],
+      actives: [...temporalManteausId, ...osWeapon],
     },
     canSelectOnOption_2: {
       actives: [],
@@ -664,7 +677,7 @@ export const otherFlat: IBaseEquipment[] = [
     criticalPercent: 0,
     penetrationPercent: 0,
     canSelectOnOption_1: {
-      actives: [...temporalManteausId],
+      actives: [...temporalManteausId, ...osWeapon],
     },
     canSelectOnOption_2: {
       actives: [],
@@ -711,7 +724,7 @@ export const otherFlat: IBaseEquipment[] = [
     criticalPercent: 0,
     penetrationPercent: 0,
     canSelectOnOption_1: {
-      actives: [...temporalManteausId],
+      actives: [...temporalManteausId, ...osWeapon],
     },
     canSelectOnOption_2: {
       actives: [],
@@ -758,7 +771,7 @@ export const otherFlat: IBaseEquipment[] = [
     criticalPercent: 0,
     penetrationPercent: 0,
     canSelectOnOption_1: {
-      actives: [],
+      actives: [...osWeapon],
     },
     canSelectOnOption_2: {
       actives: [],
@@ -805,7 +818,7 @@ export const otherFlat: IBaseEquipment[] = [
     criticalPercent: 0,
     penetrationPercent: 0,
     canSelectOnOption_1: {
-      actives: [],
+      actives: [...osWeapon],
     },
     canSelectOnOption_2: {
       actives: [],
@@ -852,7 +865,7 @@ export const otherFlat: IBaseEquipment[] = [
     criticalPercent: 0,
     penetrationPercent: 0,
     canSelectOnOption_1: {
-      actives: [],
+      actives: [...osWeapon],
     },
     canSelectOnOption_2: {
       actives: [],
@@ -899,7 +912,7 @@ export const otherFlat: IBaseEquipment[] = [
     criticalPercent: 0,
     penetrationPercent: 0,
     canSelectOnOption_1: {
-      actives: [],
+      actives: [...osWeapon],
     },
     canSelectOnOption_2: {
       actives: [],
@@ -946,7 +959,7 @@ export const otherFlat: IBaseEquipment[] = [
     criticalPercent: 0,
     penetrationPercent: 0,
     canSelectOnOption_1: {
-      actives: [],
+      actives: [...osWeapon],
     },
     canSelectOnOption_2: {
       actives: [],
@@ -993,7 +1006,7 @@ export const otherFlat: IBaseEquipment[] = [
     criticalPercent: 0,
     penetrationPercent: 0,
     canSelectOnOption_1: {
-      actives: [],
+      actives: [...osWeapon],
     },
     canSelectOnOption_2: {
       actives: [],
@@ -1040,7 +1053,7 @@ export const otherFlat: IBaseEquipment[] = [
     criticalPercent: 0,
     penetrationPercent: 0,
     canSelectOnOption_1: {
-      actives: [],
+      actives: [...osWeapon],
     },
     canSelectOnOption_2: {
       actives: [],
@@ -1087,7 +1100,7 @@ export const otherFlat: IBaseEquipment[] = [
     criticalPercent: 0,
     penetrationPercent: 0,
     canSelectOnOption_1: {
-      actives: [],
+      actives: [...osWeapon],
     },
     canSelectOnOption_2: {
       actives: [],
@@ -1134,7 +1147,7 @@ export const otherFlat: IBaseEquipment[] = [
     criticalPercent: 0,
     penetrationPercent: 0,
     canSelectOnOption_1: {
-      actives: [],
+      actives: [...osWeapon],
     },
     canSelectOnOption_2: {
       actives: [],
@@ -1181,7 +1194,7 @@ export const otherFlat: IBaseEquipment[] = [
     criticalPercent: 0,
     penetrationPercent: 0,
     canSelectOnOption_1: {
-      actives: [],
+      actives: [...osWeapon],
     },
     canSelectOnOption_2: {
       actives: [],

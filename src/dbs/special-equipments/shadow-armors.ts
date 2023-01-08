@@ -64,15 +64,13 @@ export const shadowArmors: IBaseEquipment[] = [
       }
 
       if (
-        character.shadowLeftHand &&
         character.shadowLeftHand?.id === 24394 &&
-        character.shadowShoes &&
         character.shadowShoes?.id === 24393
       ) {
         const shadowLeftRefine = character.shadowLeftHand.equipUpgradeValue;
         const shoesRefine = character.shadowShoes.equipUpgradeValue;
 
-        const sumAll = shadowLeftRefine + shoesRefine + _this.equipUpgradeValue;
+        const sumAll = shadowLeftRefine + shoesRefine + upgrade;
         _this.eATK += sumAll * 2;
 
         if (sumAll >= 23) {
@@ -176,15 +174,10 @@ export const shadowArmors: IBaseEquipment[] = [
       const upgrade = _this.equipUpgradeValue;
       _this.hpModA = upgrade * 10;
       if (
-        character.shadowRightHand &&
         character.shadowRightHand?.id === 24416 &&
-        character.shadowLeftHand &&
         character.shadowLeftHand?.id === 24418 &&
-        character.shadowShoes &&
         character.shadowShoes?.id === 24419 &&
-        character.shadowRightAccessory &&
         character.shadowRightAccessory?.id === 24420 &&
-        character.shadowLeftAccessory &&
         character.shadowLeftAccessory?.id === 24421
       ) {
         if (character.monster.race !== MonsterRace.PLAYER) {
@@ -335,9 +328,7 @@ export const shadowArmors: IBaseEquipment[] = [
       }
 
       if (
-        character.shadowLeftHand &&
         character.shadowLeftHand?.id === 24374 &&
-        character.shadowShoes &&
         character.shadowShoes?.id === 24373
       ) {
         _this.eATK += 5;
@@ -410,9 +401,7 @@ export const shadowArmors: IBaseEquipment[] = [
       }
 
       if (
-        character.shadowLeftHand &&
         character.shadowLeftHand?.id === 24374 &&
-        character.shadowShoes &&
         character.shadowShoes?.id === 24373
       ) {
         _this.eATK += 5;
@@ -487,9 +476,7 @@ export const shadowArmors: IBaseEquipment[] = [
       }
 
       if (
-        character.shadowLeftHand &&
         character.shadowLeftHand?.id === 24374 &&
-        character.shadowShoes &&
         character.shadowShoes?.id === 24373
       ) {
         _this.eATK += 5;
@@ -562,9 +549,7 @@ export const shadowArmors: IBaseEquipment[] = [
       }
 
       if (
-        character.shadowLeftHand &&
         character.shadowLeftHand?.id === 24374 &&
-        character.shadowShoes &&
         character.shadowShoes?.id === 24373
       ) {
         _this.eATK += 5;
@@ -637,9 +622,7 @@ export const shadowArmors: IBaseEquipment[] = [
       }
 
       if (
-        character.shadowLeftHand &&
         character.shadowLeftHand?.id === 24374 &&
-        character.shadowShoes &&
         character.shadowShoes?.id === 24373
       ) {
         _this.eATK += 5;
@@ -795,6 +778,93 @@ export const shadowArmors: IBaseEquipment[] = [
         character.buffSkillPercent = Number(
           new Big(character.buffSkillPercent).plus(0.05).plus(refine).valueOf()
         );
+      }
+    },
+  },
+  {
+    id: 24398,
+    name: 'Magical Shadow Armor',
+    type: EquipmentType.SHADOW_EQUIPMENT,
+    subType: EquipmentSubType.SHADOW_ARMOR,
+    location: EquipmentLocation.SHADOW_ARMOR,
+    compoundOn: null,
+    option1Enable: true,
+    baseDef: 0,
+    baseATK: 0,
+    level: 1,
+    equipUpgradeValue: 0,
+    str: 0,
+    agi: 0,
+    vit: 0,
+    int: 0,
+    dex: 0,
+    luk: 0,
+    hpModA: 0,
+    additionAtk: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+      atkPercent2: 0,
+    },
+    additionMAtk: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+      flatNamePercent: 0,
+      matkPercent: 0,
+      skillElement: 0,
+    },
+    additionDef: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    eATK: 0,
+    eMATK: 0,
+    cATK: 0,
+    criticalPercent: 0,
+    penetrationPercent: 0,
+    script: (character: Character2, _this: IBaseEquipment): void => {
+      _this.additionMAtk.matkPercent = 0;
+      _this.eMATK = 20;
+      const upgrade = _this.equipUpgradeValue;
+
+      _this.hpModA = upgrade * 10;
+
+      if (upgrade >= 7) {
+        _this.additionMAtk.matkPercent = 0.02;
+      }
+
+      if (upgrade >= 9) {
+        _this.additionMAtk.matkPercent = Number(
+          new Big(_this.additionMAtk.matkPercent).plus(0.03).valueOf()
+        );
+      }
+
+      if (
+        character.shadowLeftHand?.id === 24397 &&
+        character.shadowShoes?.id === 24396
+      ) {
+        const shadowLeftRefine = character.shadowLeftHand.equipUpgradeValue;
+        const shoesRefine = character.shadowShoes.equipUpgradeValue;
+
+        const sumAll = shadowLeftRefine + shoesRefine + upgrade;
+        _this.eMATK += sumAll * 2;
+
+        if (sumAll >= 23) {
+          _this.additionMAtk.matkPercent = Number(
+            new Big(_this.additionMAtk.matkPercent).plus(0.02).valueOf()
+          );
+        }
+
+        if (sumAll >= 25) {
+          _this.additionMAtk.matkPercent = Number(
+            new Big(_this.additionMAtk.matkPercent).plus(0.03).valueOf()
+          );
+        }
       }
     },
   },

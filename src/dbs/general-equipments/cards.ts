@@ -1124,6 +1124,112 @@ export const cards: IBaseEquipment[] = [
     },
   },
   {
+    id: 4685,
+    name: 'True Margaretha Sorin Card',
+    type: EquipmentType.CARD,
+    subType: null,
+    location: null,
+    compoundOn: CompoundOn.WEAPON,
+    baseDef: 0,
+    baseATK: 0,
+    level: 1,
+    equipUpgradeValue: 0,
+    str: 0,
+    agi: 0,
+    vit: 0,
+    int: 0,
+    dex: 0,
+    luk: 0,
+    hpModA: 0,
+    additionAtk: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    additionDef: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    eATK: 0,
+    cATK: 0,
+    criticalPercent: 0,
+    penetrationPercent: 0,
+    prefix: 'Adoramus',
+    script: (character: Character2, _this: IBaseEquipment): void => {
+      if (character.playerTypeAtk === 2040) {
+        character.buffMagicSkillPercent = Number(
+          new Big(character.buffMagicSkillPercent).plus(0.2).valueOf()
+        );
+        if (character.weapon.level === 4) {
+          character.buffMagicSkillPercent = Number(
+            new Big(character.buffMagicSkillPercent).plus(0.2).valueOf()
+          );
+          if (character.weapon.equipUpgradeValue >= 10) {
+            character.buffMagicSkillPercent = Number(
+              new Big(character.buffMagicSkillPercent).plus(0.2).valueOf()
+            );
+          }
+        }
+      }
+    },
+  },
+  {
+    id: 4692,
+    name: 'True Celia Alde Card',
+    type: EquipmentType.CARD,
+    subType: null,
+    location: null,
+    compoundOn: CompoundOn.WEAPON,
+    baseDef: 0,
+    baseATK: 0,
+    level: 1,
+    equipUpgradeValue: 0,
+    str: 0,
+    agi: 0,
+    vit: 0,
+    int: 0,
+    dex: 0,
+    luk: 0,
+    hpModA: 0,
+    additionAtk: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    additionDef: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    eATK: 0,
+    cATK: 0,
+    criticalPercent: 0,
+    penetrationPercent: 0,
+    prefix: 'Varetyr',
+    script: (character: Character2, _this: IBaseEquipment): void => {
+      if (character.playerTypeAtk === 2454) {
+        character.buffSkillPercent = Number(
+          new Big(character.buffSkillPercent).plus(0.2).valueOf()
+        );
+        if (character.weapon.level === 4) {
+          character.buffSkillPercent = Number(
+            new Big(character.buffSkillPercent).plus(0.2).valueOf()
+          );
+          if (character.weapon.equipUpgradeValue >= 10) {
+            character.buffSkillPercent = Number(
+              new Big(character.buffSkillPercent).plus(0.2).valueOf()
+            );
+          }
+        }
+      }
+    },
+  },
+  {
     id: 4399,
     name: 'Memory of Thanatos Card',
     type: EquipmentType.CARD,
@@ -2233,5 +2339,808 @@ export const cards: IBaseEquipment[] = [
     penetrationPercent: 0,
     suffix: 'of Reload',
     script: (character: Character2, _this: IBaseEquipment): void => {},
+  },
+  {
+    id: 4480,
+    name: 'Sealed Kiel Card',
+    type: EquipmentType.CARD,
+    subType: null,
+    location: null,
+    compoundOn: CompoundOn.HEADER_GEAR,
+    baseDef: 0,
+    baseATK: 0,
+    level: 1,
+    equipUpgradeValue: 0,
+    str: 0,
+    agi: 0,
+    vit: 0,
+    int: 0,
+    dex: 0,
+    luk: 0,
+    additionAtk: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    additionDef: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    eATK: 0,
+    cATK: 0,
+    acd: 0,
+    criticalPercent: 0,
+    penetrationPercent: 0,
+    suffix: 'of Half Reload',
+    script: (character: Character2, _this: IBaseEquipment): void => {
+      _this.acd = 0.15;
+      const upgrade = _this.equipUpgradeValue;
+      if (upgrade) {
+        _this.acd = 0.2;
+      }
+    },
+  },
+  {
+    id: 27289,
+    name: 'Soul Fragment Card',
+    type: EquipmentType.CARD,
+    subType: null,
+    location: null,
+    compoundOn: CompoundOn.WEAPON,
+    baseDef: 0,
+    baseATK: 0,
+    level: 1,
+    equipUpgradeValue: 0,
+    str: 0,
+    agi: 0,
+    vit: 0,
+    int: 0,
+    dex: 0,
+    luk: 0,
+    additionAtk: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    additionMAtk: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+      flatNamePercent: 0,
+      matkPercent: 0,
+      skillElement: 0,
+    },
+    additionDef: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    eATK: 0,
+    cATK: 0,
+    eMATK: 5,
+    criticalPercent: 0,
+    penetrationPercent: 0,
+    prefix: 'Proper',
+    script: (character: Character2, _this: IBaseEquipment): void => {
+      _this.additionMAtk.size = 0;
+      if (character.monster?.scale === Scale.MEDIUM) {
+        _this.additionMAtk.size = 0.2;
+      }
+    },
+  },
+  {
+    id: 27125,
+    name: 'Headless Mule Card',
+    type: EquipmentType.CARD,
+    subType: null,
+    location: null,
+    compoundOn: CompoundOn.ACCESSORY,
+    baseDef: 0,
+    baseATK: 0,
+    level: 1,
+    equipUpgradeValue: 0,
+    str: 0,
+    agi: 0,
+    vit: 0,
+    int: 0,
+    dex: 0,
+    luk: 0,
+    additionAtk: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    additionMAtk: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+      flatNamePercent: 0,
+      matkPercent: 0,
+      skillElement: 0,
+    },
+    additionDef: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    eATK: 0,
+    cATK: 0,
+    criticalPercent: 0,
+    penetrationPercent: 0,
+    prefix: 'Aqua Benedict',
+    script: (character: Character2, _this: IBaseEquipment): void => {
+      _this.additionMAtk.skillElement = 0;
+      if (
+        [E_Element.WATER, E_Element.HOLY].includes(character.elementalConverter)
+      ) {
+        _this.additionMAtk.skillElement = 0.2;
+      }
+    },
+  },
+  {
+    id: 27101,
+    name: 'Sweet Nightmare Card',
+    type: EquipmentType.CARD,
+    subType: null,
+    location: null,
+    compoundOn: CompoundOn.ARMOR,
+    baseDef: 0,
+    baseATK: 0,
+    level: 1,
+    equipUpgradeValue: 0,
+    str: 0,
+    agi: 0,
+    vit: 0,
+    int: 0,
+    dex: 0,
+    luk: 0,
+    additionAtk: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    additionDef: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    eATK: 0,
+    cATK: 0,
+    eMATK: 20,
+    criticalPercent: 0,
+    penetrationPercent: 0,
+    prefix: 'Sorcery',
+    script: (character: Character2, _this: IBaseEquipment): void => {},
+  },
+  {
+    id: 4557,
+    name: 'Weakened Fenrir Card',
+    type: EquipmentType.CARD,
+    subType: null,
+    location: null,
+    compoundOn: CompoundOn.HEADER_GEAR,
+    baseDef: 0,
+    baseATK: 0,
+    level: 1,
+    equipUpgradeValue: 0,
+    str: 0,
+    agi: 0,
+    vit: 0,
+    int: 0,
+    dex: 0,
+    luk: 0,
+    additionAtk: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    additionDef: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    eATK: 0,
+    cATK: 0,
+    eMATK: 25,
+    criticalPercent: 0,
+    penetrationPercent: 0,
+    prefix: 'Orb Spell Power',
+    script: (character: Character2, _this: IBaseEquipment): void => {},
+  },
+  {
+    id: 4556,
+    name: 'Fenrir Card',
+    type: EquipmentType.CARD,
+    subType: null,
+    location: null,
+    compoundOn: CompoundOn.HEADER_GEAR,
+    baseDef: 0,
+    baseATK: 0,
+    level: 1,
+    equipUpgradeValue: 0,
+    str: 0,
+    agi: 0,
+    vit: 0,
+    int: 0,
+    dex: 0,
+    luk: 0,
+    additionAtk: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    additionDef: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    eATK: 0,
+    cATK: 0,
+    eMATK: 0,
+    criticalPercent: 0,
+    penetrationPercent: 0,
+    prefix: 'Power Word',
+    script: (character: Character2, _this: IBaseEquipment): void => {
+      _this.eMATK = _this.equipUpgradeValue * 5 + 50;
+    },
+  },
+  {
+    id: 300209,
+    name: 'Sealed Nightmare Amon Ra Card',
+    type: EquipmentType.CARD,
+    subType: null,
+    location: null,
+    compoundOn: CompoundOn.ARMOR,
+    baseDef: 0,
+    baseATK: 0,
+    level: 1,
+    equipUpgradeValue: 0,
+    str: 0,
+    agi: 0,
+    vit: 0,
+    int: 0,
+    dex: 0,
+    luk: 0,
+    additionAtk: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    additionMAtk: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+      flatNamePercent: 0,
+      matkPercent: 0,
+      skillElement: 0,
+    },
+    additionDef: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    eATK: 0,
+    cATK: 0,
+    criticalPercent: 0,
+    penetrationPercent: 0,
+    prefix: 'Weak Punishment',
+    script: (character: Character2, _this: IBaseEquipment): void => {
+      _this.additionMAtk.race = 0;
+      _this.additionMAtk.element = 0;
+      if (
+        character.monster?.element === E_Element.UNDEAD ||
+        character.monster?.element === E_Element.SHADOW
+      ) {
+        _this.additionMAtk.race = 0.25;
+
+        if (character.bodyGear?.equipUpgradeValue >= 15) {
+          _this.additionMAtk.race = 0.37;
+        }
+      }
+      if (
+        character.monster?.race === MonsterRace.UNDEAD ||
+        character.monster?.race === MonsterRace.DEMON
+      ) {
+        _this.additionMAtk.element = 0.25;
+        if (character.bodyGear?.equipUpgradeValue >= 15) {
+          _this.additionMAtk.element = 0.37;
+        }
+      }
+    },
+  },
+  {
+    id: 4652,
+    name: 'Nightmare Amon Ra Card',
+    type: EquipmentType.CARD,
+    subType: null,
+    location: null,
+    compoundOn: CompoundOn.ARMOR,
+    baseDef: 0,
+    baseATK: 0,
+    level: 1,
+    equipUpgradeValue: 0,
+    str: 0,
+    agi: 0,
+    vit: 0,
+    int: 0,
+    dex: 0,
+    luk: 0,
+    additionAtk: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    additionMAtk: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+      flatNamePercent: 0,
+      matkPercent: 0,
+      skillElement: 0,
+    },
+    additionDef: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    eATK: 0,
+    cATK: 0,
+    criticalPercent: 0,
+    penetrationPercent: 0,
+    prefix: 'Punishment',
+    script: (character: Character2, _this: IBaseEquipment): void => {
+      _this.additionMAtk.race = 0;
+      _this.additionMAtk.element = 0;
+      if (
+        character.monster?.element === E_Element.UNDEAD ||
+        character.monster?.element === E_Element.SHADOW
+      ) {
+        _this.additionMAtk.race = 0.5;
+      }
+      if (
+        character.monster?.race === MonsterRace.UNDEAD ||
+        character.monster?.race === MonsterRace.DEMON
+      ) {
+        _this.additionMAtk.element = 0.5;
+      }
+    },
+  },
+  {
+    id: 4658,
+    name: 'Nightmare Verit Card',
+    type: EquipmentType.CARD,
+    subType: null,
+    location: null,
+    compoundOn: CompoundOn.SHOES,
+    baseDef: 0,
+    baseATK: 0,
+    level: 1,
+    equipUpgradeValue: 0,
+    str: 0,
+    agi: 0,
+    vit: 0,
+    int: 0,
+    dex: 0,
+    luk: 0,
+    additionAtk: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    additionMAtk: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+      flatNamePercent: 0,
+      matkPercent: 0,
+      skillElement: 0,
+    },
+    additionDef: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    eATK: 0,
+    cATK: 0,
+    criticalPercent: 0,
+    penetrationPercent: 0,
+    prefix: 'Magical',
+    script: (character: Character2, _this: IBaseEquipment): void => {
+      const upgrade = _this.equipUpgradeValue;
+      _this.additionMAtk.matkPercent = 0.05;
+      if (upgrade >= 7) {
+        _this.additionMAtk.matkPercent = 0.08;
+        if (upgrade >= 7) {
+          _this.additionMAtk.matkPercent = 0.1;
+        }
+      }
+    },
+  },
+  {
+    id: 4409,
+    name: 'Agav Card',
+    type: EquipmentType.CARD,
+    subType: null,
+    location: null,
+    compoundOn: CompoundOn.ARMOR,
+    baseDef: 0,
+    baseATK: 0,
+    level: 1,
+    equipUpgradeValue: 0,
+    str: 0,
+    agi: 0,
+    vit: 0,
+    int: 0,
+    dex: 0,
+    luk: 0,
+    spModA: 0,
+    additionAtk: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    additionMAtk: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+      flatNamePercent: 0,
+      matkPercent: 0,
+      skillElement: 0,
+    },
+    additionDef: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    eATK: 0,
+    cATK: 0,
+    criticalPercent: 0,
+    penetrationPercent: 0,
+    prefix: 'Panic',
+    script: (character: Character2, _this: IBaseEquipment): void => {
+      _this.additionMAtk.matkPercent = 0;
+      _this.spModA = 0;
+      _this.baseDef = 0;
+
+      if (
+        character.class.classKey === ClassKey.Warlock ||
+        character.class.classKey === ClassKey.Sorcerer
+      ) {
+        _this.additionMAtk.matkPercent = 0.05;
+        _this.spModA = 100;
+        _this.baseDef = -10;
+      }
+    },
+  },
+  {
+    id: 27259,
+    name: 'Licheniyes Card',
+    type: EquipmentType.CARD,
+    subType: null,
+    location: null,
+    compoundOn: CompoundOn.SHOES,
+    baseDef: 0,
+    baseATK: 0,
+    level: 1,
+    equipUpgradeValue: 0,
+    str: 0,
+    agi: 0,
+    vit: 0,
+    int: 0,
+    dex: 0,
+    luk: 0,
+    additionAtk: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    additionMAtk: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+      flatNamePercent: 0,
+      matkPercent: 0.03,
+      skillElement: 0,
+    },
+    additionDef: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    eATK: 0,
+    cATK: 0,
+    criticalPercent: 0,
+    penetrationPercent: 0,
+    prefix: 'Licheniyes',
+    script: (character: Character2, _this: IBaseEquipment): void => {
+      _this.additionMAtk.skillElement = 0;
+      if (E_Element.HOLY === character.elementalConverter) {
+        _this.additionMAtk.skillElement = 0.05;
+      }
+    },
+  },
+  {
+    id: 31023,
+    name: 'Celine Kimi Card',
+    type: EquipmentType.CARD,
+    subType: null,
+    location: null,
+    compoundOn: CompoundOn.WEAPON,
+    baseDef: 0,
+    baseATK: 0,
+    level: 1,
+    equipUpgradeValue: 0,
+    str: 0,
+    agi: 0,
+    vit: 0,
+    int: 0,
+    dex: 0,
+    luk: 0,
+    additionAtk: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    additionMAtk: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+      flatNamePercent: 0,
+      matkPercent: 0.1,
+      skillElement: 0,
+    },
+    additionDef: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    eATK: 0,
+    cATK: 0,
+    criticalPercent: 0,
+    penetrationPercent: 0,
+    prefix: 'Maniac',
+    script: (character: Character2, _this: IBaseEquipment): void => {},
+  },
+  {
+    id: 27177,
+    name: 'Marsh Arclouse Card',
+    type: EquipmentType.CARD,
+    subType: null,
+    location: null,
+    compoundOn: CompoundOn.GARMENT,
+    baseDef: 0,
+    baseATK: 0,
+    level: 1,
+    equipUpgradeValue: 0,
+    str: 0,
+    agi: 0,
+    vit: 0,
+    int: 0,
+    dex: 0,
+    luk: 0,
+    additionAtk: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    additionMAtk: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+      flatNamePercent: 0,
+      matkPercent: 0,
+      skillElement: 0,
+    },
+    additionDef: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    eATK: 0,
+    eMATK: 0,
+    cATK: 0,
+    aspd: 0,
+    criticalPercent: 0,
+    penetrationPercent: 0,
+    prefix: 'Marsh',
+    script: (character: Character2, _this: IBaseEquipment): void => {
+      const baseInt = character.class.int0;
+      const mul10 = Math.floor(baseInt / 10);
+      _this.eMATK = Number(new Big(mul10).mul(3).valueOf());
+      _this.aspd = Number(new Big(mul10).mul(0.01).valueOf());
+
+      if (baseInt >= 120) {
+        _this.eMATK += 40;
+      }
+    },
+  },
+  {
+    id: 27309,
+    name: 'Greater Sanare Card',
+    type: EquipmentType.CARD,
+    subType: null,
+    location: null,
+    compoundOn: CompoundOn.HEADER_GEAR,
+    baseDef: 0,
+    baseATK: 0,
+    level: 1,
+    equipUpgradeValue: 0,
+    str: 0,
+    agi: 0,
+    vit: 0,
+    int: 0,
+    dex: 0,
+    luk: 0,
+    additionAtk: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    additionMAtk: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+      flatNamePercent: 0,
+      matkPercent: 0,
+      skillElement: 0,
+    },
+    additionDef: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    eATK: 0,
+    eMATK: 10,
+    cATK: 0,
+    criticalPercent: 0,
+    penetrationPercent: 0,
+    suffix: 'of Holy Power',
+    script: (character: Character2, _this: IBaseEquipment): void => {
+      const upgrade = _this.equipUpgradeValue;
+      _this.additionMAtk.skillElement = 0;
+      if (E_Element.HOLY === character.elementalConverter) {
+        _this.additionMAtk.skillElement = 0.05;
+
+        if (upgrade >= 9) {
+          _this.additionMAtk.skillElement = 0.1;
+        }
+      }
+    },
+  },
+  {
+    id: 4528,
+    name: 'Mutant Coelacanth Card',
+    type: EquipmentType.CARD,
+    subType: null,
+    location: null,
+    compoundOn: CompoundOn.HEADER_GEAR,
+    baseDef: 0,
+    baseATK: 0,
+    level: 1,
+    equipUpgradeValue: 0,
+    str: 0,
+    agi: 0,
+    vit: 0,
+    int: 0,
+    dex: 0,
+    luk: 0,
+    hpModB: 0,
+    additionAtk: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    additionMAtk: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+      flatNamePercent: 0,
+      matkPercent: 0,
+      skillElement: 0,
+    },
+    additionDef: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    eATK: 0,
+    cATK: 0,
+    criticalPercent: 0,
+    penetrationPercent: 0,
+    prefix: 'Willpower',
+    script: (character: Character2, _this: IBaseEquipment): void => {
+      const upgrade = _this.equipUpgradeValue;
+      const mul2 = Number(new Big(Math.floor(upgrade / 2)).mul(0.01).valueOf());
+
+      _this.additionMAtk.matkPercent = Number(
+        new Big(mul2).plus(0.02).valueOf()
+      );
+      _this.hpModB = Number(new Big(mul2).mul(-1).valueOf());
+    },
+  },
+  {
+    id: 4529,
+    name: 'Cruel Coelacanth Card',
+    type: EquipmentType.CARD,
+    subType: null,
+    location: null,
+    compoundOn: CompoundOn.HEADER_GEAR,
+    baseDef: 0,
+    baseATK: 0,
+    level: 1,
+    equipUpgradeValue: 0,
+    str: 0,
+    agi: 0,
+    vit: 0,
+    int: 0,
+    dex: 0,
+    luk: 0,
+    spModB: 0,
+    additionAtk: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    additionDef: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    eATK: 0,
+    cATK: 0,
+    criticalPercent: 0,
+    penetrationPercent: 0,
+    prefix: 'Willpower',
+    script: (character: Character2, _this: IBaseEquipment): void => {
+      const upgrade = _this.equipUpgradeValue;
+      const mul2 = Number(new Big(Math.floor(upgrade / 2)).mul(0.01).valueOf());
+
+      _this.additionAtk.class = Number(new Big(mul2).plus(0.02).valueOf());
+      _this.spModB = Number(new Big(mul2).mul(-1).valueOf());
+    },
   },
 ];

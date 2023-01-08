@@ -70,7 +70,7 @@ const magicDmgElement = [
     start: 2100001,
     cnt: 200,
     startValue: 10,
-    endValue: 20,
+    endValue: 25,
   },
   {
     name: 'Magic damage to Water',
@@ -78,7 +78,7 @@ const magicDmgElement = [
     start: 2100201,
     cnt: 200,
     startValue: 10,
-    endValue: 20,
+    endValue: 25,
   },
   {
     name: 'Magic damage to Earth',
@@ -86,7 +86,7 @@ const magicDmgElement = [
     start: 2100401,
     cnt: 200,
     startValue: 10,
-    endValue: 20,
+    endValue: 25,
   },
   {
     name: 'Magic damage to Fire',
@@ -94,7 +94,7 @@ const magicDmgElement = [
     start: 2100601,
     cnt: 200,
     startValue: 10,
-    endValue: 20,
+    endValue: 25,
   },
   {
     name: 'Magic damage to Wind',
@@ -102,7 +102,7 @@ const magicDmgElement = [
     start: 2100801,
     cnt: 200,
     startValue: 10,
-    endValue: 20,
+    endValue: 25,
   },
   {
     name: 'Magic damage to Poison',
@@ -110,7 +110,7 @@ const magicDmgElement = [
     start: 2101001,
     cnt: 200,
     startValue: 10,
-    endValue: 20,
+    endValue: 25,
   },
   {
     name: 'Magic damage to Holy',
@@ -118,7 +118,7 @@ const magicDmgElement = [
     start: 2101201,
     cnt: 200,
     startValue: 10,
-    endValue: 20,
+    endValue: 25,
   },
   {
     name: 'Magic damage to Shadow',
@@ -126,7 +126,7 @@ const magicDmgElement = [
     start: 2101401,
     cnt: 200,
     startValue: 10,
-    endValue: 20,
+    endValue: 25,
   },
   {
     name: 'Magic damage to Ghost',
@@ -134,7 +134,7 @@ const magicDmgElement = [
     start: 2101601,
     cnt: 200,
     startValue: 10,
-    endValue: 20,
+    endValue: 25,
   },
   {
     name: 'Magic damage to Undead',
@@ -142,7 +142,7 @@ const magicDmgElement = [
     start: 2101801,
     cnt: 200,
     startValue: 10,
-    endValue: 20,
+    endValue: 25,
   },
 ];
 
@@ -152,8 +152,8 @@ const matkPercent = [
     option: 'matkPercent',
     start: 2102001,
     cnt: 100,
-    startValue: 1,
-    endValue: 10,
+    startValue: 11,
+    endValue: 15,
   },
 ];
 
@@ -361,8 +361,8 @@ const matkFlat = [
     option: 'eMATK',
     start: 2107001,
     cnt: 200,
-    startValue: 1,
-    endValue: 50,
+    startValue: 51,
+    endValue: 60,
   },
 ];
 
@@ -391,8 +391,8 @@ const aspdPercent = [
     option: 'aspd',
     start: 2108501,
     cnt: 100,
-    startValue: 1,
-    endValue: 5,
+    startValue: 11,
+    endValue: 20,
   },
 ];
 
@@ -418,14 +418,94 @@ const criRate = [
   },
 ];
 
-for (const group of criRate) {
+const atkFlat = [
+  {
+    name: 'ATK',
+    option: 'eATK',
+    start: 2007001,
+    cnt: 200,
+    startValue: 51,
+    endValue: 60,
+  },
+];
+
+const criDmgPercent = [
+  {
+    name: 'Critical damage',
+    option: 'criticalPercent',
+    start: 2006001,
+    cnt: 50,
+    startValue: 11,
+    endValue: 20,
+  },
+];
+
+const physicalSize = [
+  {
+    name: 'Phy. damage to Small',
+    option: 'physicalSmallPercent',
+    start: 2008001,
+    cnt: 100,
+    startValue: 3,
+    endValue: 20,
+  },
+  {
+    name: 'Phy. damage to Medium',
+    option: 'physicalMediumPercent',
+    start: 2008101,
+    cnt: 100,
+    startValue: 3,
+    endValue: 20,
+  },
+  {
+    name: 'Phy. damage to Large',
+    option: 'physicalLargePercent',
+    start: 2008201,
+    cnt: 100,
+    startValue: 3,
+    endValue: 20,
+  },
+];
+
+const magicSize = [
+  {
+    name: 'Magic damage to Small',
+    option: 'magicalSmallPercent',
+    start: 2109001,
+    cnt: 100,
+    startValue: 3,
+    endValue: 20,
+  },
+  {
+    name: 'Magic damage to Medium',
+    option: 'magicalMediumPercent',
+    start: 2109101,
+    cnt: 100,
+    startValue: 3,
+    endValue: 20,
+  },
+  {
+    name: 'Magic damage to Large',
+    option: 'magicalLargePercent',
+    start: 2109201,
+    cnt: 100,
+    startValue: 3,
+    endValue: 20,
+  },
+];
+
+for (const group of magicSize) {
   const cnt = group.cnt;
   let start = group.startValue;
   const end = group.endValue;
 
   console.log(
-    `// ${group.name} +x [${group.start} - ${group.start + (cnt - 1)}]`
+    `// ${group.name} +x% [${group.start} - ${group.start + (cnt - 1)}]`
   );
+
+  // console.log(
+  //   `// ${group.name} +x [${group.start} - ${group.start + (cnt - 1)}]`
+  // );
 
   // console.log(
   //   `// Bypass +x% of DEF on ${group.name} [${group.start} - ${
@@ -436,13 +516,13 @@ for (const group of criRate) {
   for (let index = start; index <= end; index++) {
     console.log(
       geneText(
-        `\`${group.name} + ${Math.floor(index)}\``,
+        `\`${group.name} +${Math.floor(index)}%\``,
         `${group.option}`,
         group.start + (start - 1),
-        index,
+        index / 100,
         '[]',
-        '[]',
-        '[...vmGroup2, ...vmGroup3, ...vmGroup5]'
+        '[...osWeapon]',
+        '[]'
       )
     );
     start++;

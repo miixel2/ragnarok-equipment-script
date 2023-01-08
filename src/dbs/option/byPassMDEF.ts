@@ -4,7 +4,7 @@ import {
   CompoundOn,
   IBaseEquipment,
 } from '../../models/equipment';
-import { vmGroup1 } from './equomentIds';
+import { vmGroup1 } from './equipmentIds';
 
 export const byPassMDEF: IBaseEquipment[] = [
   // Bypass +x% of MDEF on Angel [2105001 - 2105100]

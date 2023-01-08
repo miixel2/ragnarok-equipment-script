@@ -4,7 +4,12 @@ import {
   EquipmentType,
   CompoundOn,
 } from '../../models/equipment';
-import { temporalManteausId, vmGroup1 } from './equomentIds';
+import {
+  osWeapon,
+  temporalManteausId,
+  vmGroup1,
+  shadowsId,
+} from './equipmentIds';
 
 export const matkPercent: IBaseEquipment[] = [
   // MATK +x% [2102001 - 2102100]
@@ -45,7 +50,7 @@ export const matkPercent: IBaseEquipment[] = [
     criticalPercent: 0,
     penetrationPercent: 0,
     canSelectOnOption_1: {
-      actives: [...vmGroup1, ...temporalManteausId],
+      actives: [...vmGroup1, ...temporalManteausId, ...shadowsId],
     },
     canSelectOnOption_2: {
       actives: [],
@@ -92,7 +97,7 @@ export const matkPercent: IBaseEquipment[] = [
     criticalPercent: 0,
     penetrationPercent: 0,
     canSelectOnOption_1: {
-      actives: [...vmGroup1, ...temporalManteausId],
+      actives: [...vmGroup1, ...temporalManteausId, ...shadowsId],
     },
     canSelectOnOption_2: {
       actives: [],
@@ -139,7 +144,7 @@ export const matkPercent: IBaseEquipment[] = [
     criticalPercent: 0,
     penetrationPercent: 0,
     canSelectOnOption_1: {
-      actives: [...vmGroup1, ...temporalManteausId],
+      actives: [...vmGroup1, ...temporalManteausId, ...shadowsId, ...osWeapon],
     },
     canSelectOnOption_2: {
       actives: [],
@@ -186,7 +191,7 @@ export const matkPercent: IBaseEquipment[] = [
     criticalPercent: 0,
     penetrationPercent: 0,
     canSelectOnOption_1: {
-      actives: [...vmGroup1, ...temporalManteausId],
+      actives: [...vmGroup1, ...temporalManteausId, ...osWeapon],
     },
     canSelectOnOption_2: {
       actives: [],
@@ -233,7 +238,7 @@ export const matkPercent: IBaseEquipment[] = [
     criticalPercent: 0,
     penetrationPercent: 0,
     canSelectOnOption_1: {
-      actives: [...vmGroup1, ...temporalManteausId],
+      actives: [...vmGroup1, ...temporalManteausId, ...osWeapon],
     },
     canSelectOnOption_2: {
       actives: [],
@@ -280,7 +285,7 @@ export const matkPercent: IBaseEquipment[] = [
     criticalPercent: 0,
     penetrationPercent: 0,
     canSelectOnOption_1: {
-      actives: [...vmGroup1, ...temporalManteausId],
+      actives: [...vmGroup1, ...temporalManteausId, ...osWeapon],
     },
     canSelectOnOption_2: {
       actives: [],
@@ -327,7 +332,7 @@ export const matkPercent: IBaseEquipment[] = [
     criticalPercent: 0,
     penetrationPercent: 0,
     canSelectOnOption_1: {
-      actives: [...vmGroup1],
+      actives: [...vmGroup1, ...osWeapon],
     },
     canSelectOnOption_2: {
       actives: [],
@@ -374,7 +379,7 @@ export const matkPercent: IBaseEquipment[] = [
     criticalPercent: 0,
     penetrationPercent: 0,
     canSelectOnOption_1: {
-      actives: [...vmGroup1],
+      actives: [...vmGroup1, ...osWeapon],
     },
     canSelectOnOption_2: {
       actives: [],
@@ -421,7 +426,7 @@ export const matkPercent: IBaseEquipment[] = [
     criticalPercent: 0,
     penetrationPercent: 0,
     canSelectOnOption_1: {
-      actives: [...vmGroup1],
+      actives: [...vmGroup1, ...osWeapon],
     },
     canSelectOnOption_2: {
       actives: [],
@@ -468,7 +473,242 @@ export const matkPercent: IBaseEquipment[] = [
     criticalPercent: 0,
     penetrationPercent: 0,
     canSelectOnOption_1: {
-      actives: [...vmGroup1],
+      actives: [...vmGroup1, ...osWeapon],
+    },
+    canSelectOnOption_2: {
+      actives: [],
+    },
+    canSelectOnOption_3: {
+      actives: [],
+    },
+    script: (character: Character2, _this: IBaseEquipment): void => {},
+  },
+  {
+    id: 2102011,
+    name: `MATK +11%`,
+    type: EquipmentType.CARD,
+    subType: null,
+    location: null,
+    compoundOn: CompoundOn.ENCHANT,
+    baseDef: 0,
+    baseATK: 0,
+    level: 1,
+    equipUpgradeValue: 0,
+    str: 0,
+    agi: 0,
+    vit: 0,
+    int: 0,
+    dex: 0,
+    luk: 0,
+    additionAtk: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    additionDef: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    options: {
+      matkPercent: 0.11,
+    },
+    eATK: 0,
+    cATK: 0,
+    criticalPercent: 0,
+    penetrationPercent: 0,
+    canSelectOnOption_1: {
+      actives: [...osWeapon],
+    },
+    canSelectOnOption_2: {
+      actives: [],
+    },
+    canSelectOnOption_3: {
+      actives: [],
+    },
+    script: (character: Character2, _this: IBaseEquipment): void => {},
+  },
+  {
+    id: 2102012,
+    name: `MATK +12%`,
+    type: EquipmentType.CARD,
+    subType: null,
+    location: null,
+    compoundOn: CompoundOn.ENCHANT,
+    baseDef: 0,
+    baseATK: 0,
+    level: 1,
+    equipUpgradeValue: 0,
+    str: 0,
+    agi: 0,
+    vit: 0,
+    int: 0,
+    dex: 0,
+    luk: 0,
+    additionAtk: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    additionDef: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    options: {
+      matkPercent: 0.12,
+    },
+    eATK: 0,
+    cATK: 0,
+    criticalPercent: 0,
+    penetrationPercent: 0,
+    canSelectOnOption_1: {
+      actives: [...osWeapon],
+    },
+    canSelectOnOption_2: {
+      actives: [],
+    },
+    canSelectOnOption_3: {
+      actives: [],
+    },
+    script: (character: Character2, _this: IBaseEquipment): void => {},
+  },
+  {
+    id: 2102013,
+    name: `MATK +13%`,
+    type: EquipmentType.CARD,
+    subType: null,
+    location: null,
+    compoundOn: CompoundOn.ENCHANT,
+    baseDef: 0,
+    baseATK: 0,
+    level: 1,
+    equipUpgradeValue: 0,
+    str: 0,
+    agi: 0,
+    vit: 0,
+    int: 0,
+    dex: 0,
+    luk: 0,
+    additionAtk: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    additionDef: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    options: {
+      matkPercent: 0.13,
+    },
+    eATK: 0,
+    cATK: 0,
+    criticalPercent: 0,
+    penetrationPercent: 0,
+    canSelectOnOption_1: {
+      actives: [...osWeapon],
+    },
+    canSelectOnOption_2: {
+      actives: [],
+    },
+    canSelectOnOption_3: {
+      actives: [],
+    },
+    script: (character: Character2, _this: IBaseEquipment): void => {},
+  },
+  {
+    id: 2102014,
+    name: `MATK +14%`,
+    type: EquipmentType.CARD,
+    subType: null,
+    location: null,
+    compoundOn: CompoundOn.ENCHANT,
+    baseDef: 0,
+    baseATK: 0,
+    level: 1,
+    equipUpgradeValue: 0,
+    str: 0,
+    agi: 0,
+    vit: 0,
+    int: 0,
+    dex: 0,
+    luk: 0,
+    additionAtk: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    additionDef: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    options: {
+      matkPercent: 0.14,
+    },
+    eATK: 0,
+    cATK: 0,
+    criticalPercent: 0,
+    penetrationPercent: 0,
+    canSelectOnOption_1: {
+      actives: [...osWeapon],
+    },
+    canSelectOnOption_2: {
+      actives: [],
+    },
+    canSelectOnOption_3: {
+      actives: [],
+    },
+    script: (character: Character2, _this: IBaseEquipment): void => {},
+  },
+  {
+    id: 2102015,
+    name: `MATK +15%`,
+    type: EquipmentType.CARD,
+    subType: null,
+    location: null,
+    compoundOn: CompoundOn.ENCHANT,
+    baseDef: 0,
+    baseATK: 0,
+    level: 1,
+    equipUpgradeValue: 0,
+    str: 0,
+    agi: 0,
+    vit: 0,
+    int: 0,
+    dex: 0,
+    luk: 0,
+    additionAtk: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    additionDef: {
+      size: 0,
+      element: 0,
+      race: 0,
+      class: 0,
+    },
+    options: {
+      matkPercent: 0.15,
+    },
+    eATK: 0,
+    cATK: 0,
+    criticalPercent: 0,
+    penetrationPercent: 0,
+    canSelectOnOption_1: {
+      actives: [...osWeapon],
     },
     canSelectOnOption_2: {
       actives: [],
