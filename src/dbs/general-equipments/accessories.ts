@@ -2416,6 +2416,13 @@ export const accessories: IBaseEquipment[] = [
       _this.penetrationMPercent = 0;
       _this.longRangePercent = 0;
       _this.flee = 0;
+      _this.additionAtk.class = 0;
+      _this.additionMAtk.class = 0;
+
+      if (character.monster?.type === MonsterType.BOSS) {
+        _this.additionAtk.class = 0.1;
+        _this.additionMAtk.class = 0.1;
+      }
 
       if (
         character.shoes?.slot2?.id === 25700 ||

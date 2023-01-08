@@ -350,7 +350,7 @@ export const shadowPendants: IBaseEquipment[] = [
     penetrationPercent: 0,
     script: (character: Character2, _this: IBaseEquipment): void => {
       _this.spModB = 0;
-      _this.additionAtk.size = 0;
+      _this.additionAtk.class = 0;
       const upgrade = _this.equipUpgradeValue;
       _this.eATK = 5 + upgrade;
       _this.hpModA = upgrade * 10;
@@ -359,7 +359,7 @@ export const shadowPendants: IBaseEquipment[] = [
         _this.spModB = 0.01;
 
         if (upgrade >= 9) {
-          _this.additionAtk.size = 0.01;
+          _this.additionAtk.class = 0.01;
         }
       }
     },

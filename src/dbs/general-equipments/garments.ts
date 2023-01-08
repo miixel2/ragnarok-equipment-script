@@ -2349,7 +2349,7 @@ export const garments: IBaseEquipment[] = [
       const upgrade = _this.equipUpgradeValue;
       _this.hit = Number(new Big(Math.floor(upgrade / 3)).mul(8).valueOf());
       _this.meleePercent = Number(
-        new Big(Math.floor(upgrade / 3)).mul(0.03).valueOf()
+        new Big(Math.floor(upgrade / 4)).mul(0.03).valueOf()
       );
 
       if (character.class.classKey === ClassKey.GuillotineCross) {

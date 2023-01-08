@@ -1209,15 +1209,15 @@ export const shadowWeapons: IBaseEquipment[] = [
     criticalPercent: 0,
     penetrationPercent: 0,
     script: (character: Character2, _this: IBaseEquipment): void => {
-      _this.additionAtk.size = 0.01;
+      _this.additionAtk.class = 0.01;
       const upgrade = _this.equipUpgradeValue;
       _this.eATK = upgrade;
 
       if (upgrade >= 7) {
-        _this.additionAtk.size = 0.02;
+        _this.additionAtk.class = 0.02;
 
         if (upgrade >= 9) {
-          _this.additionAtk.size = 0.03;
+          _this.additionAtk.class = 0.03;
         }
       }
 
@@ -1232,13 +1232,13 @@ export const shadowWeapons: IBaseEquipment[] = [
         const sum = earringRefine + pendantRefine + upgrade;
 
         if (sum >= 20) {
-          _this.additionAtk.size = Number(
-            new Big(_this.additionAtk.size).mul(0.01).valueOf()
+          _this.additionAtk.class = Number(
+            new Big(_this.additionAtk.class).mul(0.01).valueOf()
           );
 
           if (sum >= 25) {
-            _this.additionAtk.size = Number(
-              new Big(_this.additionAtk.size).mul(0.01).valueOf()
+            _this.additionAtk.class = Number(
+              new Big(_this.additionAtk.class).mul(0.01).valueOf()
             );
           }
         }

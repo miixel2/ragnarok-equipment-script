@@ -226,7 +226,7 @@ export const buffSkills: IBuffSkill[] = [
     name: 'Dark Claw',
     level: 5,
     classActives: [ClassKey.GuillotineCross],
-    mulMeleeAtk: 1.5,
+    mulMeleeAtk: 2.5,
     script: (character: Character2, _this: IBuffSkill): void => {},
   },
   {

@@ -117,8 +117,12 @@ export const potionItems: IPotionItem[] = [
     classActives: [],
     potionAtk: 30,
     potionMAtk: 30,
-    atkPercent2: 0.01,
-    matkPercent: 0.01,
+    additionAtk: {
+      class: 0.01,
+    },
+    additionMAtk: {
+      matkPercent: 0.01,
+    },
     script: (character: Character2, _this: IBuffSkill): void => {},
   },
   {
