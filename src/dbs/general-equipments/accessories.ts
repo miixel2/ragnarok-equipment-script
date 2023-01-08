@@ -2250,7 +2250,7 @@ export const accessories: IBaseEquipment[] = [
     name: '[Upgrade] Illusion Ring [1]',
     type: EquipmentType.ARMOR,
     subType: EquipmentSubType.ACCESSORY,
-    location: EquipmentLocation.LEFT_ACCESSORY,
+    location: EquipmentLocation.ACCESSORY,
     compoundOn: null,
     slot1Enable: 'CARD',
     slot2Enable: 'ENCHANT',
