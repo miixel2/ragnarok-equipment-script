@@ -309,7 +309,6 @@ export const shadowArmors: IBaseEquipment[] = [
     penetrationPercent: 0,
     script: (character: Character2, _this: IBaseEquipment): void => {
       const upgrade = _this.equipUpgradeValue;
-      _this.eATK = upgrade;
       _this.hpModA = upgrade * 10;
 
       if (
@@ -331,7 +330,6 @@ export const shadowArmors: IBaseEquipment[] = [
         character.shadowLeftHand?.id === 24374 &&
         character.shadowShoes?.id === 24373
       ) {
-        _this.eATK += 5;
 
         if (
           [MonsterRace.DEMI_HUMAN, MonsterRace.UNDEAD].includes(
@@ -384,7 +382,6 @@ export const shadowArmors: IBaseEquipment[] = [
     penetrationPercent: 0,
     script: (character: Character2, _this: IBaseEquipment): void => {
       const upgrade = _this.equipUpgradeValue;
-      _this.eATK = upgrade;
       _this.hpModA = upgrade * 10;
 
       if (
@@ -404,7 +401,6 @@ export const shadowArmors: IBaseEquipment[] = [
         character.shadowLeftHand?.id === 24374 &&
         character.shadowShoes?.id === 24373
       ) {
-        _this.eATK += 5;
 
         if (
           [MonsterRace.DEMON, MonsterRace.ANGEL].includes(
@@ -457,7 +453,6 @@ export const shadowArmors: IBaseEquipment[] = [
     penetrationPercent: 0,
     script: (character: Character2, _this: IBaseEquipment): void => {
       const upgrade = _this.equipUpgradeValue;
-      _this.eATK = upgrade;
       _this.hpModA = upgrade * 10;
 
       if (
@@ -479,7 +474,6 @@ export const shadowArmors: IBaseEquipment[] = [
         character.shadowLeftHand?.id === 24374 &&
         character.shadowShoes?.id === 24373
       ) {
-        _this.eATK += 5;
 
         if (
           [MonsterRace.FORMLESS, MonsterRace.DRAGON].includes(
@@ -532,7 +526,6 @@ export const shadowArmors: IBaseEquipment[] = [
     penetrationPercent: 0,
     script: (character: Character2, _this: IBaseEquipment): void => {
       const upgrade = _this.equipUpgradeValue;
-      _this.eATK = upgrade;
       _this.hpModA = upgrade * 10;
 
       if (
@@ -552,7 +545,6 @@ export const shadowArmors: IBaseEquipment[] = [
         character.shadowLeftHand?.id === 24374 &&
         character.shadowShoes?.id === 24373
       ) {
-        _this.eATK += 5;
 
         if (
           [MonsterRace.BRUTE, MonsterRace.PLANT].includes(
@@ -605,7 +597,6 @@ export const shadowArmors: IBaseEquipment[] = [
     penetrationPercent: 0,
     script: (character: Character2, _this: IBaseEquipment): void => {
       const upgrade = _this.equipUpgradeValue;
-      _this.eATK = upgrade;
       _this.hpModA = upgrade * 10;
 
       if (
@@ -625,7 +616,6 @@ export const shadowArmors: IBaseEquipment[] = [
         character.shadowLeftHand?.id === 24374 &&
         character.shadowShoes?.id === 24373
       ) {
-        _this.eATK += 5;
 
         if (
           [MonsterRace.FISH, MonsterRace.INSECT].includes(
